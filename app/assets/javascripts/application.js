@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//
+// Required by Blacklight
+//= require blacklight/blacklight
 //= require turbolinks
 //= require_tree .

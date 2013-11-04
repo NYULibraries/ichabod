@@ -1,4 +1,8 @@
 HydraDemo::Application.routes.draw do
+  root :to => "catalog#index"
+  Blacklight.add_routes(self)
+  HydraHead.add_routes(self)
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
