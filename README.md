@@ -1,4 +1,4 @@
-# Hydra
+# Hydra NYU
 
 Hydra components – Fedora, Solr, Blacklight
 
