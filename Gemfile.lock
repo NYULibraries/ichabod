@@ -1,3 +1,60 @@
+GIT
+  remote: git://github.com/NYULibraries/nyulibraries-assets.git
+  revision: 78cf48ca4192be2cb8a7c85326f703e57836e2db
+  tag: v2.0.0
+  specs:
+    nyulibraries-assets (2.0.0)
+      bootstrap-sass (>= 2.2.0, < 2.3.1.1)
+      compass (~> 0.12.2)
+      institutions (~> 0.1.1)
+
+GIT
+  remote: git://github.com/NYULibraries/nyulibraries_deploy.git
+  revision: fb50274d12329936c7418c6c0a9931d6487b9fac
+  tag: v3.2.0
+  specs:
+    nyulibraries_deploy (3.2.0)
+      cap_git_tools (~> 0.9.1)
+      capistrano (~> 2.15.5)
+      git (~> 1.2.5)
+      mail (~> 2.5.4)
+      newrelic_rpm (~> 3.6.0)
+      rake (~> 10.1.0)
+      require_all (~> 1.3.0)
+      rvm-capistrano (~> 1.5.0)
+
+GIT
+  remote: git://github.com/barnabyalter/authpds-nyu.git
+  revision: bc253d17315d300d93e57dd4fbe2738f63f4ad22
+  specs:
+    authpds-nyu (1.1.3)
+      require_all (~> 1.3.1)
+
+GIT
+  remote: git://github.com/barnabyalter/authpds.git
+  revision: 54292582aa9e37d3540b5027ac5b98febd53a900
+  specs:
+    authpds (1.1.3)
+      activerecord (>= 3.2.14)
+      activesupport (>= 3.2.14)
+      authlogic (~> 3.3.0)
+      institutions (~> 0.1.3)
+      nokogiri (~> 1.6.0)
+      require_all (~> 1.3.1)
+
+GIT
+  remote: git://github.com/barnabyalter/exlibris-aleph.git
+  revision: 216a72a2cc40d6b0263e4963ae77138c6fd536e9
+  specs:
+    exlibris-aleph (1.1.0)
+      activesupport (>= 3.2.14)
+      builder (>= 3.0.0)
+      httparty (~> 0.11.0)
+      marc (~> 0.7.1)
+      nokogiri (~> 1.6.0)
+      rake (~> 10.1.0)
+      require_all (~> 1.3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,7 +94,9 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
-    bcrypt-ruby (3.1.2)
+    authlogic (3.3.0)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
     blacklight (4.5.0)
       bootstrap-sass (>= 2.2.0, < 2.4)
       kaminari (~> 0.13)
@@ -48,12 +107,27 @@ GEM
       sass-rails
     block_helpers (0.3.3)
       activesupport (>= 2.0)
-    bootstrap-sass (2.3.2.2)
+    bootstrap-sass (2.3.1.0)
       sass (~> 3.2)
     builder (3.1.4)
     cancan (1.6.10)
+    cap_git_tools (0.9.1)
+      capistrano (~> 2.0)
+    capistrano (2.15.5)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+    capybara (2.2.0)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
+    chunky_png (1.2.9)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -62,7 +136,25 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     columnize (0.3.6)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (1.1.2)
+      compass (>= 0.12.2)
+    cucumber (1.3.10)
+      builder (>= 2.1.2)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 2.12)
+      multi_json (>= 1.7.5, < 2.0)
+      multi_test (>= 0.0.2)
+    cucumber-rails (1.4.0)
+      capybara (>= 1.1.2)
+      cucumber (>= 1.2.0)
+      nokogiri (>= 1.5.0)
+      rails (>= 3.0.0)
     daemons (1.1.9)
+    database_cleaner (1.2.0)
     debugger (1.6.3)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -71,23 +163,23 @@ GEM
     debugger-ruby_core_source (1.2.4)
     deprecation (0.0.5)
       activesupport
-    devise (3.0.0.rc)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      warden (~> 1.2.1)
-    devise-guests (0.3.2)
-      devise
     diff-lcs (1.2.5)
-    ensure_valid_encoding (0.5.3)
-    equivalent-xml (0.3.0)
+    equivalent-xml (0.4.0)
       nokogiri (>= 1.4.3)
     erubis (2.7.0)
     execjs (2.0.2)
     fastercsv (1.5.5)
     ffi (1.9.3)
+    fssm (0.2.10)
+    gherkin (2.12.2)
+      multi_json (~> 1.3)
+    git (1.2.6)
+    highline (1.6.20)
     hike (1.2.3)
     hooks (0.3.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     hydra (6.1.0)
       active-fedora (~> 6.7.0)
       blacklight (~> 4.5.0)
@@ -119,6 +211,10 @@ GEM
       hydra-core (= 6.4.1)
       rails (>= 3.2.6)
     i18n (0.6.9)
+    institutions (0.1.3)
+      ipaddr_range_set (~> 0.10.0)
+      require_all (~> 1.3.1)
+    ipaddr_range_set (0.10.0)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -131,6 +227,8 @@ GEM
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.1.1)
+      railties (>= 3.1.0)
     json (1.8.1)
     kaminari (0.15.0)
       actionpack (>= 3.0.0)
@@ -139,15 +237,27 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    marc (0.8.1)
-      ensure_valid_encoding
-      unf
+    marc (0.7.1)
     mediashelf-loggable (0.4.9)
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.8.2)
-    nokogiri (1.6.0)
+    multi_test (0.0.2)
+    multi_xml (0.5.5)
+    mustache (0.99.4)
+    mustache-rails (0.2.3)
+      actionpack (>= 3.1)
+      mustache (~> 0.99.4)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
+    newrelic_rpm (3.6.9.171)
+    nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     nom-xml (0.5.1)
       activesupport
@@ -160,7 +270,6 @@ GEM
       mediashelf-loggable
       nokogiri (>= 1.4.2)
       solrizer (~> 3.1.0)
-    orm_adapter (0.5.0)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -173,13 +282,15 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.0.1)
       sprockets-rails (~> 2.0.0)
+    rails_config (0.3.3)
+      activesupport (>= 3.0)
     railties (4.0.1)
       actionpack (= 4.0.1)
       activesupport (= 4.0.1)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
-    rdf (1.1.0)
+    rdf (1.1.0.1)
     rdf-rdfxml (1.0.1)
       rdf (>= 1.0)
       rdf-xsd (>= 1.0)
@@ -187,6 +298,7 @@ GEM
       rdf (>= 1.1)
     rdoc (3.12.2)
       json (~> 1.4)
+    require_all (1.3.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rsolr (1.0.9)
@@ -212,6 +324,8 @@ GEM
       mime-types
       nokogiri
       rest-client
+    rvm-capistrano (1.5.1)
+      capistrano (~> 2.15.4)
     sass (3.2.12)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -248,32 +362,39 @@ GEM
     turbolinks (2.0.0)
       coffee-rails
     tzinfo (0.3.38)
-    uglifier (2.3.2)
+    uglifier (2.3.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unf (0.1.3)
-      unf_ext
-    unf_ext (0.0.6)
     unicode (0.4.4)
-    warden (1.2.3)
-      rack (>= 1.0)
     xml-simple (1.1.2)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  authpds!
+  authpds-nyu!
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  compass-rails
+  cucumber-rails
+  database_cleaner
   debugger
-  devise (= 3.0.0.rc)
-  devise-guests (~> 0.3)
+  exlibris-aleph!
   hydra (~> 6.1.0)
   jbuilder (~> 1.2)
   jettywrapper
   jquery-rails
+  jquery-ui-rails (~> 4.1.0)
+  mustache (= 0.99.4)
+  mustache-rails (~> 0.2.3)
+  nyulibraries-assets!
+  nyulibraries_deploy!
   rails (= 4.0.1)
-  rspec-rails
+  rails_config
+  rspec-rails (>= 2.9.0)
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3

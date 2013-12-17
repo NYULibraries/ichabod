@@ -1,6 +1,6 @@
 <h1>Listing books</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -15,7 +15,7 @@
     <% @books.each do |book| %>
       <tr>
         <td><%= book.title %></td>
-        <td><%= book.author %></td>
+        <td><%= book.author.join(", ") %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>

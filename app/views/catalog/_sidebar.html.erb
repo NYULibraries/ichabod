@@ -1,0 +1,5 @@
+<%= render :partial=>'/user_util_links' %>
+
+<% if controller_name.eql? "catalog" %>
+<%= render :partial=>'facets' %>
+<% end %>

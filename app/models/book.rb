@@ -1,4 +1,5 @@
 class Book < ActiveFedora::Base
+  include Hydra::AccessControls::Permissions
   
   has_metadata 'descMetadata', type: BookMetadata
 
