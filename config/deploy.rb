@@ -32,14 +32,14 @@ set :use_sudo, false
 set :app_path, ENV["APP_PATH"]
 set(:deploy_to) { "#{app_path}#{application}" }
 
-namespace :deploy do
-  task :create_symlink do
-    run "rm -rf #{app_path}#{app_title} && ln -s #{current_path} #{app_path}#{app_title}"
-  end
-  task :create_current_path_symlink do
-    run "rm -rf #{current_path} && ln -s #{current_release} #{current_path}"
-  end
-end
+#namespace :deploy do
+#  task :create_symlink do
+#    run "rm -rf #{app_path}#{app_title} && ln -s #{current_path} #{app_path}#{app_title}"
+#  end
+#  task :create_current_path_symlink do
+#    run "rm -rf #{current_path} && ln -s #{current_release} #{current_path}"
+#  end
+#end
 
 before "deploy", "rvm:install_ruby"
-after "deploy", "deploy:create_symlink", "deploy:create_current_path_symlink", "deploy:cleanup"
+after "deploy", "deploy:cleanup"#, "deploy:create_symlink", "deploy:create_current_path_symlink"
