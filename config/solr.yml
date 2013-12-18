@@ -5,7 +5,7 @@ development:
 test: &TEST
   url: <%= "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 8983}/solr/test" %>
 staging:
-  url: <%= "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 8983}/solr/staging" %>
+  url: <%= "http://#{ENV['SERVER_NAME']}:8983/solr/development" %>
 cucumber:
   <<: *TEST
 production:
