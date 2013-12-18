@@ -16,7 +16,7 @@ set(:app_title) { "hydra-nyu" }
 set(:application) { "#{app_title}_repos" }
 
 # RVM  vars
-set :rvm_ruby_string, "2.0.0-p353"
+set :rvm_ruby_string, "1.9.3-p448"
 set :rvm_type, :user
 
 # Git vars
