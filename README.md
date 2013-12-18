@@ -23,3 +23,9 @@ Access privileges –
 - Custom
 - Can be granted at the user or group level
 
+ActiveFedora::Base.reindex_everything
+
+Starting from an existing Fedora repository, describing the objects in Rails models with
+
+you can think of the active-fedora models as ruby proxies for your fedora-based ones
+

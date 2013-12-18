@@ -41,7 +41,7 @@ gem 'debugger', group: [:development, :test]
 gem 'unicode', platforms: [:mri_18, :mri_19]
 #gem 'devise', '3.0.0.rc'
 #gem 'devise-guests', '~> 0.3'
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'jettywrapper'
