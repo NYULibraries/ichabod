@@ -1,5 +1,15 @@
 # Hydra NYU
 
+
+## What is Hydra?
+
+## Hydra models
+
+## Defining metadata
+
+## Gated access
+
+## Starting from scratch
 Hydra components – Fedora, Solr, Blacklight
 
 In Fedora an object can have many 'datastreams' which are either content for the object or metadata about the object.

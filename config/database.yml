@@ -10,10 +10,12 @@ development:
   timeout: 5000
 
 staging:
-  adapter: sqlite3
-  database: db/staging.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql2
+  host: <%= ENV["DB_HOST"] %>
+  database: <%= ENV["DB_NAME"] %>
+  username: <%= ENV["DB_USR"] %>
+  password: <%= ENV["DB_PWD"] %>
+  encoding: utf8
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

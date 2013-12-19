@@ -5,6 +5,7 @@ gem 'rails', '4.0.1'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -42,6 +43,8 @@ gem 'unicode', platforms: [:mri_18, :mri_19]
 #gem 'devise', '3.0.0.rc'
 #gem 'devise-guests', '~> 0.3'
 #gem 'bootstrap-sass'
+
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'jettywrapper'

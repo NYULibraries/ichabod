@@ -6,6 +6,7 @@ require "bundler/capistrano"
 require "rvm/capistrano"
 # Multistage
 require 'capistrano/ext/multistage'
+require "dotenv/capistrano"
 
 # Environments
 set :stages, ["staging"]

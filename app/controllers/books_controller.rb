@@ -21,7 +21,7 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
-    authorize! :new, params[:id]
+    authorize! :new, Book
     @book = Book.new
   end
 
@@ -33,7 +33,7 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    authorize! :create, params[:id]
+    authorize! :create, Book
     @book = Book.new(book_params)
 
     respond_to do |format|
