@@ -39,3 +39,11 @@ Starting from an existing Fedora repository, describing the objects in Rails mod
 
 you can think of the active-fedora models as ruby proxies for your fedora-based ones
 
+## Resources
+
+https://github.com/projecthydra/hydra/wiki/Dive-into-Hydra
+https://github.com/projecthydra/hydra-head/wiki/Access-Controls-with-Hydra
+https://github.com/projecthydra/om/wiki/Tame-your-XML-with-OM
+https://github.com/projecthydra/hydra
+https://github.com/projecthydra/hydra/wiki/
+\#projecthydra
