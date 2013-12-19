@@ -4,13 +4,14 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    authorize! :index, Book
     @books = Book.all
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
-    authorize! :show, params[:id]
+    authorize! :show, @book
     @book = Book.find(params[:id])
 
     respond_to do |format|
@@ -27,7 +28,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
-    authorize! :edit, params[:id]
+    authorize! :edit, @book
   end
 
   # POST /books
@@ -50,7 +51,7 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1
   # PATCH/PUT /books/1.json
   def update
-    authorize! :update, params[:id]
+    authorize! :update, @book
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
@@ -65,7 +66,7 @@ class BooksController < ApplicationController
   # DELETE /books/1
   # DELETE /books/1.json
   def destroy
-    authorize! :destroy, params[:id]
+    authorize! :destroy, @book
     @book.destroy
     respond_to do |format|
       format.html { redirect_to books_url }

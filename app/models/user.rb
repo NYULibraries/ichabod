@@ -35,4 +35,8 @@ class User < ActiveRecord::Base
     self.send("find_by_username".to_sym, key)
   end
   
+  def admin?
+    true if ["ba36"].include? username
+  end
+  
 end
