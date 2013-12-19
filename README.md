@@ -14,8 +14,6 @@ Hydra is really just a collection of interweaving (open-source) technologies tha
 * **Solr** is fast Lucene-based open-source software. I believe we are all familiar with Solr. ActiveFedora uses the solrizer gem to push Fedora objects into a solr index in real time.
 * **Blacklight** is a Rails engine gem that acts as a front-end discovery interface for Solr indexes.
 
-![](public/hydra.png)
-
 ## Hydra models
 
 In Fedora an object can have many 'datastreams' which are either content for the object or metadata about the object. We create these datastreams as OM ([Opinionated Metadata](https://github.com/projecthydra/om): describes format of an xml doc in Ruby) terminologies to convert our Ruby objects into XML that ActiveFedora can push to Solr. OM lets us describe what our Solr index will look like.
