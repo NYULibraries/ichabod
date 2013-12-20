@@ -93,5 +93,6 @@ Oh and did I mention these permissions are indexed into Solr as well. They also 
 * Access Controler with Hydra Tutorial: [https://github.com/projecthydra/hydra-head/wiki/Access-Controls-with-Hydra](https://github.com/projecthydra/hydra-head/wiki/Access-Controls-with-Hydra)
 * Tame your XML with OM Turotial: [https://github.com/projecthydra/om/wiki/Tame-your-XML-with-OM](https://github.com/projecthydra/om/wiki/Tame-your-XML-with-OM)
 * Project Hydra on GitHub: [https://github.com/projecthydra/hydra](https://github.com/projecthydra/hydra)
-* Wiki: [https://github.com/projecthydra/hydra/wiki/](https://github.com/projecthydra/hydra/wiki/)
+* GitHub Wiki: [https://github.com/projecthydra/hydra/wiki/](https://github.com/projecthydra/hydra/wiki/)
+* Duraspace Wiki: [https://wiki.duraspace.org/display/hydra/The+Hydra+Project](https://wiki.duraspace.org/display/hydra/The+Hydra+Project)
 * IRC Channel: \#projecthydra
