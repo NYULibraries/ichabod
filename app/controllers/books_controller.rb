@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  respond_to :html, :json
   before_action :set_book, only: [:edit, :update, :destroy]
 
   # GET /books

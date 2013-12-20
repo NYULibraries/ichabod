@@ -52,7 +52,7 @@ end
 
 group :test do 
   gem 'rspec-rails', '>=2.9.0'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
 end
 
