@@ -6,28 +6,30 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
   # These before_filters apply the hydra access controls
-  before_filter :enforce_show_permissions, :only=>:show
+  # before_filter :enforce_show_permissions, :only=>:show
   # This applies appropriate access controls to all solr queries
-  CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
+  # CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
   # This filters out objects that you want to exclude from search results, like FileAssets
   CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
 
 
-  configure_blacklight do |config|
+configure_blacklight do |config|
     config.default_solr_params = { 
-      :qf => 'title_tesim author_tesim',
+      :qf => 'title_tesim author_tesim publisher_tesim type_tesim description_tesim series_tesim',
       :qt => 'search',
       :rows => 10 
     }
 
     # solr field configuration for search results/index views
     config.index.show_link = 'title_tesim'
+    config.index.show = 'publisher_tesim'
     config.index.record_display_type = 'has_model_ssim'
 
     # solr field configuration for document/show views
     config.show.html_title = 'title_tesim'
     config.show.heading = 'title_tesim'
     config.show.display_type = 'has_model_ssim'
+
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -75,6 +77,9 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name('published', :stored_searchable, type: :string), :label => 'Published:'
     config.add_index_field solr_name('published_vern', :stored_searchable, type: :string), :label => 'Published:'
     config.add_index_field solr_name('lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
+    #NYUCore Additions
+    config.add_index_field solr_name('publisher', :stored_searchable, type: :string), :label => 'Publisher:'
+
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -92,6 +97,12 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name('published_vern', :stored_searchable, type: :string), :label => 'Published:'
     config.add_show_field solr_name('lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
     config.add_show_field solr_name('isbn', :stored_searchable, type: :string), :label => 'ISBN:'
+    #NYUCore Additions
+    config.add_show_field solr_name('publisher', :stored_searchable, type: :string), :label => 'Publisher:'
+    config.add_show_field solr_name('type', :stored_searchable, type: :string), :label => 'Format:'
+    config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => 'Description:'
+    config.add_show_field solr_name('series', :stored_searchable, type: :string), :label => 'Series:'
+    config.add_show_field solr_name('version', :stored_searchable, type: :string), :label => 'Also available as:'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
