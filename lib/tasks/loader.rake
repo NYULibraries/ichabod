@@ -59,9 +59,12 @@ task :load => :environment do
     #now, for each record, I want to build an md hash, and load a core.
     md = {}
         for child in r.children() do
+            if child.name() == "identifier" then
+                md[:pid] = "sdr:" + child.content().gsub('.', '-').gsub('\\', '-')
+                md["identifier"] = child.content()
+            end
             md["title"] = child.content() if child.name() == "title"
             md["type"] = child.content() if child.name() == "type"
-            md["identifier"] = child.content() if child.name() == "identifier"
             md["publisher"] = child.content() if child.name() == "publisher"
             md["available"] = child.content() if child.name() == "accessURL"
             md["description"] = child.content() if child.name() == "description"
@@ -70,6 +73,7 @@ task :load => :environment do
             md["version"] = child.content() if child.name() == "hasVersion"
         end
         core = Nyucore.create(md) 
+        #puts md.to_s
 
     end
     puts l.length()
