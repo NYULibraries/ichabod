@@ -12,6 +12,14 @@ class NyucoreMetadata < ActiveFedora::OmDatastream
     t.edition(index_as: :stored_searchable)
     t.series(index_as: :stored_searchable)
     t.version(index_as: :stored_searchable)
+    # Adds for FDA Below: 
+    t.date(index_as: :stored_searchable)
+    t.format(index_as: :stored_searchable)
+    t.language(index_as: :stored_searchable)
+    t.relation(index_as: :stored_searchable)
+    t.rights(index_as: :stored_searchable)
+    t.subject(index_as: :stored_searchable)
+    t.citation(index_as: :stored_searchable)
 
   end
 

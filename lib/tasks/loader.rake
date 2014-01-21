@@ -73,18 +73,36 @@ task :load, [:fn, :prefix] => :environment do |t, args|
                 if args.prefix == "sdr" then
                     md[:pid] = args.prefix + ":" + child.content().gsub('.', '-').gsub('\\', '-')
                     md["identifier"] = child.content()
+                elsif args.prefix = "fda" then
+                    if child.content().include? "http://" then
+                        #md[:pid] = args.prefix + ":" + child.content().gsub('.', '-').gsub('\\', '-').gsub(':', '').gsub('/', '')
+                        md[:pid] = args.prefix + ":" + child.content().gsub('.', '-').gsub('\\', '-').gsub('http://', '').gsub('/', '-')
+                        md["identifier"] = child.content()
+                        md["available"] = child.content()
+                    else
+                        md["citation"] = child.content()
+                    end
                 end
             end
             md["title"] = child.content() if child.name() == "title"
             md["type"] = child.content() if child.name() == "type"
             md["publisher"] = child.content() if child.name() == "publisher"
             md["available"] = child.content() if child.name() == "accessURL"
-            md["description"] = child.content() if child.name() == "description"
+            md["description"] = child.content().gsub('\\\'', '\'') if child.name() == "description"
             md["edition"] = child.content() if child.name() == "edition"
             md["series"] = child.content() if child.name() == "isPartOf"
             md["version"] = child.content() if child.name() == "hasVersion"
+            md["date"] = child.content() if child.name() == "date"
+            md["format"] = child.content() if child.name() == "format"
+            md["language"] = child.content() if child.name() == "language"
+            md["relation"] = child.content() if child.name() == "relation"
+            md["rights"] = child.content() if child.name() == "rights"
+            md["subject"] = child.content() if child.name() == "subject"
+
         end
-        core = Nyucore.create(md) 
+        core = Nyucore.create(md)
+        puts "Loading '#{md[:pid]}'"
+ 
         #puts md.to_s
 
     end
@@ -149,10 +167,13 @@ task :delete, [:fn, :prefix] => :environment do |t, args|
             if child.name() == "identifier" then
                 if args.prefix == "sdr" then
                     pid = args.prefix + ":" + child.content().gsub('.', '-').gsub('\\', '-')
-                    puts pid
-                    result = ActiveFedora::FixtureLoader.delete(pid)
-                    puts "Deleting '#{pid}' from #{ActiveFedora::Base.connection_for_pid(pid).client.url}" if result == 1
+                elsif args.prefix == "fda" then
+                    pid = args.prefix + ":" + child.content().gsub('.', '-').gsub('\\', '-').gsub('http://', '').gsub('/', '-')
                 end
+                puts pid
+                result = ActiveFedora::FixtureLoader.delete(pid)
+                puts "Deleting '#{pid}' from #{ActiveFedora::Base.connection_for_pid(pid).client.url}" if result == 1
+                
             end
         end
     end
