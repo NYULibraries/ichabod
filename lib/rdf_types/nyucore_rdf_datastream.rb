@@ -23,7 +23,9 @@ class NyucoreRdfDatastream < ActiveFedora::NtriplesRDFDatastream
     map.identifier(in: RDF::DC) do |index|
       index.as :stored_searchable
     end
-    map.available(in: NyuTerms)
+    map.available(in: NyuTerms) do |index|
+        index.as :stored_searchable
+    end
     map.type(in: RDF::DC) do |index|
       index.as :stored_searchable, :facetable
     end

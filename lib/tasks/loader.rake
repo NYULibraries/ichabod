@@ -35,7 +35,7 @@ task :field_stats => :environment do
     ##Whooo! This works!!!!
     ##md = Nyucore.create(title: 'LION', publisher: 'New York City Dept. of City Planning', identifier: 'DSS.NYCDCP_DCPLION_10cav\DSS.Lion_GJK', available: 'http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip', description: 'LION is a single line representation of New York City streets containing address ranges and other information.', edition: '10C', series: 'NYCDCP_DCPLION_10CAV', version: 'DSS.NYCDCP_DCPLION_10cav\DSS.Lion_GJK')
     #f = File.open("/home/charper/Dropbox/strat43/sdr/sdr.xml")
-    f = File.open("/home/charper/strat43-data/hdl_2451_26402")
+    #f = File.open("/home/charper/strat43-data/hdl_2451_26402")
     f = File.open("/home/charper/strat43-data/stern.xml")
     doc = Nokogiri::XML(f)
     doc.xpath('//oai_dc:dc', 'oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/')
@@ -93,6 +93,7 @@ task :load, [:fn, :prefix] => :environment do |t, args|
                 end
             end
             core.title = child.content() if child.name() == "title"
+            core.creator = child.content() if child.name() == "creator"
             core.type = child.content() if child.name() == "type"
             core.publisher = child.content() if child.name() == "publisher"
             core.available = child.content() if child.name() == "accessURL"

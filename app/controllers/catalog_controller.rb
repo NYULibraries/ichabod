@@ -16,7 +16,8 @@ class CatalogController < ApplicationController
 configure_blacklight do |config|
     config.default_solr_params = { 
       :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__ublisher_tesim 
-                desc_metadata__type_tesim desc_metadata__description_tesim desc_metadata__series_tesim',
+                desc_metadata__type_tesim desc_metadata__description_tesim desc_metadata__series_tesim
+                desc_metadata__creator',
       :qt => 'search',
       :rows => 10 
     }
@@ -109,6 +110,13 @@ configure_blacklight do |config|
     config.add_show_field solr_name('desc_metadata__description', :stored_searchable, type: :string), :label => 'Description:'
     config.add_show_field solr_name('desc_metadata__series', :stored_searchable, type: :string), :label => 'Series:'
     config.add_show_field solr_name('desc_metadata__version', :stored_searchable, type: :string), :label => 'Also available as:'
+
+
+    config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label         => 'Online Resource:',     
+                                                                                                    :helper_method => :render_external_link, 
+                                                                                                    :text          => 'resource_text_display'
+    
+
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
