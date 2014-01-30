@@ -67,41 +67,49 @@ task :load, [:fn, :prefix] => :environment do |t, args|
     #puts len(l)
     for r in l do
     #now, for each record, I want to build an md hash, and load a core.
-    md = {}
+        md = {}
+        ids = r.xpath('dc:identifier',  'dc' => 'http://purl.org/dc/elements/1.1/')
+        for id in ids do
+            if args.prefix == "sdr" then
+                pid = args.prefix + ":" + id.content().gsub('.', '-').gsub('\\', '-')
+            elsif args.prefix = "fda" then
+                if id.content().include? "http://" then
+                    pid = args.prefix + ":" + id.content().gsub('.', '-').gsub('\\', '-').gsub('http://', '').gsub('/', '-')
+                end
+            end
+        end
+        core = Nyucore.new(:pid => pid)
         for child in r.children() do
             if child.name() == "identifier" then
                 if args.prefix == "sdr" then
-                    md[:pid] = args.prefix + ":" + child.content().gsub('.', '-').gsub('\\', '-')
-                    md["identifier"] = child.content()
+                    core.identifier = child.content()
                 elsif args.prefix = "fda" then
                     if child.content().include? "http://" then
-                        #md[:pid] = args.prefix + ":" + child.content().gsub('.', '-').gsub('\\', '-').gsub(':', '').gsub('/', '')
-                        md[:pid] = args.prefix + ":" + child.content().gsub('.', '-').gsub('\\', '-').gsub('http://', '').gsub('/', '-')
-                        md["identifier"] = child.content()
-                        md["available"] = child.content()
+                        core.identifier = child.content()
+                        core.available = child.content()
                     else
-                        md["citation"] = child.content()
+                        core.citation = child.content()
                     end
                 end
             end
-            md["title"] = child.content() if child.name() == "title"
-            md["type"] = child.content() if child.name() == "type"
-            md["publisher"] = child.content() if child.name() == "publisher"
-            md["available"] = child.content() if child.name() == "accessURL"
-            md["description"] = child.content().gsub('\\\'', '\'') if child.name() == "description"
-            md["edition"] = child.content() if child.name() == "edition"
-            md["series"] = child.content() if child.name() == "isPartOf"
-            md["version"] = child.content() if child.name() == "hasVersion"
-            md["date"] = child.content() if child.name() == "date"
-            md["format"] = child.content() if child.name() == "format"
-            md["language"] = child.content() if child.name() == "language"
-            md["relation"] = child.content() if child.name() == "relation"
-            md["rights"] = child.content() if child.name() == "rights"
-            md["subject"] = child.content() if child.name() == "subject"
+            core.title = child.content() if child.name() == "title"
+            core.type = child.content() if child.name() == "type"
+            core.publisher = child.content() if child.name() == "publisher"
+            core.available = child.content() if child.name() == "accessURL"
+            core.description = child.content().gsub('\\\'', '\'') if child.name() == "description"
+            core.edition = child.content() if child.name() == "edition"
+            core.series = child.content() if child.name() == "isPartOf"
+            core.version = child.content() if child.name() == "hasVersion"
+            core.date = child.content() if child.name() == "date"
+            core.format = child.content() if child.name() == "format"
+            core.language = child.content() if child.name() == "language"
+            core.relation = child.content() if child.name() == "relation"
+            core.rights = child.content() if child.name() == "rights"
+            core.subject = child.content() if child.name() == "subject"
 
         end
-        core = Nyucore.create(md)
-        puts "Loading '#{md[:pid]}'"
+        core.save
+        puts "Loading '#{pid}'"
  
         #puts md.to_s
 

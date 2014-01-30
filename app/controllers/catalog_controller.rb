@@ -15,19 +15,20 @@ class CatalogController < ApplicationController
 
 configure_blacklight do |config|
     config.default_solr_params = { 
-      :qf => 'title_tesim author_tesim publisher_tesim type_tesim description_tesim series_tesim',
+      :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__ublisher_tesim 
+                desc_metadata__type_tesim desc_metadata__description_tesim desc_metadata__series_tesim',
       :qt => 'search',
       :rows => 10 
     }
 
     # solr field configuration for search results/index views
-    config.index.show_link = 'title_tesim'
-    config.index.show = 'publisher_tesim'
+    config.index.show_link = 'desc_metadata__title_tesim'
+    config.index.show = 'desc_metadata__publisher_tesim'
     config.index.record_display_type = 'has_model_ssim'
 
     # solr field configuration for document/show views
-    config.show.html_title = 'title_tesim'
-    config.show.heading = 'title_tesim'
+    config.show.html_title = 'desc_metadata__title_tesim'
+    config.show.heading = 'desc_metadata__title_tesim'
     config.show.display_type = 'has_model_ssim'
 
 
@@ -57,6 +58,11 @@ configure_blacklight do |config|
     config.add_facet_field solr_name('lc1_letter', :facetable), :label => 'Call Number'
     config.add_facet_field solr_name('subject_geo', :facetable), :label => 'Region'
     config.add_facet_field solr_name('subject_era', :facetable), :label => 'Era'
+    config.add_facet_field solr_name('desc_metadata__type', :facetable), :label => 'Format'
+    config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
+    config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
+    config.add_facet_field solr_name('desc_metadata__language', :facetable), :label => 'Language'
+
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -68,41 +74,41 @@ configure_blacklight do |config|
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field solr_name('title', :stored_searchable, type: :string), :label => 'Title:'
-    config.add_index_field solr_name('title_vern', :stored_searchable, type: :string), :label => 'Title:'
-    config.add_index_field solr_name('author', :stored_searchable, type: :string), :label => 'Author:'
-    config.add_index_field solr_name('author_vern', :stored_searchable, type: :string), :label => 'Author:'
-    config.add_index_field solr_name('format', :symbol), :label => 'Format:'
-    config.add_index_field solr_name('language', :stored_searchable, type: :string), :label => 'Language:'
-    config.add_index_field solr_name('published', :stored_searchable, type: :string), :label => 'Published:'
-    config.add_index_field solr_name('published_vern', :stored_searchable, type: :string), :label => 'Published:'
-    config.add_index_field solr_name('lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
+    config.add_index_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title:'
+    config.add_index_field solr_name('desc_metadata__title_vern', :stored_searchable, type: :string), :label => 'Title:'
+    config.add_index_field solr_name('desc_metadata__author', :stored_searchable, type: :string), :label => 'Author:'
+    config.add_index_field solr_name('desc_metadata__author_vern', :stored_searchable, type: :string), :label => 'Author:'
+    config.add_index_field solr_name('desc_metadata__format', :symbol), :label => 'Format:'
+    config.add_index_field solr_name('desc_metadata__language', :stored_searchable, type: :string), :label => 'Language:'
+    config.add_index_field solr_name('desc_metadata__published', :stored_searchable, type: :string), :label => 'Published:'
+    config.add_index_field solr_name('desc_metadata__published_vern', :stored_searchable, type: :string), :label => 'Published:'
+    config.add_index_field solr_name('desc_metadata__lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
     #NYUCore Additions
-    config.add_index_field solr_name('publisher', :stored_searchable, type: :string), :label => 'Publisher:'
+    config.add_index_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher:'
 
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field solr_name('title', :stored_searchable, type: :string), :label => 'Title:'
-    config.add_show_field solr_name('title_vern', :stored_searchable, type: :string), :label => 'Title:'
-    config.add_show_field solr_name('subtitle', :stored_searchable, type: :string), :label => 'Subtitle:'
-    config.add_show_field solr_name('subtitle_vern', :stored_searchable, type: :string), :label => 'Subtitle:'
-    config.add_show_field solr_name('author', :stored_searchable, type: :string), :label => 'Author:'
-    config.add_show_field solr_name('author_vern', :stored_searchable, type: :string), :label => 'Author:'
-    config.add_show_field solr_name('format', :symbol), :label => 'Format:'
-    config.add_show_field solr_name('url_fulltext_tsim', :stored_searchable, type: :string), :label => 'URL:'
-    config.add_show_field solr_name('url_suppl_tsim', :stored_searchable, type: :string), :label => 'More Information:'
-    config.add_show_field solr_name('language', :stored_searchable, type: :string), :label => 'Language:'
-    config.add_show_field solr_name('published', :stored_searchable, type: :string), :label => 'Published:'
-    config.add_show_field solr_name('published_vern', :stored_searchable, type: :string), :label => 'Published:'
-    config.add_show_field solr_name('lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
-    config.add_show_field solr_name('isbn', :stored_searchable, type: :string), :label => 'ISBN:'
+    config.add_show_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title:'
+    config.add_show_field solr_name('desc_metadata__title_vern', :stored_searchable, type: :string), :label => 'Title:'
+    config.add_show_field solr_name('desc_metadata__subtitle', :stored_searchable, type: :string), :label => 'Subtitle:'
+    config.add_show_field solr_name('desc_metadata__subtitle_vern', :stored_searchable, type: :string), :label => 'Subtitle:'
+    config.add_show_field solr_name('desc_metadata__author', :stored_searchable, type: :string), :label => 'Author:'
+    config.add_show_field solr_name('desc_metadata__author_vern', :stored_searchable, type: :string), :label => 'Author:'
+    config.add_show_field solr_name('desc_metadata__format', :symbol), :label => 'Format:'
+    config.add_show_field solr_name('desc_metadata__url_fulltext_tsim', :stored_searchable, type: :string), :label => 'URL:'
+    config.add_show_field solr_name('desc_metadata__url_suppl_tsim', :stored_searchable, type: :string), :label => 'More Information:'
+    config.add_show_field solr_name('desc_metadata__language', :stored_searchable, type: :string), :label => 'Language:'
+    config.add_show_field solr_name('desc_metadata__published', :stored_searchable, type: :string), :label => 'Published:'
+    config.add_show_field solr_name('desc_metadata__published_vern', :stored_searchable, type: :string), :label => 'Published:'
+    config.add_show_field solr_name('desc_metadata__lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
+    config.add_show_field solr_name('desc_metadata__isbn', :stored_searchable, type: :string), :label => 'ISBN:'
     #NYUCore Additions
-    config.add_show_field solr_name('publisher', :stored_searchable, type: :string), :label => 'Publisher:'
-    config.add_show_field solr_name('type', :stored_searchable, type: :string), :label => 'Format:'
-    config.add_show_field solr_name('description', :stored_searchable, type: :string), :label => 'Description:'
-    config.add_show_field solr_name('series', :stored_searchable, type: :string), :label => 'Series:'
-    config.add_show_field solr_name('version', :stored_searchable, type: :string), :label => 'Also available as:'
+    config.add_show_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher:'
+    config.add_show_field solr_name('desc_metadata__type', :stored_searchable, type: :string), :label => 'Format:'
+    config.add_show_field solr_name('desc_metadata__description', :stored_searchable, type: :string), :label => 'Description:'
+    config.add_show_field solr_name('desc_metadata__series', :stored_searchable, type: :string), :label => 'Series:'
+    config.add_show_field solr_name('desc_metadata__version', :stored_searchable, type: :string), :label => 'Also available as:'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

@@ -3,7 +3,7 @@ class Nyucore < ActiveFedora::Base
     has_metadata 'descMetadata', type: NyucoreRdfDatastream
 
     has_attributes :title, datastream: 'descMetadata', multiple: false
-    has_attributes :author, datastream: 'descMetadata', multiple: false
+    has_attributes :creator, datastream: 'descMetadata', multiple: false
     has_attributes :publisher, datastream: 'descMetadata', multiple: false
     has_attributes :identifier, datastream: 'descMetadata', multiple: false
     has_attributes :available, datastream: 'descMetadata', multiple: true
