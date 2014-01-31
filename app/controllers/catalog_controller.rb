@@ -17,7 +17,7 @@ configure_blacklight do |config|
     config.default_solr_params = { 
       :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__ublisher_tesim 
                 desc_metadata__type_tesim desc_metadata__description_tesim desc_metadata__series_tesim
-                desc_metadata__creator',
+                desc_metadata__creator_tesim desc_metadata__subject_tesim',
       :qt => 'search',
       :rows => 10 
     }
@@ -91,6 +91,7 @@ configure_blacklight do |config|
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     config.add_show_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title:'
+    config.add_show_field solr_name('desc_metadata__creator', :stored_searchable, type: :string), :label => 'Creator:'
     config.add_show_field solr_name('desc_metadata__title_vern', :stored_searchable, type: :string), :label => 'Title:'
     config.add_show_field solr_name('desc_metadata__subtitle', :stored_searchable, type: :string), :label => 'Subtitle:'
     config.add_show_field solr_name('desc_metadata__subtitle_vern', :stored_searchable, type: :string), :label => 'Subtitle:'
