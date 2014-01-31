@@ -44,7 +44,7 @@ namespace :deploy do
     run "ln -s #{shared_path}/jetty #{current_path}/jetty"
   end
   task :create_env_symlink do
-    run "ln -s #{shared_path}/.env #{current_path}/.env"
+    run "rm -rf #{current_path}/.env && ln -s #{shared_path}/.env #{current_path}/.env"
   end
 end
 
