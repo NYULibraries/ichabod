@@ -65,5 +65,5 @@ gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-a
 gem 'exlibris-aleph', :git => 'git://github.com/barnabyalter/exlibris-aleph.git'
 gem 'authpds', :git => 'git://github.com/barnabyalter/authpds.git'
 gem 'authpds-nyu', :git => 'git://github.com/barnabyalter/authpds-nyu.git'
-gem 'nyulibraries_deploy', :git => 'git://github.com/NYULibraries/nyulibraries_deploy.git', :tag => 'v3.2.0'
+gem 'nyulibraries_deploy', :git => 'git://github.com/NYULibraries/nyulibraries_deploy.git', :tag => 'v3.2.5'
 
