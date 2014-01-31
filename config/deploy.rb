@@ -43,7 +43,10 @@ namespace :deploy do
   task :create_jetty_symlink do
     run "ln -s #{shared_path}/jetty #{current_path}/jetty"
   end
+  task :create_env_symlink do
+    run "ln -s #{shared_path}/.env #{current_path}/.env"
+  end
 end
 
 before "deploy", "rvm:install_ruby"
-after "deploy", "deploy:cleanup", "deploy:create_symlink", "deploy:create_current_path_symlink", "deploy:create_jetty_symlink"
+after "deploy", "deploy:cleanup", "deploy:create_symlink", "deploy:create_current_path_symlink", "deploy:create_jetty_symlink", "deploy:create_env_symlink"
