@@ -48,5 +48,16 @@ namespace :deploy do
   end
 end
 
+namespace :ingest do
+  task :load do
+    run 'bundle exec rake load["./ingest/sdr.xml","sdr"]'
+    run 'bundle exec rake load["./ingest/stern.xml","fda"]'
+  end
+  task :delete do
+    run 'bundle exec rake delete["./ingest/sdr.xml","sdr"]'
+    run 'bundle exec rake delete["./ingest/stern.xml","fda"]'
+  end
+end
+
 before "deploy", "rvm:install_ruby"
 after "deploy", "deploy:cleanup", "deploy:create_symlink", "deploy:create_current_path_symlink", "deploy:create_jetty_symlink", "deploy:create_env_symlink"
