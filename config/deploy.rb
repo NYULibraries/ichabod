@@ -50,12 +50,12 @@ end
 
 namespace :ingest do
   task :load_xml_data do
-    run 'bundle exec rake hydra_nyu:load["./ingest/sdr.xml","sdr"]'
-    run 'bundle exec rake hydra_nyu:load["./ingest/stern.xml","fda"]'
+    run "bundle exec rake hydra_nyu:load[./ingest/sdr.xml,sdr]"
+    run "bundle exec rake hydra_nyu:load[./ingest/stern.xml,fda]"
   end
   task :clean_xml_data do
-    run 'bundle exec rake hydra_nyu:delete["./ingest/sdr.xml","sdr"]'
-    run 'bundle exec rake hydra_nyu:delete["./ingest/stern.xml","fda"]'
+    run "bundle exec rake hydra_nyu:delete[./ingest/sdr.xml,sdr]"
+    run "bundle exec rake hydra_nyu:delete[./ingest/stern.xml,fda]"
   end
 end
 

@@ -41,7 +41,7 @@ namespace :hydra_nyu do
       puts l.length()
   end
 
-  desc "Usage: rake load['/home/charper/Dropbox/strat43/sdr/sdr.xml','sdr']"
+  desc "Usage: rake load['sdr.xml','sdr']"
   task :load, [:fn, :prefix] => :environment do |t, args|
 
       # usage: rake load["/home/charper/Dropbox/strat43/sdr/sdr.xml","sdr"]
@@ -147,7 +147,7 @@ namespace :hydra_nyu do
       puts l.length()
   end
 
-  desc "Usage: rake delete['/home/charper/Dropbox/strat43/sdr/sdr.xml','sdr']"
+  desc "Usage: rake delete['sdr.xml','sdr']"
   task :delete, [:fn, :prefix] => :environment do |t, args|
 
       # usage: rake delete["/home/charper/Dropbox/strat43/sdr/sdr.xml","sdr"]
