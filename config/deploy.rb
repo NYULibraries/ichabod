@@ -49,11 +49,11 @@ namespace :deploy do
 end
 
 namespace :ingest do
-  task :load do
+  task :load_xml_data do
     run 'bundle exec rake load["./ingest/sdr.xml","sdr"]'
     run 'bundle exec rake load["./ingest/stern.xml","fda"]'
   end
-  task :delete do
+  task :clean_xml_data do
     run 'bundle exec rake delete["./ingest/sdr.xml","sdr"]'
     run 'bundle exec rake delete["./ingest/stern.xml","fda"]'
   end
