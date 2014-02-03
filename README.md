@@ -86,6 +86,15 @@ Oh and did I mention these permissions are indexed into Solr as well. They also 
 *	Defining access controls per object or class of objects
 *	Defining relationships between objects (the Fedora RDF is translated to active record like database relations)
 
+## Sample Data Ingest
+
+Rake tasks availalbe to ingest data from "ingest" directory, and to purge data based on same data files. 
+
+    rake load["./ingest/sdr.xml","sdr"]
+    rake load["./ingest/stern.xlm","fda"]
+    rake delete["./ingest/sdr.xml","sdr"]
+    rake delete["./ingest/stern.xlm","fda"]
+
 ## Resources
 
 * Homepage: [http://projecthydra.org/](http://projecthydra.org/)
