@@ -35,6 +35,7 @@ group :doc do
 end
 
 gem 'hydra', '~> 6.1.0'
+gem 'simple_form'
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
