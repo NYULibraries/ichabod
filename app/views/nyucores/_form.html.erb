@@ -4,19 +4,104 @@
   <%= f.input :creator %>
   <%= f.input :publisher %>
   <%= f.input :identifier %>
-  <%= f.input :available %>
+  
+<div>
+  <%= f.label :available %>
+  <% @item.available.each do |available|%>
+  <%= f.input :available, label: false, input_html: {name:"nyucore[available][]", value: available} %>
+  <% end %>
+  <%= f.input :available, label: false, input_html: {name:"nyucore[available][]", value: nil, class: "new_available"} %>
+</div>
+  
   <%= f.input :type %>
-  <%= f.input :description %>
-  <%= f.input :edition %>
-  <%= f.input :series %>
-  <%= f.input :version %>
-  <%= f.input :date %>
-  <%= f.input :format %>
-  <%= f.input :language %>
-  <%= f.input :relation %>
-  <%= f.input :rights %>
-  <%= f.input :subject %>
-  <%= f.input :citation %>
 
-  <%= f.submit %>
+
+<div>
+  <%= f.label :description %>
+  <% @item.description.each do |description|%>
+  <%= f.input :description, label: false, input_html: {name:"nyucore[description][]", value: description} %>
+  <% end %>
+  <%= f.input :description, label: false, input_html: {name:"nyucore[description][]", value: nil, class: "new_description"} %>
+</div>
+<div>
+  <%= f.label :edition %>
+  <% @item.edition.each do |edition|%>
+  <%= f.input :edition, label: false, input_html: {name:"nyucore[edition][]", value: edition} %>
+  <% end %>
+  <%= f.input :edition, label: false, input_html: {name:"nyucore[edition][]", value: nil, class: "new_edition"} %>
+  
+</div>
+<div>
+  <%= f.label :series %>
+  <% @item.series.each do |series|%>
+  <%= f.input :series, label: false, input_html: {name:"nyucore[series][]", value: series} %>
+  <% end %>
+  <%= f.input :series, label: false, input_html: {name:"nyucore[series][]", value: nil, class: "new_series"} %>
+
+</div>
+<div>
+  <%= f.label :version %>
+  <% @item.version.each do |version|%>
+  <%= f.input :version, label: false, input_html: {name:"nyucore[version][]", value: version} %>
+  <% end %>
+  <%= f.input :version, label: false, input_html: {name:"nyucore[version][]", value: nil, class: "new_version"} %>
+
+</div>
+<div>
+  <%= f.label :date %>
+  <% @item.date.each do |date|%>
+  <%= f.input :date, label: false, input_html: {name:"nyucore[date][]", value: date} %>
+  <% end %>
+  <%= f.input :date, label: false, input_html: {name:"nyucore[date][]", value: nil, class: "new_date"} %>
+  
+</div>
+<div>
+  <%= f.label :format %>
+  <% @item.format.each do |format|%>
+  <%= f.input :format, label: false, input_html: {name:"nyucore[format][]", value: format} %>
+  <% end %>
+  <%= f.input :format, label: false, input_html: {name:"nyucore[format][]", value: nil, class: "new_format"} %>
+  
+</div>
+<div>
+  <%= f.label :language %>
+  <% @item.language.each do |language|%>
+  <%= f.input :language, label: false, input_html: {name:"nyucore[language][]", value: language} %>
+  <% end %>
+  <%= f.input :language, label: false, input_html: {name:"nyucore[language][]", value: nil, class: "new_language"} %>
+  
+</div>
+<div>
+  <%= f.label :relation %>
+  <% @item.relation.each do |relation|%>
+  <%= f.input :relation, label: false, input_html: {name:"nyucore[relation][]", value: relation} %>
+  <% end %>
+  <%= f.input :relation, label: false, input_html: {name:"nyucore[relation][]", value: nil, class: "new_relation"} %>
+  
+</div>
+<div>
+  <%= f.label :rights %>
+  <% @item.rights.each do |rights|%>
+  <%= f.input :rights, label: false, input_html: {name:"nyucore[rights][]", value: rights} %>
+  <% end %>
+  <%= f.input :rights, label: false, input_html: {name:"nyucore[rights][]", value: nil, class: "new_rights"} %>
+  
+</div>
+<div>
+  <%= f.label :subject %>
+  <% @item.subject.each do |subject|%>
+  <%= f.input :subject, label: false, input_html: {name:"nyucore[subject][]", value: subject} %>
+  <% end %>
+  <%= f.input :subject, label: false, input_html: {name:"nyucore[subject][]", value: nil, class: "new_subject"} %>
+  
+</div>
+<div>
+  <%= f.label :citation %>
+  <% @item.citation.each do |citation|%>
+  <%= f.input :citation, label: false, input_html: {name:"nyucore[citation][]", value: citation} %>
+  <% end %>
+  <%= f.input :citation, label: false, input_html: {name:"nyucore[citation][]", value: nil, class: "new_citation"} %>
+</div>
+<br />
+  <%= f.submit 'Save' %>
 <% end %>
