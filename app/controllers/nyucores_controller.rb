@@ -1,6 +1,6 @@
 class NyucoresController < ApplicationController
   respond_to :html, :json
-  before_action :set_item, only: [:edit, :update, :destroy]
+  before_action :set_item, only: [:edit, :update]
 
   def index
     @items = Nyucore.all
@@ -18,7 +18,6 @@ class NyucoresController < ApplicationController
     respond_with(@item)
   end
 
-
   def edit
     respond_with(@item)
   end
@@ -34,13 +33,14 @@ class NyucoresController < ApplicationController
     #authorize! :update, params[:id]
     
     flash[:notice] = 'Item was successfully updated.' if @item.update(item_params)
-    respond_with(@item, :location => nyucore_index)
+    respond_with(@item)
   end
 
   def destroy
     #authorize! :destroy, params[:id]
+    @item = Nyucore.find(params[:id])
     @item.destroy
-    respond_with(@item) 
+    respond_with(@item, :location => nyucores_path) 
   end
 
   private
