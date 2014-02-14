@@ -96,7 +96,7 @@ Rake tasks available to ingest data from "ingest" directory.
 ... and to purge data based on same data files. 
     
     rake hydra_nyu:delete["./ingest/sdr.xml","sdr"]
-    rake hydra_nyu:delete["./ingest/stern.xlm","fda"]
+    rake hydra_nyu:delete["./ingest/stern.xml","fda"]
 
 ## Resources
 
