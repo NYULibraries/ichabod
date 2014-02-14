@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def current_user_dev
-    @current_user ||= User.find_by_username("ba36")
+    @current_user ||= User.new(:email => "user@nyu.edu", :firstname => "Ptolemy")
   end
   alias_method :current_user, :current_user_dev if Rails.env == 'development'
   
