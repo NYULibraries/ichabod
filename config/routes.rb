@@ -1,6 +1,6 @@
 HydraDemo::Application.routes.draw do
   resources :books
-  resources :nyucore
+  resources :nyucores
 
   root :to => "catalog#index"
   Blacklight.add_routes(self)
