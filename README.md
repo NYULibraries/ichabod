@@ -88,10 +88,13 @@ Oh and did I mention these permissions are indexed into Solr as well. They also 
 
 ## Sample Data Ingest
 
-Rake tasks availalbe to ingest data from "ingest" directory, and to purge data based on same data files. 
+Rake tasks available to ingest data from "ingest" directory.
 
     rake hydra_nyu:load["./ingest/sdr.xml","sdr"]
     rake hydra_nyu:load["./ingest/stern.xml","fda"]
+
+... and to purge data based on same data files. 
+    
     rake hydra_nyu:delete["./ingest/sdr.xml","sdr"]
     rake hydra_nyu:delete["./ingest/stern.xlm","fda"]
 
