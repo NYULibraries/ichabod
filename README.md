@@ -90,10 +90,10 @@ Oh and did I mention these permissions are indexed into Solr as well. They also 
 
 Rake tasks availalbe to ingest data from "ingest" directory, and to purge data based on same data files. 
 
-    rake load["./ingest/sdr.xml","sdr"]
-    rake load["./ingest/stern.xlm","fda"]
-    rake delete["./ingest/sdr.xml","sdr"]
-    rake delete["./ingest/stern.xlm","fda"]
+    rake hydra_nyu:load["./ingest/sdr.xml","sdr"]
+    rake hydra_nyu:load["./ingest/stern.xml","fda"]
+    rake hydra_nyu:delete["./ingest/sdr.xml","sdr"]
+    rake hydra_nyu:delete["./ingest/stern.xlm","fda"]
 
 ## Resources
 
