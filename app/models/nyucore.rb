@@ -1,4 +1,3 @@
-require './lib/rdf_types/nyucore_rdf_datastream.rb'
 class Nyucore < ActiveFedora::Base
     has_metadata 'descMetadata', type: NyucoreRdfDatastream
 
