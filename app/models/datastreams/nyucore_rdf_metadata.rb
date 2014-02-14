@@ -1,6 +1,6 @@
 require './lib/rdf/nyu'
 require './lib/rdf/dcterms'
-class NyucoreRdfMetadata < ActiveFedora::NtriplesRDFDatastream
+class NyuCoreRdfMetadata < ActiveFedora::NtriplesRDFDatastream
   # Specify the "facetable" predicates
   FACETABLE_PREDICATES = [:creator, :type, :language, :subject]
   # Map the predicates
