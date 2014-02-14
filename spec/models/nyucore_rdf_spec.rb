@@ -1,4 +1,4 @@
 require "spec_helper"
-describe NyuCoreRdfResource do
+describe NyuCoreRdf do
   pending "add some examples to #{__FILE__}"
 end
