@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '4.0.3'
 gem 'sqlite3', group: :development
 gem 'mysql2'
 gem 'sass-rails', '~> 4.0.0'
@@ -19,7 +19,7 @@ gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-a
 gem 'exlibris-aleph', :git => 'git://github.com/barnabyalter/exlibris-aleph.git'
 gem 'authpds', :git => 'git://github.com/barnabyalter/authpds.git'
 gem 'authpds-nyu', :git => 'git://github.com/barnabyalter/authpds-nyu.git'
-gem 'nyulibraries_deploy', :git => 'git://github.com/NYULibraries/nyulibraries_deploy.git', :tag => 'v3.2.5'
+gem 'nyulibraries-deploy', :git => 'git://github.com/NYULibraries/nyulibraries-deploy.git', :tag => 'v4.0.0'
 gem 'hydra', '~> 6.1.0'
 gem 'simple_form'
 gem 'kaminari'

@@ -9,11 +9,11 @@ GIT
       institutions (~> 0.1.1)
 
 GIT
-  remote: git://github.com/NYULibraries/nyulibraries_deploy.git
-  revision: 9c29e35c7494b9ef2f24b9ffefab2cd86143e483
-  tag: v3.2.5
+  remote: git://github.com/NYULibraries/nyulibraries-deploy.git
+  revision: 1ff5afb37d3451d3a676e1678399659d9f6369a4
+  tag: v4.0.0
   specs:
-    nyulibraries_deploy (3.2.5)
+    nyulibraries-deploy (3.2.5)
       cap_git_tools (~> 0.9.1)
       capistrano (~> 2.15.5)
       git (~> 1.2.5)
@@ -58,11 +58,11 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    actionmailer (4.0.1)
-      actionpack (= 4.0.1)
+    actionmailer (4.0.3)
+      actionpack (= 4.0.3)
       mail (~> 2.5.4)
-    actionpack (4.0.1)
-      activesupport (= 4.0.1)
+    actionpack (4.0.3)
+      activesupport (= 4.0.3)
       builder (~> 3.1.0)
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
@@ -77,22 +77,22 @@ GEM
       rdf-rdfxml (= 1.0.1)
       rsolr
       rubydora (~> 1.6, >= 1.6.5)
-    activemodel (4.0.1)
-      activesupport (= 4.0.1)
+    activemodel (4.0.3)
+      activesupport (= 4.0.3)
       builder (~> 3.1.0)
-    activerecord (4.0.1)
-      activemodel (= 4.0.1)
+    activerecord (4.0.3)
+      activemodel (= 4.0.3)
       activerecord-deprecated_finders (~> 1.0.2)
-      activesupport (= 4.0.1)
+      activesupport (= 4.0.3)
       arel (~> 4.0.0)
     activerecord-deprecated_finders (1.0.3)
-    activesupport (4.0.1)
+    activesupport (4.0.3)
       i18n (~> 0.6, >= 0.6.4)
       minitest (~> 4.2)
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    arel (4.0.1)
+    arel (4.0.2)
     atomic (1.1.14)
     authlogic (3.3.0)
       activerecord (>= 3.2)
@@ -130,9 +130,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    childprocess (0.4.0)
+    childprocess (0.5.1)
       ffi (~> 1.0, >= 1.0.11)
-    chunky_png (1.2.9)
+    chunky_png (1.3.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -268,7 +268,7 @@ GEM
     net-ssh (2.8.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
-    newrelic_rpm (3.7.1.188)
+    newrelic_rpm (3.7.2.195)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     nom-xml (0.5.1)
@@ -282,23 +282,23 @@ GEM
       mediashelf-loggable
       nokogiri (>= 1.4.2)
       solrizer (~> 3.1.0)
-    polyglot (0.3.3)
+    polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
-    rails (4.0.1)
-      actionmailer (= 4.0.1)
-      actionpack (= 4.0.1)
-      activerecord (= 4.0.1)
-      activesupport (= 4.0.1)
+    rails (4.0.3)
+      actionmailer (= 4.0.3)
+      actionpack (= 4.0.3)
+      activerecord (= 4.0.3)
+      activesupport (= 4.0.3)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 4.0.1)
+      railties (= 4.0.3)
       sprockets-rails (~> 2.0.0)
     rails_config (0.3.3)
       activesupport (>= 3.0)
-    railties (4.0.1)
-      actionpack (= 4.0.1)
-      activesupport (= 4.0.1)
+    railties (4.0.3)
+      actionpack (= 4.0.3)
+      activesupport (= 4.0.3)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.1)
@@ -365,7 +365,7 @@ GEM
       sprockets (~> 2.8)
     sqlite3 (1.3.8)
     stomp (1.3.2)
-    therubyracer (0.12.0)
+    therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
     thor (0.18.1)
@@ -409,8 +409,8 @@ DEPENDENCIES
   mustache-rails (~> 0.2.3)
   mysql2
   nyulibraries-assets!
-  nyulibraries_deploy!
-  rails (= 4.0.1)
+  nyulibraries-deploy!
+  rails (= 4.0.3)
   rails_config
   rspec-rails (>= 2.9.0)
   sass-rails (~> 4.0.0)
