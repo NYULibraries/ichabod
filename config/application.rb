@@ -13,7 +13,9 @@ module HydraDemo
       g.test_framework :rspec, :spec => true
     end
 
-    config.assets.compile = Rails.env.production? || Rails.env.staging?
+    # It seems like images are included by default only from app/assets folder
+    # So in order to get images from shared assets we do this
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
