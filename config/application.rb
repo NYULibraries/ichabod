@@ -8,11 +8,12 @@ Bundler.require(:default, Rails.env)
 
 module HydraDemo
   class Application < Rails::Application
-    
+
     config.generators do |g|
       g.test_framework :rspec, :spec => true
     end
 
+    config.assets.compile = Rails.env.production? || Rails.env.staging?
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

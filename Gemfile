@@ -50,7 +50,7 @@ group :development, :test do
   gem 'jettywrapper'
 end
 
-group :test do 
+group :test do
   gem 'rspec-rails', '>=2.9.0'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
@@ -61,9 +61,8 @@ gem 'rails_config'
 gem 'mustache', '0.99.4'
 gem 'mustache-rails', '~> 0.2.3', :require => 'mustache/railtie'
 
-gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v2.0.0'
+gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v2.1.1'
 gem 'exlibris-aleph', :git => 'git://github.com/barnabyalter/exlibris-aleph.git'
 gem 'authpds', :git => 'git://github.com/barnabyalter/authpds.git'
 gem 'authpds-nyu', :git => 'git://github.com/barnabyalter/authpds-nyu.git'
 gem 'nyulibraries_deploy', :git => 'git://github.com/NYULibraries/nyulibraries_deploy.git', :tag => 'v3.2.5'
-
