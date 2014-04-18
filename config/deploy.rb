@@ -13,7 +13,7 @@ set :stages, ["staging"]
 set :default_stage, "staging"
 
 set :ssh_options, {:forward_agent => true}
-set(:app_title) { "hydra-nyu" }
+set(:app_title) { "ichabod" }
 set(:application) { "#{app_title}_repos" }
 
 # RVM  vars
@@ -21,7 +21,7 @@ set :rvm_ruby_string, "1.9.3-p448"
 set :rvm_type, :user
 
 # Git vars
-set :repository, "git@github.com:NYULibraries/hydra-nyu.git" 
+set :repository, "git@github.com:NYULibraries/ichabod.git" 
 set :scm, :git
 set :deploy_via, :checkout
 set(:branch, 'master') unless exists?(:branch)

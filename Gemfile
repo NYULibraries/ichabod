@@ -14,7 +14,7 @@ gem 'jquery-ui-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 1.2'
 gem 'rails_config'
 gem 'mustache', '0.99.4'
-gem 'mustache-rails', '~> 0.2.3', :require => 'mustache/railtie'
+gem "mustache-rails", git: "git://github.com/josh/mustache-rails.git", :require => "mustache/railtie"
 gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v2.0.0'
 gem 'exlibris-aleph', :git => 'git://github.com/barnabyalter/exlibris-aleph.git'
 gem 'authpds', :git => 'git://github.com/barnabyalter/authpds.git'
@@ -30,15 +30,13 @@ gem 'dotenv-rails'
 gem 'debugger', group: [:development, :test]
 gem 'jettywrapper', group: [:development, :test]
 
-group :test do 
+group :test do
   gem 'rspec-rails', '>=2.9.0'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
 end
 
-group :development do 
+group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
-
-
