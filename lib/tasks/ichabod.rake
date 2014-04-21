@@ -2,12 +2,12 @@ require 'nokogiri'
 require "active-fedora"
 require "active_support" # This is just to load ActiveSupport::CoreExtensions::String::Inflections
 
-namespace :hydra_nyu do
+namespace :ichabod do
 
   desc "Run this guy, pipe into sort & wc, you get record count, plus field count for input file..."
   task :field_stats => :environment do
       # run this guy, pipe into sort & wc, you get record count, plus field count for input file...
-      # example, for sdr data: 
+      # example, for sdr data:
       #charper@charper-ThinkPad-T530:~/hydra-nyu$ rake field_stats | sort | uniq -c
       #      1 144
       #    144 accessURL
@@ -100,7 +100,7 @@ namespace :hydra_nyu do
           end
           core.save
           puts "Loading '#{pid}'"
- 
+
           #puts md.to_s
 
       end
@@ -110,7 +110,7 @@ namespace :hydra_nyu do
   desc "Run this guy, pipe into sort & wc, you get record count, plus field count for input file..."
   task :id_check, [:fn, :prefix] => :environment do |t, args|
       # run this guy, pipe into sort & wc, you get record count, plus field count for input file...
-      # example, for sdr data: 
+      # example, for sdr data:
       #charper@charper-ThinkPad-T530:~/hydra-nyu$ rake field_stats | sort | uniq -c
       #      1 144
       #    144 accessURL
@@ -168,7 +168,7 @@ namespace :hydra_nyu do
                   puts pid
                   result = ActiveFedora::FixtureLoader.delete(pid)
                   puts "Deleting '#{pid}' from #{ActiveFedora::Base.connection_for_pid(pid).client.url}" if result == 1
-                
+
               end
           end
       end

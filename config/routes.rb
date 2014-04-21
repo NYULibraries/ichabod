@@ -1,4 +1,4 @@
-HydraDemo::Application.routes.draw do
+Ichabod::Application.routes.draw do
   resources :books
   resources :nyucores
 
