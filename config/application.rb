@@ -6,13 +6,19 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+require 'nyulibraries-assets'
+
+require 'figs'
+# Don't run this initializer on travis.
+Figs.load(stage: Rails.env) unless ENV['TRAVIS']
+
 module Ichabod
   class Application < Rails::Application
-    
+
     config.generators do |g|
       g.test_framework :rspec, :spec => true
     end
-    
+
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
     # Settings in config/environments/* take precedence over those specified here.
