@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-HydraDemo::Application.load_tasks
+Ichabod::Application.load_tasks
