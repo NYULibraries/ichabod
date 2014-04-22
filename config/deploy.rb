@@ -15,6 +15,10 @@ namespace :deploy do
   # task :create_env_symlink do
   #   run "rm -rf #{current_path}/.env && ln -s #{shared_path}/.env #{current_path}/.env"
   # end
+  task :passenger_symlink do
+    binding.pry
+    # run "rm -rf #{current_path} && ln -s #{current_release} #{current_path}"
+  end
 end
 
 namespace :ingest do
@@ -25,6 +29,12 @@ namespace :ingest do
   task :clean_xml_data do
     run "bundle exec rake ichabod:delete[./ingest/sdr.xml,sdr]"
     run "bundle exec rake ichabod:delete[./ingest/stern.xml,fda]"
+  end
+end
+
+namespace :cache do
+  task :tmp_clear do
+    # Do nothing
   end
 end
 
