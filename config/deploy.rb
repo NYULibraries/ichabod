@@ -16,7 +16,6 @@ namespace :deploy do
   #   run "rm -rf #{current_path}/.env && ln -s #{shared_path}/.env #{current_path}/.env"
   # end
   task :passenger_symlink do
-    binding.pry
     # run "rm -rf #{current_path} && ln -s #{current_release} #{current_path}"
   end
 end
