@@ -15,13 +15,13 @@ gem 'jquery-ui-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 1.2'
 
 gem 'mustache', '0.99.4'
-gem 'mustache-rails', github: 'josh/mustache-rails', tag: 'v0.2.3', require: 'mustache/railtie'
+gem "mustache-rails", github: "josh/mustache-rails", require: "mustache/railtie"
 
 gem 'exlibris-aleph', :git => 'git://github.com/barnabyalter/exlibris-aleph.git'
 gem 'authpds', :git => 'git://github.com/barnabyalter/authpds.git'
 gem 'authpds-nyu', :git => 'git://github.com/barnabyalter/authpds-nyu.git'
 
-gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v2.0.1'
+gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v3.0.1'
 gem 'nyulibraries-deploy', :git => 'git://github.com/NYULibraries/nyulibraries-deploy.git', :branch => 'development-fig'
 
 gem 'hydra', '~> 6.1.0'
