@@ -59,7 +59,7 @@ end
 gem 'rails_config'
 
 gem 'mustache', '0.99.4'
-gem 'mustache-rails', '~> 0.2.3', :require => 'mustache/railtie'
+gem "mustache-rails", github: "josh/mustache-rails", tag: "v0.2.3", require: "mustache/railtie"
 
 gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v2.1.1'
 gem 'exlibris-aleph', :git => 'git://github.com/barnabyalter/exlibris-aleph.git'
