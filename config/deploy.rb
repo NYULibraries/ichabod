@@ -15,9 +15,9 @@ namespace :deploy do
   # task :create_env_symlink do
   #   run "rm -rf #{current_path}/.env && ln -s #{shared_path}/.env #{current_path}/.env"
   # end
-  task :passenger_symlink do
-    # run "rm -rf #{current_path} && ln -s #{current_release} #{current_path}"
-  end
+  # task :passenger_symlink do
+  #  run "rm -rf #{current_path} && ln -s #{current_release} #{current_path}"
+  # end
 end
 
 namespace :ingest do
