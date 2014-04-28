@@ -1,10 +1,10 @@
-# Hydra NYU
+# Ichabod - Hydra at NYU
 
 A prototyping effort to bring [Hydra](http://projecthydra.org/) to NYU as a metadata augmentation system.
 
 ## What is Hydra?
 
-The Hydra group describes Hydra as a "repository solution." True to this description it does strive to solve some issues presented by repository management and discovery. The repository in discussion is [Fedora](http://www.fedora-commons.org/), which NYU doesn't use currently but can be brought up to function as a repository for augmented metadata (where the content itself is housed in R-star or the Institutional Repository) and the Hydra stack can provide a customizable interface for back and front end. 
+The Hydra group describes Hydra as a "repository solution." True to this description it does strive to solve some issues presented by repository management and discovery. The repository in discussion is [Fedora](http://www.fedora-commons.org/), which NYU doesn't use currently but can be brought up to function as a repository for augmented metadata (where the content itself is housed in R-star or the Institutional Repository) and the Hydra stack can provide a customizable interface for back and front end.
 
 Hydra is really just a collection of interweaving (open-source) technologies that provide a simple way to manage a Fedora repository: the [hydra gem](https://github.com/projecthydra/hydra), Fedora, [Solr](http://lucene.apache.org/solr/), [Blacklight](http://projectblacklight.org/). These technologies all revolve around the Ruby on Rails framework so we can easily integrate [NYU SSO](https://github.com/NYULibraries/authpds-nyu) and [shared assets](https://github.com/NYULibraries/nyulibraries-assets).
 
@@ -22,37 +22,37 @@ For example, a model aping a Fedora-based Book object with title and multiple au
 
     class Book < ActiveFedora::Base
       include Hydra::AccessControls::Permissions
-      
+
       has_metadata 'descMetadata', type: BookMetadata
-      
+
       has_many :pages, :property => :is_part_of
-      
+
       has_attributes :title, datastream: 'descMetadata', multiple: false
       has_attributes :author, datastream: 'descMetadata', multiple: true
-      
+
     end
 
 With a matching OM description:
 
     class BookMetadata < ActiveFedora::OmDatastream
-    
+
       set_terminology do |t|
         t.root(path: "fields")
         t.title index_as: :stored_searchable
         t.author index_as: :stored_searchable
       end
-      
+
       def self.xml_template
         Nokogiri::XML.parse("<fields/>")
       end
-      
+
     end
 
 ## Gated access
 
 Hydra fully supports gated access. In fact it's an integral part of Hydra's architecture.
 
-### Access privileges 
+### Access privileges
 
 * By default there are three levels of access that can be granted: Discover, Read, Edit
 * Custom privileges can be created as well. With CanCan you can!
@@ -72,7 +72,7 @@ To grant access for all registered (i.e. signed-in) users to all Book objects we
 
     Book.all.each {|book| book.read_groups = ["registered"]; book.save }
 
-Because these permissions just appear as relationships between objects, checkboxes can easily be integrated into views to allow admin users to grant their own levels of access to objects they manage.  Thanks Rails! 
+Because these permissions just appear as relationships between objects, checkboxes can easily be integrated into views to allow admin users to grant their own levels of access to objects they manage.  Thanks Rails!
 
 Oh and did I mention these permissions are indexed into Solr as well. They also can be pulled directly out of Fedora if they are already defined in there so no double work has to be done.
 
@@ -90,13 +90,13 @@ Oh and did I mention these permissions are indexed into Solr as well. They also 
 
 Rake tasks available to ingest data from "ingest" directory.
 
-    rake hydra_nyu:load["./ingest/sdr.xml","sdr"]
-    rake hydra_nyu:load["./ingest/stern.xml","fda"]
+    rake ichabod:load["./ingest/sdr.xml","sdr"]
+    rake ichabod:load["./ingest/stern.xml","fda"]
 
-... and to purge data based on same data files. 
-    
-    rake hydra_nyu:delete["./ingest/sdr.xml","sdr"]
-    rake hydra_nyu:delete["./ingest/stern.xml","fda"]
+... and to purge data based on same data files.
+
+    rake ichabod:delete["./ingest/sdr.xml","sdr"]
+    rake ichabod:delete["./ingest/stern.xlm","fda"]
 
 ## Resources
 
