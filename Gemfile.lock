@@ -101,6 +101,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    addressable (2.3.6)
     arel (4.0.2)
     authlogic (3.3.0)
       activerecord (>= 3.2)
@@ -157,6 +158,14 @@ GEM
     compass-rails (1.1.7)
       compass (>= 0.12.2)
       sprockets (<= 2.11.0)
+    coveralls (0.7.0)
+      multi_json (~> 1.3)
+      rest-client
+      simplecov (>= 0.7)
+      term-ansicolor
+      thor
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     cucumber (1.3.14)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.3)
@@ -180,10 +189,16 @@ GEM
     deprecation (0.1.0)
       activesupport
     diff-lcs (1.2.5)
+    docile (1.1.3)
     equivalent-xml (0.4.2)
       nokogiri (>= 1.4.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     fastercsv (1.5.5)
     ffi (1.9.3)
     figs (2.0.1)
@@ -260,6 +275,7 @@ GEM
       treetop (~> 1.4.8)
     marc (0.7.1)
     mediashelf-loggable (0.4.9)
+    method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.3)
     minitest (4.7.5)
@@ -290,6 +306,10 @@ GEM
       nokogiri (>= 1.4.2)
       solrizer (~> 3.1.0)
     polyglot (0.3.4)
+    pry (0.9.12.6)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -343,6 +363,7 @@ GEM
       rest-client
     rvm-capistrano (1.5.1)
       capistrano (~> 2.15.4)
+    safe_yaml (1.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -352,6 +373,14 @@ GEM
     simple_form (3.0.2)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    simplecov (0.8.2)
+      docile (~> 1.1.0)
+      multi_json
+      simplecov-html (~> 0.8.0)
+    simplecov-html (0.8.0)
+    simplecov-rcov (0.2.3)
+      simplecov (>= 0.4.1)
+    slop (3.5.0)
     solrizer (3.1.1)
       activesupport
       daemons
@@ -371,12 +400,15 @@ GEM
       sprockets (~> 2.8)
     sqlite3 (1.3.9)
     stomp (1.3.2)
+    term-ansicolor (1.3.0)
+      tins (~> 1.0)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
     thread_safe (0.3.3)
     tilt (1.4.1)
+    tins (1.1.0)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -386,6 +418,10 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicode (0.4.4.1)
+    vcr (2.8.0)
+    webmock (1.17.4)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
     xml-simple (1.1.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -400,10 +436,12 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 4.0.0)
   compass-rails (~> 1.1.7)
+  coveralls (~> 0.7.0)
   cucumber-rails
   database_cleaner
   debugger
   exlibris-aleph!
+  factory_girl_rails
   hydra (~> 6.1.0)
   jbuilder (~> 1.2)
   jettywrapper
@@ -415,12 +453,17 @@ DEPENDENCIES
   mysql2 (~> 0.3.15)
   nyulibraries-assets!
   nyulibraries-deploy!
+  pry
   rails (= 4.0.3)
-  rspec-rails (>= 2.9.0)
+  rspec-rails
   sass-rails (~> 4.0.0)
   simple_form (~> 3.0.2)
+  simplecov
+  simplecov-rcov
   sorted (~> 1.0.0)
   sqlite3
   therubyracer (~> 0.12.0)
   uglifier (>= 1.3.0)
   unicode
+  vcr (~> 2.8.0)
+  webmock (~> 1.17.4)
