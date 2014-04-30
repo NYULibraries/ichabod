@@ -15,7 +15,7 @@ gem 'jquery-ui-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 1.2'
 
 gem 'mustache', '0.99.4'
-gem "mustache-rails", github: "josh/mustache-rails", require: "mustache/railtie"
+gem 'mustache-rails', github: 'josh/mustache-rails', require: 'mustache/railtie'
 
 gem 'exlibris-aleph', :git => 'git://github.com/barnabyalter/exlibris-aleph.git'
 gem 'authpds', :git => 'git://github.com/barnabyalter/authpds.git'
@@ -30,16 +30,24 @@ gem 'kaminari', '~> 0.13'
 gem 'sorted', '~> 1.0.0'
 gem 'unicode', platforms: [:mri_18, :mri_19]
 
-gem 'debugger', group: [:development, :test]
-gem 'jettywrapper', group: [:development, :test]
-
-group :test do
-  gem 'rspec-rails', '>=2.9.0'
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
-end
+gem 'jettywrapper', group: [:development, :test, :staging]
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'simplecov', :require => false
+  gem 'simplecov-rcov', :require => false
+  gem 'coveralls', '~> 0.7.0', :require => false
+  gem 'vcr', '~> 2.8.0'
+  gem 'webmock', '~> 1.17.4'
+  gem 'database_cleaner'
+end
+
+gem 'factory_girl_rails', :group => [:test, :development]
+gem 'rspec-rails', :group => [:test, :development]
+gem 'pry', :group => [:test, :development]
+gem 'debugger', :groups => [:development, :test]
