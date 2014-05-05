@@ -4,6 +4,9 @@ class NyuTerms < RDF::Vocabulary("http://harper.bobst.nyu.edu/data/nyucore#")
   property :series
   property :version
   property :citation
+  property :addInfo
+  property :addInfoUrl
+  property :addInfoUrlText
 end
 
 class NyucoreRdfDatastream < ActiveFedora::NtriplesRDFDatastream
@@ -60,6 +63,15 @@ class NyucoreRdfDatastream < ActiveFedora::NtriplesRDFDatastream
       index.as :stored_searchable, :facetable
     end
     map.citation(in: NyuTerms) do |index|
+      index.as :stored_searchable
+    end
+    map.addInfo(in: NyuTerms) do |index|
+      index.as :stored_searchable
+    end
+    map.addInfoUrl(in: NyuTerms) do |index|
+      index.as :stored_searchable
+    end
+    map.addInfoUrlText(in: NyuTerms) do |index|
       index.as :stored_searchable
     end
   end

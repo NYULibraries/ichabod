@@ -114,6 +114,9 @@ configure_blacklight do |config|
     config.add_show_field solr_name('desc_metadata__series', :stored_searchable, type: :string), :label => 'Series:'
     config.add_show_field solr_name('desc_metadata__version', :stored_searchable, type: :string), :label => 'Also available as:'
 
+    config.add_show_field solr_name('desc_metadata__addInfoUrl', :stored_searchable, type: :string), :label         => 'Additional Information:',     
+                                                                                                    :helper_method => :render_external_link, 
+                                                                                                    :text          => solr_name('desc_metadata__addInfoUrlText')
 
     config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label         => 'Online Resource:',     
                                                                                                     :helper_method => :render_external_link, 

@@ -72,6 +72,8 @@ namespace :ichabod do
               if child.name() == "identifier" then
                   if args.prefix == "sdr" then
                       core.identifier = child.content()
+                      core.addInfoUrl = "http://nyu.libguides.com/content.php?pid=169769&sid=1489817"
+                      core.addInfoUrlText = "Download and usage instructions."
                   elsif args.prefix = "fda" then
                       if child.content().include? "http://" then
                           core.identifier = child.content()
