@@ -86,7 +86,9 @@ configure_blacklight do |config|
     config.add_index_field solr_name('desc_metadata__lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
     #NYUCore Additions
     config.add_index_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher:'
-
+    config.add_index_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label         => 'Online Resource:',     
+                                                                                                    :helper_method => :render_external_link, 
+                                                                                                    :text          => 'resource_text_display'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
