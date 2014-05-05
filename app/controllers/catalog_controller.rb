@@ -17,7 +17,7 @@ configure_blacklight do |config|
     config.default_solr_params = { 
       :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__ublisher_tesim 
                 desc_metadata__type_tesim desc_metadata__description_tesim desc_metadata__series_tesim
-                desc_metadata__creator_tesim desc_metadata__subject_tesim',
+                desc_metadata__creator_tesim desc_metadata__subject_tesim desc_metadata__publisher_tesim',
       :qt => 'search',
       :rows => 10 
     }
@@ -86,7 +86,9 @@ configure_blacklight do |config|
     config.add_index_field solr_name('desc_metadata__lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
     #NYUCore Additions
     config.add_index_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher:'
-
+    config.add_index_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label         => 'Online Resource:',     
+                                                                                                    :helper_method => :render_external_link, 
+                                                                                                    :text          => 'resource_text_display'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -112,6 +114,9 @@ configure_blacklight do |config|
     config.add_show_field solr_name('desc_metadata__series', :stored_searchable, type: :string), :label => 'Series:'
     config.add_show_field solr_name('desc_metadata__version', :stored_searchable, type: :string), :label => 'Also available as:'
 
+    config.add_show_field solr_name('desc_metadata__addInfoUrl', :stored_searchable, type: :string), :label         => 'Additional Information:',     
+                                                                                                    :helper_method => :render_external_link, 
+                                                                                                    :text          => solr_name('desc_metadata__addInfoUrlText')
 
     config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label         => 'Online Resource:',     
                                                                                                     :helper_method => :render_external_link, 

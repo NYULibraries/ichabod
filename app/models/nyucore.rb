@@ -19,4 +19,10 @@ class Nyucore < ActiveFedora::Base
   has_attributes :rights, datastream: 'descMetadata', multiple: true
   has_attributes :subject, datastream: 'descMetadata', multiple: true
   has_attributes :citation, datastream: 'descMetadata', multiple: true
+  # Update for SDR "instructions" user story (#66550102)
+  has_attributes :addInfo, datastream: 'descMetadata', multiple: true
+  has_attributes :addInfoUrl, datastream: 'descMetadata', multiple: true
+  has_attributes :addInfoUrlText, datastream: 'descMetadata', multiple: true
+
+
 end
