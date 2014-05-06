@@ -31,7 +31,7 @@ class NyucoresController < ApplicationController
 
   def update
     #authorize! :update, params[:id]
-    
+
     flash[:notice] = 'Item was successfully updated.' if @item.update(item_params)
     respond_with(@item)
   end
@@ -40,11 +40,11 @@ class NyucoresController < ApplicationController
     #authorize! :destroy, params[:id]
     @item = Nyucore.find(params[:id])
     @item.destroy
-    respond_with(@item, :location => nyucores_path) 
+    respond_with(@item, :location => nyucores_path)
   end
 
   private
-  
+
   # Use callbacks to share common setup or constraints between actions.
   def set_item
     @item = Nyucore.find(params[:id])

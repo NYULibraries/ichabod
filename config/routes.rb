@@ -1,11 +1,10 @@
 Ichabod::Application.routes.draw do
-  resources :books
   resources :nyucores
 
   root :to => "catalog#index"
   Blacklight.add_routes(self)
   HydraHead.add_routes(self)
-  
+
   get 'login', :to => 'user_sessions#new', :as => :login
   get 'logout', :to => 'user_sessions#destroy', :as => :logout
   get 'validate', :to => 'user_sessions#validate', :as => :validate

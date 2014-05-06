@@ -67,6 +67,8 @@ RSpec.configure do |config|
   end
 end
 
+# WebMock.allow_net_connect!
+
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr_cassettes'
   c.configure_rspec_metadata!
