@@ -142,6 +142,7 @@ GEM
     childprocess (0.5.3)
       ffi (~> 1.0, >= 1.0.11)
     chunky_png (1.3.0)
+    cliver (0.3.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -305,11 +306,23 @@ GEM
       mediashelf-loggable
       nokogiri (>= 1.4.2)
       solrizer (~> 3.1.0)
+    phantomjs (1.9.7.0)
+    pickle (0.4.11)
+      cucumber (>= 0.8)
+      rake
+    poltergeist (1.5.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
     polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pry-debugger (0.2.2)
+      debugger (~> 1.3)
+      pry (~> 0.9.10)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -361,6 +374,7 @@ GEM
       mime-types
       nokogiri
       rest-client
+    rubyzip (1.1.3)
     rvm-capistrano (1.5.1)
       capistrano (~> 2.15.4)
     safe_yaml (1.0.3)
@@ -370,6 +384,11 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
+    selenium-webdriver (2.41.0)
+      childprocess (>= 0.5.0)
+      multi_json (~> 1.0)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0.4)
     simple_form (3.0.2)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -422,6 +441,8 @@ GEM
     webmock (1.17.4)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
+    websocket (1.0.7)
+    websocket-driver (0.3.2)
     xml-simple (1.1.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -438,10 +459,9 @@ DEPENDENCIES
   compass-rails (~> 1.1.7)
   coveralls (~> 0.7.0)
   cucumber-rails
-  database_cleaner
-  debugger
+  database_cleaner (~> 1.2.0)
   exlibris-aleph!
-  factory_girl_rails
+  factory_girl_rails (~> 4.4.0)
   hydra (~> 6.1.0)
   jbuilder (~> 1.2)
   jettywrapper
@@ -453,10 +473,14 @@ DEPENDENCIES
   mysql2 (~> 0.3.15)
   nyulibraries-assets!
   nyulibraries-deploy!
-  pry
+  phantomjs (>= 1.9.0)
+  pickle (~> 0.4.11)
+  poltergeist (~> 1.5.0)
+  pry-debugger (~> 0.2.2)
   rails (= 4.0.3)
-  rspec-rails
+  rspec-rails (~> 2.14.0)
   sass-rails (~> 4.0.0)
+  selenium-webdriver (~> 2.41.0)
   simple_form (~> 3.0.2)
   simplecov
   simplecov-rcov

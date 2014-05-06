@@ -37,17 +37,25 @@ group :development do
   gem 'binding_of_caller'
 end
 
-group :test do
+group :development, :test, :cucumber do
+  gem 'rspec-rails', '~> 2.14.0'
+  # Phantomjs for headless browser testing
+  gem 'phantomjs', '>= 1.9.0'
+  gem 'poltergeist', '~> 1.5.0'
+  # Use factory girl for creating models
+  gem 'factory_girl_rails', '~> 4.4.0'
+  # Use pry-debugger as the REPL and for debugging
+  gem 'pry-debugger', '~> 0.2.2'
+end
+
+group :test, :cucumber do
   gem 'cucumber-rails', :require => false
   gem 'simplecov', :require => false
   gem 'simplecov-rcov', :require => false
   gem 'coveralls', '~> 0.7.0', :require => false
   gem 'vcr', '~> 2.8.0'
   gem 'webmock', '~> 1.17.4'
-  gem 'database_cleaner'
+  gem 'selenium-webdriver', '~> 2.41.0'
+  gem 'pickle', '~> 0.4.11'
+  gem 'database_cleaner', '~> 1.2.0'
 end
-
-gem 'factory_girl_rails', :group => [:test, :development]
-gem 'rspec-rails', :group => [:test, :development]
-gem 'pry', :group => [:test, :development]
-gem 'debugger', :groups => [:development, :test]
