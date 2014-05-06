@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UserSessionsController, :type => :controller do
+describe UserSessionsController do
 
   describe "GET /validate" do
     it "should create a new user session" do
