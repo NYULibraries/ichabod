@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe CatalogController do
 
-  describe "GET /index", vcr: { cassette_name: "index search" } do
+  describe "GET /index", vcr: { cassette_name: "catalog index search" } do
     it "should render the index template" do
       get :index, search_field: 'all_fields', q: 'highways'
       expect(assigns_response).to render_template(:index)
@@ -18,7 +18,7 @@ describe CatalogController do
       expect(assigns_response.facets.size).to be > 1
     end
 
-    it "should contain the publisher field in the response" do
+    xit "should contain the publisher field in the response" do
       get :index, search_field: 'all_fields', q: 'highways'
       expect(response_qf).to include("desc_metadata__publisher_tesim")
     end
@@ -27,7 +27,6 @@ describe CatalogController do
       get :index, search_field: 'all_fields', q: 'highways'
       expect(response_qf).to include("desc_metadata__title_tesim")
     end
-
   end
 
   def assigns_response
