@@ -1,5 +1,4 @@
-require 'coveralls'
-Coveralls.wear_merged!('rails')
+require 'simplecov'
 
 # Require and include helper modules
 # in feature/support/helpers and its subdirectories.
@@ -33,5 +32,5 @@ else
   end
   Capybara.default_driver    = :poltergeist
   Capybara.javascript_driver = :poltergeist
-  # Capybara.default_wait_time = 8
+  Capybara.default_wait_time = 10
 end
