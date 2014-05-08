@@ -1,4 +1,4 @@
-Given(/^I have datasets with the terms like (\w+.*?$)$/) do |kw|
+Given(/^I have datasets with terms like (\w+.*?$)$/) do |kw|
    @dataset1 = {:description => "foo #{kw}", :format => 'Geospatial Data'} 
    @dataset2 = {:description => kw, :format => 'Geospatial Data'} 
    @datasets = [@dataset1,@dataset2]
