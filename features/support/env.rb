@@ -4,6 +4,9 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+# Simplecov config
+require 'simplecov'
+
 ENV['RAILS_ENV'] = 'cucumber'
 
 require 'cucumber/rails'
