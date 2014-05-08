@@ -8,13 +8,13 @@ module ApplicationHelper
       value = args[:document][args[:field]]
       if value.length > 1
         value.each_index do |index|
-          text      = args[:document][blacklight_config.show_fields[args[:field]][:text]][index]
+          text      = args[:document][blacklight_config.show_fields[args[:field].to_s][:text]][index]
           url       = value[index]
           link_text = text.nil? ? url : text
           results << link_to(link_text, url, { :target => "_blank" }).html_safe
         end
       else
-        text      = args[:document].get(blacklight_config.show_fields[args[:field]][:text])
+        text      = args[:document].get(blacklight_config.show_fields[args[:field].to_s][:text])
         url       = args[:document].get(args[:field])
         link_text = text.nil? ? url : text
         results << link_to(link_text, url, { :target => "_blank" }).html_safe
