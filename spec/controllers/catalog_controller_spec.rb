@@ -18,7 +18,7 @@ describe CatalogController do
       expect(assigns_response.facets.size).to be > 1
     end
 
-    xit "should contain the publisher field in the response" do
+    it "should contain the publisher field in the response" do
       get :index, search_field: 'all_fields', q: 'highways'
       expect(response_qf).to include("desc_metadata__publisher_tesim")
     end
