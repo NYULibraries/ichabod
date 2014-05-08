@@ -32,5 +32,5 @@ else
   end
   Capybara.default_driver    = :poltergeist
   Capybara.javascript_driver = :poltergeist
-  Capybara.default_wait_time = 10
+  Capybara.default_wait_time = 20
 end
