@@ -2,11 +2,10 @@ require 'spec_helper'
 
 describe Nyucore, vcr: { cassette_name: "nyucore create new" } do
 
-  let(:nyucore) { create(:nyucore) }
+  let(:nyucore) { create(:valid_nyucore) }
 
   it "should have a single title field" do
     expect(nyucore.title).to_not be_nil
-    expect(nyucore.title).to_not be_nil;
     expect(nyucore.title).to be_instance_of(String)
   end
 
@@ -18,11 +17,6 @@ describe Nyucore, vcr: { cassette_name: "nyucore create new" } do
   it "should have a single publisher field" do
     expect(nyucore.publisher).to_not be_nil
     expect(nyucore.publisher).to be_instance_of(String)
-  end
-
-  it "should have a single identifier field" do
-    expect(nyucore.identifier).to_not be_nil
-    expect(nyucore.identifier).to be_instance_of(String)
   end
 
   it "should have one or more available fields" do
@@ -96,10 +90,40 @@ describe Nyucore, vcr: { cassette_name: "nyucore create new" } do
     expect(nyucore.subject.count).to be > 1
   end
 
-  it "should have one or more citation fields" do
-    expect(nyucore.citation).to_not be_nil
-    expect(nyucore.citation).to be_instance_of(Array)
-    expect(nyucore.citation.count).to be > 1
+  describe "identifier attribute" do
+
+    subject { nyucore.identifier }
+
+    context "when identifier is correctly passed in as string" do
+      it { should_not be_nil }
+      it { should be_instance_of String }
+    end
+
+    context "when identifier is incorrectly passed in as array" do
+      let(:nyucore) { create(:invalid_nyucore_id) }
+      it { should be_instance_of String }
+      it { should eq attributes_for(:invalid_nyucore_id)[:identifier].first }
+    end
+
+  end
+
+  describe "citation attribute" do
+
+    subject { nyucore.citation }
+
+    context "when citation is correctly passed in as an array" do
+      it { should_not be_nil}
+      it { should be_instance_of Array }
+      it { expect(subject.count).to be > 1 }
+    end
+
+    context "when citation is incorrectly passed in as a string" do
+      let(:nyucore) { create(:invalid_nyucore_citation) }
+      it { should be_instance_of Array }
+      it { expect(subject.count).to be 1 }
+      it { should eq [attributes_for(:invalid_nyucore_citation)[:citation]] }
+    end
+
   end
 
 end
