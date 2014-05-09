@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://127.0.0.1:57094/__identify__
+    uri: http://127.0.0.1:61611/__identify__
     body:
       encoding: US-ASCII
       string: ''
@@ -21,16 +21,51 @@ http_interactions:
       Server:
       - WEBrick/1.3.1 (Ruby/1.9.3/2013-06-27)
       Date:
-      - Thu, 08 May 2014 21:48:47 GMT
+      - Fri, 09 May 2014 17:50:11 GMT
       Content-Length:
       - '14'
       Connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: '70271682586800'
+      string: '70224503274980'
     http_version: 
-  recorded_at: Thu, 08 May 2014 21:48:47 GMT
+  recorded_at: Fri, 09 May 2014 17:50:11 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session
+    body:
+      encoding: US-ASCII
+      string: ! '{"desiredCapabilities":{"browserName":"firefox","version":"","platform":"ANY","javascriptEnabled":true,"cssSelectorsEnabled":true,"takesScreenshot":true,"nativeEvents":false,"rotatable":false}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '193'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '452'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:14 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"newSession","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":{"cssSelectorsEnabled":true,"browserName":"firefox","handlesAlerts":true,"javascriptEnabled":true,"nativeEvents":false,"platform":"Darwin","rotatable":false,"takesScreenshot":true,"version":"28.0","webStorageEnabled":true,"applicationCacheEnabled":true,"databaseEnabled":true,"locationContextEnabled":true,"browserConnectionEnabled":true,"acceptSslCerts":true}}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:14 GMT
 - request:
     method: get
     uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
@@ -53,7 +88,7 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>5,'params'=>{'sort'=>'score
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>117,'params'=>{'sort'=>'score
         desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
         desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
         desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
@@ -126,7 +161,423 @@ http_interactions:
         religious institutions, government centers, and cemeteries.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.institutions_8ZJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:21.121Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Geospatial
         Data',140,'Geospatial Dataset',46],'desc_metadata__creator_sim'=>['The Man',46],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>['en',39]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
     http_version: 
-  recorded_at: Thu, 08 May 2014 21:48:49 GMT
+  recorded_at: Fri, 09 May 2014 17:50:14 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/url
+    body:
+      encoding: US-ASCII
+      string: ! '{"url":"http://127.0.0.1:61611/"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '33'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '87'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"get","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":""}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"css selector","value":"form.search-query-form"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '57'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{aa0cbd82-9f97-844c-8b4e-e024d2c7ff0e}"}]}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Baa0cbd82-9f97-844c-8b4e-e024d2c7ff0e%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Baa0cbd82-9f97-844c-8b4e-e024d2c7ff0e%7D/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Search...'' or
+        ./@name = ''Search...'') or ./@placeholder = ''Search...'') or ./@id = //label[normalize-space(string(.))
+        = ''Search...'']/@for)] | .//label[normalize-space(string(.)) = ''Search...'']//.//*[self::input
+        | self::textarea][not(./@type = ''submit'' or ./@type = ''image'' or ./@type
+        = ''radio'' or ./@type = ''checkbox'' or ./@type = ''hidden'' or ./@type =
+        ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '567'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '153'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findChildElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6}"}]}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '107'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":"text"}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6%7D/clear
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '96'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clearElement","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":""}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//input[./@type = ''submit'' or ./@type
+        = ''reset'' or ./@type = ''image'' or ./@type = ''button''][((./@id = ''Search''
+        or ./@value = ''Search'') or ./@title = ''Search'')] | .//input[./@type =
+        ''image''][./@alt = ''Search''] | .//button[(((./@id = ''Search'' or ./@value
+        = ''Search'') or normalize-space(string(.)) = ''Search'') or ./@title = ''Search'')]
+        | .//input[./@type = ''image''][./@alt = ''Search'']"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '409'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{7d165b0a-bc2b-6145-82a4-f18de001e52a}"}]}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B7d165b0a-bc2b-6145-82a4-f18de001e52a%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B7d165b0a-bc2b-6145-82a4-f18de001e52a%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
 - request:
     method: get
     uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
@@ -222,5 +673,403 @@ http_interactions:
         religious institutions, government centers, and cemeteries.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.institutions_8ZJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:21.121Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Geospatial
         Data',140,'Geospatial Dataset',46],'desc_metadata__creator_sim'=>['The Man',46],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>['en',39]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
     http_version: 
-  recorded_at: Thu, 08 May 2014 21:48:50 GMT
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B7d165b0a-bc2b-6145-82a4-f18de001e52a%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"css selector","value":"#documents .document"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '55'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '625'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{c7d36bb7-e16b-cb42-9e20-83d6fb64a476}"},{"ELEMENT":"{e0d58a33-f62d-cc4f-8658-997341514d20}"},{"ELEMENT":"{8d0a24a0-2cf8-134d-8e46-a791527be7d5}"},{"ELEMENT":"{791af57f-c7af-6c46-a979-183c897eef97}"},{"ELEMENT":"{0d164999-d6c2-d141-874b-b88e11499cce}"},{"ELEMENT":"{b5bfab08-76ff-0649-8ab1-e7d38a00d5a4}"},{"ELEMENT":"{66f5ba98-b98c-094b-8572-9d54edaa0382}"},{"ELEMENT":"{144b1475-3d4c-c34b-8567-377c97840c79}"},{"ELEMENT":"{42b7a744-ea14-9747-a535-529f9f48ab85}"},{"ELEMENT":"{5dfd9334-6f74-c643-8719-1321ffc19d2e}"}]}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bc7d36bb7-e16b-cb42-9e20-83d6fb64a476%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Be0d58a33-f62d-cc4f-8658-997341514d20%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B8d0a24a0-2cf8-134d-8e46-a791527be7d5%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:15 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B791af57f-c7af-6c46-a979-183c897eef97%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B0d164999-d6c2-d141-874b-b88e11499cce%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bb5bfab08-76ff-0649-8ab1-e7d38a00d5a4%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B66f5ba98-b98c-094b-8572-9d54edaa0382%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B144b1475-3d4c-c34b-8567-377c97840c79%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B42b7a744-ea14-9747-a535-529f9f48ab85%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B5dfd9334-6f74-c643-8719-1321ffc19d2e%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
 recorded_with: VCR 2.8.0

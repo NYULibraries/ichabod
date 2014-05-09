@@ -95,7 +95,493 @@ http_interactions:
         religious institutions, government centers, and cemeteries.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.institutions_8ZJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:21.121Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Geospatial
         Data',140,'Geospatial Dataset',46],'desc_metadata__creator_sim'=>['The Man',46],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>['en',39]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
     http_version: 
-  recorded_at: Thu, 08 May 2014 21:48:51 GMT
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/url
+    body:
+      encoding: US-ASCII
+      string: ! '{"url":"http://127.0.0.1:61611/"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '33'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '87'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"get","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":""}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"css selector","value":"form.search-query-form"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '57'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{abd11e43-cd1f-9e45-96f4-d6d159a074bf}"}]}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Babd11e43-cd1f-9e45-96f4-d6d159a074bf%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Babd11e43-cd1f-9e45-96f4-d6d159a074bf%7D/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Search...'' or
+        ./@name = ''Search...'') or ./@placeholder = ''Search...'') or ./@id = //label[normalize-space(string(.))
+        = ''Search...'']/@for)] | .//label[normalize-space(string(.)) = ''Search...'']//.//*[self::input
+        | self::textarea][not(./@type = ''submit'' or ./@type = ''image'' or ./@type
+        = ''radio'' or ./@type = ''checkbox'' or ./@type = ''hidden'' or ./@type =
+        ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '567'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '153'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findChildElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{b713fb56-74ae-fb46-bcf8-25815d51d477}"}]}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bb713fb56-74ae-fb46-bcf8-25815d51d477%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bb713fb56-74ae-fb46-bcf8-25815d51d477%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bb713fb56-74ae-fb46-bcf8-25815d51d477%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bb713fb56-74ae-fb46-bcf8-25815d51d477%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '107'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":"text"}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bb713fb56-74ae-fb46-bcf8-25815d51d477%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":null}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{b713fb56-74ae-fb46-bcf8-25815d51d477}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":null}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bb713fb56-74ae-fb46-bcf8-25815d51d477%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["nyc"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '17'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":""}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//input[./@type = ''submit'' or ./@type
+        = ''reset'' or ./@type = ''image'' or ./@type = ''button''][((./@id = ''Search''
+        or ./@value = ''Search'') or ./@title = ''Search'')] | .//input[./@type =
+        ''image''][./@alt = ''Search''] | .//button[(((./@id = ''Search'' or ./@value
+        = ''Search'') or normalize-space(string(.)) = ''Search'') or ./@title = ''Search'')]
+        | .//input[./@type = ''image''][./@alt = ''Search'']"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '409'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{c2ad5bc8-6ae4-a64c-91a4-2f42a7bfe07e}"}]}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bc2ad5bc8-6ae4-a64c-91a4-2f42a7bfe07e%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bc2ad5bc8-6ae4-a64c-91a4-2f42a7bfe07e%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:16 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
 - request:
     method: get
     uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&q=nyc&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&spellcheck.q=nyc&wt=ruby
@@ -118,7 +604,7 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>4,'params'=>{'sort'=>'score
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>6,'params'=>{'sort'=>'score
         desc, pub_date_dtsi desc, title_tesi asc','q'=>'nyc','spellcheck.q'=>'nyc','qf'=>'desc_metadata__title_tesim
         desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
         desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
@@ -130,5 +616,106 @@ http_interactions:
         boundaries.  '],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_ADMIN_BNDRY_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nysd_MVK'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:19:27.333Z','score'=>1.8470875}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Geospatial
         Data',1],'desc_metadata__creator_sim'=>[],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>[]},'facet_dates'=>{},'facet_ranges'=>{}},'spellcheck'=>{'suggestions'=>['correctlySpelled',true]}}\n"
     http_version: 
-  recorded_at: Thu, 08 May 2014 21:48:51 GMT
+  recorded_at: Fri, 09 May 2014 17:50:16 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bc2ad5bc8-6ae4-a64c-91a4-2f42a7bfe07e%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:17 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:17 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"css selector","value":"#documents .document"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '55'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:17 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{6f50b883-1fa1-0342-9434-8162ea04a2e2}"}]}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:17 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B6f50b883-1fa1-0342-9434-8162ea04a2e2%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Fri, 09 May 2014 17:50:17 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
+    http_version: 
+  recorded_at: Fri, 09 May 2014 17:50:17 GMT
 recorded_with: VCR 2.8.0
