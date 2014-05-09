@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe NyucoresController do
 
-  let(:item) { create(:nyucore) }
+  let(:item) { create(:valid_nyucore) }
   let(:user) { create(:user) }
   before(:each) { controller.stub(:current_user).and_return(user) }
 
