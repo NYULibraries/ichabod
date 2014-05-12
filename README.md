@@ -1,8 +1,8 @@
 # Ichabod - Hydra at NYU
 
-[![Build Status](https://travis-ci.org/NYULibraries/ichabod.svg?branch=feature/rspec)](https://travis-ci.org/NYULibraries/ichabod)
+[![Build Status](https://travis-ci.org/NYULibraries/ichabod.svg?branch=development)](https://travis-ci.org/NYULibraries/ichabod)
 [![Dependency Status](https://gemnasium.com/NYULibraries/ichabod.svg)](https://gemnasium.com/NYULibraries/ichabod)
-[![Coverage Status](https://coveralls.io/repos/NYULibraries/ichabod/badge.png)](https://coveralls.io/r/NYULibraries/ichabod)
+[![Coverage Status](https://coveralls.io/repos/NYULibraries/ichabod/badge.png?branch=development)](https://coveralls.io/r/NYULibraries/ichabod?branch=development)
 
 A prototyping effort to bring [Hydra](http://projecthydra.org/) to NYU as a metadata augmentation system.
 
