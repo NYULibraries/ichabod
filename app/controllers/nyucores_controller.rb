@@ -4,10 +4,12 @@ class NyucoresController < ApplicationController
 
   def index
     @items = Nyucore.all
+    respond_with(@items)
   end
 
   def show
-    #authorize! :show, params[:id]
+    # Not authorizing resources for now
+    # authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
 
     respond_with(@item)
@@ -30,27 +32,28 @@ class NyucoresController < ApplicationController
   end
 
   def update
-    #authorize! :update, params[:id]
-    
+    # Not authorizing resources for now
+    # authorize! :update, params[:id]
+
     flash[:notice] = 'Item was successfully updated.' if @item.update(item_params)
     respond_with(@item)
   end
 
   def destroy
-    #authorize! :destroy, params[:id]
+    # Not authorizing resources for now
+    # authorize! :destroy, params[:id]
     @item = Nyucore.find(params[:id])
     @item.destroy
-    respond_with(@item, :location => nyucores_path) 
+    respond_with(@item, :location => nyucores_path)
   end
 
   private
-  
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_item
     @item = Nyucore.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Whitelist attrs
   def item_params
     params.require(:nyucore).permit(:title, :creator, :publisher, :identifier, :available, :type, :description, :edition, :series, :version, :date, :format, :language, :relation, :rights, :subject, :citation)
   end
