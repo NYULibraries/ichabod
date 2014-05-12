@@ -46,7 +46,7 @@ describe NyucoresController do
   describe "POST create", vcr: { cassette_name: "nyucore create new" } do
 
     it "should create a new nyucore record" do
-      expect { post :create, nyucore: attributes_for(:nyucore) }.to change(Nyucore, :count)
+      expect { post :create, nyucore: attributes_for(:valid_nyucore) }.to change(Nyucore, :count)
       expect(assigns(:item)).to be_instance_of(Nyucore)
       expect(assigns(:item).title).to eql(item.title)
     end

@@ -10,7 +10,7 @@ end
 
 require 'capybara/poltergeist'
 
-if ENV['IN_BROWSER']
+if ENV['IN_BROWSER'] || ENV['TRAVIS']
   # On demand: non-headless tests via Selenium/WebDriver
   # To run the scenarios in browser (default: Firefox), use the following command line:
   # IN_BROWSER=true bundle exec cucumber
