@@ -51,7 +51,6 @@ describe NyucoresController do
       expect(assigns(:item).title).to eql(item.title)
     end
 
-
   end
 
   describe "GET edit", vcr: { cassette_name: "nyucore edit existing" } do
