@@ -4,6 +4,7 @@ require "active_support" # This is just to load ActiveSupport::CoreExtensions::S
 
 namespace :ichabod do
 
+  WebMock.allow_net_connect!
   desc "Run this guy, pipe into sort & wc, you get record count, plus field count for input file..."
   task :field_stats => :environment do
       # run this guy, pipe into sort & wc, you get record count, plus field count for input file...
@@ -44,7 +45,6 @@ namespace :ichabod do
   desc "Usage: rake load['sdr.xml','sdr']"
   task :load, [:fn, :prefix] => :environment do |t, args|
 
-      WebMock.allow_net_connect!
       # usage: rake load["/home/charper/Dropbox/strat43/sdr/sdr.xml","sdr"]
       ##Whooo! This works!!!!
       ##md = Nyucore.create(title: 'LION', publisher: 'New York City Dept. of City Planning', identifier: 'DSS.NYCDCP_DCPLION_10cav\DSS.Lion_GJK', available: 'http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip', description: 'LION is a single line representation of New York City streets containing address ranges and other information.', edition: '10C', series: 'NYCDCP_DCPLION_10CAV', version: 'DSS.NYCDCP_DCPLION_10cav\DSS.Lion_GJK')
@@ -151,7 +151,6 @@ namespace :ichabod do
   desc "Usage: rake delete['sdr.xml','sdr']"
   task :delete, [:fn, :prefix] => :environment do |t, args|
 
-      WebMock.allow_net_connect!
       # usage: rake delete["/home/charper/Dropbox/strat43/sdr/sdr.xml","sdr"]
       f = File.open(args.fn)
       #f = File.open("/home/charper/strat43-data/hdl_2451_26402")
