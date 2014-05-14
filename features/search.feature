@@ -13,3 +13,10 @@ Feature: Perform a basic search
     Given I am on the default search page
     When I search on the phrase "nyc"
     Then I should see search results
+
+  Scenario: Search by keyword and limit result by facet
+   Given I am on the default search page
+   When  I search on the phrase "highways"
+   Then I should see search results
+   And I limit the search by a facet "Geospatial Data"
+   Then I should see search results
