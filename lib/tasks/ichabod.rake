@@ -4,6 +4,7 @@ require "active_support" # This is just to load ActiveSupport::CoreExtensions::S
 
 namespace :ichabod do
 
+  WebMock.allow_net_connect!
   desc "Run this guy, pipe into sort & wc, you get record count, plus field count for input file..."
   task :field_stats => :environment do
       # run this guy, pipe into sort & wc, you get record count, plus field count for input file...
