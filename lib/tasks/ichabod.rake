@@ -44,6 +44,7 @@ namespace :ichabod do
   desc "Usage: rake load['sdr.xml','sdr']"
   task :load, [:fn, :prefix] => :environment do |t, args|
 
+      WebMock.allow_net_connect!
       # usage: rake load["/home/charper/Dropbox/strat43/sdr/sdr.xml","sdr"]
       ##Whooo! This works!!!!
       ##md = Nyucore.create(title: 'LION', publisher: 'New York City Dept. of City Planning', identifier: 'DSS.NYCDCP_DCPLION_10cav\DSS.Lion_GJK', available: 'http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip', description: 'LION is a single line representation of New York City streets containing address ranges and other information.', edition: '10C', series: 'NYCDCP_DCPLION_10CAV', version: 'DSS.NYCDCP_DCPLION_10cav\DSS.Lion_GJK')
