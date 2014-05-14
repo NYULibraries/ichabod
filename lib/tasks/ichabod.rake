@@ -151,6 +151,7 @@ namespace :ichabod do
   desc "Usage: rake delete['sdr.xml','sdr']"
   task :delete, [:fn, :prefix] => :environment do |t, args|
 
+      WebMock.allow_net_connect!
       # usage: rake delete["/home/charper/Dropbox/strat43/sdr/sdr.xml","sdr"]
       f = File.open(args.fn)
       #f = File.open("/home/charper/strat43-data/hdl_2451_26402")
