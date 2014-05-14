@@ -1,11 +1,5 @@
-require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "path"))
-require 'webmock/cucumber'
-require 'selenium-webdriver'
-WebMock.disable_net_connect!(:allow_localhost => true)
-
 Given(/^I am on the home page$/) do
-  visit 'http://0.0.0.0:3000'
-  # visit root_path
+  visit root_path
 end
 
 When(/^I search for "(.*?)"$/) do |phrase|
