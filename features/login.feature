@@ -6,12 +6,12 @@ Feature: Login as a user
 
   @loggedin
   Scenario: Logged in GIS Cataloger
-    Given I am on the default search page
-    And I am logged in as "GIS Cataloger"
+    Given I am logged in as "GIS Cataloger"
+    And I am on the default search page
     Then I should see "Log-out"
 
   @loggedin
   Scenario: Logged in FDA Cataloger
-    Given I am on the default search page
-    And I am logged in as "FDA Cataloger"
+    Given I am logged in as "FDA Cataloger"
+    And I am on the default search page
     Then I should see "Log-out"
