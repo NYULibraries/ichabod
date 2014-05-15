@@ -5,6 +5,6 @@ class UserSession < Authlogic::Session::Base
   redirect_logout_url "http://bobcat.library.nyu.edu"
 
   def attempt_sso?
-    (Rails.env.development? || Rails.env.test?) ? false : super
+    (Rails.env.development? || Rails.env.test? || Rails.env.cucumber?) ? false : super
   end
 end
