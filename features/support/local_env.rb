@@ -1,6 +1,3 @@
-require 'simplecov'
-require 'cucumber/rspec/doubles'
-
 # Require and include helper modules
 # in feature/support/helpers and its subdirectories.
 Dir[Rails.root.join("features/support/helpers/**/*.rb")].each do |helper|
