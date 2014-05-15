@@ -21,7 +21,8 @@ When(/^I search on the phrase "(.*?)"$/) do |phrase|
 end
 
 And(/^I limit the search by a facet "(\w+.*?\s\w+.*?)"$/) do |facet|
-  click("#{facet}")
+  within(:css, '#facets') do
+    click_link("Format")
+    click_link("#{facet}")
+  end
 end
-
-
