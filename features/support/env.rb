@@ -61,10 +61,13 @@ end
     sleep 3
     # Run
     block.call
+    sleep 3
     # Clear session data
     Capybara.reset_sessions!
+    sleep 3
     # Rollback transaction
     DatabaseCleaner.clean
+    sleep 3
   end
 
 # Possible values are :truncation and :transaction
