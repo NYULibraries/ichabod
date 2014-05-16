@@ -24,11 +24,11 @@ else
     Capybara::Poltergeist::Driver.new(
       app,
       phantomjs_options: ['--load-images=no', '--ignore-ssl-errors=yes'],
-      window_size: [1280, 1024],
-      debug:       true
+      window_size: [1280, 1024]#,
+      # debug:       true
     )
   end
   Capybara.default_driver    = :poltergeist
   Capybara.javascript_driver = :poltergeist
-  Capybara.default_wait_time = 20
+  # Capybara.default_wait_time = 20
 end
