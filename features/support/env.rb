@@ -54,7 +54,19 @@ end
 #   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
 #     DatabaseCleaner.strategy = :transaction
 #   end
-#
+
+  Around do |scenario, block|
+    # Start transaction
+    DatabaseCleaner.start
+    sleep 3
+    # Run
+    block.call
+    # Clear session data
+    Capybara.reset_sessions!
+    # Rollback transaction
+    DatabaseCleaner.clean
+  end
+
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
