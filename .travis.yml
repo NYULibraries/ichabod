@@ -11,11 +11,6 @@ env:
 before_script:
   - mysql -e 'create database ichabod_test;' -U $ICHABOD_DB_USER
   - RAILS_ENV=test bundle exec rake db:schema:load
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
-  - "rackup &"  # start a Web server
-  - sleep 3 # give Web server some time to bind to sockets, etc
 
 bundler_args: --without development
 
