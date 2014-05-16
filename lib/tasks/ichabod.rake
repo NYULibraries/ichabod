@@ -1,14 +1,8 @@
 require 'nokogiri'
-<<<<<<< HEAD
 require 'active-fedora'
 require 'active_support' # This is just to load ActiveSupport::CoreExtensions::String::Inflections
 require 'webmock'
 WebMock.allow_net_connect!
-=======
-require 'webmock'
-require "active-fedora"
-require "active_support" # This is just to load ActiveSupport::CoreExtensions::String::Inflections
->>>>>>> 4ed87b594a0c70d05bf3c7db4be39d6deecf7130
 
 namespace :ichabod do
 
