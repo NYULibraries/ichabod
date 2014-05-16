@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'webmock'
 require "active-fedora"
 require "active_support" # This is just to load ActiveSupport::CoreExtensions::String::Inflections
 
