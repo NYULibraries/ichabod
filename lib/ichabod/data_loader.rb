@@ -1,10 +1,13 @@
 module Ichabod
   class DataLoader
+    attr_reader :prefix
+    attr_reader :cores
     def initialize(filename, prefix)
       file = File.open(filename)
       doc = Nokogiri::XML(file)
       @records = doc.xpath('//oai_dc:dc', 'oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/')
       @prefix = prefix
+      @cores = []
     end
 
     def   field_stats
@@ -62,6 +65,7 @@ module Ichabod
           core.subject = child.content() if child.name() == "subject"
 
         end
+        @cores.append(core)
         core.save
         puts "Loading '#{pid}'"
 
