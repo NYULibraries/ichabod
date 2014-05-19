@@ -4,8 +4,17 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
-# Simplecov config
+# Coveralls & SimpleCov
 require 'simplecov'
+require 'coveralls'
+# Coveralls.wear_merged!('rails')
+
+SimpleCov.merge_timeout 3600
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start('rails')
 
 ENV['RAILS_ENV'] = 'cucumber'
 
