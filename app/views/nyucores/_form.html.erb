@@ -4,7 +4,7 @@
   <%= f.input :creator %>
   <%= f.input :publisher %>
   <%= f.input :identifier %>
-  
+
 <div>
   <%= f.label :available %>
   <% @item.available.each do |available|%>
@@ -12,7 +12,7 @@
   <% end %>
   <%= f.input :available, label: false, input_html: {name:"nyucore[available][]", value: nil, class: "new_available"} %>
 </div>
-  
+
   <%= f.input :type %>
 
 
@@ -29,7 +29,7 @@
   <%= f.input :edition, label: false, input_html: {name:"nyucore[edition][]", value: edition} %>
   <% end %>
   <%= f.input :edition, label: false, input_html: {name:"nyucore[edition][]", value: nil, class: "new_edition"} %>
-  
+
 </div>
 <div>
   <%= f.label :series %>
@@ -53,7 +53,7 @@
   <%= f.input :date, label: false, input_html: {name:"nyucore[date][]", value: date} %>
   <% end %>
   <%= f.input :date, label: false, input_html: {name:"nyucore[date][]", value: nil, class: "new_date"} %>
-  
+
 </div>
 <div>
   <%= f.label :format %>
@@ -61,7 +61,7 @@
   <%= f.input :format, label: false, input_html: {name:"nyucore[format][]", value: format} %>
   <% end %>
   <%= f.input :format, label: false, input_html: {name:"nyucore[format][]", value: nil, class: "new_format"} %>
-  
+
 </div>
 <div>
   <%= f.label :language %>
@@ -69,7 +69,7 @@
   <%= f.input :language, label: false, input_html: {name:"nyucore[language][]", value: language} %>
   <% end %>
   <%= f.input :language, label: false, input_html: {name:"nyucore[language][]", value: nil, class: "new_language"} %>
-  
+
 </div>
 <div>
   <%= f.label :relation %>
@@ -77,7 +77,7 @@
   <%= f.input :relation, label: false, input_html: {name:"nyucore[relation][]", value: relation} %>
   <% end %>
   <%= f.input :relation, label: false, input_html: {name:"nyucore[relation][]", value: nil, class: "new_relation"} %>
-  
+
 </div>
 <div>
   <%= f.label :rights %>
@@ -85,7 +85,7 @@
   <%= f.input :rights, label: false, input_html: {name:"nyucore[rights][]", value: rights} %>
   <% end %>
   <%= f.input :rights, label: false, input_html: {name:"nyucore[rights][]", value: nil, class: "new_rights"} %>
-  
+
 </div>
 <div>
   <%= f.label :subject %>
@@ -93,7 +93,7 @@
   <%= f.input :subject, label: false, input_html: {name:"nyucore[subject][]", value: subject} %>
   <% end %>
   <%= f.input :subject, label: false, input_html: {name:"nyucore[subject][]", value: nil, class: "new_subject"} %>
-  
+
 </div>
 <div>
   <%= f.label :citation %>
