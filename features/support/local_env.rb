@@ -1,6 +1,3 @@
-require 'simplecov'
-require 'cucumber/rspec/doubles'
-
 # Require and include helper modules
 # in feature/support/helpers and its subdirectories.
 Dir[Rails.root.join("features/support/helpers/**/*.rb")].each do |helper|
@@ -33,5 +30,5 @@ else
   end
   Capybara.default_driver    = :poltergeist
   Capybara.javascript_driver = :poltergeist
-  # Capybara.default_wait_time = 8
+  # Capybara.default_wait_time = 20
 end
