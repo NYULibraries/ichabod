@@ -4,6 +4,9 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+# Simplecov config
+require 'simplecov'
+
 ENV['RAILS_ENV'] = 'cucumber'
 
 require 'cucumber/rails'
@@ -52,7 +55,6 @@ end
 #     DatabaseCleaner.strategy = :transaction
 #   end
 #
-
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
