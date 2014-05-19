@@ -55,21 +55,6 @@ end
 #     DatabaseCleaner.strategy = :transaction
 #   end
 
-  Around do |scenario, block|
-    # Start transaction
-    DatabaseCleaner.start
-    sleep 3
-    # Run
-    block.call
-    sleep 3
-    # Clear session data
-    Capybara.reset_sessions!
-    sleep 3
-    # Rollback transaction
-    DatabaseCleaner.clean
-    sleep 3
-  end
-
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
