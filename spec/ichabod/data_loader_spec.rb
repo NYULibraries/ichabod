@@ -15,6 +15,8 @@ module Ichabod
       it "should create Nyucore object from file" do
         subject
         expect(data_loader.instance_variable_get(:@prefix)).to eql(source)
+        expect(data_loader.instance_variable_get(:@cores)).to have(1).items
+        expect(data_loader.instance_variable_get(:@cores)[0]).to be_instance_of(Nyucore)
         expect(data_loader.instance_variable_get(:@cores)[0].title).to eql('LION')
         expect(data_loader.instance_variable_get(:@cores)[0].pid).to eql(id)
         expect(data_loader.instance_variable_get(:@cores)[0].publisher).to eql('New York City Dept. of City Planning')
