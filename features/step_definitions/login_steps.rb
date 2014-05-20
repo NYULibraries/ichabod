@@ -1,5 +1,5 @@
 Around('@loggedin') do |scenario, block|
-  VCR.use_cassette('logged in users') do
+  VCR.use_cassette('logged in users', record: :none) do
     block.call
   end
 end
