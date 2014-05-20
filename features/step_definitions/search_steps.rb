@@ -27,13 +27,13 @@ And(/^I limit the search by a facet "(\w+.*?\s\w+.*?)"$/) do |facet|
   end
 end
 
-  Given(/^I Limit search to "(.*?)" in "(.*?)" category$/) do |facet,category|
-    visit root_path
-    within(:css, '#facets') do
-      click_link("#{category}")
-      click_link("#{facet}")
-    end
+Given(/^I limit search to "(.*?)" in "(.*?)" category$/) do |facet,category|
+  visit root_path
+  within(:css, '#facets') do
+    click_link("#{category}")
+    click_link("#{facet}")
   end
+end
 
 Given(/^I search for "(.*?)"$/) do |value|
    step %{I search on the phrase "#{value}"}
@@ -43,4 +43,3 @@ Then(/^I get dataset with title "(.*?)"$/) do |title|
    node=page.find(:xpath, '//div[@id="documents"]')
    node.should have_link(title)
 end
-
