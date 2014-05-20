@@ -55,6 +55,6 @@ class NyucoresController < ApplicationController
 
   # Whitelist attrs
   def item_params
-    params.require(:nyucore).permit(:title, :creator, :publisher, :identifier, :available, :type, :description, :edition, :series, :version, :date, :format, :language, :relation, :rights, :subject, :citation)
+    params.require(:nyucore).permit(:title, :creator, :publisher, :identifier, :type, :available => [], :description=> [], :edition=> [], :series=> [], :version=> [], :date=> [], :format=> [], :language=> [], :relation=> [], :rights=> [], :subject=> [], :citation=> [])
   end
 end
