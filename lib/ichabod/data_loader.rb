@@ -13,8 +13,7 @@ module Ichabod
     end
 
     def field_stats
-      records
-      for record in @records do
+      for record in records do
         for child in record.children() do
           if child.name() != "text" && child.content() != ""
             puts child.name()
@@ -25,9 +24,8 @@ module Ichabod
     end
 
     def load
-      records
       cores = []
-      for record in @records do
+      for record in records do
         md = {}
         ids = record.xpath('dc:identifier',  'dc' => 'http://purl.org/dc/elements/1.1/')
         for id in ids do
@@ -79,10 +77,8 @@ module Ichabod
 
         
     def delete
-
       # usage: rake delete["/home/charper/Dropbox/strat43/sdr/sdr.xml","sdr"]
-      records
-      for record in @records do
+      for record in records do
       #now, for each record, I want to build an md hash, and load a core.
         for child in record.children() do
           if child.name() == "identifier" then
@@ -91,7 +87,7 @@ module Ichabod
             elsif @prefix == "fda" then
               pid = @prefix + ":" + child.content().gsub('.', '-').gsub('\\', '-').gsub('http://', '').gsub('/', '-')
             end
-            puts pid
+            #puts pid
             result = ActiveFedora::FixtureLoader.delete(pid)
             puts "Deleting '#{pid}' from #{ActiveFedora::Base.connection_for_pid(pid).client.url}" if result == 1
           end

@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=1hsugj7sk20h0116ufmnqrqqif;Path=/fedora-test
+      - JSESSIONID=hxfu8eioelmlyb4w80kbi1yv;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
@@ -33,10 +33,10 @@ http_interactions:
         xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/ http://www.fedora.info/definitions/1/0/fedoraRepository.xsd"><repositoryName>Fedora
         Repository</repositoryName><repositoryBaseURL>http://localhost:8983/fedora-test</repositoryBaseURL><repositoryVersion>3.7.0</repositoryVersion><repositoryPID>    <PID-namespaceIdentifier>changeme</PID-namespaceIdentifier>    <PID-delimiter>:</PID-delimiter>    <PID-sample>changeme:100</PID-sample>    <retainPID>*</retainPID></repositoryPID><repositoryOAI-identifier>    <OAI-namespaceIdentifier>example.org</OAI-namespaceIdentifier>    <OAI-delimiter>:</OAI-delimiter>    <OAI-sample>oai:example.org:changeme:100</OAI-sample></repositoryOAI-identifier><sampleSearch-URL>http://localhost:8983/fedora-test/objects</sampleSearch-URL><sampleAccess-URL>http://localhost:8983/fedora-test/objects/demo:5</sampleAccess-URL><sampleOAI-URL>http://localhost:8983/fedora-test/oai?verb=Identify</sampleOAI-URL><adminEmail>bob@example.org</adminEmail><adminEmail>sally@example.org</adminEmail></fedoraRepository>
     http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:15 GMT
+  recorded_at: Tue, 20 May 2014 17:36:09 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/datastreams?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -49,33 +49,163 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: Not Found
     headers:
       Set-Cookie:
-      - JSESSIONID=p2y2x4h7sxq611a3eae5dyrei;Path=/fedora-test
+      - JSESSIONID=jw4ltrzqe6t21i2nroq23fb1a;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
-      - text/xml
+      - text/plain
       Date:
-      - Mon, 19 May 2014 01:04:15 GMT
+      - Tue, 20 May 2014 17:36:09 GMT
       Content-Length:
-      - '742'
+      - '81'
     body:
       encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
-        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK"  baseURL="http://localhost:8983/fedora-test/"
-        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
-        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
-        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
-        label="" mimeType="text/plain" /></objectDatastreams>
+      string: ! 'Object not found in low-level storage: sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey'
     http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:15 GMT
+  recorded_at: Tue, 20 May 2014 17:36:09 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=y7xp393zeau0116ca0xjb9yvk;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Tue, 20 May 2014 17:36:09 GMT
+      Content-Length:
+      - '81'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey'
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:09 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1jdg34jv8ysiu11g6kq2y59fsc;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Tue, 20 May 2014 17:36:09 GMT
+      Content-Length:
+      - '81'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey'
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:09 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=8d5t80i0m4ff1f4vjxmtpcnrx;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Tue, 20 May 2014 17:36:09 GMT
+      Content-Length:
+      - '81'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey'
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:09 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - text/xml
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1h035pj2eztex1avuylwqgwu98;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/xml
+      Date:
+      - Tue, 20 May 2014 17:36:09 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey
+      Content-Length:
+      - '42'
+    body:
+      encoding: US-ASCII
+      string: sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:09 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -92,283 +222,101 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=rvppvmot8a3w1x6ksp9exy62s;Path=/fedora-test
+      - JSESSIONID=13j9qdbo06ev61bp8kffv5aija;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Mon, 19 May 2014 01:04:15 GMT
+      - Tue, 20 May 2014 17:36:09 GMT
       Content-Length:
-      - '1050'
+      - '1011'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
-        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK"
-        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-05-14T16:09:03.718Z</objCreateDate><objLastModDate>2014-05-16T17:59:49.320Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-05-20T17:36:09.505Z</objCreateDate><objLastModDate>2014-05-20T17:36:09.505Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
     http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:15 GMT
+  recorded_at: Tue, 20 May 2014 17:36:09 GMT
 - request:
-    method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/datastreams/RELS-EXT?format=xml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*; q=0.5, application/xml'
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Set-Cookie:
-      - JSESSIONID=11p8sotzuwdgg1mx0a2ld8ic9t;Path=/fedora-test
-      Expires:
-      - Thu, 01 Jan 1970 00:00:00 GMT
-      Content-Type:
-      - text/xml
-      Date:
-      - Mon, 19 May 2014 01:04:15 GMT
-      Content-Length:
-      - '975'
-    body:
-      encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK"
-        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.2</dsVersionID><dsCreateDate>2014-05-16T17:59:48.928Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>311</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+RELS-EXT+RELS-EXT.2</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
-    http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:15 GMT
-- request:
-    method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/datastreams/RELS-EXT/content
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*; q=0.5, application/xml'
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Set-Cookie:
-      - JSESSIONID=16zv41sqbms5d1p38ch998n9a1;Path=/fedora-test
-      Expires:
-      - Thu, 01 Jan 1970 00:00:00 GMT
-      Content-Disposition:
-      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
-      Content-Length:
-      - '311'
-      Content-Type:
-      - application/rdf+xml
-      Date:
-      - Mon, 19 May 2014 01:04:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
-        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK\">\n
-        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
-        \ </rdf:Description>\n</rdf:RDF>\n"
-    http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:15 GMT
-- request:
-    method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/datastreams/descMetadata?format=xml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*; q=0.5, application/xml'
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Set-Cookie:
-      - JSESSIONID=ckytxkigoeco1vl1bgra5c7s5;Path=/fedora-test
-      Expires:
-      - Thu, 01 Jan 1970 00:00:00 GMT
-      Content-Type:
-      - text/xml
-      Date:
-      - Mon, 19 May 2014 01:04:15 GMT
-      Content-Length:
-      - '949'
-    body:
-      encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK"
-        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.2</dsVersionID><dsCreateDate>2014-05-16T17:59:49.320Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1273</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+descMetadata+descMetadata.2</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
-    http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:15 GMT
-- request:
-    method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/datastreams/DC?format=xml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*; q=0.5, application/xml'
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Set-Cookie:
-      - JSESSIONID=1x912ph071xrsijc698wdf46;Path=/fedora-test
-      Expires:
-      - Thu, 01 Jan 1970 00:00:00 GMT
-      Content-Type:
-      - text/xml
-      Date:
-      - Mon, 19 May 2014 01:04:16 GMT
-      Content-Length:
-      - '974'
-    body:
-      encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK"
-        dsID="DC" ><dsLabel>Dublin Core Record for this object</dsLabel><dsVersionID>DC1.0</dsVersionID><dsCreateDate>2014-05-14T16:09:03.718Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>370</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+DC+DC1.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
-    http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:16 GMT
-- request:
-    method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/datastreams/DC/content
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*; q=0.5, application/xml'
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Set-Cookie:
-      - JSESSIONID=1af95c2gwkjk76woldky37n1x;Path=/fedora-test
-      Expires:
-      - Thu, 01 Jan 1970 00:00:00 GMT
-      Content-Disposition:
-      - inline; filename="Dublin Core Record for this object.xml"
-      Content-Length:
-      - '370'
-      Content-Type:
-      - text/xml
-      Date:
-      - Mon, 19 May 2014 01:04:16 GMT
-    body:
-      encoding: US-ASCII
-      string: ! "\n<oai_dc:dc xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\"
-        xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
-        xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd\">\n
-        \ <dc:identifier>sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK</dc:identifier>\n</oai_dc:dc>\n"
-    http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:16 GMT
-- request:
-    method: put
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/datastreams/RELS-EXT?mimeType=application/rdf%2Bxml
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/RELS-EXT?controlGroup=X&dsLabel=Fedora%20Object-to-Object%20Relationship%20Metadata&dsState=A&mimeType=application/rdf%2Bxml&versionable=true
     body:
       encoding: UTF-8
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"
-        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK\">\n
+        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey\">\n
         \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"/>\n  </rdf:Description>\n</rdf:RDF>\n"
     headers:
       Accept:
       - ! '*/*; q=0.5, application/xml'
       Accept-Encoding:
       - gzip, deflate
-      Multipart:
-      - 'true'
       Content-Type:
       - application/rdf+xml
+      Multipart:
+      - 'true'
       Content-Length:
-      - '335'
+      - '336'
       User-Agent:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 201
+      message: Created
     headers:
       Set-Cookie:
-      - JSESSIONID=w0kxtju7hob0nj8xaobris3n;Path=/fedora-test
+      - JSESSIONID=1ukcxm82io24o8gewd33i7lsb;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Mon, 19 May 2014 01:04:16 GMT
+      - Tue, 20 May 2014 17:36:09 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/RELS-EXT
       Content-Length:
-      - '975'
+      - '977'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK"
-        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.3</dsVersionID><dsCreateDate>2014-05-19T01:04:16.212Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>311</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+RELS-EXT+RELS-EXT.3</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-05-20T17:36:09.663Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>312</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:16 GMT
+  recorded_at: Tue, 20 May 2014 17:36:09 GMT
 - request:
-    method: put
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/datastreams/descMetadata?mimeType=text/plain
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/descMetadata?controlGroup=M&dsState=A&mimeType=text/plain&versionable=true
     body:
       encoding: UTF-8
-      string: ! '<info:fedora/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK> <http://purl.org/dc/terms/identifier>
-        "DSS.NYCDCP_DCPLION_10cav\\DSS.Lion_GJK" .
+      string: ! '<info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://purl.org/dc/terms/identifier>
+        "DSS.NYCDCP_MONKEY_LION\\DSS.Lion_Monkey" .
 
-        <info:fedora/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK> <http://purl.org/dc/terms/title>
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://purl.org/dc/terms/title>
         "LION" .
 
-        <info:fedora/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK> <http://purl.org/dc/terms/publisher>
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://purl.org/dc/terms/publisher>
         "New York City Dept. of City Planning" .
 
-        <info:fedora/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://harper.bobst.nyu.edu/data/nyucore#available>
         "http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip"
         .
 
-        <info:fedora/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK> <http://purl.org/dc/terms/type>
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://purl.org/dc/terms/type>
         "Geospatial Data" .
 
-        <info:fedora/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK> <http://purl.org/dc/terms/description>
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://purl.org/dc/terms/description>
         "LION is a single line representation of New York City streets containing
         address ranges and other information." .
 
-        <info:fedora/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://harper.bobst.nyu.edu/data/nyucore#edition>
         "10C" .
 
-        <info:fedora/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://harper.bobst.nyu.edu/data/nyucore#series>
         "NYCDCP_DCPLION_10CAV" .
 
-        <info:fedora/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://harper.bobst.nyu.edu/data/nyucore#version>
         "DSS.NYCDCP_DCPLION_10cav\\DSS.Lion_GJK" .
 
 '
@@ -377,40 +325,42 @@ http_interactions:
       - ! '*/*; q=0.5, application/xml'
       Accept-Encoding:
       - gzip, deflate
-      Multipart:
-      - 'true'
       Content-Type:
       - text/plain
+      Multipart:
+      - 'true'
       Content-Length:
-      - '1273'
+      - '1283'
       User-Agent:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 201
+      message: Created
     headers:
       Set-Cookie:
-      - JSESSIONID=1oojvj8dz8ikb1ur4xv6nuqfa7;Path=/fedora-test
+      - JSESSIONID=iw214sgd6q4zn2jny24fq4qa;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Mon, 19 May 2014 01:04:16 GMT
+      - Tue, 20 May 2014 17:36:10 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/descMetadata
       Content-Length:
-      - '949'
+      - '951'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK"
-        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.3</dsVersionID><dsCreateDate>2014-05-19T01:04:16.603Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1273</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+descMetadata+descMetadata.3</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-05-20T17:36:10.123Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1283</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:16 GMT
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/datastreams/RELS-EXT?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/RELS-EXT?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -427,26 +377,26 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=1m9dzngesv0ohoo5b73s8n6cu;Path=/fedora-test
+      - JSESSIONID=nxelx8f2b57l1fejkujo08v1h;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Mon, 19 May 2014 01:04:16 GMT
+      - Tue, 20 May 2014 17:36:10 GMT
       Content-Length:
-      - '975'
+      - '977'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK"
-        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.3</dsVersionID><dsCreateDate>2014-05-19T01:04:16.212Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>311</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+RELS-EXT+RELS-EXT.3</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-05-20T17:36:09.663Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>312</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:16 GMT
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/datastreams/descMetadata?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/descMetadata?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -463,35 +413,34 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=19svecmqms8x51jexvvc0a5nsn;Path=/fedora-test
+      - JSESSIONID=1hyfjyusk6i5yk2gk1wfnwnmv;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Mon, 19 May 2014 01:04:16 GMT
+      - Tue, 20 May 2014 17:36:10 GMT
       Content-Length:
-      - '949'
+      - '951'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK"
-        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.3</dsVersionID><dsCreateDate>2014-05-19T01:04:16.603Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1273</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+descMetadata+descMetadata.3</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-05-20T17:36:10.123Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1283</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:16 GMT
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
 - request:
     method: post
     uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
     body:
       encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-05-14T16:09:03Z</field><field
-        name="system_modified_dtsi">2014-05-16T17:59:49Z</field><field name="object_state_ssi">A</field><field
-        name="active_fedora_model_ssi">Nyucore</field><field name="id">sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK</field><field
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-05-20T17:36:09Z</field><field
+        name="system_modified_dtsi">2014-05-20T17:36:09Z</field><field name="object_state_ssi">A</field><field
+        name="active_fedora_model_ssi">Nyucore</field><field name="id">sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey</field><field
         name="object_profile_ssm">{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora Object-to-Object
-        Relationship Metadata","dsVersionID":"RELS-EXT.3","dsCreateDate":"2014-05-19T01:04:16Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":311,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+RELS-EXT+RELS-EXT.3","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.3","dsCreateDate":"2014-05-19T01:04:16Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1273,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+descMetadata+descMetadata.3","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"DC":{"dsLabel":"Dublin
-        Core Record for this object","dsVersionID":"DC1.0","dsCreateDate":"2014-05-14T16:09:03Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":"http://www.openarchives.org/OAI/2.0/oai_dc/","dsControlGroup":"X","dsSize":370,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+DC+DC1.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/afmodel:Nyucore","info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-05-14T16:09:03Z","objLastModDate":"2014-05-16T17:59:49Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
-        name="desc_metadata__identifier_tesim">DSS.NYCDCP_DCPLION_10cav\DSS.Lion_GJK</field><field
+        Relationship Metadata","dsVersionID":"RELS-EXT.0","dsCreateDate":"2014-05-20T17:36:09Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":312,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+RELS-EXT+RELS-EXT.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.0","dsCreateDate":"2014-05-20T17:36:10Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1283,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+descMetadata+descMetadata.0","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-05-20T17:36:09Z","objLastModDate":"2014-05-20T17:36:09Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
+        name="desc_metadata__identifier_tesim">DSS.NYCDCP_MONKEY_LION\DSS.Lion_Monkey</field><field
         name="desc_metadata__title_tesim">LION</field><field name="desc_metadata__publisher_tesim">New
         York City Dept. of City Planning</field><field name="desc_metadata__available_tesim">http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip</field><field
         name="desc_metadata__type_tesim">Geospatial Data</field><field name="desc_metadata__type_sim">Geospatial
@@ -514,11 +463,11 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>63}}
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>2}}
 
 '
     http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:16 GMT
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
 - request:
     method: post
     uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
@@ -539,9 +488,575 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>119}}
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>88}}
 
 '
     http_version: 
-  recorded_at: Mon, 19 May 2014 01:04:17 GMT
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Nyucore%22&qt=standard&rows=0&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 20 May 2014 17:36:10 GMT
+      Etag:
+      - ! '"ZWYyMDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>2,''params''=>{''q''=>''_query_:"{!raw
+        f=has_model_ssim}info:fedora/afmodel:Nyucore"'',''qt''=>''standard'',''wt''=>''ruby'',''rows''=>''0''}},''response''=>{''numFound''=>145,''start''=>0,''docs''=>[]}}
+
+'
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=13vgkcnsedt6c42u6q0sxyd7d;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 20 May 2014 17:36:10 GMT
+      Content-Length:
+      - '743'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" /></objectDatastreams>
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1hi6jkxbc7i661byec7j9zku2y;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 20 May 2014 17:36:10 GMT
+      Content-Length:
+      - '1053'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-05-20T17:36:09.505Z</objCreateDate><objLastModDate>2014-05-20T17:36:10.123Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1oqctn1iyrj9pvd0pdzx1hj97;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 20 May 2014 17:36:10 GMT
+      Content-Length:
+      - '977'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-05-20T17:36:09.663Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>312</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=itj58s292e24ezpkwa5nsxry;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '312'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Tue, 20 May 2014 17:36:10 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1r5ycgs7bqjmxyn18mzy5jxxd;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 20 May 2014 17:36:10 GMT
+      Content-Length:
+      - '951'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-05-20T17:36:10.123Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1283</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/DC?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=x8x8egax546liqiu7cyml5w;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 20 May 2014 17:36:10 GMT
+      Content-Length:
+      - '976'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        dsID="DC" ><dsLabel>Dublin Core Record for this object</dsLabel><dsVersionID>DC1.0</dsVersionID><dsCreateDate>2014-05-20T17:36:09.505Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>371</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+DC+DC1.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/DC/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=vgj7a9spiumj10ons3977j66x;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Dublin Core Record for this object.xml"
+      Content-Length:
+      - '371'
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 20 May 2014 17:36:10 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<oai_dc:dc xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\"
+        xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd\">\n
+        \ <dc:identifier>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey</dc:identifier>\n</oai_dc:dc>\n"
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/RELS-EXT?mimeType=application/rdf%2Bxml
+    body:
+      encoding: UTF-8
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"
+        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"/>\n  </rdf:Description>\n</rdf:RDF>\n"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - application/rdf+xml
+      Content-Length:
+      - '336'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1rwl0f93nmdjv1pe5tb46sfqs3;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 20 May 2014 17:36:10 GMT
+      Content-Length:
+      - '977'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.1</dsVersionID><dsCreateDate>2014-05-20T17:36:10.711Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>312</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+RELS-EXT+RELS-EXT.1</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:10 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/descMetadata?mimeType=text/plain
+    body:
+      encoding: UTF-8
+      string: ! '<info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://purl.org/dc/terms/identifier>
+        "DSS.NYCDCP_MONKEY_LION\\DSS.Lion_Monkey" .
+
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://purl.org/dc/terms/title>
+        "LION" .
+
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://purl.org/dc/terms/publisher>
+        "New York City Dept. of City Planning" .
+
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip"
+        .
+
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://purl.org/dc/terms/type>
+        "Geospatial Data" .
+
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://purl.org/dc/terms/description>
+        "LION is a single line representation of New York City streets containing
+        address ranges and other information." .
+
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        "10C" .
+
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        "NYCDCP_DCPLION_10CAV" .
+
+        <info:fedora/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        "DSS.NYCDCP_DCPLION_10cav\\DSS.Lion_GJK" .
+
+'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - text/plain
+      Content-Length:
+      - '1283'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=17w9vg7dnut2t9qxxf4884580;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 20 May 2014 17:36:11 GMT
+      Content-Length:
+      - '951'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.1</dsVersionID><dsCreateDate>2014-05-20T17:36:10.979Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1283</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+descMetadata+descMetadata.1</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=97i82p7od33ej8rkcwua0osi;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 20 May 2014 17:36:11 GMT
+      Content-Length:
+      - '977'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.1</dsVersionID><dsCreateDate>2014-05-20T17:36:10.711Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>312</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+RELS-EXT+RELS-EXT.1</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1v5km6fk0bvsywmzo5z4jjuvx;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 20 May 2014 17:36:11 GMT
+      Content-Length:
+      - '951'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.1</dsVersionID><dsCreateDate>2014-05-20T17:36:10.979Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1283</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+descMetadata+descMetadata.1</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:11 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-05-20T17:36:09Z</field><field
+        name="system_modified_dtsi">2014-05-20T17:36:10Z</field><field name="object_state_ssi">A</field><field
+        name="active_fedora_model_ssi">Nyucore</field><field name="id">sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey</field><field
+        name="object_profile_ssm">{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora Object-to-Object
+        Relationship Metadata","dsVersionID":"RELS-EXT.1","dsCreateDate":"2014-05-20T17:36:10Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":312,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+RELS-EXT+RELS-EXT.1","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.1","dsCreateDate":"2014-05-20T17:36:10Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1283,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+descMetadata+descMetadata.1","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"DC":{"dsLabel":"Dublin
+        Core Record for this object","dsVersionID":"DC1.0","dsCreateDate":"2014-05-20T17:36:09Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":"http://www.openarchives.org/OAI/2.0/oai_dc/","dsControlGroup":"X","dsSize":371,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey+DC+DC1.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/afmodel:Nyucore","info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-05-20T17:36:09Z","objLastModDate":"2014-05-20T17:36:10Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
+        name="desc_metadata__identifier_tesim">DSS.NYCDCP_MONKEY_LION\DSS.Lion_Monkey</field><field
+        name="desc_metadata__title_tesim">LION</field><field name="desc_metadata__publisher_tesim">New
+        York City Dept. of City Planning</field><field name="desc_metadata__available_tesim">http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip</field><field
+        name="desc_metadata__type_tesim">Geospatial Data</field><field name="desc_metadata__type_sim">Geospatial
+        Data</field><field name="desc_metadata__description_tesim">LION is a single
+        line representation of New York City streets containing address ranges and
+        other information.</field><field name="desc_metadata__edition_tesim">10C</field><field
+        name="desc_metadata__series_tesim">NYCDCP_DCPLION_10CAV</field><field name="desc_metadata__version_tesim">DSS.NYCDCP_DCPLION_10cav\DSS.Lion_GJK</field><field
+        name="has_model_ssim">info:fedora/afmodel:Nyucore</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>7}}
+
+'
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:11 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><commit/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>192}}
+
+'
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:11 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Nyucore%22&qt=standard&rows=0&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 20 May 2014 17:36:11 GMT
+      Etag:
+      - ! '"NWYyMDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>1,''params''=>{''q''=>''_query_:"{!raw
+        f=has_model_ssim}info:fedora/afmodel:Nyucore"'',''qt''=>''standard'',''wt''=>''ruby'',''rows''=>''0''}},''response''=>{''numFound''=>145,''start''=>0,''docs''=>[]}}
+
+'
+    http_version: 
+  recorded_at: Tue, 20 May 2014 17:36:11 GMT
 recorded_with: VCR 2.8.0
