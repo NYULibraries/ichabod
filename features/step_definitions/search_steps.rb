@@ -27,11 +27,11 @@ And(/^I limit the search by a facet "(\w+.*?\s\w+.*?)"$/) do |facet|
   end
 end
 
-  Given(/^I Limit search to "(.*?)" in "(.*?)"$/) do |value,facet|
+  Given(/^I Limit search to "(.*?)" in "(.*?)" category$/) do |facet,category|
     visit root_path
     within(:css, '#facets') do
+      click_link("#{category}")
       click_link("#{facet}")
-      click_link("#{value}")
     end
   end
 
