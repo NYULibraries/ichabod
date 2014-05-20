@@ -1,16 +1,19 @@
 module Ichabod
   class DataLoader
     attr_reader :prefix
-    attr_reader :cores
+    attr_reader :filename
+    
     def initialize(filename, prefix)
-      file = File.open(filename)
-      doc = Nokogiri::XML(file)
-      @records = doc.xpath('//oai_dc:dc', 'oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/')
+      @filename = filename
       @prefix = prefix
-      @cores = []
     end
 
-    def   field_stats
+    def records
+      @records ||= Nokogiri::XML(File.open(self.filename)).xpath('//oai_dc:dc', 'oai_dc' => 'http://www.openarchives.org/OAI/2.0/oai_dc/')
+    end
+
+    def field_stats
+      records
       for record in @records do
         for child in record.children() do
           if child.name() != "text" && child.content() != ""
@@ -22,6 +25,8 @@ module Ichabod
     end
 
     def load
+      records
+      cores = []
       for record in @records do
         md = {}
         ids = record.xpath('dc:identifier',  'dc' => 'http://purl.org/dc/elements/1.1/')
@@ -65,18 +70,18 @@ module Ichabod
           core.subject = child.content() if child.name() == "subject"
 
         end
-        @cores.append(core)
-        core.save
+        cores << core if core.save
         puts "Loading '#{pid}'"
 
       end
+      return cores
     end
 
         
     def delete
 
       # usage: rake delete["/home/charper/Dropbox/strat43/sdr/sdr.xml","sdr"]
-
+      records
       for record in @records do
       #now, for each record, I want to build an md hash, and load a core.
         for child in record.children() do
