@@ -1,4 +1,14 @@
+# Coveralls & SimpleCov
 require 'simplecov'
+require 'coveralls'
+# Coveralls.wear_merged!('rails')
+
+SimpleCov.merge_timeout 3600
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start('rails')
 
 ENV["RAILS_ENV"] ||= 'test'
 
@@ -59,12 +69,8 @@ RSpec.configure do |config|
   end
 end
 
-# WebMock.allow_net_connect!
-
 VCR.configure do |c|
-  c.default_cassette_options = { :record => :new_episodes }
   c.cassette_library_dir = 'spec/vcr_cassettes'
   c.configure_rspec_metadata!
   c.hook_into :webmock
-  # c.filter_sensitive_data("") {  }
 end
