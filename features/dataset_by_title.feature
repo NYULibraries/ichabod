@@ -5,7 +5,7 @@ Feature: Find Geospatial dataset by title
 
 
     Scenario: Search dataset by title
-        Given I Limit search to "Geospatial Data" in "Format"
+        Given I Limit search to "Geospatial Data" in "Format" category
         And I search for "MapPLUTO"
         Then I get dataset with title "MapPLUTO"
          
