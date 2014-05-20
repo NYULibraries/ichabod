@@ -28,17 +28,20 @@ describe CatalogController do
       get :index, search_field: 'all_fields', q: 'highways'
       expect(response_qf).to include("desc_metadata__title_tesim")
     end
+
+     it "should retrieve search results when search term is MapPLUTO
+      and type is Geospatial Data",
+       vcr: { cassette_name: "catalog index search MapPLUTO" } do
+       get :index, search_field: 'all_fields', q: 'MapPLUTO', desc_metadata__type_sim: 'Geospatial Data'
+       assigns_response["responseHeader"]["params"]["qf"]["desc_metadata__type_sim"]
+       expect(assigns_response.total_count).to be > 0
+     end
   end
 
   
-  context "when search term is MapPLUTO and type is Geospatial Data",
-     vcr: { cassette_name: "catalog index search MapPLUTO" } do
-     it "should retrieve search results" do
-       get :index, search_field: 'all_fields', q: 'MapPLUTO', desc_metadata__type_sim: 'Geospatial Data'
-       assigns_response["responseHeader"]["params"]["qf"]["desc_metadata__type_sim"]
-       expect(assigns_response.total_count).to be > 0    
-     end
-  end
+  #context "when search term is MapPLUTO and type is Geospatial Data",
+     
+  #end
   
 
   def assigns_response
