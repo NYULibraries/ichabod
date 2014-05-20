@@ -6,7 +6,7 @@ Feature: Index publisher
 
 Scenario: Search by keyword (publisher) and limit search by facet
   Given I am on the home page
-#  Given NYU has loaded GIS dataset data published by ESRI
-  When I search for "ESRI"
-  Then I should see "ESRI" publications in the results
-  And I should see a Geospatial Data facet under format
+  Given NYU has loaded GIS dataset data published by ESRI
+  When I search on the phrase "ESRI"
+  Then I should see search results
+  And I should see a Geospatial Data facet under Format
