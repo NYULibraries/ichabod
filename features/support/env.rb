@@ -4,8 +4,17 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
-# Simplecov config
+# Coveralls & SimpleCov
 require 'simplecov'
+require 'coveralls'
+# Coveralls.wear_merged!('rails')
+
+SimpleCov.merge_timeout 3600
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start('rails')
 
 ENV['RAILS_ENV'] = 'cucumber'
 
@@ -54,18 +63,6 @@ end
 #   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
 #     DatabaseCleaner.strategy = :transaction
 #   end
-
-  Around do |scenario, block|
-    # Start transaction
-    DatabaseCleaner.start
-    sleep 3
-    # Run
-    block.call
-    # Clear session data
-    Capybara.reset_sessions!
-    # Rollback transaction
-    DatabaseCleaner.clean
-  end
 
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
