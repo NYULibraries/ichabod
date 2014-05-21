@@ -9,8 +9,12 @@ When(/^I perform an empty search$/) do
   click_button("Search")
 end
 
-Then(/^I should see search results$/) do
-  expect(page.all("#documents .document").count).to be > 0
+Then(/^I should (not )?see search results$/) do |negator|
+  if negator
+    expect(page.all("#documents .document").count).to be 0
+  else
+    expect(page.all("#documents .document").count).to be > 0
+  end
 end
 
 When(/^I search on the phrase "(.*?)"$/) do |phrase|
