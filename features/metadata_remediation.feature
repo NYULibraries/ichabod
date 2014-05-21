@@ -31,39 +31,37 @@ Feature: Add, edit and delete records
     When I search on the phrase "A Comedy of Errors"
     Then I should see search results
 
-  @loggedin @wip
+  @loggedin @run
   Scenario: Adding a record with multiple values in all multiple fields
     Given I am logged in as "GIS Cataloger"
     And I am on the "New Item" form
     And I click on all the "+" buttons
     When I enter the fields:
-      | Title        | As You Like It      |
-      | Available    | DSS.ShakeIt         |
-      | Available    | DSS.ShakeIt1        |
-      | Type         | Text                |
-      | Type         | Text1               |
-      | Description  | As You Like It      |
-      | Description  | As You Like It1     |
-      | Edition      | 1st                 |
-      | Edition      | 1st1                |
-      | Series       | ESRI_10_STREETMAP   |
-      | Series       | ESRI_10_STREETMAP1  |
-      | Version      | 2nd                 |
-      | Version      | 2nd1                |
-      | Date         | 1594                |
-      | Date         | 15941               |
-      | Format       | Geospatial data     |
-      | Format       | Geospatial data1    |
-      | Language     | English             |
-      | Language     | English1            |
-      | Relation     | Not sure what this is  |
-      | Relation     | Not sure what this is1 |
-      | Rights       | All rights          |
-      | Rights       | All rights1         |
-      | Subject      | Plays               |
-      | Subject      | Plays1              |
-      | Citation     | B Shakes, SPC       |
-      | Citation     | B Shakes, SPC1      |
+      | Title                 | As You Like It      |
+      | nyucore_available     | DSS.ShakeIt         |
+      | nyucore_available1    | DSS.ShakeIt1        |
+      | nyucore_description   | As You Like It      |
+      | nyucore_description1  | As You Like It1     |
+      | nyucore_edition       | 1st                 |
+      | nyucore_edition1      | 1st1                |
+      | nyucore_series        | ESRI_10_STREETMAP   |
+      | nyucore_series1       | ESRI_10_STREETMAP1  |
+      | nyucore_version       | 2nd                 |
+      | nyucore_version1      | 2nd1                |
+      | nyucore_date          | 1594                |
+      | nyucore_date1         | 15941               |
+      | nyucore_format        | Geospatial data     |
+      | nyucore_format1       | Geospatial data1    |
+      | nyucore_language      | English             |
+      | nyucore_language1     | English1            |
+      | nyucore_relation      | Not sure what this is  |
+      | nyucore_relation1     | Not sure what this is1 |
+      | nyucore_rights        | All rights          |
+      | nyucore_rights1       | All rights1         |
+      | nyucore_subject       | Plays               |
+      | nyucore_subject1      | Plays1              |
+      | nyucore_citation      | B Shakes, SPC       |
+      | nyucore_citation1     | B Shakes, SPC1      |
     And I save the record
     Then I should see the message "Item was successfully created."
     When I click on "Edit"
