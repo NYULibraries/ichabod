@@ -3,7 +3,7 @@ Given(/^I am on the "New Item" form$/) do
 end
 
 When(/^I enter the fields:$/) do |table|
-  criteria = table.rows_hash.each do |field, value|
+  table.rows_hash.each do |field, value|
     fill_in field, :with => value
   end
 end
@@ -26,7 +26,7 @@ end
 
 When(/^I delete the record$/) do
   visit nyucores_path
-  accept_confirms
+  accept_javascript_confirms
   page.find(:xpath, "//a[@href='#{nyucore_path(@record)}'][@data-method='delete']").click
 end
 
@@ -41,5 +41,7 @@ Given(/^I click on all the "(.*?)" buttons$/) do |button_text|
 end
 
 Then(/^I should see the fields:$/) do |table|
-  pending
+  table.rows_hash.each do |field, value|
+    expect(page.find("##{field}").value).to have_content value
+  end
 end
