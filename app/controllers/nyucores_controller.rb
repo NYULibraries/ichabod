@@ -1,6 +1,7 @@
 class NyucoresController < ApplicationController
   respond_to :html, :json
   before_action :set_item, only: [:edit, :update]
+  before_filter :blank_to_nil_params, :only => [:create, :update]
 
   def index
     @items = Nyucore.all
@@ -56,5 +57,9 @@ class NyucoresController < ApplicationController
   # Whitelist attrs
   def item_params
     params.require(:nyucore).permit(:title, :creator, :publisher, :identifier, :type, :available => [], :description=> [], :edition=> [], :series=> [], :version=> [], :date=> [], :format=> [], :language=> [], :relation=> [], :rights=> [], :subject=> [], :citation=> [])
+  end
+
+  def blank_to_nil_params
+    params[:nyucore].merge!(params[:nyucore]){|k, v| v.blank? ? nil : v}
   end
 end
