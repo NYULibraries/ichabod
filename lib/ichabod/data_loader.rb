@@ -2,7 +2,7 @@ module Ichabod
   class DataLoader
     attr_reader :prefix
     attr_reader :filename
-    
+
     def initialize(filename, prefix)
       @filename = filename
       @prefix = prefix
@@ -20,7 +20,7 @@ module Ichabod
           end
         end
       end
-      puts @records.length()
+      return records.count
     end
 
     def load
@@ -75,7 +75,7 @@ module Ichabod
       return cores
     end
 
-        
+
     def delete
       # usage: rake delete["/home/charper/Dropbox/strat43/sdr/sdr.xml","sdr"]
       for record in records do
