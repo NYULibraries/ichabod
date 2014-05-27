@@ -10,6 +10,8 @@ Ichabod::Application.load_tasks
 # end of the default task
 
 # Add the coveralls task as the default with the appropriate prereqs
-require 'coveralls/rake/task'
-Coveralls::RakeTask.new
-task :default => [:spec, :cucumber, 'coveralls:push']
+if Rails.env.test?
+  require 'coveralls/rake/task'
+  Coveralls::RakeTask.new
+  task :default => [:spec, :cucumber, 'coveralls:push']
+end
