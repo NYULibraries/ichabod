@@ -1,14 +1,14 @@
-# Coveralls & SimpleCov
 require 'simplecov'
+require 'simplecov-rcov'
 require 'coveralls'
-# Coveralls.wear_merged!('rails')
 
 SimpleCov.merge_timeout 3600
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::RcovFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-SimpleCov.start('rails')
+SimpleCov.start
 
 ENV["RAILS_ENV"] ||= 'test'
 
