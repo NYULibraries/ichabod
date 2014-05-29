@@ -39,9 +39,40 @@ FactoryGirl.define do
       identifier ["First Id","Superego"]
     end
 
+    trait :another_valid_record do
+      title "new title"
+      creator "new creator"
+      publisher "new publisher"
+      available ["new available"]
+      type "new type"
+      description ["new description"]
+      edition ["new edition"]
+      series ["new series"]
+      version ["new version"]
+      date ["new date"]
+      format ["new format"]
+      language ["new language"]
+      relation ["new relation"]
+      rights ["new rights"]
+      subject ["new subject"]
+      citation ["new citation"]
+      identifier "new identifier"
+    end
+
+    trait :cymbeline do
+      title "Cymbeline"
+    end
+
+    trait :the_tempest do
+      title "The Tempest"
+    end
+
     factory :valid_nyucore, traits: [:valid_record, :valid_citation, :valid_identifier]
     factory :invalid_nyucore_citation, traits: [:valid_record, :invalid_citation, :valid_identifier]
     factory :invalid_nyucore_id, traits: [:valid_record, :valid_citation, :invalid_identifier]
+    factory :another_valid_nyucore, traits: [:another_valid_record]
+    factory :cymbeline, traits: [:another_valid_record, :cymbeline]
+    factory :the_tempest, traits: [:another_valid_record, :the_tempest]
   end
 
 end

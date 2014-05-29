@@ -1,6 +1,9 @@
 class NyucoresController < ApplicationController
   respond_to :html, :json
   before_action :set_item, only: [:edit, :update]
+  # Convert blank values to nil in params when creating and updating
+  # in order to not save empty array values when field is not nil but is an empty string (i.e. "")
+  before_filter :blank_to_nil_params, :only => [:create, :update]
 
   def index
     @items = Nyucore.all
@@ -55,6 +58,12 @@ class NyucoresController < ApplicationController
 
   # Whitelist attrs
   def item_params
-    params.require(:nyucore).permit(:title, :creator, :publisher, :identifier, :available, :type, :description, :edition, :series, :version, :date, :format, :language, :relation, :rights, :subject, :citation)
+    params.require(:nyucore).permit(:title, :creator, :publisher, :identifier, :type, :available => [], :description=> [], :edition=> [], :series=> [], :version=> [], :date=> [], :format=> [], :language=> [], :relation=> [], :rights=> [], :subject=> [], :citation=> [])
+  end
+
+  # Convert blank values to nil values in params
+  # in order to not save empty array values when field is not nil but is an empty string (i.e. "")
+  def blank_to_nil_params
+    params[:nyucore].merge!(params[:nyucore]){|k, v| v.blank? ? nil : v}
   end
 end

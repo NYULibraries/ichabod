@@ -15,3 +15,11 @@ Feature: Login as a user
     Given I am logged in as "FDA Cataloger"
     And I am on the default search page
     Then I should see "Log-out"
+
+  @loggedin
+  Scenario: Logged in and searching
+    Given I am logged in as "GIS Cataloger"
+    And I am on the default search page
+    When I search on the phrase "nyc"
+    Then I should see search results
+    And I should see "Log-out"
