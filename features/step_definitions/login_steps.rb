@@ -1,4 +1,7 @@
-After('@loggedin') do |scenario|
+Around('@loggedin') do |scenario, block|
+  VCR.use_cassette('logged in users', record: :none) do
+    block.call
+  end
   ENV['PDS_HANDLE'] = nil
 end
 

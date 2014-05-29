@@ -8,9 +8,10 @@ Ichabod::Application.load_tasks
 # We need to add the coveralls task in the Rakefile
 # because we want to make sure we append it to the very
 # end of the default task
+
+# Add the coveralls task as the default with the appropriate prereqs
 if Rails.env.test?
-  # Add the coveralls task as the default with the appropriate prereqs
   require 'coveralls/rake/task'
   Coveralls::RakeTask.new
-  task :default => [:spec, :test, :cucumber, 'coveralls:push']
+  task :default => [:spec, :cucumber, 'coveralls:push']
 end
