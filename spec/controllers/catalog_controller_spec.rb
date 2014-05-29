@@ -30,12 +30,12 @@ describe CatalogController do
     end
 
      context "when search term is MapPLUTO and type is Geospatial Data" do
-           it "should retrieve relevant MapPLUTO search results",
-       vcr: { cassette_name: "catalog index search MapPLUTO" } do
-      get :index, search_field: 'all_fields', q: 'MapPLUTO', desc_metadata__type_sim: 'Geospatial Data'
-      expect(assigns_response.total_count).to be > 0
+       it "should retrieve relevant MapPLUTO search results",
+        vcr: { cassette_name: "catalog index search MapPLUTO" } do
+        get :index, search_field: 'all_fields', q: 'MapPLUTO', desc_metadata__type_sim: 'Geospatial Data'
+        expect(assigns_response.total_count).to be > 0
+      end
     end
-end
   end
 
   
