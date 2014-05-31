@@ -4,6 +4,20 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+require 'simplecov'
+require 'simplecov-rcov'
+require 'coveralls'
+
+SimpleCov.merge_timeout 3600
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::RcovFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start
+
+ENV['RAILS_ENV'] = 'cucumber'
+
 require 'cucumber/rails'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
@@ -12,8 +26,8 @@ require 'cucumber/rails'
 # Capybara.default_selector = :xpath
 
 # By default, any exception happening in your Rails application will bubble up
-# to Cucumber so that your scenario will fail. This is a different from how 
-# your application behaves in the production environment, where an error page will 
+# to Cucumber so that your scenario will fail. This is a different from how
+# your application behaves in the production environment, where an error page will
 # be rendered instead.
 #
 # Sometimes we want to override this default behaviour and allow Rails to rescue
@@ -49,10 +63,8 @@ end
 #   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
 #     DatabaseCleaner.strategy = :transaction
 #   end
-#
 
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
-

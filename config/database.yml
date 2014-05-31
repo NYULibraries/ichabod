@@ -1,10 +1,16 @@
-remote: &remote
+mysql2: &mysql2
   adapter: mysql2
-  host: <%= (ENV["ICHABOD_HOST"] || "localhost") %>
-  database: <%= (ENV["ICHABOD_DATABASE"] || "ichabod_test") %>
-  username: <%= (ENV["ICHABOD_USERNAME"] || "root") %>
-  password: <%= ENV["ICHABOD_PASSWORD"] %>
   encoding: utf8
+
+remote: &remote
+  <<: *mysql2
+  host: <%= (ENV['ICHABOD_HOST'] || 'localhost') %>
+  database: <%= (ENV['ICHABOD_DATABASE'] || 'ichabod_test') %>
+  username: <%= (ENV['CI']) ? 'ICHABOD_JENKINS_USERNAME' : (ENV['ICHABOD_USERNAME'] || 'root') %>
+  password: <%= ENV['ICHABOD_PASSWORD'] %>
+
+local: &local
+  <<: *remote
 
 development:
   <<: *remote
@@ -13,10 +19,7 @@ staging:
   <<: *remote
 
 test: &test
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
+  <<: *local
 
 cucumber:
   <<: *test
