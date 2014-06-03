@@ -2,72 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://127.0.0.1:61611/__identify__
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-06-27)
-      Date:
-      - Fri, 09 May 2014 17:50:11 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: '70224503274980'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:11 GMT
-- request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session
-    body:
-      encoding: US-ASCII
-      string: ! '{"desiredCapabilities":{"browserName":"firefox","version":"","platform":"ANY","javascriptEnabled":true,"cssSelectorsEnabled":true,"takesScreenshot":true,"nativeEvents":false,"rotatable":false}}'
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '193'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '452'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:14 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"newSession","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":{"cssSelectorsEnabled":true,"browserName":"firefox","handlesAlerts":true,"javascriptEnabled":true,"nativeEvents":false,"platform":"Darwin","rotatable":false,"takesScreenshot":true,"version":"28.0","webStorageEnabled":true,"applicationCacheEnabled":true,"databaseEnabled":true,"locationContextEnabled":true,"browserConnectionEnabled":true,"acceptSslCerts":true}}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:14 GMT
-- request:
-    method: get
     uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
     body:
       encoding: US-ASCII
@@ -79,521 +13,9 @@ http_interactions:
       message: OK
     headers:
       Last-Modified:
-      - Thu, 08 May 2014 21:48:34 GMT
+      - Mon, 02 Jun 2014 21:25:00 GMT
       Etag:
-      - ! '"NDc4MDAwMDAwMDAwMDAwMFNvbHI="'
-      Content-Type:
-      - text/plain;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: US-ASCII
-      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>117,'params'=>{'sort'=>'score
-        desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
-        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
-        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
-        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>186,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-05-06T21:18:15Z','system_modified_dtsi'=>'2014-05-06T21:18:15Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:15Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:16Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1482,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:15Z\",\"objLastModDate\":\"2014-05-06T21:18:15Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-airports_ABU/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-airports_ABU/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada Airports'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-airports_ABU.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Airports represents
-        airport boundaries and runways within the United States and Canada.\n\nThis
-        data set provides six feature classes for displaying the data at different
-        scales. Everything about the feature classes is the same but the level of
-        generalization and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:16.155Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:17Z','system_modified_dtsi'=>'2014-05-06T21:18:17Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:17Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":311,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:17Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1465,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:17Z\",\"objLastModDate\":\"2014-05-06T21:18:17Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citylim_07B/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citylim_07B/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada City Areas'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citylim_07B.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Areas represents
-        the city limits of cities in the United States and Canada.\n\nThis data set
-        provides six feature classes for displaying the data at different scales.
-        Everything about the feature classes is the same but the level of generalization
-        and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:17.931Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:17Z','system_modified_dtsi'=>'2014-05-06T21:18:17Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:18Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:18Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1427,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:17Z\",\"objLastModDate\":\"2014-05-06T21:18:17Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-counties_QO4/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-counties_QO4/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'desc_metadata__title_tesim'=>['U.S.
-        Counties'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-counties_QO4.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. Counties represents the
-        counties of the United States.\n\nThis data set provides six feature classes
-        for displaying the data at different scales. Everything about the feature
-        classes is the same but the level of generalization and its name. The base
-        feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:18.503Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:16Z','system_modified_dtsi'=>'2014-05-06T21:18:16Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:16Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":313,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:17Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1307,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:16Z\",\"objLastModDate\":\"2014-05-06T21:18:16Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada Major Cities'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citiesmjr_MIE.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Major Cities
-        represents major cities of United States and Canada including national, state,
-        and provincial capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:17.357Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:16Z','system_modified_dtsi'=>'2014-05-06T21:18:16Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:16Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":310,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:16Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1267,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:16Z\",\"objLastModDate\":\"2014-05-06T21:18:16Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-cities_NOL/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-cities_NOL/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada City Points'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-cities_NOL.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Points represents
-        cities of the United States and Canada including national, state, and provincial
-        capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:16.738Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:18Z','system_modified_dtsi'=>'2014-05-06T21:18:18Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:18Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":315,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:19Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1283,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:18Z\",\"objLastModDate\":\"2014-05-06T21:18:18Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'desc_metadata__title_tesim'=>['U.S.
-        County Boundaries'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-dtl_cnty_ln_GNV.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. County Boundaries represents
-        the boundary lines of the counties of the United States.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:19.242Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:22Z','system_modified_dtsi'=>'2014-05-06T21:18:22Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-landmarks_PWY','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:22Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":313,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-landmarks_PWY+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:22Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1700,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-landmarks_PWY+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:22Z\",\"objLastModDate\":\"2014-05-06T21:18:22Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-landmarks_PWY/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-landmarks_PWY/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada Large Area Landmarks'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-landmarks_PWY.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Large Area Landmarks
-        represents common landmark areas within the United States and Canada including
-        military areas, hospitals, prisons, educational institutions, shopping centers,
-        industrial parks, amusement centers, government centers, sport centers, golf
-        courses, and cemeteries.\n\nThis data set provides six feature classes for
-        displaying the data at different scales. Everything about the feature classes
-        is the same but the level of generalization and its name. The base feature
-        class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:22.872Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:24Z','system_modified_dtsi'=>'2014-05-06T21:18:24Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-parks_0RQ','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:24Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":309,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-parks_0RQ+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:24Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1464,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-parks_0RQ+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:24Z\",\"objLastModDate\":\"2014-05-06T21:18:24Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-parks_0RQ/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-parks_0RQ/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.parks_0RQ'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada Parks'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-parks_0RQ.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Parks represents
-        parks and forests within the United States and Canada at national, state,
-        and local levels.\n\nThis data set provides six feature classes for displaying
-        the data at different scales. Everything about the feature classes is the
-        same but the level of generalization and its name. The base feature class
-        is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.parks_0RQ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:24.593Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:21Z','system_modified_dtsi'=>'2014-05-06T21:18:21Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-Lakes_NA_9JC','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:21Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-Lakes_NA_9JC+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:22Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1462,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-Lakes_NA_9JC+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:21Z\",\"objLastModDate\":\"2014-05-06T21:18:21Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-Lakes_NA_9JC/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-Lakes_NA_9JC/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.Lakes_NA_9JC'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada Lakes'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-Lakes_NA_9JC.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Lakes represents
-        the major lakes within the United States and Canada.\n\nThis data set provides
-        five feature classes for displaying the data at different scales. Everything
-        about the feature classes is the same but the level of generalization and
-        its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.Lakes_NA_9JC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:22.271Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:20Z','system_modified_dtsi'=>'2014-05-06T21:18:20Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-institutions_8ZJ','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:20Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":316,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-institutions_8ZJ+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:21Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1447,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-institutions_8ZJ+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:20Z\",\"objLastModDate\":\"2014-05-06T21:18:20Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-institutions_8ZJ/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-institutions_8ZJ/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.institutions_8ZJ'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada Institutions'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-institutions_8ZJ.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Institutions
-        represents point locations within the United States and Canada for common
-        institution landmark types including hospitals, educational institutions,
-        religious institutions, government centers, and cemeteries.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.institutions_8ZJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:21.121Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Geospatial
-        Data',140,'Geospatial Dataset',46],'desc_metadata__creator_sim'=>['The Man',46],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>['en',39]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:14 GMT
-- request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/url
-    body:
-      encoding: US-ASCII
-      string: ! '{"url":"http://127.0.0.1:61611/"}'
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '33'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '87'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"get","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":""}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/elements
-    body:
-      encoding: US-ASCII
-      string: ! '{"using":"css selector","value":"form.search-query-form"}'
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '57'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '148'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"findElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{aa0cbd82-9f97-844c-8b4e-e024d2c7ff0e}"}]}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Baa0cbd82-9f97-844c-8b4e-e024d2c7ff0e%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Baa0cbd82-9f97-844c-8b4e-e024d2c7ff0e%7D/elements
-    body:
-      encoding: US-ASCII
-      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
-        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
-        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Search...'' or
-        ./@name = ''Search...'') or ./@placeholder = ''Search...'') or ./@id = //label[normalize-space(string(.))
-        = ''Search...'']/@for)] | .//label[normalize-space(string(.)) = ''Search...'']//.//*[self::input
-        | self::textarea][not(./@type = ''submit'' or ./@type = ''image'' or ./@type
-        = ''radio'' or ./@type = ''checkbox'' or ./@type = ''hidden'' or ./@type =
-        ''file'')]"}'
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '567'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '153'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"findChildElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6}"}]}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6%7D/enabled
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '102'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementEnabled","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6%7D/name
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '106'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"getElementTagName","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":"input"}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6%7D/attribute/type
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '107'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"getElementAttribute","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":"text"}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B481ef73b-4e6b-5e4f-9d0e-8b049b2e73f6%7D/clear
-    body:
-      encoding: US-ASCII
-      string: ! '{}'
-    headers:
-      Accept:
-      - application/json
-      Content-Length:
-      - '2'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '96'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"clearElement","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":""}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/elements
-    body:
-      encoding: US-ASCII
-      string: ! '{"using":"xpath","value":".//input[./@type = ''submit'' or ./@type
-        = ''reset'' or ./@type = ''image'' or ./@type = ''button''][((./@id = ''Search''
-        or ./@value = ''Search'') or ./@title = ''Search'')] | .//input[./@type =
-        ''image''][./@alt = ''Search''] | .//button[(((./@id = ''Search'' or ./@value
-        = ''Search'') or normalize-space(string(.)) = ''Search'') or ./@title = ''Search'')]
-        | .//input[./@type = ''image''][./@alt = ''Search'']"}'
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '409'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '148'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"findElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{7d165b0a-bc2b-6145-82a4-f18de001e52a}"}]}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B7d165b0a-bc2b-6145-82a4-f18de001e52a%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B7d165b0a-bc2b-6145-82a4-f18de001e52a%7D/enabled
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '102'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementEnabled","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Last-Modified:
-      - Thu, 08 May 2014 21:48:34 GMT
-      Etag:
-      - ! '"NDc4MDAwMDAwMDAwMDAwMFNvbHI="'
+      - ! '"M2NhMDAwMDAwMDAwMDAwMFNvbHI="'
       Content-Type:
       - text/plain;charset=UTF-8
       Transfer-Encoding:
@@ -604,689 +26,170 @@ http_interactions:
         desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
         desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
         desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
-        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>186,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-05-06T21:18:15Z','system_modified_dtsi'=>'2014-05-06T21:18:15Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:15Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:16Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1482,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:15Z\",\"objLastModDate\":\"2014-05-06T21:18:15Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-airports_ABU/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-airports_ABU/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__title_tesim'=>['U.S.
+        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>144,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-05-20T17:26:54Z','system_modified_dtsi'=>'2014-05-20T17:26:54Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:54Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":324,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:54Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2853,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:54Z\",\"objLastModDate\":\"2014-05-20T17:26:54Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Mappluto_Test_11v1\\\\DSS.jam_mappluto_7OR'],'desc_metadata__title_tesim'=>['MapPLUTO'],'desc_metadata__publisher_tesim'=>['NYC
+        Department of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_MAPPLUTO_TEST_11V1-jam_mappluto_7OR.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['This dataset represents a compilation
+        of data from various government agencies throughout the City of New York.
+        \ The underlying geography is derived from the Tax Lot Polygon feature class
+        which is part of the Department of Finance\\'s Digital Tax Map (DTM).  The
+        tax lots have been clipped to the shoreline, as defined by NYCMap planimetric
+        features.  The attribute information is from the Department of City Planning\\'s
+        PLUTO data.  The attribute data pertains to tax lot and building characteristics
+        and geographic, political and administrative information for each tax lot
+        in New York City.  The Tax Lot Polygon feature class and PLUTO are derived
+        from different sources.   As a result, some PLUTO records did not have a corresponding
+        tax lot in the Tax Lot polygon feature class at the time of release.  These
+        records are included in a separate non-geographic PLUTO Only DBase (*.dbf)
+        table. There are a number of reasons why there can be a tax lot in PLUTO that
+        does not match the DTM; the most common reason is that the various source
+        files are maintained by different departments and divisions with varying update
+        cycles and criteria for adding and removing records.  The attribute definitions
+        for the PLUTO Only table are the same as those for MapPLUTO.\nDCP Mapping
+        Lots includes some features that are not on the tax maps.  They have been
+        added by DCP for cartographic purposes.  They include street center \\'malls\\',
+        traffic islands and some built streets through parks.  These features have
+        very few associated attributes.'],'desc_metadata__edition_tesim'=>['10V2'],'desc_metadata__series_tesim'=>['NYCDCP_MAPPLUTO_TEST_11V1'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Mappluto_Test_11v1\\\\DSS.jam_mappluto_7OR'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:54.603Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:55Z','system_modified_dtsi'=>'2014-05-20T17:26:55Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:55Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:55Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1482,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:55Z\",\"objLastModDate\":\"2014-05-20T17:26:55Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-airports_ABU/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-airports_ABU/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__title_tesim'=>['U.S.
         and Canada Airports'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-airports_ABU.zip'],'desc_metadata__type_tesim'=>['Geospatial
         Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Airports represents
         airport boundaries and runways within the United States and Canada.\n\nThis
         data set provides six feature classes for displaying the data at different
         scales. Everything about the feature classes is the same but the level of
-        generalization and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:16.155Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:17Z','system_modified_dtsi'=>'2014-05-06T21:18:17Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:17Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":311,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:17Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1465,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:17Z\",\"objLastModDate\":\"2014-05-06T21:18:17Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citylim_07B/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citylim_07B/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'desc_metadata__title_tesim'=>['U.S.
+        generalization and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:55.956Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:57Z','system_modified_dtsi'=>'2014-05-20T17:26:57Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:57Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":311,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:58Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1465,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:57Z\",\"objLastModDate\":\"2014-05-20T17:26:57Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citylim_07B/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citylim_07B/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'desc_metadata__title_tesim'=>['U.S.
         and Canada City Areas'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citylim_07B.zip'],'desc_metadata__type_tesim'=>['Geospatial
         Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Areas represents
         the city limits of cities in the United States and Canada.\n\nThis data set
         provides six feature classes for displaying the data at different scales.
         Everything about the feature classes is the same but the level of generalization
-        and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:17.931Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:17Z','system_modified_dtsi'=>'2014-05-06T21:18:17Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:18Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:18Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1427,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:17Z\",\"objLastModDate\":\"2014-05-06T21:18:17Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-counties_QO4/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-counties_QO4/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'desc_metadata__title_tesim'=>['U.S.
+        and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:58.063Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:58Z','system_modified_dtsi'=>'2014-05-20T17:26:58Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:58Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:58Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1427,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:58Z\",\"objLastModDate\":\"2014-05-20T17:26:58Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-counties_QO4/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-counties_QO4/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'desc_metadata__title_tesim'=>['U.S.
         Counties'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-counties_QO4.zip'],'desc_metadata__type_tesim'=>['Geospatial
         Data'],'desc_metadata__description_tesim'=>['U.S. Counties represents the
         counties of the United States.\n\nThis data set provides six feature classes
         for displaying the data at different scales. Everything about the feature
         classes is the same but the level of generalization and its name. The base
-        feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:18.503Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:16Z','system_modified_dtsi'=>'2014-05-06T21:18:16Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:16Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":313,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:17Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1307,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:16Z\",\"objLastModDate\":\"2014-05-06T21:18:16Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'desc_metadata__title_tesim'=>['U.S.
+        feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:58.773Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:52Z','system_modified_dtsi'=>'2014-05-20T17:26:52Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:52Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":311,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:52Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1273,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:52Z\",\"objLastModDate\":\"2014-05-20T17:26:52Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'desc_metadata__title_tesim'=>['LION'],'desc_metadata__publisher_tesim'=>['New
+        York City Dept. of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['LION is a single line representation
+        of New York City streets containing address ranges and other information.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_DCPLION_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:53.084Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:56Z','system_modified_dtsi'=>'2014-05-20T17:26:56Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:57Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":313,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:57Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1307,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:56Z\",\"objLastModDate\":\"2014-05-20T17:26:56Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'desc_metadata__title_tesim'=>['U.S.
         and Canada Major Cities'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citiesmjr_MIE.zip'],'desc_metadata__type_tesim'=>['Geospatial
         Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Major Cities
         represents major cities of United States and Canada including national, state,
-        and provincial capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:17.357Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:16Z','system_modified_dtsi'=>'2014-05-06T21:18:16Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:16Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":310,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:16Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1267,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:16Z\",\"objLastModDate\":\"2014-05-06T21:18:16Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-cities_NOL/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-cities_NOL/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'desc_metadata__title_tesim'=>['U.S.
+        and provincial capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:57.392Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:56Z','system_modified_dtsi'=>'2014-05-20T17:26:56Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:56Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":310,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:56Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1267,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:56Z\",\"objLastModDate\":\"2014-05-20T17:26:56Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-cities_NOL/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-cities_NOL/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'desc_metadata__title_tesim'=>['U.S.
         and Canada City Points'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-cities_NOL.zip'],'desc_metadata__type_tesim'=>['Geospatial
         Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Points represents
         cities of the United States and Canada including national, state, and provincial
-        capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:16.738Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:18Z','system_modified_dtsi'=>'2014-05-06T21:18:18Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:18Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":315,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:19Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1283,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:18Z\",\"objLastModDate\":\"2014-05-06T21:18:18Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'desc_metadata__title_tesim'=>['U.S.
+        capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:56.678Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:58Z','system_modified_dtsi'=>'2014-05-20T17:26:58Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:59Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":315,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:59Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1283,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:58Z\",\"objLastModDate\":\"2014-05-20T17:26:58Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'desc_metadata__title_tesim'=>['U.S.
         County Boundaries'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-dtl_cnty_ln_GNV.zip'],'desc_metadata__type_tesim'=>['Geospatial
         Data'],'desc_metadata__description_tesim'=>['U.S. County Boundaries represents
-        the boundary lines of the counties of the United States.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:19.242Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:22Z','system_modified_dtsi'=>'2014-05-06T21:18:22Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-landmarks_PWY','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:22Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":313,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-landmarks_PWY+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:22Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1700,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-landmarks_PWY+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:22Z\",\"objLastModDate\":\"2014-05-06T21:18:22Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-landmarks_PWY/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-landmarks_PWY/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada Large Area Landmarks'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-landmarks_PWY.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Large Area Landmarks
-        represents common landmark areas within the United States and Canada including
-        military areas, hospitals, prisons, educational institutions, shopping centers,
-        industrial parks, amusement centers, government centers, sport centers, golf
-        courses, and cemeteries.\n\nThis data set provides six feature classes for
-        displaying the data at different scales. Everything about the feature classes
-        is the same but the level of generalization and its name. The base feature
-        class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:22.872Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:24Z','system_modified_dtsi'=>'2014-05-06T21:18:24Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-parks_0RQ','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:24Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":309,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-parks_0RQ+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:24Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1464,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-parks_0RQ+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:24Z\",\"objLastModDate\":\"2014-05-06T21:18:24Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-parks_0RQ/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-parks_0RQ/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.parks_0RQ'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada Parks'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-parks_0RQ.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Parks represents
-        parks and forests within the United States and Canada at national, state,
-        and local levels.\n\nThis data set provides six feature classes for displaying
-        the data at different scales. Everything about the feature classes is the
-        same but the level of generalization and its name. The base feature class
-        is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.parks_0RQ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:24.593Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:21Z','system_modified_dtsi'=>'2014-05-06T21:18:21Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-Lakes_NA_9JC','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:21Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-Lakes_NA_9JC+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:22Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1462,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-Lakes_NA_9JC+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:21Z\",\"objLastModDate\":\"2014-05-06T21:18:21Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-Lakes_NA_9JC/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-Lakes_NA_9JC/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.Lakes_NA_9JC'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada Lakes'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-Lakes_NA_9JC.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Lakes represents
-        the major lakes within the United States and Canada.\n\nThis data set provides
-        five feature classes for displaying the data at different scales. Everything
-        about the feature classes is the same but the level of generalization and
-        its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.Lakes_NA_9JC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:22.271Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-06T21:18:20Z','system_modified_dtsi'=>'2014-05-06T21:18:20Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-institutions_8ZJ','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-06T21:18:20Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":316,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-institutions_8ZJ+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-06T21:18:21Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1447,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-institutions_8ZJ+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-06T21:18:20Z\",\"objLastModDate\":\"2014-05-06T21:18:20Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-institutions_8ZJ/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-institutions_8ZJ/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.institutions_8ZJ'],'desc_metadata__title_tesim'=>['U.S.
-        and Canada Institutions'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-institutions_8ZJ.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Institutions
-        represents point locations within the United States and Canada for common
-        institution landmark types including hospitals, educational institutions,
-        religious institutions, government centers, and cemeteries.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.institutions_8ZJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-06T21:18:21.121Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Geospatial
-        Data',140,'Geospatial Dataset',46],'desc_metadata__creator_sim'=>['The Man',46],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>['en',39]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
+        the boundary lines of the counties of the United States.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:59.473Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:53Z','system_modified_dtsi'=>'2014-05-20T17:26:53Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDOITT_Buildings_0311-DSS-Buildings_0311_VE2','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:53Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":324,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDOITT_Buildings_0311-DSS-Buildings_0311_VE2+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:53Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1297,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDOITT_Buildings_0311-DSS-Buildings_0311_VE2+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:53Z\",\"objLastModDate\":\"2014-05-20T17:26:53Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDOITT_Buildings_0311-DSS-Buildings_0311_VE2/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDOITT_Buildings_0311-DSS-Buildings_0311_VE2/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'desc_metadata__title_tesim'=>['Buildings_0311_VE2'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDOITT_BUILDINGS_0311-Buildings_0311_VE2.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDOITT_BUILDINGS_0311'],'desc_metadata__version_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:53.838Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:54Z','system_modified_dtsi'=>'2014-05-20T17:26:54Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_AOI_20101-DSS-AOI_Centroids_3CJ','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:54Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":316,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_AOI_20101-DSS-AOI_Centroids_3CJ+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:55Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1193,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_AOI_20101-DSS-AOI_Centroids_3CJ+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:54Z\",\"objLastModDate\":\"2014-05-20T17:26:54Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_AOI_20101-DSS-AOI_Centroids_3CJ/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_AOI_20101-DSS-AOI_Centroids_3CJ/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'desc_metadata__title_tesim'=>['AOI_Centroids_3CJ'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_AOI_20101-AOI_Centroids_3CJ.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDCP_AOI_20101'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:55.248Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Geospatial
+        Data',144],'desc_metadata__creator_sim'=>[],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>[]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
     http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
+  recorded_at: Mon, 02 Jun 2014 21:46:05 GMT
 - request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B7d165b0a-bc2b-6145-82a4-f18de001e52a%7D/click
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
     body:
       encoding: US-ASCII
-      string: ! '{}'
-    headers:
-      Accept:
-      - application/json
-      Content-Length:
-      - '2'
-      User-Agent:
-      - Ruby
+      string: ''
+    headers: {}
   response:
     status:
       code: 200
       message: OK
     headers:
+      Last-Modified:
+      - Mon, 02 Jun 2014 21:25:00 GMT
+      Etag:
+      - ! '"M2NhMDAwMDAwMDAwMDAwMFNvbHI="'
       Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '98'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
     body:
       encoding: US-ASCII
-      string: ! '{"name":"clickElement","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":"ok"}'
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>4,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
+        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>144,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-05-20T17:26:54Z','system_modified_dtsi'=>'2014-05-20T17:26:54Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:54Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":324,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:54Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2853,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:54Z\",\"objLastModDate\":\"2014-05-20T17:26:54Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Mappluto_Test_11v1\\\\DSS.jam_mappluto_7OR'],'desc_metadata__title_tesim'=>['MapPLUTO'],'desc_metadata__publisher_tesim'=>['NYC
+        Department of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_MAPPLUTO_TEST_11V1-jam_mappluto_7OR.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['This dataset represents a compilation
+        of data from various government agencies throughout the City of New York.
+        \ The underlying geography is derived from the Tax Lot Polygon feature class
+        which is part of the Department of Finance\\'s Digital Tax Map (DTM).  The
+        tax lots have been clipped to the shoreline, as defined by NYCMap planimetric
+        features.  The attribute information is from the Department of City Planning\\'s
+        PLUTO data.  The attribute data pertains to tax lot and building characteristics
+        and geographic, political and administrative information for each tax lot
+        in New York City.  The Tax Lot Polygon feature class and PLUTO are derived
+        from different sources.   As a result, some PLUTO records did not have a corresponding
+        tax lot in the Tax Lot polygon feature class at the time of release.  These
+        records are included in a separate non-geographic PLUTO Only DBase (*.dbf)
+        table. There are a number of reasons why there can be a tax lot in PLUTO that
+        does not match the DTM; the most common reason is that the various source
+        files are maintained by different departments and divisions with varying update
+        cycles and criteria for adding and removing records.  The attribute definitions
+        for the PLUTO Only table are the same as those for MapPLUTO.\nDCP Mapping
+        Lots includes some features that are not on the tax maps.  They have been
+        added by DCP for cartographic purposes.  They include street center \\'malls\\',
+        traffic islands and some built streets through parks.  These features have
+        very few associated attributes.'],'desc_metadata__edition_tesim'=>['10V2'],'desc_metadata__series_tesim'=>['NYCDCP_MAPPLUTO_TEST_11V1'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Mappluto_Test_11v1\\\\DSS.jam_mappluto_7OR'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:54.603Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:55Z','system_modified_dtsi'=>'2014-05-20T17:26:55Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:55Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:55Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1482,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-airports_ABU+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:55Z\",\"objLastModDate\":\"2014-05-20T17:26:55Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-airports_ABU/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-airports_ABU/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Airports'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-airports_ABU.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Airports represents
+        airport boundaries and runways within the United States and Canada.\n\nThis
+        data set provides six feature classes for displaying the data at different
+        scales. Everything about the feature classes is the same but the level of
+        generalization and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:55.956Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:57Z','system_modified_dtsi'=>'2014-05-20T17:26:57Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:57Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":311,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:58Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1465,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citylim_07B+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:57Z\",\"objLastModDate\":\"2014-05-20T17:26:57Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citylim_07B/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citylim_07B/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada City Areas'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citylim_07B.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Areas represents
+        the city limits of cities in the United States and Canada.\n\nThis data set
+        provides six feature classes for displaying the data at different scales.
+        Everything about the feature classes is the same but the level of generalization
+        and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:58.063Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:58Z','system_modified_dtsi'=>'2014-05-20T17:26:58Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:58Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:58Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1427,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-counties_QO4+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:58Z\",\"objLastModDate\":\"2014-05-20T17:26:58Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-counties_QO4/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-counties_QO4/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'desc_metadata__title_tesim'=>['U.S.
+        Counties'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-counties_QO4.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. Counties represents the
+        counties of the United States.\n\nThis data set provides six feature classes
+        for displaying the data at different scales. Everything about the feature
+        classes is the same but the level of generalization and its name. The base
+        feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:58.773Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:52Z','system_modified_dtsi'=>'2014-05-20T17:26:52Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:52Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":311,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:52Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1273,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:52Z\",\"objLastModDate\":\"2014-05-20T17:26:52Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_DCPLION_10cav-DSS-Lion_GJK/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'desc_metadata__title_tesim'=>['LION'],'desc_metadata__publisher_tesim'=>['New
+        York City Dept. of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['LION is a single line representation
+        of New York City streets containing address ranges and other information.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_DCPLION_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:53.084Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:56Z','system_modified_dtsi'=>'2014-05-20T17:26:56Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:57Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":313,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:57Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1307,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:56Z\",\"objLastModDate\":\"2014-05-20T17:26:56Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-citiesmjr_MIE/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Major Cities'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citiesmjr_MIE.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Major Cities
+        represents major cities of United States and Canada including national, state,
+        and provincial capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:57.392Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:56Z','system_modified_dtsi'=>'2014-05-20T17:26:56Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:56Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":310,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:56Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1267,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-cities_NOL+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:56Z\",\"objLastModDate\":\"2014-05-20T17:26:56Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-cities_NOL/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-cities_NOL/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada City Points'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-cities_NOL.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Points represents
+        cities of the United States and Canada including national, state, and provincial
+        capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:56.678Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:58Z','system_modified_dtsi'=>'2014-05-20T17:26:58Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:59Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":315,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:59Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1283,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:58Z\",\"objLastModDate\":\"2014-05-20T17:26:58Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_Streetmap-DSS-dtl_cnty_ln_GNV/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'desc_metadata__title_tesim'=>['U.S.
+        County Boundaries'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-dtl_cnty_ln_GNV.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. County Boundaries represents
+        the boundary lines of the counties of the United States.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:59.473Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:53Z','system_modified_dtsi'=>'2014-05-20T17:26:53Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDOITT_Buildings_0311-DSS-Buildings_0311_VE2','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:53Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":324,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDOITT_Buildings_0311-DSS-Buildings_0311_VE2+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:53Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1297,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDOITT_Buildings_0311-DSS-Buildings_0311_VE2+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:53Z\",\"objLastModDate\":\"2014-05-20T17:26:53Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDOITT_Buildings_0311-DSS-Buildings_0311_VE2/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDOITT_Buildings_0311-DSS-Buildings_0311_VE2/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'desc_metadata__title_tesim'=>['Buildings_0311_VE2'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDOITT_BUILDINGS_0311-Buildings_0311_VE2.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDOITT_BUILDINGS_0311'],'desc_metadata__version_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:53.838Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-20T17:26:54Z','system_modified_dtsi'=>'2014-05-20T17:26:54Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_AOI_20101-DSS-AOI_Centroids_3CJ','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-20T17:26:54Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":316,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_AOI_20101-DSS-AOI_Centroids_3CJ+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-20T17:26:55Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1193,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_AOI_20101-DSS-AOI_Centroids_3CJ+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-20T17:26:54Z\",\"objLastModDate\":\"2014-05-20T17:26:54Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_AOI_20101-DSS-AOI_Centroids_3CJ/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_AOI_20101-DSS-AOI_Centroids_3CJ/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'desc_metadata__title_tesim'=>['AOI_Centroids_3CJ'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_AOI_20101-AOI_Centroids_3CJ.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDCP_AOI_20101'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-20T17:26:55.248Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Geospatial
+        Data',144],'desc_metadata__creator_sim'=>[],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>[]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
     http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: post
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/elements
-    body:
-      encoding: US-ASCII
-      string: ! '{"using":"css selector","value":"#documents .document"}'
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '55'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '625'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"findElements","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":[{"ELEMENT":"{c7d36bb7-e16b-cb42-9e20-83d6fb64a476}"},{"ELEMENT":"{e0d58a33-f62d-cc4f-8658-997341514d20}"},{"ELEMENT":"{8d0a24a0-2cf8-134d-8e46-a791527be7d5}"},{"ELEMENT":"{791af57f-c7af-6c46-a979-183c897eef97}"},{"ELEMENT":"{0d164999-d6c2-d141-874b-b88e11499cce}"},{"ELEMENT":"{b5bfab08-76ff-0649-8ab1-e7d38a00d5a4}"},{"ELEMENT":"{66f5ba98-b98c-094b-8572-9d54edaa0382}"},{"ELEMENT":"{144b1475-3d4c-c34b-8567-377c97840c79}"},{"ELEMENT":"{42b7a744-ea14-9747-a535-529f9f48ab85}"},{"ELEMENT":"{5dfd9334-6f74-c643-8719-1321ffc19d2e}"}]}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bc7d36bb7-e16b-cb42-9e20-83d6fb64a476%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Be0d58a33-f62d-cc4f-8658-997341514d20%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B8d0a24a0-2cf8-134d-8e46-a791527be7d5%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:15 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B791af57f-c7af-6c46-a979-183c897eef97%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:16 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:16 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B0d164999-d6c2-d141-874b-b88e11499cce%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:16 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:16 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7Bb5bfab08-76ff-0649-8ab1-e7d38a00d5a4%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:16 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:16 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B66f5ba98-b98c-094b-8572-9d54edaa0382%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:16 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:16 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B144b1475-3d4c-c34b-8567-377c97840c79%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:16 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:16 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B42b7a744-ea14-9747-a535-529f9f48ab85%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:16 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:16 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:7055/hub/session/e155bebb-1d83-0545-ab1b-2467053ae24e/element/%7B5dfd9334-6f74-c643-8719-1321ffc19d2e%7D/displayed
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Cache-Control:
-      - no-cache
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Connection:
-      - close
-      Content-Length:
-      - '104'
-      Server:
-      - httpd.js
-      Date:
-      - Fri, 09 May 2014 17:50:16 GMT
-    body:
-      encoding: US-ASCII
-      string: ! '{"name":"isElementDisplayed","sessionId":"e155bebb-1d83-0545-ab1b-2467053ae24e","status":0,"value":true}'
-    http_version: 
-  recorded_at: Fri, 09 May 2014 17:50:16 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:49984/__identify__
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-06-27)
-      Date:
-      - Mon, 12 May 2014 16:52:59 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: '70278732398720'
-    http_version: 
-  recorded_at: Mon, 12 May 2014 16:52:59 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:51443/__identify__
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-06-27)
-      Date:
-      - Mon, 12 May 2014 18:40:23 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: '70216858847120'
-    http_version: 
-  recorded_at: Mon, 12 May 2014 18:40:23 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:51615/__identify__
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-06-27)
-      Date:
-      - Mon, 12 May 2014 18:43:36 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: '70094760048280'
-    http_version: 
-  recorded_at: Mon, 12 May 2014 18:43:36 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:50622/__identify__
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-06-27)
-      Date:
-      - Tue, 13 May 2014 03:40:14 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: '70293969964680'
-    http_version: 
-  recorded_at: Tue, 13 May 2014 03:40:14 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:50646/__identify__
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-06-27)
-      Date:
-      - Tue, 13 May 2014 03:42:15 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: '70126154443880'
-    http_version: 
-  recorded_at: Tue, 13 May 2014 03:42:15 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:50663/__identify__
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-06-27)
-      Date:
-      - Tue, 13 May 2014 03:44:48 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: '70167874134300'
-    http_version: 
-  recorded_at: Tue, 13 May 2014 03:44:48 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:50691/__identify__
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-06-27)
-      Date:
-      - Tue, 13 May 2014 03:48:33 GMT
-      Content-Length:
-      - '14'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: US-ASCII
-      string: '70191248421560'
-    http_version: 
-  recorded_at: Tue, 13 May 2014 03:48:33 GMT
+  recorded_at: Mon, 02 Jun 2014 21:46:05 GMT
 recorded_with: VCR 2.8.0
