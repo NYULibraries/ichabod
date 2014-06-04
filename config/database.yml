@@ -6,7 +6,7 @@ remote: &remote
   <<: *mysql2
   host: <%= (ENV['ICHABOD_HOST'] || 'localhost') %>
   database: <%= (ENV['ICHABOD_DATABASE'] || 'ichabod_test') %>
-  username: <%= (ENV['JENKINS']) ? ENV['ICHABOD_JENKINS_USERNAME'] : (ENV['ICHABOD_USERNAME'] || 'root') %>
+  username: <%= (ENV['ICHABOD_USERNAME'] || 'root') %>
   password: <%= ENV['ICHABOD_PASSWORD'] %>
 
 local: &local
@@ -20,6 +20,7 @@ staging:
 
 test: &test
   <<: *local
+  <% unless ENV['CI'] || ENV['JENKINS'] %>username: 'root'<% end %>
 
 cucumber:
   <<: *test
