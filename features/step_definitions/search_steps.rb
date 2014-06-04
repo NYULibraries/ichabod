@@ -2,57 +2,53 @@ Given(/^I am on the default search page$/) do
   visit root_path
 end
 
+##
+# Searching steps
 When(/^I perform an empty search$/) do
-  within(:css, "form.search-query-form") do
-    fill_in 'Search...', :with => ''
-  end
-  click_button("Search")
-end
-
-Then(/^I should (not )?see search results$/) do |negator|
-  if negator
-    expect(page.all("#documents .document").count).to be 0
-  else
-    expect(page.all("#documents .document").count).to be > 0
-  end
+  ensure_root_path
+  search_phrase('')
 end
 
 When(/^I search on the phrase "(.*?)"$/) do |phrase|
-  step "I am on the default search page" unless current_path == root_path
-  within(:css, "form.search-query-form") do
-    fill_in 'Search...', :with => phrase
-  end
-  click_button("Search")
+  ensure_root_path
+  search_phrase(phrase)
 end
 
-And(/^I limit the search by the "(.+?)" facet to "(.+?)"$/) do |facet_name, facet_value|
-  within(:css, '#facets') do
-    click_on(facet_name)
-    click_on(facet_value)
-  end
+Given(/^I search for "(.*?)"$/) do |phrase|
+  ensure_root_path
+  search_phrase(phrase)
 end
 
-Given(/^I limit search to "(.*?)" in "(.*?)" category$/) do |facet,category|
-  visit root_path
-  within(:css, '#facets') do
-    click_link("#{category}")
-    click_link("#{facet}")
+##
+# Results steps
+Then(/^I should (not )?see search results$/) do |negator|
+  if negator
+    expect(documents_list.count).to eql 0
+  else
+    expect(documents_list.count).to be > 0
   end
 end
 
-And(/^I should see a (.*?) facet under Format$/) do |facet|
+Then(/^I get a dataset with the title "(.*?)"$/) do |title|
+  expect(documents_list_container).to have_link(title)
+end
+
+##
+# Faceting steps
+Given(/^I limit my search to "(.*?)" under the "(.*?)" category$/) do |facet, category|
+  ensure_root_path
+  limit_by_facet(category, facet)
+end
+
+When(/^I limit my results to "(.*?)" under the "(.*?)" category$/) do |facet, category|
+  ensure_root_path
+  limit_by_facet(category, facet)
+end
+
+And(/^I should see a "(.*?)" facet under the "(.*?)" category$/) do |facet, category|
   within(:css, "#facets") do
-    click_link("Format")
+    click_link(category)
     expect(page.find(:css, ".facet_limit > ul")).to be_visible
     expect(page.find(:xpath, "//a[text()='#{facet}']")).to have_content
   end
-end
-
-Given(/^I search for "(.*?)"$/) do |value|
-   step %{I search on the phrase "#{value}"}
-end
-
-Then(/^I get dataset with title "(.*?)"$/) do |title|
-   node=page.find(:xpath, '//div[@id="documents"]')
-   node.should have_link(title)
 end
