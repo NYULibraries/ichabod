@@ -6,7 +6,7 @@ remote: &remote
   <<: *mysql2
   host: <%= (ENV['ICHABOD_HOST'] || 'localhost') %>
   database: <%= (ENV['ICHABOD_DATABASE'] || 'ichabod_test') %>
-  username: <%= (ENV['ICHABOD_USERNAME']) ? ENV['ICHABOD_USERNAME'] : 'root' %>
+  username: <%= 'root' %>
   password: <%= ENV['ICHABOD_PASSWORD'] %>
 
 local: &local
