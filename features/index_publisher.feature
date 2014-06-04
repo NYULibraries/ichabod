@@ -8,4 +8,4 @@ Feature: Index publisher
     Given I am on the default search page
     When I search on the phrase "ESRI"
     Then I should see search results
-    And I should see a Geospatial Data facet under Format
+    And I should see a "Geospatial Data" facet under the "Format" category
