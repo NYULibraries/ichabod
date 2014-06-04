@@ -23,9 +23,9 @@ end
 # Results steps
 Then(/^I should (not )?see search results$/) do |negator|
   if negator
-    expect(documents_list.count).to eql 0
+    expect(documents_list).to have_exactly(0).items
   else
-    expect(documents_list.count).to be > 0
+    expect(documents_list).to have_at_least(1).items
   end
 end
 

@@ -3,7 +3,7 @@ Then(/^I should get a dataset with the link "(.*?)"$/) do |download|
 end
 
 Then(/^I should get "(.*?)" field in all results$/) do |field|
-  expect(documents_list_container.all('dt', :text => field).count).to eql 10
+  expect(documents_list_container.all('dt', :text => field)).to have_exactly(10).items
 end
 
 And(/^I navigate to details display of the first result$/) do
@@ -13,5 +13,5 @@ And(/^I navigate to details display of the first result$/) do
 end
 
 Then(/^I should get "(.*?)" field in the details display$/) do |field|
-  expect(document_container.all('dt', :text => field).count).to eql 1
+  expect(document_container.all('dt', :text => field)).to have_exactly(1).item
 end
