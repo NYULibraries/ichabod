@@ -20,7 +20,7 @@ staging:
 
 test: &test
   <<: *local
-  <% unless ENV['CI'] || ENV['JENKINS'] %>username: 'root'<% end %>
+  username: 'root'
 
 cucumber:
   <<: *test
