@@ -54,7 +54,7 @@ group :test, :cucumber do
   gem 'simplecov-rcov', :require => false
   gem 'coveralls', '~> 0.7.0', :require => false
   gem 'vcr', '~> 2.8.0'
-  gem 'webmock', '~> 1.17.4'
+  gem 'webmock', '>= 1.8.0', '< 1.16'
   gem 'selenium-webdriver', '~> 2.41.0'
   gem 'pickle', '~> 0.4.11'
   gem 'database_cleaner', '~> 1.2.0'
