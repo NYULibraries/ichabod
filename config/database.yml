@@ -10,17 +10,25 @@ remote: &remote
   password: <%= ENV['ICHABOD_DB_PASSWORD'] %>
 
 local: &local
-  <<: *remote
+  <<: *mysql2
+  host: 'localhost'
+  database: 'ichabod_test'
+  username: 'root'
+  password:
 
 development:
-  <<: *remote
+  <<: *local
 
 staging:
   <<: *remote
 
+<% if ENV['CI'] || ENV['JENKINS_HOME'] %>
+test: &test
+  <<: *remote
+<% else %>
 test: &test
   <<: *local
-  <% unless ENV['CI'] || ENV['JENKINS'] %>username: 'root'<% end %>
+<% end %>
 
 cucumber:
   <<: *test
