@@ -6,16 +6,14 @@
 
 require 'simplecov'
 require 'simplecov-rcov'
-
-require 'coveralls' if ENV['TRAVIS']
+require 'coveralls'
 
 SimpleCov.merge_timeout 3600
-multi_formatter = [
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
-  SimpleCov::Formatter::RcovFormatter
+  SimpleCov::Formatter::RcovFormatter,
+  Coveralls::SimpleCov::Formatter
 ]
-multi_formatter << Coveralls::SimpleCov::Formatter if ENV['TRAVIS']
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[multi_formatter]
 SimpleCov.start
 
 ENV['RAILS_ENV'] = 'cucumber'
