@@ -36,7 +36,7 @@ Add documentation for expectations on contributing.
 
 ##Pull Requests
 
-When you're confident in your code you're going to want to send in a pull request. You're commit history will be able to tell the code maintainer what you've changed and how it will affect the codebase. It may be a good idea to summarize what you have done in the pull request message, and how it will affect the codebase. To be more certain in your own code, you may want to ask for a code review.
+When you're confident in your code you're going to want to send in a pull request. Your commit history will be able to tell the code maintainer what you've changed and how it will affect the codebase. It may be a good idea to summarize what you have done in the pull request message, and how it will affect the codebase. To be more certain in your own code, you may want to ask for a code review.
 
 ###Code Review
 
