@@ -23,16 +23,24 @@ staging:
   <<: *remote
 
 <% if ENV['TRAVIS'] %>
-test: &test
-  <<: *remote
+test:
+  host: 'localhost'
   username: 'mysql'
-<% elsif  ENV['JENKINS_HOME'] %>
-test: &test
+  database: 'ichabod_test'
+  password:
+cucumber:
+  host: 'localhost'
+  username: 'mysql'
+  database: 'ichabod_test'
+  password:
+<% elsif ENV['JENKINS_HOME'] %>
+test:
+  <<: *remote
+cucumber:
   <<: *remote
 <% else %>
-test: &test
+test:
+  <<: *local
+cucumber:
   <<: *local
 <% end %>
-
-cucumber:
-  <<: *test
