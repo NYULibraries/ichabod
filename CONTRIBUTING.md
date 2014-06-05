@@ -45,7 +45,7 @@ After sending your pull request, your code will get reviewed to make sure mergin
 
 #Continuous Integration
 
-Testing over and over again is a pain, make someone else do it. Continuous Integration is a bliss because someone else is doign the testing. Continuous Integration is constantly hammering our code with quality control metrics in hopes that we churn out better code. The core of this is our tests, but code coverage and quality are all part of Continous Integration.
+Testing over and over again is a pain, make someone else do it. Continuous Integration is a bliss because someone else is doing the testing. Continuous Integration is constantly hammering our code with quality control metrics in hopes that we churn out better code. The core of this is our tests, but code coverage and quality are all part of Continous Integration.
 
 We use two methods of testing in our Continuous Integration suite. The open, public one is [Travis](https://travis-ci.org/NYULibraries/ichabod), which builds our project and runs our tests. The closed, private one is Jenkins, which builds our projects, runs our tests, and deploys for us if everything passes. Everytime you make a Git commit, Jenkins will run it and see if it passes, emailing you if it failed. Likewise, Travis will do the same. The difference is Jenkins will also deploy, allowing you to see the changes you made.
 
@@ -60,7 +60,7 @@ This may seem daunting, but thats only because the tests haven't been written. W
 Now imagine Cavity Sam was told he probably shouldn't put strange things in his body, he would never make it to the Operation table! That is what Test Driven Design is about. You make the tests first so you don't have to use evasive surgical maneuvers on your code.
 
 ###RSpec
-Don't worry about your code, worry about the tests. Use RSpec to specify exactly what your code is supposed to do. Then watch it fail. It is important you let it fail, and that you let it fail in every imaginable way. After it has failed make more tests and let it fail again. Let the fail flow trough you.
+Don't worry about your code, worry about the tests. Use RSpec to specify exactly what your code is supposed to do. Then watch it fail. It is important you let it fail, and that you let it fail in every imaginable way. After it has failed make more tests and let it fail again. Let the fail flow through you.
 
 Check out the spec for the [Figsfile](https://github.com/NYULibraries/figs/blob/master/spec/figs/figfile_spec.rb) in [Figs](https://github.com/NYULibraries/figs). It has 83 lines, describing four methods across a couple of contexts. The spec was written before any code. All that needed to be done was to make these tests pass. Which was done, with only [14 lines of code](https://github.com/NYULibraries/figs/blob/master/lib/figs/figsfile.rb).
 
@@ -68,20 +68,20 @@ You'll find that you will write less code, which means less complexity, that is 
 
 
 ###Cucumber
-Now writing RSpec is your main objective. Translating english to code is not always easy, and you may end up testing individual pieces of code that pass, but catastrophically fail when running together. Cucumber makes it easy to take our Test Driven Design and make it into Behavior Driven Design.
+Now writing RSpec is your main objective. Translating English to code is not always easy, and you may end up testing individual pieces of code that pass, but catastrophically fail when running together. Cucumber makes it easy to take our Test Driven Design and make it into Behavior Driven Design.
 
-With Cucumber, you may describe a feature in plain english, then define the steps in Ruby (with RSpec), and finally let it fail. This will have the added benefit of documenting what your code is doing and what you are testing for. The resulting code you write to make it pass is merely the side effects of using BDD.
+With Cucumber, you may describe a feature in plain English, then define the steps in Ruby (with RSpec), and finally let it fail. This will have the added benefit of documenting what your code is doing and what you are testing for. The resulting code you write to make it pass is merely the side effects of using BDD.
 
 #Code Quality
 
-Overall code quality is important. Code quality is more than code that looks good, its about reducing [code smells](http://martinfowler.com/bliki/CodeSmell.html). We want to stay away from smelly code, but sometimes we don't smell our own code, and unless someone tells us, we'll never know our code has smells.
+Overall code quality is important. Code quality is more than code that looks good, it's about reducing [code smells](http://martinfowler.com/bliki/CodeSmell.html). We want to stay away from smelly code, but sometimes we don't smell our own code, and unless someone tells us, we'll never know our code has smells.
 
 ##Smells
 Code smells aren't hard to look out for, especially when we're using [Code Climate](https://codeclimate.com/github/NYULibraries/ichabod/). Code Climate points out what kind of smells are present in your code. In total, Code Climate detects four main smells.
 
 * __Duplication__ - Syntax structures that seem to come up more often than they should.
 * __Complex method__ — Too much branching, too many loops, too many method calls all account for complexity.
-* __Complex class/module definition__ — Much like a long and complex method, this smell means a class is long and complex. This happens when there are is too much code in the class definition that isn't part of any method.
+* __Complex class/module definition__ — Much like a long and complex method, this smell means a class is long and complex. This happens when there is too much code in the class definition that isn't part of any method.
 * __High total complexity of a class/module__ — If a class gets too large, and has too many methods, this signifies that maybe the class has too much responsibility.
 
 With this rubric you can carry one simplifying your code and aim for a very high GPA (what Code Climate uses to grade code quality).
@@ -100,7 +100,7 @@ Best part is, you can then close the issues via [git commit](https://help.github
 
 #Documentation
 
-We hope that with the use of RSpec and Cucumber, along with good coding practice that emphasises cleaner and simpler code, the code will become self documenting. What that means is that we expect variable, class, and method names to be descriptive enough that the person viewing the code understands what it's purpose is.
+We hope that with the use of RSpec and Cucumber, along with good coding practice that emphasises cleaner and simpler code, the code will become self documenting. What that means is that we expect variable, class, and method names to be descriptive enough that the person viewing the code understands what its purpose is.
 
 Self documenting code does not mean your code will be void of any sort of documentation, far from it. Self documentation means it won't rely on heavy documentation for a peer to figure out what is going on.
 
