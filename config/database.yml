@@ -24,11 +24,13 @@ staging:
 
 <% if ENV['TRAVIS'] %>
 test:
+  <<: *mysql2
   host: 'localhost'
   username: 'mysql'
   database: 'ichabod_test'
   password:
 cucumber:
+  <<: *mysql2
   host: 'localhost'
   username: 'mysql'
   database: 'ichabod_test'
