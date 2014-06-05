@@ -22,7 +22,11 @@ development:
 staging:
   <<: *remote
 
-<% if ENV['CI'] || ENV['JENKINS_HOME'] %>
+<% if ENV['TRAVIS'] %>
+test: &test
+  <<: *remote
+  username: 'mysql'
+<% elsif  ENV['JENKINS_HOME'] %>
 test: &test
   <<: *remote
 <% else %>
