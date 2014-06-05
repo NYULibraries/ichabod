@@ -1,3 +1,7 @@
+#Contributing
+
+Here we will elaborate on some guidelines on how one can contribute to this project. Please feel free to ask more questions. Again, the following is a guidline and there is plenty of grey area.
+
 #Git Flow
 
 ##Branching
