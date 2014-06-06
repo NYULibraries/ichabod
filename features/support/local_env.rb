@@ -14,6 +14,11 @@ if ENV['IN_BROWSER'] || ENV['TRAVIS']
   # IN_BROWSER=true bundle exec cucumber
   # or (to have a pause of 1 second between each step):
   # IN_BROWSER=true PAUSE=1 bundle exec cucumber
+  Capybara.register_driver :selenium do |app|
+    http_client = Selenium::WebDriver::Remote::Http::Default.new
+    http_client.timeout = 120
+    Capybara::Selenium::Driver.new(app, :browser => :firefox, :http_client => http_client)
+  end
   Capybara.default_driver = :selenium
   AfterStep do
     sleep (ENV['PAUSE'] || 0).to_i
@@ -24,8 +29,9 @@ else
     Capybara::Poltergeist::Driver.new(
       app,
       phantomjs_options: ['--load-images=no', '--ignore-ssl-errors=yes'],
-      window_size: [1280, 1024]#,
-      # debug:       true
+      window_size: [1280, 1024],
+      timeout: 120#,
+      # debug: true
     )
   end
   Capybara.default_driver    = :poltergeist
