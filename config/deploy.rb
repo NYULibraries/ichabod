@@ -1,6 +1,9 @@
 require 'nyulibraries/deploy/capistrano'
 
 set :app_title, "ichabod"
+if Rails.env.staging?
+  set :keep_releases, 2
+end
 
 namespace :deploy do
   # task :create_symlink do
@@ -21,13 +24,17 @@ namespace :deploy do
 end
 
 namespace :ingest do
-  task :load_xml_data do
-    run "bundle exec rake ichabod:load[./ingest/sdr.xml,sdr]"
-    run "bundle exec rake ichabod:load[./ingest/stern.xml,fda]"
+  task :load_sdr do
+    run "cd #{current_path}; bundle exec rake ichabod:load['./ingest/sdr.xml','sdr']"
   end
-  task :clean_xml_data do
-    run "bundle exec rake ichabod:delete[./ingest/sdr.xml,sdr]"
-    run "bundle exec rake ichabod:delete[./ingest/stern.xml,fda]"
+  task :load_fda do
+    run "cd #{current_path}; bundle exec rake ichabod:load['./ingest/stern.xml','fda']"
+  end
+  task :delete_sdr do
+    run "cd #{current_path}; bundle exec rake ichabod:delete['./ingest/sdr.xml','sdr']"
+  end
+  task :delete_fda do
+    run "cd #{current_path}; bundle exec rake ichabod:delete['./ingest/stern.xml','fda']"
   end
 end
 
@@ -37,6 +44,18 @@ namespace :cache do
   end
 end
 
-after "deploy", "deploy:create_jetty_symlink"
+namespace :jetty do
+  desc "Shutdown previous version of jetty on server"
+  task :stop do
+    run "cd #{previous_release}; bundle exec rake jetty:stop"
+  end
+  desc "Startup new jetty for current release"
+  task :start do
+    run "cd #{current_path}; bundle exec rake jetty:start"
+  end
+end
+
+before "deploy", "jetty:stop"
+after "deploy", "deploy:create_jetty_symlink", "jetty:start"
 
 # after "deploy", "deploy:create_symlink", "deploy:create_current_path_symlink", "deploy:create_env_symlink"
