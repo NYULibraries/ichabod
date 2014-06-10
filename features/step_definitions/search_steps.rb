@@ -1,4 +1,4 @@
-Given(/^I am on the default search page$/) do
+iven(/^I am on the default search page$/) do
   visit root_path
 end
 
@@ -21,7 +21,6 @@ end
 
 ##
 # Results steps
-
 Then(/^I should (not )?see search results$/) do |negator|
   if negator
     expect(documents_list).to have_exactly(0).items
@@ -34,14 +33,12 @@ Then(/^I get a dataset with the title "(.*?)"$/) do |title|
   expect(documents_list_container).to have_link(title)
 end
 
-
 ##
 # Faceting steps
 Given(/^I limit my search to "(.*?)" under the "(.*?)" category$/) do |facet, category|
   ensure_root_path
   limit_by_facet(category, facet)
 end
-
 
 When(/^I limit my results to "(.*?)" under the "(.*?)" category$/) do |facet, category|
   ensure_root_path

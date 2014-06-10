@@ -5,11 +5,11 @@ rvm:
   - 2.0.0
   - 2.1.0
 
-env:
-  - ICHABOD_DB_USER=mysql
-
 before_script:
-  - mysql -e 'create database ichabod_test;' -U $ICHABOD_DB_USER
+  # Load up X browser for selenium tests
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - mysql -e 'create database ichabod_test;'
   - RAILS_ENV=test bundle exec rake db:schema:load
 
 bundler_args: --without development
