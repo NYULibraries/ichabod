@@ -1,9 +1,7 @@
 require 'nyulibraries/deploy/capistrano'
 
 set :app_title, "ichabod"
-if Rails.env.staging?
-  set :keep_releases, 2
-end
+set :keep_releases, 2 if fetch(:stage,"").eql?("staging")
 
 namespace :deploy do
   # task :create_symlink do
