@@ -9,6 +9,8 @@ class Ability
       can [:destroy], ActiveFedora::Base
     end
 
+    
+
     # Limits creating new objects to a specific group
     #
     # if user_groups.include? 'special_group'
