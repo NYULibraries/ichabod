@@ -22,7 +22,7 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>3,'params'=>{'sort'=>'score
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>2,'params'=>{'sort'=>'score
         desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
         desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
         desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
@@ -113,63 +113,5 @@ http_interactions:
         creator',8,'Bill Shakespeare',4],'desc_metadata__subject_sim'=>['new subject',8,'Plays',6,'Plays1',5],'desc_metadata__language_sim'=>['new
         language',8,'English',6,'English1',5]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
     http_version: 
-  recorded_at: Wed, 04 Jun 2014 17:22:59 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&q=nyc&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&spellcheck.q=nyc&wt=ruby
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Last-Modified:
-      - Wed, 04 Jun 2014 16:20:58 GMT
-      Etag:
-      - ! '"NWY5MDAwMDAwMDAwMDAwMFNvbHI="'
-      Content-Type:
-      - text/plain;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: US-ASCII
-      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>4,'params'=>{'sort'=>'score
-        desc, pub_date_dtsi desc, title_tesi asc','q'=>'nyc','spellcheck.q'=>'nyc','qf'=>'desc_metadata__title_tesim
-        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
-        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
-        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>2,'start'=>0,'maxScore'=>2.0879889,'docs'=>[{'system_create_dtsi'=>'2014-06-02T19:50:36Z','system_modified_dtsi'=>'2014-06-02T19:50:36Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-02T19:50:36Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":324,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-02T19:50:36Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2853,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-02T19:50:36Z\",\"objLastModDate\":\"2014-06-02T19:50:36Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Mappluto_Test_11v1\\\\DSS.jam_mappluto_7OR'],'desc_metadata__title_tesim'=>['MapPLUTO'],'desc_metadata__publisher_tesim'=>['NYC
-        Department of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_MAPPLUTO_TEST_11V1-jam_mappluto_7OR.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['This dataset represents a compilation
-        of data from various government agencies throughout the City of New York.
-        \ The underlying geography is derived from the Tax Lot Polygon feature class
-        which is part of the Department of Finance\\'s Digital Tax Map (DTM).  The
-        tax lots have been clipped to the shoreline, as defined by NYCMap planimetric
-        features.  The attribute information is from the Department of City Planning\\'s
-        PLUTO data.  The attribute data pertains to tax lot and building characteristics
-        and geographic, political and administrative information for each tax lot
-        in New York City.  The Tax Lot Polygon feature class and PLUTO are derived
-        from different sources.   As a result, some PLUTO records did not have a corresponding
-        tax lot in the Tax Lot polygon feature class at the time of release.  These
-        records are included in a separate non-geographic PLUTO Only DBase (*.dbf)
-        table. There are a number of reasons why there can be a tax lot in PLUTO that
-        does not match the DTM; the most common reason is that the various source
-        files are maintained by different departments and divisions with varying update
-        cycles and criteria for adding and removing records.  The attribute definitions
-        for the PLUTO Only table are the same as those for MapPLUTO.\nDCP Mapping
-        Lots includes some features that are not on the tax maps.  They have been
-        added by DCP for cartographic purposes.  They include street center \\'malls\\',
-        traffic islands and some built streets through parks.  These features have
-        very few associated attributes.'],'desc_metadata__edition_tesim'=>['10V2'],'desc_metadata__series_tesim'=>['NYCDCP_MAPPLUTO_TEST_11V1'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Mappluto_Test_11v1\\\\DSS.jam_mappluto_7OR'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-02T19:50:37.014Z','score'=>2.0879889},{'system_create_dtsi'=>'2014-06-02T19:52:03Z','system_modified_dtsi'=>'2014-06-02T19:52:03Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nysd_MVK','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-02T19:52:03Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":315,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nysd_MVK+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-02T19:52:03Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nysd_MVK+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-02T19:52:03Z\",\"objLastModDate\":\"2014-06-02T19:52:03Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nysd_MVK/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nysd_MVK/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nysd_MVK'],'desc_metadata__title_tesim'=>['New
-        York City School Districts'],'desc_metadata__publisher_tesim'=>['New York
-        City Department of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nysd_MVK.zip'],'desc_metadata__type_tesim'=>['Geospatial
-        Data'],'desc_metadata__description_tesim'=>['The current NYC School District
-        boundaries.  '],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_ADMIN_BNDRY_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nysd_MVK'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-02T19:52:03.671Z','score'=>1.7897047}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Geospatial
-        Data',2],'desc_metadata__creator_sim'=>[],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>[]},'facet_dates'=>{},'facet_ranges'=>{}},'spellcheck'=>{'suggestions'=>['correctlySpelled',true]}}\n"
-    http_version: 
-  recorded_at: Wed, 04 Jun 2014 17:22:59 GMT
+  recorded_at: Wed, 04 Jun 2014 17:22:30 GMT
 recorded_with: VCR 2.8.0
