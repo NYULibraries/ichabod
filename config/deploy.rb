@@ -40,11 +40,11 @@ end
 namespace :jetty do
   desc "Shutdown previous version of jetty on server"
   task :stop do
-    run "bundle exec rake jetty:stop"
+    run "cd #{previous_release}; bundle exec rake jetty:stop"
   end
   desc "Startup new jetty for current release"
   task :start do
-    run "bundle exec rake jetty:start"
+    run "cd #{current_path}; bundle exec rake jetty:start"
   end
 end
 
