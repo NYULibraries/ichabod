@@ -1,4 +1,7 @@
 class Nyucore < ActiveFedora::Base
+  
+  include Hydra::AccessControls::Permissions
+  
   has_metadata 'descMetadata', type: NyucoreRdfDatastream
 
   has_attributes :title, datastream: 'descMetadata', multiple: false

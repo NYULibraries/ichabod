@@ -1,4 +1,4 @@
-iven(/^I am on the default search page$/) do
+Given(/^I am on the default search page$/) do
   visit root_path
 end
 
