@@ -42,6 +42,8 @@ module Ichabod
           if child.name() == "identifier" then
             if @prefix == "sdr" then
               core.identifier = child.content()
+              core.addinfolink = "http://nyu.libguides.com/content.php?pid=169769&sid=1489817"
+              core.addinfotext = "GIS Dataset Instructions"
             elsif @prefix == "fda" then
               if child.content().include? "http://" then
                 core.identifier = child.content()
