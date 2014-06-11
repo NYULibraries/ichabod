@@ -11,10 +11,13 @@ class Ability
 
     
 
-    # Limits creating new objects to a specific group
-    #
-    # if user_groups.include? 'special_group'
-    #   can [:create], ActiveFedora::Base
-    # end
+    def user_groups
+      return @user_groups if @user_groups
+
+      @user_groups = default_user_groups
+      @user_groups |= current_user.groups if current_user and current_user.respond_to? :groups
+      @user_groups |= ['registered'] unless current_user.new_record?
+      @user_groups
+    end
   end
 end

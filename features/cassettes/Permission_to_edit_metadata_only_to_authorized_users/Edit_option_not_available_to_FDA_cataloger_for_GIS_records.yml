@@ -1,0 +1,305 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=5mk2602mn5fm1tubefdb9mt8o;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Wed, 11 Jun 2014 06:35:31 GMT
+      Content-Length:
+      - '1089'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-11T02:45:19.638Z</objCreateDate><objLastModDate>2014-06-11T05:51:50.721Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Wed, 11 Jun 2014 06:35:31 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=16x40jcqb52gh1165iwv24b8xn;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Wed, 11 Jun 2014 06:35:31 GMT
+      Content-Length:
+      - '824'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" />    <datastream dsid="rightsMetadata" label=""
+        mimeType="text/xml" /></objectDatastreams>
+    http_version: 
+  recorded_at: Wed, 11 Jun 2014 06:35:31 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1nwuuamgknyjg7acnm488atjw;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Wed, 11 Jun 2014 06:35:31 GMT
+      Content-Length:
+      - '1001'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.2</dsVersionID><dsCreateDate>2014-06-11T05:51:50.413Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>324</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR+RELS-EXT+RELS-EXT.2</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Wed, 11 Jun 2014 06:35:31 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=p74iyef6yfb713p7fuudch77t;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '324'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Wed, 11 Jun 2014 06:35:31 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Wed, 11 Jun 2014 06:35:31 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1pekb0tjkncq6zj7rq6bsg0z;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Wed, 11 Jun 2014 06:35:31 GMT
+      Content-Length:
+      - '975'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.2</dsVersionID><dsCreateDate>2014-06-11T05:51:50.698Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>2853</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR+descMetadata+descMetadata.2</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Wed, 11 Jun 2014 06:35:31 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/datastreams/descMetadata/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=pxmppgth9liws55w7bz0p6mp;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="descMetadata.txt"
+      Content-Length:
+      - '2853'
+      Content-Type:
+      - text/plain
+      Date:
+      - Wed, 11 Jun 2014 06:35:31 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '<info:fedora/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR>
+        <http://purl.org/dc/terms/identifier> "DSS.NYCDCP_Mappluto_Test_11v1\\DSS.jam_mappluto_7OR"
+        .
+
+        <info:fedora/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR> <http://purl.org/dc/terms/title>
+        "MapPLUTO" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR> <http://purl.org/dc/terms/publisher>
+        "NYC Department of City Planning" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "http://magellan.home.nyu.edu/datasets/zips/NYCDCP_MAPPLUTO_TEST_11V1-jam_mappluto_7OR.zip"
+        .
+
+        <info:fedora/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR> <http://purl.org/dc/terms/type>
+        "Geospatial Data" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR> <http://purl.org/dc/terms/description>
+        "This dataset represents a compilation of data from various government agencies
+        throughout the City of New York.  The underlying geography is derived from
+        the Tax Lot Polygon feature class which is part of the Department of Finance''s
+        Digital Tax Map (DTM).  The tax lots have been clipped to the shoreline, as
+        defined by NYCMap planimetric features.  The attribute information is from
+        the Department of City Planning''s PLUTO data.  The attribute data pertains
+        to tax lot and building characteristics and geographic, political and administrative
+        information for each tax lot in New York City.  The Tax Lot Polygon feature
+        class and PLUTO are derived from different sources.   As a result, some PLUTO
+        records did not have a corresponding tax lot in the Tax Lot polygon feature
+        class at the time of release.  These records are included in a separate non-geographic
+        PLUTO Only DBase (*.dbf) table. There are a number of reasons why there can
+        be a tax lot in PLUTO that does not match the DTM; the most common reason
+        is that the various source files are maintained by different departments and
+        divisions with varying update cycles and criteria for adding and removing
+        records.  The attribute definitions for the PLUTO Only table are the same
+        as those for MapPLUTO.\nDCP Mapping Lots includes some features that are not
+        on the tax maps.  They have been added by DCP for cartographic purposes.  They
+        include street center ''malls'', traffic islands and some built streets through
+        parks.  These features have very few associated attributes." .
+
+        <info:fedora/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        "10V2" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        "NYCDCP_MAPPLUTO_TEST_11V1" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        "DSS.NYCDCP_Mappluto_Test_11v1\\DSS.jam_mappluto_7OR" .
+
+'
+    http_version: 
+  recorded_at: Wed, 11 Jun 2014 06:35:31 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 11 Jun 2014 05:53:09 GMT
+      Etag:
+      - ! '"ZmIyMDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR','edit_access_group_ssim'=>['GIS_Cataloger']}]}}\n"
+    http_version: 
+  recorded_at: Wed, 11 Jun 2014 06:35:31 GMT
+recorded_with: VCR 2.8.0

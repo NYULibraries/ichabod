@@ -39,4 +39,9 @@ class User < ActiveRecord::Base
     true if ["ba36"].include? username
   end
 
+  def groups
+    [ENV['PDS_HANDLE']]
+    
+  end
+
 end

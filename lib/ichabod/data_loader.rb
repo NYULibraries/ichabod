@@ -42,6 +42,9 @@ module Ichabod
           if child.name() == "identifier" then
             if @prefix == "sdr" then
               core.identifier = child.content()
+              if core.identifier == "DSS.NYCDCP_Mappluto_Test_11v1\\DSS.jam_mappluto_7OR" then
+                core.set_edit_groups(['GIS_Cataloger'],[])
+              end
             elsif @prefix == "fda" then
               if child.content().include? "http://" then
                 core.identifier = child.content()

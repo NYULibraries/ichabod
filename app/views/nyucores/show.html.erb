@@ -4,6 +4,7 @@
   <%= @item.title %>
 </p>
 
-
- "hyu""t"<%=    link_to 'Edit', edit_nyucore_path(@item) %> |
+<%- if can?(:edit, @item) %>
+"<%=    link_to 'Edit', edit_nyucore_path(@item) %> 
+<%- end %>
 <%= link_to 'Back', nyucores_path %>
