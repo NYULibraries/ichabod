@@ -119,7 +119,9 @@ class CatalogController < ApplicationController
                                                                                                     :helper_method => :render_external_link,
                                                                                                     :text          => 'resource_text_display'
 
-
+    config.add_show_field solr_name('desc_metadata__addinfolink', :stored_searchable, type: :string), :label         => 'Additional Information:',
+                                                                                                    :helper_method => :render_external_link,
+                                                                                                    :text          => 'desc_metadata__addinfotext_tesim'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

@@ -15,3 +15,7 @@ end
 Then(/^I should get "(.*?)" field in the details display$/) do |field|
   expect(document_container.all('dt', :text => field)).to have_exactly(1).item
 end
+
+Then(/^I should see the link "(.*?)" in the "(.*?)" field$/) do |link, field|
+  expect(document_field_value(field)).to have_link(link)
+end
