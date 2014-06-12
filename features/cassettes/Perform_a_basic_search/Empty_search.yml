@@ -228,4 +228,40 @@ http_interactions:
         language',8,'English',6,'English1',5]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
     http_version: 
   recorded_at: Wed, 04 Jun 2014 17:22:59 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-26368?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1og2nbv51ax79f37f449ngfkj;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 12 Jun 2014 20:17:27 GMT
+      Content-Length:
+      - '1014'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="fda:hdl-handle-net-2451-26368"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-12T16:16:22.903Z</objCreateDate><objLastModDate>2014-06-12T16:16:23.561Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-26368/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-26368/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 12 Jun 2014 20:17:27 GMT
 recorded_with: VCR 2.8.0

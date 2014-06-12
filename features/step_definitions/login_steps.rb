@@ -6,12 +6,10 @@ Around('@loggedin') do |scenario, block|
 end
 
 Given(/^I am logged in as "(.*?)"$/) do |user|
- 
   ENV['PDS_HANDLE'] = format_pds_handle(user)
 end
 
 Then(/^I should see "Log-out"$/) do
-   File.open("/tmp/login2.html", 'w') { |f| f.write page.body }
   within(:css, "ul.nyu-login") do
     expect(page).to have_content("Log-out")
   end

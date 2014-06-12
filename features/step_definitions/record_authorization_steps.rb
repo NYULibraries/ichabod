@@ -13,3 +13,17 @@ end
 Given(/^I am not logged in$/) do
   ENV['PDS_HANDLE'] = nil
 end
+
+Around('@loggedin_GIS') do |scenario, block|
+  VCR.use_cassette('logged in GIS Cataloger', record: :none) do
+    block.call
+  end
+  ENV['PDS_HANDLE'] = nil
+end
+
+Around('@loggedin_FDA') do |scenario, block|
+  VCR.use_cassette('logged in FDA Cataloger', record: :none) do
+    block.call
+  end
+  ENV['PDS_HANDLE'] = nil
+end
