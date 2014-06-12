@@ -20,3 +20,9 @@ Feature: Click "Download Link" for Geospatial dataset
     Given I limit my search to "Geospatial Data" under the "Format" category
     And I search for "MapPLUTO"
     Then I should get a dataset with the link "http://magellan.home.nyu.edu/datasets/zips/NYCDCP_MAPPLUTO_TEST_11V1-jam_mappluto_7OR.zip"
+
+  Scenario: Click "More Info Link" for Geospatial dataset in from details display
+    Given I limit my search to "Geospatial Data" under the "Format" category
+    And I search for "MapPLUTO"
+    When I navigate to details display of the first result
+    Then I should see the link "GIS Dataset Instructions" in the "Additional Information:" field

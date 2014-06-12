@@ -42,6 +42,8 @@ module Ichabod
           if child.name() == "identifier" then
             if @prefix == "sdr" then
               core.identifier = child.content()
+              core.addinfolink = "http://nyu.libguides.com/content.php?pid=169769&sid=1489817"
+              core.addinfotext = "GIS Dataset Instructions"
               if core.identifier == "DSS.NYCDCP_Mappluto_Test_11v1\\DSS.jam_mappluto_7OR" then
                 core.set_edit_groups(['gis_cataloger'],[])
               end

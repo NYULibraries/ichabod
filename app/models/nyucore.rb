@@ -22,4 +22,6 @@ class Nyucore < ActiveFedora::Base
   has_attributes :rights, datastream: 'descMetadata', multiple: true
   has_attributes :subject, datastream: 'descMetadata', multiple: true
   has_attributes :citation, datastream: 'descMetadata', multiple: true
+  has_attributes :addinfolink, datastream: 'descMetadata', multiple: true
+  has_attributes :addinfotext, datastream: 'descMetadata', multiple: true
 end
