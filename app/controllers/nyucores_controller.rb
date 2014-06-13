@@ -29,6 +29,7 @@ class NyucoresController < ApplicationController
 
   def create
     @item = Nyucore.new(item_params)
+    @item.set_edit_groups(['public'],[])
 
     flash[:notice] = 'Item was successfully created.' if @item.save
     respond_with(@item)

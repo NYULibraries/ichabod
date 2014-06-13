@@ -48,7 +48,7 @@ describe NyucoresController do
 
     let(:item) { build(:valid_nyucore) }
 
-    it "should create a new nyucore record" do
+    it "should create a new nyucore record" do      
       expect { post :create, nyucore: attributes_for(:valid_nyucore) }.to change(Nyucore, :count)
       expect(assigns(:item)).to be_instance_of(Nyucore)
     end
@@ -62,6 +62,11 @@ describe NyucoresController do
           expect(assigns(:item).send(field)).to eql(item.send(field))
         end
       end
+    end
+
+    it "should have edit_groups set to public" do
+      post :create, nyucore: attributes_for(:valid_nyucore)
+          expect(assigns(:item).send('edit_groups')).to match_array(['public'])
     end
 
   end
