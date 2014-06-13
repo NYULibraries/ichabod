@@ -38,6 +38,8 @@ module Ichabod
         its(:version) { should eql ['DSS.NYCDCP_DCPLION_10cav\DSS.Lion_GJK'] }
         its(:addinfolink) { should eql ['http://nyu.libguides.com/content.php?pid=169769&sid=1489817']}
         its(:addinfotext) { should eql ['GIS Dataset Instructions']}
+        its(:edit_groups) { should eql ['gis_cataloger'] }
+
       end
 
       context "when source is FDA", vcr: { cassette_name: "fda data load" } do
