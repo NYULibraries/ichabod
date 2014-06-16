@@ -12,7 +12,7 @@ class Ability
     # Limits creating new objects to a specific group
     #
      if user_groups.include? 'gis_cataloger'
-       alias_action :create, :read, :update, :destroy, :to => :crud
+       alias_action :create, :update, :destroy, :to => :crud
        can :crud, Nyucore, type: "Geospatial Data" if user_groups.include? 'gis_cataloger'
          
      end
