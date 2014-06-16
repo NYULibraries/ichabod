@@ -6,7 +6,7 @@ FactoryGirl.define do
     user_attributes {{ :some_field => "test" }}
 
     factory :gis_cataloger do
-      username "gis"
+      username "gis_admin"
     end
   end
 
