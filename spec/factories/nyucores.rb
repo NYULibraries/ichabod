@@ -74,9 +74,6 @@ FactoryGirl.define do
       title "The Tempest"
     end
 
-    factory :valid_nyucore, traits: [:valid_record, :valid_citation, :valid_identifier]
-    factory :invalid_nyucore_citation, traits: [:valid_record, :invalid_citation, :valid_identifier]
-    factory :invalid_nyucore_id, traits: [:valid_record, :valid_citation, :invalid_identifier]
     factory :another_valid_nyucore, traits: [:another_valid_record]
     factory :cymbeline, traits: [:another_valid_record, :cymbeline]
     factory :the_tempest, traits: [:another_valid_record, :the_tempest]
