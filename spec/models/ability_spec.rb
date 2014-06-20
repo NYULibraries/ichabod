@@ -10,12 +10,12 @@ describe Ability do
      context "gis cataloger can perform CRUD actions on the GIS collection" do
         let(:user) { create(:gis_cataloger) }
         subject(:ability) { Ability.new(user) }
-        it { should be_able_to(:ced, record) }
+        it { should be_able_to(:crud, record) }
      end
      context "non gis cataloger user can not perform CRUD actions on the GIS collection" do
         let(:user) { create(:user) }
         subject(:ability) { Ability.new(user) }
-        it { should_not be_able_to(:ced, record) }
+        it { should_not be_able_to(:crud, record) }
      end
    end
 end
