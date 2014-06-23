@@ -10,7 +10,6 @@ FactoryGirl.define do
       creator "The Man"
       publisher "NYU"
       available ["Avail 1","Travail"]
-      type "Geospatial Dataset"
       description ["Interesting topic","But poorly written"]
       edition ["Ed 1","Edition 1"]
       series ["Series 1","Series I"]
@@ -23,8 +22,16 @@ FactoryGirl.define do
       subject ["Cryptozoology","Vexillology"]
     end
 
+    trait :type do
+      type "Dataset"
+    end
+
     trait :valid_citation do
       citation ["Shouldn't have jumped the turnstile","Shouldn't have ran a red light"]
+    end
+
+    trait :valid_gis_type do
+      type "Geospatial Data"
     end
 
     trait :invalid_citation do
@@ -67,12 +74,13 @@ FactoryGirl.define do
       title "The Tempest"
     end
 
-    factory :valid_nyucore, traits: [:valid_record, :valid_citation, :valid_identifier]
-    factory :invalid_nyucore_citation, traits: [:valid_record, :invalid_citation, :valid_identifier]
-    factory :invalid_nyucore_id, traits: [:valid_record, :valid_citation, :invalid_identifier]
     factory :another_valid_nyucore, traits: [:another_valid_record]
     factory :cymbeline, traits: [:another_valid_record, :cymbeline]
     factory :the_tempest, traits: [:another_valid_record, :the_tempest]
+    factory :valid_nyucore, traits: [:valid_record, :type, :valid_citation, :valid_identifier]
+    factory :valid_gis_record, traits: [:valid_record, :valid_gis_type, :valid_citation, :valid_identifier]
+    factory :invalid_nyucore_citation, traits: [:valid_record, :type, :invalid_citation, :valid_identifier]
+    factory :invalid_nyucore_id, traits: [:valid_record, :type, :valid_citation, :invalid_identifier]
   end
 
 end
