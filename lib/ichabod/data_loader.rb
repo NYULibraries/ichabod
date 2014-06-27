@@ -71,7 +71,7 @@ module Ichabod
           core.relation = child.content() if child.name() == "relation"
           core.rights = child.content() if child.name() == "rights"
           core.subject = child.content() if child.name() == "subject"
-
+          core.edit_groups=['fda_cataloger']
         end
         cores << core if core.save
         puts "Loading '#{pid}'"

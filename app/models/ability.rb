@@ -9,10 +9,12 @@ class Ability
       can [:destroy], ActiveFedora::Base
     end
 
+    #aliasing create/read/update/delete actions 
+    alias_action :create, :read, :update, :destroy, :to => :crud
     # Limits creating new objects to a specific group
-    #
-    # if user_groups.include? 'special_group'
-    #   can [:create], ActiveFedora::Base
-    # end
+     if user_groups.include? 'gis_cataloger'
+       can [:crud], Nyucore, type: "Geospatial Data" if user_groups.include? 'gis_cataloger'
+         
+     end
   end
 end

@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20131218190631) do
   end
 
   create_table "searches", force: true do |t|
-    t.text     "query_params", limit: 16777215
+    t.text     "query_params"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
