@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'support/spec_test_helper'
 
 describe NyucoresController do
 
@@ -74,6 +75,7 @@ describe NyucoresController do
   describe "GET edit", vcr: { cassette_name: "nyucore edit existing" } do
 
     it "should render edit nyucore template" do
+      login('JsXX')
       get :edit, id: item
       expect(assigns(:item)).to render_template(:edit)
     end
@@ -88,6 +90,7 @@ describe NyucoresController do
   describe "PUT update", vcr: { cassette_name: "nyucore update existing" } do
 
     it "should update an existing nyucore record with a single new attribute" do
+      login('JsXX')
       put :update, id: item, nyucore: { title: "A new title" }
       expect(assigns(:item).title).to eql("A new title")
     end
@@ -95,6 +98,7 @@ describe NyucoresController do
     let(:another_item) { build(:another_valid_nyucore) }
 
     it "should update an existing nyucore record with all new attributes" do
+      login('Jpxx')
       put :update, id: item, nyucore: attributes_for(:another_valid_nyucore)
       nyucore_fields.each do |field|
         if (assigns(:item).send(field)).kind_of?(Array)
@@ -110,6 +114,7 @@ describe NyucoresController do
   describe "DELETE destroy", vcr: { cassette_name: "nyucore destroy existing" } do
 
     it "should delete an existing nyucore record" do
+      login('admin')
       expect { delete :destroy, id: Nyucore.first }.to change(Nyucore, :count).by(-1)
     end
 

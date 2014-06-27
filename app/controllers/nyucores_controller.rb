@@ -24,28 +24,26 @@ class NyucoresController < ApplicationController
   end
 
   def edit
+    authorize! :update, params[:id],:message => "un-authorized item edit attempt"
     respond_with(@item)
   end
 
   def create
     @item = Nyucore.new(item_params)
-    @item.set_edit_groups(['public'],[])
-
     flash[:notice] = 'Item was successfully created.' if @item.save
     respond_with(@item)
   end
 
   def update
     # Not authorizing resources for now
-    # authorize! :update, params[:id]
-
+    authorize! :update, params[:id],:message => "un-authorized item edit attempt"
     flash[:notice] = 'Item was successfully updated.' if @item.update(item_params)
     respond_with(@item)
   end
 
   def destroy
     # Not authorizing resources for now
-    # authorize! :destroy, params[:id]
+    authorize! :destroy, params[:id], :message => "un-authorized  item destory attempt"
     @item = Nyucore.find(params[:id])
     @item.destroy
     respond_with(@item, :location => nyucores_path)
