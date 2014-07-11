@@ -38,7 +38,7 @@ module Ichabod
         its(:version) { should eql ['DSS.NYCDCP_DCPLION_10cav\DSS.Lion_GJK'] }
         its(:addinfolink) { should eql ['http://nyu.libguides.com/content.php?pid=169769&sid=1489817']}
         its(:addinfotext) { should eql ['GIS Dataset Instructions']}
-        its(:edit_groups) { should eql ['gis_cataloger'] }
+        its(:edit_groups) { should eql ['gis_cataloger','admin_group'] }
 
       end
 
@@ -55,6 +55,7 @@ module Ichabod
         its(:format) { should eql ['application/pdf'] }
         its(:language) { should eql ['English'] }
         its(:relation) { should eql ['CeDER-05-01'] }
+        its(:edit_groups) { should eql ['fda_cataloger','admin_group'] }
       end
     end
 

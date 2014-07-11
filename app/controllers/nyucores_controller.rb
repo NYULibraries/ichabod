@@ -1,9 +1,11 @@
 class NyucoresController < ApplicationController
+ 
   respond_to :html, :json
   before_action :set_item, only: [:edit, :update]
   # Convert blank values to nil in params when creating and updating
   # in order to not save empty array values when field is not nil but is an empty string (i.e. "")
   before_filter :blank_to_nil_params, :only => [:create, :update]
+  
 
   def index
     @items = Nyucore.all
@@ -49,7 +51,9 @@ class NyucoresController < ApplicationController
     respond_with(@item, :location => nyucores_path)
   end
 
+
   private
+
 
   def set_item
     @item = Nyucore.find(params[:id])
