@@ -62,6 +62,8 @@ Feature: Add, edit and delete records
       | nyucore_subject1      | Plays1              |
       | nyucore_citation      | B Shakes, SPC       |
       | nyucore_citation1     | B Shakes, SPC1      |
+      | nyucore_citation1     | B Shakes, SPC1      |
+     
     And I save the record
     Then I should see the message "Item was successfully created."
     When I click on "Edit"

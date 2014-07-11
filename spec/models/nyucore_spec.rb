@@ -90,6 +90,10 @@ describe Nyucore, vcr: { cassette_name: "nyucore create new" } do
     expect(nyucore.subject.count).to be > 1
   end
 
+  it "should have admin_group as default edit group" do
+    expect(nyucore.edit_groups).to eql ['admin_group']
+  end
+
   describe "identifier attribute" do
 
     subject { nyucore.identifier }

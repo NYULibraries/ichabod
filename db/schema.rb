@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131218190631) do
+ActiveRecord::Schema.define(version: 20140708175644) do
 
   create_table "bookmarks", force: true do |t|
     t.integer  "user_id",     null: false
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20131218190631) do
     t.string   "user_type"
   end
 
+  
   create_table "searches", force: true do |t|
     t.text     "query_params"
     t.integer  "user_id"
@@ -60,7 +61,7 @@ ActiveRecord::Schema.define(version: 20131218190631) do
     t.string   "last_login_at"
     t.string   "last_login_ip"
     t.string   "current_login_ip"
-    t.text     "user_attributes",        limit: 16777215
+    t.text     "user_attributes"
     t.datetime "refreshed_at"
   end
 
