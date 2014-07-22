@@ -15,6 +15,8 @@ module ApplicationHelper
       else
         text      = args[:document].get(blacklight_config.show_fields[args[:field].to_s][:text])
         url       = args[:document].get(args[:field])
+        metadata_type = args[:document]["desc_metadata__type_tesim"] 
+        text = "Download" if metadata_type[0] == "Geospatial Data"
         link_text = text.nil? ? url : text
         results << link_to(link_text, url, { :target => "_blank" })
       end
