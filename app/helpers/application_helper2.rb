@@ -21,3 +21,21 @@ module ApplicationHelper
   end
 
 end
+
+       decorator = SolrDocumentUrlFieldsDecorator.new(document, blacklight_config, field)
+    begin
+      decorator.urls.each do |urls|
+        results << link_to(urls.text, urls.to_s, { :target => "_blank" })
+      end
+    rescue
+      return nil
+    end
+    return results.join(field_value_separator).html_safe
+  end
+
+  def field_value_separator
+    tag(:br)
+  end
+
+end
+
