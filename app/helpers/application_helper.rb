@@ -11,9 +11,7 @@ module ApplicationHelper
       field = args[:field]
 
       decorator = SolrDocumentUrlFieldsDecorator.new(document, field, blacklight_config)
-       url = decorator.test
-
-    
+       
       if value.length > 1
         value.each_index do |index|
           text      = args[:document][blacklight_config.show_fields[args[:field].to_s][:text]][index]
