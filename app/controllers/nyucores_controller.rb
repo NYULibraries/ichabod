@@ -62,6 +62,6 @@ class NyucoresController < ApplicationController
   # in order to not save empty array values when field is not nil but is an empty string (i.e. "")
   # Added the reject statement to get rid of blank values for array params
   def blank_to_nil_params
-    params[:nyucore].merge!(params[:nyucore]){|k, v| v.blank? ? nil : v.reject{|c| c.empty? }}
+    params[:nyucore].merge!(params[:nyucore]){|k, v| v.blank? ? nil : v.is_a?(Array) ? v.reject{|c| c.empty? } : v}
   end
 end
