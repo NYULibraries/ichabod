@@ -33,6 +33,7 @@ class CatalogController < ApplicationController
   ...
   configure_blacklight do |config|
     ...
+    # Tell Blacklight to use :render_external_links to render this field
     config.add_index_field solr_name('desc_metadata__available', :stored_searchable, type: :string),
       label: 'Online Resource:', helper_method: :render_external_links
     end
@@ -45,6 +46,8 @@ and `helpers/catalog_helper.rb` should look something like:
 ```ruby
 module CatalogHelper
   ...
+  # Called from Blacklight based on our configuration and passed a Hash of args
+  # that include the document and field we're presenting
   def render_external_links(args)
     document = args[:document]
     field_name = args[:field]
