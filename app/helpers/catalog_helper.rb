@@ -7,10 +7,10 @@ module CatalogHelper
     document = args[:document]
     field_name = args[:field]
     url_presenter = UrlPresenter.new(document, field_name)
-    results = url_presenter.urls.collect do |url|
+    links = url_presenter.urls.collect do |url|
       link_to(url.text, url.value, {target: '_blank'})
     end
-    results.join(field_value_separator).html_safe
+    links.join(field_value_separator).html_safe
   rescue
     nil
   end
