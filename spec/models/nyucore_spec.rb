@@ -126,4 +126,32 @@ describe Nyucore, vcr: { cassette_name: "check nyucore schema" } do
 
   end
 
+  describe "#collections" do
+
+    subject { nyucore.collections }
+
+    context "when there are no collections to map to" do
+      it { should be_empty }
+    end
+
+    context "when there are collections to map to from the type field" do
+      let(:nyucore) { create(:mappable_collection_from_type_nyucore) }
+      it { should include "Spatial Data Repository" }
+      it { should_not include "ESRI" }
+    end
+
+    context "when there are collections to map to from the publisher field" do
+      let(:nyucore) { create(:mappable_collection_from_publisher_nyucore) }
+      it { should include "ESRI" }
+      it { should_not include "Spatial Data Repository" }
+    end
+
+    context "when there are collections to map to from both the publisher and type fields" do
+      let(:nyucore) { create(:mappable_collection_from_publisher_and_type_nyucore) }
+      it { should include "ESRI" }
+      it { should include "Spatial Data Repository" }
+    end
+
+  end
+
 end

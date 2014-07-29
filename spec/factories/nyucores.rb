@@ -8,7 +8,6 @@ FactoryGirl.define do
     trait :valid_record do
       title "A Star Wars Guide to Fun in the Sun"
       creator "The Man"
-      publisher "NYU"
       available ["Avail 1","Travail"]
       description ["Interesting topic","But poorly written"]
       edition ["Ed 1","Edition 1"]
@@ -22,8 +21,12 @@ FactoryGirl.define do
       subject ["Cryptozoology","Vexillology"]
     end
 
+    trait :publisher do
+      publisher ["NYU"]
+    end
+
     trait :type do
-      type "Dataset"
+      type ["Dataset"]
     end
 
     trait :valid_citation do
@@ -74,13 +77,24 @@ FactoryGirl.define do
       title "The Tempest"
     end
 
+    trait :mappable_publisher do
+      publisher ["ESRI"]
+    end
+
+    trait :mappable_type do
+      type ["Geospatial Data"]
+    end
+
     factory :another_valid_nyucore, traits: [:another_valid_record]
     factory :cymbeline, traits: [:another_valid_record, :cymbeline]
     factory :the_tempest, traits: [:another_valid_record, :the_tempest]
-    factory :valid_nyucore, traits: [:valid_record, :type, :valid_citation, :valid_identifier]
-    factory :valid_gis_record, traits: [:valid_record, :valid_gis_type, :valid_citation, :valid_identifier]
-    factory :invalid_nyucore_citation, traits: [:valid_record, :type, :invalid_citation, :valid_identifier]
-    factory :invalid_nyucore_id, traits: [:valid_record, :type, :valid_citation, :invalid_identifier]
+    factory :valid_nyucore, traits: [:valid_record, :publisher, :type, :valid_citation, :valid_identifier]
+    factory :valid_gis_record, traits: [:valid_record, :publisher, :valid_gis_type, :valid_citation, :valid_identifier]
+    factory :invalid_nyucore_citation, traits: [:valid_record, :publisher, :type, :invalid_citation, :valid_identifier]
+    factory :invalid_nyucore_id, traits: [:valid_record, :publisher, :type, :valid_citation, :invalid_identifier]
+    factory :mappable_collection_from_type_nyucore, traits: [:valid_record, :publisher, :mappable_type]
+    factory :mappable_collection_from_publisher_nyucore, traits: [:valid_record, :mappable_publisher, :type]
+    factory :mappable_collection_from_publisher_and_type_nyucore, traits: [:valid_record, :mappable_publisher, :mappable_type]
   end
 
 end
