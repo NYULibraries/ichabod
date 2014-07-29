@@ -24,7 +24,23 @@ awesome Rails' features like `:link_to`. But the a lot of the complexity inheren
 the Helpers and put in a more maintainable Presenter.
 
 ## Examples
-Blacklight leverages helper methods so `helpers/catalog_helper.rb` should look something like:
+Blacklight leverages helper methods so `controllers/catalog_controller.rb` should look something like:
+
+```ruby
+require 'blacklight/catalog'
+class CatalogController < ApplicationController
+  include Blacklight::Catalog
+  ...
+  configure_blacklight do |config|
+    ...
+    config.add_index_field solr_name('desc_metadata__available', :stored_searchable, type: :string),
+      label: 'Online Resource:', helper_method: :render_external_links
+    end
+  end
+end
+```
+
+and `helpers/catalog_helper.rb` should look something like:
 
 ```ruby
 module CatalogHelper
