@@ -84,7 +84,7 @@ describe NyucoresController do
 
     it "should update an existing nyucore record with a single new attribute" do
       put :update, id: item, nyucore: { title: "A new title" }
-      expect(assigns(:item).title).to eql("A new title")
+      expect(assigns(:item).title).to include "A new title"
     end
 
     let(:another_item) { build(:another_valid_nyucore) }

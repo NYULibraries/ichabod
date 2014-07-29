@@ -1,11 +1,13 @@
 class Nyucore < ActiveFedora::Base
-  field_list = [:identifier, :addinfolink, :addinfotext, :available, :citation, :title, :creator,
-                :type, :publisher, :description, :edition, :date, :format, :language,
-                :relation, :rights, :subject, :series, :version]
+  multivalue_field_list = [:addinfolink, :addinfotext, :available, :citation, :title, :creator,
+                           :type, :publisher, :description, :edition, :date, :format, :language,
+                           :relation, :rights, :subject, :series, :version]
+  singlevalue_field_list = [:identifier]
 
   has_metadata 'descMetadata', type: NyucoreRdfDatastream
 
-  has_attributes *field_list, datastream: 'descMetadata', multiple: true
+  has_attributes *singlevalue_field_list, datastream: 'descMetadata', multiple: false
+  has_attributes *multivalue_field_list, datastream: 'descMetadata', multiple: true
 
   ##
   # Refine data before saving into solr
