@@ -7,8 +7,8 @@ describe CatalogHelper do
   let(:available) { ["http://google.com"] }
   let(:resource_text_display) { ["Google"] }
   let(:document) { create :solr_document, type: type, available: available, resource_text_display: resource_text_display }
-  describe ".render_external_link" do
-    subject { render_external_link(document: document, field: field) }
+  describe ".render_external_links" do
+    subject { render_external_links(document: document, field: field) }
     context 'when the link field has only one value' do
       it { should eql('<a href="http://google.com" target="_blank">Google</a>') }
     end
