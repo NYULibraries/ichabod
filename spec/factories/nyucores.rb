@@ -6,8 +6,8 @@ FactoryGirl.define do
   factory Nyucore do
 
     trait :valid_record do
-      title "A Star Wars Guide to Fun in the Sun"
-      creator "The Man"
+      title ["A Star Wars Guide to Fun in the Sun"]
+      creator ["The Man"]
       available ["Avail 1","Travail"]
       description ["Interesting topic","But poorly written"]
       edition ["Ed 1","Edition 1"]
