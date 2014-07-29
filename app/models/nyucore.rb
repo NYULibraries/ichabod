@@ -1,24 +1,37 @@
 class Nyucore < ActiveFedora::Base
+  field_list = [:identifier, :addinfolink, :addinfotext, :available, :citation, :title, :creator,
+                :type, :publisher, :description, :edition, :date, :format, :language,
+                :relation, :rights, :subject, :series, :version]
+
   has_metadata 'descMetadata', type: NyucoreRdfDatastream
 
-  has_attributes :title, datastream: 'descMetadata', multiple: false
-  has_attributes :creator, datastream: 'descMetadata', multiple: false
-  has_attributes :publisher, datastream: 'descMetadata', multiple: false
-  has_attributes :identifier, datastream: 'descMetadata', multiple: false
-  has_attributes :available, datastream: 'descMetadata', multiple: true
-  has_attributes :type, datastream: 'descMetadata', multiple: false
-  has_attributes :description, datastream: 'descMetadata', multiple: true
-  has_attributes :edition, datastream: 'descMetadata', multiple: true
-  has_attributes :series, datastream: 'descMetadata', multiple: true
-  has_attributes :version, datastream: 'descMetadata', multiple: true
-  # Adds for FDA Work below
-  has_attributes :date, datastream: 'descMetadata', multiple: true
-  has_attributes :format, datastream: 'descMetadata', multiple: true
-  has_attributes :language, datastream: 'descMetadata', multiple: true
-  has_attributes :relation, datastream: 'descMetadata', multiple: true
-  has_attributes :rights, datastream: 'descMetadata', multiple: true
-  has_attributes :subject, datastream: 'descMetadata', multiple: true
-  has_attributes :citation, datastream: 'descMetadata', multiple: true
-  has_attributes :addinfolink, datastream: 'descMetadata', multiple: true
-  has_attributes :addinfotext, datastream: 'descMetadata', multiple: true
+  has_attributes *field_list, datastream: 'descMetadata', multiple: true
+
+  ##
+  # Refine data before saving into solr
+  def to_solr solr_doc = Hash.new
+    super(solr_doc)
+    Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
+  end
+
+  ##
+  # Get array of collections from publisher and type mapping
+  def collections
+    collections = []
+    collections << map_to_collection(self.publisher)
+    collections << map_to_collection(self.type)
+    return collections.flatten.reject {|c| c.nil?}
+  end
+
+  ##
+  # Map type name to the collection value in config
+  def map_to_collection(from_field)
+    (from_field.is_a? Array) ? from_field.map {|t| collection_map[t]} : collection_map[from_field]
+  end
+
+  def collection_map
+    @collection_map ||= YAML::load_file(Rails.root.join('config', "collection_map.yml"))
+  end
+  private :collection_map
+
 end
