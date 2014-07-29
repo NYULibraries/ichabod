@@ -12,6 +12,7 @@ FactoryGirl.define do
           desc_metadata__title_tesim: title,
           desc_metadata__publisher_tesim: publisher,
           desc_metadata__available_tesim: available,
+          resource_text_display: resource_text_display,
           desc_metadata__type_tesim: type,
           desc_metadata__description_tesim: description,
           desc_metadata__edition_tesim: edition,
@@ -34,6 +35,7 @@ FactoryGirl.define do
     title { ['title'] }
     publisher { ['publisher'] }
     available { ['http://url.to.resource'] }
+    resource_text_display { nil }
     type { ['type'] }
     description { ['This is a description of the resource.'] }
     edition { ['edition'] }
