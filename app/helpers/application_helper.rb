@@ -37,8 +37,11 @@ module ApplicationHelper
     return results.join(field_value_separator).html_safe
   end
 
+  # Overrides BlacklightHelper#field_value_separator
+  # which defaults the separator to ", " to display
+  # multivalue fields as comma separated strings.
+  # Instead, we display each field on a new line
   def field_value_separator
     tag(:br)
   end
-
 end
