@@ -24,5 +24,52 @@ awesome Rails' features like `:link_to`. But the a lot of the complexity inheren
 the Helpers and put in a more maintainable Presenter.
 
 ## Examples
-Coming soon...
+Blacklight leverages helper methods so `helpers/catalog_helper.rb` should look something like:
 
+```ruby
+module CatalogHelper
+  ...
+  def render_external_links(args)
+    document = args[:document]
+    field_name = args[:field]
+    url_presenter = UrlPresenter.new(document, field_name)
+    links = url_presenter.urls.collect do |url|
+      link_to(url.text, url.value, {target: '_blank'})
+    end
+    links.join(field_value_separator).html_safe
+  rescue
+    nil
+  end
+end
+```
+
+And `presenters/url_presenter.rb` should look something like:
+
+```ruby
+class UrlPresenter < CatalogPresenter
+  class Url
+    attr_reader :value, :text
+
+    def initialize(value, text=nil)
+      @value = value
+      @text = (text || value)
+    end
+  end
+
+  def urls
+    @urls ||= begin
+      if url_values.nil?
+        []
+      else
+        url_values.collect do |url_value|
+          Url.new(url_value)
+        end
+      end
+    end
+  end
+
+  private
+  def url_values
+    @url_values ||= solr_document[field_name]
+  end
+end
