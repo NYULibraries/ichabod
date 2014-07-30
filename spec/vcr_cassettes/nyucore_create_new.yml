@@ -2,38 +2,32 @@
 http_interactions:
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/describe?xml=true
+    uri: http://127.0.0.1:8983/solr/test/select?q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Nyucore%22&qt=standard&rows=0&wt=ruby
     body:
       encoding: US-ASCII
       string: ''
-    headers:
-      Accept:
-      - ! '*/*; q=0.5, application/xml'
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
+    headers: {}
   response:
     status:
       code: 200
       message: OK
     headers:
-      Set-Cookie:
-      - JSESSIONID=68nw55ptffoi17vowx9xjtsq2;Path=/fedora-test
-      Expires:
-      - Thu, 01 Jan 1970 00:00:00 GMT
+      Last-Modified:
+      - Wed, 30 Jul 2014 17:27:14 GMT
+      Etag:
+      - ! '"Y2E3MDAwMDAwMDAwMDAwMFNvbHI="'
       Content-Type:
-      - text/xml;charset=UTF-8
+      - text/plain;charset=UTF-8
       Transfer-Encoding:
       - chunked
     body:
       encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><fedoraRepository xmlns="http://www.fedora.info/definitions/1/0/access/"
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/ http://www.fedora.info/definitions/1/0/fedoraRepository.xsd"><repositoryName>Fedora
-        Repository</repositoryName><repositoryBaseURL>http://localhost:8983/fedora-test</repositoryBaseURL><repositoryVersion>3.7.0</repositoryVersion><repositoryPID>    <PID-namespaceIdentifier>changeme</PID-namespaceIdentifier>    <PID-delimiter>:</PID-delimiter>    <PID-sample>changeme:100</PID-sample>    <retainPID>*</retainPID></repositoryPID><repositoryOAI-identifier>    <OAI-namespaceIdentifier>example.org</OAI-namespaceIdentifier>    <OAI-delimiter>:</OAI-delimiter>    <OAI-sample>oai:example.org:changeme:100</OAI-sample></repositoryOAI-identifier><sampleSearch-URL>http://localhost:8983/fedora-test/objects</sampleSearch-URL><sampleAccess-URL>http://localhost:8983/fedora-test/objects/demo:5</sampleAccess-URL><sampleOAI-URL>http://localhost:8983/fedora-test/oai?verb=Identify</sampleOAI-URL><adminEmail>bob@example.org</adminEmail><adminEmail>sally@example.org</adminEmail></fedoraRepository>
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>0,''params''=>{''q''=>''_query_:"{!raw
+        f=has_model_ssim}info:fedora/afmodel:Nyucore"'',''qt''=>''standard'',''wt''=>''ruby'',''rows''=>''0''}},''response''=>{''numFound''=>190,''start''=>0,''docs''=>[]}}
+
+'
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:13 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:38 GMT
 - request:
     method: post
     uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/nextPID?format=xml
@@ -53,13 +47,13 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=1ppcfxxibkldd1nyio9x25kd3v;Path=/fedora-test
+      - JSESSIONID=11rudrj9nwt3z1fkqc8zzatdd1;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Tue, 29 Jul 2014 21:28:14 GMT
+      - Wed, 30 Jul 2014 17:27:38 GMT
       Content-Length:
       - '375'
     body:
@@ -68,16 +62,16 @@ http_interactions:
 
         <pidList  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/getNextPIDInfo.xsd">  <pid>changeme:106</pid>
+        http://www.fedora.info/definitions/1/0/getNextPIDInfo.xsd">  <pid>changeme:116</pid>
 
         </pidList>
 
 '
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:14 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:38 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:106/datastreams?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:116/datastreams?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -94,23 +88,23 @@ http_interactions:
       message: Not Found
     headers:
       Set-Cookie:
-      - JSESSIONID=1vnvct5w0njkf1o1cei208zcrv;Path=/fedora-test
+      - JSESSIONID=19mmsa4b69llk1jvugc0ulkooe;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/plain
       Date:
-      - Tue, 29 Jul 2014 21:28:14 GMT
+      - Wed, 30 Jul 2014 17:27:38 GMT
       Content-Length:
       - '51'
     body:
       encoding: US-ASCII
-      string: ! 'Object not found in low-level storage: changeme:106'
+      string: ! 'Object not found in low-level storage: changeme:116'
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:14 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:38 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:106?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:116?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -127,23 +121,23 @@ http_interactions:
       message: Not Found
     headers:
       Set-Cookie:
-      - JSESSIONID=56h2wyx14g0p11y7rt85wmlq3;Path=/fedora-test
+      - JSESSIONID=1lgvrz6ia1sil1vofpbpmn24lw;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/plain
       Date:
-      - Tue, 29 Jul 2014 21:28:14 GMT
+      - Wed, 30 Jul 2014 17:27:38 GMT
       Content-Length:
       - '51'
     body:
       encoding: US-ASCII
-      string: ! 'Object not found in low-level storage: changeme:106'
+      string: ! 'Object not found in low-level storage: changeme:116'
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:14 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:38 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:106/datastreams/RELS-EXT?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:116/datastreams/RELS-EXT?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -160,23 +154,23 @@ http_interactions:
       message: Not Found
     headers:
       Set-Cookie:
-      - JSESSIONID=1u2cp9zb635621x54ye17hdaws;Path=/fedora-test
+      - JSESSIONID=2cu2585aty6v1jhbvhjo6kxow;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/plain
       Date:
-      - Tue, 29 Jul 2014 21:28:14 GMT
+      - Wed, 30 Jul 2014 17:27:38 GMT
       Content-Length:
       - '51'
     body:
       encoding: US-ASCII
-      string: ! 'Object not found in low-level storage: changeme:106'
+      string: ! 'Object not found in low-level storage: changeme:116'
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:14 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:38 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:106/datastreams/descMetadata?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:116/datastreams/descMetadata?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -193,23 +187,23 @@ http_interactions:
       message: Not Found
     headers:
       Set-Cookie:
-      - JSESSIONID=1qsfxcdkg6y3izb8tfraw5vrx;Path=/fedora-test
+      - JSESSIONID=efvniuhfag6e1szo94zxl7jm9;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/plain
       Date:
-      - Tue, 29 Jul 2014 21:28:14 GMT
+      - Wed, 30 Jul 2014 17:27:38 GMT
       Content-Length:
       - '51'
     body:
       encoding: US-ASCII
-      string: ! 'Object not found in low-level storage: changeme:106'
+      string: ! 'Object not found in low-level storage: changeme:116'
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:14 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:38 GMT
 - request:
     method: post
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:106
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:116
     body:
       encoding: US-ASCII
       string: ''
@@ -228,25 +222,25 @@ http_interactions:
       message: Created
     headers:
       Set-Cookie:
-      - JSESSIONID=pcknd31dp0zj18m3hhxd4bdj2;Path=/fedora-test
+      - JSESSIONID=gkm51zkr8aan1v639czunlz1l;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - application/xml
       Date:
-      - Tue, 29 Jul 2014 21:28:14 GMT
+      - Wed, 30 Jul 2014 17:27:38 GMT
       Location:
-      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A106
+      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A116
       Content-Length:
       - '12'
     body:
       encoding: US-ASCII
-      string: changeme:106
+      string: changeme:116
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:14 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:38 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:106?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:116?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -263,30 +257,30 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=mi8xndtpmo4b1arsq6so3p4i9;Path=/fedora-test
+      - JSESSIONID=1s4iewtvfjjeqru2mdmcmeitk;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Tue, 29 Jul 2014 21:28:14 GMT
+      - Wed, 30 Jul 2014 17:27:38 GMT
       Content-Length:
       - '921'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
-        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="changeme:106"
-        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-07-29T21:28:14.452Z</objCreateDate><objLastModDate>2014-07-29T21:28:14.452Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A106/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A106/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="changeme:116"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-07-30T17:27:38.860Z</objCreateDate><objLastModDate>2014-07-30T17:27:38.860Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A116/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A116/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:14 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:38 GMT
 - request:
     method: post
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:106/datastreams/RELS-EXT?controlGroup=X&dsLabel=Fedora%20Object-to-Object%20Relationship%20Metadata&dsState=A&mimeType=application/rdf%2Bxml&versionable=true
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:116/datastreams/RELS-EXT?controlGroup=X&dsLabel=Fedora%20Object-to-Object%20Relationship%20Metadata&dsState=A&mimeType=application/rdf%2Bxml&versionable=true
     body:
       encoding: UTF-8
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"
-        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/changeme:106\">\n
+        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/changeme:116\">\n
         \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"/>\n  </rdf:Description>\n</rdf:RDF>\n"
     headers:
       Accept:
@@ -307,103 +301,80 @@ http_interactions:
       message: Created
     headers:
       Set-Cookie:
-      - JSESSIONID=gqqdolk6agz11iou8auaaeykp;Path=/fedora-test
+      - JSESSIONID=owqbieqikrbbk7588yq6azh4;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Tue, 29 Jul 2014 21:28:15 GMT
+      - Wed, 30 Jul 2014 17:27:39 GMT
       Location:
-      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A106/datastreams/RELS-EXT
+      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A116/datastreams/RELS-EXT
       Content-Length:
       - '917'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:106"
-        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-07-29T21:28:14.958Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>282</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:106+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:116"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-07-30T17:27:39.203Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>282</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:116+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:15 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:39 GMT
 - request:
     method: post
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:106/datastreams/descMetadata?controlGroup=M&dsState=A&mimeType=text/plain&versionable=true
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:116/datastreams/descMetadata?controlGroup=M&dsState=A&mimeType=text/plain&versionable=true
     body:
       encoding: UTF-8
-      string: ! '<info:fedora/changeme:106> <http://purl.org/dc/terms/title> "A Star
-        Wars Guide to Fun in the Sun" .
+      string: ! '<info:fedora/changeme:116> <http://purl.org/dc/terms/identifier>
+        "NYCDCP_DCPLION_10CAV_8" .
 
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/creator> "The Man" .
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/title> "LION" .
 
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/identifier> "rec123"
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/creator> "Hugh Plisher"
         .
 
-        <info:fedora/changeme:106> <http://harper.bobst.nyu.edu/data/nyucore#available>
-        "Avail 1" .
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/publisher> "Rosie" .
 
-        <info:fedora/changeme:106> <http://harper.bobst.nyu.edu/data/nyucore#available>
-        "Travail" .
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/type> "Rosie Stuff" .
 
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/description> "Interesting
-        topic" .
+        <info:fedora/changeme:116> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "http://library.nyu.edu" .
 
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/description> "But poorly
-        written" .
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/description> "Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Curabitur non posuere lectus.
+        In facilisis, arcu nec tempor vulputate, justo elit aliquet sapien, in tincidunt
+        lorem purus eu nulla." .
 
-        <info:fedora/changeme:106> <http://harper.bobst.nyu.edu/data/nyucore#edition>
-        "Ed 1" .
+        <info:fedora/changeme:116> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        "10C" .
 
-        <info:fedora/changeme:106> <http://harper.bobst.nyu.edu/data/nyucore#edition>
-        "Edition 1" .
+        <info:fedora/changeme:116> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        "NYCDCP_DCPLION_10CAV" .
 
-        <info:fedora/changeme:106> <http://harper.bobst.nyu.edu/data/nyucore#series>
-        "Series 1" .
+        <info:fedora/changeme:116> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        "DSS.NYCDCP_DCPLION_10cavDSS.BOLIVAR" .
 
-        <info:fedora/changeme:106> <http://harper.bobst.nyu.edu/data/nyucore#series>
-        "Series I" .
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/date> "12/05/2014" .
 
-        <info:fedora/changeme:106> <http://harper.bobst.nyu.edu/data/nyucore#version>
-        "V1" .
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/date> "04/01/1666" .
 
-        <info:fedora/changeme:106> <http://harper.bobst.nyu.edu/data/nyucore#version>
-        "Latest Version" .
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/format> "ZIP" .
 
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/date> "12/05/2014" .
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/language> "English" .
 
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/date> "04/01/1666" .
-
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/format> "PDF" .
-
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/format> "DNS" .
-
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/language> "en" .
-
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/language> "ger" .
-
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/relation> "x is to y
-        as y is to z" .
-
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/relation> "one and a
-        two and a" .
-
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/rights> "remain silent"
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/relation> "relation1"
         .
 
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/rights> "hire an attorney"
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/rights> "rights1" .
+
+        <info:fedora/changeme:116> <http://purl.org/dc/terms/subject> "vexillology"
         .
 
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/subject> "Cryptozoology"
-        .
+        <info:fedora/changeme:116> <http://harper.bobst.nyu.edu/data/nyucore#citation>
+        "Cite" .
 
-        <info:fedora/changeme:106> <http://purl.org/dc/terms/subject> "Vexillology"
-        .
-
-        <info:fedora/changeme:106> <http://harper.bobst.nyu.edu/data/nyucore#citation>
-        "Shouldn''t have jumped the turnstile" .
-
-        <info:fedora/changeme:106> <http://harper.bobst.nyu.edu/data/nyucore#citation>
-        "Shouldn''t have ran a red light" .
+        <info:fedora/changeme:116> <http://harper.bobst.nyu.edu/data/nyucore#citation>
+        "Me" .
 
 '
     headers:
@@ -416,7 +387,7 @@ http_interactions:
       Multipart:
       - 'true'
       Content-Length:
-      - '2308'
+      - '1756'
       User-Agent:
       - Ruby
   response:
@@ -425,28 +396,28 @@ http_interactions:
       message: Created
     headers:
       Set-Cookie:
-      - JSESSIONID=16b5odfsv0e1i1p5qtfc0s2a45;Path=/fedora-test
+      - JSESSIONID=18jpql5d7dngahl6omkatjig;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Tue, 29 Jul 2014 21:28:16 GMT
+      - Wed, 30 Jul 2014 17:27:40 GMT
       Location:
-      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A106/datastreams/descMetadata
+      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A116/datastreams/descMetadata
       Content-Length:
       - '891'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:106"
-        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-07-29T21:28:16.876Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>2308</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:106+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:116"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-07-30T17:27:40.669Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1756</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:116+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:16 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:40 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:106/datastreams/RELS-EXT?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:116/datastreams/RELS-EXT?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -463,26 +434,26 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=1enao177zuuyr1uxflyyx076xu;Path=/fedora-test
+      - JSESSIONID=v62lobfrv1011nvntnhcgefal;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Tue, 29 Jul 2014 21:28:17 GMT
+      - Wed, 30 Jul 2014 17:27:40 GMT
       Content-Length:
       - '917'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:106"
-        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-07-29T21:28:14.958Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>282</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:106+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:116"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-07-30T17:27:39.203Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>282</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:116+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:17 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:40 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:106/datastreams/descMetadata?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:116/datastreams/descMetadata?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -499,54 +470,50 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=hwkegjgg0hzs17ekwdag8cpix;Path=/fedora-test
+      - JSESSIONID=1bw34y1i1phn4qj4ablf7waud;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Tue, 29 Jul 2014 21:28:17 GMT
+      - Wed, 30 Jul 2014 17:27:40 GMT
       Content-Length:
       - '891'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:106"
-        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-07-29T21:28:16.876Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>2308</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:106+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:116"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-07-30T17:27:40.669Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1756</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:116+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:17 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:40 GMT
 - request:
     method: post
     uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
     body:
       encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-07-29T21:28:14Z</field><field
-        name="system_modified_dtsi">2014-07-29T21:28:14Z</field><field name="object_state_ssi">A</field><field
-        name="active_fedora_model_ssi">Nyucore</field><field name="id">changeme:106</field><field
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-07-30T17:27:38Z</field><field
+        name="system_modified_dtsi">2014-07-30T17:27:38Z</field><field name="object_state_ssi">A</field><field
+        name="active_fedora_model_ssi">Nyucore</field><field name="id">changeme:116</field><field
         name="object_profile_ssm">{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora Object-to-Object
-        Relationship Metadata","dsVersionID":"RELS-EXT.0","dsCreateDate":"2014-07-29T21:28:14Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":282,"dsVersionable":true,"dsInfoType":null,"dsLocation":"changeme:106+RELS-EXT+RELS-EXT.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.0","dsCreateDate":"2014-07-29T21:28:16Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":2308,"dsVersionable":true,"dsInfoType":null,"dsLocation":"changeme:106+descMetadata+descMetadata.0","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-07-29T21:28:14Z","objLastModDate":"2014-07-29T21:28:14Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/changeme%3A106/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/changeme%3A106/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
-        name="desc_metadata__title_tesim">A Star Wars Guide to Fun in the Sun</field><field
-        name="desc_metadata__creator_tesim">The Man</field><field name="desc_metadata__creator_sim">The
-        Man</field><field name="desc_metadata__identifier_tesim">rec123</field><field
-        name="desc_metadata__available_tesim">Avail 1</field><field name="desc_metadata__available_tesim">Travail</field><field
-        name="desc_metadata__description_tesim">Interesting topic</field><field name="desc_metadata__description_tesim">But
-        poorly written</field><field name="desc_metadata__edition_tesim">Ed 1</field><field
-        name="desc_metadata__edition_tesim">Edition 1</field><field name="desc_metadata__series_tesim">Series
-        1</field><field name="desc_metadata__series_tesim">Series I</field><field
-        name="desc_metadata__version_tesim">V1</field><field name="desc_metadata__version_tesim">Latest
-        Version</field><field name="desc_metadata__date_tesim">12/05/2014</field><field
-        name="desc_metadata__date_tesim">04/01/1666</field><field name="desc_metadata__format_tesim">PDF</field><field
-        name="desc_metadata__format_tesim">DNS</field><field name="desc_metadata__language_tesim">en</field><field
-        name="desc_metadata__language_tesim">ger</field><field name="desc_metadata__language_sim">en</field><field
-        name="desc_metadata__language_sim">ger</field><field name="desc_metadata__relation_tesim">x
-        is to y as y is to z</field><field name="desc_metadata__relation_tesim">one
-        and a two and a</field><field name="desc_metadata__rights_tesim">remain silent</field><field
-        name="desc_metadata__rights_tesim">hire an attorney</field><field name="desc_metadata__subject_tesim">Cryptozoology</field><field
-        name="desc_metadata__subject_tesim">Vexillology</field><field name="desc_metadata__subject_sim">Cryptozoology</field><field
-        name="desc_metadata__subject_sim">Vexillology</field><field name="desc_metadata__citation_tesim">Shouldn't
-        have jumped the turnstile</field><field name="desc_metadata__citation_tesim">Shouldn't
-        have ran a red light</field><field name="has_model_ssim">info:fedora/afmodel:Nyucore</field></doc></add>
+        Relationship Metadata","dsVersionID":"RELS-EXT.0","dsCreateDate":"2014-07-30T17:27:39Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":282,"dsVersionable":true,"dsInfoType":null,"dsLocation":"changeme:116+RELS-EXT+RELS-EXT.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.0","dsCreateDate":"2014-07-30T17:27:40Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1756,"dsVersionable":true,"dsInfoType":null,"dsLocation":"changeme:116+descMetadata+descMetadata.0","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-07-30T17:27:38Z","objLastModDate":"2014-07-30T17:27:38Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/changeme%3A116/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/changeme%3A116/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
+        name="desc_metadata__identifier_tesim">NYCDCP_DCPLION_10CAV_8</field><field
+        name="desc_metadata__title_tesim">LION</field><field name="desc_metadata__creator_tesim">Hugh
+        Plisher</field><field name="desc_metadata__creator_sim">Hugh Plisher</field><field
+        name="desc_metadata__publisher_tesim">Rosie</field><field name="desc_metadata__type_tesim">Rosie
+        Stuff</field><field name="desc_metadata__type_sim">Rosie Stuff</field><field
+        name="desc_metadata__available_tesim">http://library.nyu.edu</field><field
+        name="desc_metadata__description_tesim">Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Curabitur non posuere lectus. In facilisis, arcu nec tempor
+        vulputate, justo elit aliquet sapien, in tincidunt lorem purus eu nulla.</field><field
+        name="desc_metadata__edition_tesim">10C</field><field name="desc_metadata__series_tesim">NYCDCP_DCPLION_10CAV</field><field
+        name="desc_metadata__version_tesim">DSS.NYCDCP_DCPLION_10cavDSS.BOLIVAR</field><field
+        name="desc_metadata__date_tesim">12/05/2014</field><field name="desc_metadata__date_tesim">04/01/1666</field><field
+        name="desc_metadata__format_tesim">ZIP</field><field name="desc_metadata__language_tesim">English</field><field
+        name="desc_metadata__language_sim">English</field><field name="desc_metadata__relation_tesim">relation1</field><field
+        name="desc_metadata__rights_tesim">rights1</field><field name="desc_metadata__subject_tesim">vexillology</field><field
+        name="desc_metadata__subject_sim">vexillology</field><field name="desc_metadata__citation_tesim">Cite</field><field
+        name="desc_metadata__citation_tesim">Me</field><field name="has_model_ssim">info:fedora/afmodel:Nyucore</field></doc></add>
     headers:
       Content-Type:
       - text/xml
@@ -561,11 +528,11 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>30}}
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>2}}
 
 '
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:17 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:41 GMT
 - request:
     method: post
     uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
@@ -586,9 +553,37 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>165}}
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>8}}
 
 '
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 21:28:17 GMT
+  recorded_at: Wed, 30 Jul 2014 17:27:41 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Nyucore%22&qt=standard&rows=0&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 30 Jul 2014 17:27:41 GMT
+      Etag:
+      - ! '"YWE3MDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>0,''params''=>{''q''=>''_query_:"{!raw
+        f=has_model_ssim}info:fedora/afmodel:Nyucore"'',''qt''=>''standard'',''wt''=>''ruby'',''rows''=>''0''}},''response''=>{''numFound''=>191,''start''=>0,''docs''=>[]}}
+
+'
+    http_version: 
+  recorded_at: Wed, 30 Jul 2014 17:27:41 GMT
 recorded_with: VCR 2.8.0
