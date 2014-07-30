@@ -6,7 +6,7 @@ require_relative '../../app/models/ability.rb'
 describe Ability do
 
    describe Nyucore, vcr: { cassette_name: "check nyucore ability" } do
-     let(:record) { create(:valid_gis_record) }
+     let(:record) { create(:nyucore, type: "Geospatial Data") }
      context "gis cataloger can perform CRUD actions on the GIS collection" do
         let(:user) { create(:gis_cataloger) }
         subject(:ability) { Ability.new(user) }
