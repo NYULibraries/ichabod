@@ -2,95 +2,26 @@ require 'spec_helper'
 
 describe Nyucore, vcr: { cassette_name: "check nyucore schema" } do
 
-  let(:nyucore) { create(:valid_nyucore) }
+  let(:nyucore) { create(:nyucore) }
+  subject { nyucore }
 
-  it "should have one or more title fields" do
-    expect(nyucore.title).to_not be_empty
-    expect(nyucore.title).to be_instance_of(Array)
-  end
+  its(:title) { should_not be_empty }
+  its(:creator) { should_not be_empty }
+  its(:publisher) { should_not be_empty }
+  its(:available) { should_not be_empty }
+  its(:type) { should_not be_empty }
+  its(:description) { should_not be_empty }
+  its(:edition) { should_not be_empty }
+  its(:series) { should_not be_empty }
+  its(:version) { should_not be_empty }
+  its(:format) { should_not be_empty }
+  its(:date) { should_not be_empty }
+  its(:language) { should_not be_empty }
+  its(:relation) { should_not be_empty }
+  its(:rights) { should_not be_empty }
+  its(:subject) { should_not be_empty }
 
-  it "should have one or more creator fields" do
-    expect(nyucore.creator).to_not be_empty
-    expect(nyucore.creator).to be_instance_of(Array)
-  end
-
-  it "should have one or more publisher fields" do
-    expect(nyucore.publisher).to_not be_empty
-    expect(nyucore.publisher).to be_instance_of(Array)
-  end
-
-  it "should have one or more available fields" do
-    expect(nyucore.available).to_not be_empty
-    expect(nyucore.available).to be_instance_of(Array)
-    expect(nyucore.available.count).to be > 1
-  end
-
-  it "should have one or more type fields" do
-    expect(nyucore.type).to_not be_empty
-    expect(nyucore.type).to be_instance_of(Array)
-  end
-
-  it "should have one or more description fields" do
-    expect(nyucore.description).to_not be_empty
-    expect(nyucore.description).to be_instance_of(Array)
-    expect(nyucore.description.count).to be > 1
-  end
-
-  it "should have one or more edition fields" do
-    expect(nyucore.edition).to_not be_empty
-    expect(nyucore.edition).to be_instance_of(Array)
-    expect(nyucore.edition.count).to be > 1
-  end
-
-  it "should have one or more series fields" do
-    expect(nyucore.series).to_not be_empty
-    expect(nyucore.series).to be_instance_of(Array)
-    expect(nyucore.series.count).to be > 1
-  end
-
-  it "should have one or more version fields" do
-    expect(nyucore.version).to_not be_empty
-    expect(nyucore.version).to be_instance_of(Array)
-    expect(nyucore.version.count).to be > 1
-  end
-
-  it "should have one or more format fields" do
-    expect(nyucore.format).to_not be_empty
-    expect(nyucore.format).to be_instance_of(Array)
-    expect(nyucore.format.count).to be > 1
-  end
-
-  it "should have one or more date fields" do
-    expect(nyucore.date).to_not be_empty
-    expect(nyucore.date).to be_instance_of(Array)
-    expect(nyucore.date.count).to be > 1
-  end
-
-  it "should have one or more language fields" do
-    expect(nyucore.language).to_not be_empty
-    expect(nyucore.language).to be_instance_of(Array)
-    expect(nyucore.language.count).to be > 1
-  end
-
-  it "should have one or more relation fields" do
-    expect(nyucore.relation).to_not be_empty
-    expect(nyucore.relation).to be_instance_of(Array)
-    expect(nyucore.relation.count).to be > 1
-  end
-
-  it "should have one or more rights fields" do
-    expect(nyucore.rights).to_not be_empty
-    expect(nyucore.rights).to be_instance_of(Array)
-    expect(nyucore.rights.count).to be > 1
-  end
-
-  it "should have one or more subject fields" do
-    expect(nyucore.subject).to_not be_empty
-    expect(nyucore.subject).to be_instance_of(Array)
-    expect(nyucore.subject.count).to be > 1
-  end
-
-  describe "identifier attribute" do
+  describe "#identifier" do
 
     subject { nyucore.identifier }
 
@@ -100,28 +31,28 @@ describe Nyucore, vcr: { cassette_name: "check nyucore schema" } do
     end
 
     context "when identifier is incorrectly passed in as array" do
-      let(:nyucore) { create(:invalid_nyucore_id) }
+      let(:nyucore) { create(:nyucore, identifier: ["1234","5678"]) }
       it { should be_instance_of String }
-      it { should eq attributes_for(:invalid_nyucore_id)[:identifier].first }
+      it { should eq "1234" }
     end
 
   end
 
-  describe "citation attribute" do
+  describe "#citation" do
 
     subject { nyucore.citation }
 
     context "when citation is correctly passed in as an array" do
-      it { should_not be_empty}
+      it { should_not be_empty }
       it { should be_instance_of Array }
       it { expect(subject.count).to be > 1 }
     end
 
     context "when citation is incorrectly passed in as a string" do
-      let(:nyucore) { create(:invalid_nyucore_citation) }
+      let(:nyucore) { create(:nyucore, citation: "CiteMe") }
       it { should be_instance_of Array }
       it { expect(subject.count).to be 1 }
-      it { should eq [attributes_for(:invalid_nyucore_citation)[:citation]] }
+      it { should eq ["CiteMe"] }
     end
 
   end
@@ -134,22 +65,22 @@ describe Nyucore, vcr: { cassette_name: "check nyucore schema" } do
       it { should be_empty }
     end
 
+    context "when there are collections to map to from both the publisher and type fields" do
+      let(:nyucore) { create(:nyucore, type: "Geospatial Data", publisher: "ESRI") }
+      it { should include "ESRI" }
+      it { should include "Spatial Data Repository" }
+    end
+
     context "when there are collections to map to from the type field" do
-      let(:nyucore) { create(:mappable_collection_from_type_nyucore) }
+      let(:nyucore) { create(:nyucore, type: "Geospatial Data") }
       it { should include "Spatial Data Repository" }
       it { should_not include "ESRI" }
     end
 
     context "when there are collections to map to from the publisher field" do
-      let(:nyucore) { create(:mappable_collection_from_publisher_nyucore) }
+      let(:nyucore) { create(:nyucore, publisher: "ESRI") }
       it { should include "ESRI" }
       it { should_not include "Spatial Data Repository" }
-    end
-
-    context "when there are collections to map to from both the publisher and type fields" do
-      let(:nyucore) { create(:mappable_collection_from_publisher_and_type_nyucore) }
-      it { should include "ESRI" }
-      it { should include "Spatial Data Repository" }
     end
 
   end
