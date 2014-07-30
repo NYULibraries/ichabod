@@ -28,7 +28,7 @@ class UrlPresenter < CatalogPresenter
   def url_text_for_index(index)
     if url_texts.blank? || url_texts[index].blank?
       if solr_document_types.include? 'Geospatial Data'
-        I18n.t('catalog.urls.download_text')
+        I18n.t('catalog.urls.geospatial_dataset_link_text')
       end
     else
       url_texts[index]
