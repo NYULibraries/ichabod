@@ -61,27 +61,8 @@ describe Nyucore, vcr: { cassette_name: "check nyucore schema" } do
 
     subject { nyucore.collections }
 
-    context "when there are no collections to map to" do
-      it { should be_empty }
-    end
-
-    context "when there are collections to map to from both the publisher and type fields" do
-      let(:nyucore) { create(:nyucore, type: "Geospatial Data", publisher: "ESRI") }
-      it { should include "ESRI" }
-      it { should include "Spatial Data Repository" }
-    end
-
-    context "when there are collections to map to from the type field" do
-      let(:nyucore) { create(:nyucore, type: "Geospatial Data") }
-      it { should include "Spatial Data Repository" }
-      it { should_not include "ESRI" }
-    end
-
-    context "when there are collections to map to from the publisher field" do
-      let(:nyucore) { create(:nyucore, publisher: "ESRI") }
-      it { should include "ESRI" }
-      it { should_not include "Spatial Data Repository" }
-    end
+    it { should_not be_empty }
+    it { should be_instance_of Collections }
 
   end
 
