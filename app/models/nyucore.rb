@@ -1,13 +1,15 @@
 class Nyucore < ActiveFedora::Base
-  multivalue_field_list = [:addinfolink, :addinfotext, :available, :citation, :title, :creator,
-                           :type, :publisher, :description, :edition, :date, :format, :language,
-                           :relation, :rights, :subject, :series, :version]
-  singlevalue_field_list = [:identifier]
+  FIELD_LIST = {
+    :multiple => [:addinfolink, :addinfotext, :available, :citation, :title, :creator,
+                  :type, :publisher, :description, :edition, :date, :format, :language,
+                  :relation, :rights, :subject, :series, :version],
+    :single => [:identifier]
+  }
 
   has_metadata 'descMetadata', type: NyucoreRdfDatastream
 
-  has_attributes *singlevalue_field_list, datastream: 'descMetadata', multiple: false
-  has_attributes *multivalue_field_list, datastream: 'descMetadata', multiple: true
+  has_attributes *FIELD_LIST[:single], datastream: 'descMetadata', multiple: false
+  has_attributes *FIELD_LIST[:multiple], datastream: 'descMetadata', multiple: true
 
   ##
   # Refine data before saving into solr
@@ -16,24 +18,8 @@ class Nyucore < ActiveFedora::Base
     Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
   end
 
-  ##
-  # Get array of collections from publisher and type mapping
   def collections
-    collections = []
-    collections << map_to_collection(self.publisher)
-    collections << map_to_collection(self.type)
-    return collections.flatten.reject {|c| c.nil?}
+    @collections ||= Collections.new(self)
   end
-
-  ##
-  # Map type name to the collection value in config
-  def map_to_collection(from_field)
-    (from_field.is_a? Array) ? from_field.map {|t| collection_map[t]} : collection_map[from_field]
-  end
-
-  def collection_map
-    @collection_map ||= YAML::load_file(Rails.root.join('config', "collection_map.yml"))
-  end
-  private :collection_map
 
 end
