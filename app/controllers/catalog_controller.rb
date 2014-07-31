@@ -87,7 +87,7 @@ class CatalogController < ApplicationController
     #NYUCore Additions
     config.add_index_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher:'
     config.add_index_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label         => 'Online Resource:',     
-                                                                                                    :helper_method => :render_external_link, 
+                                                                                                    :helper_method => :render_external_links,
                                                                                                     :text          => 'resource_text_display'
 
     # solr fields to be displayed in the show (single result) view
@@ -116,11 +116,11 @@ class CatalogController < ApplicationController
 
 
     config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label         => 'Online Resource:',
-                                                                                                    :helper_method => :render_external_link,
+                                                                                                    :helper_method => :render_external_links,
                                                                                                     :text          => 'resource_text_display'
 
     config.add_show_field solr_name('desc_metadata__addinfolink', :stored_searchable, type: :string), :label         => 'Additional Information:',
-                                                                                                    :helper_method => :render_external_link,
+                                                                                                    :helper_method => :render_external_links,
                                                                                                     :text          => 'desc_metadata__addinfotext_tesim'
 
     # "fielded" search configuration. Used by pulldown among other places.
