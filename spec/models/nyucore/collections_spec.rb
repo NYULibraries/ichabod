@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe Nyucore::Collections do
 
-  let(:nyucore) { build(:nyucore, type: "Geospatial Data", publisher: "ESRI") }
+  let(:type) { "Geospatial Data" }
+  let(:publisher) { "ESRI" }
+  let(:nyucore) { build(:nyucore, type: type, publisher: publisher) }
   let(:nyucore_collections) { Nyucore::Collections.new(nyucore) }
 
   describe ".new" do
@@ -23,8 +25,41 @@ describe Nyucore::Collections do
   describe "#to_a" do
     subject { nyucore_collections.to_a }
     it { should be_instance_of Array }
-    it { should include "ESRI" }
-    it { should include "Spatial Data Repository" }
+
+    context "when object contains ESRI as publisher and Geospatial Data as type" do
+      it { should include "ESRI" }
+      it { should include "Spatial Data Repository" }
+    end
+
+    context "when object contains ESRI as publisher and no type" do
+      let(:type) { nil }
+      it { should include "ESRI" }
+      it { should_not include "Spatial Data Repository" }
+    end
+
+    context "when object contains Geospatial Data as type and no publisher" do
+      let(:publisher) { nil }
+      it { should_not include "ESRI" }
+      it { should include "Spatial Data Repository" }
+    end
+
+    context "when object contains Geospatial Data as publisher and ESRI as type" do
+      let(:publisher) { "Geospatial Data" }
+      let(:type) { "ESRI" }
+      it { should be_empty }
+    end
+
+    context "when object contains ESRI and something else in publisher" do
+      let(:publisher) { ["ESRI", "something else" ]}
+      let(:type) { nil }
+      it { should eql ["ESRI"] }
+    end
+
+    context "when object contains Geospatial Data and something else in type" do
+      let(:type) { ["Geospatial Data", "something else" ]}
+      let(:publisher) { nil }
+      it { should eql ["Spatial Data Repository"] }
+    end
   end
 
 end
