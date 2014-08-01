@@ -60,9 +60,7 @@ describe Nyucore, vcr: { cassette_name: "check nyucore schema" } do
   describe "#collections" do
 
     subject { nyucore.collections }
-
-    it { should_not be_empty }
-    it { should be_instance_of Collections }
+    it { should be_instance_of Nyucore::Collections }
 
   end
 
