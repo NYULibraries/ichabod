@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "nyucores/edit", vcr: { cassette_name: "nyucore show edit form" } do
-  let(:item) { create(:valid_nyucore) }
+  let(:item) { create(:nyucore) }
   before(:each) { @item = item }
 
   it "should render the edit nyucore form" do
