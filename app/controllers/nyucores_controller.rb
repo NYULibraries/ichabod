@@ -25,8 +25,8 @@ class NyucoresController < ApplicationController
     respond_with(@item)
   end
 
-  def edit
-    authorize! :update, params[:id],:message => "un-authorized item edit attempt"
+  def edit   
+    raise CanCan::AccessDenied.new("Not authorized!", :edit, @item) unless authorize! :edit, params[:id]
     respond_with(@item)
   end
 
@@ -37,16 +37,14 @@ class NyucoresController < ApplicationController
   end
 
   def update
-    # Not authorizing resources for now
-    authorize! :update, params[:id],:message => "un-authorized item edit attempt"
+    raise CanCan::AccessDenied.new("Not authorized!", :update, @item) unless authorize! :update, params[:id]
     flash[:notice] = 'Item was successfully updated.' if @item.update(item_params)
     respond_with(@item)
   end
 
   def destroy
-    # Not authorizing resources for now
-    authorize! :destroy, params[:id], :message => "un-authorized  item destory attempt"
     @item = Nyucore.find(params[:id])
+    raise CanCan::AccessDenied.new("Not authorized!", :destroy, @item) unless authorize! :destroy, params[:id]
     @item.destroy
     respond_with(@item, :location => nyucores_path)
   end

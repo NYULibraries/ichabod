@@ -33,6 +33,7 @@ class CatalogController < ApplicationController
     config.show.display_type = 'has_model_ssim'
 
 
+
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
     #
@@ -89,7 +90,9 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label         => 'Online Resource:',     
                                                                                                     :helper_method => :render_external_link, 
                                                                                                     :text          => 'resource_text_display'
-
+    config.add_index_field solr_name('desc_metadata__id', :stored_searchable, type: :string), :label         => 'Online Resource:',
+                                                                                                    :helper_method => :render_external_link,
+                                                                                                    :text          => 'resource_text_display'
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     config.add_show_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title:'
