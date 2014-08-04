@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'support/spec_test_helper.rb'
+require 'support/test_user_helper'
 
 describe NyucoresController do
 

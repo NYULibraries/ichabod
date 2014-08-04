@@ -1,9 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filter do
-    resource = controller_path.singularize.gsub('/', '_').to_sym 
-    method = "#{resource}_params"
-    params[resource] &&= send(method) if respond_to?(method, true)
-  end
+  
   # Adds a few additional behaviors into the application controller
    include Blacklight::Controller
   # Please be sure to impelement current_user and user_session. Blacklight depends on
@@ -21,8 +17,6 @@ class ApplicationController < ActionController::Base
   end
   
   alias_method :current_user, :current_user_dev if Rails.env.development?
-  
-  
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:notice] ||= exception.message.html_safe

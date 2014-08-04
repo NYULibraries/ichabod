@@ -1,40 +1,6 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/describe?xml=true
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*; q=0.5, application/xml'
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Set-Cookie:
-      - JSESSIONID=qi5xysez21s11i9tpox7sz7rk;Path=/fedora-test
-      Expires:
-      - Thu, 01 Jan 1970 00:00:00 GMT
-      Content-Type:
-      - text/xml;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><fedoraRepository xmlns="http://www.fedora.info/definitions/1/0/access/"
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/ http://www.fedora.info/definitions/1/0/fedoraRepository.xsd"><repositoryName>Fedora
-        Repository</repositoryName><repositoryBaseURL>http://localhost:8983/fedora-test</repositoryBaseURL><repositoryVersion>3.7.0</repositoryVersion><repositoryPID>    <PID-namespaceIdentifier>changeme</PID-namespaceIdentifier>    <PID-delimiter>:</PID-delimiter>    <PID-sample>changeme:100</PID-sample>    <retainPID>*</retainPID></repositoryPID><repositoryOAI-identifier>    <OAI-namespaceIdentifier>example.org</OAI-namespaceIdentifier>    <OAI-delimiter>:</OAI-delimiter>    <OAI-sample>oai:example.org:changeme:100</OAI-sample></repositoryOAI-identifier><sampleSearch-URL>http://localhost:8983/fedora-test/objects</sampleSearch-URL><sampleAccess-URL>http://localhost:8983/fedora-test/objects/demo:5</sampleAccess-URL><sampleOAI-URL>http://localhost:8983/fedora-test/oai?verb=Identify</sampleOAI-URL><adminEmail>bob@example.org</adminEmail><adminEmail>sally@example.org</adminEmail></fedoraRepository>
-    http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:32 GMT
-- request:
     method: post
     uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/nextPID?format=xml
     body:
@@ -53,13 +19,13 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=1ej6qbnmbbejkcti4hpcax50z;Path=/fedora-test
+      - JSESSIONID=8j5cpbkdcs3zipqboj5s34it;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Fri, 11 Jul 2014 04:16:33 GMT
+      - Fri, 11 Jul 2014 20:36:36 GMT
       Content-Length:
       - '375'
     body:
@@ -68,16 +34,16 @@ http_interactions:
 
         <pidList  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/getNextPIDInfo.xsd">  <pid>changeme:445</pid>
+        http://www.fedora.info/definitions/1/0/getNextPIDInfo.xsd">  <pid>changeme:479</pid>
 
         </pidList>
 
 '
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:33 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:36 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -94,23 +60,23 @@ http_interactions:
       message: Not Found
     headers:
       Set-Cookie:
-      - JSESSIONID=ce47zshvztb5zrfrj46do692;Path=/fedora-test
+      - JSESSIONID=r0j1nzhgahwl2n1ja87rb95k;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/plain
       Date:
-      - Fri, 11 Jul 2014 04:16:34 GMT
+      - Fri, 11 Jul 2014 20:36:36 GMT
       Content-Length:
       - '51'
     body:
       encoding: US-ASCII
-      string: ! 'Object not found in low-level storage: changeme:445'
+      string: ! 'Object not found in low-level storage: changeme:479'
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:34 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:36 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -127,23 +93,23 @@ http_interactions:
       message: Not Found
     headers:
       Set-Cookie:
-      - JSESSIONID=1xwrcqt5e10mq1wq89y92qmr0n;Path=/fedora-test
+      - JSESSIONID=1j3v3cjnbio98en8buyiz84y0;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/plain
       Date:
-      - Fri, 11 Jul 2014 04:16:34 GMT
+      - Fri, 11 Jul 2014 20:36:36 GMT
       Content-Length:
       - '51'
     body:
       encoding: US-ASCII
-      string: ! 'Object not found in low-level storage: changeme:445'
+      string: ! 'Object not found in low-level storage: changeme:479'
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:34 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:36 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams/RELS-EXT?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams/RELS-EXT?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -160,23 +126,23 @@ http_interactions:
       message: Not Found
     headers:
       Set-Cookie:
-      - JSESSIONID=151if715hues91akwq6qhdbexf;Path=/fedora-test
+      - JSESSIONID=1bihm667ikear10ljt8575g7fs;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/plain
       Date:
-      - Fri, 11 Jul 2014 04:16:35 GMT
+      - Fri, 11 Jul 2014 20:36:36 GMT
       Content-Length:
       - '51'
     body:
       encoding: US-ASCII
-      string: ! 'Object not found in low-level storage: changeme:445'
+      string: ! 'Object not found in low-level storage: changeme:479'
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:35 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:36 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams/rightsMetadata?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams/rightsMetadata?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -193,23 +159,23 @@ http_interactions:
       message: Not Found
     headers:
       Set-Cookie:
-      - JSESSIONID=dc3rdca3cwlo3wmj3ww8f87j;Path=/fedora-test
+      - JSESSIONID=f76f501cj22mawi6vvh0492;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/plain
       Date:
-      - Fri, 11 Jul 2014 04:16:35 GMT
+      - Fri, 11 Jul 2014 20:36:36 GMT
       Content-Length:
       - '51'
     body:
       encoding: US-ASCII
-      string: ! 'Object not found in low-level storage: changeme:445'
+      string: ! 'Object not found in low-level storage: changeme:479'
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:35 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:36 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams/descMetadata?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams/descMetadata?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -226,23 +192,23 @@ http_interactions:
       message: Not Found
     headers:
       Set-Cookie:
-      - JSESSIONID=m40urbcdue97lbe1jip9kyj9;Path=/fedora-test
+      - JSESSIONID=1hhs0d5k6madodfd49evctdvf;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/plain
       Date:
-      - Fri, 11 Jul 2014 04:16:35 GMT
+      - Fri, 11 Jul 2014 20:36:36 GMT
       Content-Length:
       - '51'
     body:
       encoding: US-ASCII
-      string: ! 'Object not found in low-level storage: changeme:445'
+      string: ! 'Object not found in low-level storage: changeme:479'
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:35 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:36 GMT
 - request:
     method: post
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479
     body:
       encoding: US-ASCII
       string: ''
@@ -261,25 +227,25 @@ http_interactions:
       message: Created
     headers:
       Set-Cookie:
-      - JSESSIONID=qliokxopbp7h1sjb51ivzd056;Path=/fedora-test
+      - JSESSIONID=5i7lyxvo0rotthw4hb1es607;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - application/xml
       Date:
-      - Fri, 11 Jul 2014 04:16:40 GMT
+      - Fri, 11 Jul 2014 20:36:37 GMT
       Location:
-      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A445
+      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A479
       Content-Length:
       - '12'
     body:
       encoding: US-ASCII
-      string: changeme:445
+      string: changeme:479
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:40 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:37 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -296,30 +262,30 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=1vfi6i0kdte2xdu19k9r76dtb;Path=/fedora-test
+      - JSESSIONID=1xle5s8tvgyu64kexe4cnekdt;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Fri, 11 Jul 2014 04:16:40 GMT
+      - Fri, 11 Jul 2014 20:36:37 GMT
       Content-Length:
       - '921'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
-        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="changeme:445"
-        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-07-11T04:16:36.869Z</objCreateDate><objLastModDate>2014-07-11T04:16:36.869Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A445/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A445/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="changeme:479"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-07-11T20:36:36.845Z</objCreateDate><objLastModDate>2014-07-11T20:36:36.845Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A479/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A479/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:40 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:37 GMT
 - request:
     method: post
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams/RELS-EXT?controlGroup=X&dsLabel=Fedora%20Object-to-Object%20Relationship%20Metadata&dsState=A&mimeType=application/rdf%2Bxml&versionable=true
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams/RELS-EXT?controlGroup=X&dsLabel=Fedora%20Object-to-Object%20Relationship%20Metadata&dsState=A&mimeType=application/rdf%2Bxml&versionable=true
     body:
       encoding: UTF-8
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"
-        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/changeme:445\">\n
+        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/changeme:479\">\n
         \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"/>\n  </rdf:Description>\n</rdf:RDF>\n"
     headers:
       Accept:
@@ -340,75 +306,75 @@ http_interactions:
       message: Created
     headers:
       Set-Cookie:
-      - JSESSIONID=8t2gjetu0xlzfavhsrq8m9pa;Path=/fedora-test
+      - JSESSIONID=k9d4482s4ba4hlx86o52bw8d;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Fri, 11 Jul 2014 04:16:41 GMT
+      - Fri, 11 Jul 2014 20:36:37 GMT
       Location:
-      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A445/datastreams/RELS-EXT
+      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A479/datastreams/RELS-EXT
       Content-Length:
       - '917'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:445"
-        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-07-11T04:16:41.051Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>282</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:445+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:479"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-07-11T20:36:37.236Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>282</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:479+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:41 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:37 GMT
 - request:
     method: post
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams/descMetadata?controlGroup=M&dsState=A&mimeType=text/plain&versionable=true
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams/descMetadata?controlGroup=M&dsState=A&mimeType=text/plain&versionable=true
     body:
       encoding: UTF-8
-      string: ! '<info:fedora/changeme:445> <http://purl.org/dc/terms/title> "A Comedy
+      string: ! '<info:fedora/changeme:479> <http://purl.org/dc/terms/title> "A Comedy
         of Errors" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/creator> "Bill Shakespeare"
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/creator> "Bill Shakespeare"
         .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/publisher> "Penguin Classics"
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/publisher> "Penguin Classics"
         .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/identifier> "Id 123"
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/identifier> "Id 123"
         .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/type> "Text" .
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/type> "Text" .
 
-        <info:fedora/changeme:445> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        <info:fedora/changeme:479> <http://harper.bobst.nyu.edu/data/nyucore#available>
         "DSS.ESRI_10_Streetmap\\DSS.airports_ABU" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/description> "The Comedy
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/description> "The Comedy
         of Errors is one of William Shakespeare''s blah blahs" .
 
-        <info:fedora/changeme:445> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        <info:fedora/changeme:479> <http://harper.bobst.nyu.edu/data/nyucore#edition>
         "1st" .
 
-        <info:fedora/changeme:445> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        <info:fedora/changeme:479> <http://harper.bobst.nyu.edu/data/nyucore#series>
         "ESRI_10_STREETMAP" .
 
-        <info:fedora/changeme:445> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        <info:fedora/changeme:479> <http://harper.bobst.nyu.edu/data/nyucore#version>
         "2nd" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/date> "1594" .
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/date> "1594" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/format> "Geospatial data"
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/format> "Geospatial data"
         .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/language> "English" .
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/language> "English" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/relation> "Not sure what
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/relation> "Not sure what
         this is" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/rights> "All rights"
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/rights> "All rights"
         .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/subject> "Plays" .
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/subject> "Plays" .
 
-        <info:fedora/changeme:445> <http://harper.bobst.nyu.edu/data/nyucore#citation>
+        <info:fedora/changeme:479> <http://harper.bobst.nyu.edu/data/nyucore#citation>
         "B Shakes, SPC" .
 
 '
@@ -431,28 +397,28 @@ http_interactions:
       message: Created
     headers:
       Set-Cookie:
-      - JSESSIONID=467rpv6zig3b1hg2l74qxgr7e;Path=/fedora-test
+      - JSESSIONID=1rjjooxgj3qb1tmt4l931f202;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Fri, 11 Jul 2014 04:16:42 GMT
+      - Fri, 11 Jul 2014 20:36:37 GMT
       Location:
-      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A445/datastreams/descMetadata
+      - http://127.0.0.1:8983/fedora-test/objects/changeme%3A479/datastreams/descMetadata
       Content-Length:
       - '891'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:445"
-        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-07-11T04:16:42.158Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1482</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:445+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:479"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-07-11T20:36:37.686Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1482</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:479+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:42 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:37 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams/RELS-EXT?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams/RELS-EXT?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -469,26 +435,26 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=w1apm7ckx6tbbqltnkkdej26;Path=/fedora-test
+      - JSESSIONID=10e3q2w7cg0661r3oalhxalxbt;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Fri, 11 Jul 2014 04:16:42 GMT
+      - Fri, 11 Jul 2014 20:36:37 GMT
       Content-Length:
       - '917'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:445"
-        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-07-11T04:16:41.051Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>282</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:445+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:479"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-07-11T20:36:37.236Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>282</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:479+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:42 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:37 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams/descMetadata?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams/descMetadata?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -505,33 +471,33 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=vyjd3xjapdiei1fe8f4adk7k;Path=/fedora-test
+      - JSESSIONID=zaxjtp5mt1wdlqzag7lqp98f;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Fri, 11 Jul 2014 04:16:42 GMT
+      - Fri, 11 Jul 2014 20:36:37 GMT
       Content-Length:
       - '891'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:445"
-        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-07-11T04:16:42.158Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1482</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:445+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:479"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-07-11T20:36:37.686Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1482</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:479+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:42 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:37 GMT
 - request:
     method: post
     uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
     body:
       encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-07-11T04:16:36Z</field><field
-        name="system_modified_dtsi">2014-07-11T04:16:36Z</field><field name="object_state_ssi">A</field><field
-        name="active_fedora_model_ssi">Nyucore</field><field name="id">changeme:445</field><field
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-07-11T20:36:36Z</field><field
+        name="system_modified_dtsi">2014-07-11T20:36:36Z</field><field name="object_state_ssi">A</field><field
+        name="active_fedora_model_ssi">Nyucore</field><field name="id">changeme:479</field><field
         name="object_profile_ssm">{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora Object-to-Object
-        Relationship Metadata","dsVersionID":"RELS-EXT.0","dsCreateDate":"2014-07-11T04:16:41Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":282,"dsVersionable":true,"dsInfoType":null,"dsLocation":"changeme:445+RELS-EXT+RELS-EXT.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"rightsMetadata":{},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.0","dsCreateDate":"2014-07-11T04:16:42Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1482,"dsVersionable":true,"dsInfoType":null,"dsLocation":"changeme:445+descMetadata+descMetadata.0","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-07-11T04:16:36Z","objLastModDate":"2014-07-11T04:16:36Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/changeme%3A445/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/changeme%3A445/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
+        Relationship Metadata","dsVersionID":"RELS-EXT.0","dsCreateDate":"2014-07-11T20:36:37Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":282,"dsVersionable":true,"dsInfoType":null,"dsLocation":"changeme:479+RELS-EXT+RELS-EXT.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"rightsMetadata":{},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.0","dsCreateDate":"2014-07-11T20:36:37Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1482,"dsVersionable":true,"dsInfoType":null,"dsLocation":"changeme:479+descMetadata+descMetadata.0","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-07-11T20:36:36Z","objLastModDate":"2014-07-11T20:36:36Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/changeme%3A479/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/changeme%3A479/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
         name="edit_access_group_ssim">admin_group</field><field name="desc_metadata__title_tesim">A
         Comedy of Errors</field><field name="desc_metadata__creator_tesim">Bill Shakespeare</field><field
         name="desc_metadata__creator_sim">Bill Shakespeare</field><field name="desc_metadata__publisher_tesim">Penguin
@@ -561,11 +527,11 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>475}}
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>144}}
 
 '
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:43 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:38 GMT
 - request:
     method: post
     uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
@@ -586,14 +552,14 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>549}}
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>341}}
 
 '
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:43 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:38 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -610,26 +576,26 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=4vav5ub8um8t1b0zgolbf7tsb;Path=/fedora-test
+      - JSESSIONID=13h40njfy5zlx1mayx0w7y484r;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Fri, 11 Jul 2014 04:16:43 GMT
+      - Fri, 11 Jul 2014 20:36:38 GMT
       Content-Length:
       - '963'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
-        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="changeme:445"
-        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-07-11T04:16:36.869Z</objCreateDate><objLastModDate>2014-07-11T04:16:42.158Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A445/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A445/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="changeme:479"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-07-11T20:36:36.845Z</objCreateDate><objLastModDate>2014-07-11T20:36:37.686Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A479/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/changeme%3A479/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:43 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:38 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -646,29 +612,29 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=14emoip06n2bsr9z3hylx1659;Path=/fedora-test
+      - JSESSIONID=nxny7c09s72e847worybwpgs;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Fri, 11 Jul 2014 04:16:43 GMT
+      - Fri, 11 Jul 2014 20:36:38 GMT
       Content-Length:
       - '713'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
         xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
-        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="changeme:445"  baseURL="http://localhost:8983/fedora-test/"
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="changeme:479"  baseURL="http://localhost:8983/fedora-test/"
         >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
         />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
         Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
         label="" mimeType="text/plain" /></objectDatastreams>
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:43 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:38 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams/RELS-EXT?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams/RELS-EXT?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -685,26 +651,26 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=zrseixt4palvegdshioagozv;Path=/fedora-test
+      - JSESSIONID=135vfojik2feea1yslde5dwai;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Fri, 11 Jul 2014 04:16:43 GMT
+      - Fri, 11 Jul 2014 20:36:38 GMT
       Content-Length:
       - '917'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:445"
-        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-07-11T04:16:41.051Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>282</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:445+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:479"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-07-11T20:36:37.236Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>282</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:479+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:43 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:38 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams/RELS-EXT/content
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams/RELS-EXT/content
     body:
       encoding: US-ASCII
       string: ''
@@ -721,7 +687,7 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=ws8miynbiwhrnypwrvirqexr;Path=/fedora-test
+      - JSESSIONID=16gf52pwe4gqq15f1b2swetvbv;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Disposition:
@@ -731,17 +697,17 @@ http_interactions:
       Content-Type:
       - application/rdf+xml
       Date:
-      - Fri, 11 Jul 2014 04:16:44 GMT
+      - Fri, 11 Jul 2014 20:36:38 GMT
     body:
       encoding: US-ASCII
       string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
-        \ <rdf:Description rdf:about=\"info:fedora/changeme:445\">\n    <ns0:hasModel
+        \ <rdf:Description rdf:about=\"info:fedora/changeme:479\">\n    <ns0:hasModel
         rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n  </rdf:Description>\n</rdf:RDF>\n"
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:44 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:38 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams/descMetadata?format=xml
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams/descMetadata?format=xml
     body:
       encoding: US-ASCII
       string: ''
@@ -758,26 +724,26 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=1kbmgjnuud48q1cauafoowvh0a;Path=/fedora-test
+      - JSESSIONID=19ydwm72zjx2e3pyrdfji4r5v;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
       - text/xml
       Date:
-      - Fri, 11 Jul 2014 04:16:44 GMT
+      - Fri, 11 Jul 2014 20:36:38 GMT
       Content-Length:
       - '891'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:445"
-        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-07-11T04:16:42.158Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1482</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:445+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="changeme:479"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-07-11T20:36:37.686Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1482</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>changeme:479+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:44 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:38 GMT
 - request:
     method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:445/datastreams/descMetadata/content
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/changeme:479/datastreams/descMetadata/content
     body:
       encoding: US-ASCII
       string: ''
@@ -794,7 +760,7 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=dl7siel3v0ygpmvd6cricelp;Path=/fedora-test
+      - JSESSIONID=t1hnysgczq84gq68odl2yy7f;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Disposition:
@@ -804,62 +770,62 @@ http_interactions:
       Content-Type:
       - text/plain
       Date:
-      - Fri, 11 Jul 2014 04:16:44 GMT
+      - Fri, 11 Jul 2014 20:36:38 GMT
     body:
       encoding: US-ASCII
-      string: ! '<info:fedora/changeme:445> <http://purl.org/dc/terms/title> "A Comedy
+      string: ! '<info:fedora/changeme:479> <http://purl.org/dc/terms/title> "A Comedy
         of Errors" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/creator> "Bill Shakespeare"
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/creator> "Bill Shakespeare"
         .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/publisher> "Penguin Classics"
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/publisher> "Penguin Classics"
         .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/identifier> "Id 123"
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/identifier> "Id 123"
         .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/type> "Text" .
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/type> "Text" .
 
-        <info:fedora/changeme:445> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        <info:fedora/changeme:479> <http://harper.bobst.nyu.edu/data/nyucore#available>
         "DSS.ESRI_10_Streetmap\\DSS.airports_ABU" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/description> "The Comedy
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/description> "The Comedy
         of Errors is one of William Shakespeare''s blah blahs" .
 
-        <info:fedora/changeme:445> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        <info:fedora/changeme:479> <http://harper.bobst.nyu.edu/data/nyucore#edition>
         "1st" .
 
-        <info:fedora/changeme:445> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        <info:fedora/changeme:479> <http://harper.bobst.nyu.edu/data/nyucore#series>
         "ESRI_10_STREETMAP" .
 
-        <info:fedora/changeme:445> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        <info:fedora/changeme:479> <http://harper.bobst.nyu.edu/data/nyucore#version>
         "2nd" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/date> "1594" .
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/date> "1594" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/format> "Geospatial data"
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/format> "Geospatial data"
         .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/language> "English" .
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/language> "English" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/relation> "Not sure what
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/relation> "Not sure what
         this is" .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/rights> "All rights"
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/rights> "All rights"
         .
 
-        <info:fedora/changeme:445> <http://purl.org/dc/terms/subject> "Plays" .
+        <info:fedora/changeme:479> <http://purl.org/dc/terms/subject> "Plays" .
 
-        <info:fedora/changeme:445> <http://harper.bobst.nyu.edu/data/nyucore#citation>
+        <info:fedora/changeme:479> <http://harper.bobst.nyu.edu/data/nyucore#citation>
         "B Shakes, SPC" .
 
 '
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:44 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:38 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:8983/solr/test/select?id=changeme:445&qt=permissions&wt=ruby
+    uri: http://127.0.0.1:8983/solr/test/select?id=changeme:479&qt=permissions&wt=ruby
     body:
       encoding: US-ASCII
       string: ''
@@ -870,16 +836,16 @@ http_interactions:
       message: OK
     headers:
       Last-Modified:
-      - Fri, 11 Jul 2014 04:16:43 GMT
+      - Fri, 11 Jul 2014 20:36:38 GMT
       Etag:
-      - ! '"ZDQ1MjAwMDAwMDAwMDAwMFNvbHI="'
+      - ! '"NDkzMjAwMDAwMDAwMDAwMFNvbHI="'
       Content-Type:
       - text/plain;charset=UTF-8
       Transfer-Encoding:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>1078,'params'=>{'facet'=>'off','fl'=>'\n
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>4,'params'=>{'facet'=>'off','fl'=>'\n
         \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
         \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
         \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
@@ -887,9 +853,9 @@ http_interactions:
         \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
         \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
         \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
-        f=id v=$id}','rows'=>'1','id'=>'changeme:445','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'changeme:445','edit_access_group_ssim'=>['admin_group']}]}}\n"
+        f=id v=$id}','rows'=>'1','id'=>'changeme:479','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'changeme:479','edit_access_group_ssim'=>['admin_group']}]}}\n"
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:46 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:38 GMT
 - request:
     method: get
     uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
@@ -903,20 +869,20 @@ http_interactions:
       message: OK
     headers:
       Last-Modified:
-      - Fri, 11 Jul 2014 04:16:43 GMT
+      - Fri, 11 Jul 2014 20:36:38 GMT
       Etag:
-      - ! '"ZDQ1MjAwMDAwMDAwMDAwMFNvbHI="'
+      - ! '"NDkzMjAwMDAwMDAwMDAwMFNvbHI="'
       Content-Type:
       - text/plain;charset=UTF-8
       Transfer-Encoding:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>380,'params'=>{'sort'=>'score
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>843,'params'=>{'sort'=>'score
         desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
         desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
         desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
-        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>3152,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-06-12T15:58:35Z','system_modified_dtsi'=>'2014-06-12T15:58:35Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:1','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>3186,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-06-12T15:58:35Z','system_modified_dtsi'=>'2014-06-12T15:58:35Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:1','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:36Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:1+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1008,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:1+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:35Z\",\"objLastModDate\":\"2014-06-12T15:58:35Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A1/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A1/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'desc_metadata__title_tesim'=>['LION'],'desc_metadata__publisher_tesim'=>['New
         York City Dept. of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip'],'desc_metadata__type_tesim'=>['Geospatial
         Data'],'desc_metadata__description_tesim'=>['LION is a single line representation
@@ -983,16 +949,16 @@ http_interactions:
         Data'],'desc_metadata__series_tesim'=>['NYCDOITT_BUILDINGS_0311'],'desc_metadata__version_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:37.983Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:38Z','system_modified_dtsi'=>'2014-06-12T15:58:38Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:4','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:38Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:4+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:39Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":883,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:4+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:38Z\",\"objLastModDate\":\"2014-06-12T15:58:38Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A4/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A4/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'desc_metadata__title_tesim'=>['AOI_Centroids_3CJ'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_AOI_20101-AOI_Centroids_3CJ.zip'],'desc_metadata__type_tesim'=>['Geospatial
         Data'],'desc_metadata__series_tesim'=>['NYCDCP_AOI_20101'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:39.487Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Working
-        Paper',2393,'Geospatial Data',195,'Article',114,'new type',93,'Text',76,'Geospatial
-        Dataset',48,'Dataset',40,'Technical Report',3,'Thesis',3,'Book',1],'desc_metadata__creator_sim'=>['new
-        creator',93,'The Man',89,'Bill Shakespeare',76,'White, Lawrence J.',53,'Walter,
+        Paper',2393,'Geospatial Data',196,'Article',114,'new type',94,'Text',77,'Dataset',70,'Geospatial
+        Dataset',48,'Technical Report',3,'Thesis',3,'Book',1],'desc_metadata__creator_sim'=>['The
+        Man',119,'new creator',94,'Bill Shakespeare',77,'White, Lawrence J.',53,'Walter,
         Ingo',37,'Provost, Foster',35,'Saunders, Anthony',35,'Yermack, David',35,'Sundararajan,
-        Arun',34,'Economides, Nicholas',32],'desc_metadata__subject_sim'=>['Plays',151,'new
-        subject',93,'Cryptozoology',89,'Vexillology',89,'Plays1',75,'regulation',9,'procyclicality',6,'Banking',5,'Commercial
-        banks',5,'KMV',5],'desc_metadata__language_sim'=>['en_US',2285,'English',167,'en',95,'new
-        language',93,'ger',89,'English1',75,'EN',1,'en_UShry 2451/25921hry 2451/25921',1,'other',1]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
+        Arun',34,'Economides, Nicholas',32],'desc_metadata__subject_sim'=>['Plays',153,'Cryptozoology',119,'Vexillology',119,'new
+        subject',94,'Plays1',76,'regulation',9,'procyclicality',6,'Banking',5,'Commercial
+        banks',5,'KMV',5],'desc_metadata__language_sim'=>['en_US',2285,'English',169,'en',125,'ger',119,'new
+        language',94,'English1',76,'EN',1,'en_UShry 2451/25921hry 2451/25921',1,'other',1]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:48 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:40 GMT
 - request:
     method: get
     uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&q=A%20Comedy%20of%20Errors&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&spellcheck.q=A%20Comedy%20of%20Errors&wt=ruby
@@ -1006,21 +972,21 @@ http_interactions:
       message: OK
     headers:
       Last-Modified:
-      - Fri, 11 Jul 2014 04:16:43 GMT
+      - Fri, 11 Jul 2014 20:36:38 GMT
       Etag:
-      - ! '"ZDQ1MjAwMDAwMDAwMDAwMFNvbHI="'
+      - ! '"NDkzMjAwMDAwMDAwMDAwMFNvbHI="'
       Content-Type:
       - text/plain;charset=UTF-8
       Transfer-Encoding:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>591,'params'=>{'sort'=>'score
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>381,'params'=>{'sort'=>'score
         desc, pub_date_dtsi desc, title_tesi asc','q'=>'A Comedy of Errors','spellcheck.q'=>'A
         Comedy of Errors','qf'=>'desc_metadata__title_tesim desc_metadata__author_tesim
         desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
         desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
-        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>151,'start'=>0,'maxScore'=>0.09342025,'docs'=>[{'system_create_dtsi'=>'2014-06-12T18:05:27Z','system_modified_dtsi'=>'2014-06-12T18:05:28Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'fda:hdl-handle-net-2451-27559','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>152,'start'=>0,'maxScore'=>0.09332636,'docs'=>[{'system_create_dtsi'=>'2014-06-12T18:05:27Z','system_modified_dtsi'=>'2014-06-12T18:05:28Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'fda:hdl-handle-net-2451-27559','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.1\",\"dsCreateDate\":\"2014-06-13T14:31:41Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":299,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-27559+RELS-EXT+RELS-EXT.1\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.1\",\"dsCreateDate\":\"2014-06-13T14:31:41Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1792,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-27559+descMetadata+descMetadata.1\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
         Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-12T18:05:27Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":358,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-27559+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T18:05:27Z\",\"objLastModDate\":\"2014-06-12T18:05:28Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-27559/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-27559/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['Another
         Look at GAAP Versus The Street: An Empirical Assessment of Measurement Error
@@ -1035,76 +1001,76 @@ http_interactions:
         conventional analyses of GAAP and Street ERCs, including the ERC divergence
         pattern, are significantly contaminated by measurement errors in earnings
         surprises.'],'desc_metadata__date_tesim'=>['2006-11'],'desc_metadata__type_tesim'=>['Working
-        Paper'],'desc_metadata__identifier_tesim'=>['http://hdl.handle.net/2451/27559'],'desc_metadata__available_tesim'=>['http://hdl.handle.net/2451/27559'],'desc_metadata__language_tesim'=>['en_US'],'desc_metadata__relation_tesim'=>['http://archive.nyu.edu/bitstream/2451/27559/2/SSRN-id950609.pdf'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-13T14:31:41.985Z','score'=>0.09342025},{'system_create_dtsi'=>'2014-06-12T20:21:06Z','system_modified_dtsi'=>'2014-06-12T20:21:06Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:63','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Paper'],'desc_metadata__identifier_tesim'=>['http://hdl.handle.net/2451/27559'],'desc_metadata__available_tesim'=>['http://hdl.handle.net/2451/27559'],'desc_metadata__language_tesim'=>['en_US'],'desc_metadata__relation_tesim'=>['http://archive.nyu.edu/bitstream/2451/27559/2/SSRN-id950609.pdf'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-13T14:31:41.985Z','score'=>0.09332636},{'system_create_dtsi'=>'2014-06-12T20:21:06Z','system_modified_dtsi'=>'2014-06-12T20:21:06Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:63','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T20:21:07Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:63+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T20:21:08Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1465,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:63+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T20:21:06Z\",\"objLastModDate\":\"2014-06-12T20:21:06Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A63/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A63/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
         Comedy of Errors'],'desc_metadata__creator_tesim'=>['Bill Shakespeare'],'desc_metadata__publisher_tesim'=>['Penguin
         Classics'],'desc_metadata__identifier_tesim'=>['Id 123'],'desc_metadata__type_tesim'=>['Text'],'desc_metadata__available_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__description_tesim'=>['The
         Comedy of Errors is one of William Shakespeare\\'s blah blahs'],'desc_metadata__edition_tesim'=>['1st'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['2nd'],'desc_metadata__date_tesim'=>['1594'],'desc_metadata__format_tesim'=>['Geospatial
         data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['Not
         sure what this is'],'desc_metadata__rights_tesim'=>['All rights'],'desc_metadata__subject_tesim'=>['Plays'],'desc_metadata__citation_tesim'=>['B
-        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T20:21:08.39Z','score'=>0.075757466},{'system_create_dtsi'=>'2014-06-12T21:28:32Z','system_modified_dtsi'=>'2014-06-12T21:28:32Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:67','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T20:21:08.39Z','score'=>0.074873336},{'system_create_dtsi'=>'2014-06-12T21:28:32Z','system_modified_dtsi'=>'2014-06-12T21:28:32Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:67','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T21:28:32Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:67+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T21:28:33Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1465,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:67+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T21:28:32Z\",\"objLastModDate\":\"2014-06-12T21:28:32Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A67/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A67/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
         Comedy of Errors'],'desc_metadata__creator_tesim'=>['Bill Shakespeare'],'desc_metadata__publisher_tesim'=>['Penguin
         Classics'],'desc_metadata__identifier_tesim'=>['Id 123'],'desc_metadata__type_tesim'=>['Text'],'desc_metadata__available_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__description_tesim'=>['The
         Comedy of Errors is one of William Shakespeare\\'s blah blahs'],'desc_metadata__edition_tesim'=>['1st'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['2nd'],'desc_metadata__date_tesim'=>['1594'],'desc_metadata__format_tesim'=>['Geospatial
         data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['Not
         sure what this is'],'desc_metadata__rights_tesim'=>['All rights'],'desc_metadata__subject_tesim'=>['Plays'],'desc_metadata__citation_tesim'=>['B
-        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T21:28:33.422Z','score'=>0.075757466},{'system_create_dtsi'=>'2014-06-12T20:15:03Z','system_modified_dtsi'=>'2014-06-12T20:15:03Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:59','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T21:28:33.422Z','score'=>0.074873336},{'system_create_dtsi'=>'2014-06-12T20:15:03Z','system_modified_dtsi'=>'2014-06-12T20:15:03Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:59','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T20:15:03Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:59+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T20:15:03Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1465,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:59+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T20:15:03Z\",\"objLastModDate\":\"2014-06-12T20:15:03Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A59/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A59/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
         Comedy of Errors'],'desc_metadata__creator_tesim'=>['Bill Shakespeare'],'desc_metadata__publisher_tesim'=>['Penguin
         Classics'],'desc_metadata__identifier_tesim'=>['Id 123'],'desc_metadata__type_tesim'=>['Text'],'desc_metadata__available_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__description_tesim'=>['The
         Comedy of Errors is one of William Shakespeare\\'s blah blahs'],'desc_metadata__edition_tesim'=>['1st'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['2nd'],'desc_metadata__date_tesim'=>['1594'],'desc_metadata__format_tesim'=>['Geospatial
         data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['Not
         sure what this is'],'desc_metadata__rights_tesim'=>['All rights'],'desc_metadata__subject_tesim'=>['Plays'],'desc_metadata__citation_tesim'=>['B
-        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T20:15:03.832Z','score'=>0.075757466},{'system_create_dtsi'=>'2014-06-13T02:10:21Z','system_modified_dtsi'=>'2014-06-13T02:10:21Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:91','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T20:15:03.832Z','score'=>0.074873336},{'system_create_dtsi'=>'2014-06-13T02:10:21Z','system_modified_dtsi'=>'2014-06-13T02:10:21Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:91','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-13T02:10:22Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:91+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-13T02:10:22Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1465,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:91+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-13T02:10:21Z\",\"objLastModDate\":\"2014-06-13T02:10:21Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A91/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A91/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
         Comedy of Errors'],'desc_metadata__creator_tesim'=>['Bill Shakespeare'],'desc_metadata__publisher_tesim'=>['Penguin
         Classics'],'desc_metadata__identifier_tesim'=>['Id 123'],'desc_metadata__type_tesim'=>['Text'],'desc_metadata__available_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__description_tesim'=>['The
         Comedy of Errors is one of William Shakespeare\\'s blah blahs'],'desc_metadata__edition_tesim'=>['1st'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['2nd'],'desc_metadata__date_tesim'=>['1594'],'desc_metadata__format_tesim'=>['Geospatial
         data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['Not
         sure what this is'],'desc_metadata__rights_tesim'=>['All rights'],'desc_metadata__subject_tesim'=>['Plays'],'desc_metadata__citation_tesim'=>['B
-        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-13T02:10:22.941Z','score'=>0.075757466},{'system_create_dtsi'=>'2014-06-13T03:21:14Z','system_modified_dtsi'=>'2014-06-13T03:21:14Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:96','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-13T02:10:22.941Z','score'=>0.074873336},{'system_create_dtsi'=>'2014-06-13T03:21:14Z','system_modified_dtsi'=>'2014-06-13T03:21:14Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:96','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-13T03:21:14Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:96+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2014-06-13T03:21:14Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":516,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:96+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-13T03:21:15Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1465,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:96+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-13T03:21:14Z\",\"objLastModDate\":\"2014-06-13T03:21:14Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A96/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A96/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['public'],'desc_metadata__title_tesim'=>['A
         Comedy of Errors'],'desc_metadata__creator_tesim'=>['Bill Shakespeare'],'desc_metadata__publisher_tesim'=>['Penguin
         Classics'],'desc_metadata__identifier_tesim'=>['Id 123'],'desc_metadata__type_tesim'=>['Text'],'desc_metadata__available_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__description_tesim'=>['The
         Comedy of Errors is one of William Shakespeare\\'s blah blahs'],'desc_metadata__edition_tesim'=>['1st'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['2nd'],'desc_metadata__date_tesim'=>['1594'],'desc_metadata__format_tesim'=>['Geospatial
         data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['Not
         sure what this is'],'desc_metadata__rights_tesim'=>['All rights'],'desc_metadata__subject_tesim'=>['Plays'],'desc_metadata__citation_tesim'=>['B
-        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-13T03:21:15.544Z','score'=>0.075757466},{'system_create_dtsi'=>'2014-06-13T15:28:25Z','system_modified_dtsi'=>'2014-06-13T15:28:25Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:128','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-13T03:21:15.544Z','score'=>0.074873336},{'system_create_dtsi'=>'2014-06-13T15:28:25Z','system_modified_dtsi'=>'2014-06-13T15:28:25Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:128','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-13T15:28:25Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":282,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:128+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2014-06-13T15:28:26Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":516,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:128+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-13T15:28:26Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1482,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:128+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-13T15:28:25Z\",\"objLastModDate\":\"2014-06-13T15:28:25Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A128/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A128/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['public'],'desc_metadata__title_tesim'=>['A
         Comedy of Errors'],'desc_metadata__creator_tesim'=>['Bill Shakespeare'],'desc_metadata__publisher_tesim'=>['Penguin
         Classics'],'desc_metadata__identifier_tesim'=>['Id 123'],'desc_metadata__type_tesim'=>['Text'],'desc_metadata__available_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__description_tesim'=>['The
         Comedy of Errors is one of William Shakespeare\\'s blah blahs'],'desc_metadata__edition_tesim'=>['1st'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['2nd'],'desc_metadata__date_tesim'=>['1594'],'desc_metadata__format_tesim'=>['Geospatial
         data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['Not
         sure what this is'],'desc_metadata__rights_tesim'=>['All rights'],'desc_metadata__subject_tesim'=>['Plays'],'desc_metadata__citation_tesim'=>['B
-        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-13T15:28:27.102Z','score'=>0.075757466},{'system_create_dtsi'=>'2014-06-15T21:07:21Z','system_modified_dtsi'=>'2014-06-15T21:07:21Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:136','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-13T15:28:27.102Z','score'=>0.074873336},{'system_create_dtsi'=>'2014-06-15T21:07:21Z','system_modified_dtsi'=>'2014-06-15T21:07:21Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:136','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-15T21:07:23Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":282,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:136+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2014-06-15T21:07:23Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":516,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:136+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-15T21:07:24Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1482,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:136+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-15T21:07:21Z\",\"objLastModDate\":\"2014-06-15T21:07:21Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A136/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A136/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['public'],'desc_metadata__title_tesim'=>['A
         Comedy of Errors'],'desc_metadata__creator_tesim'=>['Bill Shakespeare'],'desc_metadata__publisher_tesim'=>['Penguin
         Classics'],'desc_metadata__identifier_tesim'=>['Id 123'],'desc_metadata__type_tesim'=>['Text'],'desc_metadata__available_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__description_tesim'=>['The
         Comedy of Errors is one of William Shakespeare\\'s blah blahs'],'desc_metadata__edition_tesim'=>['1st'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['2nd'],'desc_metadata__date_tesim'=>['1594'],'desc_metadata__format_tesim'=>['Geospatial
         data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['Not
         sure what this is'],'desc_metadata__rights_tesim'=>['All rights'],'desc_metadata__subject_tesim'=>['Plays'],'desc_metadata__citation_tesim'=>['B
-        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-15T21:07:24.667Z','score'=>0.075757466},{'system_create_dtsi'=>'2014-06-15T21:21:51Z','system_modified_dtsi'=>'2014-06-15T21:21:51Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:140','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-15T21:07:24.667Z','score'=>0.074873336},{'system_create_dtsi'=>'2014-06-15T21:21:51Z','system_modified_dtsi'=>'2014-06-15T21:21:51Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:140','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-15T21:21:51Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":282,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:140+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2014-06-15T21:21:51Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":516,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:140+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-15T21:21:52Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1482,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:140+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-15T21:21:51Z\",\"objLastModDate\":\"2014-06-15T21:21:51Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A140/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A140/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['public'],'desc_metadata__title_tesim'=>['A
         Comedy of Errors'],'desc_metadata__creator_tesim'=>['Bill Shakespeare'],'desc_metadata__publisher_tesim'=>['Penguin
         Classics'],'desc_metadata__identifier_tesim'=>['Id 123'],'desc_metadata__type_tesim'=>['Text'],'desc_metadata__available_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__description_tesim'=>['The
         Comedy of Errors is one of William Shakespeare\\'s blah blahs'],'desc_metadata__edition_tesim'=>['1st'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['2nd'],'desc_metadata__date_tesim'=>['1594'],'desc_metadata__format_tesim'=>['Geospatial
         data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['Not
         sure what this is'],'desc_metadata__rights_tesim'=>['All rights'],'desc_metadata__subject_tesim'=>['Plays'],'desc_metadata__citation_tesim'=>['B
-        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-15T21:21:52.813Z','score'=>0.075757466},{'system_create_dtsi'=>'2014-06-15T21:34:54Z','system_modified_dtsi'=>'2014-06-15T21:34:54Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:144','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-15T21:21:52.813Z','score'=>0.074873336},{'system_create_dtsi'=>'2014-06-15T21:34:54Z','system_modified_dtsi'=>'2014-06-15T21:34:54Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:144','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
         Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-15T21:34:55Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":282,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:144+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2014-06-15T21:34:55Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":516,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:144+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-15T21:34:57Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1482,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:144+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-15T21:34:54Z\",\"objLastModDate\":\"2014-06-15T21:34:54Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A144/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A144/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['public'],'desc_metadata__title_tesim'=>['A
         Comedy of Errors'],'desc_metadata__creator_tesim'=>['Bill Shakespeare'],'desc_metadata__publisher_tesim'=>['Penguin
         Classics'],'desc_metadata__identifier_tesim'=>['Id 123'],'desc_metadata__type_tesim'=>['Text'],'desc_metadata__available_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__description_tesim'=>['The
         Comedy of Errors is one of William Shakespeare\\'s blah blahs'],'desc_metadata__edition_tesim'=>['1st'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['2nd'],'desc_metadata__date_tesim'=>['1594'],'desc_metadata__format_tesim'=>['Geospatial
         data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['Not
         sure what this is'],'desc_metadata__rights_tesim'=>['All rights'],'desc_metadata__subject_tesim'=>['Plays'],'desc_metadata__citation_tesim'=>['B
-        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-15T21:34:57.804Z','score'=>0.075757466}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Text',76,'Working
-        Paper',70],'desc_metadata__creator_sim'=>['Bill Shakespeare',76,'Hurvich,
+        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-15T21:34:57.804Z','score'=>0.074873336}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Text',77,'Working
+        Paper',70],'desc_metadata__creator_sim'=>['Bill Shakespeare',77,'Hurvich,
         Clifford M.',6,'Figlewski, Stephen',3,'Mendenhall, Richard R.',3,'Baker, Malcolm',2,'Deo,
         Rohit S.',2,'Gallo, Giampiero M.',2,'Jarke, Matthias',2,'Laudon, Kenneth C.',2,'Ludvigson,
-        Sydney C.',2],'desc_metadata__subject_sim'=>['Plays',76,'Autoregressive Models',4,'semiparametric
+        Sydney C.',2],'desc_metadata__subject_sim'=>['Plays',77,'Autoregressive Models',4,'semiparametric
         estimation',2,'1934 Securities Act',1,'Long-Memory',1,'Market efficiency',1,'Model
-        selection',1,'OLAP',1,'Post-earnings announcement Drift',1,'Presmoothing',1],'desc_metadata__language_sim'=>['English',79,'en_US',59]},'facet_dates'=>{},'facet_ranges'=>{}},'spellcheck'=>{'suggestions'=>['correctlySpelled',true]}}\n"
+        selection',1,'OLAP',1,'Post-earnings announcement Drift',1,'Presmoothing',1],'desc_metadata__language_sim'=>['English',80,'en_US',59]},'facet_dates'=>{},'facet_ranges'=>{}},'spellcheck'=>{'suggestions'=>['correctlySpelled',true]}}\n"
     http_version: 
-  recorded_at: Fri, 11 Jul 2014 04:16:50 GMT
+  recorded_at: Fri, 11 Jul 2014 20:36:40 GMT
 recorded_with: VCR 2.8.0
