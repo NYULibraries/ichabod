@@ -1,0 +1,736 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1jqu80xqi9kge1262m9ygd2qm0;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:36 GMT
+      Content-Length:
+      - '787'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="testgisrecord:123"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="rightsMetadata"
+        label="" mimeType="text/xml" />    <datastream dsid="descMetadata" label=""
+        mimeType="text/plain" /></objectDatastreams>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:36 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=44uhm5j8spag1d79f3a0zcon6;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:36 GMT
+      Content-Length:
+      - '978'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="testgisrecord:123"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-08-05T18:51:13.309Z</objCreateDate><objLastModDate>2014-08-05T20:18:56.642Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:37 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=k8rz8kcx2nrf1fn8y5arexaje;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:37 GMT
+      Content-Length:
+      - '927'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.3</dsVersionID><dsCreateDate>2014-08-05T20:18:55.274Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>287</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+RELS-EXT+RELS-EXT.3</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:37 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1uy9cxuyvzcs6sei52se81t3;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '287'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:37 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/testgisrecord:123\">\n    <ns0:hasModel
+        rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n  </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:37 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=389ys3fpqvqj18mylcvusw4bq;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:37 GMT
+      Content-Length:
+      - '906'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.3</dsVersionID><dsCreateDate>2014-08-05T20:18:55.384Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>523</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+rightsMetadata+rightsMetadata.3</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:37 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1h0lpatyviiub15it6z69pumv3;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:37 GMT
+      Content-Length:
+      - '901'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.3</dsVersionID><dsCreateDate>2014-08-05T20:18:56.642Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>2604</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+descMetadata+descMetadata.3</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:37 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/DC?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=130ke8xkzosqf17e5lsbeknehc;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:37 GMT
+      Content-Length:
+      - '926'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="DC" ><dsLabel>Dublin Core Record for this object</dsLabel><dsVersionID>DC1.0</dsVersionID><dsCreateDate>2014-08-05T18:51:13.309Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>346</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+DC+DC1.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:37 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/DC/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=bzjpf5oxhnnp1vu731jx7xsrj;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Dublin Core Record for this object.xml"
+      Content-Length:
+      - '346'
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:37 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<oai_dc:dc xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\"
+        xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd\">\n
+        \ <dc:identifier>testgisrecord:123</dc:identifier>\n</oai_dc:dc>\n"
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:37 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT?mimeType=application/rdf%2Bxml
+    body:
+      encoding: UTF-8
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"
+        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/testgisrecord:123\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"/>\n  </rdf:Description>\n</rdf:RDF>\n"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - application/rdf+xml
+      Content-Length:
+      - '311'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=9tbj1mc7qvmdpkv6a7sz1j1n;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:37 GMT
+      Content-Length:
+      - '927'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.4</dsVersionID><dsCreateDate>2014-08-05T20:23:37.387Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>287</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+RELS-EXT+RELS-EXT.4</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:37 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/rightsMetadata?mimeType=text/xml
+    body:
+      encoding: US-ASCII
+      string: ! "<rightsMetadata xmlns=\"http://hydra-collab.stanford.edu/schemas/rightsMetadata/v1\"
+        version=\"0.1\">\n  <copyright>\n    <human type=\"title\"/>\n    <human type=\"description\"/>\n
+        \   <machine type=\"uri\"/>\n  </copyright>\n  <access type=\"discover\">\n
+        \   <human/>\n    <machine/>\n  </access>\n  <access type=\"read\">\n    <human/>\n
+        \   <machine/>\n  </access>\n  <access type=\"edit\">\n    <human/>\n    <machine>\n
+        \     <group>gis_cataloger</group>\n    </machine>\n  </access>\n  <embargo>\n
+        \   <human/>\n    <machine/>\n  </embargo>\n</rightsMetadata>"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '523'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=ms99q716xzvf1dot5sf3v0ext;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:37 GMT
+      Content-Length:
+      - '906'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.4</dsVersionID><dsCreateDate>2014-08-05T20:23:37.417Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>523</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+rightsMetadata+rightsMetadata.4</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:37 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/descMetadata?mimeType=text/plain
+    body:
+      encoding: UTF-8
+      string: ! '<info:fedora/testgisrecord:123> <http://purl.org/dc/terms/title>
+        "A Star Wars Guide to Fun in the Sun" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/creator> "The Man"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/publisher> "NYU"
+        .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "Avail 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "Travail" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/description> "Interesting
+        topic" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/description> "But
+        poorly written" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        "Ed 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        "Edition 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        "Series 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        "Series I" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        "V1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        "Latest Version" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/date> "12/05/2014"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/date> "04/01/1666"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/format> "PDF" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/format> "DNS" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/language> "en" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/language> "ger"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/relation> "x is
+        to y as y is to z" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/relation> "one and
+        a two and a" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/rights> "remain
+        silent" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/rights> "hire an
+        attorney" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/subject> "Cryptozoology"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/subject> "Vexillology"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/type> "Geospatial
+        Data" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#citation>
+        "Shouldn''t have jumped the turnstile" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#citation>
+        "Shouldn''t have ran a red light" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/identifier> "rec123"
+        .
+
+'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - text/plain
+      Content-Length:
+      - '2604'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1sqb6utzjgvab160d6h9bhq0ro;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:38 GMT
+      Content-Length:
+      - '901'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.4</dsVersionID><dsCreateDate>2014-08-05T20:23:38.704Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>2604</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+descMetadata+descMetadata.4</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:38 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=54xc55fmaq2h6867i11vb41y;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:38 GMT
+      Content-Length:
+      - '927'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.4</dsVersionID><dsCreateDate>2014-08-05T20:23:37.387Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>287</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+RELS-EXT+RELS-EXT.4</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:38 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=tbwtn0pb8icm19epnfb303zm4;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:38 GMT
+      Content-Length:
+      - '906'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.4</dsVersionID><dsCreateDate>2014-08-05T20:23:37.417Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>523</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+rightsMetadata+rightsMetadata.4</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:38 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=ong7awn7tsl417qfyzkgnwt2y;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 05 Aug 2014 20:23:38 GMT
+      Content-Length:
+      - '901'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.4</dsVersionID><dsCreateDate>2014-08-05T20:23:38.704Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>2604</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+descMetadata+descMetadata.4</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:38 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-08-05T18:51:13Z</field><field
+        name="system_modified_dtsi">2014-08-05T20:18:56Z</field><field name="object_state_ssi">A</field><field
+        name="active_fedora_model_ssi">Nyucore</field><field name="id">testgisrecord:123</field><field
+        name="object_profile_ssm">{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora Object-to-Object
+        Relationship Metadata","dsVersionID":"RELS-EXT.4","dsCreateDate":"2014-08-05T20:23:37Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":287,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+RELS-EXT+RELS-EXT.4","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"rightsMetadata":{"dsLabel":null,"dsVersionID":"rightsMetadata.4","dsCreateDate":"2014-08-05T20:23:37Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":null,"dsControlGroup":"M","dsSize":523,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+rightsMetadata+rightsMetadata.4","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.4","dsCreateDate":"2014-08-05T20:23:38Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":2604,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+descMetadata+descMetadata.4","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"DC":{"dsLabel":"Dublin
+        Core Record for this object","dsVersionID":"DC1.0","dsCreateDate":"2014-08-05T18:51:13Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":"http://www.openarchives.org/OAI/2.0/oai_dc/","dsControlGroup":"X","dsSize":346,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+DC+DC1.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/afmodel:Nyucore","info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-08-05T18:51:13Z","objLastModDate":"2014-08-05T20:18:56Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
+        name="edit_access_group_ssim">gis_cataloger</field><field name="edit_access_group_ssim">admin_group</field><field
+        name="desc_metadata__title_tesim">A Star Wars Guide to Fun in the Sun</field><field
+        name="desc_metadata__creator_tesim">The Man</field><field name="desc_metadata__creator_sim">The
+        Man</field><field name="desc_metadata__publisher_tesim">NYU</field><field
+        name="desc_metadata__available_tesim">Avail 1</field><field name="desc_metadata__available_tesim">Travail</field><field
+        name="desc_metadata__description_tesim">Interesting topic</field><field name="desc_metadata__description_tesim">But
+        poorly written</field><field name="desc_metadata__edition_tesim">Ed 1</field><field
+        name="desc_metadata__edition_tesim">Edition 1</field><field name="desc_metadata__series_tesim">Series
+        1</field><field name="desc_metadata__series_tesim">Series I</field><field
+        name="desc_metadata__version_tesim">V1</field><field name="desc_metadata__version_tesim">Latest
+        Version</field><field name="desc_metadata__date_tesim">12/05/2014</field><field
+        name="desc_metadata__date_tesim">04/01/1666</field><field name="desc_metadata__format_tesim">PDF</field><field
+        name="desc_metadata__format_tesim">DNS</field><field name="desc_metadata__language_tesim">en</field><field
+        name="desc_metadata__language_tesim">ger</field><field name="desc_metadata__language_sim">en</field><field
+        name="desc_metadata__language_sim">ger</field><field name="desc_metadata__relation_tesim">x
+        is to y as y is to z</field><field name="desc_metadata__relation_tesim">one
+        and a two and a</field><field name="desc_metadata__rights_tesim">remain silent</field><field
+        name="desc_metadata__rights_tesim">hire an attorney</field><field name="desc_metadata__subject_tesim">Cryptozoology</field><field
+        name="desc_metadata__subject_tesim">Vexillology</field><field name="desc_metadata__subject_sim">Cryptozoology</field><field
+        name="desc_metadata__subject_sim">Vexillology</field><field name="desc_metadata__type_tesim">Geospatial
+        Data</field><field name="desc_metadata__type_sim">Geospatial Data</field><field
+        name="desc_metadata__citation_tesim">Shouldn't have jumped the turnstile</field><field
+        name="desc_metadata__citation_tesim">Shouldn't have ran a red light</field><field
+        name="desc_metadata__identifier_tesim">rec123</field><field name="has_model_ssim">info:fedora/afmodel:Nyucore</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>4}}
+
+'
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:38 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><commit/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>9}}
+
+'
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:38 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=testgisrecord:123&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 05 Aug 2014 20:23:38 GMT
+      Etag:
+      - ! '"MTkyODAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'testgisrecord:123','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'testgisrecord:123','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Tue, 05 Aug 2014 20:23:38 GMT
+recorded_with: VCR 2.8.0

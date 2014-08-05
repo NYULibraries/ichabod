@@ -7,7 +7,7 @@ describe NyucoresController do
   let(:user) { create_or_return_test_admin }
   let(:nyucore_fields) { [:title, :creator, :publisher, :available, :type, :description, :edition, :series, :version, :date, :format, :language, :relation, :rights, :subject, :citation, :identifier] }
   before(:each) { controller.stub(:current_user).and_return(user) }
- 
+
  describe "GET index", vcr: { cassette_name: "nyucore index search" } do
 
    it "should retrieve nyucore records"  do
@@ -49,7 +49,7 @@ describe NyucoresController do
 
     let(:item) { build(:valid_nyucore) }
 
-    it "should create a new nyucore record" do      
+    it "should create a new nyucore record" do
       expect { post :create, nyucore: attributes_for(:valid_nyucore) }.to change(Nyucore, :count)
       expect(assigns(:item)).to be_instance_of(Nyucore)
     end
@@ -67,10 +67,10 @@ describe NyucoresController do
 
   end
 
- 
+
   describe "GET edit", vcr: { cassette_name: "nyucore edit existing" } do
-    
-    it "should render edit nyucore template" do      
+
+    it "should render edit nyucore template" do
       get :edit, id: item
       expect(assigns(:item)).to render_template(:edit)
     end
@@ -83,7 +83,7 @@ describe NyucoresController do
   end
 
   describe "PUT update", vcr: { cassette_name: "nyucore update existing" } do
-    
+
     it "should update an existing nyucore record with a single new attribute" do
       put :update, id: item, nyucore: { title: "A new title" }
       expect(assigns(:item).title).to eql("A new title")
@@ -107,7 +107,7 @@ describe NyucoresController do
   describe "DELETE destroy", vcr: { cassette_name: "nyucore destroy existing" } do
 
     it "should delete an existing nyucore record" do
-     expect { delete :destroy, id: Nyucore.first }.to change(Nyucore, :count).by(-1)
+      expect { delete :destroy, id: Nyucore.first }.to change(Nyucore, :count).by(-1)
     end
 
   end
