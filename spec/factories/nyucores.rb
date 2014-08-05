@@ -78,9 +78,19 @@ FactoryGirl.define do
     factory :cymbeline, traits: [:another_valid_record, :cymbeline]
     factory :the_tempest, traits: [:another_valid_record, :the_tempest]
     factory :valid_nyucore, traits: [:valid_record, :type, :valid_citation, :valid_identifier]
-    factory :valid_gis_record, traits: [:valid_record, :valid_gis_type, :valid_citation, :valid_identifier]
     factory :invalid_nyucore_citation, traits: [:valid_record, :type, :invalid_citation, :valid_identifier]
     factory :invalid_nyucore_id, traits: [:valid_record, :type, :valid_citation, :invalid_identifier]
+
+    factory :valid_gis_record do
+      valid_record
+      valid_gis_type
+      valid_citation
+      valid_identifier
+      after(:build) {|record| record.set_edit_groups(['gis_cataloger'],[]) }
+      # Don't dare put an underscore in this pid or it'll explode
+      initialize_with { new(pid: 'testgisrecord:123') }
+    end
+
   end
 
 end
