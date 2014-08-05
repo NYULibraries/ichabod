@@ -8,7 +8,7 @@ VCR.configure do |c|
   c.ignore_request do |request|
     URI(request.uri).path == "/__identify__" || URI(request.uri).path =~ /\/hub\/session/
   end
-  c.default_cassette_options = { allow_playback_repeats: true }
+  c.default_cassette_options = { allow_playback_repeats: true, record: :new_episodes }
   c.hook_into :webmock
   c.cassette_library_dir     = 'features/cassettes'
 end
