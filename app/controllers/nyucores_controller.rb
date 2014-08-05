@@ -1,11 +1,8 @@
 class NyucoresController < ApplicationController
- 
   respond_to :html, :json
-  before_action :set_item, only: [:edit, :update]
   # Convert blank values to nil in params when creating and updating
   # in order to not save empty array values when field is not nil but is an empty string (i.e. "")
   before_filter :blank_to_nil_params, :only => [:create, :update]
-  
 
   def index
     @items = Nyucore.all
@@ -13,10 +10,7 @@ class NyucoresController < ApplicationController
   end
 
   def show
-    # Not authorizing resources for now
-    # authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
-
     respond_with(@item)
   end
 
@@ -25,8 +19,9 @@ class NyucoresController < ApplicationController
     respond_with(@item)
   end
 
-  def edit   
-    raise CanCan::AccessDenied.new("Not authorized!", :edit, @item) unless authorize! :edit, params[:id]
+  def edit
+    authorize! :edit, params[:id]
+    @item = Nyucore.find(params[:id])
     respond_with(@item)
   end
 
@@ -37,25 +32,19 @@ class NyucoresController < ApplicationController
   end
 
   def update
-    raise CanCan::AccessDenied.new("Not authorized!", :update, @item) unless authorize! :update, params[:id]
+    authorize! :update, params[:id]
+    @item = Nyucore.find(params[:id])
     flash[:notice] = 'Item was successfully updated.' if @item.update(item_params)
     respond_with(@item)
   end
 
   def destroy
     @item = Nyucore.find(params[:id])
-    raise CanCan::AccessDenied.new("Not authorized!", :destroy, @item) unless authorize! :destroy, params[:id]
     @item.destroy
     respond_with(@item, :location => nyucores_path)
   end
 
-
   private
-
-
-  def set_item
-    @item = Nyucore.find(params[:id])
-  end
 
   # Whitelist attrs
   def item_params
