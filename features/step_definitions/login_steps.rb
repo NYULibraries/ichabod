@@ -1,8 +1,12 @@
 Around('@loggedin') do |scenario, block|
-  VCR.use_cassette('logged in users', record: :none) do
+  VCR.use_cassette('logged in users', match_requests_on: [:method, :uri, :body], record: :none) do
     block.call
   end
   ENV['PDS_HANDLE'] = nil
+end
+
+Given(/^I am logged in as an admin$/) do
+  ENV['PDS_HANDLE'] = "Test_Admin"
 end
 
 Given(/^I am logged in as "(.*?)"$/) do |user|
