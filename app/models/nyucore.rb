@@ -1,9 +1,8 @@
 class Nyucore < ActiveFedora::Base
-  
   include Hydra::AccessControls::Permissions
 
   after_create :add_admin_group
-  
+
   has_metadata 'descMetadata', type: NyucoreRdfDatastream
 
   has_attributes :title, datastream: 'descMetadata', multiple: false
@@ -30,6 +29,6 @@ class Nyucore < ActiveFedora::Base
   private
 
   def add_admin_group
-   self.set_edit_groups(["admin_group"],[] )
+    self.set_edit_groups(["admin_group"],[])
   end
 end
