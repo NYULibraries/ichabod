@@ -8,6 +8,6 @@ module IchabodFeatures
     def fixture_dir
       Rails.root.join("spec","fixtures")
     end
-    
+
   end
 end
