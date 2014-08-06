@@ -50,7 +50,8 @@ describe NyucoresController do
     let(:item) { build(:valid_nyucore) }
 
     it "should create a new nyucore record" do
-      expect { post :create, nyucore: attributes_for(:valid_nyucore) }.to change(Nyucore, :count)
+      post :create, nyucore: attributes_for(:valid_nyucore, title: "Only this title")
+      expect(assigns(:item).title).to eql "Only this title"
       expect(assigns(:item)).to be_instance_of(Nyucore)
     end
 
@@ -106,8 +107,9 @@ describe NyucoresController do
 
   describe "DELETE destroy", vcr: { cassette_name: "nyucore destroy existing" } do
 
+    let!(:item) { create(:valid_nyucore) }
     it "should delete an existing nyucore record" do
-      expect { delete :destroy, id: Nyucore.first }.to change(Nyucore, :count).by(-1)
+      expect { delete :destroy, id: item }.to change(Nyucore, :count).by(-1)
     end
 
   end
