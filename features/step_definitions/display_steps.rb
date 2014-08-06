@@ -19,3 +19,7 @@ end
 Then(/^I should see the link "(.*?)" in the "(.*?)" field$/) do |link, field|
   expect(document_field_value(field)).to have_link(link)
 end
+
+Then(/^I should see the value "(.*?)" in the "(.*?)" field$/) do |value, field|
+  expect(document_field_value(field)).to have_content(value)
+end
