@@ -10,12 +10,14 @@ class NyucoresController < ApplicationController
   end
 
   def show
+    authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
     respond_with(@item)
   end
 
   def new
     @item = Nyucore.new
+    authorize! :new, @item
     respond_with(@item)
   end
 
@@ -27,6 +29,7 @@ class NyucoresController < ApplicationController
 
   def create
     @item = Nyucore.new(item_params)
+    authorize! :create, @item
     flash[:notice] = 'Item was successfully created.' if @item.save
     respond_with(@item)
   end
@@ -39,6 +42,7 @@ class NyucoresController < ApplicationController
   end
 
   def destroy
+    authorize! :destroy, params[:id]
     @item = Nyucore.find(params[:id])
     @item.destroy
     respond_with(@item, :location => nyucores_path)

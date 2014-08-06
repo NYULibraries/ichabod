@@ -30,5 +30,6 @@ class Nyucore < ActiveFedora::Base
 
   def add_admin_group
     self.set_edit_groups(["admin_group"],[])
+    self.save
   end
 end
