@@ -55,7 +55,7 @@ With a matching OM description:
 
 ## Gated access
 
-Hydra fully supports gated access. In fact it's an integral part of Hydra's architecture.
+Hydra fully supports gated access. In fact it's an integral part of Hydra's architecture. [See the wiki](https://github.com/NYULibraries/ichabod/wiki/Access-Controls) for details about how we implement Hydra permissions for Ichabod.
 
 ### Access privileges
 
