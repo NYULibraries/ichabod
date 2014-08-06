@@ -88,6 +88,7 @@ module Ichabod
               pid = @prefix + ":" + child.content().gsub('.', '-').gsub('\\', '-')
             elsif @prefix == "fda" then
               pid = @prefix + ":" + child.content().gsub('.', '-').gsub('\\', '-').gsub('http://', '').gsub('/', '-')
+            else pid = @prefix + ":" + child.content()
             end
             #puts pid
             result = ActiveFedora::FixtureLoader.delete(pid)
