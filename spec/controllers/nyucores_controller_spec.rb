@@ -3,12 +3,12 @@ require 'support/test_user_helper'
 
 describe NyucoresController do
 
-  let(:item) { create(:valid_nyucore) }
+  let(:item) { create(:nyucore) }
   let(:user) { create_or_return_test_admin }
   let(:nyucore_fields) { [:title, :creator, :publisher, :available, :type, :description, :edition, :series, :version, :date, :format, :language, :relation, :rights, :subject, :citation, :identifier] }
   before(:each) { controller.stub(:current_user).and_return(user) }
 
- describe "GET index", vcr: { cassette_name: "nyucore index search" } do
+  describe "GET index", vcr: { cassette_name: "nyucore index search" } do
 
    it "should retrieve nyucore records"  do
      get :index
@@ -47,21 +47,19 @@ describe NyucoresController do
 
   describe "POST create", vcr: { cassette_name: "nyucore create new" } do
 
-    let(:item) { build(:valid_nyucore) }
+    let(:item) { build(:nyucore) }
 
     it "should create a new nyucore record" do
-      post :create, nyucore: attributes_for(:valid_nyucore, title: "Only this title")
-      expect(assigns(:item).title).to eql "Only this title"
+      post :create, nyucore: attributes_for(:nyucore, title: ["Only this title"])
+      expect(assigns(:item).title).to include "Only this title"
       expect(assigns(:item)).to be_instance_of(Nyucore)
     end
 
     it "should map attributes to all available fields" do
-      post :create, nyucore: attributes_for(:valid_nyucore)
+      post :create, nyucore: attributes_for(:nyucore)
       nyucore_fields.each do |field|
         if (assigns(:item).send(field)).kind_of?(Array)
           expect(assigns(:item).send(field)).to match_array(item.send(field))
-        else
-          expect(assigns(:item).send(field)).to eql(item.send(field))
         end
       end
     end
@@ -86,19 +84,17 @@ describe NyucoresController do
   describe "PUT update", vcr: { cassette_name: "nyucore update existing" } do
 
     it "should update an existing nyucore record with a single new attribute" do
-      put :update, id: item, nyucore: { title: "A new title" }
-      expect(assigns(:item).title).to eql("A new title")
+      put :update, id: item, nyucore: { title: ["A new title"] }
+      expect(assigns(:item).title).to include "A new title"
     end
 
-    let(:another_item) { build(:another_valid_nyucore) }
+    let(:another_item) { build(:nyucore) }
 
     it "should update an existing nyucore record with all new attributes" do
-      put :update, id: item, nyucore: attributes_for(:another_valid_nyucore)
+      put :update, id: item, nyucore: attributes_for(:nyucore)
       nyucore_fields.each do |field|
         if (assigns(:item).send(field)).kind_of?(Array)
           expect(assigns(:item).send(field)).to match_array(another_item.send(field))
-        else
-          expect(assigns(:item).send(field)).to eql(another_item.send(field))
         end
       end
     end
@@ -107,7 +103,7 @@ describe NyucoresController do
 
   describe "DELETE destroy", vcr: { cassette_name: "nyucore destroy existing" } do
 
-    let!(:item) { create(:valid_nyucore) }
+    let!(:item) { create(:nyucore) }
     it "should delete an existing nyucore record" do
       expect { delete :destroy, id: item }.to change(Nyucore, :count).by(-1)
     end

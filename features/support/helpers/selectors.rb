@@ -14,7 +14,7 @@ module IchabodFeatures
     end
 
     def document_field_value(field)
-      document_container.find(:xpath, "//dt[text()='#{field}']/following-sibling::dd")
+      document_container.find(:xpath, "//dt[text()='#{field}']/following-sibling::dd[1]")
     end
 
   end

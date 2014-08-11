@@ -17,7 +17,7 @@ Then(/^I should see the message "(.+?)"$/) do |message|
 end
 
 Given(/^the record "(.*?)" exists$/) do |title|
-  @record = FactoryGirl.create(:valid_gis_record, title: title)
+  @record = FactoryGirl.create(:nyucore, title: title)
 end
 
 Given(/^I am on the "Edit Item" form for "(.*?)"$/) do |title|
