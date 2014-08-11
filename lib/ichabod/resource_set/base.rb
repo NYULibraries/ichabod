@@ -5,8 +5,10 @@ module Ichabod
       extend Forwardable
       def_delegators :resources, :each
 
-      cattr_reader :source_reader_class
-      cattr_accessor :prefix
+      class << self
+        attr_reader :source_reader_class
+        attr_accessor :prefix
+      end
 
       attr_reader :options, :prefix
 
@@ -17,7 +19,7 @@ module Ichabod
         unless source_reader_class.ancestors.include?(Ichabod::ResourceSet::SourceReader)
           raise ArgumentError.new("Expecting #{source_reader_class} to be a descendant of Ichabod::ResourceSet::SourceReader")
         end
-        @@source_reader_class = source_reader_class
+        @source_reader_class = source_reader_class
       end
 
       include Enumerable
@@ -30,6 +32,16 @@ module Ichabod
 
       def read_from_source
         @resources = source_reader.read
+      end
+
+      def persist
+        read_from_source if resources.empty?
+        resources.each do |resource|
+          unless resource.is_a?(Resource)
+            raise RuntimeError.new("Expecting #{resource} to be a Resource")
+          end
+          resource.to_nyucore.save
+        end
       end
 
       def method_missing(method_name, *args)
