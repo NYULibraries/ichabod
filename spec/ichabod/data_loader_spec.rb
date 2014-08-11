@@ -28,10 +28,10 @@ module Ichabod
 
         its(:pid) { should eql id }
         its(:identifier) { should eql 'DSS.NYCDCP_MONKEY_LION\DSS.Lion_Monkey' }
-        its(:title) { should eql 'LION' }
-        its(:publisher) { should eql 'New York City Dept. of City Planning' }
+        its(:title) { should eql ['LION'] }
+        its(:publisher) { should eql ['New York City Dept. of City Planning'] }
         its(:available) { should eql ['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip'] }
-        its(:type) { should eql 'Geospatial Data' }
+        its(:type) { should eql ['Geospatial Data'] }
         its(:description) { should eql ['LION is a single line representation of New York City streets containing address ranges and other information.'] }
         its(:edition) { should eql ['10C'] }
         its(:series) { should eql ['NYCDCP_DCPLION_10CAV'] }
@@ -49,9 +49,9 @@ module Ichabod
 
         its(:pid) { should eql id }
         its(:identifier) { should eql 'http://hdl.handle.net/2451/14097' }
-        its(:title) { should eql 'FDA Title' }
-        its(:publisher) { should eql 'Stern' }
-        its(:type) { should eql 'Working Paper' }
+        its(:title) { should eql ['FDA Title'] }
+        its(:publisher) { should eql ['Stern'] }
+        its(:type) { should eql ['Working Paper'] }
         its(:format) { should eql ['application/pdf'] }
         its(:language) { should eql ['English'] }
         its(:relation) { should eql ['CeDER-05-01'] }
