@@ -15,7 +15,7 @@ module Ichabod
         end
       end
       describe '.source_reader_class=' do
-        after { Base.class_variable_set(:@@source_reader_class, nil)}
+        after { Base.instance_variable_set(:@source_reader_class, nil)}
         subject { Base.source_reader_class=(source_reader_class) }
         context 'when the source_reader_class argument is not a Class' do
           let(:source_reader_class) { 'invalid' }
@@ -89,7 +89,7 @@ module Ichabod
         context 'when we have read from source' do
           before { Base.source_reader_class = ResourceSetMocks::MockSourceReader }
           before { base.read_from_source }
-          after { Base.class_variable_set(:@@source_reader_class, nil) }
+          after { Base.instance_variable_set(:@source_reader_class, nil) }
           it { should be > 0 }
         end
         context 'when we have read from source' do
@@ -109,7 +109,7 @@ module Ichabod
       end
       describe '#read_from_source' do
         before { Base.source_reader_class = ResourceSetMocks::MockSourceReader }
-        after { Base.class_variable_set(:@@source_reader_class, nil) }
+        after { Base.instance_variable_set(:@source_reader_class, nil) }
         subject { base.read_from_source }
         it 'should assign the @resources instance variable' do
           expect(base.instance_variable_get(:@resources)).to be_nil
