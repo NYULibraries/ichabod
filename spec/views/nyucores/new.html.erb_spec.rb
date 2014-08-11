@@ -1,7 +1,7 @@
 # require 'spec_helper'
 #
 # describe "nyucores/new", vcr: { cassette_name: "nyucore show new form" } do
-#   let(:item) { create(:valid_nyucore) }
+#   let(:item) { create(:nyucore) }
 #   before(:each) { @item = item }
 #
 #   it "should render the new nyucore form" do

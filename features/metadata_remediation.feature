@@ -6,7 +6,7 @@ Feature: Add, edit and delete records
 
   @loggedin
   Scenario: Adding a record
-    Given I am logged in as "GIS Cataloger"
+    Given I am logged in as an admin
     And I am on the "New Item" form
     When I enter the fields:
       | Title        | A Comedy of Errors  |
@@ -33,7 +33,7 @@ Feature: Add, edit and delete records
 
   @loggedin
   Scenario: Adding a record with multiple values in all multiple fields
-    Given I am logged in as "GIS Cataloger"
+    Given I am logged in as an admin
     And I am on the "New Item" form
     And I click on all the "+" buttons
     When I enter the fields:
@@ -93,7 +93,7 @@ Feature: Add, edit and delete records
 
   @loggedin
   Scenario: Editing a record
-    Given I am logged in as "GIS Cataloger"
+    Given I am logged in as an admin
     And the record "Cymbeline" exists
     And I am on the "Edit Item" form for "Cymbeline"
     When I enter the fields:
@@ -105,7 +105,7 @@ Feature: Add, edit and delete records
 
   @loggedin
   Scenario: Deleting a record
-    Given I am logged in as "GIS Cataloger"
+    Given I am logged in as an admin
     And the record "The Tempest" exists
     When I delete the record
     Then I search on the phrase "The Tempest"

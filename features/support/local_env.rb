@@ -30,7 +30,7 @@ else
       app,
       phantomjs_options: ['--load-images=no', '--ignore-ssl-errors=yes'],
       window_size: [1280, 1024],
-      timeout: 120#,
+      timeout: 6000000#,
       # debug: true
     )
   end

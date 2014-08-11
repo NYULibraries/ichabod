@@ -1,17 +1,18 @@
 require 'spec_helper'
+require 'support/test_user_helper'
 
 describe NyucoresController do
 
   let(:item) { create(:nyucore) }
-  let(:user) { create(:user) }
+  let(:user) { create_or_return_test_admin }
   let(:nyucore_fields) { [:title, :creator, :publisher, :available, :type, :description, :edition, :series, :version, :date, :format, :language, :relation, :rights, :subject, :citation, :identifier] }
   before(:each) { controller.stub(:current_user).and_return(user) }
 
   describe "GET index", vcr: { cassette_name: "nyucore index search" } do
 
-    it "should retrieve nyucore records"  do
-      get :index
-      expect(assigns(:items).size).to be > 1
+   it "should retrieve nyucore records"  do
+     get :index
+     expect(assigns(:items).size).to be > 1
     end
 
     it "should render index template"  do
@@ -49,7 +50,8 @@ describe NyucoresController do
     let(:item) { build(:nyucore) }
 
     it "should create a new nyucore record" do
-      expect { post :create, nyucore: attributes_for(:nyucore) }.to change(Nyucore, :count)
+      post :create, nyucore: attributes_for(:nyucore, title: ["Only this title"])
+      expect(assigns(:item).title).to include "Only this title"
       expect(assigns(:item)).to be_instance_of(Nyucore)
     end
 
@@ -63,6 +65,7 @@ describe NyucoresController do
     end
 
   end
+
 
   describe "GET edit", vcr: { cassette_name: "nyucore edit existing" } do
 
@@ -100,8 +103,9 @@ describe NyucoresController do
 
   describe "DELETE destroy", vcr: { cassette_name: "nyucore destroy existing" } do
 
+    let!(:item) { create(:nyucore) }
     it "should delete an existing nyucore record" do
-      expect { delete :destroy, id: Nyucore.first }.to change(Nyucore, :count).by(-1)
+      expect { delete :destroy, id: item }.to change(Nyucore, :count).by(-1)
     end
 
   end
