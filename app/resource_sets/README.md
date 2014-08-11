@@ -21,8 +21,8 @@ ResourceSet::Resources that are passed back to the ResourceSet
 ```ruby
 # resource_sets/spatial_data_repository.rb
 class SpatialDataRepository < Ichabod::ResourceSet::Base
-  prefix = 'sdr'
-  source_reader_class = OaiDcFileReader
+  self.prefix = 'sdr'
+  self.source_reader_class = Ichabod::ResourceSet::SourceReaders::OaiDcFileReader
 end
 
 # At initialization, a ResourceSet can given options for the instance
