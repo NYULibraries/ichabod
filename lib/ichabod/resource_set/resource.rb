@@ -9,7 +9,7 @@ module Ichabod
 
       def initialize(attributes={})
         attributes.each_pair do |key, value|
-          send(key, value)
+          send("#{key}=".to_sym, value)
         end
       end
 
