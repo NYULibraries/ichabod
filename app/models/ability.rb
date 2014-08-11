@@ -3,13 +3,13 @@ class Ability
 
   # Define any customized permissions here.
   def custom_permissions
-    # Aliasing create/read/update/delete actions
-    alias_action :create, :read, :update, :destroy, :to => :crud
-    # Limits creating new objects to a specific group
-    if user_groups.include? 'gis_cataloger'
-      can [:crud], Nyucore do |nyucore|
-        nyucore.type.include? "Geospatial Data"
-      end
+
+  end
+
+  # Override create permissions, which are blank by default
+  def create_permissions
+    if user_groups.include?('admin_group') || user_groups.include?('gis_cataloger')
+      can [:new, :create], ActiveFedora::Base
     end
   end
 end

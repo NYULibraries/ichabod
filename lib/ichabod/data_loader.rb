@@ -44,6 +44,9 @@ module Ichabod
               core.identifier = child.content()
               core.addinfolink = "http://nyu.libguides.com/content.php?pid=169769&sid=1489817"
               core.addinfotext = "GIS Dataset Instructions"
+              core.set_edit_groups(['gis_cataloger'],[])
+              
+              
             elsif @prefix == "fda" then
               if child.content().include? "http://" then
                 core.identifier = child.content()
@@ -51,6 +54,7 @@ module Ichabod
               else
                 core.citation = child.content()
               end
+              core.set_edit_groups(['fda_cataloger'],[])
             end
           end
           core.title = child.content() if child.name() == "title"
@@ -68,7 +72,7 @@ module Ichabod
           core.relation = child.content() if child.name() == "relation"
           core.rights = child.content() if child.name() == "rights"
           core.subject = child.content() if child.name() == "subject"
-
+          
         end
         cores << core if core.save
         puts "Loading '#{pid}'"

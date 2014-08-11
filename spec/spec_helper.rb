@@ -37,6 +37,8 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 
+  config.include SpecTestHelper, :type => :controller
+
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
@@ -70,6 +72,7 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |c|
+  c.default_cassette_options = { allow_playback_repeats: true, record: :new_episodes }
   c.cassette_library_dir = 'spec/vcr_cassettes'
   c.configure_rspec_metadata!
   c.hook_into :webmock
