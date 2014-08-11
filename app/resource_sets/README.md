@@ -3,7 +3,8 @@
 ## Ichabod::ResourceSet::Base
 Ichabod::ResourceSets are a logical group of Ichabod::ResourceSet::Resources.
 They are [Enumerable](http://ruby-doc.org/core/Enumerable.html) and iterate
-over the set of Resources. They can fetch
+over the set of Resources. They can read from source, persist to Fedora and
+delete from Fedora.
 
 ## Ichabod::ResourceSet::Resource
 Resources are intermediary objects that respond to
