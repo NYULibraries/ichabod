@@ -7,8 +7,8 @@ over the set of Resources. They can read from source, persist to Fedora and
 delete from Fedora.
 
 ## Ichabod::ResourceSet::Resource
-Resources are intermediary objects that respond to
-the instance method #to_nyucore, to coerces themselves to an Nyucore object.
+Resources are intermediary objects that respond to the instance method
+#to_nyucore in order to coerce themselves to an Nyucore object.
 They do not persist themselves when coercing themselves, since that seems
 presumptuous.
 
@@ -22,7 +22,7 @@ ResourceSet::Resources that are passed back to the ResourceSet
 # resource_sets/spatial_data_repository.rb
 class SpatialDataRepository < Ichabod::ResourceSet::Base
   prefix = 'sdr'
-  source_reader = OaiDcFileReader
+  source_reader_class = OaiDcFileReader
 end
 
 # At initialization, a ResourceSet can given options for the instance
