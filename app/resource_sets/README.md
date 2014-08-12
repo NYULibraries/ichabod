@@ -16,13 +16,17 @@ presumptuous.
 SourceReaders read from the ResourceSet's source system and retrieve an Array of
 ResourceSet::Resources that are passed back to the ResourceSet
 
+## Ichabod::ManagementGroup
+ManagementGroups
+
 ## Examples
 
 ```ruby
 # resource_sets/spatial_data_repository.rb
 class SpatialDataRepository < Ichabod::ResourceSet::Base
   self.prefix = 'sdr'
-  self.source_reader_class = Ichabod::ResourceSet::SourceReaders::OaiDcFileReader
+  self.source_reader = :oai_dc_file_reader
+  self.management_group = :gis_cataloger
 end
 
 # At initialization, a ResourceSet can given options for the instance
