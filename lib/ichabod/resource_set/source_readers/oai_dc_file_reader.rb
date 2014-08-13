@@ -16,6 +16,7 @@ module Ichabod
         private
         def resource_attributes_from_record(record)
           {
+            prefix: resource_set.prefix,
             identifier: dc_attribute_from_record('identifier', record),
             title: dc_attribute_from_record('title', record),
             creator: dc_attribute_from_record('creator', record),
