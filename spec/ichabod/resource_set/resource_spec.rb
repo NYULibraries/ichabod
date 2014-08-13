@@ -8,10 +8,32 @@ module Ichabod
         subject { resource.prefix }
         it { should eq 'prefix' }
       end
+      describe '#pid' do
+        subject { resource.pid }
+        it { should eq "#{resource.prefix}:#{resource.identifier.first}"}
+        context 'when the identifier has "."s' do
+          let(:resource) { create :resource, identifier: 'this.has.dots' }
+          it { should_not include '.' }
+          it { should eq 'prefix:this-has-dots'}
+        end
+        context 'when the identifier has "/"s' do
+          let(:resource) { create :resource, identifier: 'this/has/slashes' }
+          it { should_not include '/' }
+          it { should eq 'prefix:this-has-slashes'}
+        end
+        context 'when the identifier has "\"s' do
+          let(:resource) { create :resource, identifier: 'this\has\backslashes' }
+          it { should_not include '\\' }
+          it { should eq 'prefix:this-has-backslashes'}
+        end
+      end
       describe '#to_nyucore' do
         subject { resource.to_nyucore }
         it { should be_an Nyucore }
         it { should_not be_persisted }
+        it 'should have a pid' do
+          expect(subject.pid).to be_present
+        end
       end
     end
   end
