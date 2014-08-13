@@ -4,6 +4,7 @@ module Ichabod
       class OaiDcFileReader < ResourceSet::SourceReader
         OAI_DC_URI = 'http://www.openarchives.org/OAI/2.0/oai_dc/'
         DC_URI = 'http://purl.org/dc/elements/1.1/'
+        DCTERMS_URI = 'http://purl.org/dc/terms/'
         NYU_URI = 'http://purl.org/nyu/digicat/'
 
         def read
@@ -17,14 +18,14 @@ module Ichabod
           {
             identifier: dc_attribute_from_record('identifier', record),
             title: dc_attribute_from_record('title', record),
-            creator: dc_attribute_from_record('creator', record)
+            creator: dc_attribute_from_record('creator', record),
             publisher: dc_attribute_from_record('publisher', record),
             type: dc_attribute_from_record('type', record),
             available: nyu_attribute_from_record('accessURL', record),
             description: dc_attribute_from_record('description', record),
             edition: nyu_attribute_from_record('edition', record),
-            series: dc_attribute_from_record('isPartOf', record),
-            version: dc_attribute_from_record('hasVersion', record),
+            series: dcterms_attribute_from_record('isPartOf', record),
+            version: dcterms_attribute_from_record('hasVersion', record),
             date: dc_attribute_from_record('date', record),
             format: dc_attribute_from_record('format', record),
             language: dc_attribute_from_record('language', record),
@@ -36,6 +37,10 @@ module Ichabod
 
         def dc_attribute_from_record(attribute, record)
           content_from_nodes(record.xpath(".//dc:#{attribute}", dc: DC_URI))
+        end
+
+        def dcterms_attribute_from_record(attribute, record)
+          content_from_nodes(record.xpath(".//dcterms:#{attribute}", dcterms: DCTERMS_URI))
         end
 
         def nyu_attribute_from_record(attribute, record)
