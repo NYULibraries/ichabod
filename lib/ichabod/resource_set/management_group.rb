@@ -1,12 +1,13 @@
 module Ichabod
   module ResourceSet
     class ManagementGroup
-      attr_reader :owner, :members
+      attr_reader :name, :owner, :members
 
-      def initialize(owner, *members)
+      def initialize(name, owner, *members)
         unless owner.is_a? User
           raise ArgumentError.new("Expecting #{owner} to be a User")
         end
+        @name = name
         @owner = owner
         @members = [owner]
         members.each do |member|
