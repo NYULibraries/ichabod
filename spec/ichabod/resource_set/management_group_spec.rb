@@ -5,9 +5,7 @@ module Ichabod
       let(:name) { :gis_cataloger }
       let(:owner) { build(:user) }
       let(:members) { [build(:user), build(:user)] }
-      subject(:management_group) do
-        ResourceSet::ManagementGroup.new(name, owner, *members)
-      end
+      subject(:management_group) { ManagementGroup.new(name, owner, *members) }
       it { should be_a ResourceSet::ManagementGroup }
       describe '#name' do
         subject { management_group.name }
@@ -16,10 +14,18 @@ module Ichabod
       describe '#owner' do
         subject { management_group.owner }
         it { should eq owner }
+        context 'when initialized without any members' do
+          let(:management_group) { ManagementGroup.new(name)}
+          it { should be_nil }
+        end
       end
       describe '#members' do
         subject { management_group.members }
         it { should eq [owner, *members] }
+        context 'when initialized without any members' do
+          let(:management_group) { ManagementGroup.new(name)}
+          it { should be_empty }
+        end
       end
       context 'when initialized with an owner argument that is not a User' do
         let(:owner) { 'invalid' }
