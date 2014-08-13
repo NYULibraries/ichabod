@@ -3,18 +3,17 @@ module Ichabod
     class ManagementGroup
       attr_reader :name, :owner, :members
 
-      def initialize(name, owner, *members)
-        unless owner.is_a? User
-          raise ArgumentError.new("Expecting #{owner} to be a User")
-        end
+      def initialize(name, *members)
         @name = name
-        @owner = owner
-        @members = [owner]
-        members.each do |member|
-          unless member.is_a? User
-            raise ArgumentError.new("Expecting #{member} to be a User")
+        @members = []
+        unless members.blank?
+          members.each do |member|
+            unless member.is_a? User
+              raise ArgumentError.new("Expecting #{member} to be a User")
+            end
           end
-          @members << member
+          @owner =  members.first
+          @members = members
         end
       end
     end
