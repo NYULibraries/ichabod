@@ -2,8 +2,8 @@ require 'spec_helper'
 module Ichabod
   module ResourceSet
     describe Base do
+      let(:editors) { [:editor1, :editor2] }
       let(:prefix) { 'mock' }
-      let(:management_group) { 'managers' }
       describe '.prefix=' do
         after { Base.prefix=(nil)}
         subject { Base.prefix=(prefix) }
@@ -15,15 +15,15 @@ module Ichabod
           expect(Base.prefix).to eq prefix
         end
       end
-      describe '.management_group=' do
-        after { Base.management_group=(nil)}
-        subject { Base.management_group=(management_group) }
+      describe '.editor' do
+        after { Base.instance_variable_set(:@editor, nil)}
+        subject { Base.editor(*editors) }
         it 'should not raise an ArgumentError' do
           expect { subject }.not_to raise_error
         end
-        it 'should set the management_group attribute on the class' do
+        it 'should set the editors attribute on the class' do
           subject
-          expect(Base.management_group).to eq management_group
+          expect(Base.editors).to eq editors
         end
       end
       describe '.source_reader=' do
@@ -125,22 +125,21 @@ module Ichabod
         end
         context 'when configured with a prefix' do
           before { Base.prefix = prefix }
-          after { Base.prefix = nil}
+          after { Base.instance_variable_set(:@editor, nil)}
           it { should eq prefix }
         end
       end
-      describe '#management_group' do
-        subject { base.management_group }
-        context 'when not configured with a management group' do
-          it { should be_nil }
+      describe '#editors' do
+        subject { base.editors }
+        context 'when not configured with editors' do
+          it { should be_an Array }
+          it { should be_empty }
         end
-        context 'when configured with a management group' do
-          before { Base.management_group = management_group }
-          after { Base.management_group = nil }
-          it { should be_a ManagementGroup }
-          it 'should have the configure name' do
-            expect(subject.name).to eq management_group
-          end
+        context 'when configured with a editors' do
+          before { Base.editor(*editors) }
+          after { Base.editor(nil) }
+          it { should be_an Array }
+          it { should eq editors }
         end
       end
       describe '#read_from_source' do

@@ -8,16 +8,13 @@ delete from Fedora.
 
 ## Ichabod::ResourceSet::Resource
 Resources are intermediary objects that respond to the instance method
-#to_nyucore in order to coerce themselves to an Nyucore object.
+`#to_nyucore` in order to coerce themselves to an Nyucore object.
 They do not persist themselves when coercing themselves, since that seems
 presumptuous.
 
 ## Ichabod::ResourceSet::SourceReader
 SourceReaders read from the ResourceSet's source system and retrieve an Array of
 ResourceSet::Resources that are passed back to the ResourceSet
-
-## Ichabod::ManagementGroup
-ManagementGroups
 
 ## Examples
 
@@ -26,7 +23,9 @@ ManagementGroups
 class SpatialDataRepository < Ichabod::ResourceSet::Base
   self.prefix = 'sdr'
   self.source_reader = :oai_dc_file_reader
-  self.management_group = :gis_cataloger
+  editor :gis_cataloger
+  editor :admin
+  editor :editor1, :editor2
 end
 
 # At initialization, a ResourceSet can given options for the instance
@@ -34,6 +33,16 @@ instance_options = {option_key: 'options value'}
 
 # Create a new SpatialDataRepository ResourceSet with the given options
 spatial_data_repository = SpatialDataRepository.new(instance_options)
+
+# See the properties
+spatial_data_repository.prefix
+# => "sdr"
+spatial_data_repository.source_reader
+# => Ichabod::ResourceSet::SourceReaders::OaiDcFileReader
+spatial_data_repository.editors
+# => [:gis_cataloger, :admin, :editor1, :editor2]
+spatial_data_repository.option_key
+# => "options value"
 
 # To get the set of Resources for the instance from the source, we can call the
 # #read_from_source method. Reading from source instantiates the specified
