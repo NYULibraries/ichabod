@@ -129,6 +129,17 @@ module Ichabod
           it { should eq prefix }
         end
       end
+      describe '#management_group', half_baked: true do
+        subject { base.management_group }
+        context 'when not configured with a management group' do
+          it { should be_nil }
+        end
+        context 'when configured with a management group' do
+          before { Base.management_group = management_group }
+          after { Base.management_group = nil }
+          it { should be_a ManagementGroup }
+        end
+      end
       describe '#read_from_source' do
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
         after { Base.instance_variable_set(:@source_reader, nil) }
