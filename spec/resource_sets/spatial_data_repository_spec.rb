@@ -10,4 +10,8 @@ describe SpatialDataRepository do
     subject { SpatialDataRepository.source_reader }
     it { should eq Ichabod::ResourceSet::SourceReaders::OaiDcFileReader }
   end
+  describe '.editors' do
+    subject { SpatialDataRepository.editors }
+    it { should eq [:gis_cataloger] }
+  end
 end
