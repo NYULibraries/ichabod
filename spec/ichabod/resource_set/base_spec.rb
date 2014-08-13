@@ -16,7 +16,7 @@ module Ichabod
         end
       end
       describe '.editor' do
-        after { Base.instance_variable_set(:@editor, nil)}
+        after { Base.instance_variable_set(:@editors, nil)}
         subject { Base.editor(*editors) }
         it 'should not raise an ArgumentError' do
           expect { subject }.not_to raise_error
@@ -125,7 +125,7 @@ module Ichabod
         end
         context 'when configured with a prefix' do
           before { Base.prefix = prefix }
-          after { Base.instance_variable_set(:@editor, nil)}
+          after { Base.prefix = nil}
           it { should eq prefix }
         end
       end
@@ -137,9 +137,9 @@ module Ichabod
         end
         context 'when configured with a editors' do
           before { Base.editor(*editors) }
-          after { Base.editor(nil) }
+          after { Base.instance_variable_set(:@editors, nil)}
           it { should be_an Array }
-          it { should eq editors }
+          it { should eq editors.map(&:to_s) }
         end
       end
       describe '#read_from_source' do
