@@ -15,10 +15,22 @@ module Ichabod
         private
         def resource_attributes_from_record(record)
           {
+            identifier: dc_attribute_from_record('identifier', record),
             title: dc_attribute_from_record('title', record),
+            creator: dc_attribute_from_record('creator', record)
             publisher: dc_attribute_from_record('publisher', record),
             type: dc_attribute_from_record('type', record),
-            available: nyu_attribute_from_record('accessURL', record)
+            available: nyu_attribute_from_record('accessURL', record),
+            description: dc_attribute_from_record('description', record),
+            edition: nyu_attribute_from_record('edition', record),
+            series: dc_attribute_from_record('isPartOf', record),
+            version: dc_attribute_from_record('hasVersion', record),
+            date: dc_attribute_from_record('date', record),
+            format: dc_attribute_from_record('format', record),
+            language: dc_attribute_from_record('language', record),
+            relation: dc_attribute_from_record('relation', record),
+            rights: dc_attribute_from_record('rights', record),
+            subject: dc_attribute_from_record('subject', record)
           }
         end
 
@@ -32,7 +44,7 @@ module Ichabod
 
         def content_from_nodes(nodes)
           nodes.collect do |node|
-            node.content
+            node.content.gsub('\\\'', '\'')
           end
         end
 
