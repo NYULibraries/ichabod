@@ -9,6 +9,6 @@ module ResourceSetMocks
 
   class MockResourceSet < Ichabod::ResourceSet::Base
     self.prefix = 'mock'
-    self.source_reader_class = MockSourceReader
+    self.source_reader = MockSourceReader
   end
 end

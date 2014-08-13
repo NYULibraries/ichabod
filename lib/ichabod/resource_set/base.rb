@@ -6,20 +6,28 @@ module Ichabod
       def_delegators :resources, :each
 
       class << self
-        attr_reader :source_reader_class
         attr_accessor :prefix
+        attr_reader :source_reader
       end
 
       attr_reader :options, :prefix
 
-      def self.source_reader_class=(source_reader_class)
-        unless source_reader_class.is_a?(Class)
-          raise ArgumentError.new("Expecting #{source_reader_class} to be a Class")
+      def self.source_reader=(source_reader)
+        unless source_reader.is_a?(Class)
+          module_name = "#{name.deconstantize}::SourceReaders"
+          class_name = source_reader.to_s.classify
+          source_reader = "#{module_name}::#{class_name}".safe_constantize
+          if source_reader.nil?
+            raise ArgumentError.new("Expecting #{class_name} to be in SourceReaders")
+          end
         end
-        unless source_reader_class.ancestors.include?(Ichabod::ResourceSet::SourceReader)
-          raise ArgumentError.new("Expecting #{source_reader_class} to be a descendant of Ichabod::ResourceSet::SourceReader")
+        unless source_reader.is_a?(Class)
+          raise ArgumentError.new("Expecting #{source_reader} to be a Class")
         end
-        @source_reader_class = source_reader_class
+        unless source_reader.ancestors.include?(Ichabod::ResourceSet::SourceReader)
+          raise ArgumentError.new("Expecting #{source_reader} to be a descendant of Ichabod::ResourceSet::SourceReader")
+        end
+        @source_reader = source_reader
       end
 
       include Enumerable
@@ -62,7 +70,7 @@ module Ichabod
       end
 
       def source_reader
-        @source_reader ||= self.class.source_reader_class.new(self)
+        @source_reader ||= self.class.source_reader.new(self)
       end
     end
   end
