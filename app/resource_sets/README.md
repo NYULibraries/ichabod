@@ -64,8 +64,8 @@ spatial_data_repository.size
 # => N
 
 # Persist Nyucore objects to the Fedora repository and index them in Solr
-spatial_data_repository.persist
-# => Reads from source (if not already read) and saves the Resources to Fedora
+spatial_data_repository.create
+# => Reads from source (if not already read) and creates the Resources in Fedora
 #    as Nyucore objects and indexes them in Solr. Returns an Array of the
 #    created Nyucore objects.
 
