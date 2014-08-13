@@ -38,6 +38,14 @@ module Ichabod
         @prefix = self.class.prefix
       end
 
+      def management_group
+        @management_group ||= begin
+          if self.class.management_group.present?
+            ManagementGroup.new(self.class.management_group)
+          end
+        end
+      end
+
       def read_from_source
         @resources = source_reader.read
       end
