@@ -5,6 +5,7 @@ module Ichabod
 
       NYUCORE_ATTRIBUTES = Nyucore.defined_attributes.keys.map(&:to_sym)
 
+      attr_accessor :prefix
       attr_accessor *NYUCORE_ATTRIBUTES
 
       def initialize(attributes={})
