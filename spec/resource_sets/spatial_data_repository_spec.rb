@@ -6,8 +6,8 @@ describe SpatialDataRepository do
     subject { SpatialDataRepository.prefix }
     it { should eq 'sdr' }
   end
-  describe '.source_reader_class' do
-    subject { SpatialDataRepository.source_reader_class }
+  describe '.source_reader' do
+    subject { SpatialDataRepository.source_reader }
     it { should eq Ichabod::ResourceSet::SourceReaders::OaiDcFileReader }
   end
 end
