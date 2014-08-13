@@ -7,10 +7,10 @@ module Ichabod
 
       class << self
         attr_reader :source_reader
-        attr_accessor :prefix, :management_group
+        attr_accessor :prefix
       end
 
-      attr_reader :options, :prefix
+      attr_reader :options, :prefix, :editors
 
       def self.source_reader=(source_reader)
         unless source_reader.is_a?(Class)
@@ -30,20 +30,21 @@ module Ichabod
         @source_reader = source_reader
       end
 
+      def self.editors
+        @editors ||= []
+      end
+
+      def self.editor(*editors)
+        self.editors.concat(editors.compact).uniq!
+      end
+
       include Enumerable
       alias_method :size, :count
 
       def initialize(options = {})
         @options = options
         @prefix = self.class.prefix
-      end
-
-      def management_group
-        @management_group ||= begin
-          if self.class.management_group.present?
-            ManagementGroup.new(self.class.management_group)
-          end
-        end
+        @editors = self.class.editors
       end
 
       def read_from_source
@@ -56,7 +57,8 @@ module Ichabod
           unless resource.is_a?(Resource)
             raise RuntimeError.new("Expecting #{resource} to be a Resource")
           end
-          resource.to_nyucore.save
+          nyucore = resource.to_nyucore
+          
         end
       end
 
