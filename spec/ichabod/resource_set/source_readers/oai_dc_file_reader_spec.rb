@@ -26,6 +26,9 @@ module Ichabod
             end
           end
           context 'when the file is an SDR file' do
+            it 'should have a resource with a prefix "mock"' do
+              expect(resource.prefix).to include 'mock'
+            end
             it 'should have a resource with an identifier "DSS.NYCDCP_MONKEY_LION\DSS.Lion_Monkey"' do
               expect(resource.identifier).to include 'DSS.NYCDCP_MONKEY_LION\DSS.Lion_Monkey'
             end
