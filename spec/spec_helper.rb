@@ -58,6 +58,10 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  # Set a "half baked" exclusion filter for saying that the feature is not 
+  # ready for testing
+  config.filter_run_excluding half_baked: true
+
   config.before(:suite) do
     # Run factory girl lint before the suite
     FactoryGirl.lint
