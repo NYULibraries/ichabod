@@ -129,7 +129,7 @@ module Ichabod
           it { should eq prefix }
         end
       end
-      describe '#management_group', half_baked: true do
+      describe '#management_group' do
         subject { base.management_group }
         context 'when not configured with a management group' do
           it { should be_nil }
@@ -138,6 +138,9 @@ module Ichabod
           before { Base.management_group = management_group }
           after { Base.management_group = nil }
           it { should be_a ManagementGroup }
+          it 'should have the configure name' do
+            expect(subject.name).to eq management_group
+          end
         end
       end
       describe '#read_from_source' do
