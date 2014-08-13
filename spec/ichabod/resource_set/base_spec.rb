@@ -14,30 +14,40 @@ module Ichabod
           expect(Base.prefix).to eq prefix
         end
       end
-      describe '.source_reader_class=' do
-        after { Base.instance_variable_set(:@source_reader_class, nil)}
-        subject { Base.source_reader_class=(source_reader_class) }
-        context 'when the source_reader_class argument is not a Class' do
-          let(:source_reader_class) { 'invalid' }
+      describe '.source_reader=' do
+        after { Base.instance_variable_set(:@source_reader, nil)}
+        subject { Base.source_reader=(source_reader) }
+        context 'when the source_reader argument cannot be coerced into a SourceReader' do
+          let(:source_reader) { 'invalid' }
           it 'should raise an ArgumentError' do
             expect { subject }.to raise_error ArgumentError
           end
         end
-        context 'when the source_reader_class argument is a Class' do
+        context 'when the source_reader argument can be coerced into a SourceReader' do
+          let(:source_reader) { :oai_dc_file_reader }
+          it 'should not raise an ArgumentError' do
+            expect { subject }.not_to raise_error
+          end
+          it 'should set the source reader class attribute on the class' do
+            subject
+            expect(Base.source_reader).to eq SourceReaders::OaiDcFileReader
+          end
+        end
+        context 'when the source_reader argument is a Class' do
           context 'but it is not a descendant of SourceReader' do
-            let(:source_reader_class) { Object }
+            let(:source_reader) { Object }
             it 'should raise an ArgumentError' do
               expect { subject }.to raise_error ArgumentError
             end
           end
           context 'and it is a descendant of SourceReader' do
-            let(:source_reader_class) { SourceReader }
+            let(:source_reader) { SourceReader }
             it 'should not raise an ArgumentError' do
               expect { subject }.not_to raise_error
             end
             it 'should set the source reader class attribute on the class' do
               subject
-              expect(Base.source_reader_class).to eq SourceReader
+              expect(Base.source_reader).to eq SourceReader
             end
           end
         end
@@ -87,9 +97,9 @@ module Ichabod
       describe '#size' do
         subject { base.size }
         context 'when we have read from source' do
-          before { Base.source_reader_class = ResourceSetMocks::MockSourceReader }
+          before { Base.source_reader = ResourceSetMocks::MockSourceReader }
           before { base.read_from_source }
-          after { Base.instance_variable_set(:@source_reader_class, nil) }
+          after { Base.instance_variable_set(:@source_reader, nil) }
           it { should be > 0 }
         end
         context 'when we have read from source' do
@@ -108,8 +118,8 @@ module Ichabod
         end
       end
       describe '#read_from_source' do
-        before { Base.source_reader_class = ResourceSetMocks::MockSourceReader }
-        after { Base.instance_variable_set(:@source_reader_class, nil) }
+        before { Base.source_reader = ResourceSetMocks::MockSourceReader }
+        after { Base.instance_variable_set(:@source_reader, nil) }
         subject { base.read_from_source }
         it 'should assign the @resources instance variable' do
           expect(base.instance_variable_get(:@resources)).to be_nil
