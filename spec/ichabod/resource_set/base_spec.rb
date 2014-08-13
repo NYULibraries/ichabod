@@ -3,6 +3,7 @@ module Ichabod
   module ResourceSet
     describe Base do
       let(:prefix) { 'mock' }
+      let(:management_group) { 'managers' }
       describe '.prefix=' do
         after { Base.prefix=(nil)}
         subject { Base.prefix=(prefix) }
@@ -12,6 +13,17 @@ module Ichabod
         it 'should set the prefix attribute on the class' do
           subject
           expect(Base.prefix).to eq prefix
+        end
+      end
+      describe '.management_group=' do
+        after { Base.management_group=(nil)}
+        subject { Base.management_group=(management_group) }
+        it 'should not raise an ArgumentError' do
+          expect { subject }.not_to raise_error
+        end
+        it 'should set the management_group attribute on the class' do
+          subject
+          expect(Base.management_group).to eq management_group
         end
       end
       describe '.source_reader=' do

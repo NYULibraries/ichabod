@@ -6,8 +6,8 @@ module Ichabod
       def_delegators :resources, :each
 
       class << self
-        attr_accessor :prefix
         attr_reader :source_reader
+        attr_accessor :prefix, :management_group
       end
 
       attr_reader :options, :prefix
