@@ -14,7 +14,7 @@ module Ichabod
 
       def self.source_reader=(source_reader)
         unless source_reader.is_a?(Class)
-          module_name = "#{name.deconstantize}::SourceReaders"
+          module_name = "Ichabod::ResourceSet::SourceReaders"
           class_name = source_reader.to_s.classify
           source_reader = "#{module_name}::#{class_name}".safe_constantize
           if source_reader.nil?
