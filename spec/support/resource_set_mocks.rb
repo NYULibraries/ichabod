@@ -2,7 +2,7 @@ module ResourceSetMocks
   class MockSourceReader < Ichabod::ResourceSet::SourceReader
     def read
       5.times.map do |n|
-        FactoryGirl.create :resource, identifier: "#{resource_set.prefix}-n"
+        FactoryGirl.create :resource, identifier: "identifier-#{n}"
       end
     end
   end
