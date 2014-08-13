@@ -151,18 +151,66 @@ module Ichabod
           subject
           expect(base.instance_variable_get(:@resources)).not_to be_nil
         end
+        context 'when there is no source reader configured' do
+          before { Base.instance_variable_set(:@source_reader, nil) }
+          it 'should raise a RuntimeError' do
+            expect { subject }.to raise_error RuntimeError
+          end
+        end
       end
-      describe '#persist' do
-        subject { base.persist }
-        it 'should persist the Resources to Fedora as Nyucores'
+      describe '#create', vcr: {cassette_name: 'resource sets/create resource set'} do
+        before { Base.source_reader = ResourceSetMocks::MockSourceReader }
+        after { Base.instance_variable_set(:@source_reader, nil) }
+        subject { base.create }
+        it 'should create the Resources in Fedora as Nyucores'
         it 'should index the Nyucores in Solr'
-        it 'should return an array of persisted Nyucores'
+        it 'should return an array of persisted Nyucores' do
+          subject.each do |nyucore|
+            expect(nyucore).to be_an Nyucore
+            expect(nyucore).to be_persisted
+          end
+        end
+        context 'when there are no editors' do
+          it 'should return an array of Nyucores with no edit groups' do
+            subject.each do |nyucore|
+              expect(nyucore.edit_groups).to be_blank
+            end
+          end
+        end
+        context 'when there are editors', vcr: {cassette_name: 'resource sets/create resource set with editors'} do
+          before { Base.editor(*editors) }
+          after { Base.instance_variable_set(:@editors, nil)}
+          it 'should return an array of Nyucores with the specified edit groups' do
+            subject.each do |nyucore|
+              expect(nyucore.edit_groups).to eq editors
+            end
+          end
+        end
+        context 'when there is no source reader configured' do
+          before { Base.instance_variable_set(:@source_reader, nil) }
+          it 'should raise a RuntimeError' do
+            expect { subject }.to raise_error RuntimeError
+          end
+        end
       end
-      describe '.delete' do
-        subject { Base.delete }
+      describe '#delete', vcr: {cassette_name: 'resource sets/delete resource set'} do
+        before { Base.source_reader = ResourceSetMocks::MockSourceReader }
+        after { Base.instance_variable_set(:@source_reader, nil) }
+        subject { base.delete }
         it 'should delete the associated Nyucores from Fedora'
         it 'should delete the Nyucores from the Solr index'
-        it 'should return an array of deleted Nyucores'
+        it 'should return an array of deleted Nyucores' do
+          subject.each do |nyucore|
+            expect(nyucore).to be_an Nyucore
+            expect(nyucore).to be_destroyed
+          end
+        end
+        context 'when there is no source reader configured' do
+          before { Base.instance_variable_set(:@source_reader, nil) }
+          it 'should raise a RuntimeError' do
+            expect { subject }.to raise_error RuntimeError
+          end
+        end
       end
     end
   end

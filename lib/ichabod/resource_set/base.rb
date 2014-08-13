@@ -48,17 +48,30 @@ module Ichabod
       end
 
       def read_from_source
+        raise_runtime_error_if_no_source_reader_configured
         @resources = source_reader.read
       end
 
-      def persist
+      def create
         read_from_source if resources.empty?
-        resources.each do |resource|
+        resources.collect do |resource|
           unless resource.is_a?(Resource)
             raise RuntimeError.new("Expecting #{resource} to be a Resource")
           end
           nyucore = resource.to_nyucore
-          
+          nyucore.set_edit_groups(editors, []) unless editors.empty?
+          nyucore.save
+        end
+      end
+
+      def delete
+        read_from_source if resources.empty?
+        resources.collect do |resource|
+          unless resource.is_a?(Resource)
+            raise RuntimeError.new("Expecting #{resource} to be a Resource")
+          end
+          pid = resource.pid
+          Nyucore.find(pid).destroy
         end
       end
 
@@ -75,6 +88,12 @@ module Ichabod
       end
 
       private
+      def raise_runtime_error_if_no_source_reader_configured
+        if self.class.source_reader.blank?
+          raise RuntimeError.new("No source reader has been configured for the class #{self.class.name}")
+        end
+      end
+
       def resources
         (@resources || [])
       end
