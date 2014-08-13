@@ -44,7 +44,7 @@ module Ichabod
       def initialize(options = {})
         @options = options
         @prefix = self.class.prefix
-        @editors = self.class.editors
+        @editors = self.class.editors.map(&:to_s)
       end
 
       def read_from_source
