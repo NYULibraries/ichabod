@@ -60,8 +60,8 @@ module Ichabod
           end
           nyucore = resource.to_nyucore
           nyucore.set_edit_groups(editors, []) unless editors.empty?
-          nyucore.save
-        end
+          nyucore if nyucore.save
+        end.compact
       end
 
       def delete
