@@ -66,8 +66,8 @@ module Ichabod
           it { should be_empty }
         end
       end
-      describe '#respond_to_missing?' do
-        subject { base.respond_to_missing?(method_name) }
+      describe '#respond_to?' do
+        subject { base.respond_to?(method_name) }
         context 'when the method is not really missing' do
           let(:method_name) { :file }
           it { should be true }
