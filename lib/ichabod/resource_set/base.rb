@@ -30,15 +30,11 @@ module Ichabod
         @source_reader = source_reader
       end
 
-      def self.editors
-        @editors ||= gather_superclass_editors
-      end
-
-      def self.gather_superclass_editors(klass=superclass)
-        if klass.respond_to?(:editors)
-          klass.editors + begin
-            if klass.superclass.respond_to?(:editors)
-              gather_editors(klass.superclass)
+      def self.gather_superclass_attributes(attribute, klass=superclass)
+        if klass.respond_to?(attribute)
+          klass.send(attribute) + begin
+            if klass.superclass.respond_to?(attribute)
+              gather_superclass_attributes(attribute, klass.superclass)
             else
               []
             end
@@ -46,6 +42,10 @@ module Ichabod
         else
           []
         end
+      end
+
+      def self.editors
+        @editors ||= gather_superclass_attributes(:editors)
       end
 
       def self.editor(*editors)
@@ -53,21 +53,7 @@ module Ichabod
       end
 
       def self.before_creates
-        @before_creates ||= gather_superclass_before_creates
-      end
-
-      def self.gather_superclass_before_creates(klass=superclass)
-        if klass.respond_to?(:before_creates)
-          klass.before_creates + begin
-            if klass.superclass.respond_to?(:before_creates)
-              gather_before_creates(klass.superclass)
-            else
-              []
-            end
-          end
-        else
-          []
-        end
+        @before_creates ||= gather_superclass_attributes(:before_creates)
       end
 
       def self.before_create(*before_creates)
