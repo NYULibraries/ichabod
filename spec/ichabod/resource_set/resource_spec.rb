@@ -26,6 +26,11 @@ module Ichabod
           it { should_not include '\\' }
           it { should eq 'prefix:this-has-backslashes'}
         end
+        context 'when the identifier has "http://"s' do
+          let(:resource) { create :resource, identifier: 'this\has\http://handle' }
+          it { should_not include 'http://' }
+          it { should eq 'prefix:this-has-handle'}
+        end
       end
       describe '#to_nyucore' do
         subject { resource.to_nyucore }
