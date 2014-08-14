@@ -13,6 +13,10 @@ module Ichabod
         context 'the candidate is valid' do
           it { should be true }
         end
+        context 'the candidate has many valid pairs' do
+          let(:candidate) { "{filename: 'filename', option2: 'option2'}" }
+          it { should be true }
+        end
         context 'the candidate is invalid' do
           let(:candidate) { invalid_candidate }
           it { should be false }
