@@ -8,10 +8,8 @@ module Ichabod
     subject(:data_loader) { DataLoader.new(name, options) }
     its(:name) { should eq name }
     its(:options) { should eq options }
-
     describe "#load" do
-      before { data_loader.load }
-      let(:records) { data_loader.records }
+      let(:records) { data_loader.load }
       subject(:record) { records.first }
       context "when source is SDR", vcr: { cassette_name: "sdr data load" } do
         it "should load an nyucore record" do
@@ -35,7 +33,6 @@ module Ichabod
         its(:addinfotext) { should eql ['GIS Dataset Instructions']}
         its(:edit_groups) { should eql ['admin_group', 'gis_cataloger'] }
       end
-
       context "when source is FDA", vcr: { cassette_name: "fda data load" } do
         let(:name) { 'faculty_digital_archive' }
         let(:filename) { './spec/fixtures/sample_fda.xml' }
@@ -51,19 +48,17 @@ module Ichabod
         its(:edit_groups) { should eql ['admin_group', 'fda_cataloger'] }
       end
     end
-
     describe "#delete" do
       before do
         data_loader.load
         data_loader.delete
       end
-      context "when source is SDR", vcr: { cassette_name: "sdr data delete" } do
+      context "when source is the Spatial Data Repository", vcr: { cassette_name: "sdr data delete" } do
         it "should delete an existing nyucore record" do
           expect(Nyucore.find(pid: id)).to be_blank
         end
       end
-
-      context "when source is FDA", vcr: { cassette_name: "fda data delete" } do
+      context "when source is the Faculty Digital Archive", vcr: { cassette_name: "fda data delete" } do
         let(:name) { 'faculty_digital_archive' }
         let(:filename) { './spec/fixtures/sample_fda.xml' }
         let(:id) { 'fda:hdl-handle-net-2451-14097' }
@@ -72,11 +67,10 @@ module Ichabod
         end
       end
     end
-
-    describe "#field_stats", vcr: { cassette_name: "sdr data load" } do
-      before { data_loader.load }
-      subject { data_loader.field_stats }
-      it { should eq 1 }
+    describe "#read" do
+      subject { data_loader.read }
+      it { should be_an Array }
+      it { should_not be_empty }
     end
   end
 end

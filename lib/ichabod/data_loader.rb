@@ -15,6 +15,10 @@ module Ichabod
       end
     end
 
+    def read
+      resource_set.read_from_source
+    end
+
     def load
       @records = resource_set.create
     end
@@ -25,16 +29,6 @@ module Ichabod
 
     def records
       @records ||= []
-    end
-
-    def field_stats
-      records.each do |record|
-        Nyucore.defined_attributes.keys.map(&:to_sym).each do |attribute|
-          value = record.send(attribute)
-          p value unless value.blank?
-        end
-      end
-      records.count
     end
   end
 end
