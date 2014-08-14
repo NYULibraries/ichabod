@@ -11,11 +11,11 @@ module Ichabod
       describe '#valid?' do
         subject { options_interpreter.valid? }
         context 'the candidate is valid' do
-          it { should be true}
+          it { should be true }
         end
         context 'the candidate is invalid' do
-        let(:candidate) { invalid_candidate }
-        it { should be false}
+          let(:candidate) { invalid_candidate }
+          it { should be false }
         end
       end
       describe '#interpret' do
