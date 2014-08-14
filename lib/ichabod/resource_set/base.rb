@@ -30,6 +30,33 @@ module Ichabod
         @source_reader = source_reader
       end
 
+      # Since the class attributes are defined as instance variables on a Class
+      # we need to make sure we force inheritance by grabbing the superclass(es)
+      # instance variables as well. We do this through recursion so that all
+      # super classes that have the attributes are gathered.
+      #
+      # Example
+      #   class SubClass < Base
+      #     editor :admin_group
+      #   end
+      #
+      #   class SubClass < Base
+      #     editor :editor1
+      #   end
+      #
+      #   class SubSubClass < SubClass
+      #     editor :editor2
+      #   end
+      #
+      # without forcing inheritance
+      #   SubSubClass.editors
+      #   # =>  :editor2
+      #
+      # with forcing inheritance through recursion
+      #   SubSubClass.editors
+      #   # =>  :admin_group, :editor1, :editor2
+      #
+      # We want inheritance, so that's what this method gives us
       def self.gather_superclass_attributes(attribute, klass=superclass)
         if klass.respond_to?(attribute)
           klass.send(attribute) + begin
