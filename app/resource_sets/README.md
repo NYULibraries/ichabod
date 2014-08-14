@@ -45,7 +45,9 @@ spatial_data_repository.prefix
 spatial_data_repository.source_reader
 # => Ichabod::ResourceSet::SourceReaders::OaiDcFileReader
 spatial_data_repository.editors
-# => [:gis_cataloger, :admin, :editor1, :editor2]
+# => ['admin_group', 'gis_cataloger', 'editor1', 'editor2']
+spatial_data_repository.before_creates
+# => [:add_edit_groups, :add_additional_info_link]
 spatial_data_repository.option_key
 # => "options value"
 
