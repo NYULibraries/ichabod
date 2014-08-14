@@ -9,4 +9,4 @@ staging:
 cucumber:
   <<: *TEST
 production:
-  url: <%= ENV[SOLR_URL] %>
+  url: <%= (ENV[SOLR_URL] || 'http://solr.library.edu') %>
