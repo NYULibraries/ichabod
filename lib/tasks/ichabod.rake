@@ -7,17 +7,23 @@ WebMock.allow_net_connect!
 namespace :ichabod do
 
   desc "Run this guy, pipe into sort & wc, you get record count, plus field count for input file..."
-  task :field_stats, [:filename, :prefix] => :environment do |t, args|
-    Ichabod::DataLoader.new(args.filename, args.prefix).field_stats
+  task :field_stats, [:name, :options] => :environment do |t, args|
+    name = args.name
+    options = eval(args.options)
+    Ichabod::DataLoader.new(name, options).field_stats
   end
 
-  desc "Usage: rake load['sdr.xml','sdr']"
-  task :load, [:filename, :prefix] => :environment do |t, args|
-    Ichabod::DataLoader.new(args.filename, args.prefix).load
+  desc "Usage: rake load['spatial_data_repository','{filename:\"sdr.xml\"}']"
+  task :load, [:name, :options] => :environment do |t, args|
+    name = args.name
+    options = eval(args.options)
+    Ichabod::DataLoader.new(name, options).load
   end
 
-  desc "Usage: rake delete['sdr.xml','sdr']"
-  task :delete, [:filename, :prefix] => :environment do |t, args|
-    Ichabod::DataLoader.new(args.filename, args.prefix).delete
+  desc "Usage: rake delete['spatial_data_repository','{filename: \"sdr.xml\"}']"
+  task :delete, [:name, :options] => :environment do |t, args|
+    name = args.name
+    options = eval(args.options)
+    Ichabod::DataLoader.new(name, options).delete
   end
 end
