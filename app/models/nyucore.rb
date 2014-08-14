@@ -1,8 +1,6 @@
 class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
 
-  after_create :add_admin_group
-
   FIELD_LIST = {
     :multiple => [:addinfolink, :addinfotext, :available, :citation, :title, :creator,
                   :type, :publisher, :description, :edition, :date, :format, :language,
@@ -24,12 +22,5 @@ class Nyucore < ActiveFedora::Base
 
   def collections
     @collections ||= Collections.new(self)
-  end
-
-private
-
-  def add_admin_group
-    self.set_edit_groups(["admin_group"],[])
-    self.save
   end
 end
