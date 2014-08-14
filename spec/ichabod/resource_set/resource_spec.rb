@@ -40,6 +40,17 @@ module Ichabod
           expect(subject.pid).to be_present
         end
       end
+      describe '#to_s' do
+        subject { resource.to_s }
+        it { should be_a String }
+        it { should_not be_empty }
+        it 'should include the title' do
+          expect(subject).to include "pid: #{resource.pid}"
+        end
+        it 'should include the first title' do
+          expect(subject).to include "title: #{resource.title.first}"
+        end
+      end
     end
   end
 end
