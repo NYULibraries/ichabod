@@ -6,7 +6,7 @@ module Ichabod
       NYUCORE_ATTRIBUTES = Nyucore.defined_attributes.keys.map(&:to_sym)
 
       attr_accessor :prefix
-      attr_accessor *NYUCORE_ATTRIBUTES
+      attr_accessor(*NYUCORE_ATTRIBUTES)
 
       def initialize(attributes={})
         attributes.each_pair do |key, value|
@@ -25,6 +25,20 @@ module Ichabod
           @nyucore.send("#{attribute}=".to_sym, send(attribute))
         end
         @nyucore
+      end
+
+      def to_s
+        "pid: #{pid}\n" +
+        NYUCORE_ATTRIBUTES.map do |attribute|
+          value = send(attribute)
+          if value.present?
+            if value.is_a? Array
+              "#{attribute}: #{value.join('; ')}"
+            else
+              value
+            end
+          end
+        end.compact.join("\n") + "\n"
       end
 
       private
