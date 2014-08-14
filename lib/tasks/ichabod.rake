@@ -9,9 +9,7 @@ namespace :ichabod do
 
   desc "Run this guy, pipe into sort & wc, you get record count, plus field count for input file..."
   task :read, [:name, :options] => :environment do |t, args|
-    name = args.name
-    options = eval(args.options)
-    data_loader = Ichabod::DataLoader.new(name, options)
+    data_loader = Ichabod::DataLoader.new(args.name, args.options)
     records = data_loader.read
     records.each do |record|
       p record
@@ -20,15 +18,11 @@ namespace :ichabod do
 
   desc "Usage: rake load['spatial_data_repository','{filename:\"sdr.xml\"}']"
   task :load, [:name, :options] => :environment do |t, args|
-    name = args.name
-    options = eval(args.options)
-    Ichabod::DataLoader.new(name, options).load
+    Ichabod::DataLoader.new(args.name, args.options).load
   end
 
   desc "Usage: rake delete['spatial_data_repository','{filename: \"sdr.xml\"}']"
   task :delete, [:name, :options] => :environment do |t, args|
-    name = args.name
-    options = eval(args.options)
-    Ichabod::DataLoader.new(name, options).delete
+    Ichabod::DataLoader.new(args.name, args.options).delete
   end
 end
