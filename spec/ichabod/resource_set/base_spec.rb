@@ -236,7 +236,7 @@ module Ichabod
         it 'should return an array of deleted Nyucores' do
           subject.each do |nyucore|
             expect(nyucore).to be_an Nyucore
-            pending('Waiting for ActiveFedora 7.0')
+            pending('Waiting for ActiveFedora 7.0 to check destruction status')
             expect(nyucore).to be_destroyed
           end
         end
