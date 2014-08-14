@@ -16,7 +16,7 @@ describe FacultyDigitalArchive do
   end
   describe '.before_creates' do
     subject { FacultyDigitalArchive.before_creates }
-    it { should eq [:add_edit_groups, :add_http_identifier_as_available] }
+    it { should eq [:add_edit_groups, :add_http_identifier_as_available_and_citation] }
   end
   describe '#editors' do
     subject { faculty_digital_archive.editors }
@@ -24,6 +24,6 @@ describe FacultyDigitalArchive do
   end
   describe '#before_creates' do
     subject { faculty_digital_archive.before_creates }
-    it { should eq [:add_edit_groups, :add_http_identifier_as_available] }
+    it { should eq [:add_edit_groups, :add_http_identifier_as_available_and_citation] }
   end
 end
