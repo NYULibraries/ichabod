@@ -2,7 +2,10 @@ require 'spec_helper'
 module Ichabod
   module ResourceSet
     describe Base do
+      let(:before_creates) { [:method1, :method2] }
+      let!(:original_before_creates) { Base.before_creates - before_creates }
       let(:editors) { [:editor1, :editor2] }
+      let!(:original_editors) { Base.editors - editors }
       let(:prefix) { 'mock' }
       describe '.prefix=' do
         after { Base.prefix=(nil)}
@@ -16,14 +19,27 @@ module Ichabod
         end
       end
       describe '.editor' do
-        after { Base.instance_variable_set(:@editors, nil)}
+        after { Base.instance_variable_set(:@editors, original_editors)}
         subject { Base.editor(*editors) }
         it 'should not raise an ArgumentError' do
           expect { subject }.not_to raise_error
         end
         it 'should set the editors attribute on the class' do
           subject
-          expect(Base.editors).to eq editors
+          expect(Base.editors).to eq editors.unshift(*original_editors)
+        end
+      end
+      describe '.before_create' do
+        after do
+          Base.instance_variable_set(:@before_creates, original_before_creates)
+        end
+        subject { Base.before_create(*before_creates) }
+        it 'should not raise an ArgumentError' do
+          expect { subject }.not_to raise_error
+        end
+        it 'should set the before_creates attribute on the class' do
+          subject
+          expect(Base.before_creates).to eq before_creates.unshift(*original_before_creates)
         end
       end
       describe '.source_reader=' do
@@ -133,13 +149,27 @@ module Ichabod
         subject { base.editors }
         context 'when not configured with editors' do
           it { should be_an Array }
-          it { should be_empty }
+          it { should eq original_editors.map(&:to_s) }
         end
-        context 'when configured with a editors' do
+        context 'when configured with editors' do
           before { Base.editor(*editors) }
-          after { Base.instance_variable_set(:@editors, nil)}
+          after { Base.instance_variable_set(:@editors, original_editors)}
           it { should be_an Array }
-          it { should eq editors.map(&:to_s) }
+          it { should eq editors.map(&:to_s).unshift(*original_editors.map(&:to_s)) }
+        end
+      end
+      describe '#before_creates' do
+        subject { base.before_creates }
+        context 'when not configured with before creates' do
+          it { should be_an Array }
+          it { should eql original_before_creates }
+        end
+        context 'when configured with before creates' do
+          before { Base.before_create(*before_creates) }
+          after do
+            Base.instance_variable_set(:@before_creates, original_before_creates)
+          end
+          it { should eq before_creates.map(&:to_sym).unshift(*original_before_creates.map(&:to_sym)) }
         end
       end
       describe '#read_from_source' do
@@ -162,27 +192,33 @@ module Ichabod
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
         after { Base.instance_variable_set(:@source_reader, nil) }
         subject { base.create }
-        it 'should create the Resources in Fedora as Nyucores'
-        it 'should index the Nyucores in Solr'
-        it 'should return an array of persisted Nyucores' do
+        it { should be_an Array }
+        it { should_not be_empty }
+        its(:size) { should eq 5 }
+        it 'should return an array of created Nyucores' do
           subject.each do |nyucore|
             expect(nyucore).to be_an Nyucore
             expect(nyucore).to be_persisted
+            expect(nyucore).not_to be_new
           end
         end
         context 'when there are no editors' do
+          before { Base.instance_variable_set(:@editors, original_editors)}
           it 'should return an array of Nyucores with no edit groups' do
             subject.each do |nyucore|
-              expect(nyucore.edit_groups).to be_blank
+              expect(nyucore.edit_groups).to eq original_editors.map(&:to_s)
             end
           end
         end
         context 'when there are editors', vcr: {cassette_name: 'resource sets/create resource set with editors'} do
           before { Base.editor(*editors) }
-          after { Base.instance_variable_set(:@editors, nil)}
+          after { Base.instance_variable_set(:@editors, original_editors)}
+          it { should be_an Array }
+          it { should_not be_empty }
+          its(:size) { should eq 5 }
           it 'should return an array of Nyucores with the specified edit groups' do
             subject.each do |nyucore|
-              expect(nyucore.edit_groups).to eq editors
+              expect(nyucore.edit_groups).to eq editors.map(&:to_s).unshift(*original_editors.map(&:to_s))
             end
           end
         end
@@ -197,11 +233,10 @@ module Ichabod
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
         after { Base.instance_variable_set(:@source_reader, nil) }
         subject { base.delete }
-        it 'should delete the associated Nyucores from Fedora'
-        it 'should delete the Nyucores from the Solr index'
         it 'should return an array of deleted Nyucores' do
           subject.each do |nyucore|
             expect(nyucore).to be_an Nyucore
+            pending('Waiting for ActiveFedora 7.0')
             expect(nyucore).to be_destroyed
           end
         end

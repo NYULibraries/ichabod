@@ -10,7 +10,7 @@ module Ichabod
         attr_accessor :prefix
       end
 
-      attr_reader :options, :prefix, :editors
+      attr_reader :options, :prefix, :editors, :before_creates
 
       def self.source_reader=(source_reader)
         unless source_reader.is_a?(Class)
@@ -31,12 +31,54 @@ module Ichabod
       end
 
       def self.editors
-        @editors ||= []
+        @editors ||= gather_superclass_editors
+      end
+
+      def self.gather_superclass_editors(klass=superclass)
+        if klass.respond_to?(:editors)
+          klass.editors + begin
+            if klass.superclass.respond_to?(:editors)
+              gather_editors(klass.superclass)
+            else
+              []
+            end
+          end
+        else
+          []
+        end
       end
 
       def self.editor(*editors)
         self.editors.concat(editors.compact).uniq!
       end
+
+      def self.before_creates
+        @before_creates ||= gather_superclass_before_creates
+      end
+
+      def self.gather_superclass_before_creates(klass=superclass)
+        if klass.respond_to?(:before_creates)
+          klass.before_creates + begin
+            if klass.superclass.respond_to?(:before_creates)
+              gather_before_creates(klass.superclass)
+            else
+              []
+            end
+          end
+        else
+          []
+        end
+      end
+
+      def self.before_create(*before_creates)
+        self.before_creates.concat(before_creates.compact).uniq!
+      end
+
+      # Default editor on all ResourceSets is the admin group
+      editor :admin_group
+
+      # Default to adding the edit groups on create
+      before_create :add_edit_groups
 
       include Enumerable
       alias_method :size, :count
@@ -45,6 +87,7 @@ module Ichabod
         @options = options
         @prefix = self.class.prefix
         @editors = self.class.editors.map(&:to_s)
+        @before_creates = self.class.before_creates.map(&:to_sym)
       end
 
       def read_from_source
@@ -59,7 +102,9 @@ module Ichabod
             raise RuntimeError.new("Expecting #{resource} to be a Resource")
           end
           nyucore = resource.to_nyucore
-          nyucore.set_edit_groups(editors, []) unless editors.empty?
+          before_create_methods.each do |before_create_method|
+            before_create_method.call(resource, nyucore)
+          end
           nyucore if nyucore.save
         end.compact
       end
@@ -70,8 +115,10 @@ module Ichabod
           unless resource.is_a?(Resource)
             raise RuntimeError.new("Expecting #{resource} to be a Resource")
           end
-          pid = resource.pid
-          Nyucore.find(pid).destroy
+          nyucore = Nyucore.find(resource.pid)
+          # ActiveFedora::FixtureLoader.delete(resource.pid)
+          nyucore.destroy
+          nyucore
         end
       end
 
@@ -88,6 +135,19 @@ module Ichabod
       end
 
       private
+      def add_edit_groups(*args)
+        nyucore = args.last
+        nyucore.set_edit_groups(editors, []) unless editors.empty?
+      end
+
+      def before_create_methods
+        @before_create_methods ||= begin
+          before_creates.collect do |before_create|
+            method(before_create)
+          end
+        end
+      end
+
       def raise_runtime_error_if_no_source_reader_configured
         if self.class.source_reader.blank?
           raise RuntimeError.new("No source reader has been configured for the class #{self.class.name}")
