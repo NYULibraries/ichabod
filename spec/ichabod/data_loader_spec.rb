@@ -39,6 +39,8 @@ module Ichabod
         let(:id) { 'fda:hdl-handle-net-2451-14097' }
         its(:pid) { should eql id }
         its(:identifier) { should eql 'http://hdl.handle.net/2451/14097' }
+        its(:available) { should eql ['http://hdl.handle.net/2451/14097'] }
+        its(:citation) { should eql ['http://hdl.handle.net/2451/14097'] }
         its(:title) { should eql ['FDA Title'] }
         its(:publisher) { should eql ['Stern'] }
         its(:type) { should eql ['Working Paper'] }
