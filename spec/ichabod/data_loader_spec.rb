@@ -1,31 +1,26 @@
 require 'spec_helper'
 module Ichabod
   describe DataLoader do
+    let(:name) { 'spatial_data_repository' }
+    let(:options) { {filename: filename} }
     let(:filename) { './spec/fixtures/sample_sdr.xml' }
-    let(:source) { 'sdr' }
     let(:id) { 'sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey' }
-    let(:data_loader) { DataLoader.new(filename, source) }
-    it "should instantiate properly" do
-      expect(data_loader.prefix).to eql(source)
-      expect(data_loader.filename).to eql(filename)
-    end
+    subject(:data_loader) { DataLoader.new(name, options) }
+    its(:name) { should eq name }
+    its(:options) { should eq options }
 
     describe "#load" do
-
-      let(:records) { data_loader.load }
+      before { data_loader.load }
+      let(:records) { data_loader.records }
       subject(:record) { records.first }
-
       context "when source is SDR", vcr: { cassette_name: "sdr data load" } do
-
         it "should load an nyucore record" do
           data_loader.load
           expect(Nyucore.find(pid: id).first).to be_instance_of Nyucore
         end
-
         it "should be an NYUCore record" do
           expect(subject).to be_instance_of(Nyucore)
         end
-
         its(:pid) { should eql id }
         its(:identifier) { should eql 'DSS.NYCDCP_MONKEY_LION\DSS.Lion_Monkey' }
         its(:title) { should eql ['LION'] }
@@ -38,15 +33,13 @@ module Ichabod
         its(:version) { should eql ['DSS.NYCDCP_DCPLION_10cav\DSS.Lion_GJK'] }
         its(:addinfolink) { should eql ['http://nyu.libguides.com/content.php?pid=169769&sid=1489817']}
         its(:addinfotext) { should eql ['GIS Dataset Instructions']}
-        its(:edit_groups) { should eql ['gis_cataloger','admin_group'] }
-
+        its(:edit_groups) { should eql ['admin_group', 'gis_cataloger'] }
       end
 
       context "when source is FDA", vcr: { cassette_name: "fda data load" } do
+        let(:name) { 'faculty_digital_archive' }
         let(:filename) { './spec/fixtures/sample_fda.xml' }
-        let(:source) { 'fda' }
         let(:id) { 'fda:hdl-handle-net-2451-14097' }
-
         its(:pid) { should eql id }
         its(:identifier) { should eql 'http://hdl.handle.net/2451/14097' }
         its(:title) { should eql ['FDA Title'] }
@@ -55,46 +48,35 @@ module Ichabod
         its(:format) { should eql ['application/pdf'] }
         its(:language) { should eql ['English'] }
         its(:relation) { should eql ['CeDER-05-01'] }
-        its(:edit_groups) { should eql ['fda_cataloger','admin_group'] }
+        its(:edit_groups) { should eql ['admin_group', 'fda_cataloger'] }
       end
     end
 
     describe "#delete" do
+      before do
+        data_loader.load
+        data_loader.delete
+      end
       context "when source is SDR", vcr: { cassette_name: "sdr data delete" } do
-        before(:each) {
-          data_loader.load
-          expect(Nyucore.find(pid: id).first).to be_instance_of Nyucore
-        }
-
         it "should delete an existing nyucore record" do
-          data_loader.delete
-          expect(Nyucore.find(pid: id).first).to be_nil
+          expect(Nyucore.find(pid: id)).to be_blank
         end
       end
 
       context "when source is FDA", vcr: { cassette_name: "fda data delete" } do
+        let(:name) { 'faculty_digital_archive' }
         let(:filename) { './spec/fixtures/sample_fda.xml' }
-        let(:source) { 'fda' }
         let(:id) { 'fda:hdl-handle-net-2451-14097' }
-
-        before(:each) {
-          data_loader.load
-          expect(Nyucore.find(pid: id).first).to be_instance_of Nyucore
-        }
-
         it "should delete an existing nyucore record" do
-          data_loader.delete
-          expect(Nyucore.find(pid: id).first).to be_nil
+          expect(Nyucore.find(pid: id)).to be_blank
         end
       end
     end
 
-    describe "#field_stats" do
+    describe "#field_stats", vcr: { cassette_name: "sdr data load" } do
+      before { data_loader.load }
       subject { data_loader.field_stats }
-
-      it "should return number of records" do
-        expect(subject).to eql 1
-      end
+      it { should eq 1 }
     end
   end
 end
