@@ -1,4 +1,4 @@
-Given(/^I "(change|revert)?" the "(.*?)" source data in the "(.*?)" field to "(.*?)" for the record identified by "(.*?)"$/) do |method, source, field, data, identifier|
+Given(/^I (change|revert) the "(.*?)" source data in the "(.*?)" field to "(.*?)" for the record identified by "(.*?)"$/) do |method, source, field, data, identifier|
   prefix = prefix_for_source(source)
   if method == "change"
     FileUtils.cp(fixture_file(prefix, ".xml.new"), fixture_file("#{prefix}_tmp"))
