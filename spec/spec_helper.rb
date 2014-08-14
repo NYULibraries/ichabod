@@ -58,7 +58,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-  # Set a "half baked" exclusion filter for saying that the feature is not 
+  # Set a "half baked" exclusion filter for saying that the feature is not
   # ready for testing
   config.filter_run_excluding half_baked: true
 
