@@ -93,6 +93,13 @@ module Ichabod
           it { should be_a Hash }
           it { should be_empty }
         end
+        context 'when initialized with a string of options' do
+          let(:options) { "{file: 'file'}" }
+          it { should be_a Hash }
+          it { should_not be_empty }
+          its(:keys) { should eq [:file] }
+          its(:values) { should eq ['file'] }
+        end
       end
       describe '#respond_to?' do
         subject { base.respond_to?(method_name) }
