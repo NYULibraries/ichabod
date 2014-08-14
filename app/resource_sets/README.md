@@ -24,8 +24,13 @@ class SpatialDataRepository < Ichabod::ResourceSet::Base
   self.prefix = 'sdr'
   self.source_reader = :oai_dc_file_reader
   editor :gis_cataloger
-  editor :admin
   editor :editor1, :editor2
+  before_create :add_additional_info_link
+
+  def add_additional_info_link(nyucore)
+    nyucore.addinfolink = 'http://nyu.libguides.com/content.php?pid=169769&sid=1489817'
+    nyucore.addinfotext = 'GIS Dataset Instructions'
+  end
 end
 
 # At initialization, a ResourceSet can given options for the instance
