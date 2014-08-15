@@ -2,12 +2,12 @@ require 'spec_helper'
 module Ichabod
   describe DataLoader do
     let(:name) { 'spatial_data_repository' }
-    let(:options) { {filename: filename} }
+    let(:args) { [filename] }
     let(:filename) { './spec/fixtures/sample_sdr.xml' }
     let(:id) { 'sdr:DSS-NYCDCP_MONKEY_LION-DSS-Lion_Monkey' }
-    subject(:data_loader) { DataLoader.new(name, options) }
+    subject(:data_loader) { DataLoader.new(name, *args) }
     its(:name) { should eq name }
-    its(:options) { should eq options }
+    its(:args) { should eq args }
     describe "#load" do
       let(:records) { data_loader.load }
       subject(:record) { records.first }

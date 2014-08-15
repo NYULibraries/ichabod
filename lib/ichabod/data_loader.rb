@@ -1,15 +1,15 @@
 module Ichabod
   class DataLoader
-    attr_reader :name, :options, :resource_set
+    attr_reader :name, :args, :resource_set
 
-    def initialize(name, options={})
+    def initialize(name, *args)
       @name = name
-      @options = options
+      @args = args
       klass = name.classify.safe_constantize
       if klass.nil?
         raise ArgumentError.new("Expecting #{name} to be a class name")
       end
-      @resource_set = klass.new(options)
+      @resource_set = klass.new(*args)
       unless resource_set.is_a? ResourceSet::Base
         raise ArgumentError.new("Expecting #{resource_set} to be a ResourceSet")
       end
