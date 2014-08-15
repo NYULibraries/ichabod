@@ -10,5 +10,5 @@ end
 And(/^I reload the "(.*?)" source data into Ichabod$/) do |source|
   name = name_for_source(source)
   prefix = prefix_for_source(source)
-  Ichabod::DataLoader.new(name, filename: fixture_file("#{prefix}_tmp")).load
+  Ichabod::DataLoader.new(name, fixture_file("#{prefix}_tmp")).load
 end
