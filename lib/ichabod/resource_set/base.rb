@@ -97,9 +97,6 @@ module Ichabod
       alias_method :size, :count
 
       def initialize(options = {})
-        unless options.is_a?(Hash)
-          options = OptionsInterpreter.new(options).interpret
-        end
         @options = options
         @prefix = self.class.prefix
         @editors = self.class.editors.map(&:to_s)
