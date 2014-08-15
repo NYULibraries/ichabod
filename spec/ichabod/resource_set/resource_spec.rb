@@ -4,10 +4,7 @@ module Ichabod
     describe Resource do
       subject(:resource) { create :resource }
       it { should be_a Resource }
-      describe '#prefix' do
-        subject { resource.prefix }
-        it { should eq 'prefix' }
-      end
+      its(:prefix) { should eq 'prefix' }
       describe '#pid' do
         subject { resource.pid }
         it { should eq "#{resource.prefix}:#{resource.identifier.first}"}
