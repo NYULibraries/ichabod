@@ -4,6 +4,13 @@ class SpatialDataRepository < Ichabod::ResourceSet::Base
   editor :gis_cataloger
   before_create :add_additional_info_link
 
+  attr_reader :filename
+
+  def initialize(*args)
+    @filename = args.shift
+    super
+  end
+
   private
   def add_additional_info_link(*args)
     nyucore = args.last

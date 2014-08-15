@@ -4,6 +4,13 @@ class FacultyDigitalArchive < Ichabod::ResourceSet::Base
   editor :fda_cataloger
   before_create :add_http_identifier_as_available_and_citation
 
+  attr_reader :filename
+
+  def initialize(*args)
+    @filename = args.shift
+    super
+  end
+
   private
   def add_http_identifier_as_available_and_citation(*args)
     resource, nyucore = *args
