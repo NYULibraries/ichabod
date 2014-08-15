@@ -1,29 +1,36 @@
-require 'nokogiri'
-require 'active-fedora'
-require 'active_support' # This is just to load ActiveSupport::CoreExtensions::String::Inflections
+# We need to bypass VCR in order to load data in the test environment
 require 'webmock'
 WebMock.allow_net_connect!
 
 namespace :ichabod do
 
-
-  desc "Run this guy, pipe into sort & wc, you get record count, plus field count for input file..."
-  task :field_stats, [:filename, :prefix] => :environment do |t, args|
-    Ichabod::DataLoader.new(args.filename, args.prefix).field_stats
+  desc <<-DESC
+Read the Resources for a ResourceSet
+Usage: rake read['resource_set_name','arg1','arg2',...,'argN'],
+where resource_set_name is required and args are optional
+  DESC
+  task :read, [:name] => :environment do |t, args|
+    data_loader = Ichabod::DataLoader.new(args.name, *args.extras)
+    data_loader.read.each { |resource| p resource }
   end
 
-  task :test, [:filename, :prefix] => :environment do |t, args|
-    Ichabod::DataLoader.new(args.filename, args.prefix).inspect
+  desc  <<-DESC
+Load the Nyucores for a ResourceSet into Ichabod
+Usage: rake load['resource_set_name','arg1','arg2',...,'argN'],
+where resource_set_name is required and args are optional
+  DESC
+  task :load, [:name] => :environment do |t, args|
+    data_loader = Ichabod::DataLoader.new(args.name, *args.extras)
+    data_loader.load
   end
 
-  desc "Usage: rake load['sdr.xml','sdr']"
-  task :load, [:filename, :prefix] => :environment do |t, args|
-    Ichabod::DataLoader.new(args.filename, args.prefix).load
+  desc  <<-DESC
+Delete the Nyucores for a ResourceSet from Ichabod
+Usage: rake delete['resource_set_name','arg1','arg2',...,'argN'],
+where resource_set_name is required and args are optional
+  DESC
+  task :delete, [:name] => :environment do |t, args|
+    data_loader = Ichabod::DataLoader.new(args.name, *args.extras)
+    data_loader.delete
   end
-
-  desc "Usage: rake delete['sdr.xml','sdr']"
-  task :delete, [:filename, :prefix] => :environment do |t, args|
-    Ichabod::DataLoader.new(args.filename, args.prefix).delete
-  end
-
 end
