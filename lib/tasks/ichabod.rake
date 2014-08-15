@@ -1,19 +1,12 @@
-require 'nokogiri'
-require 'active-fedora'
-require 'active_support' # This is just to load ActiveSupport::CoreExtensions::String::Inflections
+# We need to bypass VCR in order to load data in the test environment
 require 'webmock'
-require 'pry'
 WebMock.allow_net_connect!
-
 namespace :ichabod do
 
   desc "Run this guy, pipe into sort & wc, you get record count, plus field count for input file..."
   task :read, [:name, :options] => :environment do |t, args|
     data_loader = Ichabod::DataLoader.new(args.name, args.options)
-    records = data_loader.read
-    records.each do |record|
-      p record
-    end
+    data_loader.read.each { |resource| p resource }
   end
 
   desc "Usage: rake load['spatial_data_repository','{filename:\"sdr.xml\"}']"
