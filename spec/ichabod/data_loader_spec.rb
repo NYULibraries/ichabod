@@ -74,5 +74,19 @@ module Ichabod
       it { should be_an Array }
       it { should_not be_empty }
     end
+    context 'when initialized with a name that cannot be coerced into a Class' do
+      let(:name) { 'invalid' }
+      it 'should raise an ArgumentError' do
+        expect { subject }.to raise_error ArgumentError
+      end
+      context 'when initialized with a name that can be coerced into a Class' do
+        context 'but it is not a ResourceSet' do
+          let(:name) { 'object' }
+          it 'should raise an ArgumentError' do
+            expect { subject }.to raise_error ArgumentError
+          end
+        end
+      end
+    end
   end
 end
