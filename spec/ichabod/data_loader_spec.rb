@@ -81,7 +81,7 @@ module Ichabod
       end
       context 'when initialized with a name that can be coerced into a Class' do
         context 'but it is not a ResourceSet' do
-          let(:name) { 'object' }
+          let(:name) { 'hash' }
           it 'should raise an ArgumentError' do
             expect { subject }.to raise_error ArgumentError
           end
