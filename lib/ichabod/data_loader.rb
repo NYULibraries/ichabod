@@ -7,11 +7,11 @@ module Ichabod
       @options = options
       klass = name.classify.safe_constantize
       if klass.nil?
-        raise ArgumentError.new("Expecting #{@resource_set_name} to be a class name")
+        raise ArgumentError.new("Expecting #{name} to be a class name")
       end
       @resource_set = klass.new(options)
       unless resource_set.is_a? ResourceSet::Base
-        raise ArgumentError.new("Expecting #{@resource_set} to be a ResourceSet")
+        raise ArgumentError.new("Expecting #{resource_set} to be a ResourceSet")
       end
     end
 
@@ -25,10 +25,6 @@ module Ichabod
 
     def delete
       @records = resource_set.delete
-    end
-
-    def records
-      @records ||= []
     end
   end
 end
