@@ -13,7 +13,7 @@ module Ichabod
       # Public: Read from the ResourceSet's source
       # Returns an Array of Ichabod::ResourceSet::Resources
       def read
-        raise RuntimeError.new("This is really just an interface that should be implemented by subclasses")
+        raise Ichabod::MethodNotImplementedError.new('Subclasses should implement')
       end
     end
   end
