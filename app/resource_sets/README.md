@@ -27,25 +27,31 @@ class SpatialDataRepository < Ichabod::ResourceSet::Base
   editor :editor1, :editor2
   before_create :add_additional_info_link
 
+  attr_reader :filename
+
+  def initialize(*args)
+    @filename = args.shift
+    super
+  end
+
   def add_additional_info_link(nyucore)
     nyucore.addinfolink = 'http://nyu.libguides.com/content.php?pid=169769&sid=1489817'
     nyucore.addinfotext = 'GIS Dataset Instructions'
   end
 end
 
-# At initialization, a ResourceSet can given options for the instance
-instance_options = {option_key: 'options value'}
-
 # Create a new SpatialDataRepository ResourceSet with the given options
-spatial_data_repository = SpatialDataRepository.new(instance_options)
+spatial_data_repository = SpatialDataRepository.new('file/path/for/sdr.xml')
 
 # See the properties
+spatial_data_repository.filename
+# => "file/path/for/sdr.xml"
 spatial_data_repository.prefix
 # => "sdr"
 spatial_data_repository.source_reader
 # => Ichabod::ResourceSet::SourceReaders::OaiDcFileReader
 spatial_data_repository.editors
-# => ['admin_group', 'gis_cataloger', 'editor1', 'editor2']
+# => ["admin_group", "gis_cataloger", "editor1", "editor2"]
 spatial_data_repository.before_creates
 # => [:add_edit_groups, :add_additional_info_link]
 spatial_data_repository.option_key
