@@ -7,8 +7,8 @@ module Ichabod
       it { should be_a SourceReader }
       describe '#read' do
         subject { source_reader.read }
-        it 'should raise a RuntimeError' do
-          expect { subject }.to raise_error RuntimeError
+        it 'should raise a MethodNotImplementedError' do
+          expect { subject }.to raise_error MethodNotImplementedError
         end
       end
       context 'when initialized without a resource_set argument that is not a ResourceSet' do
