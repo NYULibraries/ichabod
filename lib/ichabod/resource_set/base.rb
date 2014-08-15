@@ -132,7 +132,6 @@ module Ichabod
             raise RuntimeError.new("Expecting #{resource} to be a Resource")
           end
           nyucore = Nyucore.find(resource.pid)
-          # ActiveFedora::FixtureLoader.delete(resource.pid)
           nyucore.destroy
           nyucore
         end
