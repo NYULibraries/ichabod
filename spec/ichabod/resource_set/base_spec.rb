@@ -80,44 +80,8 @@ module Ichabod
           end
         end
       end
-      let(:options) { {file: 'file'} }
-      subject(:base) { Base.new(options) }
+      subject(:base) { Base.new }
       it { should be_a Base }
-      describe '#options' do
-        subject { base.options }
-        it { should be_a Hash }
-        it { should_not be_empty }
-        it { should eq options }
-        context 'when initialized without options' do
-          let(:base) { Base.new }
-          it { should be_a Hash }
-          it { should be_empty }
-        end
-      end
-      describe '#respond_to?' do
-        subject { base.respond_to?(method_name) }
-        context 'when the method is not really missing' do
-          let(:method_name) { :file }
-          it { should be true }
-        end
-        context 'when the method is really missing' do
-          let(:method_name) { :missing }
-          it { should be false }
-        end
-      end
-      describe '#method_missing' do
-        subject { base.method_missing(method_name) }
-        context 'when the method is not really missing' do
-          let(:method_name) { :file }
-          it { should eq 'file' }
-        end
-        context 'when the method is really missing' do
-          let(:method_name) { :missing }
-          it 'should raise a NameError' do
-            expect { subject }.to raise_error NameError
-          end
-        end
-      end
       describe '#each' do
         subject { base.each }
         it { should be_an Enumerator }

@@ -10,7 +10,7 @@ module Ichabod
         attr_accessor :prefix
       end
 
-      attr_reader :options, :prefix, :editors, :before_creates
+      attr_reader :prefix, :editors, :before_creates
 
       def self.source_reader=(source_reader)
         unless source_reader.is_a?(Class)
@@ -96,8 +96,7 @@ module Ichabod
       include Enumerable
       alias_method :size, :count
 
-      def initialize(options = {})
-        @options = options
+      def initialize(*args)
         @prefix = self.class.prefix
         @editors = self.class.editors.map(&:to_s)
         @before_creates = self.class.before_creates.map(&:to_sym)
@@ -132,18 +131,6 @@ module Ichabod
           nyucore.destroy
           nyucore
         end
-      end
-
-      def method_missing(method_name, *args)
-        if respond_to_missing?(method_name)
-          options[method_name]
-        else
-          super
-        end
-      end
-
-      def respond_to_missing?(method_name, include_private = false)
-        options.has_key?(method_name) || super
       end
 
       private
