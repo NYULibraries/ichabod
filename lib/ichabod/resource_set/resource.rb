@@ -3,7 +3,10 @@ module Ichabod
     # Public
     class Resource
 
-      NYUCORE_ATTRIBUTES = Nyucore.defined_attributes.keys.map(&:to_sym)
+      NYUCORE_ATTRIBUTES = [:identifier, :addinfolink, :addinfotext, :available,
+        :citation, :title, :creator, :type, :publisher, :description, :edition,
+        :date, :format, :language, :relation, :rights, :subject, :series,
+        :version]
 
       attr_accessor :prefix
       attr_accessor(*NYUCORE_ATTRIBUTES)
