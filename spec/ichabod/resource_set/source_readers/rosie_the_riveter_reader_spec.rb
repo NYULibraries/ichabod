@@ -5,7 +5,7 @@ module Ichabod
       describe RosieTheRiveterReader do
         let(:user) { ENV['ICHABOD_ROSIE_USER'] || 'user' }
         let(:password) { ENV['ICHABOD_ROSIE_PASSWORD'] || 'password' }
-        let(:endpoint_url) { ENV['ICHABOD_ROSIE_ENDPOINT_URL'] || 'https://rosie.the.riveter' }
+        let(:endpoint_url) { 'http://dev-dl-pa.home.nyu.edu' }
         let(:collection_code) { 'rosie' }
         let(:resource_set) { mock_resource_set }
         before do
