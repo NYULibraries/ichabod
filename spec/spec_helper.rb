@@ -83,7 +83,6 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr_cassettes'
   c.configure_rspec_metadata!
   c.hook_into :webmock
-  c.filter_sensitive_data('https://rosie.the.riveter') { ENV['ICHABOD_ROSIE_ENDPOINT_URL'] }
   c.filter_sensitive_data('user') { ENV['ICHABOD_ROSIE_USER'] }
   c.filter_sensitive_data('password') { ENV['ICHABOD_ROSIE_PASSWORD'] }
 end
