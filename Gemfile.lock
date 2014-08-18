@@ -201,6 +201,8 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     fastercsv (1.5.5)
     ffi (1.9.3)
     figs (2.0.1)
@@ -284,6 +286,7 @@ GEM
     multi_json (1.10.1)
     multi_test (0.1.1)
     multi_xml (0.5.5)
+    multipart-post (2.0.0)
     mustache (0.99.4)
     mysql2 (0.3.16)
     net-scp (1.2.1)
@@ -465,12 +468,14 @@ DEPENDENCIES
   database_cleaner (~> 1.2.0)
   exlibris-aleph!
   factory_girl_rails (~> 4.4.0)
+  faraday (~> 0.9.0)
   hydra (~> 6.1.0)
   jbuilder (~> 2.0.7)
   jettywrapper
   jquery-rails (~> 3.1.0)
   jquery-ui-rails (~> 4.1.0)
   kaminari (~> 0.13)
+  multi_json (~> 1.10.1)
   mustache (= 0.99.4)
   mustache-rails!
   mysql2 (~> 0.3.15)
