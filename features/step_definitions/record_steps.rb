@@ -13,7 +13,7 @@ When(/^I save the record$/) do
 end
 
 Then(/^I should see the message "(.+?)"$/) do |message|
-  expect(page.find(:css, "div.alert.alert-info")).to have_content message
+  expect(page.first(:css, "div.alert.alert-info")).to have_content message
 end
 
 Given(/^the record "(.*?)" exists$/) do |title|

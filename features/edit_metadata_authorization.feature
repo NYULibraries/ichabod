@@ -1,7 +1,7 @@
 @vcr
 Feature: Permission to edit metadata only to authorized users
   In order to protect my own metadata and others from inadvertent modification
-  As a logged in cataloger
+  As a logged in gis cataloger
   I want to have permission to edit metadata only for items of which I am an authorized user
 
   @loggedin
