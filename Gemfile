@@ -34,6 +34,7 @@ gem 'jettywrapper', group: [:development, :test, :staging]
 
 gem 'faraday', '~> 0.9.0'
 gem 'multi_json', '~> 1.10.1'
+gem 'multi_xml', '~> 0.5.5'
 
 group :development do
   gem 'better_errors'
