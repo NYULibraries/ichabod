@@ -1,0 +1,2057 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1irnrbqp7s44mjkth3gjhcmz;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Tue, 19 Aug 2014 17:22:25 GMT
+      Content-Length:
+      - '56'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: testgisrecord:123'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:25 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=q30jt303l7w111l8yrvkmnmcb;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Tue, 19 Aug 2014 17:22:25 GMT
+      Content-Length:
+      - '56'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: testgisrecord:123'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:25 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1lll80i45ppll1rqsa83eqledp;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Tue, 19 Aug 2014 17:22:25 GMT
+      Content-Length:
+      - '56'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: testgisrecord:123'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:25 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1o7nxxxvi19vn16emmhwv7yvcl;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Tue, 19 Aug 2014 17:22:25 GMT
+      Content-Length:
+      - '56'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: testgisrecord:123'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:25 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1hvlo493urbiwooted07nxs8;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Tue, 19 Aug 2014 17:22:25 GMT
+      Content-Length:
+      - '56'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: testgisrecord:123'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:25 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - text/xml
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1kjzqu3l6epxs1p43merylq0dj;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:25 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/testgisrecord%3A123
+      Content-Length:
+      - '17'
+    body:
+      encoding: US-ASCII
+      string: testgisrecord:123
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:25 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=14wxdqaraog9igsmub2n2qob;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:25 GMT
+      Content-Length:
+      - '936'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="testgisrecord:123"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-08-19T17:22:25.329Z</objCreateDate><objLastModDate>2014-08-19T17:22:25.329Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:25 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT?controlGroup=X&dsLabel=Fedora%20Object-to-Object%20Relationship%20Metadata&dsState=A&mimeType=application/rdf%2Bxml&versionable=true
+    body:
+      encoding: UTF-8
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"
+        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/testgisrecord:123\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"/>\n  </rdf:Description>\n</rdf:RDF>\n"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/rdf+xml
+      Multipart:
+      - 'true'
+      Content-Length:
+      - '311'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=veidvjrmpc0o1hgpp36twszod;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:25 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/testgisrecord%3A123/datastreams/RELS-EXT
+      Content-Length:
+      - '927'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-08-19T17:22:25.793Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>287</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:25 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/rightsMetadata?controlGroup=M&dsState=A&mimeType=text/xml&versionable=true
+    body:
+      encoding: US-ASCII
+      string: ! "<rightsMetadata xmlns=\"http://hydra-collab.stanford.edu/schemas/rightsMetadata/v1\"
+        version=\"0.1\">\n  <copyright>\n    <human type=\"title\"/>\n    <human type=\"description\"/>\n
+        \   <machine type=\"uri\"/>\n  </copyright>\n  <access type=\"discover\">\n
+        \   <human/>\n    <machine/>\n  </access>\n  <access type=\"read\">\n    <human/>\n
+        \   <machine/>\n  </access>\n  <access type=\"edit\">\n    <human/>\n    <machine>\n
+        \     <group>gis_cataloger</group>\n    </machine>\n  </access>\n  <embargo>\n
+        \   <human/>\n    <machine/>\n  </embargo>\n</rightsMetadata>"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - text/xml
+      Multipart:
+      - 'true'
+      Content-Length:
+      - '523'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=mvbimeft8yfqmfhlw7baxhud;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:25 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/testgisrecord%3A123/datastreams/rightsMetadata
+      Content-Length:
+      - '906'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.0</dsVersionID><dsCreateDate>2014-08-19T17:22:25.886Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>523</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+rightsMetadata+rightsMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:25 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/descMetadata?controlGroup=M&dsState=A&mimeType=text/plain&versionable=true
+    body:
+      encoding: UTF-8
+      string: ! '<info:fedora/testgisrecord:123> <http://purl.org/dc/terms/title>
+        "The Hermit" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/creator> "The Man"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/publisher> "NYU"
+        .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "Avail 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "Travail" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/description> "Interesting
+        topic" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/description> "But
+        poorly written" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        "Ed 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        "Edition 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        "Series 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        "Series I" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        "V1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        "Latest Version" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/date> "12/05/2014"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/date> "04/01/1666"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/format> "PDF" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/format> "DNS" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/language> "en" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/language> "ger"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/relation> "x is
+        to y as y is to z" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/relation> "one and
+        a two and a" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/rights> "remain
+        silent" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/rights> "hire an
+        attorney" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/subject> "Cryptozoology"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/subject> "Vexillology"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/type> "Geospatial
+        Data" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#citation>
+        "Shouldn''t have jumped the turnstile" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#citation>
+        "Shouldn''t have ran a red light" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/identifier> "rec123"
+        .
+
+'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - text/plain
+      Multipart:
+      - 'true'
+      Content-Length:
+      - '2579'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1tmt6ut02ivaq1gjxwa64g0vza;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:26 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/testgisrecord%3A123/datastreams/descMetadata
+      Content-Length:
+      - '901'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-08-19T17:22:26.586Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>2579</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:26 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=170z7111lb6b619815w27v7b6i;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:26 GMT
+      Content-Length:
+      - '927'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-08-19T17:22:25.793Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>287</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:26 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=7yz4ilkbrp12cj98ndsgytsu;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:26 GMT
+      Content-Length:
+      - '906'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.0</dsVersionID><dsCreateDate>2014-08-19T17:22:25.886Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>523</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+rightsMetadata+rightsMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:26 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=uii8t1007t0c16735z55oh5le;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:26 GMT
+      Content-Length:
+      - '901'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.0</dsVersionID><dsCreateDate>2014-08-19T17:22:26.586Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>2579</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+descMetadata+descMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:26 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=jzp07ke9pvdv1wvztorea732z;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '287'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:26 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/testgisrecord:123\">\n    <ns0:hasModel
+        rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n  </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:26 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/rightsMetadata?mimeType=text/xml
+    body:
+      encoding: US-ASCII
+      string: ! "<rightsMetadata xmlns=\"http://hydra-collab.stanford.edu/schemas/rightsMetadata/v1\"
+        version=\"0.1\">\n  <copyright>\n    <human type=\"title\"/>\n    <human type=\"description\"/>\n
+        \   <machine type=\"uri\"/>\n  </copyright>\n  <access type=\"discover\">\n
+        \   <human/>\n    <machine/>\n  </access>\n  <access type=\"read\">\n    <human/>\n
+        \   <machine/>\n  </access>\n  <access type=\"edit\">\n    <human/>\n    <machine>\n
+        \     <group>gis_cataloger</group>\n      <group>admin_group</group>\n    </machine>\n
+        \ </access>\n  <embargo>\n    <human/>\n    <machine/>\n  </embargo>\n</rightsMetadata>"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '556'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1udcns1rlw4u31vav7qpw299ck;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:26 GMT
+      Content-Length:
+      - '906'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.1</dsVersionID><dsCreateDate>2014-08-19T17:22:26.882Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>556</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+rightsMetadata+rightsMetadata.1</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:26 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/descMetadata?mimeType=text/plain
+    body:
+      encoding: UTF-8
+      string: ! '<info:fedora/testgisrecord:123> <http://purl.org/dc/terms/title>
+        "The Hermit" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/creator> "The Man"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/publisher> "NYU"
+        .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "Avail 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "Travail" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/description> "Interesting
+        topic" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/description> "But
+        poorly written" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        "Ed 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        "Edition 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        "Series 1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        "Series I" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        "V1" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        "Latest Version" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/date> "12/05/2014"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/date> "04/01/1666"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/format> "PDF" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/format> "DNS" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/language> "en" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/language> "ger"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/relation> "x is
+        to y as y is to z" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/relation> "one and
+        a two and a" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/rights> "remain
+        silent" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/rights> "hire an
+        attorney" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/subject> "Cryptozoology"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/subject> "Vexillology"
+        .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/type> "Geospatial
+        Data" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#citation>
+        "Shouldn''t have jumped the turnstile" .
+
+        <info:fedora/testgisrecord:123> <http://harper.bobst.nyu.edu/data/nyucore#citation>
+        "Shouldn''t have ran a red light" .
+
+        <info:fedora/testgisrecord:123> <http://purl.org/dc/terms/identifier> "rec123"
+        .
+
+'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - text/plain
+      Content-Length:
+      - '2579'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1wlygmwhr4l635gni9e09ps9h;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:27 GMT
+      Content-Length:
+      - '901'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.1</dsVersionID><dsCreateDate>2014-08-19T17:22:27.389Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>2579</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+descMetadata+descMetadata.1</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:27 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=18op07gloq0zv1j38x50tw5kse;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:27 GMT
+      Content-Length:
+      - '906'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.1</dsVersionID><dsCreateDate>2014-08-19T17:22:26.882Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>556</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+rightsMetadata+rightsMetadata.1</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:27 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=2jywcvrnkq1j1myq568u2vl1v;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:27 GMT
+      Content-Length:
+      - '901'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.1</dsVersionID><dsCreateDate>2014-08-19T17:22:27.389Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>2579</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+descMetadata+descMetadata.1</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:27 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-08-19T17:22:25Z</field><field
+        name="system_modified_dtsi">2014-08-19T17:22:25Z</field><field name="object_state_ssi">A</field><field
+        name="active_fedora_model_ssi">Nyucore</field><field name="id">testgisrecord:123</field><field
+        name="object_profile_ssm">{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora Object-to-Object
+        Relationship Metadata","dsVersionID":"RELS-EXT.0","dsCreateDate":"2014-08-19T17:22:25Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":287,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+RELS-EXT+RELS-EXT.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"rightsMetadata":{"dsLabel":null,"dsVersionID":"rightsMetadata.1","dsCreateDate":"2014-08-19T17:22:26Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":null,"dsControlGroup":"M","dsSize":556,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+rightsMetadata+rightsMetadata.1","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.1","dsCreateDate":"2014-08-19T17:22:27Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":2579,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+descMetadata+descMetadata.1","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-08-19T17:22:25Z","objLastModDate":"2014-08-19T17:22:25Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
+        name="edit_access_group_ssim">gis_cataloger</field><field name="edit_access_group_ssim">admin_group</field><field
+        name="desc_metadata__title_tesim">The Hermit</field><field name="desc_metadata__creator_tesim">The
+        Man</field><field name="desc_metadata__creator_sim">The Man</field><field
+        name="desc_metadata__publisher_tesim">NYU</field><field name="desc_metadata__available_tesim">Avail
+        1</field><field name="desc_metadata__available_tesim">Travail</field><field
+        name="desc_metadata__description_tesim">Interesting topic</field><field name="desc_metadata__description_tesim">But
+        poorly written</field><field name="desc_metadata__edition_tesim">Ed 1</field><field
+        name="desc_metadata__edition_tesim">Edition 1</field><field name="desc_metadata__series_tesim">Series
+        1</field><field name="desc_metadata__series_tesim">Series I</field><field
+        name="desc_metadata__version_tesim">V1</field><field name="desc_metadata__version_tesim">Latest
+        Version</field><field name="desc_metadata__date_tesim">12/05/2014</field><field
+        name="desc_metadata__date_tesim">04/01/1666</field><field name="desc_metadata__format_tesim">PDF</field><field
+        name="desc_metadata__format_tesim">DNS</field><field name="desc_metadata__language_tesim">en</field><field
+        name="desc_metadata__language_tesim">ger</field><field name="desc_metadata__language_sim">en</field><field
+        name="desc_metadata__language_sim">ger</field><field name="desc_metadata__relation_tesim">x
+        is to y as y is to z</field><field name="desc_metadata__relation_tesim">one
+        and a two and a</field><field name="desc_metadata__rights_tesim">remain silent</field><field
+        name="desc_metadata__rights_tesim">hire an attorney</field><field name="desc_metadata__subject_tesim">Cryptozoology</field><field
+        name="desc_metadata__subject_tesim">Vexillology</field><field name="desc_metadata__subject_sim">Cryptozoology</field><field
+        name="desc_metadata__subject_sim">Vexillology</field><field name="desc_metadata__type_tesim">Geospatial
+        Data</field><field name="desc_metadata__type_sim">Geospatial Data</field><field
+        name="desc_metadata__citation_tesim">Shouldn't have jumped the turnstile</field><field
+        name="desc_metadata__citation_tesim">Shouldn't have ran a red light</field><field
+        name="desc_metadata__identifier_tesim">rec123</field><field name="has_model_ssim">info:fedora/afmodel:Nyucore</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>26}}
+
+'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:27 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><commit/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>91}}
+
+'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:27 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-08-19T17:22:25Z</field><field
+        name="system_modified_dtsi">2014-08-19T17:22:25Z</field><field name="object_state_ssi">A</field><field
+        name="active_fedora_model_ssi">Nyucore</field><field name="id">testgisrecord:123</field><field
+        name="object_profile_ssm">{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora Object-to-Object
+        Relationship Metadata","dsVersionID":"RELS-EXT.0","dsCreateDate":"2014-08-19T17:22:25Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":287,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+RELS-EXT+RELS-EXT.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"rightsMetadata":{"dsLabel":null,"dsVersionID":"rightsMetadata.1","dsCreateDate":"2014-08-19T17:22:26Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":null,"dsControlGroup":"M","dsSize":556,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+rightsMetadata+rightsMetadata.1","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.1","dsCreateDate":"2014-08-19T17:22:27Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":2579,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+descMetadata+descMetadata.1","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-08-19T17:22:25Z","objLastModDate":"2014-08-19T17:22:25Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
+        name="edit_access_group_ssim">gis_cataloger</field><field name="edit_access_group_ssim">admin_group</field><field
+        name="desc_metadata__title_tesim">The Hermit</field><field name="desc_metadata__creator_tesim">The
+        Man</field><field name="desc_metadata__creator_sim">The Man</field><field
+        name="desc_metadata__publisher_tesim">NYU</field><field name="desc_metadata__available_tesim">Avail
+        1</field><field name="desc_metadata__available_tesim">Travail</field><field
+        name="desc_metadata__description_tesim">Interesting topic</field><field name="desc_metadata__description_tesim">But
+        poorly written</field><field name="desc_metadata__edition_tesim">Ed 1</field><field
+        name="desc_metadata__edition_tesim">Edition 1</field><field name="desc_metadata__series_tesim">Series
+        1</field><field name="desc_metadata__series_tesim">Series I</field><field
+        name="desc_metadata__version_tesim">V1</field><field name="desc_metadata__version_tesim">Latest
+        Version</field><field name="desc_metadata__date_tesim">12/05/2014</field><field
+        name="desc_metadata__date_tesim">04/01/1666</field><field name="desc_metadata__format_tesim">PDF</field><field
+        name="desc_metadata__format_tesim">DNS</field><field name="desc_metadata__language_tesim">en</field><field
+        name="desc_metadata__language_tesim">ger</field><field name="desc_metadata__language_sim">en</field><field
+        name="desc_metadata__language_sim">ger</field><field name="desc_metadata__relation_tesim">x
+        is to y as y is to z</field><field name="desc_metadata__relation_tesim">one
+        and a two and a</field><field name="desc_metadata__rights_tesim">remain silent</field><field
+        name="desc_metadata__rights_tesim">hire an attorney</field><field name="desc_metadata__subject_tesim">Cryptozoology</field><field
+        name="desc_metadata__subject_tesim">Vexillology</field><field name="desc_metadata__subject_sim">Cryptozoology</field><field
+        name="desc_metadata__subject_sim">Vexillology</field><field name="desc_metadata__type_tesim">Geospatial
+        Data</field><field name="desc_metadata__type_sim">Geospatial Data</field><field
+        name="desc_metadata__citation_tesim">Shouldn't have jumped the turnstile</field><field
+        name="desc_metadata__citation_tesim">Shouldn't have ran a red light</field><field
+        name="desc_metadata__identifier_tesim">rec123</field><field name="has_model_ssim">info:fedora/afmodel:Nyucore</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>3}}
+
+'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:27 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><commit/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>33}}
+
+'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:27 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 19 Aug 2014 17:22:27 GMT
+      Etag:
+      - ! '"ODY5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>60,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
+        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>3192,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-06-12T15:58:35Z','system_modified_dtsi'=>'2014-06-12T15:58:35Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:1','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:36Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:1+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1008,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:1+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:35Z\",\"objLastModDate\":\"2014-06-12T15:58:35Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A1/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A1/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'desc_metadata__title_tesim'=>['LION'],'desc_metadata__publisher_tesim'=>['New
+        York City Dept. of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['LION is a single line representation
+        of New York City streets containing address ranges and other information.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_DCPLION_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:37.28Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:39Z','system_modified_dtsi'=>'2014-06-12T15:58:39Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:5','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:39Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:5+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1208,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:5+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:39Z\",\"objLastModDate\":\"2014-06-12T15:58:39Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A5/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A5/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Airports'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-airports_ABU.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Airports represents
+        airport boundaries and runways within the United States and Canada.\n\nThis
+        data set provides six feature classes for displaying the data at different
+        scales. Everything about the feature classes is the same but the level of
+        generalization and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:40.128Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:41Z','system_modified_dtsi'=>'2014-06-12T15:58:41Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:8','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:8+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1200,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:8+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:41Z\",\"objLastModDate\":\"2014-06-12T15:58:41Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A8/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A8/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada City Areas'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citylim_07B.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Areas represents
+        the city limits of cities in the United States and Canada.\n\nThis data set
+        provides six feature classes for displaying the data at different scales.
+        Everything about the feature classes is the same but the level of generalization
+        and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:42.244Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:42Z','system_modified_dtsi'=>'2014-06-12T15:58:42Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:9','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:9+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1153,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:9+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:42Z\",\"objLastModDate\":\"2014-06-12T15:58:42Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A9/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A9/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'desc_metadata__title_tesim'=>['U.S.
+        Counties'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-counties_QO4.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. Counties represents the
+        counties of the United States.\n\nThis data set provides six feature classes
+        for displaying the data at different scales. Everything about the feature
+        classes is the same but the level of generalization and its name. The base
+        feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:42.966Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:40Z','system_modified_dtsi'=>'2014-06-12T15:58:40Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:7','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:7+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1024,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:7+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:40Z\",\"objLastModDate\":\"2014-06-12T15:58:40Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A7/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A7/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Major Cities'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citiesmjr_MIE.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Major Cities
+        represents major cities of United States and Canada including national, state,
+        and provincial capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:41.492Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:40Z','system_modified_dtsi'=>'2014-06-12T15:58:40Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:6','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:6+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1011,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:6+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:40Z\",\"objLastModDate\":\"2014-06-12T15:58:40Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A6/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A6/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada City Points'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-cities_NOL.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Points represents
+        cities of the United States and Canada including national, state, and provincial
+        capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:40.848Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:43Z','system_modified_dtsi'=>'2014-06-12T15:58:43Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:10','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:43Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:10+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:43Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":991,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:10+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:43Z\",\"objLastModDate\":\"2014-06-12T15:58:43Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A10/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A10/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'desc_metadata__title_tesim'=>['U.S.
+        County Boundaries'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-dtl_cnty_ln_GNV.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. County Boundaries represents
+        the boundary lines of the counties of the United States.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:43.642Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:37Z','system_modified_dtsi'=>'2014-06-12T15:58:37Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:2','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:2+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":915,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:2+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:37Z\",\"objLastModDate\":\"2014-06-12T15:58:37Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A2/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A2/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'desc_metadata__title_tesim'=>['Buildings_0311_VE2'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDOITT_BUILDINGS_0311-Buildings_0311_VE2.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDOITT_BUILDINGS_0311'],'desc_metadata__version_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:37.983Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:38Z','system_modified_dtsi'=>'2014-06-12T15:58:38Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:4','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:38Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:4+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:39Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":883,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:4+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:38Z\",\"objLastModDate\":\"2014-06-12T15:58:38Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A4/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A4/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'desc_metadata__title_tesim'=>['AOI_Centroids_3CJ'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_AOI_20101-AOI_Centroids_3CJ.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDCP_AOI_20101'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:39.487Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:47Z','system_modified_dtsi'=>'2014-06-12T15:58:47Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:16','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:47Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:16+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:47Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1426,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:16+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:47Z\",\"objLastModDate\":\"2014-06-12T15:58:47Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A16/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A16/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Large Area Landmarks'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-landmarks_PWY.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Large Area Landmarks
+        represents common landmark areas within the United States and Canada including
+        military areas, hospitals, prisons, educational institutions, shopping centers,
+        industrial parks, amusement centers, government centers, sport centers, golf
+        courses, and cemeteries.\n\nThis data set provides six feature classes for
+        displaying the data at different scales. Everything about the feature classes
+        is the same but the level of generalization and its name. The base feature
+        class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:47.959Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Working
+        Paper',2393,'Geospatial Data',198,'Article',114,'new type',95,'Text',78,'Dataset',70,'Geospatial
+        Dataset',48,'Technical Report',3,'Thesis',3,'Book',1],'desc_metadata__creator_sim'=>['The
+        Man',120,'new creator',95,'Bill Shakespeare',78,'White, Lawrence J.',53,'Walter,
+        Ingo',37,'Provost, Foster',35,'Saunders, Anthony',35,'Yermack, David',35,'Sundararajan,
+        Arun',34,'Economides, Nicholas',32],'desc_metadata__subject_sim'=>['Plays',156,'Cryptozoology',120,'Vexillology',120,'new
+        subject',95,'Plays1',78,'regulation',9,'procyclicality',6,'Banking',5,'Commercial
+        banks',5,'KMV',5],'desc_metadata__language_sim'=>['en_US',2285,'English',172,'en',126,'ger',120,'new
+        language',95,'English1',78,'EN',1,'en_UShry 2451/25921hry 2451/25921',1,'other',1]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:27 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&q=The%20Hermit&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&spellcheck.q=The%20Hermit&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 19 Aug 2014 17:22:27 GMT
+      Etag:
+      - ! '"ODY5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>89,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','q'=>'The Hermit','spellcheck.q'=>'The
+        Hermit','qf'=>'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__publisher_tesim\n
+        \               desc_metadata__type_tesim desc_metadata__description_tesim
+        desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>1,'start'=>0,'maxScore'=>0.3035789,'docs'=>[{'system_create_dtsi'=>'2014-08-19T17:22:25Z','system_modified_dtsi'=>'2014-08-19T17:22:25Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'testgisrecord:123','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-08-19T17:22:25Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":287,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"testgisrecord:123+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.1\",\"dsCreateDate\":\"2014-08-19T17:22:26Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"testgisrecord:123+rightsMetadata+rightsMetadata.1\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.1\",\"dsCreateDate\":\"2014-08-19T17:22:27Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2579,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"testgisrecord:123+descMetadata+descMetadata.1\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-08-19T17:22:25Z\",\"objLastModDate\":\"2014-08-19T17:22:25Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__title_tesim'=>['The
+        Hermit'],'desc_metadata__creator_tesim'=>['The Man'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__available_tesim'=>['Avail
+        1','Travail'],'desc_metadata__description_tesim'=>['Interesting topic','But
+        poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition 1'],'desc_metadata__series_tesim'=>['Series
+        1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__citation_tesim'=>['Shouldn\\'t have jumped the turnstile','Shouldn\\'t
+        have ran a red light'],'desc_metadata__identifier_tesim'=>['rec123'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-19T17:22:27.791Z','score'=>0.3035789}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Geospatial
+        Data',1],'desc_metadata__creator_sim'=>['The Man',1],'desc_metadata__subject_sim'=>['Cryptozoology',1,'Vexillology',1],'desc_metadata__language_sim'=>['en',1,'ger',1]},'facet_dates'=>{},'facet_ranges'=>{}},'spellcheck'=>{'suggestions'=>['correctlySpelled',true]}}\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=8jw9jqlw203dgpqf1fiya2hw;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:28 GMT
+      Content-Length:
+      - '978'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="testgisrecord:123"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-08-19T17:22:25.329Z</objCreateDate><objLastModDate>2014-08-19T17:22:27.389Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1o27583mkkzzm1vccgaxr5g7eg;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:28 GMT
+      Content-Length:
+      - '787'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="testgisrecord:123"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="rightsMetadata"
+        label="" mimeType="text/xml" />    <datastream dsid="descMetadata" label=""
+        mimeType="text/plain" /></objectDatastreams>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=n16vw3ylnfvqgo8g4lcrwiin;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:28 GMT
+      Content-Length:
+      - '927'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-08-19T17:22:25.793Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>287</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=5ws7v5wax1q118r3qtzs3ifoy;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '287'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:28 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/testgisrecord:123\">\n    <ns0:hasModel
+        rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n  </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=testgisrecord:123&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 19 Aug 2014 17:22:27 GMT
+      Etag:
+      - ! '"ODY5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'testgisrecord:123','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'testgisrecord:123','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=testgisrecord:123&qt=document&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 19 Aug 2014 17:22:27 GMT
+      Etag:
+      - ! '"ODY5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>0,''params''=>{''fl''=>''*'',''echoParams''=>''all'',''q''=>''{!raw
+        f=id v=$id}'',''rows''=>''1'',''id''=>''testgisrecord:123'',''qt''=>''document'',''wt''=>''ruby''}},''response''=>{''numFound''=>1,''start''=>0,''docs''=>[{''system_create_dtsi''=>''2014-08-19T17:22:25Z'',''system_modified_dtsi''=>''2014-08-19T17:22:25Z'',''object_state_ssi''=>''A'',''active_fedora_model_ssi''=>''Nyucore'',''id''=>''testgisrecord:123'',''object_profile_ssm''=>[''{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora
+        Object-to-Object Relationship Metadata","dsVersionID":"RELS-EXT.0","dsCreateDate":"2014-08-19T17:22:25Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":287,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+RELS-EXT+RELS-EXT.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"rightsMetadata":{"dsLabel":null,"dsVersionID":"rightsMetadata.1","dsCreateDate":"2014-08-19T17:22:26Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":null,"dsControlGroup":"M","dsSize":556,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+rightsMetadata+rightsMetadata.1","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.1","dsCreateDate":"2014-08-19T17:22:27Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":2579,"dsVersionable":true,"dsInfoType":null,"dsLocation":"testgisrecord:123+descMetadata+descMetadata.1","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-08-19T17:22:25Z","objLastModDate":"2014-08-19T17:22:25Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewItemIndex","objState":"A"}''],''edit_access_group_ssim''=>[''gis_cataloger'',''admin_group''],''desc_metadata__title_tesim''=>[''The
+        Hermit''],''desc_metadata__creator_tesim''=>[''The Man''],''desc_metadata__publisher_tesim''=>[''NYU''],''desc_metadata__available_tesim''=>[''Avail
+        1'',''Travail''],''desc_metadata__description_tesim''=>[''Interesting topic'',''But
+        poorly written''],''desc_metadata__edition_tesim''=>[''Ed 1'',''Edition 1''],''desc_metadata__series_tesim''=>[''Series
+        1'',''Series I''],''desc_metadata__version_tesim''=>[''V1'',''Latest Version''],''desc_metadata__date_tesim''=>[''12/05/2014'',''04/01/1666''],''desc_metadata__format_tesim''=>[''PDF'',''DNS''],''desc_metadata__language_tesim''=>[''en'',''ger''],''desc_metadata__relation_tesim''=>[''x
+        is to y as y is to z'',''one and a two and a''],''desc_metadata__rights_tesim''=>[''remain
+        silent'',''hire an attorney''],''desc_metadata__subject_tesim''=>[''Cryptozoology'',''Vexillology''],''desc_metadata__type_tesim''=>[''Geospatial
+        Data''],''desc_metadata__citation_tesim''=>[''Shouldn\''t have jumped the
+        turnstile'',''Shouldn\''t have ran a red light''],''desc_metadata__identifier_tesim''=>[''rec123''],''has_model_ssim''=>[''info:fedora/afmodel:Nyucore''],''timestamp''=>''2014-08-19T17:22:27.791Z''}]}}
+
+'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet=false&facet.field=desc_metadata__language_sim&fl=*&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&q=The%20Hermit&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=2&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&spellcheck.q=The%20Hermit&start=0&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 19 Aug 2014 17:22:27 GMT
+      Etag:
+      - ! '"ODY5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>3,'params'=>{'facet'=>'false','sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','spellcheck.q'=>'The Hermit','qf'=>'desc_metadata__title_tesim
+        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','wt'=>'ruby','f.subject_topic_sim.facet.limit'=>'21','rows'=>'2','fl'=>'*','start'=>'0','q'=>'The
+        Hermit','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'system_create_dtsi'=>'2014-08-19T17:22:25Z','system_modified_dtsi'=>'2014-08-19T17:22:25Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'testgisrecord:123','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-08-19T17:22:25Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":287,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"testgisrecord:123+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.1\",\"dsCreateDate\":\"2014-08-19T17:22:26Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"testgisrecord:123+rightsMetadata+rightsMetadata.1\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.1\",\"dsCreateDate\":\"2014-08-19T17:22:27Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2579,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"testgisrecord:123+descMetadata+descMetadata.1\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-08-19T17:22:25Z\",\"objLastModDate\":\"2014-08-19T17:22:25Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__title_tesim'=>['The
+        Hermit'],'desc_metadata__creator_tesim'=>['The Man'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__available_tesim'=>['Avail
+        1','Travail'],'desc_metadata__description_tesim'=>['Interesting topic','But
+        poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition 1'],'desc_metadata__series_tesim'=>['Series
+        1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__citation_tesim'=>['Shouldn\\'t have jumped the turnstile','Shouldn\\'t
+        have ran a red light'],'desc_metadata__identifier_tesim'=>['rec123'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-19T17:22:27.791Z'}]},'spellcheck'=>{'suggestions'=>['correctlySpelled',true]}}\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1b6u1u79g6nawu6ga4xqji5pz;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:28 GMT
+      Content-Length:
+      - '978'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="testgisrecord:123"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-08-19T17:22:25.329Z</objCreateDate><objLastModDate>2014-08-19T17:22:27.389Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=ity0iyu2qoci1kbo8tkgwgu3t;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:28 GMT
+      Content-Length:
+      - '787'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="testgisrecord:123"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="rightsMetadata"
+        label="" mimeType="text/xml" />    <datastream dsid="descMetadata" label=""
+        mimeType="text/plain" /></objectDatastreams>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=ttubhc5a9oijoqleb1lmzmw6;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:28 GMT
+      Content-Length:
+      - '927'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-08-19T17:22:25.793Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>287</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1agt146dqyrtw90nhrseus1ip;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '287'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:28 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/testgisrecord:123\">\n    <ns0:hasModel
+        rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n  </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=testgisrecord:123&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 19 Aug 2014 17:22:27 GMT
+      Etag:
+      - ! '"ODY5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'testgisrecord:123','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'testgisrecord:123','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:28 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=testgisrecord:123&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 19 Aug 2014 17:22:27 GMT
+      Etag:
+      - ! '"ODY5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'testgisrecord:123','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'testgisrecord:123','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:29 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=v2guwzriewtpcmf6gxizmzfu;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:29 GMT
+      Content-Length:
+      - '978'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="testgisrecord:123"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-08-19T17:22:25.329Z</objCreateDate><objLastModDate>2014-08-19T17:22:27.389Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/testgisrecord%3A123/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:29 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=6b70bf83iomrqg1aw3es1inh;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:29 GMT
+      Content-Length:
+      - '787'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="testgisrecord:123"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="rightsMetadata"
+        label="" mimeType="text/xml" />    <datastream dsid="descMetadata" label=""
+        mimeType="text/plain" /></objectDatastreams>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:29 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1ym7quatazf31ag9yk7ho8zza;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:29 GMT
+      Content-Length:
+      - '927'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="testgisrecord:123"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-08-19T17:22:25.793Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>287</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>testgisrecord:123+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:29 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=e6tog39pc5rv79bgznmmi7ga;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '287'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Tue, 19 Aug 2014 17:22:29 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/testgisrecord:123\">\n    <ns0:hasModel
+        rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n  </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:29 GMT
+- request:
+    method: delete
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/testgisrecord:123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=13iv8gjfbeghd137ujhg5365jk;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Tue, 19 Aug 2014 17:22:29 GMT
+      Content-Length:
+      - '24'
+    body:
+      encoding: US-ASCII
+      string: '2014-08-19T17:22:29.208Z'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:29 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><delete><id>testgisrecord:123</id></delete>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>1}}
+
+'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:29 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><commit/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>5}}
+
+'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:29 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 19 Aug 2014 17:22:29 GMT
+      Etag:
+      - ! '"YzY5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>4,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
+        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>3191,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-06-12T15:58:35Z','system_modified_dtsi'=>'2014-06-12T15:58:35Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:1','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:36Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:1+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1008,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:1+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:35Z\",\"objLastModDate\":\"2014-06-12T15:58:35Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A1/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A1/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'desc_metadata__title_tesim'=>['LION'],'desc_metadata__publisher_tesim'=>['New
+        York City Dept. of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['LION is a single line representation
+        of New York City streets containing address ranges and other information.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_DCPLION_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:37.28Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:39Z','system_modified_dtsi'=>'2014-06-12T15:58:39Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:5','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:39Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:5+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1208,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:5+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:39Z\",\"objLastModDate\":\"2014-06-12T15:58:39Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A5/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A5/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Airports'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-airports_ABU.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Airports represents
+        airport boundaries and runways within the United States and Canada.\n\nThis
+        data set provides six feature classes for displaying the data at different
+        scales. Everything about the feature classes is the same but the level of
+        generalization and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:40.128Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:41Z','system_modified_dtsi'=>'2014-06-12T15:58:41Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:8','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:8+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1200,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:8+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:41Z\",\"objLastModDate\":\"2014-06-12T15:58:41Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A8/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A8/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada City Areas'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citylim_07B.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Areas represents
+        the city limits of cities in the United States and Canada.\n\nThis data set
+        provides six feature classes for displaying the data at different scales.
+        Everything about the feature classes is the same but the level of generalization
+        and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:42.244Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:42Z','system_modified_dtsi'=>'2014-06-12T15:58:42Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:9','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:9+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1153,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:9+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:42Z\",\"objLastModDate\":\"2014-06-12T15:58:42Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A9/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A9/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'desc_metadata__title_tesim'=>['U.S.
+        Counties'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-counties_QO4.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. Counties represents the
+        counties of the United States.\n\nThis data set provides six feature classes
+        for displaying the data at different scales. Everything about the feature
+        classes is the same but the level of generalization and its name. The base
+        feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:42.966Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:40Z','system_modified_dtsi'=>'2014-06-12T15:58:40Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:7','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:7+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1024,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:7+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:40Z\",\"objLastModDate\":\"2014-06-12T15:58:40Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A7/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A7/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Major Cities'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citiesmjr_MIE.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Major Cities
+        represents major cities of United States and Canada including national, state,
+        and provincial capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:41.492Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:40Z','system_modified_dtsi'=>'2014-06-12T15:58:40Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:6','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:6+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1011,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:6+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:40Z\",\"objLastModDate\":\"2014-06-12T15:58:40Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A6/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A6/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada City Points'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-cities_NOL.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Points represents
+        cities of the United States and Canada including national, state, and provincial
+        capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:40.848Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:43Z','system_modified_dtsi'=>'2014-06-12T15:58:43Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:10','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:43Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:10+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:43Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":991,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:10+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:43Z\",\"objLastModDate\":\"2014-06-12T15:58:43Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A10/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A10/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'desc_metadata__title_tesim'=>['U.S.
+        County Boundaries'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-dtl_cnty_ln_GNV.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. County Boundaries represents
+        the boundary lines of the counties of the United States.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:43.642Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:37Z','system_modified_dtsi'=>'2014-06-12T15:58:37Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:2','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:2+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":915,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:2+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:37Z\",\"objLastModDate\":\"2014-06-12T15:58:37Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A2/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A2/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'desc_metadata__title_tesim'=>['Buildings_0311_VE2'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDOITT_BUILDINGS_0311-Buildings_0311_VE2.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDOITT_BUILDINGS_0311'],'desc_metadata__version_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:37.983Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:38Z','system_modified_dtsi'=>'2014-06-12T15:58:38Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:4','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:38Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:4+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:39Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":883,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:4+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:38Z\",\"objLastModDate\":\"2014-06-12T15:58:38Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A4/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A4/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'desc_metadata__title_tesim'=>['AOI_Centroids_3CJ'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_AOI_20101-AOI_Centroids_3CJ.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDCP_AOI_20101'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:39.487Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:47Z','system_modified_dtsi'=>'2014-06-12T15:58:47Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:16','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:47Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:16+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:47Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1426,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:16+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:47Z\",\"objLastModDate\":\"2014-06-12T15:58:47Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A16/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A16/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Large Area Landmarks'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-landmarks_PWY.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Large Area Landmarks
+        represents common landmark areas within the United States and Canada including
+        military areas, hospitals, prisons, educational institutions, shopping centers,
+        industrial parks, amusement centers, government centers, sport centers, golf
+        courses, and cemeteries.\n\nThis data set provides six feature classes for
+        displaying the data at different scales. Everything about the feature classes
+        is the same but the level of generalization and its name. The base feature
+        class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:47.959Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Working
+        Paper',2393,'Geospatial Data',197,'Article',114,'new type',95,'Text',78,'Dataset',70,'Geospatial
+        Dataset',48,'Technical Report',3,'Thesis',3,'Book',1],'desc_metadata__creator_sim'=>['The
+        Man',119,'new creator',95,'Bill Shakespeare',78,'White, Lawrence J.',53,'Walter,
+        Ingo',37,'Provost, Foster',35,'Saunders, Anthony',35,'Yermack, David',35,'Sundararajan,
+        Arun',34,'Economides, Nicholas',32],'desc_metadata__subject_sim'=>['Plays',156,'Cryptozoology',119,'Vexillology',119,'new
+        subject',95,'Plays1',78,'regulation',9,'procyclicality',6,'Banking',5,'Commercial
+        banks',5,'KMV',5],'desc_metadata__language_sim'=>['en_US',2285,'English',172,'en',125,'ger',119,'new
+        language',95,'English1',78,'EN',1,'en_UShry 2451/25921hry 2451/25921',1,'other',1]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:29 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 19 Aug 2014 17:22:29 GMT
+      Etag:
+      - ! '"YzY5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>2,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
+        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>3191,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-06-12T15:58:35Z','system_modified_dtsi'=>'2014-06-12T15:58:35Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:1','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:36Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:1+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1008,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:1+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:35Z\",\"objLastModDate\":\"2014-06-12T15:58:35Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A1/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A1/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'desc_metadata__title_tesim'=>['LION'],'desc_metadata__publisher_tesim'=>['New
+        York City Dept. of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['LION is a single line representation
+        of New York City streets containing address ranges and other information.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_DCPLION_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:37.28Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:39Z','system_modified_dtsi'=>'2014-06-12T15:58:39Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:5','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:39Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:5+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1208,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:5+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:39Z\",\"objLastModDate\":\"2014-06-12T15:58:39Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A5/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A5/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Airports'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-airports_ABU.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Airports represents
+        airport boundaries and runways within the United States and Canada.\n\nThis
+        data set provides six feature classes for displaying the data at different
+        scales. Everything about the feature classes is the same but the level of
+        generalization and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:40.128Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:41Z','system_modified_dtsi'=>'2014-06-12T15:58:41Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:8','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:8+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1200,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:8+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:41Z\",\"objLastModDate\":\"2014-06-12T15:58:41Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A8/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A8/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada City Areas'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citylim_07B.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Areas represents
+        the city limits of cities in the United States and Canada.\n\nThis data set
+        provides six feature classes for displaying the data at different scales.
+        Everything about the feature classes is the same but the level of generalization
+        and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:42.244Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:42Z','system_modified_dtsi'=>'2014-06-12T15:58:42Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:9','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:9+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1153,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:9+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:42Z\",\"objLastModDate\":\"2014-06-12T15:58:42Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A9/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A9/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'desc_metadata__title_tesim'=>['U.S.
+        Counties'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-counties_QO4.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. Counties represents the
+        counties of the United States.\n\nThis data set provides six feature classes
+        for displaying the data at different scales. Everything about the feature
+        classes is the same but the level of generalization and its name. The base
+        feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:42.966Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:40Z','system_modified_dtsi'=>'2014-06-12T15:58:40Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:7','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:7+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1024,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:7+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:40Z\",\"objLastModDate\":\"2014-06-12T15:58:40Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A7/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A7/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Major Cities'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citiesmjr_MIE.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Major Cities
+        represents major cities of United States and Canada including national, state,
+        and provincial capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:41.492Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:40Z','system_modified_dtsi'=>'2014-06-12T15:58:40Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:6','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:6+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1011,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:6+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:40Z\",\"objLastModDate\":\"2014-06-12T15:58:40Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A6/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A6/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada City Points'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-cities_NOL.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Points represents
+        cities of the United States and Canada including national, state, and provincial
+        capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:40.848Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:43Z','system_modified_dtsi'=>'2014-06-12T15:58:43Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:10','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:43Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:10+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:43Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":991,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:10+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:43Z\",\"objLastModDate\":\"2014-06-12T15:58:43Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A10/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A10/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'desc_metadata__title_tesim'=>['U.S.
+        County Boundaries'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-dtl_cnty_ln_GNV.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. County Boundaries represents
+        the boundary lines of the counties of the United States.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:43.642Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:37Z','system_modified_dtsi'=>'2014-06-12T15:58:37Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:2','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:2+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":915,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:2+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:37Z\",\"objLastModDate\":\"2014-06-12T15:58:37Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A2/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A2/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'desc_metadata__title_tesim'=>['Buildings_0311_VE2'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDOITT_BUILDINGS_0311-Buildings_0311_VE2.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDOITT_BUILDINGS_0311'],'desc_metadata__version_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:37.983Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:38Z','system_modified_dtsi'=>'2014-06-12T15:58:38Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:4','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:38Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:4+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:39Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":883,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:4+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:38Z\",\"objLastModDate\":\"2014-06-12T15:58:38Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A4/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A4/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'desc_metadata__title_tesim'=>['AOI_Centroids_3CJ'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_AOI_20101-AOI_Centroids_3CJ.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDCP_AOI_20101'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:39.487Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:47Z','system_modified_dtsi'=>'2014-06-12T15:58:47Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:16','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:47Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:16+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:47Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1426,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:16+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:47Z\",\"objLastModDate\":\"2014-06-12T15:58:47Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A16/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A16/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Large Area Landmarks'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-landmarks_PWY.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Large Area Landmarks
+        represents common landmark areas within the United States and Canada including
+        military areas, hospitals, prisons, educational institutions, shopping centers,
+        industrial parks, amusement centers, government centers, sport centers, golf
+        courses, and cemeteries.\n\nThis data set provides six feature classes for
+        displaying the data at different scales. Everything about the feature classes
+        is the same but the level of generalization and its name. The base feature
+        class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:47.959Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>['Working
+        Paper',2393,'Geospatial Data',197,'Article',114,'new type',95,'Text',78,'Dataset',70,'Geospatial
+        Dataset',48,'Technical Report',3,'Thesis',3,'Book',1],'desc_metadata__creator_sim'=>['The
+        Man',119,'new creator',95,'Bill Shakespeare',78,'White, Lawrence J.',53,'Walter,
+        Ingo',37,'Provost, Foster',35,'Saunders, Anthony',35,'Yermack, David',35,'Sundararajan,
+        Arun',34,'Economides, Nicholas',32],'desc_metadata__subject_sim'=>['Plays',156,'Cryptozoology',119,'Vexillology',119,'new
+        subject',95,'Plays1',78,'regulation',9,'procyclicality',6,'Banking',5,'Commercial
+        banks',5,'KMV',5],'desc_metadata__language_sim'=>['en_US',2285,'English',172,'en',125,'ger',119,'new
+        language',95,'English1',78,'EN',1,'en_UShry 2451/25921hry 2451/25921',1,'other',1]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:29 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?f.subject_topic_sim.facet.limit=21&facet.field=desc_metadata__language_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&q=The%20Hermit&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&spellcheck.q=The%20Hermit&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Tue, 19 Aug 2014 17:22:29 GMT
+      Etag:
+      - ! '"YzY5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>3,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','q'=>'The Hermit','spellcheck.q'=>'The
+        Hermit','qf'=>'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__publisher_tesim\n
+        \               desc_metadata__type_tesim desc_metadata__description_tesim
+        desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['object_type_sim','pub_date_sim','subject_topic_sim','language_sim','lc1_letter_sim','subject_geo_sim','subject_era_sim','desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','f.subject_topic_sim.facet.limit'=>'21','rows'=>'10'}},'response'=>{'numFound'=>0,'start'=>0,'maxScore'=>0.0,'docs'=>[]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'object_type_sim'=>[],'pub_date_sim'=>[],'subject_topic_sim'=>[],'language_sim'=>[],'lc1_letter_sim'=>[],'subject_geo_sim'=>[],'subject_era_sim'=>[],'desc_metadata__type_sim'=>[],'desc_metadata__creator_sim'=>[],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>[]},'facet_dates'=>{},'facet_ranges'=>{}},'spellcheck'=>{'suggestions'=>['correctlySpelled',false]}}\n"
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 17:22:29 GMT
+recorded_with: VCR 2.8.0
