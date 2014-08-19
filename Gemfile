@@ -32,6 +32,9 @@ gem 'unicode', platforms: [:mri_18, :mri_19]
 
 gem 'jettywrapper', group: [:development, :test, :staging]
 
+gem 'faraday', '~> 0.9.0'
+gem 'multi_json', '~> 1.10.1'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
