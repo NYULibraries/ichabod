@@ -3,6 +3,18 @@ module Ichabod
     module SourceReaders
       require 'faraday'
       require 'multi_json'
+      # A reader for the Real Rosie the Riveter collection.
+      # There are two access points for the collection
+      #   - A Solr index
+      #   - A JSON API
+      # The Solr index has most of what we need and quickly returns the set of
+      # all documents for the collection. The strategy we use is to query Solr
+      # for the collection, grab all the "Interviews", use the Solr data and
+      # only go to the JSON API if we need it.
+      # 
+      # When we do need the JSON API, we first match the interview from Solr to
+      # its index in the JSON API and then grab the relevant field for that
+      # index from the JSON API.
       class RosieTheRiveterReader < ResourceSet::SourceReader
 
         def read
@@ -25,17 +37,26 @@ module Ichabod
             available: interview['url'],
             date: interview['ds_created'],
             description: description_from_interview(interview),
-            type: interview['collection_type'],
+            type: interview['collection_type'].capitalize,
             format: interview['bundle_name'],
             language: interview['ss_language']
           }
         end
 
+        # Get the description from collection's JSON API for the given interview
+        # We need to grab the index for the particular interview and use that
+        # index to grab the relevant description
         def description_from_interview(interview)
           index = index_from_interview(interview)
           descriptions[index]['value'] unless index.blank?
         end
 
+        # We get most of the data from the Solr document but some things aren't
+        # stored (or are partially stored) in Solr. For that we need to use the
+        # collection's JSON API. We can get specific fields for the whole
+        # collection, as an Array with the indexes basically matching up.
+        # In order to find the index for the interview we want, we use the
+        # playlist reference endpoint that matches the given interview.
         def index_from_interview(interview)
           interview_playlist_reference =
             interview['im_field_playlist_ref'].first.to_s
@@ -44,6 +65,8 @@ module Ichabod
           end
         end
 
+        # Solr doesn't have the full descriptions of the interviews so we need
+        # to go to the Rosie API endpoint to get the full descriptions
         def descriptions
           @descriptions ||= fields('field_description')
         end
