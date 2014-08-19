@@ -36,3 +36,9 @@ Feature: Perform a basic search
     Given I am on the default search page
     When I search on the phrase "Jerre Kalbas"
     Then I should see search results
+
+    Scenario: Search for a Research Guide title and limit by "Format"
+    Given I am on the default search page
+    When I search on the phrase "Data Services"
+    And I limit my results to "Research Guide" under the "Format" category
+    Then I should see search results
