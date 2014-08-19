@@ -35,7 +35,7 @@ end
 
 ##
 # Faceting steps
-Given(/^I (limit|filter) my search to "(.*?)" under the "(.*?)" category$/) do |a, facet, category|
+Given(/^I limit my search to "(.*?)" under the "(.*?)" category$/) do |facet, category|
   ensure_root_path
   limit_by_facet(category, facet)
 end

@@ -39,9 +39,6 @@ RSpec.configure do |config|
 
   config.include SpecTestHelper, :type => :controller
 
-  # Include ResourceSet macros
-  config.include ResourceSetMacros
-
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
@@ -57,10 +54,6 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
-
-  # Set a "half baked" exclusion filter for saying that the feature is not
-  # ready for testing
-  config.filter_run_excluding half_baked: true
 
   config.before(:suite) do
     # Run factory girl lint before the suite

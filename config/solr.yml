@@ -1,4 +1,5 @@
-# This is a sample config file that does not have multiple solr instances.
+# This is a sample config file that does not have multiple solr instances. You will also need to be sure to
+# edit the fedora.yml file to match the solr URL for active-fedora. 
 development:
   url: http://localhost:8983/solr/development
 test: &TEST
@@ -8,4 +9,4 @@ staging:
 cucumber:
   <<: *TEST
 production:
-  url: <%= (ENV['SOLR_URL'] || 'http://solr.library.edu') %>
+  url: http://your.production.server:8080/bl_solr/core0 
