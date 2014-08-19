@@ -5,13 +5,23 @@ module Ichabod
       require 'multi_json'
       # A reader for the Real Rosie the Riveter collection.
       # There are two access points for the collection
-      #   - A Solr index
-      #   - A JSON API
+      #   - a Solr index
+      #   - a JSON API
+      #
       # The Solr index has most of what we need and quickly returns the set of
-      # all documents for the collection. The strategy we use is to query Solr
-      # for the collection, grab all the "Interviews", use the Solr data and
-      # only go to the JSON API if we need it.
-      # 
+      # all documents for the collection. The JSON API return field level
+      # metadata for the collection items as an Array for a given metadata
+      # field. For example a call to services/metadata/field/field_description
+      # returns an Array of the "descriptions" of all the interviews in order,
+      # e.g.
+      #   [ {"value":"Interview 1 description"},
+      #     {"value":"Interview 2 description"},
+      #     ... ]
+      #
+      # The strategy we use is to query Solr for the collection, grab all the
+      # "Interviews", use the Solr data and only go to the JSON API if we need
+      # it.
+      #
       # When we do need the JSON API, we first match the interview from Solr to
       # its index in the JSON API and then grab the relevant field for that
       # index from the JSON API.
