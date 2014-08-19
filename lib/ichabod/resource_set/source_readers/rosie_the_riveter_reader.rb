@@ -75,24 +75,28 @@ module Ichabod
           end
         end
 
-        # Solr doesn't have the full descriptions of the interviews so we need
-        # to go to the Rosie API endpoint to get the full descriptions
+        # The description field for all interviews as an Array
         def descriptions
           @descriptions ||= fields('field_description')
         end
 
+        # The playlist reference field for all interviews as an Array
         def playlist_references
           @playlist_references ||= fields('field_playlist_ref')
         end
 
+        # Get the field response as an Array
         def fields(field_name)
           MultiJson.load(field_endpoint(field_name).body)
         end
 
+        # Call the "field" endpoint which returns JSON for the given field name
         def field_endpoint(field_name)
           endpoint_connection.get("/#{collection_code}/services/metadata/field/#{field_name}")
         end
 
+        # Only grab the interviews from the returned Solr documents.
+        # A collection level description is included so we want to exclude that.
         def interviews
           @interviews ||= solr_documents.find_all do |solr_document|
             solr_document['bundle'] == 'rosie_interview'
@@ -107,10 +111,13 @@ module Ichabod
           @solr_response ||= solr_select['response']
         end
 
+        # Select all the documents from Solr for the collection
         def solr_select
           @solr_select ||= solr.select(params: solr_params)
         end
 
+        # Solr params for grabbing 100 rows (more than we need) and
+        # limiting to only the results for the Rosie collection
         def solr_params
           {
             fq: "collection_code:#{collection_code}",
@@ -118,27 +125,35 @@ module Ichabod
           }
         end
 
+        # Use RSolr to connect to Solr
         def solr
           @solr ||= RSolr.connect(url: solr_url)
         end
 
+        # Get Solr URL by removing the /select from the end of the discovery
+        # URL that we got from the collection's JSON API
         def solr_url
           @solr_url ||= discovery_url.gsub(/\/select$/, '')
         end
 
+        # Get the URL of the discovery service from the collection's JSON API
         def discovery_url
           @discovery_url ||= discovery_json['url']
         end
 
+        # Get the discovery response as a Hash
         def discovery_json
           @discovery_json ||= MultiJson.load(discovery_endpoint.body)
         end
 
+        # Call the "discovery" endpoint which returns JSON for the discovery
+        # service for the collection
         def discovery_endpoint
           @discovery_endpoint ||=
             endpoint_connection.get("/#{collection_code}/sources/discovery")
         end
 
+        # Use Faraday to connect to the collection's JSON API
         def endpoint_connection
           @endpoint_connection ||= Faraday.new(url: endpoint_url) do |faraday|
             faraday.request :basic_auth, user, password
