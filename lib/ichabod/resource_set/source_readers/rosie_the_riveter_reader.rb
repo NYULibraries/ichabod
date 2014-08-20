@@ -45,6 +45,7 @@ module Ichabod
             title: interview['label'],
             series: interview['collection_title'],
             available: interview['ss_handle'],
+            citation: interview['ss_handle'],
             date: interview['ds_created'],
             description: description_from_interview(interview),
             type: interview['collection_type'].capitalize,
