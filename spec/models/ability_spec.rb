@@ -5,7 +5,7 @@ require Rails.root.join('app','models','ability.rb')
 describe Ability do
 
   describe Nyucore, vcr: { cassette_name: "nyucore query permissions" } do
-    let(:record) { create(:gis_record) }
+    let(:record) { create(:valid_gis_record) }
     let(:user) { create(:user) }
     subject(:ability) { Ability.new(user) }
 

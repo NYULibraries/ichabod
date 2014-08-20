@@ -29,11 +29,6 @@ describe CatalogController do
       expect(response_qf).to include("desc_metadata__title_tesim")
     end
 
-    it "should contain the collection field in the response" do
-      get :index, search_field: 'all_fields', q: 'highways'
-      expect(response_facets).to include("collection_sim")
-    end
-
     context "when search term is MapPLUTO and type is Geospatial Data" do
       it "should retrieve relevant MapPLUTO search results", vcr: { cassette_name: "catalog index search MapPLUTO" } do
         get :index, search_field: 'all_fields', q: 'MapPLUTO', desc_metadata__type_sim: 'Geospatial Data'
@@ -50,10 +45,6 @@ describe CatalogController do
 
   def response_qf
     assigns_response["responseHeader"]["params"]["qf"]
-  end
-
-  def response_facets
-    assigns_response["responseHeader"]["params"]["facet.field"]
   end
 
 end

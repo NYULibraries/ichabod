@@ -1,5 +1,5 @@
 @vcr
-Feature: Click "Download" link for Geospatial dataset
+Feature: Click "Download Link" for Geospatial dataset
   In order to download a Geospatial dataset
   As an on-campus NYU patron
   Once I’ve found a dataset in Ichabod, I need to be able to click on a download link
@@ -16,12 +16,12 @@ Feature: Click "Download" link for Geospatial dataset
     When I navigate to details display of the first result
     Then I should get "Online Resource" field in the details display
 
-  Scenario: Click "Download" link for Geospatial dataset from search results
+  Scenario: Click "Download Link" for Geospatial dataset from search results
     Given I limit my search to "Geospatial Data" under the "Format" category
     And I search for "MapPLUTO"
-    Then I should get a dataset with the link "Download"
+    Then I should get a dataset with the link "http://magellan.home.nyu.edu/datasets/zips/NYCDCP_MAPPLUTO_TEST_11V1-jam_mappluto_7OR.zip"
 
-  Scenario: Click "More Info" link for Geospatial dataset in from details display
+  Scenario: Click "More Info Link" for Geospatial dataset in from details display
     Given I limit my search to "Geospatial Data" under the "Format" category
     And I search for "MapPLUTO"
     When I navigate to details display of the first result

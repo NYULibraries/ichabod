@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
 # Connects this user object to Hydra behaviors.
  include Hydra::User
- # Connects this user object to Role-management behaviors. 
- #include Hydra::RoleManagement::UserRoles
+ 
 
 # Connects this user object to Blacklights Bookmarks.
  include Blacklight::User
