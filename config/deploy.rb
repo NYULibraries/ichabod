@@ -46,10 +46,10 @@ namespace :ingest do
     run "cd #{current_path}; bundle exec rake ichabod:load['faculty_digital_archive','./ingest/stern.xml']"
   end
   task :delete_sdr do
-    run "cd #{current_path}; bundle exec rake ichabod:delete[''spatial_data_repository',./ingest/sdr.xml']"
+    run "cd #{current_path}; bundle exec rake ichabod:delete['spatial_data_repository','./ingest/sdr.xml']"
   end
   task :delete_fda do
-    run "cd #{current_path}; bundle exec rake ichabod:delete['faculty_digital_archive''./ingest/stern.xml']"
+    run "cd #{current_path}; bundle exec rake ichabod:delete['faculty_digital_archive','./ingest/stern.xml']"
   end
 end
 
