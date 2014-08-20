@@ -15,7 +15,7 @@ module Ichabod
       def self.source_reader=(source_reader)
         unless source_reader.is_a?(Class)
           module_name = "Ichabod::ResourceSet::SourceReaders"
-          class_name = source_reader.to_s.classify
+          class_name = source_reader.to_s.camelize
           source_reader = "#{module_name}::#{class_name}".safe_constantize
           if source_reader.nil?
             raise ArgumentError.new("Expecting #{class_name} to be in SourceReaders")
