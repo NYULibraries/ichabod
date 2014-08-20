@@ -44,12 +44,13 @@ module Ichabod
             identifier: interview['dc_identifier'],
             title: interview['label'],
             series: interview['collection_title'],
-            available: interview['url'],
+            available: interview['ss_handle'],
+            citation: interview['ss_handle'],
             date: interview['ds_created'],
             description: description_from_interview(interview),
             type: interview['collection_type'].capitalize,
-            format: interview['bundle_name'],
-            language: interview['ss_language']
+            # language: interview['ss_language'],
+            format: interview['bundle_name']
           }
         end
 
