@@ -23,7 +23,22 @@ module Ichabod
             available: (guide['FRIENDLY_URL'] || guide['URL']),
             description: guide['DESCRIPTION'],
             date: guide['LAST_UPDATE'],
+            subject: subjects_from_guide(guide)
           }
+        end
+
+        def subjects_from_guide(guide)
+          categories = guide['CATEGORIES']
+          unless categories.nil?
+            categories = categories['CATEGORY']
+            if categories.is_a? Array
+              categories.collect do |category|
+                category['CATEGORY_NAME']
+              end
+            elsif categories.is_a? Hash
+              categories['CATEGORY_NAME']
+            end
+          end
         end
 
         def published_guides
