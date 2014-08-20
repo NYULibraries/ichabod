@@ -49,8 +49,8 @@ module Ichabod
             date: interview['ds_created'],
             description: description_from_interview(interview),
             type: interview['collection_type'].capitalize,
-            format: interview['bundle_name'],
-            language: interview['ss_language']
+            # language: interview['ss_language'],
+            format: interview['bundle_name']
           }
         end
 
