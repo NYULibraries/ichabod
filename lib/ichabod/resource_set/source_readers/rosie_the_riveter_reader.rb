@@ -44,7 +44,7 @@ module Ichabod
             identifier: interview['dc_identifier'],
             title: interview['label'],
             series: interview['collection_title'],
-            available: interview['url'],
+            available: interview['ss_handle'],
             date: interview['ds_created'],
             description: description_from_interview(interview),
             type: interview['collection_type'].capitalize,
