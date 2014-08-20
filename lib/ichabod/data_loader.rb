@@ -5,7 +5,7 @@ module Ichabod
     def initialize(name, *args)
       @name = name
       @args = args
-      klass = name.classify.safe_constantize
+      klass = name.camelize.safe_constantize
       if klass.nil?
         raise ArgumentError.new("Expecting #{name} to be a class name")
       end
