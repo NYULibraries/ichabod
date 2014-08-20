@@ -4,7 +4,7 @@ module Ichabod
       class LibGuidesXmlFileReader < ResourceSet::SourceReader
 
         def read
-          guides.collect do |guide|
+          published_guides.collect do |guide|
             ResourceSet::Resource.new(resource_attributes_from_guide(guide))
           end
         end
@@ -16,27 +16,24 @@ module Ichabod
         def resource_attributes_from_guide(guide)
           {
             prefix: prefix,
-            identifier: guide['identifier'],
-            title: guide['title'],
-            creator: guide['creator'],
-            publisher: guide['publisher'],
-            type: guide['type'],
-            available: guide['accessURL'],
-            description: guide['description'],
-            edition: guide['edition'],
-            series: guide['isPartOf'],
-            version: guide['hasVersion'],
-            date: guide['date'],
-            format: guide['format'],
-            language: guide['language'],
-            relation: guide['relation'],
-            rights: guide['rights'],
-            subject: guide['subject']
+            identifier: guide['URL'],
+            title: guide['NAME'],
+            creator: guide['OWNER']['NAME'],
+            type: 'Research Guide',
+            available: (guide['FRIENDLY_URL'] || guide['URL']),
+            description: guide['DESCRIPTION'],
+            date: guide['LAST_UPDATE'],
           }
         end
 
+        def published_guides
+          @published_guides ||= guides.find_all do |guide|
+            guide['STATUS'] == 'Published'
+          end
+        end
+
         def guides
-          @guides ||= xml['guides']
+          @guides ||= xml['LIBGUIDES']['GUIDES']['GUIDE']
         end
 
         def xml
