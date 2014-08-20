@@ -29,6 +29,15 @@ module Ichabod
               expect(resource).to be_a ResourceSet::Resource
             end
           end
+          describe 'the first record' do
+            subject { read.first }
+            its(:prefix) { should eq resource_set.prefix }
+            its(:identifier) { should include '4jeads/node/827' }
+            its(:title) { should include 'Jerre Kalbas' }
+            its(:available) { should include 'http://hdl.handle.net/2333.1/6djh9wm1' }
+            its(:type) { should include 'Video' }
+            its(:series) { should include 'The Real Rosie the Riveter' }
+          end
         end
       end
     end
