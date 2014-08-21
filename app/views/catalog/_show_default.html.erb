@@ -7,7 +7,7 @@
 <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, :field => solr_fname %></dd>
 <% end -%>
 <% end -%>
-<%- if can?(:edit, item) %><td><%=link_to 'Edit', edit_nyucore_path(item) %></td><% end %>
-<%- if can?(:destroy, item) %><td><%= link_to 'Destroy', nyucore_path(item, {:search_params=>request.params}), method: :delete, data: { confirm: 'Are you sure?' } %></td><% end %>
+<% if can?(:edit, item) %><td><%=link_to 'Edit', edit_nyucore_path(item) %></td><% end %>
+<% if can?(:destroy, item) %><td><%= link_to 'Destroy', nyucore_path(item, {:search_params=>request.params}), method: :delete, data: { confirm: 'Are you sure?' } %></td><% end %>
 </dl>
 
