@@ -1,19 +1,37 @@
+<% nyucore_ds_fields = [{name: :title, multiple: true}, {name: :creator, multiple: true}, %>
+<%                      {name: :publisher, multiple: true}, {name: :identifier, multiple: false}, %>
+<%                      {name: :available, multiple: true}, {name: :type, multiple: true}, %>
+<%                      {name: :description, multiple: true}, {name: :edition, multiple: true}, %>
+<%                      {name: :series, multiple: true}, {name: :version, multiple: true}, %>
+<%                      {name: :date, multiple: true}, {name: :format, multiple: true}, %>
+<%                      {name: :language, multiple: true}, {name: :relation, multiple: true}, %>
+<%                      {name: :rights, multiple: true}, {name: :subject, multiple: true}, %>
+<%                      {name: :citation, multiple: true}, {name: :addinfolink, multiple: true}, %>
+<%                      {name: :addinfotext, multiple: true} %>
+<%                      ] %>
+
 <%= simple_form_for @item do |f| %>
+<% nyucore_ds_fields.each do |field| %>
+    <div>
+      <%= f.label field[:name] %>
+      <% @item.datastreams.each do |ds| %>
+        <% if ["native_metadata", "source_metadata"].include? ds.first %>
 
-<%= f.input :title %>
-<%= f.input :creator %>
-<%= f.input :publisher %>
-<%= f.input :identifier %>
-<%= f.input :type %>
+            <% if field[:name] == :title %>
 
-<% multivalue_fields.each do |field| %>
-<div>
-  <%= f.label field %>
-  <% @item.send(field).each_with_index do |item, index| %>
-  <%= f.input field, label: false, input_html: {name:"nyucore[#{field.to_s}][]", value: item.to_s, id: "nyucore_#{field.to_s}#{format_field_index(@item.send(field), index)}"} %>
-  <% end %>
-  <%= f.input field, label: false, input_html: {name:"nyucore[#{field.to_s}][]", value: nil, class: "new_#{field.to_s}", id: "nyucore_#{field.to_s}#{format_field_index(@item.send(field))}"} %>
-</div>
+<!--%binding.pry%-->
+            <% end %>
+            <% item_fields_for_datastream(ds, field[:name]).each_with_index do |field_value, index| %>
+              <%= f.input field[:name], input_html: { name: "nyucore[#{field[:name].to_s}][]", value: field_value, class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], ds.first, index) }, label: false, disabled: cannot?(:edit, ds.last) %>
+            <% end %>
+        <% end %>
+      <% end %>
+      <% if field[:multiple] == true  %>
+        <%= f.input field[:name], label: false, input_html: { name: "nyucore[#{field[:name].to_s}][]", value: nil, class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], "native_metadata") } %>
+      <% elsif @item.native_metadata.send(field[:name]) == [] %>
+        <%= f.input field[:name], label: false, input_html: { name: "nyucore[#{field[:name].to_s}]", value: nil, class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], "native_metadata") } %>
+      <% end %>
+    </div>
 <% end %>
 
 <br />
