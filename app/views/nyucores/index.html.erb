@@ -13,9 +13,13 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.title %></td>
+        <% if item.source_metadata.title != [] %>
+          <td><%= item.source_metadata.title[0] %></td>
+        <% else %>
+          <td><%= item.native_metadata.title[0] %></td>
+        <% end %>
         <td><%= link_to 'Show', item %></td>
-        <%- if can?(:edit, @item) %><td><%= link_to 'Edit', edit_nyucore_path(item) %></td><%- end %>
+        <td><%= link_to 'Edit', edit_nyucore_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
