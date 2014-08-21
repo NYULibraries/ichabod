@@ -45,11 +45,17 @@ namespace :ingest do
   task :load_fda do
     run "cd #{current_path}; bundle exec rake ichabod:load['faculty_digital_archive','./ingest/stern.xml']"
   end
+  task :load_lib_guides do
+    run "cd #{current_path}; bundle exec rake ichabod:load['lib_guides','./ingest/libguides.xml']"
+  end
   task :delete_sdr do
     run "cd #{current_path}; bundle exec rake ichabod:delete['spatial_data_repository','./ingest/sdr.xml']"
   end
   task :delete_fda do
     run "cd #{current_path}; bundle exec rake ichabod:delete['faculty_digital_archive','./ingest/stern.xml']"
+  end
+  task :delete_lib_guides do
+    run "cd #{current_path}; bundle exec rake ichabod:delete['lib_guides','./ingest/libguides.xml']"
   end
 end
 

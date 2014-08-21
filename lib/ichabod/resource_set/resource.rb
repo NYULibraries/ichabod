@@ -46,7 +46,7 @@ module Ichabod
 
       private
       def clean_identifier(identifier)
-        identifier.gsub('http://', '').gsub(/[\.\/\\]/, '-')
+        identifier.gsub('http://', '').gsub(/[\.\/\\\?=]/, '-')
       end
 
       def first_identifier
