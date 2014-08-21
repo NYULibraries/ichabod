@@ -95,13 +95,13 @@ Oh and did I mention these permissions are indexed into Solr as well. They also 
 
 Rake tasks available to ingest data from "ingest" directory.
 
-    rake ichabod:load["./ingest/sdr.xml","sdr"]
-    rake ichabod:load["./ingest/stern.xml","fda"]
+    rake ichabod:load['spatial_data_repository','./ingest/sdr.xml']
+    rake ichabod:load['faculty_digital_archive','./ingest/stern.xml']
 
 ... and to purge data based on same data files.
 
-    rake ichabod:delete["./ingest/sdr.xml","sdr"]
-    rake ichabod:delete["./ingest/stern.xlm","fda"]
+    rake ichabod:delete['spatial_data_repository','./ingest/sdr.xml']
+    rake ichabod:delete['faculty_digital_archive','./ingest/stern.xml']
 
 ## Resources
 
