@@ -117,5 +117,4 @@ class Nyucore < ActiveFedora::Base
   def collections
     @collections ||= Collections.new(self)
   end
-
 end
