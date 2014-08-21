@@ -1,0 +1,2044 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?facet.field=collection_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>6,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
+        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim','collection_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','rows'=>'10'}},'response'=>{'numFound'=>3195,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-06-12T15:58:35Z','system_modified_dtsi'=>'2014-06-12T15:58:35Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:1','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:36Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:1+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1008,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:1+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:35Z\",\"objLastModDate\":\"2014-06-12T15:58:35Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A1/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A1/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'desc_metadata__title_tesim'=>['LION'],'desc_metadata__publisher_tesim'=>['New
+        York City Dept. of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_DCPLION_10CAV-Lion_GJK.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['LION is a single line representation
+        of New York City streets containing address ranges and other information.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_DCPLION_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_DCPLION_10cav\\\\DSS.Lion_GJK'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:37.28Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:39Z','system_modified_dtsi'=>'2014-06-12T15:58:39Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:5','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:39Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:5+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1208,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:5+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:39Z\",\"objLastModDate\":\"2014-06-12T15:58:39Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A5/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A5/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Airports'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-airports_ABU.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Airports represents
+        airport boundaries and runways within the United States and Canada.\n\nThis
+        data set provides six feature classes for displaying the data at different
+        scales. Everything about the feature classes is the same but the level of
+        generalization and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:40.128Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:41Z','system_modified_dtsi'=>'2014-06-12T15:58:41Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:8','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:8+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1200,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:8+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:41Z\",\"objLastModDate\":\"2014-06-12T15:58:41Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A8/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A8/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada City Areas'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citylim_07B.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Areas represents
+        the city limits of cities in the United States and Canada.\n\nThis data set
+        provides six feature classes for displaying the data at different scales.
+        Everything about the feature classes is the same but the level of generalization
+        and its name. The base feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citylim_07B'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:42.244Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:42Z','system_modified_dtsi'=>'2014-06-12T15:58:42Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:9','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:9+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:42Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1153,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:9+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:42Z\",\"objLastModDate\":\"2014-06-12T15:58:42Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A9/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A9/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'desc_metadata__title_tesim'=>['U.S.
+        Counties'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-counties_QO4.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. Counties represents the
+        counties of the United States.\n\nThis data set provides six feature classes
+        for displaying the data at different scales. Everything about the feature
+        classes is the same but the level of generalization and its name. The base
+        feature class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.counties_QO4'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:42.966Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:40Z','system_modified_dtsi'=>'2014-06-12T15:58:40Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:7','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:7+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:41Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1024,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:7+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:40Z\",\"objLastModDate\":\"2014-06-12T15:58:40Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A7/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A7/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Major Cities'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-citiesmjr_MIE.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Major Cities
+        represents major cities of United States and Canada including national, state,
+        and provincial capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.citiesmjr_MIE'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:41.492Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:40Z','system_modified_dtsi'=>'2014-06-12T15:58:40Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:6','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:6+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:40Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1011,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:6+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:40Z\",\"objLastModDate\":\"2014-06-12T15:58:40Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A6/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A6/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada City Points'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-cities_NOL.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada City Points represents
+        cities of the United States and Canada including national, state, and provincial
+        capitals.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.cities_NOL'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:40.848Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:43Z','system_modified_dtsi'=>'2014-06-12T15:58:43Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:10','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:43Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:10+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:43Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":991,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:10+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:43Z\",\"objLastModDate\":\"2014-06-12T15:58:43Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A10/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A10/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'desc_metadata__title_tesim'=>['U.S.
+        County Boundaries'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-dtl_cnty_ln_GNV.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. County Boundaries represents
+        the boundary lines of the counties of the United States.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.dtl_cnty_ln_GNV'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:43.642Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:37Z','system_modified_dtsi'=>'2014-06-12T15:58:37Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:2','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:2+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":915,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:2+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:37Z\",\"objLastModDate\":\"2014-06-12T15:58:37Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A2/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A2/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'desc_metadata__title_tesim'=>['Buildings_0311_VE2'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDOITT_BUILDINGS_0311-Buildings_0311_VE2.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDOITT_BUILDINGS_0311'],'desc_metadata__version_tesim'=>['DSS.NYCDOITT_Buildings_0311\\\\DSS.Buildings_0311_VE2'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:37.983Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:38Z','system_modified_dtsi'=>'2014-06-12T15:58:38Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:4','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:38Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":280,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:4+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:39Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":883,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:4+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:38Z\",\"objLastModDate\":\"2014-06-12T15:58:38Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A4/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A4/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'desc_metadata__title_tesim'=>['AOI_Centroids_3CJ'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_AOI_20101-AOI_Centroids_3CJ.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__series_tesim'=>['NYCDCP_AOI_20101'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_AOI_20101\\\\DSS.AOI_Centroids_3CJ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:39.487Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-12T15:58:47Z','system_modified_dtsi'=>'2014-06-12T15:58:47Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:16','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-12T15:58:47Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:16+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-12T15:58:47Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1426,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:16+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T15:58:47Z\",\"objLastModDate\":\"2014-06-12T15:58:47Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A16/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A16/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__citation_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'desc_metadata__title_tesim'=>['U.S.
+        and Canada Large Area Landmarks'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_STREETMAP-landmarks_PWY.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. and Canada Large Area Landmarks
+        represents common landmark areas within the United States and Canada including
+        military areas, hospitals, prisons, educational institutions, shopping centers,
+        industrial parks, amusement centers, government centers, sport centers, golf
+        courses, and cemeteries.\n\nThis data set provides six feature classes for
+        displaying the data at different scales. Everything about the feature classes
+        is the same but the level of generalization and its name. The base feature
+        class is called '],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.landmarks_PWY'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-12T15:58:47.959Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'desc_metadata__type_sim'=>['Working
+        Paper',2393,'Geospatial Data',197,'Article',114,'new type',95,'Text',78,'Dataset',70,'Geospatial
+        Dataset',48,'Rosie Stuff',4,'Technical Report',3,'Thesis',3],'desc_metadata__creator_sim'=>['The
+        Man',119,'new creator',95,'Bill Shakespeare',78,'White, Lawrence J.',53,'Walter,
+        Ingo',37,'Provost, Foster',35,'Saunders, Anthony',35,'Yermack, David',35,'Sundararajan,
+        Arun',34,'Economides, Nicholas',32],'desc_metadata__subject_sim'=>['Plays',156,'Cryptozoology',119,'Vexillology',119,'new
+        subject',95,'Plays1',78,'regulation',9,'procyclicality',6,'Banking',5,'Commercial
+        banks',5,'KMV',5],'desc_metadata__language_sim'=>['en_US',2285,'English',176,'en',125,'ger',119,'new
+        language',95,'English1',78,'EN',1,'en_UShry 2451/25921hry 2451/25921',1,'other',1],'collection_sim'=>[]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?facet.field=collection_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&q=Map&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&spellcheck.q=Map&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>7,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','q'=>'Map','spellcheck.q'=>'Map','qf'=>'desc_metadata__title_tesim
+        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim','collection_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','rows'=>'10'}},'response'=>{'numFound'=>21,'start'=>0,'maxScore'=>3.8768308,'docs'=>[{'system_create_dtsi'=>'2014-06-11T02:46:25Z','system_modified_dtsi'=>'2014-08-18T06:41:11Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_World-DSS-world30_WDQ','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.10\",\"dsCreateDate\":\"2014-08-18T20:56:11Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":307,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_World-DSS-world30_WDQ+RELS-EXT+RELS-EXT.10\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.7\",\"dsCreateDate\":\"2014-08-18T20:56:12Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_World-DSS-world30_WDQ+rightsMetadata+rightsMetadata.7\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.13\",\"dsCreateDate\":\"2014-08-18T20:56:12Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1481,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_World-DSS-world30_WDQ+descMetadata+descMetadata.13\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-11T02:46:25Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":366,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_World-DSS-world30_WDQ+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-11T02:46:25Z\",\"objLastModDate\":\"2014-08-18T06:41:11Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_World-DSS-world30_WDQ/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_World-DSS-world30_WDQ/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_World\\\\DSS.world30_WDQ'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['World Map Backgroun'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_WORLD-world30_WDQ.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['World Map Background represents
+        grid cells of 30 by 30 degrees that cover the world.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_WORLD'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_World\\\\DSS.world30_WDQ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-18T20:56:12.347Z','score'=>3.8768308},{'system_create_dtsi'=>'2014-06-11T02:46:16Z','system_modified_dtsi'=>'2014-08-18T06:40:38Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_World-DSS-gaz_WEO','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.10\",\"dsCreateDate\":\"2014-08-18T20:55:48Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":303,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_World-DSS-gaz_WEO+RELS-EXT+RELS-EXT.10\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.7\",\"dsCreateDate\":\"2014-08-18T20:55:49Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_World-DSS-gaz_WEO+rightsMetadata+rightsMetadata.7\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.13\",\"dsCreateDate\":\"2014-08-18T20:55:49Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1549,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_World-DSS-gaz_WEO+descMetadata+descMetadata.13\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-11T02:46:16Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":362,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_World-DSS-gaz_WEO+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-11T02:46:16Z\",\"objLastModDate\":\"2014-08-18T06:40:38Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_World-DSS-gaz_WEO/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_World-DSS-gaz_WEO/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_World\\\\DSS.gaz_WEO'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['World Gazetteer'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_WORLD-gaz_WEO.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['World Gazetteer represents the
+        locations and proper names for map features around the world. The gazetteer
+        includes attribute and annotation name information from various layers of
+        the Digital Chart of the World.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_WORLD'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_World\\\\DSS.gaz_WEO'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-18T20:55:49.51Z','score'=>0.59789103},{'system_create_dtsi'=>'2014-06-11T02:46:45Z','system_modified_dtsi'=>'2014-08-18T06:42:22Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.10\",\"dsCreateDate\":\"2014-08-18T20:57:04Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":321,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G+RELS-EXT+RELS-EXT.10\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.7\",\"dsCreateDate\":\"2014-08-18T20:57:05Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G+rightsMetadata+rightsMetadata.7\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.13\",\"dsCreateDate\":\"2014-08-18T20:57:05Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1857,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G+descMetadata+descMetadata.13\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-11T02:46:45Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":380,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-11T02:46:45Z\",\"objLastModDate\":\"2014-08-18T06:42:22Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nycb2000wi_R5G'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['New York City Census
+        Blocks Water Include'],'desc_metadata__publisher_tesim'=>['City of New York
+        Department of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nycb2000wi_R5G.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['The Census Blocks for the 2000
+        US Census.  These boundary files are derived from the US Census Bureau\\'s
+        TIGER project and have been geographically modified to fit the New York City
+        base map.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_ADMIN_BNDRY_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nycb2000wi_R5G'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-18T20:57:06.36Z','score'=>0.59789103},{'system_create_dtsi'=>'2014-06-11T02:46:49Z','system_modified_dtsi'=>'2014-08-18T06:42:34Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.10\",\"dsCreateDate\":\"2014-08-18T20:57:13Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":321,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z+RELS-EXT+RELS-EXT.10\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.7\",\"dsCreateDate\":\"2014-08-18T20:57:14Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z+rightsMetadata+rightsMetadata.7\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.13\",\"dsCreateDate\":\"2014-08-18T20:57:14Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1857,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z+descMetadata+descMetadata.13\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-11T02:46:49Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":380,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-11T02:46:49Z\",\"objLastModDate\":\"2014-08-18T06:42:34Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyct2000wi_X2Z'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['New York City Census
+        Tracts Water Include'],'desc_metadata__publisher_tesim'=>['City of New York
+        Department of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyct2000wi_X2Z.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['The Census Tracts for the 2000
+        US Census.  These boundary files are derived from the US Census Bureau\\'s
+        TIGER project and have been geographically modified to fit the New York City
+        base map.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_ADMIN_BNDRY_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyct2000wi_X2Z'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-18T20:57:14.897Z','score'=>0.59789103},{'system_create_dtsi'=>'2014-06-11T02:47:03Z','system_modified_dtsi'=>'2014-08-18T06:43:35Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.10\",\"dsCreateDate\":\"2014-08-18T20:57:51Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD+RELS-EXT+RELS-EXT.10\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.7\",\"dsCreateDate\":\"2014-08-18T20:57:52Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD+rightsMetadata+rightsMetadata.7\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.13\",\"dsCreateDate\":\"2014-08-18T20:57:52Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1731,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD+descMetadata+descMetadata.13\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-11T02:47:03Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":371,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-11T02:47:03Z\",\"objLastModDate\":\"2014-08-18T06:43:35Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq100_RXD/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq100_RXD/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_USA_Other\\\\DSS.topoq100_RXD'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['U.S. USGS 1:100,000
+        Topographic Quadrangle Series Index'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_USA_OTHER-topoq100_RXD.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. USGS 1:100,000 Topographic
+        Quadrangle Series Index represents the geographic extent of USGS 1:100,000
+        topographic maps (30- by 60-minute quadrangles) for the coterminous U.S. forty-eight
+        states and District of Columbia.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_USA_OTHER'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_USA_Other\\\\DSS.topoq100_RXD'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-18T20:57:52.464Z','score'=>0.59789103},{'system_create_dtsi'=>'2014-06-11T02:47:04Z','system_modified_dtsi'=>'2014-08-18T06:43:39Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.10\",\"dsCreateDate\":\"2014-08-18T20:57:52Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":311,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM+RELS-EXT+RELS-EXT.10\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.7\",\"dsCreateDate\":\"2014-08-18T20:57:54Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM+rightsMetadata+rightsMetadata.7\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.13\",\"dsCreateDate\":\"2014-08-18T20:57:53Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1716,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM+descMetadata+descMetadata.13\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-11T02:47:04Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":370,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-11T02:47:04Z\",\"objLastModDate\":\"2014-08-18T06:43:39Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq24_8QM/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq24_8QM/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_USA_Other\\\\DSS.topoq24_8QM'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['U.S. USGS 1:24,000
+        Topographic Quadrangle Series Index'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_USA_OTHER-topoq24_8QM.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. USGS 1:24,000 Topographic
+        Quadrangle Series Index represents the geographic extent of USGS 1:24,000
+        topographic maps (7.5- by 7.5-minute quadrangles) for the coterminous U.S.
+        forty-eight states and District of Columbia.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_USA_OTHER'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_USA_Other\\\\DSS.topoq24_8QM'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-18T20:57:54.196Z','score'=>0.59789103},{'system_create_dtsi'=>'2014-06-11T02:47:04Z','system_modified_dtsi'=>'2014-08-18T06:43:45Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.10\",\"dsCreateDate\":\"2014-08-18T20:57:54Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":312,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ+RELS-EXT+RELS-EXT.10\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.7\",\"dsCreateDate\":\"2014-08-18T20:57:55Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ+rightsMetadata+rightsMetadata.7\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.13\",\"dsCreateDate\":\"2014-08-18T20:57:55Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1729,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ+descMetadata+descMetadata.13\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-11T02:47:04Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":371,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-11T02:47:04Z\",\"objLastModDate\":\"2014-08-18T06:43:45Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq250_7KQ/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq250_7KQ/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.ESRI_10_USA_Other\\\\DSS.topoq250_7KQ'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['U.S. USGS 1:250,000
+        Topographic Quadrangle Series Index'],'desc_metadata__publisher_tesim'=>['ESRI'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/ESRI_10_USA_OTHER-topoq250_7KQ.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['U.S. USGS 1:250,000 Topographic
+        Quadrangle Series Index represents the geographic extent of USGS 1:250,000
+        topographic maps (1- by 2-degree quadrangles) for the coterminous U.S. forty-eight
+        states and District of Columbia.'],'desc_metadata__edition_tesim'=>['10'],'desc_metadata__series_tesim'=>['ESRI_10_USA_OTHER'],'desc_metadata__version_tesim'=>['DSS.ESRI_10_USA_Other\\\\DSS.topoq250_7KQ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-18T20:57:55.953Z','score'=>0.59789103},{'system_create_dtsi'=>'2014-06-11T02:46:45Z','system_modified_dtsi'=>'2014-08-18T06:42:20Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.10\",\"dsCreateDate\":\"2014-08-18T20:57:01Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":319,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D+RELS-EXT+RELS-EXT.10\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.7\",\"dsCreateDate\":\"2014-08-18T20:57:03Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D+rightsMetadata+rightsMetadata.7\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.13\",\"dsCreateDate\":\"2014-08-18T20:57:03Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2024,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D+descMetadata+descMetadata.13\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-11T02:46:45Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":378,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-11T02:46:45Z\",\"objLastModDate\":\"2014-08-18T06:42:20Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nycb2000_M8D'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['New York City Census
+        Blocks for 2000 US Census'],'desc_metadata__publisher_tesim'=>['City of New
+        York Department of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nycb2000_M8D.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['The Census Blocks for the 2000
+        US Census.  These boundary files are derived from the US Census Bureau\\'s
+        TIGER project and have been geographically modified to fit the New York City
+        base map.  Because some census blocks are under water not all census blocks
+        are contained in this file, only census blocks that are partially or totally
+        located on land have been mapped in this file.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_ADMIN_BNDRY_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nycb2000_M8D'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-18T20:57:03.872Z','score'=>0.41852373},{'system_create_dtsi'=>'2014-06-11T02:46:48Z','system_modified_dtsi'=>'2014-08-18T06:42:31Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.10\",\"dsCreateDate\":\"2014-08-18T20:57:11Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":319,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ+RELS-EXT+RELS-EXT.10\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.7\",\"dsCreateDate\":\"2014-08-18T20:57:12Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ+rightsMetadata+rightsMetadata.7\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.13\",\"dsCreateDate\":\"2014-08-18T20:57:12Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2023,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ+descMetadata+descMetadata.13\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-11T02:46:48Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":378,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-11T02:46:48Z\",\"objLastModDate\":\"2014-08-18T06:42:31Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyct2000_SCQ'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['New York City Census
+        Tracts for 2000 US Census'],'desc_metadata__publisher_tesim'=>['City of New
+        York Department of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyct2000_SCQ.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['The Census Tracts for the 2000
+        US Census.  These boundary files are derived from the US Census Bureau\\'s
+        TIGER project and have been geographically modified to fit the New York City
+        base map.  Because some census tract are under water not all census tracts
+        are contained in this file, only census tracts that are partially or totally
+        located on land have been mapped in this file.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_ADMIN_BNDRY_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyct2000_SCQ'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-18T20:57:13.291Z','score'=>0.41852373},{'system_create_dtsi'=>'2014-06-12T16:01:34Z','system_modified_dtsi'=>'2014-06-12T16:01:35Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'fda:hdl-handle-net-2451-14218','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.1\",\"dsCreateDate\":\"2014-06-13T13:35:56Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":299,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-14218+RELS-EXT+RELS-EXT.1\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.1\",\"dsCreateDate\":\"2014-06-13T13:35:56Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1775,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-14218+descMetadata+descMetadata.1\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-12T16:01:34Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":358,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-14218+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-12T16:01:34Z\",\"objLastModDate\":\"2014-06-12T16:01:35Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14218/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14218/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['ENHANCED
+        IMAGEMAP 2.0: WEB DESIGN ADVANTAGES CONFERED BY PARAMETERIZATION'],'desc_metadata__creator_tesim'=>['Isakowitz,
+        Tomas'],'desc_metadata__description_tesim'=>['This paper discusses the shortcomings
+        of unparameterizable image maps\nand presents a solution to the problem through
+        the use of PATH_INFO\nand textual substitution in the mapping configuration
+        file. After some discussion\non why this scheme was chosen instead of the
+        alternatives, two\nexample of actual use are given: passing parameters to
+        the mapping file\n(1) as a path and (2) as arguments to a CGI script. Both
+        techniques offer\nconvenience and ease of design to the website administrator
+        and we\nexplore these advantages.'],'desc_metadata__publisher_tesim'=>['Stern
+        School of Business, New York University'],'desc_metadata__date_tesim'=>['1995-07-17'],'desc_metadata__type_tesim'=>['Working
+        Paper'],'desc_metadata__format_tesim'=>['application/pdf'],'desc_metadata__identifier_tesim'=>['http://hdl.handle.net/2451/14218'],'desc_metadata__available_tesim'=>['http://hdl.handle.net/2451/14218'],'desc_metadata__language_tesim'=>['en_US'],'desc_metadata__relation_tesim'=>['http://archive.nyu.edu/bitstream/2451/14218/3/IS-95-10.pdf.txt'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-13T13:35:57.015Z','score'=>0.3587346}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'desc_metadata__type_sim'=>['Working
+        Paper',11,'Geospatial Data',10],'desc_metadata__creator_sim'=>['Tuzhilin,
+        Alexander',3,'Isakowitz, Tomas',1,'Kambil, Ajit',1,'Morey, Richard C.',1,'Padberg,
+        M.',1,'Sundararajan, Arun',1,'TASHJIAN, RICHARD H.',1,'Tuzhilin, Alex',1,'Weigend,
+        Andreas S.',1],'desc_metadata__subject_sim'=>['generalization',1,'time',1],'desc_metadata__language_sim'=>['en_US',9],'collection_sim'=>[]},'facet_dates'=>{},'facet_ranges'=>{}},'spellcheck'=>{'suggestions'=>['correctlySpelled',true]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_World-DSS-world30_WDQ?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=vsef6ftapj7x1tkfzxpqaknez;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '1038'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-ESRI_10_World-DSS-world30_WDQ"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-11T02:46:25.977Z</objCreateDate><objLastModDate>2014-08-18T20:56:12.171Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_World-DSS-world30_WDQ/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_World-DSS-world30_WDQ/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_World-DSS-world30_WDQ/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=hy85ie64ham1qjdzriyhgr0u;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '807'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-ESRI_10_World-DSS-world30_WDQ"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" />    <datastream dsid="rightsMetadata" label=""
+        mimeType="text/xml" /></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_World-DSS-world30_WDQ/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=19mlfk8jfx81te245m6cs3yf4;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '969'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-ESRI_10_World-DSS-world30_WDQ"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.10</dsVersionID><dsCreateDate>2014-08-18T20:56:11.003Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>307</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-ESRI_10_World-DSS-world30_WDQ+RELS-EXT+RELS-EXT.10</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_World-DSS-world30_WDQ/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1fr8siminxdmbdy3nby3defau;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '307'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-ESRI_10_World-DSS-world30_WDQ\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=sdr:DSS-ESRI_10_World-DSS-world30_WDQ&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'sdr:DSS-ESRI_10_World-DSS-world30_WDQ','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'sdr:DSS-ESRI_10_World-DSS-world30_WDQ','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_World-DSS-gaz_WEO?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=u819j2kesf9u3d4dly5zkylt;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '1026'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-ESRI_10_World-DSS-gaz_WEO"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-11T02:46:16.385Z</objCreateDate><objLastModDate>2014-08-18T20:55:49.283Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_World-DSS-gaz_WEO/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_World-DSS-gaz_WEO/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_World-DSS-gaz_WEO/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1ser4f3trfi34512iu7vhdvgf;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '803'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-ESRI_10_World-DSS-gaz_WEO"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" />    <datastream dsid="rightsMetadata" label=""
+        mimeType="text/xml" /></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_World-DSS-gaz_WEO/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=p8mb7fddognx1n4ozizyf13ey;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '961'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-ESRI_10_World-DSS-gaz_WEO"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.10</dsVersionID><dsCreateDate>2014-08-18T20:55:48.258Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>303</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-ESRI_10_World-DSS-gaz_WEO+RELS-EXT+RELS-EXT.10</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_World-DSS-gaz_WEO/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1kalpv0t3iv62142to97i0jj02;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '303'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-ESRI_10_World-DSS-gaz_WEO\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=sdr:DSS-ESRI_10_World-DSS-gaz_WEO&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>2,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'sdr:DSS-ESRI_10_World-DSS-gaz_WEO','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'sdr:DSS-ESRI_10_World-DSS-gaz_WEO','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1xkdlgh6zc5us1h4mnasn7qm99;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '1080'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-11T02:46:45.946Z</objCreateDate><objLastModDate>2014-08-18T20:57:05.973Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=10bv9ug352cibtwig4ad9ajf7;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '821'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" />    <datastream dsid="rightsMetadata" label=""
+        mimeType="text/xml" /></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1sm2is3b9lmgx6fls9b8k7jsv;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '997'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.10</dsVersionID><dsCreateDate>2014-08-18T20:57:04.347Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>321</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G+RELS-EXT+RELS-EXT.10</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=t89qupbs2fournr6p8pezayx;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '321'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000wi_R5G','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=7py285ysetnnwknoji8fkk0a;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '1080'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-11T02:46:49.218Z</objCreateDate><objLastModDate>2014-08-18T20:57:14.741Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=zigvn31gpulo1xuyw5df2r1e4;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '821'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" />    <datastream dsid="rightsMetadata" label=""
+        mimeType="text/xml" /></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=18iq0spv1kys9vy50u4cc5tpm;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '997'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.10</dsVersionID><dsCreateDate>2014-08-18T20:57:13.658Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>321</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z+RELS-EXT+RELS-EXT.10</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=w5rojafzy9y61kk745d5poju6;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '321'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>2,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000wi_X2Z','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1bmva1jxabh1n70uxc2an3zks;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '1053'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-11T02:47:03.596Z</objCreateDate><objLastModDate>2014-08-18T20:57:52.268Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq100_RXD/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq100_RXD/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1njf3vl8qqjdb13viqdsw00bza;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:18 GMT
+      Content-Length:
+      - '812'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" />    <datastream dsid="rightsMetadata" label=""
+        mimeType="text/xml" /></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1488g9gj8sts91omjpyf46d25i;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '979'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.10</dsVersionID><dsCreateDate>2014-08-18T20:57:51.154Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>312</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD+RELS-EXT+RELS-EXT.10</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=173dsch6lisih1v8wrhq12av0d;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '312'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>2,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'sdr:DSS-ESRI_10_USA_Other-DSS-topoq100_RXD','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1vmqhqy5rh0iy3vdf5iuhtfjw;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '1050'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-11T02:47:04.226Z</objCreateDate><objLastModDate>2014-08-18T20:57:54.027Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq24_8QM/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq24_8QM/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1tuebzfff44n31nnfyww5avj3t;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '811'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" />    <datastream dsid="rightsMetadata" label=""
+        mimeType="text/xml" /></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1wg0hi1wud4wk13fkypf9elzfe;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '977'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.10</dsVersionID><dsCreateDate>2014-08-18T20:57:52.758Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>311</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM+RELS-EXT+RELS-EXT.10</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=ppcv7ic3fjsh1evrw6bio5yia;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '311'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'sdr:DSS-ESRI_10_USA_Other-DSS-topoq24_8QM','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=fdcan42r3ac13gkwqe7blzde;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '1053'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-11T02:47:04.888Z</objCreateDate><objLastModDate>2014-08-18T20:57:55.751Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq250_7KQ/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-ESRI_10_USA_Other-DSS-topoq250_7KQ/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=zrnpy0njqglq1g0l5scfu75sy;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '812'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" />    <datastream dsid="rightsMetadata" label=""
+        mimeType="text/xml" /></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=wqjaegb48yqa153f6gjxij7vg;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '979'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.10</dsVersionID><dsCreateDate>2014-08-18T20:57:54.689Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>312</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ+RELS-EXT+RELS-EXT.10</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=11p09ldrywago1smi72e81r6p1;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '312'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'sdr:DSS-ESRI_10_USA_Other-DSS-topoq250_7KQ','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=deo8ni7m8lv81bt6b1howel7w;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '1074'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-11T02:46:45.253Z</objCreateDate><objLastModDate>2014-08-18T20:57:03.623Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=ra6qisi0re6136x2zvtwyl2g;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '819'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" />    <datastream dsid="rightsMetadata" label=""
+        mimeType="text/xml" /></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1hovx3184i2jn1fjfatd1sorvp;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '993'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.10</dsVersionID><dsCreateDate>2014-08-18T20:57:01.456Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>319</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D+RELS-EXT+RELS-EXT.10</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1mkllo2f0yvpm1o1jwmoavq9sn;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '319'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nycb2000_M8D','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1rtrle5y787ds13xe3a6kyvqz1;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '1074'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-11T02:46:48.483Z</objCreateDate><objLastModDate>2014-08-18T20:57:12.886Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=wkt313ow8ghfkpl39glgdhdp;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '819'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" />    <datastream dsid="rightsMetadata" label=""
+        mimeType="text/xml" /></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=c70gdcev29i510nyorofqx3hi;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '993'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.10</dsVersionID><dsCreateDate>2014-08-18T20:57:11.742Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>319</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ+RELS-EXT+RELS-EXT.10</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=70fmeueijoh7vg4oz43s2r8o;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '319'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyct2000_SCQ','edit_access_group_ssim'=>['gis_cataloger','admin_group']}]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14218?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=17jfila1fdlq8127w7td2rfj6u;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '1014'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="fda:hdl-handle-net-2451-14218"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-06-12T16:01:34.997Z</objCreateDate><objLastModDate>2014-06-13T13:35:56.954Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14218/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14218/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14218/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=oetho59shgbc11qkra6wh8uiq;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '730'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="fda:hdl-handle-net-2451-14218"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" /></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14218/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=b7tn6xx73mdo16pltxgaecaq0;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+      Content-Length:
+      - '951'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-14218"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.1</dsVersionID><dsCreateDate>2014-06-13T13:35:56.557Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>299</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-14218+RELS-EXT+RELS-EXT.1</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14218/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=3b42q1r85b0c47xfba5jj3yf;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '299'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Aug 2014 04:48:19 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/fda:hdl-handle-net-2451-14218\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=fda:hdl-handle-net-2451-14218&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Aug 2014 04:44:43 GMT
+      Etag:
+      - ! '"ZDE5YTAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'\n
+        \       id,\n        access_ssim,\n        discover_access_group_ssim,discover_access_person_ssim,\n
+        \       read_access_group_ssim,read_access_person_ssim,\n        edit_access_group_ssim,edit_access_person_ssim,\n
+        \       depositor_ti,\n        embargo_release_date_dtsi\n        inheritable_access_ssim,\n
+        \       inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,\n
+        \       inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,\n
+        \       inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,\n
+        \       inheritable_embargo_release_date_dtsi\n      ','echoParams'=>'all','q'=>'{!raw
+        f=id v=$id}','rows'=>'1','id'=>'fda:hdl-handle-net-2451-14218','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'fda:hdl-handle-net-2451-14218'}]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Aug 2014 04:48:19 GMT
+recorded_with: VCR 2.8.0
