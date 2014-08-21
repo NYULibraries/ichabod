@@ -15,6 +15,12 @@ module Ichabod
       def self.source_reader=(source_reader)
         unless source_reader.is_a?(Class)
           module_name = "Ichabod::ResourceSet::SourceReaders"
+          # Use :camelize to get the CamelCase version of the string
+          #   "lib_guides".camelize
+          #   # => "LibGuides"
+          # We don't use :classify since it makes the class name singular
+          #   "lib_guides".classify
+          #   # => "LibGuide"
           class_name = source_reader.to_s.camelize
           source_reader = "#{module_name}::#{class_name}".safe_constantize
           if source_reader.nil?

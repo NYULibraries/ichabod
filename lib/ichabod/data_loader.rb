@@ -5,6 +5,12 @@ module Ichabod
     def initialize(name, *args)
       @name = name
       @args = args
+      # Use :camelize to get the CamelCase version of the string
+      #   "lib_guides".camelize
+      #   # => "LibGuides"
+      # We don't use :classify since it makes the class name singular
+      #   "lib_guides".classify
+      #   # => "LibGuide"
       klass = name.camelize.safe_constantize
       if klass.nil?
         raise ArgumentError.new("Expecting #{name} to be a class name")
