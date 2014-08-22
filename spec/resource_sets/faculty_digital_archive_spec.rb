@@ -24,4 +24,24 @@ describe FacultyDigitalArchive do
     subject { FacultyDigitalArchive.before_creates }
     it { should eq [:add_edit_groups, :add_http_identifier_as_available_and_citation] }
   end
+  describe '#create', vcr: {cassette_name: 'resource sets/fda create'} do
+    subject(:create) { binding.pry;faculty_digital_archive.create }
+    it { should be_an Array }
+    describe 'a Nyucore record' do
+      subject { create[1] }
+      context 'when the record has' do
+        let(:index) { 1 }
+        its(:pid) { should eq '' }
+        its(:identifier) { should eq '' }
+        its(:title) { should include '' }
+        its(:publisher) { should include '' }
+        its(:available) { should include '' }
+        its(:type) { should include '' }
+        its(:description) { should include '' }
+        its(:edition) { should include '' }
+        its(:series) { should include '' }
+        its(:version) { should include '' }
+      end
+    end
+  end
 end
