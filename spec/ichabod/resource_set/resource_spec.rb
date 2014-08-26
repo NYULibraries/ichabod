@@ -28,6 +28,40 @@ module Ichabod
           it { should_not include 'http://' }
           it { should eq 'prefix:this-has-handle'}
         end
+        context 'when there are multiple identifiers' do
+          let(:resource) { create :resource, identifier: [identifier1, identifier2] }
+          context 'and one of them is a "handle"' do
+            let(:identifier1) { 'Vol. 18, No. 5, September-October 2007' }
+            let(:identifier2) { 'http://hdl.handle.net/2451/14097' }
+            it { should eq 'prefix:hdl-handle-net-2451-14097'}
+            context 'and one of them is a non-handle URL' do
+              let(:identifier1) { 'http://example.com' }
+              it { should eq 'prefix:hdl-handle-net-2451-14097'}
+            end
+          end
+          context 'and all of them are "handles"' do
+            let(:identifier1) { 'http://hdl.handle.net/2451/27761' }
+            let(:identifier2) { 'http://hdl.handle.net/2451/14097' }
+            it { should eq 'prefix:hdl-handle-net-2451-27761'}
+          end
+          context 'and none of them are "handles"' do
+            context 'and one of them is a non-handle URL' do
+              let(:identifier1) { 'an.identifier'}
+              let(:identifier2) { 'http://example.com' }
+              it { should eq 'prefix:example-com'}
+            end
+            context 'and all of them are non-handle URL' do
+              let(:identifier1) { 'http://an.identifier.net'}
+              let(:identifier2) { 'http://example.com' }
+              it { should eq 'prefix:an-identifier-net' }
+            end
+            context 'and none of them are non-handle URL' do
+              let(:identifier1) { 'an.identifier' }
+              let(:identifier2) { 'another.identifier'}
+              it { should eq 'prefix:an-identifier'}
+            end
+          end
+        end
       end
       describe '#to_nyucore' do
         subject { resource.to_nyucore }
