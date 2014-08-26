@@ -12,6 +12,7 @@ module Ichabod
         :version]
 
       attr_accessor :prefix
+      attr_writer :pid_identifier
       attr_accessor(*NYUCORE_ATTRIBUTES)
 
       def initialize(attributes={})
