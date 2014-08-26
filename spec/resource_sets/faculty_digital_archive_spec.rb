@@ -25,7 +25,7 @@ describe FacultyDigitalArchive do
     it { should eq [:add_edit_groups, :add_http_identifier_as_available_and_citation] }
   end
   describe '#create', vcr: {cassette_name: 'resource sets/fda create'} do
-    subject(:create) { binding.pry;faculty_digital_archive.create }
+    subject(:create) { faculty_digital_archive.create }
     it { should be_an Array }
     describe 'a Nyucore record' do
       subject { create[1] }
