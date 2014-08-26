@@ -25,7 +25,7 @@ module Ichabod
         return @nyucore unless @nyucore.nil?
         @nyucore = Nyucore.new(pid: pid)
         NYUCORE_ATTRIBUTES.each do |attribute|
-          @nyucore.send("#{attribute}=".to_sym, send(attribute))
+          @nyucore.source_metadata.send("#{attribute}=".to_sym, send(attribute))
         end
         @nyucore
       end

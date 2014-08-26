@@ -14,7 +14,7 @@ class SpatialDataRepository < Ichabod::ResourceSet::Base
   private
   def add_additional_info_link(*args)
     nyucore = args.last
-    nyucore.addinfolink = 'http://nyu.libguides.com/content.php?pid=169769&sid=1489817'
-    nyucore.addinfotext = 'GIS Dataset Instructions'
+    nyucore.source_metadata.addinfolink = 'http://nyu.libguides.com/content.php?pid=169769&sid=1489817'
+    nyucore.source_metadata.addinfotext = 'GIS Dataset Instructions'
   end
 end
