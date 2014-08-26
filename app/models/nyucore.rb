@@ -8,10 +8,31 @@ class Nyucore < ActiveFedora::Base
     :single => [:identifier]
   }
 
-  has_metadata 'descMetadata', type: NyucoreRdfDatastream
+  has_metadata 'native_metadata', type: NyucoreRdfDatastream
+  has_metadata 'source_metadata', type: NyucoreRdfDatastream
 
-  has_attributes *FIELD_LIST[:single], datastream: 'descMetadata', multiple: false
-  has_attributes *FIELD_LIST[:multiple], datastream: 'descMetadata', multiple: true
+  has_attributes *FIELD_LIST[:single], datastream: 'native_metadata', multiple: false
+  has_attributes *FIELD_LIST[:single], datastream: 'source_metadata', multiple: false
+  has_attributes *FIELD_LIST[:multiple], datastream: 'native_metadata', multiple: true
+  has_attributes *FIELD_LIST[:multiple], datastream: 'source_metadata', multiple: true
+
+  attr_accessible = *FIELD_LIST[:single], *FIELD_LIST[:multiple]
+  
+  FIELD_LIST[:multiple].each do |attr_name|
+    puts #{attr_name}
+    define_method("#{attr_name}=") do |argument|
+      #puts "#{attr_name}|" + argument
+      #@nyucore.source_metadata.send("#{attribute}=".to_sym, send(attribute))
+      #"performing #{action.gsub('_', ' ')} on #{argument}"
+#binding.pry
+      self.native_metadata.send("#{attr_name}=", argument)
+    end
+  end
+
+  #def title=(value)
+  #  #self.native_metadata.title.concat(value)
+  #  self.native_metadata.title = value
+  #end
 
   ##
   # Refine data before saving into solr
