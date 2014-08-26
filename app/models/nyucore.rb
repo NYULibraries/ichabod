@@ -18,7 +18,7 @@ class Nyucore < ActiveFedora::Base
 
   attr_accessible = *FIELD_LIST[:single], *FIELD_LIST[:multiple]
   
-  FIELD_LIST[:multiple].each do |attr_name|
+  FIELD_LIST[:multiple].concat(FIELD_LIST[:single]).each do |attr_name|
     puts #{attr_name}
     define_method("#{attr_name}=") do |argument|
       #puts "#{attr_name}|" + argument

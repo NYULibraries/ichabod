@@ -22,14 +22,18 @@
 <!--%binding.pry%-->
             <% end %>
             <% item_fields_for_datastream(ds, field[:name]).each_with_index do |field_value, index| %>
-              <%= f.input field[:name], input_html: { name: "nyucore[#{field[:name].to_s}][]", value: field_value, class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], ds.first, index) }, label: false, disabled: cannot?(:edit, ds.last) %>
+              <% if field[:multiple] == true  %>
+                <%= f.input field[:name], input_html: { name: "nyucore[#{field[:name].to_s}][]", value: field_value, class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], ds.first, index) }, label: false, disabled: cannot?(:edit, ds.last) %>
+              <% end %>
             <% end %>
         <% end %>
       <% end %>
       <% if field[:multiple] == true  %>
         <%= f.input field[:name], label: false, input_html: { name: "nyucore[#{field[:name].to_s}][]", value: nil, class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], "native_metadata") } %>
-      <% elsif @item.native_metadata.send(field[:name]) == [] %>
-        <%= f.input field[:name], label: false, input_html: { name: "nyucore[#{field[:name].to_s}]", value: nil, class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], "native_metadata") } %>
+      <% elsif @item.source_metadata.send(field[:name]) != [] %> 
+        <%= f.input field[:name], input_html: { name: "nyucore[#{field[:name].to_s}][]", value: "#{@item.source_metadata.send(field[:name]).first}" , class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], "source_metadata") }, label: false, disabled: cannot?(:edit, :source_metadata) %>
+      <% else %>
+        <%= f.input field[:name], label: false, input_html: { name: "nyucore[#{field[:name].to_s}]", value: "#{@item.native_metadata.send(field[:name]).first}", class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], "native_metadata") } %>
       <% end %>
     </div>
 <% end %>
