@@ -124,6 +124,7 @@ module Ichabod
             before_create_method.call(resource, nyucore)
           end
           nyucore if nyucore.save
+          puts nyucore.identifier.to_s + " has been saved to Fedora"
         end.compact
       end
 

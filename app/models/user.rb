@@ -40,6 +40,9 @@ class User < ActiveRecord::Base
 
   def admin?
     true if ["ba36"].include? username
+binding.pry
+    true if ["ppXX"].include? username
+
   end
 
 end
