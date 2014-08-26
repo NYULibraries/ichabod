@@ -1,6 +1,6 @@
 require 'spec_helper'
 describe FacultyDigitalArchive do
-  let(:prefix) { 'sdr' }
+  let(:prefix) { 'fda' }
   let(:filename) { './spec/fixtures/sample_fda.xml' }
   subject(:faculty_digital_archive) { FacultyDigitalArchive.new(filename) }
   it { should be_a FacultyDigitalArchive }
@@ -10,7 +10,7 @@ describe FacultyDigitalArchive do
   its(:before_creates) { should eq [:add_edit_groups, :add_identifier_as_available_or_citation] }
   describe '.prefix' do
     subject { FacultyDigitalArchive.prefix }
-    it { should eq 'fda' }
+    it { should eq prefix }
   end
   describe '.source_reader' do
     subject { FacultyDigitalArchive.source_reader }
