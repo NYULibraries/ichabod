@@ -28,9 +28,14 @@ module Ichabod
           it { should eq 'prefix:this-has-backslashes'}
         end
         context 'when the identifier has "http://"s' do
-          let(:resource) { create :resource, identifier: 'this\has\http://handle' }
+          let(:resource) { create :resource, identifier: 'http://this/is/a/handle' }
           it { should_not include 'http://' }
-          it { should eq 'prefix:this-has-handle'}
+          it { should eq 'prefix:this-is-a-handle'}
+        end
+        context 'when the identifier has "https://"s' do
+          let(:resource) { create :resource, identifier: 'https://this/is/a/url' }
+          it { should_not include 'https://' }
+          it { should eq 'prefix:this-is-a-url'}
         end
         context 'when there are multiple identifiers' do
           let(:identifier1) { 'http://example.com' }
@@ -58,6 +63,11 @@ module Ichabod
             context 'and one of them is a non-handle URL' do
               let(:identifier1) { 'an.identifier'}
               let(:identifier2) { 'http://example.com' }
+              it { should eq 'prefix:example-com'}
+            end
+            context 'and one of them is a non-handle URL that is served over SSL' do
+              let(:identifier1) { 'an.identifier'}
+              let(:identifier2) { 'https://example.com' }
               it { should eq 'prefix:example-com'}
             end
             context 'and all of them are non-handle URL' do
