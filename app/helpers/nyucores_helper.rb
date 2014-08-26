@@ -31,5 +31,25 @@ module NyucoresHelper
       return index if index.to_i > 0
     end
   end
+  def item_fields_for_datastream(ds, field)
+    item_fields = []
+#binding.pry
+    if item_has_field?(ds, field)
+      item_fields |= (item_field_is_array?(ds, field)) ? @item.send(ds.first).send(field) : [@item.send(ds.first).send(field)]
+    end
+    item_fields
+  end
 
+  def item_has_field?(ds, field)
+    defined? @item.send(ds.first).send(field).present?
+  end
+
+  def item_field_is_array?(ds, field)
+    @item.send(ds.first).send(field).is_a? Array
+  end
+
+  def nyucore_form_id(field, ds, index=nil)
+#binding.pry
+    "nyucore_#{field.to_s}_#{ds.to_s}#{format_field_index(@item.send(ds).send(field), index)}"
+  end
 end
