@@ -8,6 +8,10 @@ module Ichabod
       describe '#pid' do
         subject { resource.pid }
         it { should eq "#{resource.prefix}:#{resource.identifier.first}"}
+        context 'when the pid identifier is set at initialization' do
+          let(:resource) { create :resource, pid_identifier: 'pid_identifier' }
+          it { should eq 'prefix:pid_identifier'}
+        end
         context 'when the identifier has "."s' do
           let(:resource) { create :resource, identifier: 'this.has.dots' }
           it { should_not include '.' }
@@ -29,7 +33,13 @@ module Ichabod
           it { should eq 'prefix:this-has-handle'}
         end
         context 'when there are multiple identifiers' do
+          let(:identifier1) { 'http://example.com' }
+          let(:identifier2) { 'http://hdl.handle.net/2451/14097' }
           let(:resource) { create :resource, identifier: [identifier1, identifier2] }
+          context 'and the pid identifier is set at initialization' do
+            let(:resource) { create :resource, pid_identifier: 'pid_identifier', identifier: [identifier1, identifier2] }
+            it { should eq 'prefix:pid_identifier'}
+          end
           context 'and one of them is a "handle"' do
             let(:identifier1) { 'Vol. 18, No. 5, September-October 2007' }
             let(:identifier2) { 'http://hdl.handle.net/2451/14097' }
