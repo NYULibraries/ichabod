@@ -17,7 +17,7 @@ class NyucoresController < ApplicationController
 
   def new
     @item = Nyucore.new
-    authorize! :new, @item
+    #authorize! :new, @item
     respond_with(@item)
   end
 
