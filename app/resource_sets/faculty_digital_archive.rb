@@ -14,11 +14,12 @@ class FacultyDigitalArchive < Ichabod::ResourceSet::Base
   private
   def add_identifier_as_available_or_citation(*args)
     resource, nyucore = *args
-    resource.identifier.each do |id|
-      if id.include? "http://"
-        nyucore.available = id
+    identifiers = resource.identifier
+    identifiers.each do |identifier|
+      if identifier.starts_with? "http://"
+        nyucore.available = identifier
       else
-        nyucore.citation = id
+        nyucore.citation = identifier
       end
     end
   end
