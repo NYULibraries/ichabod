@@ -3,6 +3,9 @@ module Ichabod
     # Public
     class Resource
 
+      HANDLE_REGEXP = /^http:\/\/hdl\.handle\.net/
+      URL_REGEXP = /^http:\/\//
+
       NYUCORE_ATTRIBUTES = [:identifier, :addinfolink, :addinfotext, :available,
         :citation, :title, :creator, :type, :publisher, :description, :edition,
         :date, :format, :language, :relation, :rights, :subject, :series,
@@ -18,7 +21,7 @@ module Ichabod
       end
 
       def pid
-        @pid ||= "#{prefix}:#{clean_identifier(first_identifier)}"
+        @pid ||= "#{prefix}:#{clean_identifier(pid_identifier)}"
       end
 
       def to_nyucore
@@ -49,10 +52,19 @@ module Ichabod
         identifier.gsub('http://', '').gsub(/[\.\/\\\?=]/, '-')
       end
 
-      def first_identifier
-        @first_identifier ||= begin
+      def pid_identifier
+        @pid_identifier ||= begin
           if identifier.is_a? Array
-            identifier.first
+            # First, try to find a handle
+            if identifier.any? { |id| HANDLE_REGEXP === id }
+              identifier.find { |id| HANDLE_REGEXP === id }
+            # Next, try to find any URL
+            elsif identifier.any? { |id| URL_REGEXP === id }
+              identifier.find { |id| URL_REGEXP === id }
+            # If we can't find a URL, grab the first one
+            else
+              identifier.first
+            end
           else
             identifier
           end
