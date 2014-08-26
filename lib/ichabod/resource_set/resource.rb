@@ -4,7 +4,7 @@ module Ichabod
     class Resource
 
       HANDLE_REGEXP = /^http:\/\/hdl\.handle\.net/
-      URL_REGEXP = /^http:\/\//
+      URL_REGEXP = /^https?:\/\//
 
       NYUCORE_ATTRIBUTES = [:identifier, :addinfolink, :addinfotext, :available,
         :citation, :title, :creator, :type, :publisher, :description, :edition,
@@ -50,7 +50,7 @@ module Ichabod
 
       private
       def clean_identifier(identifier)
-        identifier.gsub('http://', '').gsub(/[\.\/\\\?=]/, '-')
+        identifier.gsub(URL_REGEXP, '').gsub(/[\.\/\\\?=]/, '-')
       end
 
       def pid_identifier
