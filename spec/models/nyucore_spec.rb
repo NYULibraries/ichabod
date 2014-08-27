@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Nyucore, vcr: {cassette_name: "models/nyucore", record: :once} do
+describe Nyucore, vcr: {cassette_name: "models/nyucore"} do
 
   describe Nyucore::FIELDS do
     subject { Nyucore::FIELDS }
