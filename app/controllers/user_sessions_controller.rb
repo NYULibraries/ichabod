@@ -1,6 +1,6 @@
 class UserSessionsController < ApplicationController
   include Authpds::Controllers::AuthpdsSessionsController
-  
+
   # GET /validate
   def validate
     # Only create a new one if it doesn't exist

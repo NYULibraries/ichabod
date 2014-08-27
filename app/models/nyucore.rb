@@ -1,23 +1,26 @@
-require './lib/rdf_types/nyucore_rdf_datastream.rb'
 class Nyucore < ActiveFedora::Base
-    has_metadata 'descMetadata', type: NyucoreRdfDatastream
+  include Hydra::AccessControls::Permissions
 
-    has_attributes :title, datastream: 'descMetadata', multiple: false
-    has_attributes :creator, datastream: 'descMetadata', multiple: false
-    has_attributes :publisher, datastream: 'descMetadata', multiple: false
-    has_attributes :identifier, datastream: 'descMetadata', multiple: false
-    has_attributes :available, datastream: 'descMetadata', multiple: true
-    has_attributes :type, datastream: 'descMetadata', multiple: false
-    has_attributes :description, datastream: 'descMetadata', multiple: true
-    has_attributes :edition, datastream: 'descMetadata', multiple: true
-    has_attributes :series, datastream: 'descMetadata', multiple: true
-    has_attributes :version, datastream: 'descMetadata', multiple: true
-    # Adds for FDA Work below
-    has_attributes :date, datastream: 'descMetadata', multiple: true
-    has_attributes :format, datastream: 'descMetadata', multiple: true
-    has_attributes :language, datastream: 'descMetadata', multiple: true
-    has_attributes :relation, datastream: 'descMetadata', multiple: true
-    has_attributes :rights, datastream: 'descMetadata', multiple: true
-    has_attributes :subject, datastream: 'descMetadata', multiple: true
-    has_attributes :citation, datastream: 'descMetadata', multiple: true
+  FIELD_LIST = {
+    :multiple => [:addinfolink, :addinfotext, :available, :citation, :title, :creator,
+                  :type, :publisher, :description, :edition, :date, :format, :language,
+                  :relation, :rights, :subject, :series, :version],
+    :single => [:identifier]
+  }
+
+  has_metadata 'descMetadata', type: NyucoreRdfDatastream
+
+  has_attributes *FIELD_LIST[:single], datastream: 'descMetadata', multiple: false
+  has_attributes *FIELD_LIST[:multiple], datastream: 'descMetadata', multiple: true
+
+  ##
+  # Refine data before saving into solr
+  def to_solr solr_doc = Hash.new
+    super(solr_doc)
+    Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
+  end
+
+  def collections
+    @collections ||= Collections.new(self)
+  end
 end

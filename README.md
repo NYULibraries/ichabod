@@ -1,10 +1,15 @@
-# Hydra NYU
+# Ichabod - Hydra at NYU
+
+[![Build Status](https://travis-ci.org/NYULibraries/ichabod.svg?branch=development)](https://travis-ci.org/NYULibraries/ichabod)
+[![Dependency Status](https://gemnasium.com/NYULibraries/ichabod.svg)](https://gemnasium.com/NYULibraries/ichabod)
+[![Code Climate](https://codeclimate.com/github/NYULibraries/ichabod.png)](https://codeclimate.com/github/NYULibraries/ichabod)
+[![Coverage Status](https://coveralls.io/repos/NYULibraries/ichabod/badge.png?branch=development)](https://coveralls.io/r/NYULibraries/ichabod?branch=development)
 
 A prototyping effort to bring [Hydra](http://projecthydra.org/) to NYU as a metadata augmentation system.
 
 ## What is Hydra?
 
-The Hydra group describes Hydra as a "repository solution." True to this description it does strive to solve some issues presented by repository management and discovery. The repository in discussion is [Fedora](http://www.fedora-commons.org/), which NYU doesn't use currently but can be brought up to function as a repository for augmented metadata (where the content itself is housed in R-star or the Institutional Repository) and the Hydra stack can provide a customizable interface for back and front end. 
+The Hydra group describes Hydra as a "repository solution." True to this description it does strive to solve some issues presented by repository management and discovery. The repository in discussion is [Fedora](http://www.fedora-commons.org/), which NYU doesn't use currently but can be brought up to function as a repository for augmented metadata (where the content itself is housed in R-star or the Institutional Repository) and the Hydra stack can provide a customizable interface for back and front end.
 
 Hydra is really just a collection of interweaving (open-source) technologies that provide a simple way to manage a Fedora repository: the [hydra gem](https://github.com/projecthydra/hydra), Fedora, [Solr](http://lucene.apache.org/solr/), [Blacklight](http://projectblacklight.org/). These technologies all revolve around the Ruby on Rails framework so we can easily integrate [NYU SSO](https://github.com/NYULibraries/authpds-nyu) and [shared assets](https://github.com/NYULibraries/nyulibraries-assets).
 
@@ -22,37 +27,37 @@ For example, a model aping a Fedora-based Book object with title and multiple au
 
     class Book < ActiveFedora::Base
       include Hydra::AccessControls::Permissions
-      
+
       has_metadata 'descMetadata', type: BookMetadata
-      
+
       has_many :pages, :property => :is_part_of
-      
+
       has_attributes :title, datastream: 'descMetadata', multiple: false
       has_attributes :author, datastream: 'descMetadata', multiple: true
-      
+
     end
 
 With a matching OM description:
 
     class BookMetadata < ActiveFedora::OmDatastream
-    
+
       set_terminology do |t|
         t.root(path: "fields")
         t.title index_as: :stored_searchable
         t.author index_as: :stored_searchable
       end
-      
+
       def self.xml_template
         Nokogiri::XML.parse("<fields/>")
       end
-      
+
     end
 
 ## Gated access
 
-Hydra fully supports gated access. In fact it's an integral part of Hydra's architecture.
+Hydra fully supports gated access. In fact it's an integral part of Hydra's architecture. [See the wiki](https://github.com/NYULibraries/ichabod/wiki/Access-Controls) for details about how we implement Hydra permissions for Ichabod.
 
-### Access privileges 
+### Access privileges
 
 * By default there are three levels of access that can be granted: Discover, Read, Edit
 * Custom privileges can be created as well. With CanCan you can!
@@ -72,7 +77,7 @@ To grant access for all registered (i.e. signed-in) users to all Book objects we
 
     Book.all.each {|book| book.read_groups = ["registered"]; book.save }
 
-Because these permissions just appear as relationships between objects, checkboxes can easily be integrated into views to allow admin users to grant their own levels of access to objects they manage.  Thanks Rails! 
+Because these permissions just appear as relationships between objects, checkboxes can easily be integrated into views to allow admin users to grant their own levels of access to objects they manage.  Thanks Rails!
 
 Oh and did I mention these permissions are indexed into Solr as well. They also can be pulled directly out of Fedora if they are already defined in there so no double work has to be done.
 
@@ -90,21 +95,20 @@ Oh and did I mention these permissions are indexed into Solr as well. They also 
 
 Rake tasks available to ingest data from "ingest" directory.
 
-    rake hydra_nyu:load["./ingest/sdr.xml","sdr"]
-    rake hydra_nyu:load["./ingest/stern.xml","fda"]
+    rake ichabod:load['spatial_data_repository','./ingest/sdr.xml']
+    rake ichabod:load['faculty_digital_archive','./ingest/stern.xml']
 
-... and to purge data based on same data files. 
-    
-    rake hydra_nyu:delete["./ingest/sdr.xml","sdr"]
-    rake hydra_nyu:delete["./ingest/stern.xml","fda"]
+... and to purge data based on same data files.
+
+    rake ichabod:delete['spatial_data_repository','./ingest/sdr.xml']
+    rake ichabod:delete['faculty_digital_archive','./ingest/stern.xml']
 
 ## Resources
 
-* Homepage: [http://projecthydra.org/](http://projecthydra.org/)
-* Dive Into Hydra Tutorial: [https://github.com/projecthydra/hydra/wiki/Dive-into-Hydra](https://github.com/projecthydra/hydra/wiki/Dive-into-Hydra)
-* Access Controler with Hydra Tutorial: [https://github.com/projecthydra/hydra-head/wiki/Access-Controls-with-Hydra](https://github.com/projecthydra/hydra-head/wiki/Access-Controls-with-Hydra)
-* Tame your XML with OM Turotial: [https://github.com/projecthydra/om/wiki/Tame-your-XML-with-OM](https://github.com/projecthydra/om/wiki/Tame-your-XML-with-OM)
-* Project Hydra on GitHub: [https://github.com/projecthydra/hydra](https://github.com/projecthydra/hydra)
-* GitHub Wiki: [https://github.com/projecthydra/hydra/wiki/](https://github.com/projecthydra/hydra/wiki/)
-* Duraspace Wiki: [https://wiki.duraspace.org/display/hydra/The+Hydra+Project](https://wiki.duraspace.org/display/hydra/The+Hydra+Project)
+* [Project Hydra Homepage](http://projecthydra.org/)
+* [Project Hydra @ GitHub](https://github.com/projecthydra/hydra)
+* [Dive Into Hydra](https://github.com/projecthydra/hydra/wiki/Dive-into-Hydra)
+* [Access Controls with Hydra](https://github.com/projecthydra/hydra-head/wiki/Access-Controls-with-Hydra)
+* [More Hydra Tutorials](https://github.com/projecthydra/hydra/wiki)
+* [The Hydra Project @ Duraspace](https://wiki.duraspace.org/display/hydra/The+Hydra+Project)
 * IRC Channel: \#projecthydra

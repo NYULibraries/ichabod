@@ -1,68 +1,65 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '~> 4.0.9'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-gem 'mysql2'
+gem 'sqlite3', group: :development
+gem 'mysql2', '~> 0.3.15'
 
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-gem 'compass-rails'
-
-# Use Uglifier as compressor for JavaScript assets
+gem 'compass-rails', '~> 1.1.7'
 gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
 gem 'therubyracer', '~> 0.12.0', :platforms => :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 3.1.0'
 gem 'jquery-ui-rails', '~> 4.1.0'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
-gem 'hydra', '~> 6.1.0'
-
-# Use debugger
-gem 'debugger', group: [:development, :test]
-
-gem 'unicode', platforms: [:mri_18, :mri_19]
-#gem 'devise', '3.0.0.rc'
-#gem 'devise-guests', '~> 0.3'
-#gem 'bootstrap-sass'
-
-gem 'dotenv-rails'
-
-group :development, :test do
-  gem 'jettywrapper'
-end
-
-group :test do
-  gem 'rspec-rails', '>=2.9.0'
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
-end
-
-gem 'rails_config'
+gem 'jbuilder', '~> 2.0.7'
 
 gem 'mustache', '0.99.4'
-gem 'mustache-rails', '~> 0.2.3', :require => 'mustache/railtie'
+gem 'mustache-rails', github: 'josh/mustache-rails', require: 'mustache/railtie'
 
-gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v2.1.1'
 gem 'exlibris-aleph', :git => 'git://github.com/barnabyalter/exlibris-aleph.git'
 gem 'authpds', :git => 'git://github.com/barnabyalter/authpds.git'
 gem 'authpds-nyu', :git => 'git://github.com/barnabyalter/authpds-nyu.git'
-gem 'nyulibraries_deploy', :git => 'git://github.com/NYULibraries/nyulibraries_deploy.git', :tag => 'v3.2.5'
+
+gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v3.0.3'
+gem 'nyulibraries-deploy', :git => 'git://github.com/NYULibraries/nyulibraries-deploy.git', :branch => 'development-fig'
+
+gem 'hydra', '~> 6.1.0'
+gem 'simple_form', '~> 3.0.2'
+gem 'kaminari', '~> 0.13'
+gem 'sorted', '~> 1.0.0'
+gem 'unicode', platforms: [:mri_18, :mri_19]
+
+gem 'jettywrapper', group: [:development, :test, :staging]
+
+gem 'faraday', '~> 0.9.0'
+gem 'multi_json', '~> 1.10.1'
+gem 'multi_xml', '~> 0.5.5'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+group :development, :test, :cucumber do
+  gem 'rspec-rails', '~> 2.14.0'
+  # Phantomjs for headless browser testing
+  gem 'phantomjs', '>= 1.9.0'
+  gem 'poltergeist', '~> 1.5.0'
+  # Use factory girl for creating models
+  gem 'factory_girl_rails', '~> 4.4.0'
+  # Use pry-debugger as the REPL and for debugging
+  gem 'pry-debugger', '~> 0.2.2'
+end
+
+group :test, :cucumber do
+  gem 'cucumber-rails', :require => false
+  gem 'simplecov', :require => false
+  gem 'simplecov-rcov', :require => false
+  gem 'coveralls', '~> 0.7.0', :require => false
+  gem 'vcr', '~> 2.8.0'
+  gem 'webmock', '>= 1.8.0', '< 1.16'
+  gem 'selenium-webdriver', '~> 2.41.0'
+  gem 'pickle', '~> 0.4.11'
+  gem 'database_cleaner', '~> 1.2.0'
+end

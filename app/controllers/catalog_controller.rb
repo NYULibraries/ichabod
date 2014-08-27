@@ -13,13 +13,13 @@ class CatalogController < ApplicationController
   CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
 
 
-configure_blacklight do |config|
-    config.default_solr_params = { 
-      :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__ublisher_tesim 
+  configure_blacklight do |config|
+    config.default_solr_params = {
+      :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__publisher_tesim
                 desc_metadata__type_tesim desc_metadata__description_tesim desc_metadata__series_tesim
                 desc_metadata__creator_tesim desc_metadata__subject_tesim',
       :qt => 'search',
-      :rows => 10 
+      :rows => 10
     }
 
     # solr field configuration for search results/index views
@@ -31,6 +31,7 @@ configure_blacklight do |config|
     config.show.html_title = 'desc_metadata__title_tesim'
     config.show.heading = 'desc_metadata__title_tesim'
     config.show.display_type = 'has_model_ssim'
+
 
 
     # solr fields that will be treated as facets by the blacklight application
@@ -52,17 +53,11 @@ configure_blacklight do |config|
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
-    config.add_facet_field solr_name('object_type', :facetable), :label => 'Format'
-    config.add_facet_field solr_name('pub_date', :facetable), :label => 'Publication Year'
-    config.add_facet_field solr_name('subject_topic', :facetable), :label => 'Topic', :limit => 20
-    config.add_facet_field solr_name('language', :facetable), :label => 'Language', :limit => true
-    config.add_facet_field solr_name('lc1_letter', :facetable), :label => 'Call Number'
-    config.add_facet_field solr_name('subject_geo', :facetable), :label => 'Region'
-    config.add_facet_field solr_name('subject_era', :facetable), :label => 'Era'
     config.add_facet_field solr_name('desc_metadata__type', :facetable), :label => 'Format'
     config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
     config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
     config.add_facet_field solr_name('desc_metadata__language', :facetable), :label => 'Language'
+    config.add_facet_field solr_name('collection', :facetable), :label => 'Collection'
 
 
     # Have BL send all facet field names to Solr, which has been the default
@@ -86,8 +81,12 @@ configure_blacklight do |config|
     config.add_index_field solr_name('desc_metadata__lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
     #NYUCore Additions
     config.add_index_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher:'
-
-
+    config.add_index_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label         => 'Online Resource:',
+                                                                                                    :helper_method => :render_external_links,
+                                                                                                    :text          => 'resource_text_display'
+    config.add_index_field solr_name('desc_metadata__id', :stored_searchable, type: :string), :label         => 'Online Resource:',
+                                                                                                    :helper_method => :render_external_link,
+                                                                                                    :text          => 'resource_text_display'
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     config.add_show_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title:'
@@ -113,11 +112,13 @@ configure_blacklight do |config|
     config.add_show_field solr_name('desc_metadata__version', :stored_searchable, type: :string), :label => 'Also available as:'
 
 
-    config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label         => 'Online Resource:',     
-                                                                                                    :helper_method => :render_external_link, 
+    config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label         => 'Online Resource:',
+                                                                                                    :helper_method => :render_external_links,
                                                                                                     :text          => 'resource_text_display'
-    
 
+    config.add_show_field solr_name('desc_metadata__addinfolink', :stored_searchable, type: :string), :label         => 'Additional Information:',
+                                                                                                    :helper_method => :render_external_links,
+                                                                                                    :text          => 'desc_metadata__addinfotext_tesim'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

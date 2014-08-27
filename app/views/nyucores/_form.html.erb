@@ -1,0 +1,23 @@
+<%= simple_form_for @item do |f| %>
+
+<%= f.input :title %>
+<%= f.input :creator %>
+<%= f.input :publisher %>
+<%= f.input :identifier %>
+<%= f.input :type %>
+
+<% multivalue_fields.each do |field| %>
+<div>
+  <%= f.label field %>
+  <% @item.send(field).each_with_index do |item, index| %>
+  <%= f.input field, label: false, input_html: {name:"nyucore[#{field.to_s}][]", value: item.to_s, id: "nyucore_#{field.to_s}#{format_field_index(@item.send(field), index)}"} %>
+  <% end %>
+  <%= f.input field, label: false, input_html: {name:"nyucore[#{field.to_s}][]", value: nil, class: "new_#{field.to_s}", id: "nyucore_#{field.to_s}#{format_field_index(@item.send(field))}"} %>
+</div>
+<% end %>
+
+<br />
+
+<%= f.submit 'Save' %>
+
+<% end %>

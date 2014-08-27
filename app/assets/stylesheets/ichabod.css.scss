@@ -1,0 +1,85 @@
+@import "nyulibraries";
+@import "blacklight";
+
+body {
+  padding-top: 0;
+}
+
+.row, #content {
+  margin-left: 0 !important;
+}
+
+#search {
+  margin-bottom: $paddingStandard;
+}
+
+.toggle_bookmark { margin-top: 2px !important; }
+
+.page_links { line-height: 20px; }
+
+.search {
+  #search_field { display: none !important; }
+}
+
+.q {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  line-height: $lineHeightLarge !important;
+}
+
+.record-help { margin-bottom: 10px; }
+
+.field_with_errors {
+  input {
+    @extend .alert;
+    @extend .alert-error;
+  }
+  label {
+    color: #B94A48;
+    font-weight:bold;
+  }
+}
+
+.constraint {
+  * { text-indent: 0; }
+  .filterValue {
+    span { margin: 0px 4px; }
+    .label {
+      color: white !important;
+    }
+  }
+}
+
+.pagination, .nyu-pagination {
+  text-align: left;
+}
+
+input[type='file'] {
+  line-height: 12px;
+}
+
+form label {margin-left:0;}
+
+//#search h2 {
+//  font-size: 17.5px;
+//  padding-top: 0;
+//  padding-bottom: 0;
+//  margin: 0;
+//}
+
+//.breadcrumb {
+//
+//  color: #333333;
+//  background-color: #e8e8e8;
+//  padding-top: 13px;
+//  padding-bottom: 13px;
+//  padding-left: 20px;
+//}
+
+//button#search { padding: 5px; }
+
+//.sidebar h2 {
+//  font-size: 18px !important;
+//  padding-top: 0;
+//  padding-bottom: 0;
+//}

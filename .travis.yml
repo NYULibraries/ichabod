@@ -1,0 +1,28 @@
+language: ruby
+
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1.0
+
+before_script:
+  # Load up X browser for selenium tests
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - mysql -e 'create database ichabod_test;'
+  - RAILS_ENV=test bundle exec rake db:schema:load
+
+bundler_args: --without development
+
+script: "bundle exec rake"
+
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#libtechnyu"
+    template:
+      - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
+      - "Change view : %{compare_url}"
+      - "Build details : %{build_url}"
+  email:
+    - web.services@library.nyu.edu

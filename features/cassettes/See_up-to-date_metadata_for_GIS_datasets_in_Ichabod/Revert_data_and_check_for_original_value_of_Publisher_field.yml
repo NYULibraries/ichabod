@@ -1,0 +1,1371 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1uniewpol2d8z1rp9r8aeyslkz;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '887'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams  xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora-commons.org/definitions/1/0/listDatastreams.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"  baseURL="http://localhost:8983/fedora-test/"
+        >    <datastream dsid="DC" label="Dublin Core Record for this object" mimeType="text/xml"
+        />    <datastream dsid="RELS-EXT" label="Fedora Object-to-Object Relationship
+        Metadata" mimeType="application/rdf+xml" />    <datastream dsid="descMetadata"
+        label="" mimeType="text/plain" />    <datastream dsid="source_metadata" label=""
+        mimeType="text/plain" />    <datastream dsid="rightsMetadata" label="" mimeType="text/xml"
+        /></objectDatastreams>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1nbhngvm2h3dhrsuyqvun1fu9;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '1062'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/afmodel:Nyucore</model><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-07-29T20:10:28.313Z</objCreateDate><objLastModDate>2014-08-11T20:59:32.024Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=kr39o5e8ma8f5q9cc7syoq5f;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '985'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.10</dsVersionID><dsCreateDate>2014-08-11T20:59:31.505Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>315</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+RELS-EXT+RELS-EXT.10</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1v8t6vxfih15830i0d3q8ye6z;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '315'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1xz0ovb7n5ypl1sif190yq552l;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '962'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.9</dsVersionID><dsCreateDate>2014-08-11T20:59:32.024Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>556</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+rightsMetadata+rightsMetadata.9</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=cg3n1xsf5wcr34tfzefapsyc;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '959'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.13</dsVersionID><dsCreateDate>2014-08-11T20:59:31.960Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1626</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+descMetadata+descMetadata.13</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/DC?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1fhikd5ui5dnq1mqj1zwyv7b92;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '982'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="DC" ><dsLabel>Dublin Core Record for this object</dsLabel><dsVersionID>DC1.0</dsVersionID><dsCreateDate>2014-07-29T20:10:28.313Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>374</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+DC+DC1.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/DC/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=i9ahseq2cdkwtdzsjilpxisq;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Dublin Core Record for this object.xml"
+      Content-Length:
+      - '374'
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<oai_dc:dc xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\"
+        xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd\">\n
+        \ <dc:identifier>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R</dc:identifier>\n</oai_dc:dc>\n"
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/source_metadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=xf84k2qf2eyghrfprjh6qmcg;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '969'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="source_metadata" ><dsLabel></dsLabel><dsVersionID>source_metadata.0</dsVersionID><dsCreateDate>2014-08-01T18:17:24.197Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1632</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+source_metadata+source_metadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/RELS-EXT?mimeType=application/rdf%2Bxml
+    body:
+      encoding: UTF-8
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"
+        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"/>\n  </rdf:Description>\n</rdf:RDF>\n"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - application/rdf+xml
+      Content-Length:
+      - '339'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1j1pzsj8tj2sjvmvxy8s2wlqx;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '985'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.11</dsVersionID><dsCreateDate>2014-08-11T20:59:33.455Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>315</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+RELS-EXT+RELS-EXT.11</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/descMetadata?mimeType=text/plain
+    body:
+      encoding: UTF-8
+      string: ! '<info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://purl.org/dc/terms/identifier>
+        "DSS.NYCDCP_Admin_Bndry_10cav\\DSS.nyfb_05R" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#addinfolink>
+        "http://nyu.libguides.com/content.php?pid=169769&sid=1489817" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#addinfotext>
+        "GIS Dataset Instructions" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://purl.org/dc/terms/title>
+        "New York City Fire Battalions" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://purl.org/dc/terms/publisher>
+        "New York City Department of City Planning" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfb_05R.zip"
+        .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://purl.org/dc/terms/type>
+        "Geospatial Data" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://purl.org/dc/terms/description>
+        "The service area boundaries for New York City''s fire battalions." .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        "10C" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        "NYCDCP_ADMIN_BNDRY_10CAV" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        "DSS.NYCDCP_Admin_Bndry_10cav\\DSS.nyfb_05R" .
+
+'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - text/plain
+      Content-Length:
+      - '1632'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=2qat10r8eyy3ktcp078uml9p;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '959'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.14</dsVersionID><dsCreateDate>2014-08-11T20:59:33.594Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1632</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+descMetadata+descMetadata.14</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/rightsMetadata?mimeType=text/xml
+    body:
+      encoding: US-ASCII
+      string: ! "<rightsMetadata xmlns=\"http://hydra-collab.stanford.edu/schemas/rightsMetadata/v1\"
+        version=\"0.1\">\n  <copyright>\n    <human type=\"title\"/>\n    <human type=\"description\"/>\n
+        \   <machine type=\"uri\"/>\n  </copyright>\n  <access type=\"discover\">\n
+        \   <human/>\n    <machine/>\n  </access>\n  <access type=\"read\">\n    <human/>\n
+        \   <machine/>\n  </access>\n  <access type=\"edit\">\n    <human/>\n    <machine>\n
+        \     <group>gis_cataloger</group>\n    </machine>\n  </access>\n  <embargo>\n
+        \   <human/>\n    <machine/>\n  </embargo>\n</rightsMetadata>"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '523'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=umef33a1c7g07krkrbfj107t;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '964'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.10</dsVersionID><dsCreateDate>2014-08-11T20:59:33.621Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>523</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+rightsMetadata+rightsMetadata.10</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=48xcy7camgfmlimfirenguc;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '985'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.11</dsVersionID><dsCreateDate>2014-08-11T20:59:33.455Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>315</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+RELS-EXT+RELS-EXT.11</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1seeru71ldrh11mzo7s6gda0s4;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '964'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.10</dsVersionID><dsCreateDate>2014-08-11T20:59:33.621Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>523</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+rightsMetadata+rightsMetadata.10</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1wiaxryrl2ipq1g361zmguyi6m;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '959'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.14</dsVersionID><dsCreateDate>2014-08-11T20:59:33.594Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1632</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+descMetadata+descMetadata.14</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1dsg0jinigx0aqsozzerz9yxz;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '315'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+    body:
+      encoding: US-ASCII
+      string: ! "\n<rdf:RDF xmlns:ns0=\"info:fedora/fedora-system:def/model#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n
+        \ <rdf:Description rdf:about=\"info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"></ns0:hasModel>\n
+        \ </rdf:Description>\n</rdf:RDF>\n"
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/descMetadata?mimeType=text/plain
+    body:
+      encoding: UTF-8
+      string: ! '<info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://purl.org/dc/terms/identifier>
+        "DSS.NYCDCP_Admin_Bndry_10cav\\DSS.nyfb_05R" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#addinfolink>
+        "http://nyu.libguides.com/content.php?pid=169769&sid=1489817" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#addinfotext>
+        "GIS Dataset Instructions" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://purl.org/dc/terms/title>
+        "New York City Fire Battalions" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://purl.org/dc/terms/publisher>
+        "New York City Department of City Planning" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfb_05R.zip"
+        .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://purl.org/dc/terms/type>
+        "Geospatial Data" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://purl.org/dc/terms/description>
+        "The service area boundaries for New York City''s fire battalions." .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#edition>
+        "10C" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#series>
+        "NYCDCP_ADMIN_BNDRY_10CAV" .
+
+        <info:fedora/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R> <http://harper.bobst.nyu.edu/data/nyucore#version>
+        "DSS.NYCDCP_Admin_Bndry_10cav\\DSS.nyfb_05R" .
+
+'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - text/plain
+      Content-Length:
+      - '1632'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=6rdhae6ny9uk3zkhpofhdymb;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '959'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.15</dsVersionID><dsCreateDate>2014-08-11T20:59:33.876Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1632</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+descMetadata+descMetadata.15</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: put
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/rightsMetadata?mimeType=text/xml
+    body:
+      encoding: US-ASCII
+      string: ! "<rightsMetadata xmlns=\"http://hydra-collab.stanford.edu/schemas/rightsMetadata/v1\"
+        version=\"0.1\">\n  <copyright>\n    <human type=\"title\"/>\n    <human type=\"description\"/>\n
+        \   <machine type=\"uri\"/>\n  </copyright>\n  <access type=\"discover\">\n
+        \   <human/>\n    <machine/>\n  </access>\n  <access type=\"read\">\n    <human/>\n
+        \   <machine/>\n  </access>\n  <access type=\"edit\">\n    <human/>\n    <machine>\n
+        \     <group>gis_cataloger</group>\n      <group>admin_group</group>\n    </machine>\n
+        \ </access>\n  <embargo>\n    <human/>\n    <machine/>\n  </embargo>\n</rightsMetadata>"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Multipart:
+      - 'true'
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '556'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1n00aine1948ozasp0gqolijk;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '964'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.11</dsVersionID><dsCreateDate>2014-08-11T20:59:33.901Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>556</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+rightsMetadata+rightsMetadata.11</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=11wwq6nmcbh5paz1epe345416;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '964'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.11</dsVersionID><dsCreateDate>2014-08-11T20:59:33.901Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>556</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+rightsMetadata+rightsMetadata.11</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/datastreams/descMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=18du6a0plqqvmalij7k25f34w;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Mon, 11 Aug 2014 20:59:33 GMT
+      Content-Length:
+      - '959'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+        dsID="descMetadata" ><dsLabel></dsLabel><dsVersionID>descMetadata.15</dsVersionID><dsCreateDate>2014-08-11T20:59:33.876Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1632</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+descMetadata+descMetadata.15</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-07-29T20:10:28Z</field><field
+        name="system_modified_dtsi">2014-08-11T20:59:32Z</field><field name="object_state_ssi">A</field><field
+        name="active_fedora_model_ssi">Nyucore</field><field name="id">sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R</field><field
+        name="object_profile_ssm">{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora Object-to-Object
+        Relationship Metadata","dsVersionID":"RELS-EXT.11","dsCreateDate":"2014-08-11T20:59:33Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":315,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+RELS-EXT+RELS-EXT.11","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"rightsMetadata":{"dsLabel":null,"dsVersionID":"rightsMetadata.11","dsCreateDate":"2014-08-11T20:59:33Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":null,"dsControlGroup":"M","dsSize":556,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+rightsMetadata+rightsMetadata.11","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.15","dsCreateDate":"2014-08-11T20:59:33Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1632,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+descMetadata+descMetadata.15","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"DC":{"dsLabel":"Dublin
+        Core Record for this object","dsVersionID":"DC1.0","dsCreateDate":"2014-07-29T20:10:28Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":"http://www.openarchives.org/OAI/2.0/oai_dc/","dsControlGroup":"X","dsSize":374,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+DC+DC1.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"source_metadata":{"dsLabel":null,"dsVersionID":"source_metadata.0","dsCreateDate":"2014-08-01T18:17:24Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1632,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+source_metadata+source_metadata.0","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/afmodel:Nyucore","info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-07-29T20:10:28Z","objLastModDate":"2014-08-11T20:59:32Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
+        name="edit_access_group_ssim">gis_cataloger</field><field name="edit_access_group_ssim">admin_group</field><field
+        name="desc_metadata__identifier_tesim">DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R</field><field
+        name="desc_metadata__addinfolink_tesim">http://nyu.libguides.com/content.php?pid=169769&amp;sid=1489817</field><field
+        name="desc_metadata__addinfotext_tesim">GIS Dataset Instructions</field><field
+        name="desc_metadata__title_tesim">New York City Fire Battalions</field><field
+        name="desc_metadata__publisher_tesim">New York City Department of City Planning</field><field
+        name="desc_metadata__available_tesim">http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfb_05R.zip</field><field
+        name="desc_metadata__type_tesim">Geospatial Data</field><field name="desc_metadata__type_sim">Geospatial
+        Data</field><field name="desc_metadata__description_tesim">The service area
+        boundaries for New York City's fire battalions.</field><field name="desc_metadata__edition_tesim">10C</field><field
+        name="desc_metadata__series_tesim">NYCDCP_ADMIN_BNDRY_10CAV</field><field
+        name="desc_metadata__version_tesim">DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R</field><field
+        name="has_model_ssim">info:fedora/afmodel:Nyucore</field><field name="collection_sim">Spatial
+        Data Repository</field><field name="collection_ssm">Spatial Data Repository</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>2}}
+
+'
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><commit/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>8}}
+
+'
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:33 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-07-29T20:10:28Z</field><field
+        name="system_modified_dtsi">2014-08-11T20:59:32Z</field><field name="object_state_ssi">A</field><field
+        name="active_fedora_model_ssi">Nyucore</field><field name="id">sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R</field><field
+        name="object_profile_ssm">{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora Object-to-Object
+        Relationship Metadata","dsVersionID":"RELS-EXT.11","dsCreateDate":"2014-08-11T20:59:33Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":315,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+RELS-EXT+RELS-EXT.11","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"rightsMetadata":{"dsLabel":null,"dsVersionID":"rightsMetadata.11","dsCreateDate":"2014-08-11T20:59:33Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":null,"dsControlGroup":"M","dsSize":556,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+rightsMetadata+rightsMetadata.11","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.15","dsCreateDate":"2014-08-11T20:59:33Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1632,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+descMetadata+descMetadata.15","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"DC":{"dsLabel":"Dublin
+        Core Record for this object","dsVersionID":"DC1.0","dsCreateDate":"2014-07-29T20:10:28Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":"http://www.openarchives.org/OAI/2.0/oai_dc/","dsControlGroup":"X","dsSize":374,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+DC+DC1.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"source_metadata":{"dsLabel":null,"dsVersionID":"source_metadata.0","dsCreateDate":"2014-08-01T18:17:24Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1632,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+source_metadata+source_metadata.0","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/afmodel:Nyucore","info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-07-29T20:10:28Z","objLastModDate":"2014-08-11T20:59:32Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
+        name="edit_access_group_ssim">gis_cataloger</field><field name="edit_access_group_ssim">admin_group</field><field
+        name="desc_metadata__identifier_tesim">DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R</field><field
+        name="desc_metadata__addinfolink_tesim">http://nyu.libguides.com/content.php?pid=169769&amp;sid=1489817</field><field
+        name="desc_metadata__addinfotext_tesim">GIS Dataset Instructions</field><field
+        name="desc_metadata__title_tesim">New York City Fire Battalions</field><field
+        name="desc_metadata__publisher_tesim">New York City Department of City Planning</field><field
+        name="desc_metadata__available_tesim">http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfb_05R.zip</field><field
+        name="desc_metadata__type_tesim">Geospatial Data</field><field name="desc_metadata__type_sim">Geospatial
+        Data</field><field name="desc_metadata__description_tesim">The service area
+        boundaries for New York City's fire battalions.</field><field name="desc_metadata__edition_tesim">10C</field><field
+        name="desc_metadata__series_tesim">NYCDCP_ADMIN_BNDRY_10CAV</field><field
+        name="desc_metadata__version_tesim">DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R</field><field
+        name="has_model_ssim">info:fedora/afmodel:Nyucore</field><field name="collection_sim">Spatial
+        Data Repository</field><field name="collection_ssm">Spatial Data Repository</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>2}}
+
+'
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:34 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><commit/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>7}}
+
+'
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:34 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?facet.field=collection_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Mon, 11 Aug 2014 20:59:34 GMT
+      Etag:
+      - ! '"YTkzODAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>4,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
+        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim','collection_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'-has_model_ssim:\"info:fedora/afmodel:FileAsset\"','rows'=>'10'}},'response'=>{'numFound'=>274,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-05-21T19:53:54Z','system_modified_dtsi'=>'2014-05-21T19:53:54Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:65','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-21T19:53:54Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:65+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-21T19:53:54Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1395,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:65+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-21T19:53:54Z\",\"objLastModDate\":\"2014-05-21T19:53:54Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A65/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A65/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['Cymbeline'],'desc_metadata__creator_tesim'=>['new
+        creator'],'desc_metadata__publisher_tesim'=>['new publisher'],'desc_metadata__available_tesim'=>['new
+        available'],'desc_metadata__type_tesim'=>['new type'],'desc_metadata__description_tesim'=>['new
+        description'],'desc_metadata__edition_tesim'=>['new edition'],'desc_metadata__series_tesim'=>['new
+        series'],'desc_metadata__version_tesim'=>['new version'],'desc_metadata__date_tesim'=>['new
+        date'],'desc_metadata__format_tesim'=>['new format'],'desc_metadata__language_tesim'=>['new
+        language'],'desc_metadata__relation_tesim'=>['new relation'],'desc_metadata__rights_tesim'=>['new
+        rights'],'desc_metadata__subject_tesim'=>['new subject'],'desc_metadata__citation_tesim'=>['new
+        citation'],'desc_metadata__identifier_tesim'=>['new identifier'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-21T19:53:54.903Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-21T20:16:15Z','system_modified_dtsi'=>'2014-05-21T20:16:15Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:69','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-21T20:16:15Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:69+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-21T20:16:15Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1359,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:69+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-21T20:16:15Z\",\"objLastModDate\":\"2014-05-21T20:16:15Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A69/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A69/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['As
+        You Like It'],'desc_metadata__type_tesim'=>['Text1'],'desc_metadata__available_tesim'=>['DSS.ShakeIt1'],'desc_metadata__description_tesim'=>['As
+        You Like It1'],'desc_metadata__edition_tesim'=>['1st1'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP1'],'desc_metadata__version_tesim'=>['2nd1'],'desc_metadata__date_tesim'=>['15941'],'desc_metadata__format_tesim'=>['Geospatial
+        data1'],'desc_metadata__language_tesim'=>['English1'],'desc_metadata__relation_tesim'=>['Not
+        sure what this is1'],'desc_metadata__rights_tesim'=>['All rights1'],'desc_metadata__subject_tesim'=>['Plays1'],'desc_metadata__citation_tesim'=>['B
+        Shakes, SPC1'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-21T20:16:15.967Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-21T20:22:42Z','system_modified_dtsi'=>'2014-05-21T20:22:42Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:70','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-21T20:22:42Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:70+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-21T20:22:42Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1359,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:70+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-21T20:22:42Z\",\"objLastModDate\":\"2014-05-21T20:22:42Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A70/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A70/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['As
+        You Like It'],'desc_metadata__type_tesim'=>['Text1'],'desc_metadata__available_tesim'=>['DSS.ShakeIt1'],'desc_metadata__description_tesim'=>['As
+        You Like It1'],'desc_metadata__edition_tesim'=>['1st1'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP1'],'desc_metadata__version_tesim'=>['2nd1'],'desc_metadata__date_tesim'=>['15941'],'desc_metadata__format_tesim'=>['Geospatial
+        data1'],'desc_metadata__language_tesim'=>['English1'],'desc_metadata__relation_tesim'=>['Not
+        sure what this is1'],'desc_metadata__rights_tesim'=>['All rights1'],'desc_metadata__subject_tesim'=>['Plays1'],'desc_metadata__citation_tesim'=>['B
+        Shakes, SPC1'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-21T20:22:43.03Z','score'=>1.0},{'system_create_dtsi'=>'2014-05-21T20:27:52Z','system_modified_dtsi'=>'2014-05-21T20:27:52Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:71','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-05-21T20:27:52Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:71+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-05-21T20:27:52Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1359,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:71+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-05-21T20:27:52Z\",\"objLastModDate\":\"2014-05-21T20:27:52Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A71/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A71/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['As
+        You Like It'],'desc_metadata__type_tesim'=>['Text1'],'desc_metadata__available_tesim'=>['DSS.ShakeIt1'],'desc_metadata__description_tesim'=>['As
+        You Like It1'],'desc_metadata__edition_tesim'=>['1st1'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP1'],'desc_metadata__version_tesim'=>['2nd1'],'desc_metadata__date_tesim'=>['15941'],'desc_metadata__format_tesim'=>['Geospatial
+        data1'],'desc_metadata__language_tesim'=>['English1'],'desc_metadata__relation_tesim'=>['Not
+        sure what this is1'],'desc_metadata__rights_tesim'=>['All rights1'],'desc_metadata__subject_tesim'=>['Plays1'],'desc_metadata__citation_tesim'=>['B
+        Shakes, SPC1'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-05-21T20:27:52.835Z','score'=>1.0},{'system_create_dtsi'=>'2014-07-29T17:46:41Z','system_modified_dtsi'=>'2014-07-29T17:46:41Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:81','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-07-29T17:46:43Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:81+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-07-29T17:46:45Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2430,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:81+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-29T17:46:41Z\",\"objLastModDate\":\"2014-07-29T17:46:41Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A81/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A81/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
+        Star Wars Guide to Fun in the Sun'],'desc_metadata__creator_tesim'=>['The
+        Man'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__available_tesim'=>['Avail
+        1','Travail'],'desc_metadata__description_tesim'=>['Interesting topic','But
+        poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition 1'],'desc_metadata__series_tesim'=>['Series
+        1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__citation_tesim'=>['Shouldn\\'t have jumped the turnstile','Shouldn\\'t
+        have ran a red light'],'desc_metadata__identifier_tesim'=>['rec123'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-07-29T17:46:45.382Z','score'=>1.0},{'system_create_dtsi'=>'2014-07-29T17:47:07Z','system_modified_dtsi'=>'2014-07-29T17:47:07Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:82','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-07-29T17:47:07Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:82+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-07-29T17:47:09Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2422,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:82+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-29T17:47:07Z\",\"objLastModDate\":\"2014-07-29T17:47:07Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A82/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A82/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
+        Star Wars Guide to Fun in the Sun'],'desc_metadata__creator_tesim'=>['The
+        Man'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__available_tesim'=>['Avail
+        1','Travail'],'desc_metadata__description_tesim'=>['Interesting topic','But
+        poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition 1'],'desc_metadata__series_tesim'=>['Series
+        1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__type_tesim'=>['Dataset'],'desc_metadata__citation_tesim'=>['Shouldn\\'t
+        have jumped the turnstile','Shouldn\\'t have ran a red light'],'desc_metadata__identifier_tesim'=>['rec123'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-07-29T17:47:09.531Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-04T16:18:25Z','system_modified_dtsi'=>'2014-06-04T16:18:26Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:74','object_profile_ssm'=>['{\"datastreams\":{\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-04T16:18:25Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":340,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:74+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-04T16:18:25Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:74+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.1\",\"dsCreateDate\":\"2014-06-04T16:18:27Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2279,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:74+descMetadata+descMetadata.1\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-04T16:18:25Z\",\"objLastModDate\":\"2014-06-04T16:18:26Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A74/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A74/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['The
+        Tale of Imogen'],'desc_metadata__creator_tesim'=>['new creator'],'desc_metadata__publisher_tesim'=>['new
+        publisher'],'desc_metadata__identifier_tesim'=>['new identifier'],'desc_metadata__type_tesim'=>['new
+        type'],'desc_metadata__available_tesim'=>['new available'],'desc_metadata__description_tesim'=>['new
+        description'],'desc_metadata__edition_tesim'=>['new edition'],'desc_metadata__series_tesim'=>['new
+        series'],'desc_metadata__version_tesim'=>['new version'],'desc_metadata__date_tesim'=>['new
+        date'],'desc_metadata__format_tesim'=>['new format'],'desc_metadata__language_tesim'=>['new
+        language'],'desc_metadata__relation_tesim'=>['new relation'],'desc_metadata__rights_tesim'=>['new
+        rights'],'desc_metadata__subject_tesim'=>['new subject'],'desc_metadata__citation_tesim'=>['new
+        citation'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-04T16:18:27.585Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-04T16:18:19Z','system_modified_dtsi'=>'2014-06-04T16:18:19Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:72','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-04T16:18:20Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:72+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-04T16:18:21Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1465,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:72+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-04T16:18:19Z\",\"objLastModDate\":\"2014-06-04T16:18:19Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A72/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A72/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
+        Comedy of Errors'],'desc_metadata__creator_tesim'=>['Bill Shakespeare'],'desc_metadata__publisher_tesim'=>['Penguin
+        Classics'],'desc_metadata__identifier_tesim'=>['Id 123'],'desc_metadata__type_tesim'=>['Text'],'desc_metadata__available_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__description_tesim'=>['The
+        Comedy of Errors is one of William Shakespeare\\'s blah blahs'],'desc_metadata__edition_tesim'=>['1st'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['2nd'],'desc_metadata__date_tesim'=>['1594'],'desc_metadata__format_tesim'=>['Geospatial
+        data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['Not
+        sure what this is'],'desc_metadata__rights_tesim'=>['All rights'],'desc_metadata__subject_tesim'=>['Plays'],'desc_metadata__citation_tesim'=>['B
+        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-04T16:18:21.477Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-04T16:20:39Z','system_modified_dtsi'=>'2014-06-04T16:20:39Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:78','object_profile_ssm'=>['{\"datastreams\":{\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-06-04T16:20:39Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":340,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:78+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-04T16:20:39Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:78+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.1\",\"dsCreateDate\":\"2014-06-04T16:20:40Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2279,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:78+descMetadata+descMetadata.1\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-04T16:20:39Z\",\"objLastModDate\":\"2014-06-04T16:20:39Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A78/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A78/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['The
+        Tale of Imogen'],'desc_metadata__creator_tesim'=>['new creator'],'desc_metadata__publisher_tesim'=>['new
+        publisher'],'desc_metadata__identifier_tesim'=>['new identifier'],'desc_metadata__type_tesim'=>['new
+        type'],'desc_metadata__available_tesim'=>['new available'],'desc_metadata__description_tesim'=>['new
+        description'],'desc_metadata__edition_tesim'=>['new edition'],'desc_metadata__series_tesim'=>['new
+        series'],'desc_metadata__version_tesim'=>['new version'],'desc_metadata__date_tesim'=>['new
+        date'],'desc_metadata__format_tesim'=>['new format'],'desc_metadata__language_tesim'=>['new
+        language'],'desc_metadata__relation_tesim'=>['new relation'],'desc_metadata__rights_tesim'=>['new
+        rights'],'desc_metadata__subject_tesim'=>['new subject'],'desc_metadata__citation_tesim'=>['new
+        citation'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-04T16:20:40.864Z','score'=>1.0},{'system_create_dtsi'=>'2014-06-04T16:20:35Z','system_modified_dtsi'=>'2014-06-04T16:20:35Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:76','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-06-04T16:20:35Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:76+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-06-04T16:20:36Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1465,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:76+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-06-04T16:20:35Z\",\"objLastModDate\":\"2014-06-04T16:20:35Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A76/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A76/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
+        Comedy of Errors'],'desc_metadata__creator_tesim'=>['Bill Shakespeare'],'desc_metadata__publisher_tesim'=>['Penguin
+        Classics'],'desc_metadata__identifier_tesim'=>['Id 123'],'desc_metadata__type_tesim'=>['Text'],'desc_metadata__available_tesim'=>['DSS.ESRI_10_Streetmap\\\\DSS.airports_ABU'],'desc_metadata__description_tesim'=>['The
+        Comedy of Errors is one of William Shakespeare\\'s blah blahs'],'desc_metadata__edition_tesim'=>['1st'],'desc_metadata__series_tesim'=>['ESRI_10_STREETMAP'],'desc_metadata__version_tesim'=>['2nd'],'desc_metadata__date_tesim'=>['1594'],'desc_metadata__format_tesim'=>['Geospatial
+        data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['Not
+        sure what this is'],'desc_metadata__rights_tesim'=>['All rights'],'desc_metadata__subject_tesim'=>['Plays'],'desc_metadata__citation_tesim'=>['B
+        Shakes, SPC'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-06-04T16:20:36.293Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'desc_metadata__type_sim'=>['Geospatial
+        Data',155,'Dataset',54,'Rosie Stuff',29,'Text',7,'new type',7,'Text1',3,'[\"new
+        type\"]',2,'[]',2],'desc_metadata__creator_sim'=>['The Man',64,'Hugh Plisher',31,'Bill
+        Shakespeare',7,'new creator',7,'[\"new creator\"]',2,'[]',2],'desc_metadata__subject_sim'=>['Cryptozoology',64,'Vexillology',64,'vexillology',31,'Plays',23,'Plays1',15,'new
+        subject',9],'desc_metadata__language_sim'=>['en',64,'ger',64,'English',54,'English1',15,'new
+        language',9],'collection_sim'=>['Spatial Data Repository',150,'ESRI',120]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:34 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?facet.field=collection_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Mon, 11 Aug 2014 20:59:34 GMT
+      Etag:
+      - ! '"YTkzODAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>2,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
+        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim','collection_sim'],'qt'=>'search','wt'=>'ruby','fq'=>['{!raw
+        f=desc_metadata__type_sim}Geospatial Data','-has_model_ssim:\"info:fedora/afmodel:FileAsset\"'],'rows'=>'10'}},'response'=>{'numFound'=>155,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2014-07-29T17:46:41Z','system_modified_dtsi'=>'2014-07-29T17:46:41Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:81','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-07-29T17:46:43Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:81+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-07-29T17:46:45Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2430,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:81+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-29T17:46:41Z\",\"objLastModDate\":\"2014-07-29T17:46:41Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A81/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A81/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
+        Star Wars Guide to Fun in the Sun'],'desc_metadata__creator_tesim'=>['The
+        Man'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__available_tesim'=>['Avail
+        1','Travail'],'desc_metadata__description_tesim'=>['Interesting topic','But
+        poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition 1'],'desc_metadata__series_tesim'=>['Series
+        1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__citation_tesim'=>['Shouldn\\'t have jumped the turnstile','Shouldn\\'t
+        have ran a red light'],'desc_metadata__identifier_tesim'=>['rec123'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-07-29T17:46:45.382Z','score'=>1.0},{'system_create_dtsi'=>'2014-07-29T18:32:44Z','system_modified_dtsi'=>'2014-07-29T18:32:44Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:86','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-07-29T18:32:44Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:86+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-07-29T18:32:46Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2430,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:86+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-29T18:32:44Z\",\"objLastModDate\":\"2014-07-29T18:32:44Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A86/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A86/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
+        Star Wars Guide to Fun in the Sun'],'desc_metadata__creator_tesim'=>['The
+        Man'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__available_tesim'=>['Avail
+        1','Travail'],'desc_metadata__description_tesim'=>['Interesting topic','But
+        poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition 1'],'desc_metadata__series_tesim'=>['Series
+        1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__citation_tesim'=>['Shouldn\\'t have jumped the turnstile','Shouldn\\'t
+        have ran a red light'],'desc_metadata__identifier_tesim'=>['rec123'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-07-29T18:32:46.754Z','score'=>1.0},{'system_create_dtsi'=>'2014-07-29T18:58:31Z','system_modified_dtsi'=>'2014-07-29T18:58:31Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:95','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-07-29T18:58:31Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":281,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:95+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-07-29T18:58:33Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2430,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:95+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-29T18:58:31Z\",\"objLastModDate\":\"2014-07-29T18:58:31Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A95/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A95/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
+        Star Wars Guide to Fun in the Sun'],'desc_metadata__creator_tesim'=>['The
+        Man'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__available_tesim'=>['Avail
+        1','Travail'],'desc_metadata__description_tesim'=>['Interesting topic','But
+        poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition 1'],'desc_metadata__series_tesim'=>['Series
+        1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__citation_tesim'=>['Shouldn\\'t have jumped the turnstile','Shouldn\\'t
+        have ran a red light'],'desc_metadata__identifier_tesim'=>['rec123'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-07-29T18:58:33.567Z','score'=>1.0},{'system_create_dtsi'=>'2014-07-30T15:08:56Z','system_modified_dtsi'=>'2014-07-30T15:08:56Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:112','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-07-30T15:08:56Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":282,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:112+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-07-30T15:08:59Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2459,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:112+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-30T15:08:56Z\",\"objLastModDate\":\"2014-07-30T15:08:56Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A112/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A112/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['A
+        Star Wars Guide to Fun in the Sun'],'desc_metadata__creator_tesim'=>['The
+        Man'],'desc_metadata__available_tesim'=>['Avail 1','Travail'],'desc_metadata__description_tesim'=>['Interesting
+        topic','But poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition
+        1'],'desc_metadata__series_tesim'=>['Series 1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest
+        Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__citation_tesim'=>['Shouldn\\'t have jumped the turnstile','Shouldn\\'t
+        have ran a red light'],'desc_metadata__identifier_tesim'=>['rec123'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-07-30T15:08:59.1Z','score'=>1.0},{'system_create_dtsi'=>'2014-07-30T17:31:24Z','system_modified_dtsi'=>'2014-07-30T17:31:24Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:118','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-07-30T17:31:24Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":282,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:118+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-07-30T17:31:25Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1760,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:118+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-30T17:31:24Z\",\"objLastModDate\":\"2014-07-30T17:31:24Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A118/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A118/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['LION'],'desc_metadata__creator_tesim'=>['Hugh
+        Plisher'],'desc_metadata__available_tesim'=>['http://library.nyu.edu'],'desc_metadata__description_tesim'=>['Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non posuere lectus.
+        In facilisis, arcu nec tempor vulputate, justo elit aliquet sapien, in tincidunt
+        lorem purus eu nulla.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_DCPLION_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_DCPLION_10cavDSS.BOLIVAR'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['relation1'],'desc_metadata__rights_tesim'=>['rights1'],'desc_metadata__subject_tesim'=>['vexillology'],'desc_metadata__publisher_tesim'=>['Rosie'],'desc_metadata__format_tesim'=>['ZIP'],'desc_metadata__citation_tesim'=>['Cite','Me'],'desc_metadata__identifier_tesim'=>['NYCDCP_DCPLION_10CAV_2'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-07-30T17:31:25.822Z','score'=>1.0},{'system_create_dtsi'=>'2014-08-01T16:22:30Z','system_modified_dtsi'=>'2014-08-01T16:22:30Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:131','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-08-01T16:22:30Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":282,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:131+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-08-01T16:22:31Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1761,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:131+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-08-01T16:22:30Z\",\"objLastModDate\":\"2014-08-01T16:22:30Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A131/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A131/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['LION'],'desc_metadata__creator_tesim'=>['Hugh
+        Plisher'],'desc_metadata__available_tesim'=>['http://library.nyu.edu'],'desc_metadata__description_tesim'=>['Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non posuere lectus.
+        In facilisis, arcu nec tempor vulputate, justo elit aliquet sapien, in tincidunt
+        lorem purus eu nulla.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_DCPLION_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_DCPLION_10cavDSS.BOLIVAR'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__language_tesim'=>['English'],'desc_metadata__relation_tesim'=>['relation1'],'desc_metadata__rights_tesim'=>['rights1'],'desc_metadata__subject_tesim'=>['vexillology'],'desc_metadata__publisher_tesim'=>['Rosie'],'desc_metadata__format_tesim'=>['ZIP'],'desc_metadata__citation_tesim'=>['Cite','Me'],'desc_metadata__identifier_tesim'=>['NYCDCP_DCPLION_10CAV_38'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-08-01T16:22:31.875Z','score'=>1.0},{'system_create_dtsi'=>'2014-08-05T16:49:37Z','system_modified_dtsi'=>'2014-08-05T16:49:37Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:144','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-08-05T16:49:37Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":282,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:144+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-08-05T16:49:40Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2459,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:144+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-08-05T16:49:37Z\",\"objLastModDate\":\"2014-08-05T16:49:37Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A144/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A144/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'desc_metadata__title_tesim'=>['A
+        Star Wars Guide to Fun in the Sun'],'desc_metadata__creator_tesim'=>['The
+        Man'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__available_tesim'=>['Avail
+        1','Travail'],'desc_metadata__description_tesim'=>['Interesting topic','But
+        poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition 1'],'desc_metadata__series_tesim'=>['Series
+        1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__citation_tesim'=>['Shouldn\\'t have jumped the turnstile','Shouldn\\'t
+        have ran a red light'],'desc_metadata__identifier_tesim'=>['rec123'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-05T16:49:40.963Z','score'=>1.0},{'system_create_dtsi'=>'2014-08-05T16:51:21Z','system_modified_dtsi'=>'2014-08-05T16:51:21Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:145','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-08-05T16:51:21Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":282,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:145+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-08-05T16:51:23Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2459,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:145+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-08-05T16:51:21Z\",\"objLastModDate\":\"2014-08-05T16:51:21Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A145/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A145/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'desc_metadata__title_tesim'=>['A
+        Star Wars Guide to Fun in the Sun'],'desc_metadata__creator_tesim'=>['The
+        Man'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__available_tesim'=>['Avail
+        1','Travail'],'desc_metadata__description_tesim'=>['Interesting topic','But
+        poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition 1'],'desc_metadata__series_tesim'=>['Series
+        1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__citation_tesim'=>['Shouldn\\'t have jumped the turnstile','Shouldn\\'t
+        have ran a red light'],'desc_metadata__identifier_tesim'=>['rec123'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-05T16:51:24.038Z','score'=>1.0},{'system_create_dtsi'=>'2014-08-05T18:23:26Z','system_modified_dtsi'=>'2014-08-05T18:23:26Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:147','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-08-05T18:23:27Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":282,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:147+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2014-08-05T18:23:27Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":523,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:147+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-08-05T18:23:28Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2463,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:147+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-08-05T18:23:26Z\",\"objLastModDate\":\"2014-08-05T18:23:26Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A147/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A147/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__title_tesim'=>['A
+        Star Wars Guide to Fun in the Sun'],'desc_metadata__creator_tesim'=>['The
+        Man'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__available_tesim'=>['Avail
+        1','Travail'],'desc_metadata__description_tesim'=>['Interesting topic','But
+        poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition 1'],'desc_metadata__series_tesim'=>['Series
+        1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__citation_tesim'=>['Shouldn\\'t have jumped the turnstile','Shouldn\\'t
+        have ran a red light'],'desc_metadata__identifier_tesim'=>['gis_record'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-05T18:23:29.267Z','score'=>1.0},{'system_create_dtsi'=>'2014-08-05T16:58:45Z','system_modified_dtsi'=>'2014-08-05T16:58:45Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'changeme:146','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-08-05T16:58:45Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":282,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:146+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.0\",\"dsCreateDate\":\"2014-08-05T16:58:47Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":2459,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"changeme:146+descMetadata+descMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-08-05T16:58:45Z\",\"objLastModDate\":\"2014-08-05T16:58:45Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A146/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/changeme%3A146/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'desc_metadata__title_tesim'=>['A
+        Star Wars Guide to Fun in the Sun'],'desc_metadata__creator_tesim'=>['The
+        Man'],'desc_metadata__publisher_tesim'=>['NYU'],'desc_metadata__available_tesim'=>['Avail
+        1','Travail'],'desc_metadata__description_tesim'=>['Interesting topic','But
+        poorly written'],'desc_metadata__edition_tesim'=>['Ed 1','Edition 1'],'desc_metadata__series_tesim'=>['Series
+        1','Series I'],'desc_metadata__version_tesim'=>['V1','Latest Version'],'desc_metadata__date_tesim'=>['12/05/2014','04/01/1666'],'desc_metadata__format_tesim'=>['PDF','DNS'],'desc_metadata__language_tesim'=>['en','ger'],'desc_metadata__relation_tesim'=>['x
+        is to y as y is to z','one and a two and a'],'desc_metadata__rights_tesim'=>['remain
+        silent','hire an attorney'],'desc_metadata__subject_tesim'=>['Cryptozoology','Vexillology'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__citation_tesim'=>['Shouldn\\'t have jumped the turnstile','Shouldn\\'t
+        have ran a red light'],'desc_metadata__identifier_tesim'=>['rec123'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'timestamp'=>'2014-08-05T16:58:47.644Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'desc_metadata__type_sim'=>['Geospatial
+        Data',155],'desc_metadata__creator_sim'=>['The Man',9,'Hugh Plisher',2],'desc_metadata__subject_sim'=>['Cryptozoology',9,'Vexillology',9,'vexillology',2],'desc_metadata__language_sim'=>['en',9,'ger',9,'English',2],'collection_sim'=>['Spatial
+        Data Repository',150,'ESRI',120]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:34 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?facet.field=collection_sim&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&q=New%20York%20City%20Fire%20Battalions&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&spellcheck.q=New%20York%20City%20Fire%20Battalions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Mon, 11 Aug 2014 20:59:34 GMT
+      Etag:
+      - ! '"YTkzODAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>8,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','q'=>'New York City Fire Battalions','spellcheck.q'=>'New
+        York City Fire Battalions','qf'=>'desc_metadata__title_tesim desc_metadata__author_tesim
+        desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim','collection_sim'],'qt'=>'search','wt'=>'ruby','fq'=>['{!raw
+        f=desc_metadata__type_sim}Geospatial Data','-has_model_ssim:\"info:fedora/afmodel:FileAsset\"'],'rows'=>'10'}},'response'=>{'numFound'=>3,'start'=>0,'maxScore'=>0.122999854,'docs'=>[{'system_create_dtsi'=>'2014-07-29T20:10:28Z','system_modified_dtsi'=>'2014-08-11T20:59:32Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.11\",\"dsCreateDate\":\"2014-08-11T20:59:33Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":315,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+RELS-EXT+RELS-EXT.11\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.11\",\"dsCreateDate\":\"2014-08-11T20:59:33Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+rightsMetadata+rightsMetadata.11\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.15\",\"dsCreateDate\":\"2014-08-11T20:59:33Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1632,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+descMetadata+descMetadata.15\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-07-29T20:10:28Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":374,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2014-08-01T18:17:24Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1632,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-29T20:10:28Z\",\"objLastModDate\":\"2014-08-11T20:59:32Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyfb_05R'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['New York City Fire
+        Battalions'],'desc_metadata__publisher_tesim'=>['New York City Department
+        of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfb_05R.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['The service area boundaries for
+        New York City\\'s fire battalions.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_ADMIN_BNDRY_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyfb_05R'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-08-11T20:59:34.058Z','score'=>0.122999854},{'system_create_dtsi'=>'2014-07-29T20:10:29Z','system_modified_dtsi'=>'2014-08-06T16:19:47Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.5\",\"dsCreateDate\":\"2014-08-11T20:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":315,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V+RELS-EXT+RELS-EXT.5\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.3\",\"dsCreateDate\":\"2014-08-11T20:58:38Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V+rightsMetadata+rightsMetadata.3\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.5\",\"dsCreateDate\":\"2014-08-11T20:58:38Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1630,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V+descMetadata+descMetadata.5\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-07-29T20:10:29Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":374,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2014-08-01T18:17:24Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1630,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-29T20:10:29Z\",\"objLastModDate\":\"2014-08-06T16:19:47Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyfc_O5V'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['New York City Fire
+        Companies'],'desc_metadata__publisher_tesim'=>['New York City Department of
+        City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfc_O5V.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['The service area boundaries for
+        New York City\\'s fire companies.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_ADMIN_BNDRY_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyfc_O5V'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-08-11T20:58:38.675Z','score'=>0.06586511},{'system_create_dtsi'=>'2014-07-29T20:10:30Z','system_modified_dtsi'=>'2014-08-06T16:19:49Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfd_854','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.5\",\"dsCreateDate\":\"2014-08-11T20:58:38Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":315,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfd_854+RELS-EXT+RELS-EXT.5\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.3\",\"dsCreateDate\":\"2014-08-11T20:58:39Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfd_854+rightsMetadata+rightsMetadata.3\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.5\",\"dsCreateDate\":\"2014-08-11T20:58:39Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1630,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfd_854+descMetadata+descMetadata.5\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-07-29T20:10:30Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":374,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfd_854+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2014-08-01T18:17:25Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1630,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfd_854+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-29T20:10:30Z\",\"objLastModDate\":\"2014-08-06T16:19:49Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfd_854/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfd_854/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyfd_854'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['New York City Fire
+        Divisions'],'desc_metadata__publisher_tesim'=>['New York City Department of
+        City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfd_854.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['The service area boundaries for
+        New York City\\'s fire companies.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_ADMIN_BNDRY_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyfd_854'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-08-11T20:58:39.912Z','score'=>0.06586511}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'desc_metadata__type_sim'=>['Geospatial
+        Data',3],'desc_metadata__creator_sim'=>[],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>[],'collection_sim'=>['Spatial
+        Data Repository',3]},'facet_dates'=>{},'facet_ranges'=>{}},'spellcheck'=>{'suggestions'=>['correctlySpelled',true]}}\n"
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:34 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R&qt=document&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Mon, 11 Aug 2014 20:59:34 GMT
+      Etag:
+      - ! '"YTkzODAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>0,''params''=>{''fl''=>''*'',''echoParams''=>''all'',''q''=>''{!raw
+        f=id v=$id}'',''rows''=>''1'',''id''=>''sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R'',''qt''=>''document'',''wt''=>''ruby''}},''response''=>{''numFound''=>1,''start''=>0,''docs''=>[{''system_create_dtsi''=>''2014-07-29T20:10:28Z'',''system_modified_dtsi''=>''2014-08-11T20:59:32Z'',''object_state_ssi''=>''A'',''active_fedora_model_ssi''=>''Nyucore'',''id''=>''sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R'',''object_profile_ssm''=>[''{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora
+        Object-to-Object Relationship Metadata","dsVersionID":"RELS-EXT.11","dsCreateDate":"2014-08-11T20:59:33Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":315,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+RELS-EXT+RELS-EXT.11","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"rightsMetadata":{"dsLabel":null,"dsVersionID":"rightsMetadata.11","dsCreateDate":"2014-08-11T20:59:33Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":null,"dsControlGroup":"M","dsSize":556,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+rightsMetadata+rightsMetadata.11","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"descMetadata":{"dsLabel":null,"dsVersionID":"descMetadata.15","dsCreateDate":"2014-08-11T20:59:33Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1632,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+descMetadata+descMetadata.15","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"DC":{"dsLabel":"Dublin
+        Core Record for this object","dsVersionID":"DC1.0","dsCreateDate":"2014-07-29T20:10:28Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":"http://www.openarchives.org/OAI/2.0/oai_dc/","dsControlGroup":"X","dsSize":374,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+DC+DC1.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"source_metadata":{"dsLabel":null,"dsVersionID":"source_metadata.0","dsCreateDate":"2014-08-01T18:17:24Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1632,"dsVersionable":true,"dsInfoType":null,"dsLocation":"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+source_metadata+source_metadata.0","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/afmodel:Nyucore","info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-07-29T20:10:28Z","objLastModDate":"2014-08-11T20:59:32Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewItemIndex","objState":"A"}''],''edit_access_group_ssim''=>[''gis_cataloger'',''admin_group''],''desc_metadata__identifier_tesim''=>[''DSS.NYCDCP_Admin_Bndry_10cav\\DSS.nyfb_05R''],''desc_metadata__addinfolink_tesim''=>[''http://nyu.libguides.com/content.php?pid=169769&sid=1489817''],''desc_metadata__addinfotext_tesim''=>[''GIS
+        Dataset Instructions''],''desc_metadata__title_tesim''=>[''New York City Fire
+        Battalions''],''desc_metadata__publisher_tesim''=>[''New York City Department
+        of City Planning''],''desc_metadata__available_tesim''=>[''http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfb_05R.zip''],''desc_metadata__type_tesim''=>[''Geospatial
+        Data''],''desc_metadata__description_tesim''=>[''The service area boundaries
+        for New York City\''s fire battalions.''],''desc_metadata__edition_tesim''=>[''10C''],''desc_metadata__series_tesim''=>[''NYCDCP_ADMIN_BNDRY_10CAV''],''desc_metadata__version_tesim''=>[''DSS.NYCDCP_Admin_Bndry_10cav\\DSS.nyfb_05R''],''has_model_ssim''=>[''info:fedora/afmodel:Nyucore''],''collection_ssm''=>[''Spatial
+        Data Repository''],''timestamp''=>''2014-08-11T20:59:34.058Z''}]}}
+
+'
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?facet=false&facet.field=collection_sim&fl=*&fq=-has_model_ssim:%22info:fedora/afmodel:FileAsset%22&q=New%20York%20City%20Fire%20Battalions&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim&qt=search&rows=2&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&spellcheck.q=New%20York%20City%20Fire%20Battalions&start=0&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Mon, 11 Aug 2014 20:59:34 GMT
+      Etag:
+      - ! '"YTkzODAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{'responseHeader'=>{'status'=>0,'QTime'=>8,'params'=>{'facet'=>'false','fl'=>'*','sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','start'=>'0','q'=>'New York City
+        Fire Battalions','spellcheck.q'=>'New York City Fire Battalions','qf'=>'desc_metadata__title_tesim
+        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim','facet.field'=>['desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim','collection_sim'],'qt'=>'search','wt'=>'ruby','fq'=>['{!raw
+        f=desc_metadata__type_sim}Geospatial Data','-has_model_ssim:\"info:fedora/afmodel:FileAsset\"'],'rows'=>'2'}},'response'=>{'numFound'=>3,'start'=>0,'docs'=>[{'system_create_dtsi'=>'2014-07-29T20:10:28Z','system_modified_dtsi'=>'2014-08-11T20:59:32Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.11\",\"dsCreateDate\":\"2014-08-11T20:59:33Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":315,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+RELS-EXT+RELS-EXT.11\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.11\",\"dsCreateDate\":\"2014-08-11T20:59:33Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+rightsMetadata+rightsMetadata.11\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.15\",\"dsCreateDate\":\"2014-08-11T20:59:33Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1632,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+descMetadata+descMetadata.15\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-07-29T20:10:28Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":374,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2014-08-01T18:17:24Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1632,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-29T20:10:28Z\",\"objLastModDate\":\"2014-08-11T20:59:32Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyfb_05R'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['New York City Fire
+        Battalions'],'desc_metadata__publisher_tesim'=>['New York City Department
+        of City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfb_05R.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['The service area boundaries for
+        New York City\\'s fire battalions.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_ADMIN_BNDRY_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyfb_05R'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-08-11T20:59:34.058Z'},{'system_create_dtsi'=>'2014-07-29T20:10:29Z','system_modified_dtsi'=>'2014-08-06T16:19:47Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.5\",\"dsCreateDate\":\"2014-08-11T20:58:37Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":315,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V+RELS-EXT+RELS-EXT.5\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.3\",\"dsCreateDate\":\"2014-08-11T20:58:38Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V+rightsMetadata+rightsMetadata.3\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"descMetadata.5\",\"dsCreateDate\":\"2014-08-11T20:58:38Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1630,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V+descMetadata+descMetadata.5\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2014-07-29T20:10:29Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":374,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2014-08-01T18:17:24Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1630,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/afmodel:Nyucore\",\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-07-29T20:10:29Z\",\"objLastModDate\":\"2014-08-06T16:19:47Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/sdr%3ADSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfc_O5V/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['gis_cataloger','admin_group'],'desc_metadata__identifier_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyfc_O5V'],'desc_metadata__addinfolink_tesim'=>['http://nyu.libguides.com/content.php?pid=169769&sid=1489817'],'desc_metadata__addinfotext_tesim'=>['GIS
+        Dataset Instructions'],'desc_metadata__title_tesim'=>['New York City Fire
+        Companies'],'desc_metadata__publisher_tesim'=>['New York City Department of
+        City Planning'],'desc_metadata__available_tesim'=>['http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfc_O5V.zip'],'desc_metadata__type_tesim'=>['Geospatial
+        Data'],'desc_metadata__description_tesim'=>['The service area boundaries for
+        New York City\\'s fire companies.'],'desc_metadata__edition_tesim'=>['10C'],'desc_metadata__series_tesim'=>['NYCDCP_ADMIN_BNDRY_10CAV'],'desc_metadata__version_tesim'=>['DSS.NYCDCP_Admin_Bndry_10cav\\\\DSS.nyfc_O5V'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'collection_ssm'=>['Spatial
+        Data Repository'],'timestamp'=>'2014-08-11T20:58:38.675Z'}]},'spellcheck'=>{'suggestions'=>['correctlySpelled',true]}}\n"
+    http_version: 
+  recorded_at: Mon, 11 Aug 2014 20:59:35 GMT
+recorded_with: VCR 2.8.0

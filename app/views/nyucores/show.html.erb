@@ -1,0 +1,8 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @item.title %>
+</p>
+
+<%- if can?(:edit, @item) %><%= link_to 'Edit', edit_nyucore_path(@item) %><%- end %>
+<%= link_to 'Back', nyucores_path %>

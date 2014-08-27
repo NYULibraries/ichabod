@@ -1,63 +1,81 @@
-# Multistage
-require 'capistrano/ext/multistage'
-# Load bundler-capistrano gem
-require "bundler/capistrano"
-# Load rvm-capistrano gem
-require "rvm/capistrano"
-# Multistage
-require 'capistrano/ext/multistage'
-require "dotenv/capistrano"
+require 'nyulibraries/deploy/capistrano'
 
-# Environments
-set :stages, ["staging"]
-set :default_stage, "staging"
-
-set :ssh_options, {:forward_agent => true}
-set(:app_title) { "hydra-nyu" }
-set(:application) { "#{app_title}_repos" }
-
-# RVM  vars
-set :rvm_ruby_string, "1.9.3-p448"
-set :rvm_type, :user
-
-# Git vars
-set :repository, "git@github.com:NYULibraries/hydra-nyu.git" 
-set :scm, :git
-set :deploy_via, :checkout
-set(:branch, 'master') unless exists?(:branch)
-set :git_enable_submodules, 1
-
-set :keep_releases, 5
-set :use_sudo, false
-
-set :app_path, ENV["APP_PATH"]
-set(:deploy_to) { "#{app_path}#{application}" }
+set :app_title, "ichabod"
 
 namespace :deploy do
-  task :create_symlink do
-    run "rm -rf #{app_path}#{app_title} && ln -s #{current_path}/public #{app_path}#{app_title}"
-  end
-  task :create_current_path_symlink do
-    run "rm -rf #{current_path} && ln -s #{current_release} #{current_path}"
-  end
+  # task :create_symlink do
+  #   run "rm -rf #{app_path}#{app_title} && ln -s #{current_path}/public #{app_path}#{app_title}"
+  # end
+  # task :create_current_path_symlink do
+  #   run "rm -rf #{current_path} && ln -s #{current_release} #{current_path}"
+  # end
   task :create_jetty_symlink do
     run "ln -s #{shared_path}/jetty #{current_path}/jetty"
   end
-  task :create_env_symlink do
-    run "rm -rf #{current_path}/.env && ln -s #{shared_path}/.env #{current_path}/.env"
+  # task :create_env_symlink do
+  #   run "rm -rf #{current_path}/.env && ln -s #{shared_path}/.env #{current_path}/.env"
+  # end
+  # task :passenger_symlink do
+  #  run "rm -rf #{current_path} && ln -s #{current_release} #{current_path}"
+  # end
+end
+
+namespace :rosie do
+  # desc "Set variables for the Rosie the Riveter ingest tasks"
+  task :set_variables do
+    set :rosie_endpoint_url, ENV['ICHABOD_ROSIE_ENDPOINT_URL']
+    set :rosie_user, ENV['ICHABOD_ROSIE_USER']
+    set :rosie_password, ENV['ICHABOD_ROSIE_PASSWORD']
+  end
+  task :import do
+    set_variables
+    run "cd #{current_path}; bundle exec rake ichabod:load['rosie_the_riveter',#{rosie_endpoint_url},#{rosie_user},#{rosie_password}]"
+  end
+  task :delete do
+    set_variables
+    run "cd #{current_path}; bundle exec rake ichabod:delete['rosie_the_riveter',#{rosie_endpoint_url},#{rosie_user},#{rosie_password}]"
   end
 end
 
 namespace :ingest do
-  task :load_xml_data do
-    run "bundle exec rake hydra_nyu:load[./ingest/sdr.xml,sdr]"
-    run "bundle exec rake hydra_nyu:load[./ingest/stern.xml,fda]"
+  task :load_sdr do
+    run "cd #{current_path}; bundle exec rake ichabod:load['spatial_data_repository','./ingest/sdr.xml']"
   end
-  task :clean_xml_data do
-    run "bundle exec rake hydra_nyu:delete[./ingest/sdr.xml,sdr]"
-    run "bundle exec rake hydra_nyu:delete[./ingest/stern.xml,fda]"
+  task :load_fda do
+    run "cd #{current_path}; bundle exec rake ichabod:load['faculty_digital_archive','./ingest/stern.xml']"
+  end
+  task :load_lib_guides do
+    run "cd #{current_path}; bundle exec rake ichabod:load['lib_guides','./ingest/libguides.xml']"
+  end
+  task :delete_sdr do
+    run "cd #{current_path}; bundle exec rake ichabod:delete['spatial_data_repository','./ingest/sdr.xml']"
+  end
+  task :delete_fda do
+    run "cd #{current_path}; bundle exec rake ichabod:delete['faculty_digital_archive','./ingest/stern.xml']"
+  end
+  task :delete_lib_guides do
+    run "cd #{current_path}; bundle exec rake ichabod:delete['lib_guides','./ingest/libguides.xml']"
   end
 end
 
-before "deploy", "rvm:install_ruby"
-after "deploy", "deploy:cleanup", "deploy:create_symlink", "deploy:create_current_path_symlink", "deploy:create_jetty_symlink", "deploy:create_env_symlink"
+namespace :cache do
+  task :tmp_clear do
+    # Do nothing
+  end
+end
+
+namespace :jetty do
+  desc "Shutdown previous version of jetty on server"
+  task :stop do
+    run "cd #{current_path}; bundle exec rake jetty:stop"
+  end
+  desc "Startup new jetty for current release"
+  task :start do
+    run "cd #{current_path}; bundle exec rake jetty:start"
+  end
+end
+
+before "deploy", "jetty:stop"
+after "deploy", "deploy:create_jetty_symlink", "jetty:start"
+
+# after "deploy", "deploy:create_symlink", "deploy:create_current_path_symlink", "deploy:create_env_symlink"
