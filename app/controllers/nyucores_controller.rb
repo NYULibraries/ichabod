@@ -29,7 +29,7 @@ class NyucoresController < ApplicationController
 
   def create
     @item = Nyucore.new(item_params)
-    #authorize! :create, @item
+    authorize! :create, @item
     flash[:notice] = 'Item was successfully created.' if @item.save
     respond_with(@item)
   end
