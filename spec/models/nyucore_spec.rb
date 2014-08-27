@@ -47,7 +47,7 @@ describe Nyucore, vcr: {cassette_name: "models/nyucore", record: :once} do
         expect(nyucore.native_metadata.send(field)).to be_blank
         subject
         expect(nyucore.native_metadata.send(field)).to be_present
-        expect(nyucore.native_metadata.send(field)).to eq value
+        expect(nyucore.native_metadata.send(field)).to eq [value]
       end
       context 'when the value is correctly passed in as an Array' do
         let(:value) { ['1', '2'] }
