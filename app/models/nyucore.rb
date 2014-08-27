@@ -56,6 +56,34 @@ class Nyucore < ActiveFedora::Base
     end
   end
 
+  # Return source metadata OR native metadata from the attribute readers for
+  # fields with single values
+  # Examples
+  #   pid = 'prefix:pid'
+  #   nyucore = Nyucore.new(pid: pid)
+  #   # => <Nyucore>
+  #   nyucore.identifier= 'native_identifier'
+  #   # => nil
+  #   nyucore.identifier
+  #   # => 'native_identifier'
+  #   nyucore.source_metadata.identifier = 'source_identifier'
+  #   # => nil
+  #   nyucore.identifier
+  #   # => 'source_identifier'
+  FIELDS[:single].each do |field|
+    define_method(field) do
+      value ||= begin
+        if source_metadata.send(field).present?
+          source_metadata.send(field)
+        else
+          native_metadata.send(field)
+        end
+      end
+      # ActiveFedora forces the first value and so do we.
+      # https://github.com/projecthydra/active_fedora/blob/v6.7.6/lib/active_fedora/attributes.rb#L153
+      self.class.multiple?(field) ? value : value.first
+    end
+  end
 
   ##
   # Refine data before saving into solr
