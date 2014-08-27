@@ -63,12 +63,18 @@ RSpec.configure do |config|
   config.filter_run_excluding half_baked: true
 
   config.before(:suite) do
-    # Run factory girl lint before the suite
-    FactoryGirl.lint
     # Startout by trucating all the tables
     DatabaseCleaner.clean_with :truncation
     # Then use transactions to roll back other changes
     DatabaseCleaner.strategy = :transaction
+
+    # Run factory girl lint before the suite
+    begin
+      DatabaseCleaner.start
+      FactoryGirl.lint
+    ensure
+      DatabaseCleaner.clean
+    end
   end
 
   config.around(:each) do |example|
