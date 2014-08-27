@@ -14,6 +14,8 @@
 <% nyucore_ds_fields.each do |field| %>
     <div>
       <%= f.label field[:name] %>
+      <!-- Process all datastreams, and handle "multiples" by adding a form element per -->
+      <!-- Technically, probably better to move the "if multiple / else" blocks around for more clarity -->
       <% @item.datastreams.each do |ds| %>
         <% if ["native_metadata", "source_metadata"].include? ds.first %>
 
@@ -28,10 +30,13 @@
             <% end %>
         <% end %>
       <% end %>
+      <!-- Then add the additional blank native_metadata element for any field that is multiple -->
       <% if field[:multiple] == true  %>
         <%= f.input field[:name], label: false, input_html: { name: "nyucore[#{field[:name].to_s}][]", value: nil, class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], "native_metadata") } %>
+      <!-- For single fields, if the source_metadata's populated add the element from source -->
       <% elsif @item.source_metadata.send(field[:name]) != [] %> 
         <%= f.input field[:name], input_html: { name: "nyucore[#{field[:name].to_s}][]", value: "#{@item.source_metadata.send(field[:name]).first}" , class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], "source_metadata") }, label: false, disabled: cannot?(:edit, :source_metadata) %>
+      <!-- otherwise, add the native_metadata form element -->
       <% else %>
         <%= f.input field[:name], label: false, input_html: { name: "nyucore[#{field[:name].to_s}]", value: "#{@item.native_metadata.send(field[:name]).first}", class: "new_#{field[:name].to_s}", id: nyucore_form_id(field[:name], "native_metadata") } %>
       <% end %>
