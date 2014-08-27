@@ -7,8 +7,8 @@ class Nyucore < ActiveFedora::Base
                   :rights, :subject, :series, :version],
     :single => [:identifier]
   }
-
   EXTRAS = [:addinfolink, :addinfotext]
+  METADATA_STREAMS = ['source_metadata', 'native_metadata']
 
   # Delegate writers for attributes to the native_metadata datastream.
   # This happens by default since the native_metadata element is the last one
@@ -27,7 +27,6 @@ class Nyucore < ActiveFedora::Base
   #   # => nil
   #   nyucore.title
   #   # => ['Source Title', 'Native Title']
-  METADATA_STREAMS = ['source_metadata', 'native_metadata']
   METADATA_STREAMS.each do |metadata_stream|
     has_metadata metadata_stream, type: NyucoreRdfDatastream
     has_attributes *FIELDS[:single], datastream: metadata_stream, multiple: false
