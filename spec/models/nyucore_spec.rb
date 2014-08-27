@@ -7,6 +7,13 @@ describe Nyucore, vcr: {cassette_name: "models/nyucore"} do
     it { should be_a Hash }
     it { should have_key :single }
     it { should have_key :multiple }
+    it 'should have the appropriate single fields'
+    it 'should have the appropriate multiple fields'
+  end
+
+  describe Nyucore::EXTRAS do
+    subject { Nyucore::EXTRAS }
+    it { should ea [:addinfolink, :addinfotext] }
   end
 
   subject(:nyucore) { build(:nyucore) }
