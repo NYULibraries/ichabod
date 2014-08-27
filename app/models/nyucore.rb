@@ -35,23 +35,27 @@ class Nyucore < ActiveFedora::Base
     has_attributes *EXTRAS, datastream: metadata_stream, multiple: true
   end
 
-  attr_accessible = *FIELD_LIST[:single], *FIELD_LIST[:multiple]
-  
-  FIELD_LIST[:multiple].concat(FIELD_LIST[:single]).each do |attr_name|
-    puts #{attr_name}
-    define_method("#{attr_name}=") do |argument|
-      #puts "#{attr_name}|" + argument
-      #@nyucore.source_metadata.send("#{attribute}=".to_sym, send(attribute))
-      #"performing #{action.gsub('_', ' ')} on #{argument}"
-#binding.pry
-      self.native_metadata.send("#{attr_name}=", argument)
+  # Return both source AND native metadata value from the attribute readers
+  # for attribute with multiple values
+  #
+  # Examples
+  #   pid = 'prefix:pid'
+  #   nyucore = Nyucore.new(pid: pid)
+  #   # => <Nyucore>
+  #   nyucore.title= 'Native Title'
+  #   # => nil
+  #   nyucore.title
+  #   # => ['Native Title']
+  #   nyucore.source_metadata.title = 'Source Title'
+  #   # => nil
+  #   nyucore.title
+  #   # => ['Source Title', 'Native Title']
+  (FIELDS[:multiple] + EXTRAS).each do |field|
+    define_method(field) do
+      source_metadata.send(field) + native_metadata.send(field)
     end
   end
 
-  #def title=(value)
-  #  #self.native_metadata.title.concat(value)
-  #  self.native_metadata.title = value
-  #end
 
   ##
   # Refine data before saving into solr
