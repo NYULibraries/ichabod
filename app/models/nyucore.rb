@@ -1,20 +1,39 @@
 class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
 
-  FIELD_LIST = {
-    :multiple => [:addinfolink, :addinfotext, :available, :citation, :title, :creator,
-                  :type, :publisher, :description, :edition, :date, :format, :language,
-                  :relation, :rights, :subject, :series, :version],
+  FIELDS = {
+    :multiple => [:available, :citation, :title, :creator, :type, :publisher,
+                  :description, :edition, :date, :format, :language, :relation,
+                  :rights, :subject, :series, :version],
     :single => [:identifier]
   }
 
-  has_metadata 'native_metadata', type: NyucoreRdfDatastream
-  has_metadata 'source_metadata', type: NyucoreRdfDatastream
+  EXTRAS = [:addinfolink, :addinfotext]
 
-  has_attributes *FIELD_LIST[:single], datastream: 'native_metadata', multiple: false
-  has_attributes *FIELD_LIST[:single], datastream: 'source_metadata', multiple: false
-  has_attributes *FIELD_LIST[:multiple], datastream: 'native_metadata', multiple: true
-  has_attributes *FIELD_LIST[:multiple], datastream: 'source_metadata', multiple: true
+  # Delegate writers for attributes to the native_metadata datastream.
+  # This happens by default since the native_metadata element is the last one
+  # in the Array and ActiveFedora sets it as the writer for the attribute on the
+  # model
+  #
+  # Examples
+  #   pid = 'prefix:pid'
+  #   nyucore = Nyucore.new(pid: pid)
+  #   # => <Nyucore>
+  #   nyucore.title= 'Native Title'
+  #   # => nil
+  #   nyucore.title
+  #   # => ['Native Title']
+  #   nyucore.source_metadata.title = 'Source Title'
+  #   # => nil
+  #   nyucore.title
+  #   # => ['Source Title', 'Native Title']
+  METADATA_STREAMS = ['source_metadata', 'native_metadata']
+  METADATA_STREAMS.each do |metadata_stream|
+    has_metadata metadata_stream, type: NyucoreRdfDatastream
+    has_attributes *FIELDS[:single], datastream: metadata_stream, multiple: false
+    has_attributes *FIELDS[:multiple], datastream: metadata_stream, multiple: true
+    has_attributes *EXTRAS, datastream: metadata_stream, multiple: true
+  end
 
   attr_accessible = *FIELD_LIST[:single], *FIELD_LIST[:multiple]
   
