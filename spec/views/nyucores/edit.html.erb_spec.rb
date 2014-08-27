@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe "nyucores/edit", vcr: { cassette_name: "nyucore show edit form" } do
+  let(:item) { create(:nyucore) }
   let(:user) { create(:user) }
-  let(:item) { create(:valid_nyucore) }
   before(:each) { @item = item }
   before(:each) { controller.stub(:current_user).and_return(user) }
 
