@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe UserSessionsController do
-
   describe "GET /validate" do
     it "should create a new user session" do
       get :validate, user_session: { username: "dev123" }
@@ -10,5 +9,4 @@ describe UserSessionsController do
       expect(response).to redirect_to root_url
     end
   end
-
 end
