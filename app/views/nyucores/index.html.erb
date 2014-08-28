@@ -1,5 +1,4 @@
 <h1>Listing Items</h1>
-
 <table class="table">
   <thead>
     <tr>
@@ -9,7 +8,6 @@
       <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @items.each do |item| %>
       <tr>
@@ -24,8 +22,5 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-
-<br>
-
+</table><br>
 <%= link_to 'New Item', new_nyucore_path %>
