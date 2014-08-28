@@ -20,6 +20,8 @@ FactoryGirl.define do
     publisher ["Rosie"]
     format ["ZIP"]
     citation ["Cite", "Me"]
+    addinfotext ["Ask a Librarian"]
+    addinfolink ["http://library.nyu.edu/ask"]
 
     factory :gis_record do
       after(:build) {|record| record.set_edit_groups(['gis_cataloger'],[]) }
