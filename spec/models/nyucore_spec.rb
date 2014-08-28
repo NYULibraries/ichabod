@@ -133,8 +133,9 @@ describe Nyucore do
     end
   end
 
-  # Some meta programming to test all the multi-valued Nyucore attributes
-  Nyucore::FIELDS[:multiple].each do |field|
+  # Some meta programming to test all the multi-valued Nyucore attributes and
+  # extra Ichabod attributes
+  (Nyucore::FIELDS[:multiple] + Nyucore::EXTRAS).each do |field|
     # Generic test for validity
     it { should be_valid }
     # Generic test for presence
