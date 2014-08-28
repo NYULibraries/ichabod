@@ -3,6 +3,7 @@
 # in a VCR cassette since saving Fedora records in Hydra requires an http call
 FactoryGirl.define do
   factory :nyucore do
+    sequence(:identifier) { |n| "#{series.first}_#{n}" }
     title ["LION"]
     creator ["Hugh Plisher"]
     available ["http://library.nyu.edu"]
@@ -19,7 +20,6 @@ FactoryGirl.define do
     publisher ["Rosie"]
     format ["ZIP"]
     citation ["Cite", "Me"]
-    sequence(:identifier) { |n| "#{series.first}_#{n}" }
 
     factory :gis_record do
       after(:build) {|record| record.set_edit_groups(['gis_cataloger'],[]) }
