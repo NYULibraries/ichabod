@@ -22,9 +22,10 @@ FactoryGirl.define do
     citation ["Cite", "Me"]
     addinfotext ["Ask a Librarian"]
     addinfolink ["http://library.nyu.edu/ask"]
+    after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
 
     factory :gis_record do
-      after(:build) {|record| record.set_edit_groups(['gis_cataloger'],[]) }
+      after(:build) { |record| record.set_edit_groups(['gis_cataloger'],[]) }
       # Don't dare put an underscore in this pid or it'll explode
       initialize_with { new(pid: 'testgisrecord:123') }
     end
