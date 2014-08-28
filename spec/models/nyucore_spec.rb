@@ -23,6 +23,8 @@ describe Nyucore do
   end
 
   subject(:nyucore) { build(:nyucore) }
+  # Generic test for validity
+  it { should be_valid }
 
   describe '#native_metadata' do
     subject { nyucore.native_metadata }
@@ -41,6 +43,8 @@ describe Nyucore do
 
   # Some meta programming to test all the single-valued Nyucore attributes
   Nyucore::FIELDS[:single].each do |field|
+    # Generic test for validity
+    it { should be_valid }
     # Generic test for presence
     its(field) { should be_present }
 
@@ -132,6 +136,8 @@ describe Nyucore do
 
   # Some meta programming to test all the multi-valued Nyucore attributes
   Nyucore::FIELDS[:multiple].each do |field|
+    # Generic test for validity
+    it { should be_valid }
     # Generic test for presence
     its(field) { should be_present }
 
@@ -209,6 +215,7 @@ describe Nyucore do
     context "when the #{field} value is set at initialization" do
       let(:value) { "#{field}" }
       subject { build(:nyucore, field => value) }
+      it { should be_valid }
       its(field) { should be_present }
       its(field) { should be_an Array }
       its(field) { should include value }
