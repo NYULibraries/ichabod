@@ -90,7 +90,7 @@ class Nyucore < ActiveFedora::Base
       end
       # ActiveFedora forces the first value and so do we.
       # https://github.com/projecthydra/active_fedora/blob/v6.7.6/lib/active_fedora/attributes.rb#L153
-      self.class.multiple?(field) ? value : value.first
+      value.first
     end
   end
 
