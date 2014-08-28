@@ -48,7 +48,6 @@ describe Nyucore do
     # Generic test for presence
     its(field) { should be_present }
 
-
     # Test the attribute writers
     describe "##{field}=" do
       let(:value) { "Native #{field}" }
