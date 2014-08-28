@@ -10,23 +10,10 @@ class Nyucore < ActiveFedora::Base
   EXTRAS = [:addinfolink, :addinfotext]
   METADATA_STREAMS = ['source_metadata', 'native_metadata']
 
-  # Delegate writers for attributes to the native_metadata datastream.
-  # This happens by default since the native_metadata element is the last one
-  # in the Array and ActiveFedora sets it as the writer for the attribute on the
-  # model
-  #
-  # Examples
-  #   pid = 'prefix:pid'
-  #   nyucore = Nyucore.new(pid: pid)
-  #   # => <Nyucore>
-  #   nyucore.title= 'Native Title'
-  #   # => nil
-  #   nyucore.title
-  #   # => ['Native Title']
-  #   nyucore.source_metadata.title = 'Source Title'
-  #   # => nil
-  #   nyucore.title
-  #   # => ['Source Title', 'Native Title']
+  # Add multiple metadata streams to the model and include the attributes we
+  # want on each stream. AcitveFedora::Base.has_attributes sets the attribute
+  # readers and writers, which we explictly override below, but this gives us
+  # our base.
   METADATA_STREAMS.each do |metadata_stream|
     has_metadata metadata_stream, type: NyucoreRdfDatastream
     has_attributes *FIELDS[:single], datastream: metadata_stream, multiple: false
