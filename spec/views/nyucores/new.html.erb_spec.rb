@@ -1,14 +1,13 @@
-# require 'spec_helper'
-#
-# describe "nyucores/new", vcr: { cassette_name: "nyucore show new form" } do
-#   let(:item) { create(:valid_nyucore) }
-#   before(:each) { @item = item }
-#
-#   it "should render the new nyucore form" do
-#     render
-#
-#     assert_select "form[action=?][method=?]", nyucores_path, "post" do
-#       assert_select "input#nyucore_title[name=?]", "nyucore[title]"
-#     end
-#   end
-# end
+require 'spec_helper'
+describe 'nyucores/new' do
+  let(:user) { create(:user) }
+  let(:item) { build(:nyucore) }
+  before do
+    allow(controller).to receive(:current_user).and_return(user)
+    assign(:item, item)
+  end
+  it 'should render the new nyucore form' do
+    render
+    expect(rendered).to match /New Item/
+  end
+end
