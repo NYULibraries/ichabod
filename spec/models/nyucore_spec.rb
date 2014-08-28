@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Nyucore, vcr: {cassette_name: "models/nyucore"} do
+describe Nyucore do
 
   describe Nyucore::FIELDS do
     subject { Nyucore::FIELDS }
@@ -99,7 +99,7 @@ describe Nyucore, vcr: {cassette_name: "models/nyucore"} do
           it { should eq native_value }
         end
         context 'and there is no native metadata' do
-          let(:nyucore) { create(:nyucore, field => nil) }
+          let(:nyucore) { build(:nyucore, field => nil) }
           it { should be_nil }
         end
       end
@@ -108,7 +108,7 @@ describe Nyucore, vcr: {cassette_name: "models/nyucore"} do
 
     # Test that the fields get set correctly at initialization
     context "when the #{field} value is set at initialization" do
-      subject { create(:nyucore, field => value) }
+      subject { build(:nyucore, field => value) }
       context "and the value is a String" do
         let(:value) { '1' }
         its(field) { should be_present }
