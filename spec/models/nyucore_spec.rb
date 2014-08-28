@@ -7,8 +7,14 @@ describe Nyucore do
     it { should be_a Hash }
     it { should have_key :single }
     it { should have_key :multiple }
-    it 'should have the appropriate single fields'
-    it 'should have the appropriate multiple fields'
+    it 'should have the appropriate single fields' do
+      expect(subject[:single]).to eq [:identifier]
+    end
+    it 'should have the appropriate multiple fields' do
+      expect(subject[:multiple]).to eq [:available, :citation, :title,
+        :creator, :type, :publisher, :description, :edition, :date, :format,
+        :language, :relation, :rights, :subject, :series, :version]
+    end
   end
 
   describe Nyucore::EXTRAS do
