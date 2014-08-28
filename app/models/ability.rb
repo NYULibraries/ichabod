@@ -11,11 +11,5 @@ class Ability
     if user_groups.include?('admin_group') || user_groups.include?('gis_cataloger')
       can [:new, :create], ActiveFedora::Base
     end
-     can [:new, :create, :edit, :update], NyucoreRdfDatastream do |ds|
-      ds.dsid.to_sym == :native_metadata
-    end   
   end
-
-
-
 end
