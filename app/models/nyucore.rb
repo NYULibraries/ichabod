@@ -44,8 +44,8 @@ class Nyucore < ActiveFedora::Base
     def_delegators :native_metadata, "#{field}=".to_sym
   end
 
-  # Return both source AND native metadata value from the attribute readers
-  # for attribute with multiple values
+  # Override the attribute readers to return both source AND native metadata
+  # values for attribute with multiple values
   #
   # Examples
   #   pid = 'prefix:pid'
@@ -65,8 +65,8 @@ class Nyucore < ActiveFedora::Base
     end
   end
 
-  # Return source metadata OR native metadata from the attribute readers for
-  # fields with single values
+  # Override the attribute readers to return source metadata OR native metadata
+  # values for attributes with single values
   # Examples
   #   pid = 'prefix:pid'
   #   nyucore = Nyucore.new(pid: pid)
