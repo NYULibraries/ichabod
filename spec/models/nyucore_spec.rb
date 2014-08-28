@@ -19,7 +19,7 @@ describe Nyucore do
 
   describe Nyucore::EXTRAS do
     subject { Nyucore::EXTRAS }
-    it { should ea [:addinfolink, :addinfotext] }
+    it { should eq [:addinfolink, :addinfotext] }
   end
 
   subject(:nyucore) { build(:nyucore) }
