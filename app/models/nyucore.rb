@@ -21,6 +21,29 @@ class Nyucore < ActiveFedora::Base
     has_attributes *EXTRAS, datastream: metadata_stream, multiple: true
   end
 
+  # Override the attribute writers by delegating to the native_metadata
+  # datastream. While this actually happens by default since the native_metadata
+  # element is the last one in the METADATA_STREAMS Array and
+  # ActiveFedora::Base.has_attributes defines the attribute writer method for the
+  # the model, we don't want to depend on the order, since it could change.
+  #
+  # Examples
+  #   pid = 'prefix:pid'
+  #   nyucore = Nyucore.new(pid: pid)
+  #   # => <Nyucore>
+  #   nyucore.title= 'Native Title'
+  #   # => nil
+  #   nyucore.title
+  #   # => ['Native Title']
+  #   nyucore.source_metadata.title = 'Source Title'
+  #   # => nil
+  #   nyucore.title
+  #   # => ['Source Title', 'Native Title']
+  extend Forwardable
+  (FIELDS[:single] + FIELDS[:multiple] + EXTRAS).each do |field|
+    def_delegators :native_metadata, "#{field}=".to_sym
+  end
+
   # Return both source AND native metadata value from the attribute readers
   # for attribute with multiple values
   #
