@@ -17,9 +17,9 @@ class FacultyDigitalArchive < Ichabod::ResourceSet::Base
     identifiers = resource.identifier
     identifiers.each do |identifier|
       if identifier.starts_with? "http://"
-        nyucore.available = identifier
+        nyucore.source_metadata.available = identifier
       else
-        nyucore.citation = identifier
+        nyucore.source_metadata.citation = identifier
       end
     end
   end
@@ -27,7 +27,7 @@ class FacultyDigitalArchive < Ichabod::ResourceSet::Base
   def set_http_identifier(*args)
     resource, nyucore = *args
     identifiers = resource.identifier
-    nyucore.identifier = identifiers.find do |identifier|
+    nyucore.source_metadata.identifier = identifiers.find do |identifier|
       identifier.starts_with? 'http://'
     end
   end
