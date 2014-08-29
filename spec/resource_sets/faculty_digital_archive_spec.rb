@@ -28,7 +28,7 @@ describe FacultyDigitalArchive do
     subject(:create) { faculty_digital_archive.create }
     it { should be_an Array }
     describe 'a Nyucore record' do
-      subject { create[1] }
+      subject { create[index] }
       context 'when the record has multiple identifiers' do
         let(:index) { 1 }
         its(:pid) { should eq 'fda:hdl-handle-net-2451-27761' }
