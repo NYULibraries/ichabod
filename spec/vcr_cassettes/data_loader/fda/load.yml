@@ -1,0 +1,1418 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?fl=id&q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Nyucore%22%20AND%20id:%22fda%5C:hdl-handle-net-2451-14097%22&qt=standard&rows=1000&sort=system_create_dtsi%20asc&start=0&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Fri, 29 Aug 2014 03:26:54 GMT
+      Etag:
+      - ! '"OTg0MDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>1,''params''=>{''fl''=>''id'',''sort''=>''system_create_dtsi
+        asc'',''start''=>''0'',''q''=>''_query_:"{!raw f=has_model_ssim}info:fedora/afmodel:Nyucore"
+        AND id:"fda\\:hdl-handle-net-2451-14097"'',''qt''=>''standard'',''wt''=>''ruby'',''rows''=>''1000''}},''response''=>{''numFound''=>0,''start''=>0,''docs''=>[]}}
+
+'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:18 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=j3xy5vg96efv1cnpregx62o0d;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:18 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-14097'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=18q2ki5cxoqm31lm7owcakuz4p;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:19 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-14097'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=oatb7rnlsoqe1v7fnrmn5iufv;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:19 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-14097'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=147boz0uyjkhy1v4rt7vypnedh;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:19 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-14097'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097/datastreams/source_metadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=pz5xsmak1eud1qlvrhfelozt5;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:19 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-14097'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097/datastreams/native_metadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=c6is7w4zdizuj2wyri4etxhu;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:19 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-14097'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:19 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - text/xml
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=2z8nzm0gscyp1320eep9ryem0;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:19 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14097
+      Content-Length:
+      - '29'
+    body:
+      encoding: US-ASCII
+      string: fda:hdl-handle-net-2451-14097
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:19 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=12fttz89j2lztm3xoj1xj0vho;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:19 GMT
+      Content-Length:
+      - '972'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="fda:hdl-handle-net-2451-14097"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-08-29T03:27:19.105Z</objCreateDate><objLastModDate>2014-08-29T03:27:19.105Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14097/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14097/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:19 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097/datastreams/RELS-EXT?controlGroup=X&dsLabel=Fedora%20Object-to-Object%20Relationship%20Metadata&dsState=A&mimeType=application/rdf%2Bxml&versionable=true
+    body:
+      encoding: UTF-8
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"
+        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/fda:hdl-handle-net-2451-14097\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"/>\n  </rdf:Description>\n</rdf:RDF>\n"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/rdf+xml
+      Multipart:
+      - 'true'
+      Content-Length:
+      - '323'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=stss1jmfj6pe1eg5ziu89oz2a;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:19 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14097/datastreams/RELS-EXT
+      Content-Length:
+      - '951'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-14097"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-08-29T03:27:19.464Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>299</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-14097+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:19 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097/datastreams/rightsMetadata?controlGroup=M&dsState=A&mimeType=text/xml&versionable=true
+    body:
+      encoding: US-ASCII
+      string: ! "<rightsMetadata xmlns=\"http://hydra-collab.stanford.edu/schemas/rightsMetadata/v1\"
+        version=\"0.1\">\n  <copyright>\n    <human type=\"title\"/>\n    <human type=\"description\"/>\n
+        \   <machine type=\"uri\"/>\n  </copyright>\n  <access type=\"discover\">\n
+        \   <human/>\n    <machine/>\n  </access>\n  <access type=\"read\">\n    <human/>\n
+        \   <machine/>\n  </access>\n  <access type=\"edit\">\n    <human/>\n    <machine>\n
+        \     <group>admin_group</group>\n      <group>fda_cataloger</group>\n    </machine>\n
+        \ </access>\n  <embargo>\n    <human/>\n    <machine/>\n  </embargo>\n</rightsMetadata>"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - text/xml
+      Multipart:
+      - 'true'
+      Content-Length:
+      - '556'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=dmvje5meiubp1lral69p2bslt;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:19 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14097/datastreams/rightsMetadata
+      Content-Length:
+      - '930'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-14097"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.0</dsVersionID><dsCreateDate>2014-08-29T03:27:19.504Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>556</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-14097+rightsMetadata+rightsMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:19 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097/datastreams/source_metadata?controlGroup=M&dsState=A&mimeType=text/plain&versionable=true
+    body:
+      encoding: UTF-8
+      string: ! '<info:fedora/fda:hdl-handle-net-2451-14097> <http://purl.org/dc/terms/title>
+        "FDA Title" .
+
+        <info:fedora/fda:hdl-handle-net-2451-14097> <http://purl.org/dc/terms/creator>
+        "Alter, Scampi" .
+
+        <info:fedora/fda:hdl-handle-net-2451-14097> <http://purl.org/dc/terms/type>
+        "Working Paper" .
+
+        <info:fedora/fda:hdl-handle-net-2451-14097> <http://purl.org/dc/terms/publisher>
+        "Stern" .
+
+        <info:fedora/fda:hdl-handle-net-2451-14097> <http://purl.org/dc/terms/description>
+        "We model " .
+
+        <info:fedora/fda:hdl-handle-net-2451-14097> <http://purl.org/dc/terms/date>
+        "2014" .
+
+        <info:fedora/fda:hdl-handle-net-2451-14097> <http://purl.org/dc/terms/format>
+        "application/pdf" .
+
+        <info:fedora/fda:hdl-handle-net-2451-14097> <http://purl.org/dc/terms/language>
+        "English" .
+
+        <info:fedora/fda:hdl-handle-net-2451-14097> <http://purl.org/dc/terms/relation>
+        "CeDER-05-01" .
+
+        <info:fedora/fda:hdl-handle-net-2451-14097> <http://purl.org/dc/terms/subject>
+        "imperfect competition" .
+
+        <info:fedora/fda:hdl-handle-net-2451-14097> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "http://hdl.handle.net/2451/14097" .
+
+        <info:fedora/fda:hdl-handle-net-2451-14097> <http://purl.org/dc/terms/identifier>
+        "http://hdl.handle.net/2451/14097" .
+
+'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - text/plain
+      Multipart:
+      - 'true'
+      Content-Length:
+      - '1199'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=yk9yg5mkqahxzl6jrn8p11ps;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14097/datastreams/source_metadata
+      Content-Length:
+      - '937'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-14097"
+        dsID="source_metadata" ><dsLabel></dsLabel><dsVersionID>source_metadata.0</dsVersionID><dsCreateDate>2014-08-29T03:27:20.996Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1199</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-14097+source_metadata+source_metadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1x3kroplkfvgf1tzgv2lxka18h;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Content-Length:
+      - '951'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-14097"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-08-29T03:27:19.464Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>299</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-14097+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=chc3oitfah0g1egehe2tt8mzr;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Content-Length:
+      - '930'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-14097"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.0</dsVersionID><dsCreateDate>2014-08-29T03:27:19.504Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>556</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-14097+rightsMetadata+rightsMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-14097/datastreams/source_metadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1b3havqrk7teh1xxmelnwypo7u;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Content-Length:
+      - '937'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-14097"
+        dsID="source_metadata" ><dsLabel></dsLabel><dsVersionID>source_metadata.0</dsVersionID><dsCreateDate>2014-08-29T03:27:20.996Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>1199</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-14097+source_metadata+source_metadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="system_create_dtsi">2014-08-29T03:27:19Z</field><field
+        name="system_modified_dtsi">2014-08-29T03:27:19Z</field><field name="object_state_ssi">A</field><field
+        name="active_fedora_model_ssi">Nyucore</field><field name="id">fda:hdl-handle-net-2451-14097</field><field
+        name="object_profile_ssm">{"datastreams":{"RELS-EXT":{"dsLabel":"Fedora Object-to-Object
+        Relationship Metadata","dsVersionID":"RELS-EXT.0","dsCreateDate":"2014-08-29T03:27:19Z","dsState":"A","dsMIME":"application/rdf+xml","dsFormatURI":null,"dsControlGroup":"X","dsSize":299,"dsVersionable":true,"dsInfoType":null,"dsLocation":"fda:hdl-handle-net-2451-14097+RELS-EXT+RELS-EXT.0","dsLocationType":null,"dsChecksumType":"DISABLED","dsChecksum":"none"},"rightsMetadata":{"dsLabel":null,"dsVersionID":"rightsMetadata.0","dsCreateDate":"2014-08-29T03:27:19Z","dsState":"A","dsMIME":"text/xml","dsFormatURI":null,"dsControlGroup":"M","dsSize":556,"dsVersionable":true,"dsInfoType":null,"dsLocation":"fda:hdl-handle-net-2451-14097+rightsMetadata+rightsMetadata.0","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"source_metadata":{"dsLabel":null,"dsVersionID":"source_metadata.0","dsCreateDate":"2014-08-29T03:27:20Z","dsState":"A","dsMIME":"text/plain","dsFormatURI":null,"dsControlGroup":"M","dsSize":1199,"dsVersionable":true,"dsInfoType":null,"dsLocation":"fda:hdl-handle-net-2451-14097+source_metadata+source_metadata.0","dsLocationType":"INTERNAL_ID","dsChecksumType":"DISABLED","dsChecksum":"none"},"native_metadata":{}},"objLabel":null,"objOwnerId":"fedoraAdmin","objModels":["info:fedora/fedora-system:FedoraObject-3.0"],"objCreateDate":"2014-08-29T03:27:19Z","objLastModDate":"2014-08-29T03:27:19Z","objDissIndexViewURL":"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14097/methods/fedora-system%3A3/viewMethodIndex","objItemIndexViewURL":"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-14097/methods/fedora-system%3A3/viewItemIndex","objState":"A"}</field><field
+        name="edit_access_group_ssim">admin_group</field><field name="edit_access_group_ssim">fda_cataloger</field><field
+        name="desc_metadata__title_tesim">FDA Title</field><field name="desc_metadata__creator_tesim">Alter,
+        Scampi</field><field name="desc_metadata__creator_sim">Alter, Scampi</field><field
+        name="desc_metadata__type_tesim">Working Paper</field><field name="desc_metadata__type_sim">Working
+        Paper</field><field name="desc_metadata__publisher_tesim">Stern</field><field
+        name="desc_metadata__description_tesim">We model </field><field name="desc_metadata__date_tesim">2014</field><field
+        name="desc_metadata__format_tesim">application/pdf</field><field name="desc_metadata__language_tesim">English</field><field
+        name="desc_metadata__language_sim">English</field><field name="desc_metadata__relation_tesim">CeDER-05-01</field><field
+        name="desc_metadata__subject_tesim">imperfect competition</field><field name="desc_metadata__subject_sim">imperfect
+        competition</field><field name="desc_metadata__available_tesim">http://hdl.handle.net/2451/14097</field><field
+        name="desc_metadata__identifier_tesim">http://hdl.handle.net/2451/14097</field><field
+        name="has_model_ssim">info:fedora/afmodel:Nyucore</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>5}}
+
+'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><commit/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>17}}
+
+'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?fl=id&q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Nyucore%22%20AND%20id:%22fda%5C:hdl-handle-net-2451-27761%22&qt=standard&rows=1000&sort=system_create_dtsi%20asc&start=0&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Etag:
+      - ! '"ZDg0MDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>7,''params''=>{''fl''=>''id'',''sort''=>''system_create_dtsi
+        asc'',''start''=>''0'',''q''=>''_query_:"{!raw f=has_model_ssim}info:fedora/afmodel:Nyucore"
+        AND id:"fda\\:hdl-handle-net-2451-27761"'',''qt''=>''standard'',''wt''=>''ruby'',''rows''=>''1000''}},''response''=>{''numFound''=>0,''start''=>0,''docs''=>[]}}
+
+'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761/datastreams?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=sbv6tugi5icm14ecznd6yrqof;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-27761'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=dtjvi29wl3epuidfxd873syt;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-27761'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=g5g88mdus0juuxvmanophqre;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-27761'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1go7nqpu6jyu5dvco0iss6ty5;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-27761'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761/datastreams/source_metadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=8gnhuswy7w5m1hjpnybohmstd;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-27761'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761/datastreams/native_metadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Set-Cookie:
+      - JSESSIONID=u0ez3tsvq5361pyhqdj5de1by;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/plain
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Content-Length:
+      - '68'
+    body:
+      encoding: US-ASCII
+      string: ! 'Object not found in low-level storage: fda:hdl-handle-net-2451-27761'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - text/xml
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1dmivo6jmozxv1n5nu4ae5xmzm;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-27761
+      Content-Length:
+      - '29'
+    body:
+      encoding: US-ASCII
+      string: fda:hdl-handle-net-2451-27761
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=wllo6phutm4i8u5le98e3b89;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Content-Length:
+      - '972'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="fda:hdl-handle-net-2451-27761"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model></objModels><objCreateDate>2014-08-29T03:27:21.415Z</objCreateDate><objLastModDate>2014-08-29T03:27:21.415Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-27761/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-27761/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761/datastreams/RELS-EXT?controlGroup=X&dsLabel=Fedora%20Object-to-Object%20Relationship%20Metadata&dsState=A&mimeType=application/rdf%2Bxml&versionable=true
+    body:
+      encoding: UTF-8
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"
+        xmlns:ns0=\"info:fedora/fedora-system:def/model#\">\n  <rdf:Description rdf:about=\"info:fedora/fda:hdl-handle-net-2451-27761\">\n
+        \   <ns0:hasModel rdf:resource=\"info:fedora/afmodel:Nyucore\"/>\n  </rdf:Description>\n</rdf:RDF>\n"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/rdf+xml
+      Multipart:
+      - 'true'
+      Content-Length:
+      - '323'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1caixrz4i5ggn1a2lcuonuthfl;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:21 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-27761/datastreams/RELS-EXT
+      Content-Length:
+      - '951'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-27761"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-08-29T03:27:21.960Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>299</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-27761+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:21 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761/datastreams/rightsMetadata?controlGroup=M&dsState=A&mimeType=text/xml&versionable=true
+    body:
+      encoding: US-ASCII
+      string: ! "<rightsMetadata xmlns=\"http://hydra-collab.stanford.edu/schemas/rightsMetadata/v1\"
+        version=\"0.1\">\n  <copyright>\n    <human type=\"title\"/>\n    <human type=\"description\"/>\n
+        \   <machine type=\"uri\"/>\n  </copyright>\n  <access type=\"discover\">\n
+        \   <human/>\n    <machine/>\n  </access>\n  <access type=\"read\">\n    <human/>\n
+        \   <machine/>\n  </access>\n  <access type=\"edit\">\n    <human/>\n    <machine>\n
+        \     <group>admin_group</group>\n      <group>fda_cataloger</group>\n    </machine>\n
+        \ </access>\n  <embargo>\n    <human/>\n    <machine/>\n  </embargo>\n</rightsMetadata>"
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - text/xml
+      Multipart:
+      - 'true'
+      Content-Length:
+      - '556'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=33rvfddif4s69aknaceaaapl;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:22 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-27761/datastreams/rightsMetadata
+      Content-Length:
+      - '930'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-27761"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.0</dsVersionID><dsCreateDate>2014-08-29T03:27:21.998Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>556</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-27761+rightsMetadata+rightsMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:22 GMT
+- request:
+    method: post
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761/datastreams/source_metadata?controlGroup=M&dsState=A&mimeType=text/plain&versionable=true
+    body:
+      encoding: UTF-8
+      string: ! '<info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/title>
+        "IT Assets, Organizational Capabilities, and Firm Performance: How Resource
+        Allocations and Organizational Differences Explain Performance Variation"
+        .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/creator>
+        "Aral, Sinan" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/creator>
+        "Weill, Peter" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/type>
+        "Article" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/publisher>
+        "Organization Science" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/description>
+        "\n          Despite evidence of a positive relationship between information
+        technology (IT) investments and firm performance,\n          results still
+        vary across firms and performance measures. We explore two organizational
+        explanations for this variation:\n          differences in firms’ IT investment
+        allocations and their IT capabilities. We develop a theoretical model of IT
+        resources,\n          defined as the combination of specific IT assets and
+        organizational IT capabilities. We argue that investments into different\n          IT
+        assets are guided by firms’ strategies (e.g., cost leadership or innovation)
+        and deliver value along performance dimensions\n          consistent with
+        their strategic purpose. We hypothesize that firms derive additional value
+        per IT dollar through a mutually\n          reinforcing system of organizational
+        IT capabilities built on complementary practices and competencies. Empirically,
+        we\n          test the impact of IT assets, IT capabilities, and their combination
+        on four dimensions of firm performance: market\n          valuation, profitability,
+        cost, and innovation. Our results—based on data on IT investment allocations
+        and IT capabilities\n          in 147 U.S. firms from 1999 to 2002—demonstrate
+        that IT investment allocations and organizational IT capabilities drive\n          differences
+        in firm performance. Firms’ total IT investment is not associated with performance,
+        but investments in specific\n          IT assets explain performance differences
+        along dimensions consistent with their strategic purpose. In addition, a system\n          of
+        organizational IT capabilities strengthens the performance effects of IT assets
+        and broadens their impact beyond their\n          intended purpose. The results
+        help explain variance in returns to IT capital across firms and expand our
+        understanding of\n          alignment between IT and organizations. We illustrate
+        our findings with examples from a case study of 7-Eleven Japan\n        "
+        .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/description>
+        "NYU, Stern School of Business, IOMS department, Center for Digital Economy
+        Research" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/date>
+        "2008-11-10T21:37:47Z" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/date>
+        "2007-09" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/format>
+        "187093 bytes" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/format>
+        "application/pdf" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/language>
+        "en_US" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/relation>
+        "CeDER-PP-2007-12" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/relation>
+        "http://archive.nyu.edu/bitstream/2451/27761/2/CPP-12-07.pdf" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/relation>
+        "http://archive.nyu.edu/bitstream/2451/27761/3/CPP-12-07.pdf.txt" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/subject>
+        "Business value of information technology" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/subject>
+        "information technology assets" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/subject>
+        "resource-based theory" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/subject>
+        "complementarities" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/subject>
+        "IT infrastructure" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/subject>
+        "IT capabilities" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/subject>
+        "IT practices" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/subject>
+        "firm performance" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://harper.bobst.nyu.edu/data/nyucore#citation>
+        "Vol. 18, No. 5, September-October 2007, pp. 763-780" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://harper.bobst.nyu.edu/data/nyucore#available>
+        "http://hdl.handle.net/2451/27761" .
+
+        <info:fedora/fda:hdl-handle-net-2451-27761> <http://purl.org/dc/terms/identifier>
+        "http://hdl.handle.net/2451/27761" .
+
+'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - text/plain
+      Multipart:
+      - 'true'
+      Content-Length:
+      - '4988'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Set-Cookie:
+      - JSESSIONID=14pqqeh2ekv7d1aorogqfyawx7;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:24 GMT
+      Location:
+      - http://127.0.0.1:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-27761/datastreams/source_metadata
+      Content-Length:
+      - '937'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-27761"
+        dsID="source_metadata" ><dsLabel></dsLabel><dsVersionID>source_metadata.0</dsVersionID><dsCreateDate>2014-08-29T03:27:24.833Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>4988</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-27761+source_metadata+source_metadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:24 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761/datastreams/RELS-EXT?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1fib7zxvbgbb51ukbhh7ns32e8;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:24 GMT
+      Content-Length:
+      - '951'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-27761"
+        dsID="RELS-EXT" ><dsLabel>Fedora Object-to-Object Relationship Metadata</dsLabel><dsVersionID>RELS-EXT.0</dsVersionID><dsCreateDate>2014-08-29T03:27:21.960Z</dsCreateDate><dsState>A</dsState><dsMIME>application/rdf+xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>X</dsControlGroup><dsSize>299</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-27761+RELS-EXT+RELS-EXT.0</dsLocation><dsLocationType></dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:24 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761/datastreams/rightsMetadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1gxufk2v5go9d1ms70o7mhtluz;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:24 GMT
+      Content-Length:
+      - '930'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-27761"
+        dsID="rightsMetadata" ><dsLabel></dsLabel><dsVersionID>rightsMetadata.0</dsVersionID><dsCreateDate>2014-08-29T03:27:21.998Z</dsCreateDate><dsState>A</dsState><dsMIME>text/xml</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>556</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-27761+rightsMetadata+rightsMetadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:24 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/fda:hdl-handle-net-2451-27761/datastreams/source_metadata?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1tfoqw5cg9bed1j0tqypkmqy2q;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 29 Aug 2014 03:27:24 GMT
+      Content-Length:
+      - '937'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
+        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="fda:hdl-handle-net-2451-27761"
+        dsID="source_metadata" ><dsLabel></dsLabel><dsVersionID>source_metadata.0</dsVersionID><dsCreateDate>2014-08-29T03:27:24.833Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>4988</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>fda:hdl-handle-net-2451-27761+source_metadata+source_metadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:24 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?><add><doc><field name=\"system_create_dtsi\">2014-08-29T03:27:21Z</field><field
+        name=\"system_modified_dtsi\">2014-08-29T03:27:21Z</field><field name=\"object_state_ssi\">A</field><field
+        name=\"active_fedora_model_ssi\">Nyucore</field><field name=\"id\">fda:hdl-handle-net-2451-27761</field><field
+        name=\"object_profile_ssm\">{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2014-08-29T03:27:21Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":299,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-27761+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2014-08-29T03:27:21Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":556,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-27761+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2014-08-29T03:27:24Z\",\"dsState\":\"A\",\"dsMIME\":\"text/plain\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":4988,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-27761+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2014-08-29T03:27:21Z\",\"objLastModDate\":\"2014-08-29T03:27:21Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-27761/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-27761/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}</field><field
+        name=\"edit_access_group_ssim\">admin_group</field><field name=\"edit_access_group_ssim\">fda_cataloger</field><field
+        name=\"desc_metadata__title_tesim\">IT Assets, Organizational Capabilities,
+        and Firm Performance: How Resource Allocations and Organizational Differences
+        Explain Performance Variation</field><field name=\"desc_metadata__creator_tesim\">Aral,
+        Sinan</field><field name=\"desc_metadata__creator_tesim\">Weill, Peter</field><field
+        name=\"desc_metadata__creator_sim\">Aral, Sinan</field><field name=\"desc_metadata__creator_sim\">Weill,
+        Peter</field><field name=\"desc_metadata__type_tesim\">Article</field><field
+        name=\"desc_metadata__type_sim\">Article</field><field name=\"desc_metadata__publisher_tesim\">Organization
+        Science</field><field name=\"desc_metadata__description_tesim\">\n          Despite
+        evidence of a positive relationship between information technology (IT) investments
+        and firm performance,\n          results still vary across firms and performance
+        measures. We explore two organizational explanations for this variation:\n
+        \         differences in firms’ IT investment allocations and their IT capabilities.
+        We develop a theoretical model of IT resources,\n          defined as the
+        combination of specific IT assets and organizational IT capabilities. We argue
+        that investments into different\n          IT assets are guided by firms’
+        strategies (e.g., cost leadership or innovation) and deliver value along performance
+        dimensions\n          consistent with their strategic purpose. We hypothesize
+        that firms derive additional value per IT dollar through a mutually\n          reinforcing
+        system of organizational IT capabilities built on complementary practices
+        and competencies. Empirically, we\n          test the impact of IT assets,
+        IT capabilities, and their combination on four dimensions of firm performance:
+        market\n          valuation, profitability, cost, and innovation. Our results—based
+        on data on IT investment allocations and IT capabilities\n          in 147
+        U.S. firms from 1999 to 2002—demonstrate that IT investment allocations and
+        organizational IT capabilities drive\n          differences in firm performance.
+        Firms’ total IT investment is not associated with performance, but investments
+        in specific\n          IT assets explain performance differences along dimensions
+        consistent with their strategic purpose. In addition, a system\n          of
+        organizational IT capabilities strengthens the performance effects of IT assets
+        and broadens their impact beyond their\n          intended purpose. The results
+        help explain variance in returns to IT capital across firms and expand our
+        understanding of\n          alignment between IT and organizations. We illustrate
+        our findings with examples from a case study of 7-Eleven Japan\n        </field><field
+        name=\"desc_metadata__description_tesim\">NYU, Stern School of Business, IOMS
+        department, Center for Digital Economy Research</field><field name=\"desc_metadata__date_tesim\">2008-11-10T21:37:47Z</field><field
+        name=\"desc_metadata__date_tesim\">2007-09</field><field name=\"desc_metadata__format_tesim\">187093
+        bytes</field><field name=\"desc_metadata__format_tesim\">application/pdf</field><field
+        name=\"desc_metadata__language_tesim\">en_US</field><field name=\"desc_metadata__language_sim\">en_US</field><field
+        name=\"desc_metadata__relation_tesim\">CeDER-PP-2007-12</field><field name=\"desc_metadata__relation_tesim\">http://archive.nyu.edu/bitstream/2451/27761/2/CPP-12-07.pdf</field><field
+        name=\"desc_metadata__relation_tesim\">http://archive.nyu.edu/bitstream/2451/27761/3/CPP-12-07.pdf.txt</field><field
+        name=\"desc_metadata__subject_tesim\">Business value of information technology</field><field
+        name=\"desc_metadata__subject_tesim\">information technology assets</field><field
+        name=\"desc_metadata__subject_tesim\">resource-based theory</field><field
+        name=\"desc_metadata__subject_tesim\">complementarities</field><field name=\"desc_metadata__subject_tesim\">IT
+        infrastructure</field><field name=\"desc_metadata__subject_tesim\">IT capabilities</field><field
+        name=\"desc_metadata__subject_tesim\">IT practices</field><field name=\"desc_metadata__subject_tesim\">firm
+        performance</field><field name=\"desc_metadata__subject_sim\">Business value
+        of information technology</field><field name=\"desc_metadata__subject_sim\">information
+        technology assets</field><field name=\"desc_metadata__subject_sim\">resource-based
+        theory</field><field name=\"desc_metadata__subject_sim\">complementarities</field><field
+        name=\"desc_metadata__subject_sim\">IT infrastructure</field><field name=\"desc_metadata__subject_sim\">IT
+        capabilities</field><field name=\"desc_metadata__subject_sim\">IT practices</field><field
+        name=\"desc_metadata__subject_sim\">firm performance</field><field name=\"desc_metadata__citation_tesim\">Vol.
+        18, No. 5, September-October 2007, pp. 763-780</field><field name=\"desc_metadata__available_tesim\">http://hdl.handle.net/2451/27761</field><field
+        name=\"desc_metadata__identifier_tesim\">http://hdl.handle.net/2451/27761</field><field
+        name=\"has_model_ssim\">info:fedora/afmodel:Nyucore</field></doc></add>"
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>28}}
+
+'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><commit/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>67}}
+
+'
+    http_version: 
+  recorded_at: Fri, 29 Aug 2014 03:27:25 GMT
+recorded_with: VCR 2.8.0
