@@ -1,7 +1,7 @@
 require 'spec_helper'
 module Ichabod
   module ResourceSet
-    describe Resource do
+    describe Resource, vcr: {cassette_name: 'resource sets/resource'} do
       subject(:resource) { create :resource }
       it { should be_a Resource }
       its(:prefix) { should eq 'prefix' }
