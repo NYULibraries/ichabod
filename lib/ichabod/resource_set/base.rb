@@ -123,8 +123,10 @@ module Ichabod
           before_create_methods.each do |before_create_method|
             before_create_method.call(resource, nyucore)
           end
-          nyucore if nyucore.save
-          puts nyucore.identifier.to_s + " has been saved to Fedora"
+          if nyucore.save
+            Rails.logger.info("#{nyucore.pid} has been saved to Fedora")
+            nyucore
+          end
         end.compact
       end
 
