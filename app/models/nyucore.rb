@@ -61,7 +61,11 @@ class Nyucore < ActiveFedora::Base
   #   # => ['Source Title', 'Native Title']
   (FIELDS[:multiple] + EXTRAS).each do |field|
     define_method(field) do
-      source_metadata.send(field) + native_metadata.send(field)
+      source_metadata.send(field).collect do |value|
+        Metadatum.new(value, source_metadata)
+      end + native_metadata.send(field).collect do |value|
+        Metadatum.new(value, native_metadata)
+      end
     end
   end
 
@@ -81,16 +85,13 @@ class Nyucore < ActiveFedora::Base
   #   # => 'source_identifier'
   FIELDS[:single].each do |field|
     define_method(field) do
-      value ||= begin
-        if source_metadata.send(field).present?
-          source_metadata.send(field)
-        else
-          native_metadata.send(field)
-        end
-      end
       # ActiveFedora forces the first value and so do we.
       # https://github.com/projecthydra/active_fedora/blob/v6.7.6/lib/active_fedora/attributes.rb#L153
-      value.first
+      if source_metadata.send(field).present?
+        Metadatum.new(source_metadata.send(field).first, source_metadata)
+      elsif native_metadata.send(field).present?
+        Metadatum.new(native_metadata.send(field).first, native_metadata)
+      end
     end
   end
 
