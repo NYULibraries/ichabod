@@ -8,29 +8,16 @@ describe NyucoresHelper do
     it { should be_an Array }
   end
 
-  describe '#values' do
-    subject { helper.values(:title) }
-    it { should be_an Array }
-  end
-
   describe '#multiple?' do
-    subject { helper.multiple?(:title) }
-    it { should be true }
-  end
-
-  describe '#source?' do
-    subject { helper.source?(:title, item.title.first) }
-    it { should be false }
-  end
-
-  describe '#editable?' do
-    subject { helper.editable?(:title, item.title.first) }
-    it { should be true }
-  end
-
-  describe '#nyucore_presenter' do
-    subject { helper.nyucore_presenter }
-    it { should be_an NyucorePresenter }
+    subject { helper.multiple?(field) }
+    context 'when the field is "multiple"' do
+      let(:field) { :title }
+      it { should be true }
+    end
+    context 'when the field is "single"' do
+      let(:field) { :identifier }
+      it { should be false }
+    end
   end
 
   describe '#format_field_index' do
