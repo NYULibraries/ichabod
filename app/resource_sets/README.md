@@ -25,7 +25,7 @@ class SpatialDataRepository < Ichabod::ResourceSet::Base
   self.source_reader = :oai_dc_file_reader
   editor :gis_cataloger
   editor :editor1, :editor2
-  before_create :add_additional_info_link
+  before_load :add_additional_info_link
 
   attr_reader :filename
 
@@ -52,7 +52,7 @@ spatial_data_repository.source_reader
 # => Ichabod::ResourceSet::SourceReaders::OaiDcFileReader
 spatial_data_repository.editors
 # => ["admin_group", "gis_cataloger", "editor1", "editor2"]
-spatial_data_repository.before_creates
+spatial_data_repository.before_loads
 # => [:add_edit_groups, :add_additional_info_link]
 spatial_data_repository.option_key
 # => "options value"
