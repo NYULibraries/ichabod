@@ -1,8 +1,8 @@
 <%= simple_form_for item do |f| %>
   <% fields.each do |field| %>
     <div>
+      <%= f.label field %>
       <% if multiple?(field) %>
-        <%= f.label field %>
         <% values = item.send(field) %>
         <% values.each_with_index do |value, index| %>
           <% if value.source? %>
