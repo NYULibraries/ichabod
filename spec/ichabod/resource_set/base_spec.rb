@@ -129,7 +129,7 @@ module Ichabod
           it { should eql original_before_loads }
         end
         context 'when configured with before loads' do
-          before { Base.before_loads(*before_loads) }
+          before { Base.before_load(*before_loads) }
           after do
             Base.instance_variable_set(:@before_loads, original_before_loads)
           end
