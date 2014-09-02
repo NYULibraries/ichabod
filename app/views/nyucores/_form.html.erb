@@ -3,20 +3,21 @@
     <div>
       <% if multiple?(field) %>
         <%= f.label field %>
-        <% values(field).each_with_index do |value, index| %>
-          <% if editable?(field, value) %>
-            <%= f.input field, label: false, input_html: {name:"nyucore[#{field}][]", value: value, id: field_id(field, index)} %>
-          <% else %>
+        <% values = item.send(field) %>
+        <% values.each_with_index do |value, index| %>
+          <% if value.source? %>
             <div class="source"><%= value %></div>
+          <% else %>
+            <%= f.input field, label: false, input_html: {name:"nyucore[#{field}][]", value: value, id: field_id(field, index)} %>
           <% end %>
         <% end %>
-        <%= f.input field, label: false, input_html: {name:"nyucore[#{field}][]", value: nil, id: field_id(field, values(field).size)} %>
+        <%= f.input field, label: false, input_html: {name:"nyucore[#{field}][]", value: nil, id: field_id(field, values.size)} %>
       <% else %>
         <% value = item.send(field) %>
-        <% if editable?(field, value) %>
-          <%= f.input field, label: false, input_html: {name:"nyucore[#{field}]", value: value, id: field_id(field)} %>
-        <% else %>
+        <% if value.present? && value.source? %>
           <div class="source"><%= value %></div>
+        <% else %>
+          <%= f.input field, label: false, input_html: {name:"nyucore[#{field}]", value: value, id: field_id(field)} %>
         <% end %>
       <% end %>
     </div>
