@@ -31,14 +31,11 @@ module NyucoresHelper
     end
   end
 
-  extend Forwardable
-  def_delegators :nyucore_presenter, :values, :source?, :editable?, :multiple?
-
-  def nyucore_presenter
-    @nyucore_presenter ||= NyucorePresenter.new(@item)
+  def multiple?(field)
+    Nyucore.multiple?(field)
   end
 
   def field_id(field, index = nil)
-    "nyucore_#{field}#{format_field_index(values(field), index)}"
+    "nyucore_#{field}#{format_field_index(@item.send(field), index)}"
   end
 end
