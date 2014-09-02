@@ -29,6 +29,8 @@ class NyucoresController < ApplicationController
 
   def create
     @item = Nyucore.new(item_params)
+    # Ensure that there are default editors before you create the item
+    ensure_default_editors
     authorize! :create, @item
     flash[:notice] = 'Item was successfully created.' if @item.save
     respond_with(@item)
@@ -53,6 +55,10 @@ class NyucoresController < ApplicationController
   # Whitelist attrs
   def item_params
     params.require(:nyucore).permit(:identifier, title: [], creator: [], publisher: [], type: [], available: [], description: [], edition: [], series: [], version: [], date: [], format: [], language: [], relation: [], rights: [], subject: [], citation: [])
+  end
+
+  def ensure_default_editors
+    @item.set_edit_groups(["admin_group"],[]) if @item.edit_groups.blank?
   end
 
   # Convert blank values to nil values in params
