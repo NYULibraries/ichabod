@@ -2,7 +2,7 @@ class SpatialDataRepository < Ichabod::ResourceSet::Base
   self.prefix = 'sdr'
   self.source_reader = :oai_dc_file_reader
   editor :gis_cataloger
-  before_create :add_additional_info_link
+  before_load :add_additional_info_link
 
   attr_reader :filename
 

@@ -10,7 +10,7 @@ module Ichabod
         attr_accessor :prefix
       end
 
-      attr_reader :prefix, :editors, :before_creates
+      attr_reader :prefix, :editors, :before_loads
 
       def self.source_reader=(source_reader)
         unless source_reader.is_a?(Class)
@@ -85,19 +85,19 @@ module Ichabod
         self.editors.concat(editors.compact).uniq!
       end
 
-      def self.before_creates
-        @before_creates ||= gather_superclass_attributes(:before_creates)
+      def self.before_loads
+        @before_loads ||= gather_superclass_attributes(:before_loads)
       end
 
-      def self.before_create(*before_creates)
-        self.before_creates.concat(before_creates.compact).uniq!
+      def self.before_load(*before_loads)
+        self.before_loads.concat(before_loads.compact).uniq!
       end
 
       # Default editor on all ResourceSets is the admin group
       editor :admin_group
 
       # Default to adding the edit groups on create
-      before_create :add_edit_groups
+      before_load :add_edit_groups
 
       include Enumerable
       alias_method :size, :count
@@ -105,7 +105,7 @@ module Ichabod
       def initialize(*args)
         @prefix = self.class.prefix
         @editors = self.class.editors.map(&:to_s)
-        @before_creates = self.class.before_creates.map(&:to_sym)
+        @before_loads = self.class.before_loads.map(&:to_sym)
       end
 
       def read_from_source
@@ -120,8 +120,8 @@ module Ichabod
             raise RuntimeError.new("Expecting #{resource} to be a Resource")
           end
           nyucore = resource.to_nyucore
-          before_create_methods.each do |before_create_method|
-            before_create_method.call(resource, nyucore)
+          before_load_methods.each do |before_load_method|
+            before_load_method.call(resource, nyucore)
           end
           if nyucore.save
             Rails.logger.info("#{nyucore.pid} has been saved to Fedora")
@@ -148,10 +148,10 @@ module Ichabod
         nyucore.set_edit_groups(editors, []) unless editors.empty?
       end
 
-      def before_create_methods
-        @before_create_methods ||= begin
-          before_creates.collect do |before_create|
-            method(before_create)
+      def before_load_methods
+        @before_load_methods ||= begin
+          before_loads.collect do |before_load|
+            method(before_load)
           end
         end
       end
