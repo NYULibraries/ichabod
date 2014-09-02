@@ -1,10 +1,6 @@
 <p>
   <strong>Title:</strong>
-  <% if @item.source_metadata.title != [] %>
-    <%= @item.source_metadata.title[0] %>
-  <% else %>
-    <%= @item.native_metadata.title[0] %>
-  <% end %>
+  <%= @item.title %>
 </p>
-<%= link_to 'Edit', edit_nyucore_path(@item) %> |
+<%- if can?(:edit, @item) %><%= link_to 'Edit', edit_nyucore_path(@item) %><%- end %>
 <%= link_to 'Back', nyucores_path %>
