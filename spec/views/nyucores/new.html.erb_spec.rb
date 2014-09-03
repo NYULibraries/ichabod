@@ -1,6 +1,6 @@
 require 'spec_helper'
 describe 'nyucores/new' do
-  let(:user) { create(:user) }
+  let(:user) { build(:user) }
   let(:item) { build(:nyucore) }
   before do
     allow(controller).to receive(:current_user).and_return(user)
