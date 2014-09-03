@@ -65,18 +65,18 @@ describe Nyucore do
         expect(nyucore.native_metadata.send(field)).to be_present
         expect(nyucore.native_metadata.send(field)).to eq [value]
       end
-      context 'when the value is correctly passed in as an Array' do
+      context 'when the value is incorrectly passed in as an Array' do
         let(:value) { ['1', '2'] }
-        it "should set the #{field} attribute as an Array" do
+        it "should get the #{field} attribute as a String" do
           expect(nyucore.send(field)).to be_blank
           subject
           expect(nyucore.send(field)).to be_present
           expect(nyucore.send(field)).to eq value.first
         end
       end
-      context 'when the value is incorrectly passed in as a String' do
+      context 'when the value is correctly passed in as a String' do
         let(:value) { '1' }
-        it "should set the #{field} attribute as an Array" do
+        it "should get the #{field} attribute as a String" do
           expect(nyucore.send(field)).to be_blank
           subject
           expect(nyucore.send(field)).to be_present
@@ -111,6 +111,18 @@ describe Nyucore do
           let(:nyucore) { build(:nyucore, field => nil) }
           it { should be_nil }
         end
+      end
+      context 'when the source data is reset', vcr: { cassette_name: "models/nyucore/reset #{field}" } do
+        let(:old_value) { "Old #{field}" }
+        let(:new_value) { "New #{field}" }
+        before do
+          nyucore.source_metadata.send("#{field}=", old_value)
+          nyucore.save
+          nyucore.source_metadata.send("#{field}=", new_value)
+          nyucore.save
+        end
+        it { should_not eq old_value }
+        it { should eq new_value }
       end
     end
 
@@ -208,6 +220,18 @@ describe Nyucore do
           it { should_not include source_value }
           it { should_not include native_value }
         end
+      end
+      context 'when the source data is reset', vcr: { cassette_name: "models/nyucore/reset #{field}" } do
+        let(:old_value) { "Old #{field}" }
+        let(:new_value) { "New #{field}" }
+        before do
+          nyucore.source_metadata.send("#{field}=", old_value)
+          nyucore.save
+          nyucore.source_metadata.send("#{field}=", new_value)
+          nyucore.save
+        end
+        it { should_not include old_value }
+        it { should include new_value }
       end
     end
 
