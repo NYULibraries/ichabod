@@ -1,6 +1,6 @@
 require 'spec_helper'
-describe 'nyucores/edit', vcr: {cassette_name: 'views/nyucores/edit'} do
-  let(:user) { create(:user) }
+describe 'nyucores/edit', vcr: {cassette_name: 'views/nyucores/edit' } do
+  let(:user) { build(:user) }
   let(:item) { create(:nyucore) }
   before do
     allow(controller).to receive(:current_user).and_return(user)

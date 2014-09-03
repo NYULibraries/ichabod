@@ -11,7 +11,7 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.title %></td>
+        <td><%= item.title.join(', ') %></td>
         <td><%= link_to 'Show', item %></td>
         <%- if can?(:edit, @item) %><td><%= link_to 'Edit', edit_nyucore_path(item) %></td><%- end %>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
