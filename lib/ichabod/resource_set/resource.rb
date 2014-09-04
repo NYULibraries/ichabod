@@ -27,6 +27,8 @@ module Ichabod
 
       def to_nyucore
         return @nyucore unless @nyucore.nil?
+        # Use Nyucore.find(pid: pid) since Nyucore.find(pid)
+        # raises an error if it's not found
         @nyucore = Nyucore.find(pid: pid).first
         @nyucore ||= Nyucore.new(pid: pid)
         NYUCORE_ATTRIBUTES.each do |attribute|
