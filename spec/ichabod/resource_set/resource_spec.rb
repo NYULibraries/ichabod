@@ -84,6 +84,7 @@ module Ichabod
         end
       end
       describe '#to_nyucore' do
+        let(:resource) { create :resource, pid_identifier: 'to_nyucore' }
         subject { resource.to_nyucore }
         it { should be_an Nyucore }
         its(:pid) { should be_present }
