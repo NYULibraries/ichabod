@@ -86,9 +86,17 @@ module Ichabod
       describe '#to_nyucore' do
         subject { resource.to_nyucore }
         it { should be_an Nyucore }
-        it { should_not be_persisted }
-        it 'should have a pid' do
-          expect(subject.pid).to be_present
+        its(:pid) { should be_present }
+        context 'when the Nyucore does not exist' do
+          let(:nyucore) { Nyucore.find(pid: resource.pid).first }
+          before { nyucore.destroy if nyucore.present? }
+          it { should be_new }
+          it { should_not be_persisted }
+        end
+        context 'when the Nyucore does exist' do
+          before { resource.to_nyucore.save }
+          it { should_not be_new }
+          it { should be_persisted }
         end
       end
       describe '#to_s' do
