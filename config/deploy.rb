@@ -1,6 +1,7 @@
 require 'nyulibraries/deploy/capistrano'
 
 set :app_title, "ichabod"
+set :new_relic_environments, nil  # do not use new_relic at this time
 
 namespace :deploy do
   # task :create_symlink do
