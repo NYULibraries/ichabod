@@ -18,7 +18,7 @@ This branch is where all ongoing work is done. It runs parallel to master, and i
 Feature branches branch off of development and must be merged back into development. A feature branch adds end-user functionality to the application. When working on a feature branch, it is important to only make changes that are relevant to the feature you are currently working on. Thus the lifespan of the feature branch is limited to the development of that feature. As a convention, we prefix feature branch names with ```feature/```, e.g., ```feature/add-foo```.
 
 ###Chore Branches
-Chore branches branch off of development and must be merged back into development. A chore branch does not add end-user functionality, but is used for housekeeping tasks, e.g., updating a configuration file. When working on a chore branch, it is important to only make changes that are relevant to the feature you are currently working on. Thus the lifespan of the chore branch is limited to the completion of the chore. As a convention, we prefix feature branch names with ```chore/```, e.g., ```chore/update-database-config```.
+Chore branches branch off of development and must be merged back into development. A chore branch does not add end-user functionality, but is used for housekeeping tasks, e.g., updating a configuration file. When working on a chore branch, it is important to only make changes that are relevant to the chore you are currently working on. Thus the lifespan of the chore branch is limited to the completion of the chore. As a convention, we prefix chore branch names with ```chore/```, e.g., ```chore/update-database-config```.
 
 ###Unused Git-Flow Branches
 For simplicity, we shall eschew hotfix and release branches.
