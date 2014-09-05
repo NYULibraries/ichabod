@@ -13,8 +13,7 @@ module CatalogHelper
       link_to(url.text, url.value, {target: '_blank'})
     end
     links.join(field_value_separator).html_safe
-  rescue => error
-    logger.error(error)
-    nil
+    rescue ArgumentError => e
+      nil
+    end
   end
-end
