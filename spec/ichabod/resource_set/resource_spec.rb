@@ -1,7 +1,7 @@
 require 'spec_helper'
 module Ichabod
   module ResourceSet
-    describe Resource, vcr: {cassette_name: 'resource sets/resource'} do
+    describe Resource do
       subject(:resource) { create :resource }
       it { should be_a Resource }
       its(:prefix) { should eq 'prefix' }
@@ -83,18 +83,18 @@ module Ichabod
           end
         end
       end
-      describe '#to_nyucore' do
+      describe '#to_nyucore', vcr: {cassette_name: 'resource sets/resource'} do
         let(:resource) { create :resource, pid_identifier: 'to_nyucore' }
         subject { resource.to_nyucore }
         it { should be_an Nyucore }
         its(:pid) { should be_present }
-        context 'when the Nyucore does not exist' do
+        context 'when the Nyucore does not exist', vcr: {cassette_name: 'resource sets/resource/does not exist'} do
           let(:nyucore) { Nyucore.find(pid: resource.pid).first }
           before { nyucore.destroy if nyucore.present? }
           it { should be_new }
           it { should_not be_persisted }
         end
-        context 'when the Nyucore does exist' do
+        context 'when the Nyucore does exist', vcr: {cassette_name: 'resource sets/resource/exists'} do
           before { resource.to_nyucore.save }
           it { should_not be_new }
           it { should be_persisted }
