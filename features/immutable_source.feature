@@ -25,6 +25,12 @@ Feature: Source fields immutable, edit native fields
       | Edition       | 10C                                         | 
       | Series        | NYCDCP_ADMIN_BNDRY_10CAV                    |
       | Version       | DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R  | 
+    
+  @loggedin
+  Scenario: Check that native metadata fields are editable
+    Given I am logged in as "GIS Cataloger"
+    And I view record with id "sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+    When I click on "Edit"
     And I enter the fields:
       | nyucore_title1       | A Pile of Monkeys   |
       | nyucore_creator      | An Orangutan        |
@@ -32,4 +38,23 @@ Feature: Source fields immutable, edit native fields
     And I save the record
     Then I should see the message "Item was successfully updated."
     When I search on the phrase "A Pile of Monkeys"
+    Then I should see search results
+
+  @loggedin
+  Scenario: Check that native metadata multiples are editable
+    Given I am logged in as "GIS Cataloger"
+    And I view record with id "sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+    When I click on "Edit"
+    And I click on all the "+" buttons
+    And I enter the fields:
+      | nyucore_title2       | Another Monkey Title  |
+      | nyucore_creator1     | An Echidna            |
+      | nyucore_publisher2   | Another Imprint       |
+      | nyucore_description1 | A native description  |
+      | nyucore_description2 | A 2nd native desc     | 
+      | nyucore_date         | Today                 | 
+      | nyucore_date1        | Tomorrow              |
+    And I save the record
+    Then I should see the message "Item was successfully updated."
+    When I search on the phrase "Echidna"
     Then I should see search results
