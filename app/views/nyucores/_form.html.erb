@@ -4,11 +4,11 @@
       <%= f.label field %>
       <% if multiple?(field) %>
         <% values = item.send(field) %>
-        <% values.each_with_index do |value, index| %>
+        <% values.each do |value| %>
           <% if value.source? %>
             <div class="source"><%= value %></div>
           <% else %>
-            <%= f.input field, label: false, input_html: {name:"nyucore[#{field}][]", value: value, id: field_id(field, index)} %>
+            <%= f.input field, label: false, input_html: {name:"nyucore[#{field}][]", value: value, id: field_id(field, value.index)} %>
           <% end %>
         <% end %>
         <%= f.input field, label: false, input_html: {name:"nyucore[#{field}][]", value: nil, id: field_id(field)} %>

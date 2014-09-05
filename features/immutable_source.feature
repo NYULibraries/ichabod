@@ -17,24 +17,24 @@ Feature: Source fields immutable, edit native fields
     When I click on "Edit"
     Then I should see the immutable fields:
       | Identifier    | DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R   |
-      | Title         | New York City Fire Battalions               | 
-      | Publisher     | New York City Department of City Planning   | 
-      | Available     | http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfb_05R.zip | 
-      | Type          | Geospatial Data                             | 
-      | Description   | The service area boundaries for New York City's fire battalions. | 
-      | Edition       | 10C                                         | 
+      | Title         | New York City Fire Battalions               |
+      | Publisher     | New York City Department of City Planning   |
+      | Available     | http://magellan.home.nyu.edu/datasets/zips/NYCDCP_ADMIN_BNDRY_10CAV-nyfb_05R.zip |
+      | Type          | Geospatial Data                             |
+      | Description   | The service area boundaries for New York City's fire battalions. |
+      | Edition       | 10C                                         |
       | Series        | NYCDCP_ADMIN_BNDRY_10CAV                    |
-      | Version       | DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R  | 
-    
+      | Version       | DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R  |
+
   @loggedin
   Scenario: Check that native metadata fields are editable
     Given I am logged in as "GIS Cataloger"
     And I view record with id "sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
     When I click on "Edit"
     And I enter the fields:
-      | nyucore_title1       | A Pile of Monkeys   |
+      | nyucore_title        | A Pile of Monkeys   |
       | nyucore_creator      | An Orangutan        |
-      | nyucore_publisher1   | Penguin Publishing  |
+      | nyucore_publisher    | Penguin Publishing  |
     And I save the record
     Then I should see the message "Item was successfully updated."
     When I search on the phrase "A Pile of Monkeys"
@@ -47,12 +47,12 @@ Feature: Source fields immutable, edit native fields
     When I click on "Edit"
     And I click on all the "+" buttons
     And I enter the fields:
-      | nyucore_title2       | Another Monkey Title  |
+      | nyucore_title1       | Another Monkey Title  |
       | nyucore_creator1     | An Echidna            |
-      | nyucore_publisher2   | Another Imprint       |
-      | nyucore_description1 | A native description  |
-      | nyucore_description2 | A 2nd native desc     | 
-      | nyucore_date         | Today                 | 
+      | nyucore_publisher1   | Another Imprint       |
+      | nyucore_description  | A native description  |
+      | nyucore_description1 | A 2nd native desc     |
+      | nyucore_date         | Today                 |
       | nyucore_date1        | Tomorrow              |
     And I save the record
     Then I should see the message "Item was successfully updated."
