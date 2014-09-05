@@ -58,3 +58,29 @@ Feature: Source fields immutable, edit native fields
     Then I should see the message "Item was successfully updated."
     When I search on the phrase "Echidna"
     Then I should see search results
+
+  @loggedin
+  Scenario: Check that native doesn't overwrite source metadata
+    Given I am logged in as "GIS Cataloger"
+    And I view record with id "sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
+    When I click on "Edit"
+    And I enter the fields:
+      | nyucore_title        | A Pile of Monkeys   |
+      | nyucore_creator      | An Orangutan        |
+      | nyucore_publisher    | Penguin Publishing  |
+    And I save the record
+    Then I should see the message "Item was successfully updated."
+    When I search on the phrase "New York City Fire Battalions"
+    Then I should see search results
+    When I navigate to details display of the first result
+    Then I should see the value "New York City Department of City Planning" in the "Publisher:" field   
+    And I should see the value "Penguin Publishing" in the "Publisher:" field
+    
+  Scenario: Check that source doesn't overwrite native metadata
+    Given I revert the "Spatial Data Repository" source data in the "publisher" field to "New York City Department of City Planning" for the record identified by "DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R"
+    And I reload the "Spatial Data Repository" source data into Ichabod
+    And I limit my search to "Geospatial Data" under the "Format" category
+    And I search for "New York City Fire Battalions"
+    And I navigate to details display of the first result
+    Then I should see the value "New York City Department of City Planning" in the "Publisher:" field
+    And I should see the value "Penguin Publishing" in the "Publisher:" field
