@@ -15,8 +15,12 @@ This branch remains readily deployable at all times. It has no end to it's lifes
 This branch is where all ongoing work is done. It runs parallel to master, and incorporates all bugfixes and features. When the head of the development branch is tested and meets our coding requirements (to be discussed later), it graduates and gets merged to master via pull request.
 
 ###Feature Branches
-Feature branches branch off of development and must be merged back into development. When working on a feature branch, it is important to only make changes that are relevant to the feature you are currently working on. Thus the lifespan of the feature branch is limited to the development of that feature.
+Feature branches branch off of development and must be merged back into development. A feature branch adds end-user functionality to the application. When working on a feature branch, it is important to only make changes that are relevant to the feature you are currently working on. Thus the lifespan of the feature branch is limited to the development of that feature. As a convention, we prefix feature branch names with ```feature/```, e.g., ```feature/add-foo```.
 
+###Chore Branches
+Chore branches branch off of development and must be merged back into development. A chore branch does not add end-user functionality, but is used for housekeeping tasks, e.g., updating a configuration file. When working on a chore branch, it is important to only make changes that are relevant to the chore you are currently working on. Thus the lifespan of the chore branch is limited to the completion of the chore. As a convention, we prefix chore branch names with ```chore/```, e.g., ```chore/update-database-config```.
+
+###Unused Git-Flow Branches
 For simplicity, we shall eschew hotfix and release branches.
 
 ##Committing
@@ -40,7 +44,7 @@ When you're confident in your code you're going to want to send in a pull reques
 
 ###Code Review
 
-After sending your pull request, your code will get reviewed to make sure merging it wont break the branch it's merging into. This is a good time to ask any questions or concerns you have. Code reviews also help get fresh set of eyes to look at your code, and if those eyes are alsow working on the project, it lets them get familiar with the new code base.
+After sending your pull request, your code will get reviewed to make sure merging it won't break the branch it's merging into. This is a good time to ask any questions or concerns you have. Code reviews also help get fresh set of eyes to look at your code, and if those eyes are also working on the project, it lets them get familiar with the new code base.
 
 
 #Continuous Integration
@@ -94,7 +98,7 @@ With this rubric you can carry one simplifying your code and aim for a very high
 
 If you find any issues in the code base, feel free to open up an issue using GitHub's awesome [issues](https://github.com/NYULibraries/ichabod/issues) feature. You can assign issues to users, label them, and set them to milestones!
 
-Best part is, you can then close the issues via [git commit](https://help.github.com/articles/closing-issues-via-commit-messages). 
+Best part is, you can then close the issues via [git commit](https://help.github.com/articles/closing-issues-via-commit-messages).
 
 
 
@@ -113,7 +117,4 @@ For best practices, give every class, method, and variable a clear, semantic nam
 * [Blog post on our workflows](https://web1.library.nyu.edu/libtechnyu/blog/2013/05/21/development-workflows/)
 * [Some more info on pull requests, and why code reviews are important](https://www.igvita.com/2011/12/19/dont-push-your-pull-requests/).
 * [5 useful tips on how to write a better git commit message](http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message)
-* [A Note About Git Commit Messages](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html). 
-
-
-
+* [A Note About Git Commit Messages](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
