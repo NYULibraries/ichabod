@@ -4,6 +4,7 @@ end
 
 When(/^I enter the fields:$/) do |table|
   table.rows_hash.each do |field, value|
+#binding.pry
     fill_in field, :with => value
   end
 end
@@ -43,5 +44,14 @@ end
 Then(/^I should see the fields:$/) do |table|
   table.rows_hash.each do |field, value|
     expect(page.find("##{field}").value).to have_content value
+  end
+end
+
+Then(/^I should see the immutable fields:$/) do |table|
+  table.rows_hash.each do |field, value|
+#binding.pry
+    page.find(:xpath, "//label[@for='nyucore_#{field.downcase}']/following-sibling::div[@class='source']").text.should == value
+    #page.find('div.source').should == 'DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R)'
+    #expect(page.find("##{field}").value).to have_content value
   end
 end
