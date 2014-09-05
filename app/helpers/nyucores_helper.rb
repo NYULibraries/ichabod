@@ -36,6 +36,6 @@ module NyucoresHelper
   end
 
   def field_id(field, index = nil)
-    "nyucore_#{field}#{format_field_index(@item.send(field), index)}"
+    "nyucore_#{field}#{format_field_index(@item.native_metadata.send(field), index)}"
   end
 end
