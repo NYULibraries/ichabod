@@ -1,5 +1,6 @@
 require 'spec_helper'
 describe Nyucore::Metadatum do
+  let(:index) { 0 }
   let(:value) { 'value' }
   let(:nyucore) do
     _nyucore = build(:nyucore, title: value)
@@ -10,6 +11,7 @@ describe Nyucore::Metadatum do
   subject(:metadatum) { Nyucore::Metadatum.new(value, datastream) }
   it { should be_a String }
   it { should be_a Nyucore::Metadatum }
+  its(:index) { should eq index }
   describe '#datastream' do
     it 'should eq "datastream" but there seems to be a bug in ActiveFedora::Datastream#== for this version'
     it 'should match the datastream' do
