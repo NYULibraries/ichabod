@@ -22,45 +22,11 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>30,''params''=>{''fl''=>''id'',''sort''=>''system_create_dtsi
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>0,''params''=>{''fl''=>''id'',''sort''=>''system_create_dtsi
         asc'',''start''=>''0'',''q''=>''_query_:"{!raw f=has_model_ssim}info:fedora/afmodel:Nyucore"
         AND id:"prefix\\:to_nyucore"'',''qt''=>''standard'',''wt''=>''ruby'',''rows''=>''1000''}},''response''=>{''numFound''=>1,''start''=>0,''docs''=>[{''id''=>''prefix:to_nyucore''}]}}
 
 '
-    http_version: 
-  recorded_at: Fri, 05 Sep 2014 21:23:38 GMT
-- request:
-    method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/describe?xml=true
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*; q=0.5, application/xml'
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Set-Cookie:
-      - JSESSIONID=mpgw62vr6jg6kaprmhojsc7j;Path=/fedora-test
-      Expires:
-      - Thu, 01 Jan 1970 00:00:00 GMT
-      Content-Type:
-      - text/xml;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><fedoraRepository xmlns="http://www.fedora.info/definitions/1/0/access/"
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/ http://www.fedora.info/definitions/1/0/fedoraRepository.xsd"><repositoryName>Fedora
-        Repository</repositoryName><repositoryBaseURL>http://localhost:8983/fedora-test</repositoryBaseURL><repositoryVersion>3.7.0</repositoryVersion><repositoryPID>    <PID-namespaceIdentifier>changeme</PID-namespaceIdentifier>    <PID-delimiter>:</PID-delimiter>    <PID-sample>changeme:100</PID-sample>    <retainPID>*</retainPID></repositoryPID><repositoryOAI-identifier>    <OAI-namespaceIdentifier>example.org</OAI-namespaceIdentifier>    <OAI-delimiter>:</OAI-delimiter>    <OAI-sample>oai:example.org:changeme:100</OAI-sample></repositoryOAI-identifier><sampleSearch-URL>http://localhost:8983/fedora-test/objects</sampleSearch-URL><sampleAccess-URL>http://localhost:8983/fedora-test/objects/demo:5</sampleAccess-URL><sampleOAI-URL>http://localhost:8983/fedora-test/oai?verb=Identify</sampleOAI-URL><adminEmail>bob@example.org</adminEmail><adminEmail>sally@example.org</adminEmail></fedoraRepository>
     http_version: 
   recorded_at: Fri, 05 Sep 2014 21:23:39 GMT
 - request:
@@ -82,7 +48,7 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=amga9lzrhy53187fvg5ines7x;Path=/fedora-test
+      - JSESSIONID=19nq1el39ejh31kr30vfp357hx;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
@@ -118,7 +84,7 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=18eong9jywwxl1y0gxwj90lrjk;Path=/fedora-test
+      - JSESSIONID=vx3a9ptka023hsox9vcpg2zz;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
@@ -157,7 +123,7 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=1cu2y30smugl51thxzsbdtht79;Path=/fedora-test
+      - JSESSIONID=1nd89zbs0sj5bijwomoj252yh;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Type:
@@ -193,7 +159,7 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=djemksiltcu91txvl8rzrxlx9;Path=/fedora-test
+      - JSESSIONID=1a73qfl5z020s1ubb9m241dc55;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Content-Disposition:
@@ -212,8 +178,8 @@ http_interactions:
     http_version: 
   recorded_at: Fri, 05 Sep 2014 21:23:39 GMT
 - request:
-    method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/prefix:to_nyucore/datastreams/source_metadata?format=xml
+    method: delete
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/prefix:to_nyucore
     body:
       encoding: US-ASCII
       string: ''
@@ -230,60 +196,95 @@ http_interactions:
       message: OK
     headers:
       Set-Cookie:
-      - JSESSIONID=1r7899qn9ikdd1d808ybb0www4;Path=/fedora-test
+      - JSESSIONID=1xsdzlc0o9svh1el8y3zh59d4w;Path=/fedora-test
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
-      Content-Type:
-      - text/xml
-      Date:
-      - Fri, 05 Sep 2014 21:23:39 GMT
-      Content-Length:
-      - '912'
-    body:
-      encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><datastreamProfile  xmlns="http://www.fedora.info/definitions/1/0/management/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/management/
-        http://www.fedora.info/definitions/1/0/datastreamProfile.xsd" pid="prefix:to_nyucore"
-        dsID="source_metadata" ><dsLabel></dsLabel><dsVersionID>source_metadata.0</dsVersionID><dsCreateDate>2014-09-05T21:20:32.430Z</dsCreateDate><dsState>A</dsState><dsMIME>text/plain</dsMIME><dsFormatURI></dsFormatURI><dsControlGroup>M</dsControlGroup><dsSize>166</dsSize><dsVersionable>true</dsVersionable><dsInfoType></dsInfoType><dsLocation>prefix:to_nyucore+source_metadata+source_metadata.0</dsLocation><dsLocationType>INTERNAL_ID</dsLocationType><dsChecksumType>DISABLED</dsChecksumType><dsChecksum>none</dsChecksum></datastreamProfile>
-    http_version: 
-  recorded_at: Fri, 05 Sep 2014 21:23:39 GMT
-- request:
-    method: get
-    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/prefix:to_nyucore/datastreams/source_metadata/content
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*; q=0.5, application/xml'
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Set-Cookie:
-      - JSESSIONID=102tlby8pf1a11ilqrm1dnycs5;Path=/fedora-test
-      Expires:
-      - Thu, 01 Jan 1970 00:00:00 GMT
-      Content-Disposition:
-      - inline; filename="source_metadata.txt"
-      Content-Length:
-      - '166'
       Content-Type:
       - text/plain
       Date:
       - Fri, 05 Sep 2014 21:23:39 GMT
+      Content-Length:
+      - '24'
     body:
       encoding: US-ASCII
-      string: ! '<info:fedora/prefix:to_nyucore> <http://purl.org/dc/terms/identifier>
-        "identifier-13" .
+      string: '2014-09-05T21:23:39.639Z'
+    http_version: 
+  recorded_at: Fri, 05 Sep 2014 21:23:39 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><delete><id>prefix:to_nyucore</id></delete>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>0}}
 
-        <info:fedora/prefix:to_nyucore> <http://purl.org/dc/terms/title> "Title 31"
-        .
+'
+    http_version: 
+  recorded_at: Fri, 05 Sep 2014 21:23:39 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8983/solr/test/update?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><commit/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>2}}
+
+'
+    http_version: 
+  recorded_at: Fri, 05 Sep 2014 21:23:39 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?fl=id&q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Nyucore%22%20AND%20id:%22prefix%5C:to_nyucore%22&qt=standard&rows=1000&sort=system_create_dtsi%20asc&start=0&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Fri, 05 Sep 2014 21:23:39 GMT
+      Etag:
+      - ! '"NjEyODAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{''responseHeader''=>{''status''=>0,''QTime''=>1,''params''=>{''fl''=>''id'',''sort''=>''system_create_dtsi
+        asc'',''start''=>''0'',''q''=>''_query_:"{!raw f=has_model_ssim}info:fedora/afmodel:Nyucore"
+        AND id:"prefix\\:to_nyucore"'',''qt''=>''standard'',''wt''=>''ruby'',''rows''=>''1000''}},''response''=>{''numFound''=>0,''start''=>0,''docs''=>[]}}
 
 '
     http_version: 
