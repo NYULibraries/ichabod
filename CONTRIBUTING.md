@@ -112,6 +112,13 @@ A good rule of thumb is that if your code requires documentation to explain exac
 
 For best practices, give every class, method, and variable a clear, semantic name, along with comments explaining the codes purpose. Try to avoid cluttered comments and large methods. The human eye is attracted to empty space, so breaking up large blocks of code to succinct blocks with small comments is highly visible and easier to follow.
 
+
+#User Stories
+Any team member can contribute user stories and add them to the Ichabod Pivotal Tracker Icebox.
+The Product Owners may review, use, or rewrite the stories at their discretion during story selection, refinement, and prioritization activities.
+Ideas, comments, questions, or concerns that cannot be easily described in a user story should be captured **WHERE** ?
+
+
 #More Resources
 
 * [Blog post on our workflows](https://web1.library.nyu.edu/libtechnyu/blog/2013/05/21/development-workflows/)
