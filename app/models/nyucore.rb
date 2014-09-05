@@ -61,10 +61,10 @@ class Nyucore < ActiveFedora::Base
   #   # => ['Source Title', 'Native Title']
   (FIELDS[:multiple] + EXTRAS).each do |field|
     define_method(field) do
-      source_metadata.send(field).collect do |value|
-        Metadatum.new(value, source_metadata)
-      end + native_metadata.send(field).collect do |value|
-        Metadatum.new(value, native_metadata)
+      source_metadata.send(field).each_with_index.collect do |value, index|
+        Metadatum.new(value, source_metadata, index)
+      end + native_metadata.send(field).each_with_index.collect do |value, index|
+        Metadatum.new(value, native_metadata, index)
       end
     end
   end
