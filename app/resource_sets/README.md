@@ -56,7 +56,7 @@ spatial_data_repository.source_reader
 spatial_data_repository.editors
 # => ["admin_group", "gis_cataloger", "editor1", "editor2"]
 spatial_data_repository.before_loads
-# => [:add_edit_groups, :add_additional_info_link]
+# => [:add_edit_groups, :add_resource_set, :add_additional_info_link]
 spatial_data_repository.option_key
 # => "options value"
 
