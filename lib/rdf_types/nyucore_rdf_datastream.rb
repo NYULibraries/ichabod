@@ -53,7 +53,7 @@ class NyucoreRdfDatastream < ActiveFedora::NtriplesRDFDatastream
       index.as :stored_searchable, :facetable
     end
     map.relation(in: RDF::DC) do |index|
-      index.as :stored_searchable    
+      index.as :stored_searchable
     end
     map.rights(in: RDF::DC) do |index|
       index.as :stored_searchable
@@ -69,9 +69,9 @@ class NyucoreRdfDatastream < ActiveFedora::NtriplesRDFDatastream
     end
     map.addinfotext(in: NyuTerms) do |index|
       index.as :stored_searchable
-    end   
+    end
   end
-  # Overriding rdf_datastream.rb's prefix method allows us to 
+  # Overriding rdf_datastream.rb's prefix method allows us to
   # force all the metadata, irrespective of it's datastream,
   # into the same solr fields
   # Though, as Joe pointed out, we could want to revisit this decision
