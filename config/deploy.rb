@@ -1,6 +1,7 @@
 require 'nyulibraries/deploy/capistrano'
 
 set :app_title, "ichabod"
+set :new_relic_environments, nil  # do not use new_relic at this time
 
 namespace :deploy do
   # task :create_symlink do
@@ -67,7 +68,7 @@ end
 namespace :jetty do
   desc "Shutdown previous version of jetty on server"
   task :stop do
-    run "cd #{current_path}; bundle exec rake jetty:stop"
+    run "if [[ -d #{current_path} ]]; then cd #{current_path}; bundle exec rake jetty:stop ; else echo '#{current_path} DNE, skipping jetty:stop' ; fi"
   end
   desc "Startup new jetty for current release"
   task :start do
