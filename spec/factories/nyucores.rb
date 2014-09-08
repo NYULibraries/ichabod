@@ -3,6 +3,7 @@
 # in a VCR cassette since saving Fedora records in Hydra requires an http call
 FactoryGirl.define do
   factory :nyucore do
+    sequence(:identifier) { |n| "#{series.first}_#{n}" }
     title ["LION"]
     creator ["Hugh Plisher"]
     available ["http://library.nyu.edu"]
@@ -19,10 +20,12 @@ FactoryGirl.define do
     publisher ["Rosie"]
     format ["ZIP"]
     citation ["Cite", "Me"]
-    sequence(:identifier) { |n| "#{series.first}_#{n}" }
+    addinfotext ["Ask a Librarian"]
+    addinfolink ["http://library.nyu.edu/ask"]
+    after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
 
     factory :gis_record do
-      after(:build) {|record| record.set_edit_groups(['gis_cataloger'],[]) }
+      after(:build) { |record| record.set_edit_groups(['gis_cataloger'],[]) }
       # Don't dare put an underscore in this pid or it'll explode
       initialize_with { new(pid: 'testgisrecord:123') }
     end

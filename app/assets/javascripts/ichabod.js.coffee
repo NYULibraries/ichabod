@@ -4,38 +4,37 @@
 #
 class AdditionalFieldLink
   constructor: (element) ->
-    @el = $(element)
+    @element = $(element)
 
-  # Get element ID with no index attached
-  generic_element_id: ->
-    @generic_element_input().attr("id")
+  id: ->
+    @input_id() + @count()
+
+  # Get input ID with no index attached
+  input_id: ->
+    @input().find("input").attr("id")
 
   # Get the shared element name for multivalued fields
-  generic_element_name: ->
-    @generic_element_input().attr("name")
+  name: ->
+    @input().find("input").attr("name")
 
   # Get the first element of the series, which has no index
-  generic_element: ->
-    @el.closest("div").find("div:first-of-type")
-
-  # Get the input element of the first element of the series
-  generic_element_input: ->
-    @generic_element().find("input")
+  input: ->
+    @element.closest("div").find("div.input").first()
 
   # Get the count of fields of this element
-  get_element_count: ->
-    $("input[name='"+@generic_element_name()+"']").size()
+  count: ->
+    $("input[name='#{@name()}']").size()
 
   # Clone the element and change the ID, and nil the value
-  cloned_element: ->
-    $cloned = @generic_element().clone()
-    $cloned.find("input").attr("id", @generic_element_id() + @get_element_count()).val("")
-    return $cloned
+  clone: ->
+    clone = @input().clone()
+    clone.find("input").attr("id", @id()).val("")
+    return clone
 
   # Append a cloned version of the first element in this list
   # to the end of the list
   append_new_field: ->
-    @el.closest("div").find("div:last-of-type").after(@cloned_element())
+    @element.closest("div").find("div.input").last().after(@clone())
 
 $ ->
   # Add a "+" link after multivalued nyucore fields

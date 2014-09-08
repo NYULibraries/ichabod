@@ -7,7 +7,7 @@ describe FacultyDigitalArchive do
   it { should be_a Ichabod::ResourceSet::Base }
   its(:filename) { should eq filename }
   its(:editors) { should eq ['admin_group', 'fda_cataloger'] }
-  its(:before_creates) { should eq [:add_edit_groups, :add_identifier_as_available_or_citation, :set_http_identifier] }
+  its(:before_loads) { should eq [:add_edit_groups, :add_identifier_as_available_or_citation, :set_http_identifier] }
   describe '.prefix' do
     subject { FacultyDigitalArchive.prefix }
     it { should eq prefix }
@@ -20,15 +20,15 @@ describe FacultyDigitalArchive do
     subject { FacultyDigitalArchive.editors }
     it { should eq [:admin_group, :fda_cataloger] }
   end
-  describe '.before_creates' do
-    subject { FacultyDigitalArchive.before_creates }
+  describe '.before_loads' do
+    subject { FacultyDigitalArchive.before_loads }
     it { should eq [:add_edit_groups, :add_identifier_as_available_or_citation, :set_http_identifier] }
   end
   describe '#create', vcr: {cassette_name: 'resource sets/fda create'} do
     subject(:create) { faculty_digital_archive.create }
     it { should be_an Array }
     describe 'a Nyucore record' do
-      subject { create[1] }
+      subject { create[index] }
       context 'when the record has multiple identifiers' do
         let(:index) { 1 }
         its(:pid) { should eq 'fda:hdl-handle-net-2451-27761' }
