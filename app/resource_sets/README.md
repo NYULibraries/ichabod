@@ -7,10 +7,13 @@ over the set of Resources. They can read from source, persist to Fedora and
 delete from Fedora.
 
 ## Ichabod::ResourceSet::Resource
-Resources are intermediary objects that respond to the instance method
-`#to_nyucore` in order to coerce themselves to an Nyucore object.
-They do not persist themselves when coercing themselves, since that seems
-presumptuous.
+A `ResourceSet::Resource` is an intermediary object that responds to the
+instance method `#to_nyucore` in order to coerce itself to an `Nyucore` object.
+The `#to_nyucore` method "finds or initializes" its corresponding `Nyucore`
+object. This means that when an `Nyucore` object with the same `pid` as the
+`ResourceSet::Resource` exists in Fedora, the existing object is returned.
+Otherwise a new `Nyucore` object is returned. The returned object is not
+persisted, since that seems presumptuous.
 
 ## Ichabod::ResourceSet::SourceReader
 SourceReaders read from the ResourceSet's source system and retrieve an Array of
