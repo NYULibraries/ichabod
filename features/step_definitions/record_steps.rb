@@ -45,3 +45,9 @@ Then(/^I should see the fields:$/) do |table|
     expect(page.find("##{field}").value).to have_content value
   end
 end
+
+Then(/^I should see the immutable fields:$/) do |table|
+  table.rows_hash.each do |field, value|
+    page.find(:xpath, "//label[@for='nyucore_#{field.downcase}']/following-sibling::div[@class='source']").text.should == value
+  end
+end
