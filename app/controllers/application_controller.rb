@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  
+
   # Adds a few additional behaviors into the application controller
    include Blacklight::Controller
   # Please be sure to impelement current_user and user_session. Blacklight depends on
@@ -13,9 +13,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user_dev
-    @current_user ||= User.new(:email => "user@nyu.edu", :firstname => "Ptolemy", :username => "test_admin")
+    @current_user ||= User.new(:email => "user@nyu.edu", :firstname => "Ptolemy", :username => "ppXX")
   end
-  
+
   alias_method :current_user, :current_user_dev if Rails.env.development?
 
   rescue_from CanCan::AccessDenied do |exception|
