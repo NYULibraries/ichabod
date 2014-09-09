@@ -4,9 +4,8 @@ module Ichabod
       RDF::DC => [:identifier, :title, :creator, :contributor, :publisher,
         :type, :description, :date, :format, :language, :relation, :rights,
         :subject],
-      NyucoreMetadata::Vocabulary => [:available, :edition, :series, :version,
-        :citation],
-      Ichabod::Vocabulary => [:addinfolink, :addinfotext, :resource_set]
+      NyucoreMetadata::Vocabulary => NyucoreMetadata::Vocabulary::TERMS,
+      Ichabod::Vocabulary => Ichabod::Vocabulary::TERMS
     }
     FACETABLE_TERMS = [:creator, :type, :language, :subject]
 
