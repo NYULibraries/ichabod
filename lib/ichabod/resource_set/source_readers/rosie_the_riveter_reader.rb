@@ -43,7 +43,6 @@ module Ichabod
             prefix: resource_set.prefix,
             identifier: interview['dc_identifier'],
             title: interview['label'],
-            series: interview['collection_title'],
             available: interview['ss_handle'],
             citation: interview['ss_handle'],
             date: interview['ds_created'],
