@@ -116,7 +116,7 @@ module Ichabod
         @resources = source_reader.read
       end
 
-      def create
+      def load
         read_from_source if resources.empty?
         resources.collect do |resource|
           unless resource.is_a?(Resource)
