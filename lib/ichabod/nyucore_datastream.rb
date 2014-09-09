@@ -21,5 +21,16 @@ module Ichabod
         end
       end
     end
+
+    # Overriding rdf_datastream.rb's prefix method allows us to
+    # force all the metadata, irrespective of it's datastream,
+    # into the same solr fields
+    # Though, as Joe pointed out, we could want to revisit this decision
+    # to allow different weighting for different datastreams.
+    def prefix(name)
+      name = name.to_s unless name.is_a? String
+      pre = "desc_metadata"
+      "#{pre}__#{name}".to_sym
+    end
   end
 end

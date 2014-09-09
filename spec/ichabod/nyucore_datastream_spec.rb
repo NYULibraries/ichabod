@@ -38,7 +38,7 @@ module Ichabod
       it { should eq [:creator, :type, :language, :subject] }
     end
 
-    subject { NyucoreDatastream.new }
+    subject(:nyucore_datastream) { NyucoreDatastream.new }
     it { should be_an ActiveFedora::NtriplesRDFDatastream }
 
     # Some metaprogramming to check the attributes accessors
@@ -50,6 +50,12 @@ module Ichabod
         it { should respond_to term }
         it { should respond_to "#{term}=".to_sym }
       end
+    end
+
+    describe '#prefix' do
+      let(:name) { 'type' }
+      subject { nyucore_datastream.prefix(name) }
+      it { should eq :desc_metadata__type }
     end
   end
 end
