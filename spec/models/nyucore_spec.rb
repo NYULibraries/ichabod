@@ -28,12 +28,12 @@ describe Nyucore do
 
   describe '#native_metadata' do
     subject { nyucore.native_metadata }
-    it { should be_a NyucoreRdfDatastream }
+    it { should be_a Ichabod::NyucoreDatastream }
   end
 
   describe '#source_metadata' do
     subject { nyucore.source_metadata }
-    it { should be_a NyucoreRdfDatastream }
+    it { should be_a Ichabod::NyucoreDatastream }
   end
 
   describe "#collections" do
