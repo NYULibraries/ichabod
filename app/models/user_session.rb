@@ -1,6 +1,6 @@
 class UserSession < Authlogic::Session::Base
 
-  pds_url ENV['PDS_URL'] # set by figs/configula
+  pds_url ENV['PDS_URL']
 
   calling_system "hydra"
   anonymous true
