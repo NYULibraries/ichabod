@@ -164,6 +164,7 @@ module Ichabod
             expect(nyucore).to be_an Nyucore
             expect(nyucore).to be_persisted
             expect(nyucore).not_to be_new
+            expect(nyucore.resource_set).to eq 'base'
           end
         end
         context 'when there are no editors' do
