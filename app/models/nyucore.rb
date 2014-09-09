@@ -15,7 +15,7 @@ class Nyucore < ActiveFedora::Base
   # readers and writers, which we explictly override below, but this gives us
   # our base.
   METADATA_STREAMS.each do |metadata_stream|
-    has_metadata metadata_stream, type: NyucoreRdfDatastream
+    has_metadata metadata_stream, type: Ichabod::NyucoreDatastream
     has_attributes *FIELDS[:single], datastream: metadata_stream, multiple: false
     has_attributes *FIELDS[:multiple], datastream: metadata_stream, multiple: true
     has_attributes *EXTRAS, datastream: metadata_stream, multiple: true
