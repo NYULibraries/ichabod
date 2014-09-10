@@ -14,3 +14,8 @@ Feature: Collection facet
     When I filter my search to "ESRI" under the "Collection" category
     And I filter my search to "Spatial Data Repository" under the "Collection" category
     Then I should see search results
+
+  Scenario: Filter by The Real Rosie the Riveter
+    Given I am on the default search page
+    When I filter my search to "The Real Rosie the Riveter" under the "Collection" category
+    Then I should see search results

@@ -2,7 +2,7 @@ module NyucoresHelper
 
   # List of Nyucore fields
   def fields
-    @fields ||= Nyucore::FIELDS[:single] + Nyucore::FIELDS[:multiple] + Nyucore::EXTRAS
+    @fields ||= Nyucore::FIELDS
   end
 
   # Retrieve the index of the current field so we can append that to the element's ID

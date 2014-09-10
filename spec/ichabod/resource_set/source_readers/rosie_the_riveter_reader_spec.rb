@@ -36,7 +36,7 @@ module Ichabod
             its(:title) { should include 'Jerre Kalbas' }
             its(:available) { should include 'http://hdl.handle.net/2333.1/6djh9wm1' }
             its(:type) { should include 'Video' }
-            its(:series) { should include 'The Real Rosie the Riveter' }
+            its(:series) { should be_nil }
           end
         end
       end

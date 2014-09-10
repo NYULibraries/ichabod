@@ -3,7 +3,7 @@
 ## Ichabod::ResourceSet::Base
 Ichabod::ResourceSets are a logical group of Ichabod::ResourceSet::Resources.
 They are [Enumerable](http://ruby-doc.org/core/Enumerable.html) and iterate
-over the set of Resources. They can read from source, persist to Fedora and
+over the set of Resources. They can read from source, load to Fedora and
 delete from Fedora.
 
 ## Ichabod::ResourceSet::Resource
@@ -56,7 +56,7 @@ spatial_data_repository.source_reader
 spatial_data_repository.editors
 # => ["admin_group", "gis_cataloger", "editor1", "editor2"]
 spatial_data_repository.before_loads
-# => [:add_edit_groups, :add_additional_info_link]
+# => [:add_edit_groups, :add_resource_set, :add_additional_info_link]
 spatial_data_repository.option_key
 # => "options value"
 
@@ -80,15 +80,16 @@ spatial_data_repository.size
 # => N
 
 # Persist Nyucore objects to the Fedora repository and index them in Solr
-spatial_data_repository.create
-# => Reads from source (if not already read) and creates the Resources in Fedora
+spatial_data_repository.load
+# => Reads from source (if not already read) and loads the Resources to Fedora
 #    as Nyucore objects and indexes them in Solr. Returns an Array of the
-#    created Nyucore objects.
+#    created Nyucore objects. If an Nyucore object with a given pid already
+#    exists, #load uses that object instead of creating a new one.
 
 # Delete Nyucore object from the Fedora repository
 # and delete them from the Solr index
 spatial_data_repository.delete
 # => Deletes the Nyucore objects from Fedora, deletes them from the Solr index
-#    and clears them from the ResourceSet.  Returns an Array of the deleted
+#    and clears them from the ResourceSet. Returns an Array of the deleted
 #    Nyucore object.
 ```

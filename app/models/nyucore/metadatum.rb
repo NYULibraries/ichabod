@@ -5,8 +5,8 @@ class Nyucore < ActiveFedora::Base
 
     def initialize(value, datastream, index=0)
       super(value)
-      unless datastream.is_a? NyucoreRdfDatastream
-        raise ArgumentError.new("Expecting #{datastream} to be an NyucoreRdfDatastream")
+      unless datastream.is_a? Ichabod::NyucoreDatastream
+        raise ArgumentError.new("Expecting #{datastream} to be an Ichabod::NyucoreDatastream")
       end
       @datastream = datastream
       @index = index

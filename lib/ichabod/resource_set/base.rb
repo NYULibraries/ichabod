@@ -99,6 +99,9 @@ module Ichabod
       # Default to adding the edit groups on create
       before_load :add_edit_groups
 
+      # Default to adding the ResourceSet on create
+      before_load :add_resource_set
+
       include Enumerable
       alias_method :size, :count
 
@@ -113,7 +116,7 @@ module Ichabod
         @resources = source_reader.read
       end
 
-      def create
+      def load
         read_from_source if resources.empty?
         resources.collect do |resource|
           unless resource.is_a?(Resource)
@@ -146,6 +149,15 @@ module Ichabod
       def add_edit_groups(*args)
         nyucore = args.last
         nyucore.set_edit_groups(editors, []) unless editors.empty?
+      end
+
+      def add_resource_set(*args)
+        nyucore = args.last
+        nyucore.source_metadata.resource_set = name
+      end
+
+      def name
+        @name ||= self.class.name.demodulize.underscore
       end
 
       def before_load_methods

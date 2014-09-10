@@ -29,7 +29,7 @@ describe Nyucore::Metadatum do
       it { should be false }
     end
   end
-  context 'when initialized with a datastream that is not an NyucoreRdfDatastream' do
+  context 'when initialized with a datastream that is not an Ichabod::NyucoreDatastream' do
     let(:datastream) { 'invalid' }
     it 'should raise an ArgumentError' do
       expect { subject }.to raise_error ArgumentError

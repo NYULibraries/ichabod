@@ -22,6 +22,7 @@ FactoryGirl.define do
     citation ["Cite", "Me"]
     addinfotext ["Ask a Librarian"]
     addinfolink ["http://library.nyu.edu/ask"]
+    resource_set 'resource_set'
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
 
     factory :gis_record do
