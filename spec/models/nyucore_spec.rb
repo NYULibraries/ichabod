@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Nyucore do
 
-  describe Nyucore::FIELDS do
-    subject { Nyucore::FIELDS }
+  describe Nyucore::NYUCORE_FIELDS do
+    subject { Nyucore::NYUCORE_FIELDS }
     it { should be_a Hash }
     it { should have_key :single }
     it { should have_key :multiple }
@@ -11,15 +11,30 @@ describe Nyucore do
       expect(subject[:single]).to eq [:identifier]
     end
     it 'should have the appropriate multiple fields' do
-      expect(subject[:multiple]).to eq [:available, :citation, :title,
-        :creator, :type, :publisher, :description, :edition, :date, :format,
-        :language, :relation, :rights, :subject, :series, :version]
+      expect(subject[:multiple]).to eq [:available, :citation, :title, :creator,
+        :type, :publisher, :description, :edition, :date, :format, :language,
+        :relation, :rights, :subject, :series, :version]
     end
   end
 
-  describe Nyucore::EXTRAS do
-    subject { Nyucore::EXTRAS }
+  describe Nyucore::EXTRA_SINGLES do
+    subject { Nyucore::EXTRA_SINGLES }
+    it { should eq [:resource_set] }
+  end
+
+  describe Nyucore::EXTRA_MULTIPLES do
+    subject { Nyucore::EXTRA_MULTIPLES }
     it { should eq [:addinfolink, :addinfotext] }
+  end
+
+  describe Nyucore::SINGLE_FIELDS do
+    subject { Nyucore::SINGLE_FIELDS }
+    it { should eq Nyucore::NYUCORE_FIELDS[:single] + Nyucore::EXTRA_SINGLES }
+  end
+
+  describe Nyucore::MULTIPLE_FIELDS do
+    subject { Nyucore::MULTIPLE_FIELDS }
+    it { should eq Nyucore::NYUCORE_FIELDS[:multiple] + Nyucore::EXTRA_MULTIPLES }
   end
 
   subject(:nyucore) { build(:nyucore) }
@@ -28,12 +43,12 @@ describe Nyucore do
 
   describe '#native_metadata' do
     subject { nyucore.native_metadata }
-    it { should be_a NyucoreRdfDatastream }
+    it { should be_a Ichabod::NyucoreDatastream }
   end
 
   describe '#source_metadata' do
     subject { nyucore.source_metadata }
-    it { should be_a NyucoreRdfDatastream }
+    it { should be_a Ichabod::NyucoreDatastream }
   end
 
   describe "#collections" do
@@ -42,7 +57,7 @@ describe Nyucore do
   end
 
   # Some meta programming to test all the single-valued Nyucore attributes
-  Nyucore::FIELDS[:single].each do |field|
+  Nyucore::SINGLE_FIELDS.each do |field|
     # Generic test for validity
     it { should be_valid }
     # Generic test for presence
@@ -147,7 +162,7 @@ describe Nyucore do
 
   # Some meta programming to test all the multi-valued Nyucore attributes and
   # extra Ichabod attributes
-  (Nyucore::FIELDS[:multiple] + Nyucore::EXTRAS).each do |field|
+  Nyucore::MULTIPLE_FIELDS.each do |field|
     # Generic test for validity
     it { should be_valid }
     # Generic test for presence

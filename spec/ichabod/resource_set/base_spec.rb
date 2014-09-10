@@ -152,10 +152,10 @@ module Ichabod
           end
         end
       end
-      describe '#create', vcr: {cassette_name: 'resource sets/create resource set'} do
+      describe '#load', vcr: {cassette_name: 'resource sets/load resource set'} do
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
         after { Base.instance_variable_set(:@source_reader, nil) }
-        subject { base.create }
+        subject { base.load }
         it { should be_an Array }
         it { should_not be_empty }
         its(:size) { should eq 5 }
@@ -164,6 +164,7 @@ module Ichabod
             expect(nyucore).to be_an Nyucore
             expect(nyucore).to be_persisted
             expect(nyucore).not_to be_new
+            expect(nyucore.resource_set).to eq 'base'
           end
         end
         context 'when there are no editors' do
@@ -174,7 +175,7 @@ module Ichabod
             end
           end
         end
-        context 'when there are editors', vcr: {cassette_name: 'resource sets/create resource set with editors'} do
+        context 'when there are editors', vcr: {cassette_name: 'resource sets/load resource set with editors'} do
           before { Base.editor(*editors) }
           after { Base.instance_variable_set(:@editors, original_editors)}
           it { should be_an Array }

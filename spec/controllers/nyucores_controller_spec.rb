@@ -4,7 +4,7 @@ require 'support/test_user_helper'
 describe NyucoresController do
 
   let(:user) { create_or_return_test_admin }
-  let(:nyucore_fields) { Nyucore::FIELDS[:single] + Nyucore::FIELDS[:multiple] }
+  let(:nyucore_fields) { Nyucore::NYUCORE_FIELDS[:single] + Nyucore::NYUCORE_FIELDS[:multiple] }
   before { controller.stub(:current_user).and_return(user) }
 
   describe 'GET index', vcr: {cassette_name: 'controllers/nyucores controller/index'} do
