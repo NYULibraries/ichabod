@@ -17,9 +17,8 @@ gem 'jbuilder', '~> 2.0.7'
 gem 'mustache', '0.99.4'
 gem 'mustache-rails', github: 'josh/mustache-rails', require: 'mustache/railtie'
 
-gem 'exlibris-aleph', :git => 'git://github.com/barnabyalter/exlibris-aleph.git'
-gem 'authpds', :git => 'git://github.com/barnabyalter/authpds.git'
-gem 'authpds-nyu', :git => 'git://github.com/barnabyalter/authpds-nyu.git'
+gem 'authpds', github: 'barnabyalter/authpds'
+gem 'authpds-nyu', github: 'scotdalton/authpds-nyu'
 
 gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v3.0.3'
 gem 'nyulibraries-deploy', :git => 'git://github.com/NYULibraries/nyulibraries-deploy.git', :branch => 'development-fig'
@@ -35,6 +34,8 @@ gem 'jettywrapper', group: [:development, :test, :staging]
 gem 'faraday', '~> 0.9.0'
 gem 'multi_json', '~> 1.10.1'
 gem 'multi_xml', '~> 0.5.5'
+
+gem 'exlibris-nyu', github: 'NYULibraries/exlibris-nyu', tag: 'v2.1.2'
 
 group :development do
   gem 'better_errors', '~> 1.1.0'
