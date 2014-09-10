@@ -37,7 +37,7 @@ gem 'multi_json', '~> 1.10.1'
 gem 'multi_xml', '~> 0.5.5'
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '~> 1.1.0'
   gem 'binding_of_caller'
 end
 
