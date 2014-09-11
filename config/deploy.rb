@@ -76,7 +76,4 @@ namespace :jetty do
   end
 end
 
-before "deploy", "jetty:stop"
-after "deploy", "deploy:create_jetty_symlink", "jetty:start"
-
 # after "deploy", "deploy:create_symlink", "deploy:create_current_path_symlink", "deploy:create_env_symlink"
