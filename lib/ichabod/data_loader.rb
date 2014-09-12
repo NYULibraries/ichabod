@@ -26,7 +26,7 @@ module Ichabod
     end
 
     def load
-      @records = resource_set.create
+      @records = resource_set.load
     end
 
     def delete

@@ -2,8 +2,8 @@ require 'spec_helper'
 module Ichabod
   module ResourceSet
     describe Base do
-      let(:before_creates) { [:method1, :method2] }
-      let!(:original_before_creates) { Base.before_creates - before_creates }
+      let(:before_loads) { [:method1, :method2] }
+      let!(:original_before_loads) { Base.before_loads - before_loads }
       let(:editors) { [:editor1, :editor2] }
       let!(:original_editors) { Base.editors - editors }
       let(:prefix) { 'mock' }
@@ -29,17 +29,17 @@ module Ichabod
           expect(Base.editors).to eq editors.unshift(*original_editors)
         end
       end
-      describe '.before_create' do
+      describe '.before_load' do
         after do
-          Base.instance_variable_set(:@before_creates, original_before_creates)
+          Base.instance_variable_set(:@before_loads, original_before_loads)
         end
-        subject { Base.before_create(*before_creates) }
+        subject { Base.before_load(*before_loads) }
         it 'should not raise an ArgumentError' do
           expect { subject }.not_to raise_error
         end
-        it 'should set the before_creates attribute on the class' do
+        it 'should set the before_loads attribute on the class' do
           subject
-          expect(Base.before_creates).to eq before_creates.unshift(*original_before_creates)
+          expect(Base.before_loads).to eq before_loads.unshift(*original_before_loads)
         end
       end
       describe '.source_reader=' do
@@ -122,18 +122,18 @@ module Ichabod
           it { should eq editors.map(&:to_s).unshift(*original_editors.map(&:to_s)) }
         end
       end
-      describe '#before_creates' do
-        subject { base.before_creates }
-        context 'when not configured with before creates' do
+      describe '#before_loads' do
+        subject { base.before_loads }
+        context 'when not configured with before loads' do
           it { should be_an Array }
-          it { should eql original_before_creates }
+          it { should eql original_before_loads }
         end
-        context 'when configured with before creates' do
-          before { Base.before_create(*before_creates) }
+        context 'when configured with before loads' do
+          before { Base.before_load(*before_loads) }
           after do
-            Base.instance_variable_set(:@before_creates, original_before_creates)
+            Base.instance_variable_set(:@before_loads, original_before_loads)
           end
-          it { should eq before_creates.map(&:to_sym).unshift(*original_before_creates.map(&:to_sym)) }
+          it { should eq before_loads.map(&:to_sym).unshift(*original_before_loads.map(&:to_sym)) }
         end
       end
       describe '#read_from_source' do
@@ -152,10 +152,10 @@ module Ichabod
           end
         end
       end
-      describe '#create', vcr: {cassette_name: 'resource sets/create resource set'} do
+      describe '#load', vcr: {cassette_name: 'resource sets/load resource set'} do
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
         after { Base.instance_variable_set(:@source_reader, nil) }
-        subject { base.create }
+        subject { base.load }
         it { should be_an Array }
         it { should_not be_empty }
         its(:size) { should eq 5 }
@@ -164,6 +164,7 @@ module Ichabod
             expect(nyucore).to be_an Nyucore
             expect(nyucore).to be_persisted
             expect(nyucore).not_to be_new
+            expect(nyucore.resource_set).to eq 'base'
           end
         end
         context 'when there are no editors' do
@@ -174,7 +175,7 @@ module Ichabod
             end
           end
         end
-        context 'when there are editors', vcr: {cassette_name: 'resource sets/create resource set with editors'} do
+        context 'when there are editors', vcr: {cassette_name: 'resource sets/load resource set with editors'} do
           before { Base.editor(*editors) }
           after { Base.instance_variable_set(:@editors, original_editors)}
           it { should be_an Array }

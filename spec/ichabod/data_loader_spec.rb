@@ -11,7 +11,7 @@ module Ichabod
     describe "#load" do
       let(:records) { data_loader.load }
       subject(:record) { records.first }
-      context "when source is SDR", vcr: { cassette_name: "sdr data load" } do
+      context "when source is SDR", vcr: { cassette_name: 'data loader/sdr/load' } do
         it "should load an nyucore record" do
           data_loader.load
           expect(Nyucore.find(pid: id).first).to be_instance_of Nyucore
@@ -33,7 +33,7 @@ module Ichabod
         its(:addinfotext) { should eql ['GIS Dataset Instructions']}
         its(:edit_groups) { should eql ['admin_group', 'gis_cataloger'] }
       end
-      context "when source is FDA", vcr: { cassette_name: "fda data load" } do
+      context "when source is FDA", vcr: { cassette_name: 'data loader/fda/load' } do
         let(:name) { 'faculty_digital_archive' }
         let(:filename) { './spec/fixtures/sample_fda.xml' }
         let(:id) { 'fda:hdl-handle-net-2451-14097' }
@@ -55,12 +55,12 @@ module Ichabod
         data_loader.load
         data_loader.delete
       end
-      context "when source is the Spatial Data Repository", vcr: { cassette_name: "sdr data delete" } do
+      context "when source is the Spatial Data Repository", vcr: { cassette_name: 'data loader/sdr/delete' } do
         it "should delete an existing nyucore record" do
           expect(Nyucore.find(pid: id)).to be_blank
         end
       end
-      context "when source is the Faculty Digital Archive", vcr: { cassette_name: "fda data delete" } do
+      context "when source is the Faculty Digital Archive", vcr: { cassette_name: 'data loader/fda/delete' } do
         let(:name) { 'faculty_digital_archive' }
         let(:filename) { './spec/fixtures/sample_fda.xml' }
         let(:id) { 'fda:hdl-handle-net-2451-14097' }

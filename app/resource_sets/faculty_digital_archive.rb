@@ -2,7 +2,7 @@ class FacultyDigitalArchive < Ichabod::ResourceSet::Base
   self.prefix = 'fda'
   self.source_reader = :oai_dc_file_reader
   editor :fda_cataloger
-  before_create :add_identifier_as_available_or_citation, :set_http_identifier
+  before_load :add_identifier_as_available_or_citation, :set_http_identifier
 
   attr_reader :filename
 
@@ -17,9 +17,9 @@ class FacultyDigitalArchive < Ichabod::ResourceSet::Base
     identifiers = resource.identifier
     identifiers.each do |identifier|
       if identifier.starts_with? "http://"
-        nyucore.available = identifier
+        nyucore.source_metadata.available = identifier
       else
-        nyucore.citation = identifier
+        nyucore.source_metadata.citation = identifier
       end
     end
   end
@@ -27,7 +27,7 @@ class FacultyDigitalArchive < Ichabod::ResourceSet::Base
   def set_http_identifier(*args)
     resource, nyucore = *args
     identifiers = resource.identifier
-    nyucore.identifier = identifiers.find do |identifier|
+    nyucore.source_metadata.identifier = identifiers.find do |identifier|
       identifier.starts_with? 'http://'
     end
   end

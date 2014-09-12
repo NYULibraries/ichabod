@@ -7,7 +7,7 @@ describe SpatialDataRepository do
   it { should be_a Ichabod::ResourceSet::Base }
   its(:filename) { should eq filename }
   its(:editors) { should eq ['admin_group', 'gis_cataloger'] }
-  its(:before_creates) { should eq [:add_edit_groups, :add_additional_info_link] }
+  its(:before_loads) { should eq [:add_edit_groups, :add_resource_set, :add_additional_info_link] }
   describe '.prefix' do
     subject { SpatialDataRepository.prefix }
     it { should eq prefix }
@@ -20,8 +20,8 @@ describe SpatialDataRepository do
     subject { SpatialDataRepository.editors }
     it { should eq [:admin_group, :gis_cataloger] }
   end
-  describe '.before_creates' do
-    subject { SpatialDataRepository.before_creates }
-    it { should eq [:add_edit_groups, :add_additional_info_link] }
+  describe '.before_loads' do
+    subject { SpatialDataRepository.before_loads }
+    it { should eq [:add_edit_groups, :add_resource_set, :add_additional_info_link] }
   end
 end

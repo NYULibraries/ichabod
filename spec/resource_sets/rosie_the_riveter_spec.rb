@@ -15,7 +15,7 @@ describe RosieTheRiveter do
   its(:password) { should eq password }
   its(:collection_code) { should eq collection_code }
   its(:editors) { should eq ['admin_group'] }
-  its(:before_creates) { should eq [:add_edit_groups] }
+  its(:before_loads) { should eq [:add_edit_groups, :add_resource_set] }
   context 'when initialized without a password' do
     let(:password) { nil }
     it 'should not raise an error' do
@@ -43,8 +43,8 @@ describe RosieTheRiveter do
     subject { RosieTheRiveter.editors }
     it { should eq [:admin_group] }
   end
-  describe '.before_creates' do
-    subject { RosieTheRiveter.before_creates }
-    it { should eq [:add_edit_groups] }
+  describe '.before_loads' do
+    subject { RosieTheRiveter.before_loads }
+    it { should eq [:add_edit_groups, :add_resource_set] }
   end
 end

@@ -1,17 +1,13 @@
-# require 'spec_helper'
-#
-# describe "books/show" do
-#   before(:each) do
-#     @book = assign(:book, stub_model(Book,
-#       :title => "Title",
-#       :author => "Author"
-#     ))
-#   end
-#
-#   it "renders attributes in <p>" do
-#     render
-#     # Run the generator again with the --webrat flag if you want to use webrat matchers
-#     rendered.should match(/Title/)
-#     rendered.should match(/Author/)
-#   end
-# end
+require 'spec_helper'
+describe 'nyucores/show', vcr: {cassette_name: 'views/nyucores/show' } do
+  let(:user) { build(:user) }
+  let(:item) { create(:nyucore) }
+  before do
+    allow(controller).to receive(:current_user).and_return(user)
+    assign(:item, item)
+  end
+  it 'should show the nyucore page' do
+    render
+    expect(rendered).to match /Title/
+  end
+end

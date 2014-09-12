@@ -1,14 +1,13 @@
 require 'spec_helper'
-
-describe "nyucores/edit", vcr: { cassette_name: "nyucore show edit form" } do
+describe 'nyucores/edit', vcr: {cassette_name: 'views/nyucores/edit' } do
+  let(:user) { build(:user) }
   let(:item) { create(:nyucore) }
-  before(:each) { @item = item }
-
-  it "should render the edit nyucore form" do
+  before do
+    allow(controller).to receive(:current_user).and_return(user)
+    assign(:item, item)
+  end
+  it 'should render the edit nyucore form' do
     render
-
-    assert_select "form[action=?][method=?]", nyucore_path(item), "post" do
-      assert_select "input#nyucore_title[name=?]", "nyucore[title]"
-    end
+    expect(rendered).to match /Edit Item/
   end
 end

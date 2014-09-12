@@ -3,6 +3,7 @@ class Nyucore < ActiveFedora::Base
     include Enumerable
 
     COLLECTION_MAP = {
+      'The Real Rosie the Riveter' => ->(nyucore){ nyucore.resource_set == 'rosie_the_riveter' },
       "ESRI" => ->(nyucore){ nyucore.publisher.include? "ESRI" },
       "Spatial Data Repository" => ->(nyucore){ nyucore.type.include? "Geospatial Data" }
     }

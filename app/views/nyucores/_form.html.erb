@@ -1,23 +1,27 @@
-<%= simple_form_for @item do |f| %>
-
-<%= f.input :title %>
-<%= f.input :creator %>
-<%= f.input :publisher %>
-<%= f.input :identifier %>
-<%= f.input :type %>
-
-<% multivalue_fields.each do |field| %>
-<div>
-  <%= f.label field %>
-  <% @item.send(field).each_with_index do |item, index| %>
-  <%= f.input field, label: false, input_html: {name:"nyucore[#{field.to_s}][]", value: item.to_s, id: "nyucore_#{field.to_s}#{format_field_index(@item.send(field), index)}"} %>
+<%= simple_form_for item do |f| %>
+  <% fields.each do |field| %>
+    <div>
+      <%= f.label field %>
+      <% if multiple?(field) %>
+        <% values = item.send(field) %>
+        <% values.each do |value| %>
+          <% if value.source? %>
+            <div class="source"><%= value %></div>
+          <% else %>
+            <%= f.input field, label: false, input_html: {name:"nyucore[#{field}][]", value: value, id: field_id(field, value.index)} %>
+          <% end %>
+        <% end %>
+        <%= f.input field, label: false, input_html: {name:"nyucore[#{field}][]", value: nil, id: field_id(field)} %>
+      <% else %>
+        <% value = item.send(field) %>
+        <% if value.present? && value.source? %>
+          <div class="source"><%= value %></div>
+        <% else %>
+          <%= f.input field, label: false, input_html: {name:"nyucore[#{field}]", value: value, id: field_id(field)} %>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
-  <%= f.input field, label: false, input_html: {name:"nyucore[#{field.to_s}][]", value: nil, class: "new_#{field.to_s}", id: "nyucore_#{field.to_s}#{format_field_index(@item.send(field))}"} %>
-</div>
-<% end %>
-
-<br />
-
-<%= f.submit 'Save' %>
-
+  <br />
+  <%= f.submit 'Save' %>
 <% end %>

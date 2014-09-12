@@ -1,9 +1,8 @@
 module NyucoresHelper
 
-  # List of fields that have multiple values, so we can just loop in the view
-  # TODO: Encapsulate this somewhere else
-  def multivalue_fields
-    @multivalue_fields ||= [:available, :description, :edition, :series, :version, :date, :format, :language, :relation, :rights, :subject, :citation]
+  # List of Nyucore fields
+  def fields
+    @fields ||= Nyucore::FIELDS
   end
 
   # Retrieve the index of the current field so we can append that to the element's ID
@@ -32,4 +31,11 @@ module NyucoresHelper
     end
   end
 
+  def multiple?(field)
+    Nyucore.multiple?(field)
+  end
+
+  def field_id(field, index = nil)
+    "nyucore_#{field}#{format_field_index(@item.native_metadata.send(field), index)}"
+  end
 end

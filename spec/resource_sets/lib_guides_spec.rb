@@ -8,7 +8,7 @@ describe LibGuides do
   its(:prefix) { should eq prefix }
   its(:filename) { should eq filename }
   its(:editors) { should eq ['admin_group', 'libguides_cataloger'] }
-  its(:before_creates) { should eq [:add_edit_groups] }
+  its(:before_loads) { should eq [:add_edit_groups, :add_resource_set] }
   describe '.prefix' do
     subject { LibGuides.prefix }
     it { should eq prefix }
@@ -21,8 +21,8 @@ describe LibGuides do
     subject { LibGuides.editors }
     it { should eq [:admin_group, :libguides_cataloger] }
   end
-  describe '.before_creates' do
-    subject { LibGuides.before_creates }
-    it { should eq [:add_edit_groups] }
+  describe '.before_loads' do
+    subject { LibGuides.before_loads }
+    it { should eq [:add_edit_groups, :add_resource_set] }
   end
 end

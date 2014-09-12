@@ -11,8 +11,8 @@ staging:
   password: fedoraAdmin
   url: <%= "http://#{ENV['SERVER_NAME']}:8983/fedora" %>
 production:
-  user: fedoraAdmin
-  password: fedoraAdmin
-  url: http://your.production.server:8080/fedora
+  user: <%= "#{ENV['ICHABOD_FEDORA_USER']}" %>
+  password: <%= "#{ENV['ICHABOD_FEDORA_PASSWORD']}" %>
+  url: <%= "#{ENV['ICHABOD_FEDORA_HOST']}:#{ENV['ICHABOD_FEDORA_PORT']}/fedora" %>
 cucumber:
   <<: *TEST
