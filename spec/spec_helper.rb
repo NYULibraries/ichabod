@@ -87,6 +87,7 @@ end
 VCR.configure do |c|
   c.default_cassette_options = { allow_playback_repeats: true, record: :new_episodes }
   c.cassette_library_dir = 'spec/vcr_cassettes'
+  c.ignore_localhost = true
   c.configure_rspec_metadata!
   c.hook_into :webmock
   c.filter_sensitive_data('user') { ENV['ICHABOD_ROSIE_USER'] }
