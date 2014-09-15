@@ -11,6 +11,11 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - mysql -e 'create database ichabod_test;'
   - RAILS_ENV=test bundle exec rake db:schema:load
+  - bundle exec rake jetty:start
+  - sleep 10
+
+after_script:
+  - bundle exec rake jetty:stop
 
 bundler_args: --without development
 
