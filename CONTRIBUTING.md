@@ -116,7 +116,7 @@ For best practices, give every class, method, and variable a clear, semantic nam
 #User Stories
 Any team member can contribute user stories and add them to the Ichabod Pivotal Tracker Icebox.
 The Product Owners may review, use, or rewrite the stories at their discretion during story selection, refinement, and prioritization activities.
-Ideas, comments, questions, or concerns that cannot be easily described in a user story should be captured **WHERE** ?
+Ideas, comments, questions, or concerns that cannot be easily described in a user story should be captured as [GitHub Issues](https://github.com/NYULibraries/ichabod/issues).  Use of GitHub issue labels, e.g., ```question```, ```enhancement```, is encouraged.
 
 
 #More Resources
