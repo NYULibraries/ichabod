@@ -1,30 +1,31 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.0.9'
+gem 'rails', '~> 4.1.6'
 
 gem 'sqlite3', group: :development
 gem 'mysql2', '~> 0.3.15'
 
-gem 'sass-rails', '~> 4.0.0'
-gem 'compass-rails', '~> 1.1.7'
+gem 'sass-rails',   '>= 5.0.0.beta1'
+gem 'compass-rails', '~> 2.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', '~> 0.12.0', :platforms => :ruby
 gem 'jquery-rails', '~> 3.1.0'
-gem 'jquery-ui-rails', '~> 4.1.0'
-gem 'jbuilder', '~> 2.0.7'
+gem 'jquery-ui-rails', '~> 5.0.0'
+gem 'jbuilder', '~> 2.1.3'
 
-gem 'mustache', '0.99.4'
+gem 'mustache', '0.99.6'
 gem 'mustache-rails', github: 'josh/mustache-rails', require: 'mustache/railtie'
 
 gem 'exlibris-aleph', :git => 'git://github.com/barnabyalter/exlibris-aleph.git'
 gem 'authpds', :git => 'git://github.com/barnabyalter/authpds.git'
 gem 'authpds-nyu', :git => 'git://github.com/barnabyalter/authpds-nyu.git'
 
-gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v3.0.3'
+# gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v3.0.3'
+gem 'nyulibraries-assets', path: '/apps/nyulibraries-assets'
 gem 'nyulibraries-deploy', :git => 'git://github.com/NYULibraries/nyulibraries-deploy.git', :branch => 'development-fig'
 
-gem 'hydra', '~> 6.1.0'
+gem 'hydra', '~> 7.1.0'
 gem 'simple_form', '~> 3.0.2'
 gem 'kaminari', '~> 0.13'
 gem 'sorted', '~> 1.0.0'
