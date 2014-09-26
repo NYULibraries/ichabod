@@ -1,4 +1,3 @@
-@vcr
 Feature: See up-to-date metadata for GIS datasets in Ichabod
   In order to trust that the information I'm viewing is accurate
   As an NYU Patron
