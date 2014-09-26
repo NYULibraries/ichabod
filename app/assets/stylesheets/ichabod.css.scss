@@ -10,7 +10,7 @@ body {
 }
 
 #search {
-  margin-bottom: $paddingStandard;
+  margin-bottom: $padding-base;
 }
 
 .toggle_bookmark { margin-top: 2px !important; }
@@ -24,7 +24,7 @@ body {
 .q {
   padding-top: 6px !important;
   padding-bottom: 6px !important;
-  line-height: $lineHeightLarge !important;
+  line-height: $line-height-large-computed !important;
 }
 
 .record-help { margin-bottom: 10px; }
@@ -32,7 +32,7 @@ body {
 .field_with_errors {
   input {
     @extend .alert;
-    @extend .alert-error;
+    @extend .alert-danger;
   }
   label {
     color: #B94A48;
