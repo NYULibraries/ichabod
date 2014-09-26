@@ -101,7 +101,7 @@ class Nyucore < ActiveFedora::Base
   ##
   # Refine data before saving into solr
   def to_solr(solr_doc = {})
-    super(solr_doc)
+    solr_doc = super(solr_doc)
     Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
   end
 
