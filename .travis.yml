@@ -14,6 +14,10 @@ before_script:
   - bundle exec rails g hydra:jetty
   - bundle exec rake jetty:start
   - sleep 30
+  - RAILS_ENV=test bundle exec rake ichabod:load['spatial_data_repository','./ingest/test_sdr.xml']
+  - RAILS_ENV=test bundle exec rake ichabod:load['lib_guides','./ingest/test_libguides.xml']
+  - sleep 10
+  - RAILS_ENV=test bundle exec rake
 
 after_script:
   - bundle exec rake jetty:stop
