@@ -9,15 +9,17 @@ module Ichabod
     }
     FACETABLE_TERMS = [:creator, :type, :language, :subject]
 
-    map_predicates do |map|
-      TERMS.each_pair do |vocabulary, terms|
-        terms.each do |term|
-          index_args = [:stored_searchable]
-          index_args << :facetable if FACETABLE_TERMS.include? term
-          # Send publicly since :format is defined privately
-          map.public_send(term, in: vocabulary) do |index|
-            index.as(*index_args)
-          end
+    ##
+    # For active_fedora 7.x properties are now mapped like this
+    #
+    # Ex.
+    # => property :subject, predicate: RDF::DC.subject
+    TERMS.each_pair do |vocabulary, terms|
+      terms.each do |term|
+        index_args = [:stored_searchable]
+        index_args << :facetable if FACETABLE_TERMS.include? term
+        property term, predicate: vocabulary.send(term) do |index|
+          index.as(*index_args)
         end
       end
     end
