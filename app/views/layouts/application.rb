@@ -27,7 +27,7 @@ module Views
 
         prepend_yield += render :partial => 'shared/header_navbar' if show_search_box?
 
-        prepend_yield += content_tag :div, :id => "main-flashses" do
+        prepend_yield += content_tag :div, :id => "main-flashes" do
          render :partial => '/flash_msg'
         end
 
