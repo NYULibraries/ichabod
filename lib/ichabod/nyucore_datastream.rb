@@ -1,5 +1,6 @@
 module Ichabod
   class NyucoreDatastream < ActiveFedora::NtriplesRDFDatastream
+
     TERMS = {
       RDF::DC => [:identifier, :title, :creator, :contributor, :publisher,
         :type, :description, :date, :format, :language, :relation, :rights,
@@ -29,7 +30,7 @@ module Ichabod
     # into the same solr fields
     # Though, as Joe pointed out, we could want to revisit this decision
     # to allow different weighting for different datastreams.
-    def prefix(name)
+    def apply_prefix(name)
       name = name.to_s unless name.is_a? String
       pre = "desc_metadata"
       "#{pre}__#{name}".to_sym
