@@ -5,27 +5,9 @@ body {
   padding-top: 0;
 }
 
-.row, #content {
-  margin-left: 0 !important;
-}
-
-#search {
-  margin-bottom: $padding-base;
-}
-
 .toggle_bookmark { margin-top: 2px !important; }
 
 .page_links { line-height: 20px; }
-
-.search {
-  #search_field { display: none !important; }
-}
-
-.q {
-  padding-top: 6px !important;
-  padding-bottom: 6px !important;
-  line-height: $line-height-large-computed !important;
-}
 
 .record-help { margin-bottom: 10px; }
 
@@ -64,26 +46,21 @@ form div.source {
   color: gray;
 }
 
-//#search h2 {
-//  font-size: 17.5px;
-//  padding-top: 0;
-//  padding-bottom: 0;
-//  margin: 0;
-//}
-
-//.breadcrumb {
-//
-//  color: #333333;
-//  background-color: #e8e8e8;
-//  padding-top: 13px;
-//  padding-bottom: 13px;
-//  padding-left: 20px;
-//}
-
-//button#search { padding: 5px; }
-
-//.sidebar h2 {
-//  font-size: 18px !important;
-//  padding-top: 0;
-//  padding-bottom: 0;
-//}
+// Override blacklight styles because our search box is not in a navbar
+#q {
+  border-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  line-height: $line-height-large-computed !important;
+}
+#search {
+  margin-bottom: 1.5em;
+}
+// Hide "Search" text on phones
+.submit-search-text {
+  @media screen and (max-width: $screen-xs-min ) {
+    display: none;
+  }
+}
