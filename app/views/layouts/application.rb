@@ -16,22 +16,20 @@ module Views
 
       # Prepend modal dialog elements to the body
       def prepend_body
-        content_tag(:div, nil, :class => "modal-container")+
-        content_tag(:div, nil, :id => "ajax-modal", :class => "modal hide fade", :tabindex => "-1")
+        render partial: 'shared/ajax_modal'
       end
 
       # Prepend search box amd flash message partials before to yield
       def prepend_yield
         return unless show_search_box?
-        prepend_yield = ""
 
-        prepend_yield += render :partial => 'shared/header_navbar' if show_search_box?
+        prepend_yield = render :partial => 'shared/header_navbar' if show_search_box?
 
         prepend_yield += content_tag :div, :id => "main-flashes" do
-         render :partial => '/flash_msg'
+          render :partial => '/flash_msg'
         end
 
-        return prepend_yield.html_safe
+        return prepend_yield
       end
 
       # Boolean for whether or not to show tabs
