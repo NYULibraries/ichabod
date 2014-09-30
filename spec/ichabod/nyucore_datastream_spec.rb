@@ -52,9 +52,9 @@ module Ichabod
       end
     end
 
-    describe '#prefix' do
+    describe '#apply_prefix' do
       let(:name) { 'type' }
-      subject { nyucore_datastream.prefix(name) }
+      subject { nyucore_datastream.apply_prefix(name) }
       it { should eq :desc_metadata__type }
     end
   end
