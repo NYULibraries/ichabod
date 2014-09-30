@@ -51,9 +51,7 @@ form div.source {
   border-radius: 4px;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  line-height: $line-height-large-computed !important;
+  height: 2.5em;
 }
 #search {
   margin-bottom: 1.5em;
@@ -62,5 +60,14 @@ form div.source {
 .submit-search-text {
   @media screen and (max-width: $screen-xs-min ) {
     display: none;
+  }
+}
+button.search-btn {
+  height: 2.5em;
+  border-bottom-right-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+  &, &:link, &:hover, &:active, &:visited {
+    background-color: $nyu-purple !important;
+    border-color: $nyu-purple !important;
   }
 }
