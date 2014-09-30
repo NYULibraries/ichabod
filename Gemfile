@@ -49,7 +49,7 @@ group :development, :test, :cucumber do
   # Use factory girl for creating models
   gem 'factory_girl_rails', '~> 4.4.0'
   # Use pry-debugger as the REPL and for debugging
-  gem 'pry-debugger', '~> 0.2.2'
+  gem 'pry-debugger', '~> 0.2.2', :platform => :ruby_19
 end
 
 group :test, :cucumber do
