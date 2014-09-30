@@ -21,7 +21,7 @@ class CatalogController < ApplicationController
 
     # solr field configuration for search results/index views
     config.index.title_field = 'desc_metadata__title_tesim'
-    config.index.record_display_type = 'has_model_ssim'
+    config.index.display_type_field = 'has_model_ssim'
 
 
     # solr fields that will be treated as facets by the blacklight application
