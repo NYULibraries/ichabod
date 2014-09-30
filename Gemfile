@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'http://gems.github.com'
 
 gem 'rails', '~> 4.1.6'
 
@@ -9,7 +10,7 @@ gem 'sass-rails',   '>= 5.0.0.beta1'
 gem 'compass-rails', '~> 2.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'therubyracer', '~> 0.12.0', :platforms => :ruby
+gem 'therubyracer', '~> 0.12.0', platforms: :ruby
 gem 'jquery-rails', '~> 3.1.0'
 gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'jbuilder', '~> 2.1.3'
@@ -17,14 +18,14 @@ gem 'jbuilder', '~> 2.1.3'
 gem 'mustache', '0.99.4'
 gem 'mustache-rails', github: 'josh/mustache-rails', require: 'mustache/railtie'
 
-gem 'exlibris-aleph', :git => 'git://github.com/barnabyalter/exlibris-aleph.git'
-gem 'authpds', :git => 'git://github.com/barnabyalter/authpds.git'
-gem 'authpds-nyu', :git => 'git://github.com/barnabyalter/authpds-nyu.git'
+gem 'exlibris-aleph', github: 'barnabyalter/exlibris-aleph'
+gem 'authpds', github: 'barnabyalter/authpds'
+gem 'authpds-nyu', github: 'barnabyalter/authpds-nyu'
 
 # gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v3.0.3'
 # gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', branch: 'development-bootstrap3'
 gem 'nyulibraries-assets', path: '/apps/nyulibraries-assets'
-gem 'nyulibraries-deploy', :git => 'git://github.com/NYULibraries/nyulibraries-deploy.git', :branch => 'development-fig'
+gem 'nyulibraries-deploy', github: 'NYULibraries/nyulibraries-deploy', branch: 'development-fig'
 
 gem 'hydra', '~> 7.1.0'
 gem 'simple_form', '~> 3.0.2'
@@ -39,7 +40,7 @@ gem 'multi_json', '~> 1.10.1'
 gem 'multi_xml', '~> 0.5.5'
 
 group :development do
-  gem 'better_errors', '~> 1.1.0'
+  gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller'
 end
 
@@ -55,10 +56,10 @@ group :development, :test, :cucumber do
 end
 
 group :test, :cucumber do
-  gem 'cucumber-rails', :require => false
-  gem 'simplecov', :require => false
-  gem 'simplecov-rcov', :require => false
-  gem 'coveralls', '~> 0.7.0', :require => false
+  gem 'cucumber-rails', require: false
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov', require: false
+  gem 'coveralls', '~> 0.7.0', require: false
   gem 'vcr', '~> 2.8.0'
   gem 'webmock', '>= 1.8.0', '< 1.16'
   gem 'selenium-webdriver', '~> 2.41.0'
