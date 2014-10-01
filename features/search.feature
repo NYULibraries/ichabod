@@ -6,7 +6,7 @@ Feature: Perform a basic search
   Scenario: Empty search
     Given I am on the default search page
     When I perform an empty search
-    Then I should see search results
+    Then I should be presented with default search page
 
   Scenario: Search by keyword
     Given I am on the default search page
