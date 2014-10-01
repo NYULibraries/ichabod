@@ -105,6 +105,7 @@ class Nyucore < ActiveFedora::Base
     # so reference solr_doc locally (Hydra 7.0.0)
     solr_doc = super(solr_doc)
     Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
+    solr_doc
   end
 
   def collections
