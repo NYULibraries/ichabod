@@ -89,7 +89,7 @@ class Nyucore < ActiveFedora::Base
   SINGLE_FIELDS.each do |field|
     define_method(field) do
       # ActiveFedora forces the first value and so do we.
-      # https://github.com/projecthydra/active_fedora/blob/v6.7.6/lib/active_fedora/attributes.rb#L153
+      # https://github.com/projecthydra/active_fedora/blob/v7.0.0/lib/active_fedora/attributes.rb#L134
       if source_metadata.send(field).present?
         Metadatum.new(source_metadata.send(field).first, source_metadata)
       elsif native_metadata.send(field).present?
@@ -101,6 +101,8 @@ class Nyucore < ActiveFedora::Base
   ##
   # Refine data before saving into solr
   def to_solr(solr_doc = {})
+    # to_solr super is no longer passing a reference to one big solr document
+    # so reference solr_doc locally (Hydra 7.0.0)
     solr_doc = super(solr_doc)
     Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
   end
