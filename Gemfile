@@ -41,7 +41,9 @@ gem 'multi_xml', '~> 0.5.5'
 
 group :development do
   gem 'better_errors', '~> 2.0.0'
-  gem 'binding_of_caller'
+  gem 'binding_of_caller', '~> 0.7.2'
+  # Use pry-debugger as the REPL and for debugging
+  gem 'pry-debugger', '~> 0.2.2'
 end
 
 group :development, :test, :cucumber do
@@ -51,8 +53,7 @@ group :development, :test, :cucumber do
   gem 'poltergeist', '~> 1.5.0'
   # Use factory girl for creating models
   gem 'factory_girl_rails', '~> 4.4.0'
-  # Use pry-debugger as the REPL and for debugging
-  gem 'pry-debugger', '~> 0.2.2'
+
 end
 
 group :test, :cucumber do
