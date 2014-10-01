@@ -12,7 +12,7 @@ end
 
 def using_vcr_cassette(name)
   vcr_localhost_request do
-    VCR.use_cassette(name, match_requests_on: [:method, :uri, :body], record: :once) do
+    VCR.use_cassette(name, match_requests_on: [:method, :uri, :body], record: :none) do
       yield
     end
   end
