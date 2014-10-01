@@ -1,4 +1,3 @@
-@vcr
 Feature: Click "Download" link for Geospatial dataset
   In order to download a Geospatial dataset
   As an on-campus NYU patron

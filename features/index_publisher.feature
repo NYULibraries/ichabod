@@ -1,4 +1,3 @@
-@vcr
 Feature: Index publisher
   In order to use GIS dataset data in my research
   As an NYU patron

@@ -1,4 +1,3 @@
-@vcr
 Feature: Permission to edit metadata only to authorized users
   In order to protect my own metadata and others from inadvertent modification
   As a logged in cataloger

@@ -10,10 +10,7 @@ VCR.configure do |c|
   end
   c.default_cassette_options = { allow_playback_repeats: true, record: :new_episodes }
   c.hook_into :webmock
+  c.ignore_localhost = true
   c.cassette_library_dir     = 'features/cassettes'
   c.filter_sensitive_data('https://rosie.the.riveter') { ENV['ICHABOD_ROSIE_ENDPOINT_URL'] }
-end
-
-VCR.cucumber_tags do |t|
-  t.tag '@vcr', use_scenario_name: true
 end

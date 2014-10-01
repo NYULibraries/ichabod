@@ -11,10 +11,17 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - mysql -e 'create database ichabod_test;'
   - RAILS_ENV=test bundle exec rake db:schema:load
+  - bundle exec rails g hydra:jetty
+  - bundle exec rake jetty:start
+  - sleep 40
+  - RAILS_ENV=test bundle exec rake ichabod:load['spatial_data_repository','./ingest/test_sdr.xml']
+  - RAILS_ENV=test bundle exec rake ichabod:load['lib_guides','./ingest/test_libguides.xml']
+  - sleep 30
+
 
 bundler_args: --without development
 
-script: "bundle exec rake"
+script: "RAILS_ENV=test bundle exec rake"
 
 notifications:
   irc:

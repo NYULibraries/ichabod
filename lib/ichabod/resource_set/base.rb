@@ -139,8 +139,8 @@ module Ichabod
           unless resource.is_a?(Resource)
             raise RuntimeError.new("Expecting #{resource} to be a Resource")
           end
-          nyucore = Nyucore.find(resource.pid)
-          nyucore.destroy
+          nyucore = Nyucore.find(pid: resource.pid).first
+          nyucore.destroy if nyucore
           nyucore
         end
       end
