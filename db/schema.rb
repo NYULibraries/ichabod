@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708175644) do
+ActiveRecord::Schema.define(version: 20141001211059) do
 
   create_table "bookmarks", force: true do |t|
-    t.integer  "user_id",     null: false
+    t.integer  "user_id",       null: false
     t.string   "document_id"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "user_type"
+    t.string   "document_type"
   end
 
-  
+  add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id", using: :btree
+
   create_table "searches", force: true do |t|
     t.text     "query_params"
     t.integer  "user_id"
@@ -34,19 +36,19 @@ ActiveRecord::Schema.define(version: 20140708175644) do
   add_index "searches", ["user_id"], name: "index_searches_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                                   default: "",    null: false
-    t.string   "encrypted_password",                      default: "",    null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                           default: 0
+    t.integer  "sign_in_count",          default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "guest",                                   default: false
+    t.boolean  "guest",                  default: false
     t.string   "username"
     t.string   "firstname"
     t.string   "lastname"
