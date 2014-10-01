@@ -5,7 +5,7 @@ Feature: Click "Download" link for Geospatial dataset
 
   Scenario: Display "Online Resource" field in search results
     Given I am on the default search page
-    When I perform an empty search
+    When I search for "MapPluto"
     And I limit my results to "Geospatial Data" under the "Format" category
     Then I should get "Online Resource" field in all results
 

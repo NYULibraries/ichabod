@@ -9,6 +9,10 @@ When(/^I perform an empty search$/) do
   search_phrase('')
 end
 
+Then(/^I should be presented with default search page$/) do
+  expect(find('#content')).to have_content("Use the search box above to search for resources in this repository")
+end
+
 When(/^I search on the phrase "(.*?)"$/) do |phrase|
   ensure_root_path
   search_phrase(phrase)
