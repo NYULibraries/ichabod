@@ -1,4 +1,3 @@
-@vcr
 Feature: Login as a user
   In order to have permissions specific to me
   As a valid NYU user

@@ -1,4 +1,3 @@
-@vcr
 Feature: Add, edit and delete records
   In order to provide complete records and maintain them within Ichabod
   As a record maintainer

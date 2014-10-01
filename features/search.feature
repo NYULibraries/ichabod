@@ -1,4 +1,3 @@
-@vcr
 Feature: Perform a basic search
   In order to retrieve results from the respository
   As an NYU user
@@ -32,12 +31,13 @@ Feature: Perform a basic search
     And I limit my results to "Geospatial Data" under the "Format" category
     Then I should see search results
 
+  @vcr_rosie_the_riveter_search
   Scenario: Search for Rosie the Riveter interview subject's name
     Given I am on the default search page
     When I search on the phrase "Jerre Kalbas"
     Then I should see search results
 
-    Scenario: Search for a Research Guide title and limit by "Format"
+  Scenario: Search for a Research Guide title and limit by "Format"
     Given I am on the default search page
     When I search on the phrase "Data Services"
     And I limit my results to "Research Guide" under the "Format" category
