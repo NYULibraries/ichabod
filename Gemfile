@@ -22,9 +22,8 @@ gem 'exlibris-aleph', github: 'barnabyalter/exlibris-aleph'
 gem 'authpds', github: 'barnabyalter/authpds'
 gem 'authpds-nyu', github: 'barnabyalter/authpds-nyu'
 
-# gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', :tag => 'v3.0.3'
-# gem 'nyulibraries-assets', :git => 'git://github.com/NYULibraries/nyulibraries-assets.git', branch: 'development-bootstrap3'
-gem 'nyulibraries-assets', path: '/apps/nyulibraries-assets'
+gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', branch: 'development-bootstrap3'
+# gem 'nyulibraries-assets', path: '/apps/nyulibraries-assets'
 gem 'nyulibraries-deploy', github: 'NYULibraries/nyulibraries-deploy', branch: 'development-fig'
 
 gem 'hydra', '~> 7.1.0'
