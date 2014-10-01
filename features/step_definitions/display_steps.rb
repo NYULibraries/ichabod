@@ -8,7 +8,7 @@ end
 
 And(/^I navigate to details display of the first result$/) do
   within(documents_list_container) do
-    find(:xpath, "//a[@data-counter='1']").click
+    find(".document:first-child h5.index_title a").click
   end
 end
 

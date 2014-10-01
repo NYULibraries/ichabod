@@ -48,7 +48,6 @@ end
 And(/^I should see a "(.*?)" facet under the "(.*?)" category$/) do |facet, category|
   within(:css, "#facets") do
     click_link(category)
-    expect(page.find(:css, ".facet_limit > ul")).to be_visible
     expect(page.find(:xpath, "//a[text()='#{facet}']")).to have_content
   end
 end
