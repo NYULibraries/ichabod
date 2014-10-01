@@ -18,6 +18,9 @@ gem 'jbuilder', '~> 2.1.3'
 gem 'mustache', '0.99.4'
 gem 'mustache-rails', github: 'josh/mustache-rails', require: 'mustache/railtie'
 
+# None of these gems should be included in a real production instance.
+# This entire auth process should be handled by login
+gem 'authlogic', github: 'binarylogic/authlogic', ref: 'e4b2990d6282f3f7b50249b4f639631aef68b939'
 gem 'exlibris-aleph', github: 'barnabyalter/exlibris-aleph'
 gem 'authpds', github: 'barnabyalter/authpds'
 gem 'authpds-nyu', github: 'barnabyalter/authpds-nyu'
@@ -41,8 +44,6 @@ gem 'multi_xml', '~> 0.5.5'
 group :development do
   gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller'
-  # Use pry-debugger as the REPL and for debugging
-  gem 'pry-debugger', '~> 0.2.2'
 end
 
 group :development, :test, :cucumber do
@@ -52,6 +53,8 @@ group :development, :test, :cucumber do
   gem 'poltergeist', '~> 1.5.0'
   # Use factory girl for creating models
   gem 'factory_girl_rails', '~> 4.4.0'
+  # Use pry-debugger as the REPL and for debugging
+  gem 'pry', '~> 0.10.1'
 end
 
 group :test, :cucumber do
@@ -59,9 +62,9 @@ group :test, :cucumber do
   gem 'simplecov', require: false
   gem 'simplecov-rcov', require: false
   gem 'coveralls', '~> 0.7.0', require: false
-  gem 'vcr', '~> 2.8.0'
-  gem 'webmock', '>= 1.8.0', '< 1.16'
-  gem 'selenium-webdriver', '~> 2.41.0'
+  gem 'vcr', '~> 2.9.3'
+  gem 'webmock', '~> 1.19.0'
+  gem 'selenium-webdriver', '~> 2.43.0'
   gem 'pickle', '~> 0.4.11'
-  gem 'database_cleaner', '~> 1.2.0'
+  gem 'database_cleaner', '~> 1.3.0'
 end
