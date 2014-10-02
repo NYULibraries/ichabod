@@ -35,5 +35,6 @@ module Ichabod
       pre = "desc_metadata"
       "#{pre}__#{name}".to_sym
     end
+
   end
 end
