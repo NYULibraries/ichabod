@@ -69,7 +69,6 @@ class Nyucore < ActiveFedora::Base
       end + native_metadata.send(field).each_with_index.collect do |value, index|
         Metadatum.new(value, native_metadata, index)
       end
-      # binding.pry if field == :publisher
     end
   end
 
@@ -101,23 +100,19 @@ class Nyucore < ActiveFedora::Base
 
   ##
   # Refine data before saving into solr
-  # def to_solr(solr_doc = {})
-  # #   # to_solr super is no longer passing a reference to one big solr document
-  # #   # so reference solr_doc locally (Hydra 7.0.0)
-  # #   prefix = "desc_metadata__"
-  # #   solr_doc = super(solr_doc)
-  # #   solr_doc_converted_values = solr_doc.each_with_object({}) do |(key, value), new|
-  # #     METADATA_STREAMS.each do |stream|
-  # #       if key.to_s.start_with? stream
-  # #         new[key.to_s.gsub("#{stream}__",prefix)] = value
-  # #       end
-  # #     end
-  # #   end
-  # #   solr_doc.merge!(solr_doc_converted_values)
-  # #   Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
-  #   # solr_doc
-  #   binding.pry
-  # end
+  def to_solr(solr_doc = {})
+    solr_doc = super(solr_doc)
+    # Delete all the desc_metadata__ fields from the solr_doc so we can
+    # readd them correctly
+    solr_doc = solr_doc.delete_if {|field,value| field.to_s.start_with?("desc_metadata__") }
+    datastreams.each_value do |ds|
+      # Jumping through a few hoops here to make it work like it did in the below commit:
+      # https://github.com/projecthydra/active_fedora/blob/889aa962a326ad9e8302ada3237193221ad2feb5/lib/active_fedora/indexing.rb
+      solr_doc = ds.to_solr(solr_doc)
+    end
+    Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
+    solr_doc
+  end
 
   def collections
     @collections ||= Collections.new(self)
