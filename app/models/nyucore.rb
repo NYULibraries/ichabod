@@ -69,6 +69,7 @@ class Nyucore < ActiveFedora::Base
       end + native_metadata.send(field).each_with_index.collect do |value, index|
         Metadatum.new(value, native_metadata, index)
       end
+      # binding.pry if field == :publisher
     end
   end
 
@@ -100,13 +101,23 @@ class Nyucore < ActiveFedora::Base
 
   ##
   # Refine data before saving into solr
-  def to_solr(solr_doc = {})
-    # to_solr super is no longer passing a reference to one big solr document
-    # so reference solr_doc locally (Hydra 7.0.0)
-    solr_doc = super(solr_doc)
-    Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
-    solr_doc
-  end
+  # def to_solr(solr_doc = {})
+  # #   # to_solr super is no longer passing a reference to one big solr document
+  # #   # so reference solr_doc locally (Hydra 7.0.0)
+  # #   prefix = "desc_metadata__"
+  # #   solr_doc = super(solr_doc)
+  # #   solr_doc_converted_values = solr_doc.each_with_object({}) do |(key, value), new|
+  # #     METADATA_STREAMS.each do |stream|
+  # #       if key.to_s.start_with? stream
+  # #         new[key.to_s.gsub("#{stream}__",prefix)] = value
+  # #       end
+  # #     end
+  # #   end
+  # #   solr_doc.merge!(solr_doc_converted_values)
+  # #   Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
+  #   # solr_doc
+  #   binding.pry
+  # end
 
   def collections
     @collections ||= Collections.new(self)
