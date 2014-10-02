@@ -23,6 +23,14 @@ require 'database_cleaner'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
+# Refresh jetty data before rspec tests run
+if Rails.env.test?
+  WebMock.allow_net_connect!
+  Nyucore.destroy_all
+  Ichabod::DataLoader.new('spatial_data_repository', File.join(Rails.root, 'ingest/test_sdr.xml')).load
+  Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
+end
+
 RSpec.configure do |config|
   # ## Mock Framework
   #
