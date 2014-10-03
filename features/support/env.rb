@@ -22,10 +22,14 @@ require 'cucumber/rails'
 
 # Refresh jetty data before cucumber tests run
 if Rails.env.cucumber?
-  WebMock.allow_net_connect!
-  Nyucore.destroy_all
-  Ichabod::DataLoader.new('spatial_data_repository', File.join(Rails.root, 'ingest/test_sdr.xml')).load
-  Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
+  begin
+    WebMock.allow_net_connect!
+    Nyucore.destroy_all
+    Ichabod::DataLoader.new('spatial_data_repository', File.join(Rails.root, 'ingest/test_sdr.xml')).load
+    Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
+  ensure
+    WebMock.disable_net_connect!
+  end
 end
 
 # Capybara defaults to CSS3 selectors rather than XPath.
