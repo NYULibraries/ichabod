@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'http://gems.github.com'
 
 gem 'rails', '~> 4.1.6'
 
@@ -25,7 +24,7 @@ gem 'exlibris-aleph', github: 'barnabyalter/exlibris-aleph'
 gem 'authpds', github: 'barnabyalter/authpds'
 gem 'authpds-nyu', github: 'barnabyalter/authpds-nyu'
 
-gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', branch: 'development-bootstrap3'
+gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', tag: 'v4.0.0'
 # gem 'nyulibraries-assets', path: '/apps/nyulibraries-assets'
 gem 'nyulibraries-deploy', github: 'NYULibraries/nyulibraries-deploy', branch: 'development-fig'
 
