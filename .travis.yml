@@ -16,7 +16,6 @@ before_script:
   - bundle exec rake jetty:start
   - sleep 100
 
-
 bundler_args: --without development
 
 script: "RAILS_ENV=test bundle exec rake"
