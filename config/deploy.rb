@@ -3,6 +3,8 @@ require 'nyulibraries/deploy/capistrano'
 set :app_title, "ichabod"
 set :new_relic_environments, nil  # do not use new_relic at this time
 
+set :rvm_ruby_string, "ruby-2.1.3"
+
 namespace :deploy do
   # task :create_symlink do
   #   run "rm -rf #{app_path}#{app_title} && ln -s #{current_path}/public #{app_path}#{app_title}"
