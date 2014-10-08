@@ -5,7 +5,8 @@ class Nyucore < ActiveFedora::Base
     COLLECTION_MAP = {
       'The Real Rosie the Riveter' => ->(nyucore){ nyucore.resource_set == 'rosie_the_riveter' },
       "ESRI" => ->(nyucore){ nyucore.publisher.include? "ESRI" },
-      "Spatial Data Repository" => ->(nyucore){ nyucore.type.include? "Geospatial Data" }
+      "Spatial Data Repository" => ->(nyucore){ nyucore.type.include? "Geospatial Data" },
+      'Asian NGOs Reports' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_ngo' }
     }
 
     attr_reader :nyucore

@@ -19,3 +19,9 @@ Feature: Collection facet
     Given I am on the default search page
     When I filter my search to "The Real Rosie the Riveter" under the "Collection" category
     Then I should see search results
+
+  @vcr_faculty_digital_archive_ngo_collection
+  Scenario: Filter by The Asian NGOs Reports
+    Given I am on the default search page
+    When I filter my search to "Asian NGOs Reports" under the "Collection" category
+    Then I should see search results

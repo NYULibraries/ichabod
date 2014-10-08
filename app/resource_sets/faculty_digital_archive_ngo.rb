@@ -3,7 +3,7 @@ class FacultyDigitalArchiveNgo < Ichabod::ResourceSet::Base
   self.prefix = 'fda'
   self.source_reader = :oai_dc_http_reader
   editor :fda_cataloger
-  before_create :set_available_or_citation,:set_type
+  before_load :add_resource_set, :set_available_or_citation, :set_type
 
   attr_reader :endpoint_url,:set_handle
 
@@ -13,15 +13,15 @@ class FacultyDigitalArchiveNgo < Ichabod::ResourceSet::Base
     super
   end
 
-   private
+  private
   def set_available_or_citation(*args)
     resource, nyucore = *args
     identifiers = resource.identifier
-    nyucore.identifier = identifiers.find do |identifier|
+    identifiers.each do |identifier|
       if identifier.include? "handle"
-        nyucore.available = identifier
+        nyucore.source_metadata.available = identifier
       else
-        nyucore.citation = identifier
+        nyucore.source_metadata.citation = identifier
       end
     end
   end
@@ -30,5 +30,4 @@ class FacultyDigitalArchiveNgo < Ichabod::ResourceSet::Base
     resource,nyucore = *args
     nyucore.type="Technical Report"
   end
-
 end

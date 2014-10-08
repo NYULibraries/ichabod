@@ -10,7 +10,7 @@ describe FacultyDigitalArchiveNgo do
   its(:endpoint_url) { should eq endpoint_url }
   its(:set_handle) { should eq set_handle }
   its(:editors) { should eq ['admin_group', 'fda_cataloger'] }
-  its(:before_creates) { should eq [:add_edit_groups,:set_available_or_citation, :set_type] }
+  its(:before_loads) { should eq [:add_edit_groups, :add_resource_set, :set_available_or_citation, :set_type] }
   describe '.prefix' do
     subject { FacultyDigitalArchiveNgo.prefix }
     it { should eq prefix }
@@ -23,8 +23,8 @@ describe FacultyDigitalArchiveNgo do
     subject { FacultyDigitalArchiveNgo.editors }
     it { should eq [:admin_group, :fda_cataloger] }
   end
-  describe '.before_creates' do
-    subject { FacultyDigitalArchiveNgo.before_creates }
-    it { should eq [:add_edit_groups, :set_available_or_citation, :set_type,] }
+  describe '.before_loads' do
+    subject { FacultyDigitalArchiveNgo.before_loads }
+    it { should eq [:add_edit_groups, :add_resource_set, :set_available_or_citation, :set_type] }
   end
 end
