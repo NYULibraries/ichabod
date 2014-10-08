@@ -40,7 +40,11 @@ module Ichabod
          @records=[]
          client = OAI::Client.new endpoint_url
          response_oai = client.list_records :set=>set_handle
-         response_oai.each { |oai_record| @records<<oai_record.metadata }   
+         if(Rails.env.test?)|
+           response_oai.first(5).each { |oai_record| @records<<oai_record.metadata }
+         else
+           response_oai.each { |oai_record| @records<<oai_record.metadata }
+         end
          @records            
         end
       end
