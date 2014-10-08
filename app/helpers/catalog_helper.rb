@@ -18,3 +18,4 @@ module CatalogHelper
       nil
     end
   end
+end
