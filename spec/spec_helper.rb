@@ -23,6 +23,18 @@ require 'database_cleaner'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
+# Refresh jetty data before rspec tests run
+if Rails.env.test?
+  begin
+    WebMock.allow_net_connect!
+    Nyucore.destroy_all
+    Ichabod::DataLoader.new('spatial_data_repository', File.join(Rails.root, 'ingest/test_sdr.xml')).load
+    Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
+  ensure
+    WebMock.disable_net_connect!
+  end
+end
+
 RSpec.configure do |config|
   # ## Mock Framework
   #
@@ -87,6 +99,7 @@ end
 VCR.configure do |c|
   c.default_cassette_options = { allow_playback_repeats: true, record: :new_episodes }
   c.cassette_library_dir = 'spec/vcr_cassettes'
+  c.ignore_localhost = true
   c.configure_rspec_metadata!
   c.hook_into :webmock
   c.filter_sensitive_data('user') { ENV['ICHABOD_ROSIE_USER'] }

@@ -1,4 +1,3 @@
-@vcr
 Feature: Find Geospatial dataset by title
   In order to find a Geospatial dataset with a known title
   As a visitor

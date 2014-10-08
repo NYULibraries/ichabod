@@ -152,7 +152,7 @@ module Ichabod
           end
         end
       end
-      describe '#load', vcr: {cassette_name: 'resource sets/load resource set'} do
+      describe '#load' do
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
         after { Base.instance_variable_set(:@source_reader, nil) }
         subject { base.load }
@@ -168,6 +168,7 @@ module Ichabod
           end
         end
         context 'when there are no editors' do
+          before { base.delete }
           before { Base.instance_variable_set(:@editors, original_editors)}
           it 'should return an array of Nyucores with no edit groups' do
             subject.each do |nyucore|
@@ -194,8 +195,9 @@ module Ichabod
           end
         end
       end
-      describe '#delete', vcr: {cassette_name: 'resource sets/delete resource set'} do
+      describe '#delete' do
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
+        before { base.load }
         after { Base.instance_variable_set(:@source_reader, nil) }
         subject { base.delete }
         it 'should return an array of deleted Nyucores' do
@@ -207,6 +209,7 @@ module Ichabod
         end
         context 'when there is no source reader configured' do
           before { Base.instance_variable_set(:@source_reader, nil) }
+          before { base.instance_variable_set(:@resources, nil) }
           it 'should raise a RuntimeError' do
             expect { subject }.to raise_error RuntimeError
           end

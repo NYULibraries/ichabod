@@ -57,7 +57,7 @@ module Ichabod
       end
       context "when source is the Spatial Data Repository", vcr: { cassette_name: 'data loader/sdr/delete' } do
         it "should delete an existing nyucore record" do
-          expect(Nyucore.find(pid: id)).to be_blank
+          expect(Nyucore.find(pid: id)).to be_empty
         end
       end
       context "when source is the Faculty Digital Archive", vcr: { cassette_name: 'data loader/fda/delete' } do
@@ -65,7 +65,7 @@ module Ichabod
         let(:filename) { './spec/fixtures/sample_fda.xml' }
         let(:id) { 'fda:hdl-handle-net-2451-14097' }
         it "should delete an existing nyucore record" do
-          expect(Nyucore.find(pid: id)).to be_blank
+          expect(Nyucore.find(pid: id)).to be_empty
         end
       end
     end

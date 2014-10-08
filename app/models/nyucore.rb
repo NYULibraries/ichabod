@@ -89,7 +89,7 @@ class Nyucore < ActiveFedora::Base
   SINGLE_FIELDS.each do |field|
     define_method(field) do
       # ActiveFedora forces the first value and so do we.
-      # https://github.com/projecthydra/active_fedora/blob/v6.7.6/lib/active_fedora/attributes.rb#L153
+      # https://github.com/projecthydra/active_fedora/blob/v7.0.0/lib/active_fedora/attributes.rb#L134
       if source_metadata.send(field).present?
         Metadatum.new(source_metadata.send(field).first, source_metadata)
       elsif native_metadata.send(field).present?
@@ -101,8 +101,17 @@ class Nyucore < ActiveFedora::Base
   ##
   # Refine data before saving into solr
   def to_solr(solr_doc = {})
-    super(solr_doc)
+    solr_doc = super(solr_doc)
+    # Delete all the desc_metadata__ fields from the solr_doc so we can
+    # readd them correctly
+    solr_doc = solr_doc.delete_if {|field,value| field.to_s.start_with?("desc_metadata__") }
+    datastreams.each_value do |ds|
+      # Jumping through a few hoops here to make it work like it did in the below commit:
+      # https://github.com/projecthydra/active_fedora/blob/889aa962a326ad9e8302ada3237193221ad2feb5/lib/active_fedora/indexing.rb
+      solr_doc = ds.to_solr(solr_doc)
+    end
     Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
+    solr_doc
   end
 
   def collections

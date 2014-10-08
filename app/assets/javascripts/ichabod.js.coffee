@@ -19,7 +19,7 @@ class AdditionalFieldLink
 
   # Get the first element of the series, which has no index
   input: ->
-    @element.closest("div").find("div.input").first()
+    @element.closest("div").find("div.form-group").first()
 
   # Get the count of fields of this element
   count: ->
@@ -34,7 +34,7 @@ class AdditionalFieldLink
   # Append a cloned version of the first element in this list
   # to the end of the list
   append_new_field: ->
-    @element.closest("div").find("div.input").last().after(@clone())
+    @element.closest("div").find("div.form-group").last().after(@clone())
 
 $ ->
   # Add a "+" link after multivalued nyucore fields

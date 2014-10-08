@@ -20,6 +20,18 @@ ENV['RAILS_ENV'] = 'cucumber'
 
 require 'cucumber/rails'
 
+# Refresh jetty data before cucumber tests run
+if Rails.env.cucumber?
+  begin
+    WebMock.allow_net_connect!
+    Nyucore.destroy_all
+    Ichabod::DataLoader.new('spatial_data_repository', File.join(Rails.root, 'ingest/test_sdr.xml')).load
+    Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
+  ensure
+    WebMock.disable_net_connect!
+  end
+end
+
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
@@ -63,6 +75,12 @@ end
 #   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
 #     DatabaseCleaner.strategy = :transaction
 #   end
+
+Before do
+  if Capybara.default_driver == :selenium
+    Capybara.current_session.driver.browser.manage.window.resize_to(1280, 1024)
+  end
+end
 
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
