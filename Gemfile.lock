@@ -66,6 +66,16 @@ GIT
       activesupport (>= 3.2)
 
 GIT
+  remote: git://github.com/code4lib/ruby-oai.git
+  revision: 2962523677f8619f646ea95ece490c8c3a43e742
+  branch: master
+  specs:
+    oai (0.3.1)
+      builder (>= 3.1.0)
+      faraday
+      faraday_middleware
+
+GIT
   remote: git://github.com/josh/mustache-rails.git
   revision: d219b298ddc94ca0c4b749125a803f74157ddd03
   specs:
@@ -342,15 +352,7 @@ GEM
       activesupport
       i18n
       nokogiri
-<<<<<<< HEAD
     om (3.1.0)
-=======
-    oai (0.3.1)
-      builder (>= 2.0.0)
-      faraday
-      faraday_middleware
-    om (3.0.7)
->>>>>>> Added data loader for Collection 'Asian NGO Reports'
       activemodel
       activesupport
       nokogiri (>= 1.4.2)
@@ -569,6 +571,7 @@ DEPENDENCIES
   mysql2 (~> 0.3.15)
   nyulibraries-assets!
   nyulibraries-deploy!
+  oai!
   phantomjs (>= 1.9.0)
   pickle (~> 0.4.11)
   poltergeist (~> 1.5.0)
@@ -587,4 +590,3 @@ DEPENDENCIES
   unicode
   vcr (~> 2.9.3)
   webmock (~> 1.19.0)
-  oai (~> 0.3.1)
