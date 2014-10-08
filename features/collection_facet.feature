@@ -19,3 +19,8 @@ Feature: Collection facet
     Given I am on the default search page
     When I filter my search to "The Real Rosie the Riveter" under the "Collection" category
     Then I should see search results
+
+  Scenario: Filter by The Asian NGOs Reports
+    Given I am on the default search page
+    When I filter my search to "Asian NGOs Reports" under the "Collection" category
+    Then I should see search results
