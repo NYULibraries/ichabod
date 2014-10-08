@@ -8,12 +8,13 @@ module CatalogHelper
   def render_external_links(args)
     document = args[:document]
     field_name = args[:field]
-    url_presenter = UrlPresenter.new(document, field_name)
+    url_presenter = UrlPresenter.new(document,field_name)
     links = url_presenter.urls.collect do |url|
       link_to(url.text, url.value, {target: '_blank'})
     end
     links.join(field_value_separator).html_safe
-  rescue
+  rescue => error
+    logger.error(error)
     nil
   end
 end
