@@ -42,3 +42,9 @@ Feature: Perform a basic search
     When I search on the phrase "Data Services"
     And I limit my results to "Research Guide" under the "Format" category
     Then I should see search results
+
+  Scenario: Search for NGO reports
+    Given I am on the default search page
+    When I search on the phrase "Hijras"
+    And I limit my results to "Technical Report" under the "Format" category
+    Then I should see search results
