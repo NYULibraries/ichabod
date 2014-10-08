@@ -3,7 +3,7 @@ class FacultyDigitalArchiveNgo < Ichabod::ResourceSet::Base
   self.prefix = 'fda'
   self.source_reader = :oai_dc_http_reader
   editor :fda_cataloger
-  before_load :add_resource_set, :set_available_or_citation, :set_type
+  before_load :set_available_or_citation, :set_type
 
   attr_reader :endpoint_url,:set_handle
 
