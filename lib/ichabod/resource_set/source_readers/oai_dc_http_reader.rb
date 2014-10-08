@@ -4,14 +4,13 @@ module Ichabod
       class OaiDcHttpReader < ResourceSet::SourceReader
       require 'oai'
  
-
-        def read        
+        def read
             records.collect do | record|
              ResourceSet::Resource.new(resource_attributes_from_record(record))
             end
         end
 
-       private
+        private
         extend Forwardable
         def_delegators :resource_set, :endpoint_url, :set_handle
 
