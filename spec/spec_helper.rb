@@ -27,7 +27,7 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 if Rails.env.test?
   begin
     WebMock.allow_net_connect!
-    #Nyucore.destroy_all
+    Nyucore.destroy_all
     Ichabod::DataLoader.new('spatial_data_repository', File.join(Rails.root, 'ingest/test_sdr.xml')).load
     Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
   ensure
