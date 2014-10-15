@@ -29,6 +29,7 @@ namespace :rosie do
     set :rosie_endpoint_url, ENV['ICHABOD_ROSIE_ENDPOINT_URL']
     set :rosie_user, ENV['ICHABOD_ROSIE_USER']
     set :rosie_password, ENV['ICHABOD_ROSIE_PASSWORD']
+   
   end
   task :import do
     set_variables
@@ -37,6 +38,22 @@ namespace :rosie do
   task :delete do
     set_variables
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['rosie_the_riveter',#{rosie_endpoint_url},#{rosie_user},#{rosie_password}]"
+  end
+end
+
+namespace :voice do
+  # desc "Set variables for the Rosie the Riveter ingest tasks"
+  task :set_variables do
+    set :voice_endpoint_url, ENV['ICHABOD_VOICE_ENDPOINT_URL']
+    
+  end
+  task :import do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['voice',#{voice_endpoint_url}]"
+  end
+  task :delete do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['voice',#{voice_endpoint_url}]"
   end
 end
 
