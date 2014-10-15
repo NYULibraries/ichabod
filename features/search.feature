@@ -60,3 +60,7 @@ Feature: Perform a basic search
     When I search on the phrase "louiskarchin.com"
     Then I should see search results
 
+  Scenario: Search for NYU Press Open Access Books
+    Given I am on the default search page
+    When I search on the phrase "Ugly Secrets"
+    Then I should see search results

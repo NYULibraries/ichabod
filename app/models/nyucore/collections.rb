@@ -7,8 +7,13 @@ class Nyucore < ActiveFedora::Base
       'Voices of the Food Revolution' => ->(nyucore){ nyucore.resource_set == 'voice' },
       "ESRI" => ->(nyucore){ nyucore.publisher.include? "ESRI" },
       "Spatial Data Repository" => ->(nyucore){ nyucore.type.include? "Geospatial Data" },
+<<<<<<< HEAD
       'Asian NGOs Reports' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_ngo' },
       "Archive of Contemporary Composers' Websites" => ->(nyucore){ nyucore.resource_set == 'archive_it_accw' }
+=======
+      'Asian NGOs Reports' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_ngo' }
+      'NYU Press Open Access Books' => ->(nyucore){ nyucore.resource_set == 'nyu_press_open_access_book' }
+>>>>>>> Added tests and configs for nyupress
     }
 
     attr_reader :nyucore

@@ -1,0 +1,154 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="True" name="HandheldFriendly"><meta content="on" http-equiv="cleartype"><link href="https://library.nyu.edu/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <title>Ichabod</title>
+    <link href="/assets/application.css" media="screen" rel="stylesheet">
+    <script src="/assets/application.js"></script>
+  </head>
+  <body>
+    <div id="ajax-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal menu" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+<header id="header" class="header">
+  <div class="parent"><a href="http://library.nyu.edu/"><span>NYU Libraries</span></a></div>
+  <div class="institution"><span>NYU</span></div>
+  <div class="application"><span>Ichabod</span></div>
+</header>
+<nav>
+<ol class="nyu-breadcrumbs">
+    <li><a href="http://library.nyu.edu">NYU Libraries</a></li>
+    <li><a href="http://bobcat.library.nyu.edu/nyu">BobCat</a></li>
+    <li><a href="http://127.0.0.1:52146/catalog">Catalog</a></li>
+    <li class="nyu-login"><i class="icons-famfamfam-lock"></i><a class="logout" href="http://127.0.0.1:52146/logout">Log-out gis_admin</a></li>
+</ol>
+</nav>
+    <div class="nyu-container">
+      <div class="col-sm-8">
+        <div id="search" class="search">  
+    <h2>Search repository</h2>
+      <form accept-charset="UTF-8" action="http://127.0.0.1:52146/" class="search-query-form form-inline clearfix" method="get"><div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+    
+
+    <div class="input-group col-sm-8">
+
+      <span class="input-group-addon">
+        <label for="search_field" class="sr-only">Search in</label>
+        <select class="search_field" id="search_field" name="search_field" title="Targeted search options"><option value="all_fields">All Fields</option>
+<option value="title">Title</option>
+<option value="author">Author</option>
+<option value="subject">Subject</option></select>
+        <span class="sr-only">for</span>
+        </span>
+        <label for="q" class="sr-only">Search...</label>
+         <input class="search_q q form-control" id="q" name="q" placeholder="Search..." type="text">
+
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary search-btn form-control" id="search">
+          <span class="submit-search-text">Search</span>
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+        </span>
+      </div>
+</form>
+</div>
+<div id="main-flashes"><div class="flash_messages">
+</div>
+</div>
+        <div id="content" class="col-md-9 show-document">
+
+  
+
+   
+
+<div id="document" class="document " itemscope="" itemtype="http://schema.org/Thing">
+  <div id="doc_sdr-dss-nycdcp_mappluto_test_11v1-dss-jam_mappluto_7or">
+  
+    <h1 itemprop="name">MapPLUTO</h1>
+<dl class="dl-horizontal  dl-invert">
+	    <dt class="blacklight-desc_metadata__title_tesim">Title:</dt>
+	    <dd class="blacklight-desc_metadata__title_tesim">MapPLUTO</dd>
+	    <dt class="blacklight-desc_metadata__publisher_tesim">Publisher:</dt>
+	    <dd class="blacklight-desc_metadata__publisher_tesim">NYC Department of City Planning</dd>
+	    <dt class="blacklight-desc_metadata__type_tesim">Format:</dt>
+	    <dd class="blacklight-desc_metadata__type_tesim">Geospatial Data</dd>
+	    <dt class="blacklight-desc_metadata__description_tesim">Description:</dt>
+	    <dd class="blacklight-desc_metadata__description_tesim">This dataset represents a compilation of data from various government agencies throughout the City of New York.  The underlying geography is derived from the Tax Lot Polygon feature class which is part of the Department of Finance's Digital Tax Map (DTM).  The tax lots have been clipped to the shoreline, as defined by NYCMap planimetric features.  The attribute information is from the Department of City Planning's PLUTO data.  The attribute data pertains to tax lot and building characteristics and geographic, political and administrative information for each tax lot in New York City.  The Tax Lot Polygon feature class and PLUTO are derived from different sources.   As a result, some PLUTO records did not have a corresponding tax lot in the Tax Lot polygon feature class at the time of release.  These records are included in a separate non-geographic PLUTO Only DBase (*.dbf) table. There are a number of reasons why there can be a tax lot in PLUTO that does not match the DTM; the most common reason is that the various source files are maintained by different departments and divisions with varying update cycles and criteria for adding and removing records.  The attribute definitions for the PLUTO Only table are the same as those for MapPLUTO.
+    DCP Mapping Lots includes some features that are not on the tax maps.  They have been added by DCP for cartographic purposes.  They include street center 'malls', traffic islands and some built streets through parks.  These features have very few associated attributes.</dd>
+	    <dt class="blacklight-desc_metadata__series_tesim">Series:</dt>
+	    <dd class="blacklight-desc_metadata__series_tesim">NYCDCP_MAPPLUTO_TEST_11V1</dd>
+	    <dt class="blacklight-desc_metadata__version_tesim">Also available as:</dt>
+	    <dd class="blacklight-desc_metadata__version_tesim">DSS.NYCDCP_Mappluto_Test_11v1\DSS.jam_mappluto_7OR</dd>
+	    <dt class="blacklight-desc_metadata__available_tesim">Online Resource:</dt>
+	    <dd class="blacklight-desc_metadata__available_tesim"><a href="http://magellan.home.nyu.edu/datasets/zips/NYCDCP_MAPPLUTO_TEST_11V1-jam_mappluto_7OR.zip" target="_blank">Download</a></dd>
+	    <dt class="blacklight-desc_metadata__addinfolink_tesim">Additional Information:</dt>
+	    <dd class="blacklight-desc_metadata__addinfolink_tesim"><a href="http://nyu.libguides.com/content.php?pid=169769&amp;sid=1489817" target="_blank">GIS Dataset Instructions</a></dd>
+</dl>
+
+<a href="/nyucores/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR/edit">Edit</a>
+ <a data-confirm="Are you sure?" data-method="delete" href="/nyucores/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR?document_counter=1" rel="nofollow">Delete</a>
+
+ 
+  </div>
+</div>
+
+
+
+
+</div>
+
+<div id="sidebar" class="col-md-3">
+   <div class="panel panel-default show-tools">
+  <div class="panel-heading">
+    Tools
+  </div>
+
+  <div class="panel-body">
+  <ul class="nav">
+      <li>
+        <div class="documentFunctions">
+      <form accept-charset="UTF-8" action="/bookmarks/sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR" class="bookmark_toggle form-horizontal" data-absent="Bookmark" data-doc-id="sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR" data-inprogress="Saving..." data-present="In Bookmarks" method="post"><div style="display: none; "><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="put"></div>   
+        
+<div class="checkbox toggle_bookmark"><label class="toggle_bookmark" for="toggle_bookmark_sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR" title=""><input type="checkbox" class="toggle_bookmark" id="toggle_bookmark_sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR"> <span>Bookmark</span></label></div></form>  
+</div>
+      </li>
+      <li class="email">
+      <a data-ajax-modal="trigger" href="/catalog/email?id=sdr%3ADSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR" id="emailLink">Email</a>
+      </li>
+      <li class="sms">
+      <a data-ajax-modal="trigger" href="/catalog/sms?id=sdr%3ADSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR" id="smsLink">SMS This</a>
+      </li>
+    
+  </ul>
+  </div>
+</div>
+
+  
+
+</div>
+
+      </div>
+      <div class="col-sm-4">
+        <div id="sidebar" class="sidebar">
+<nav class="navbar navbar-default"><div class="navbar-header"><button class="navbar-toggle collapsed" data-target="#user_util_links.navbar-collapse" data-toggle="collapse" type="button"><span class="icon-bar"></span><span class="icon-bar"></span></button><h2>My Workspace</h2></div><div class="navbar-collapse collapse sidebar-section" id="user_util_links" style="">
+  <ul>
+      <li>
+        <a href="/bookmarks" id="bookmarks_nav">
+          Bookmarks
+    (<span data-role="bookmark-counter">0</span>)
+</a>      </li>
+      <li><a href="/saved_searches">Saved Searches</a></li>
+      <li><a href="/search_history">History</a></li>
+  </ul>
+</div></nav>
+
+
+        </div>
+      </div>
+    </div>
+<footer>NYU Division of Libraries</footer>
+  
+
+</body></html>

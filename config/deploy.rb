@@ -29,6 +29,7 @@ namespace :rosie do
   end
 end
 
+<<<<<<< HEAD
 namespace :voice do
   desc "Set variables for the Voices of the Food Revolution ingest tasks"
   task :set_variables do
@@ -72,6 +73,21 @@ namespace :archive_it_accw do
   task :delete do
     set_variables
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['archive_it_accw',#{archive_it_accw_endpoint_url}]"
+  end
+end
+
+namespace :nyupress do
+  # desc "Set variables for the NYUPress Open Access Books ingest tasks"
+  task :set_variables do
+    set :nyupress_endpoint_url, ENV['ICHABOD_NYUPress_ENDPOINT_URL']
+  end
+  task :import do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['nyu_press_open_access_book',#{nyupress_endpoint_url}]"
+  end
+  task :delete do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['nyu_press_open_access_book',#{nyupress_endpoint_url}]"
   end
 end
 
