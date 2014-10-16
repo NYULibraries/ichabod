@@ -12,7 +12,7 @@ module Ichabod
 
         private
         extend Forwardable
-        def_delegators :resource_set, :endpoint_url, :set_handle
+        def_delegators :resource_set, :endpoint_url, :set_handle, :load_number_of_records
 
         def resource_attributes_from_record(record)
           {
@@ -38,14 +38,20 @@ module Ichabod
 
         def records
          @records=[]
-         client = OAI::Client.new endpoint_url
-         response_oai = client.list_records :set=>set_handle
-         if(Rails.env.test?)|
-           response_oai.first(5).each { |oai_record| @records<<oai_record.metadata }
+         unless load_number_of_records.nil?
+           response_oai.first(load_number_of_records).each { |oai_record| @records<<oai_record.metadata }
          else
            response_oai.each { |oai_record| @records<<oai_record.metadata }
          end
          @records            
+        end
+
+        def response_oai
+          @response_oai ||= oai_client.list_records(set: set_handle)
+        end
+
+        def oai_client
+          @oai_client ||= OAI::Client.new endpoint_url
         end
       end
     end
