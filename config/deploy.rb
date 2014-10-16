@@ -41,7 +41,7 @@ namespace :rosie do
 end
 
 namespace :fda_ngo do
-  # desc "Set variables for the Rosie the Riveter ingest tasks"
+  # desc "Set variables for FDA NGO ingest tasks"
   task :set_variables do
     set :fda_ngo_endpoint_url, ENV['ICHABOD_FDA_NGO_ENDPOINT_URL']
     set :fda_ngo_set_handle, ENV['ICHABOD_FDA_NGO_SET_HANDLE']
