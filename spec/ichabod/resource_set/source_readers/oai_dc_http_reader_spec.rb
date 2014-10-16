@@ -4,7 +4,7 @@ module Ichabod
     module SourceReaders
       describe OaiDcHttpReader do
         let(:endpoint_url) { 'http://archive.nyu.edu/request' }
-        let(:set_handle) { ENV['ICHABOD_FDA_NGO_SET_HANDLE'] }
+        let(:set_handle) { 'hdl_2451_33605' }
         let(:collection_code) { 'fda' }
         let(:load_number_of_records) { 5 }
         let(:resource_set) { mock_resource_set }
