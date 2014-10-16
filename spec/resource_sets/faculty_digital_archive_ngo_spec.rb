@@ -3,7 +3,8 @@ describe FacultyDigitalArchiveNgo do
   let(:prefix) { 'fda' }
   let(:endpoint_url) { 'http://archive.nyu.edu/request' }
   let(:set_handle) { 'hdl_2451_33605' }
-  let(:args) { [endpoint_url, set_handle].compact }
+  let(:load_number_of_records) { 5 }
+  let(:args) { [endpoint_url, set_handle, load_number_of_records].compact }
   subject(:faculty_digital_archive_ngo) { FacultyDigitalArchiveNgo.new(*args) }
   it { should be_a FacultyDigitalArchiveNgo }
   it { should be_a Ichabod::ResourceSet::Base }

@@ -5,11 +5,12 @@ class FacultyDigitalArchiveNgo < Ichabod::ResourceSet::Base
   editor :fda_cataloger
   before_load :set_available_or_citation, :set_type
 
-  attr_reader :endpoint_url,:set_handle
+  attr_reader :endpoint_url, :set_handle, :load_number_of_records
 
   def initialize(*args)
     @endpoint_url = args.shift
     @set_handle = args.shift
+    @load_number_of_records = args.shift
     super
   end
 
