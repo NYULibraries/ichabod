@@ -3,28 +3,19 @@ module Ichabod
     module SourceReaders
       require 'faraday'
       require 'multi_json'
-      # A reader for the Real Rosie the Riveter collection.
-      # There are two access points for the collection
-      #   - a Solr index
-      #   - a JSON API
+      # A reader for the Voices of the Food Revolution collection.
+      # The collection is a Drupal website and its search is powered
+      # by SOLR
+      # Accessing the data through its SOLR index 
       #
       # The Solr index has most of what we need and quickly returns the set of
-      # all documents for the collection. The JSON API return field level
-      # metadata for the collection items as an Array for a given metadata
-      # field. For example a call to services/metadata/field/field_description
-      # returns an Array of the "descriptions" of all the interviews in order,
-      # e.g.
-      #   [ {"value":"Interview 1 description"},
-      #     {"value":"Interview 2 description"},
-      #     ... ]
+      # all documents for the collection. 
       #
-      # The strategy we use is to query Solr for the collection, grab all the
-      # "Interviews", use the Solr data and only go to the JSON API if we need
-      # it.
-      #
-      # When we do need the JSON API, we first match the interview from Solr to
-      # its index in the JSON API and then grab the relevant field for that
-      # index from the JSON API.
+      # The strategy we use is to query Solr for the collection and grab all the
+      # "Interviews"
+      # There is no format listed in the metadata, so creating a constant for the
+      # collection
+
       class VoiceReader < ResourceSet::SourceReader
         Format = "Audio"
         def read
@@ -35,9 +26,10 @@ module Ichabod
 
         private
         extend Forwardable
-        def_delegators :resource_set, :endpoint_url, :collection_code, :user,
-          :password
+        def_delegators :resource_set, :endpoint_url, :collection_code
 
+        # This does not have handles in an easily parseable field
+        # Therefore storing its actual url
         def resource_attributes_from_interview(interview)
           {
             prefix: resource_set.prefix,
@@ -56,8 +48,11 @@ module Ichabod
 
         # Only grab the interviews from the returned Solr documents.
         # A collection level description is included so we want to exclude that.
+
         def interviews
           @interviews ||= solr_documents.find_all do |solr_document|
+            # it is beard_interview because this is how the collection is known
+            # in the drupal site
             solr_document['bundle'] == 'beard_interview'
           end
         end
@@ -76,7 +71,7 @@ module Ichabod
         end
 
         # Solr params for grabbing 100 rows (more than we need) and
-        # limiting to only the results for the Rosie collection
+        # limiting to only the results for the Voices(or Beard as it is known in the Drupal site) collection
         def solr_params
           {
             fq: "collection_code:#{collection_code}",
@@ -89,8 +84,7 @@ module Ichabod
           @solr ||= RSolr.connect(url: solr_url)
         end
 
-        # Get Solr URL by removing the /select from the end of the discovery
-        # URL that we got from the collection's JSON API
+        # Get Solr URL by removing the /select from the constant
         def solr_url
           @solr_url ||= endpoint_url.gsub(/\/select$/, '')
         end
