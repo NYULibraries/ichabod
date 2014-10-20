@@ -1,11 +1,11 @@
-Around('@vcr_rosie_the_riveter_collection') do |scenario, block|
-  using_vcr_cassette('Collection_facet/Filter by The Real Rosie the Riveter') do
+Around('@vcr_collection') do |scenario, block|
+  using_vcr_cassette('Collection_facet/Filter by collection') do
     block.call
   end
 end
 
-Around('@vcr_rosie_the_riveter_search') do |scenario, block|
-  using_vcr_cassette('Perform_a_basic_search/Search for Rosie the Riveter interview subject s name') do
+Around('@vcr_search') do |scenario, block|
+  using_vcr_cassette('Perform_a_basic_search/Search for name') do
     block.call
   end
 end
