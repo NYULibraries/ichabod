@@ -1,0 +1,2 @@
+<% if can?(:edit, item) %><td><%=link_to 'Edit', edit_nyucore_path(item) %></td><% end %>
+<% if can?(:destroy, item) %> <td><%= link_to 'Destroy', nyucore_path(item, search_params), method: :delete, data: { confirm: 'Are you sure?' } %></td><% end %>
