@@ -25,7 +25,7 @@ module Ichabod
             citation: book['handle'],
             date: book['date'],
             description: book['description'],
-            type: book['time'],
+            type: book['type'],
             language: book['language'],
             format: book['format']
           }
