@@ -31,13 +31,13 @@ Feature: Perform a basic search
     And I limit my results to "Geospatial Data" under the "Format" category
     Then I should see search results
 
- @vcr_search
+  @vcr
   Scenario: Search for Rosie the Riveter interview subject's name
     Given I am on the default search page
     When I search on the phrase "Jerre Kalbas"
     Then I should see search results
 
-  @vcr_search
+  @vcr
   Scenario: Search for Voices of the Food Foundation interview subject's name
     Given I am on the default search page
     When I search on the phrase "Dan Barber"
