@@ -27,6 +27,7 @@ if Rails.env.cucumber?
     Nyucore.destroy_all
     Ichabod::DataLoader.new('spatial_data_repository', File.join(Rails.root, 'ingest/test_sdr.xml')).load
     Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
+    Ichabod::DataLoader.new('faculty_digital_archive_ngo','https://archive.nyu.edu/request','hdl_2451_33605',5).load
     # Loaded the voice collection up to record a cassette, but don't need it after that
     # Ichabod::DataLoader.new('voice', ENV['ICHABOD_VOICE_ENDPOINT_URL']).load
   ensure

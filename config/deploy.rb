@@ -29,7 +29,7 @@ namespace :rosie do
     set :rosie_endpoint_url, ENV['ICHABOD_ROSIE_ENDPOINT_URL']
     set :rosie_user, ENV['ICHABOD_ROSIE_USER']
     set :rosie_password, ENV['ICHABOD_ROSIE_PASSWORD']
-   
+
   end
   task :import do
     set_variables
@@ -45,7 +45,7 @@ namespace :voice do
   # desc "Set variables for the Rosie the Riveter ingest tasks"
   task :set_variables do
     set :voice_endpoint_url, ENV['ICHABOD_VOICE_ENDPOINT_URL']
-    
+
   end
   task :import do
     set_variables
@@ -54,6 +54,22 @@ namespace :voice do
   task :delete do
     set_variables
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['voice',#{voice_endpoint_url}]"
+  end
+end
+
+namespace :fda_ngo do
+  # desc "Set variables for FDA NGO ingest tasks"
+  task :set_variables do
+    set :fda_ngo_endpoint_url, ENV['ICHABOD_FDA_NGO_ENDPOINT_URL']
+    set :fda_ngo_set_handle, ENV['ICHABOD_FDA_NGO_SET_HANDLE']
+  end
+  task :import do
+    set_variables
+    run "cd #{current_path}; bundle exec rake ichabod:load['faculty_digital_archive_ngo',#{fda_ngo_endpoint_url},#{fda_ngo_set_handle}]"
+  end
+  task :delete do
+    set_variables
+    run "cd #{current_path}; bundle exec rake ichabod:delete['faculty_digital_archive_ngo',#{fda_ngo_endpoint_url},#{fda_ngo_set_handle}]"
   end
 end
 
