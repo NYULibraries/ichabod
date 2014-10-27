@@ -33,5 +33,5 @@ Feature: Collection facet
 
   Scenario: Filter by Archive of Contemporary Composers Websites
     Given I am on the default search page
-    When I filter my search to "Archive of Contemporary Composers Websites" under the "Collection" category
+    When I filter my search to "Archive of Contemporary Composers' Websites" under the "Collection" category
     Then I should see search results
