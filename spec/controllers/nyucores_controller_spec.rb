@@ -74,10 +74,9 @@ describe NyucoresController do
   describe "PUT update", vcr: {cassette_name: 'controllers/nyucores controller/update'} do
     let(:item) { create(:nyucore) }
     let(:another_item) { build(:nyucore) }
-    it 'should update an existing nyucore record with a single new attribute and redirect to document view' do
+    it 'should update an existing nyucore record with a single new attribute' do
       put :update, id: item, nyucore: { title: ["A new title"] }
       expect(assigns(:item).title).to include "A new title"
-      expect response.should redirect_to catalog_url
     end
     it 'should update an existing nyucore record with all new attributes' do
       put :update, id: item, nyucore: attributes_for(:nyucore)
@@ -91,10 +90,8 @@ describe NyucoresController do
 
   describe "DELETE destroy", vcr: {cassette_name: 'controllers/nyucores controller/destroy'} do
     let!(:item) { create(:nyucore) }
-    before {  controller.request.stub(:referer).and_return(root_url) }
-    it 'should delete an existing nyucore record and return to the initial search page' do
+    it 'should delete an existing nyucore record' do
       expect { delete :destroy, id: item }.to change(Nyucore, :count).by(-1)
-      expect response.should redirect_to request.referer
     end
   end
 end

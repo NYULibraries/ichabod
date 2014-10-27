@@ -47,8 +47,9 @@ class NyucoresController < ApplicationController
     authorize! :destroy, params[:id]
     @item = Nyucore.find(params[:id])
     @item.destroy
-    flash[:notice] = "Item was successfully deleted.#{request.env["HTTP_REFERER"]}"
-    redirect_to request.referer
+    search_params=request.params['search_params']
+    flash[:notice] = 'Item was successfully deleted.'
+    redirect_to(search_action_url  search_params) 
   end
 
   private
