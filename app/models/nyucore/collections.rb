@@ -8,7 +8,7 @@ class Nyucore < ActiveFedora::Base
       "ESRI" => ->(nyucore){ nyucore.publisher.include? "ESRI" },
       "Spatial Data Repository" => ->(nyucore){ nyucore.type.include? "Geospatial Data" },
       'Asian NGOs Reports' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_ngo' },
-      "Archive of Contemporary Composers Websites" => ->(nyucore){ nyucore.resource_set == 'archive_it_accw' }
+      "Archive of Contemporary Composers' Websites" => ->(nyucore){ nyucore.resource_set == 'archive_it_accw' }
     }
 
     attr_reader :nyucore
