@@ -52,8 +52,10 @@ module Ichabod
       #
       # NOTE: the waybackCalendar URL can get long, and therefore cannot be
       #       used as the identifier for the object, because the Fedora pid
-      #       string-length limit is 64 characters.  Therefore, an MD5
+      #       string-length limit is 64 characters [1]. Therefore, an MD5
       #       digest of the waybackURL is used to generate the identifier.
+      #
+      # [1] https://wiki.duraspace.org/display/FEDORA37/Fedora+Identifiers
       class ArchiveItAccwReader < ResourceSet::SourceReader
 
         ARCHIVE_IT_COLLECTION_CODE = '4049'
