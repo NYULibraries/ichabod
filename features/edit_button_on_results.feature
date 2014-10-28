@@ -1,4 +1,3 @@
-@vcr
 Feature: Edit and Destroy button on detailed search results page
   As an authorized Ichabod user
   I want to be able to use the existing search interface to find records to edit
@@ -14,7 +13,7 @@ Feature: Edit and Destroy button on detailed search results page
     When I click on "Edit"
     Then I should get to the "edit" form
 
- @loggedin
+  @loggedin
   Scenario: Destroy button available to loggedin user on the detailed search results page and user can destroy
     an item, using it
     Given I am logged in as an admin
@@ -33,7 +32,7 @@ Feature: Edit and Destroy button on detailed search results page
     Then the record should not have link "Edit"
     Then the record should not have link "Destroy"
 
-@loggedin
+  @loggedin
   Scenario: Edit button available to loggedin user on search result page and user can edit
     an item, using it
     Given I am logged in as an admin
@@ -42,7 +41,7 @@ Feature: Edit and Destroy button on detailed search results page
     When I click on the first "Edit" link
     Then I should get to the "edit" form
 
- @loggedin
+  @loggedin
   Scenario: Destroy button available to loggedin user on search result page and user can destroy
     an item, using it
     Given I am logged in as an admin
@@ -51,7 +50,6 @@ Feature: Edit and Destroy button on detailed search results page
     Then the search results should have link "Destroy"
     When I click on the first "Destroy" link
     Then I should not see search results
-
 
   Scenario: Edit option not available to unathenticated user on search result page
     Given I am not logged in

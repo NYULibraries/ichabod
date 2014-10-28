@@ -25,9 +25,8 @@ Given(/^I am on the "Edit Item" form for "(.*?)"$/) do |title|
 end
 
 When(/^I delete the record$/) do
-  visit nyucores_path
   accept_javascript_confirms
-  page.find(:xpath, "//a[@href='#{nyucore_path(@record)}'][@data-method='delete']").click
+  click_on('Destroy')  
 end
 
 When(/^I click on "(.+?)"$/) do |link_text|
