@@ -40,16 +40,15 @@ class NyucoresController < ApplicationController
     authorize! :update, params[:id]
     @item = Nyucore.find(params[:id])
     flash[:notice] = 'Item was successfully updated.' if @item.update(item_params)
-    redirect_to(catalog_url(:id=>@item.id))
+    redirect_to catalog_url(@item)
   end
 
   def destroy
     authorize! :destroy, params[:id]
     @item = Nyucore.find(params[:id])
     @item.destroy
-    search_params=request.params['search_params']
-    flash[:notice] = 'Item was successfully deleted.'
-    redirect_to(search_action_url  search_params) 
+    flash[:notice] = "Item was successfully deleted.#{request.env["HTTP_REFERER"]}"
+    redirect_to request.referer
   end
 
   private
