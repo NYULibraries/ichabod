@@ -30,55 +30,9 @@ module Ichabod
             format: book['format']
           }
         end
-
-        # Get the description from collection's JSON API for the given book
-        # We need to grab the index for the particular book and use that
-        # index to grab the relevant description
-        def description_from_book(book)
-          index = index_from_book(book)
-          descriptions[index]['value'] unless index.blank?
-        end
-
-        # We get most of the data from the Solr document but some things aren't
-        # stored (or are partially stored) in Solr. For that we need to use the
-        # collection's JSON API. We can get specific fields for the whole
-        # collection, as an Array with the indexes basically matching up.
-        # In order to find the index for the book we want, we use the
-        # playlist reference endpoint that matches the given book.
-        def index_from_book(book)
-          book_playlist_reference =
-            book['im_field_playlist_ref'].first.to_s
-          playlist_references.find_index do |playlist_reference|
-            playlist_reference['raw_value'] == book_playlist_reference
-          end
-        end
-
-        # The description field for all books as an Array
-        def descriptions
-          @descriptions ||= fields('field_description')
-        end
-
-        # The playlist reference field for all books as an Array
-        def playlist_references
-          @playlist_references ||= fields('field_playlist_ref')
-        end
-
-        # Get the field response as an Array
-        def fields(field_name)
-          MultiJson.load(field_endpoint(field_name).body)
-        end
-
-        # Call the "field" endpoint which returns JSON for the given field name
-        def field_endpoint(field_name)
-          endpoint_connection.get("/#{collection_code}/services/metadata/field/#{field_name}")
-        end
-
-        # Only grab the books from the returned Solr documents.
-        # A collection level description is included so we want to exclude that.
+        
         def books
-          @books ||= solr_documents.find_all #do |solr_document|
-            #solr_document[''] == 'rosie_book'
-          #end
+          @books ||= solr_documents.find_all           
         end
 
         def solr_documents
@@ -94,11 +48,9 @@ module Ichabod
           @solr_select ||= solr.select(params: solr_params)
         end
 
-        # Solr params for grabbing 100 rows (more than we need) and
-        # limiting to only the results for the Rosie collection
+        # Solr params for grabbing 100 rows (more than we need)
         def solr_params
           {
-            #fq: "collection_code:#{collection_code}",
             rows: 100
           }
         end

@@ -18,7 +18,6 @@ describe NyuPressOpenAccessBook do
   end
   describe '.source_reader' do
     subject { NyuPressOpenAccessBook.source_reader }
-    #it 'should be a DLTS reader'
     it { should eq Ichabod::ResourceSet::SourceReaders::NyuPressOpenAccessBookReader }
   end
   describe '.editors' do
