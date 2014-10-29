@@ -65,11 +65,11 @@ namespace :fda_ngo do
   end
   task :import do
     set_variables
-    run "cd #{current_path}; bundle exec rake ichabod:load['faculty_digital_archive_ngo',#{fda_ngo_endpoint_url},#{fda_ngo_set_handle}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['faculty_digital_archive_ngo',#{fda_ngo_endpoint_url},#{fda_ngo_set_handle}]"
   end
   task :delete do
     set_variables
-    run "cd #{current_path}; bundle exec rake ichabod:delete['faculty_digital_archive_ngo',#{fda_ngo_endpoint_url},#{fda_ngo_set_handle}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive_ngo',#{fda_ngo_endpoint_url},#{fda_ngo_set_handle}]"
   end
 end
 
