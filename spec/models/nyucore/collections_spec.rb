@@ -70,5 +70,11 @@ describe Nyucore::Collections do
       let(:resource_set) { ['voice'] }
       it { should eql ['Voices of the Food Revolution'] }
     end
+    context "when object is FDA NGO resource set" do
+      let(:type) { ['Technical Report'] }
+      let(:publisher) { nil }
+      let(:resource_set) { ['faculty_digital_archive_ngo'] }
+      it { should eql ['Asian NGOs Reports'] }
+    end
   end
 end
