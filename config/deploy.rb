@@ -42,7 +42,7 @@ namespace :rosie do
 end
 
 namespace :voice do
-  # desc "Set variables for the Rosie the Riveter ingest tasks"
+  # desc "Set variables for the Voices of the Food Revolution ingest tasks"
   task :set_variables do
     set :voice_endpoint_url, ENV['ICHABOD_VOICE_ENDPOINT_URL']
 
@@ -70,6 +70,38 @@ namespace :fda_ngo do
   task :delete do
     set_variables
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive_ngo',#{fda_ngo_endpoint_url},#{fda_ngo_set_handle}]"
+  end
+end
+
+namespace :archive_it_accw do
+  # desc "Set variables for the Archive It Archive of Contemporary Composers' Websites ingest tasks"
+  task :set_variables do
+    set :archive_it_accw_endpoint_url, ENV['ICHABOD_ARCHIVE_IT_ACCW_ENDPOINT_URL']
+
+  end
+  task :import do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['archive_it_accw',#{archive_it_accw_endpoint_url}]"
+  end
+  task :delete do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['archive_it_accw',#{archive_it_accw_endpoint_url}]"
+  end
+end
+
+namespace :archive_it_accw do
+  # desc "Set variables for the Archive It Archive of Contemporary Composers' Websites ingest tasks"
+  task :set_variables do
+    set :archive_it_accw_endpoint_url, ENV['ICHABOD_ARCHIVE_IT_ACCW_ENDPOINT_URL']
+
+  end
+  task :import do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['archive_it_accw',#{archive_it_accw_endpoint_url}]"
+  end
+  task :delete do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['archive_it_accw',#{archive_it_accw_endpoint_url}]"
   end
 end
 
