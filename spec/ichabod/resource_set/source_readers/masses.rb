@@ -23,7 +23,6 @@ module Ichabod
           subject(:read) { reader.read }
           it { should be_an Array }
           it { should_not be_empty }
-          its(:size) { should eq 5 }
           it 'should include only ResourceSet::Resources' do
             subject.each do |resource|
               expect(resource).to be_a ResourceSet::Resource
