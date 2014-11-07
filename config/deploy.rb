@@ -57,6 +57,25 @@ namespace :voice do
   end
 end
 
+namespace :masses do
+  # desc "Set variables for The Masses ingest tasks"
+  task :set_variables do
+    set :masses_endpoint_url, ENV['ICHABOD_MASSES_ENDPOINT_URL']
+    set :masses_start, ENV['ICHABOD_MASSES_START']
+    set :masses_rows, ENV['ICHABOD_MASSES_ROWS']
+  end
+  
+  task :import do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['masses',#{masses_endpoint_url},#{masses_start},#{masses_rows}]"
+  end
+  
+  task :delete do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['masses',#{masses_endpoint_url},#{masses_start},#{masses_rows}]"
+  end
+end
+
 namespace :fda_ngo do
   # desc "Set variables for FDA NGO ingest tasks"
   task :set_variables do
