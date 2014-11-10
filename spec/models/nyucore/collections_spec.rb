@@ -64,5 +64,23 @@ describe Nyucore::Collections do
       let(:resource_set) { ['rosie_the_riveter'] }
       it { should eql ['The Real Rosie the Riveter'] }
     end
+    context "when object is from the Voices of the Food Revolution resource set" do
+      let(:type) { ['Audio'] }
+      let(:publisher) { nil }
+      let(:resource_set) { ['voice'] }
+      it { should eql ['Voices of the Food Revolution'] }
+    end
+    context "when object is FDA NGO resource set" do
+      let(:type) { ['Technical Report'] }
+      let(:publisher) { nil }
+      let(:resource_set) { ['faculty_digital_archive_ngo'] }
+      it { should eql ['Asian NGOs Reports'] }
+    end
+    context "when object is from the Archive of Contemporary Composers' Websites resource set" do
+      let(:type) { nil }
+      let(:publisher) { nil }
+      let(:resource_set) { ['archive_it_accw'] }
+      it { should eql ["Archive of Contemporary Composers' Websites"] }
+    end
   end
 end

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.6'
+gem 'rails', '~> 4.1.7'
 
 gem 'sqlite3', group: :development
 gem 'mysql2', '~> 0.3.15'
@@ -14,6 +14,8 @@ gem 'jquery-rails', '~> 3.1.0'
 gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'jbuilder', '~> 2.1.3'
 
+#gem 'oai','~> 0.3.1'
+gem 'oai', github: 'code4lib/ruby-oai', branch: 'master'
 gem 'mustache', '0.99.4'
 gem 'mustache-rails', github: 'josh/mustache-rails', require: 'mustache/railtie'
 

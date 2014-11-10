@@ -27,6 +27,14 @@ describe UrlPresenter do
       it { should be_empty }
     end
     context 'when there are no URL texts in the SolrDocument' do
+      context 'type of the SolrDocument is not defined' do
+        let(:type) { ['type', []] }
+        it 'should have Urls whose texts are equal to their values' do
+          subject.each do |url|
+            expect(url.text).to eq url.value
+          end
+        end
+      end
       context 'and one of the types of the SolrDocument "Geospatial Data"' do
         let(:type) { ['type', 'Geospatial Data'] }
         it 'should have Urls whose texts are "Download"' do

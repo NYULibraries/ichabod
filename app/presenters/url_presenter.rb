@@ -22,7 +22,7 @@ class UrlPresenter < CatalogPresenter
 
   private
   def solr_document_types
-    @solr_document_types ||= solr_document['desc_metadata__type_tesim']
+    @solr_document_types ||= (solr_document['desc_metadata__type_tesim'] || [])
   end
 
   def url_text_for_index(index)
