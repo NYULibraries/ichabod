@@ -89,22 +89,6 @@ namespace :archive_it_accw do
   end
 end
 
-namespace :archive_it_accw do
-  # desc "Set variables for the Archive It Archive of Contemporary Composers' Websites ingest tasks"
-  task :set_variables do
-    set :archive_it_accw_endpoint_url, ENV['ICHABOD_ARCHIVE_IT_ACCW_ENDPOINT_URL']
-
-  end
-  task :import do
-    set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['archive_it_accw',#{archive_it_accw_endpoint_url}]"
-  end
-  task :delete do
-    set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['archive_it_accw',#{archive_it_accw_endpoint_url}]"
-  end
-end
-
 namespace :ingest do
   task :load_sdr do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['spatial_data_repository','./ingest/sdr.xml']"
