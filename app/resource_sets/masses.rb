@@ -9,29 +9,9 @@ class Masses < Ichabod::ResourceSet::Base
     @endpoint_url = args.shift
     @resource_format = "Book"
     @resource_type = "Book"
-    
-    start = args.shift
-    rows = args.shift
-
-    if is_numeric?(start)
-      @start = start
-    else      
-      @start = 0
-    end
-    
-    if is_numeric?(rows)
-      @rows = rows
-    else      
-      @rows = 10
-    end
-
+    @start = args.shift || 0
+    @rows = args.shift || 100
     super
   end
-  
-  private 
-  
-  def is_numeric?(s)
-    !!Float(s) rescue false
-  end  
 
 end
