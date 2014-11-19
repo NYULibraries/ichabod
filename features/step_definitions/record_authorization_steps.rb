@@ -1,4 +1,5 @@
 Then(/^the record should have link "(.*?)"$/) do  |link_text|
+    save_and_open_page 'dva'
   expect(page.all(:xpath, "//a[text()='#{link_text}']").count).to be > 0
 end
 

@@ -50,3 +50,7 @@ Then(/^I should see the immutable fields:$/) do |table|
     page.find(:xpath, "//label[@for='nyucore_#{field.downcase}']/following-sibling::div[@class='source']").text.should == value
   end
 end
+
+Then(/^the record should be deleted$/) do
+   expect(documents_list).to have_exactly(0).items
+end

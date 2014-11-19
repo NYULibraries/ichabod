@@ -5,7 +5,7 @@ describe NyucoresController do
 
   let(:user) { create_or_return_test_admin }
   let(:nyucore_fields) { Nyucore::NYUCORE_FIELDS[:single] + Nyucore::NYUCORE_FIELDS[:multiple] }
-  before { controller.stub(:current_user).and_return(user) }
+  before  { controller.stub(:current_user).and_return(user) }
 
   describe 'GET index', vcr: {cassette_name: 'controllers/nyucores controller/index'} do
     before do
@@ -90,11 +90,51 @@ describe NyucoresController do
   end
 
   describe "DELETE destroy", vcr: {cassette_name: 'controllers/nyucores controller/destroy'} do
-    let!(:item) { create(:nyucore) }
-    before {  controller.request.stub(:referer).and_return(root_url) }
-    it 'should delete an existing nyucore record and return to the initial search page' do
-      expect { delete :destroy, id: item }.to change(Nyucore, :count).by(-1)
-      expect response.should redirect_to request.referer
+    let!(:item) { create(:nyucore, { :title => "LION" }) }  
+    context " previos search parameters are not defined in the session" do
+      it 'should delete an existing nyucore record and return to the main page' do
+          expect { delete :destroy, id: item, document_counter: 1 }.to change(Nyucore, :count).by(-1)
+          expect response.should redirect_to root_url 
+      end
     end
+    context " previos search parameters are defined in the session" do
+       let!(:search) { Search.create(:query_params => { :q => "Lion", :f => "facet" }) }
+       let(:persisted_session) { ActionController::TestSession.new() }
+       context " previos search parameters are saved in search history" do
+         before {
+           persisted_session[:search]=search
+           persisted_session[:history]=[search]
+           controller.stub(:session).and_return(persisted_session)
+         }
+         context " deleted document is the first one on the first page" do
+           it 'should delete an existing nyucore record and return to the first page' do
+             expect { delete :destroy, id: item, document_counter: 1, per_page: 10 }.to change(Nyucore, :count).by(-1)
+             expect response.should redirect_to root_url :page => 1, :q => "Lion", :f => "facet"
+           end
+         end
+         context " deleted document is the first one but not on the first page" do
+           it 'should delete an existing nyucore record and return to the previous page' do
+             expect { delete :destroy, id: item, document_counter: 11, per_page: 10 }.to change(Nyucore, :count).by(-1)
+             expect response.should redirect_to root_url :page => 1, :q => "Lion", :f => "facet"
+           end
+         end
+         context " deleted document is not the first one on the page" do
+           it 'should delete an existing nyucore record and return to the same page' do
+             expect { delete :destroy, id: item, document_counter: 12, per_page: 10 }.to change(Nyucore, :count).by(-1)
+             expect response.should redirect_to root_url :page => 2, :q => "Lion", :f => "facet"
+           end
+         end
+       end
+       context " previos search parameters are not saved in the search history" do
+         before {
+             persisted_session[:search]=search
+             controller.stub(:session).and_return(persisted_session)
+           }
+         it 'should delete an existing nyucore record and return to the main page' do
+           expect { delete :destroy, id: item, document_counter: 1 }.to change(Nyucore, :count).by(-1)
+           expect response.should redirect_to root_url 
+         end
+       end
+     end
   end
 end

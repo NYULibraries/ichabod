@@ -4,55 +4,30 @@ Feature: Edit and Destroy button on detailed search results page
   And then click an "edit" link on the resulting detail page
   
   @loggedin
-  Scenario: Edit button available to loggedin user on detailed search result page and user can edit
-    an item, using it
+  Scenario:authorized user can call edit form and edit a record using search interface
     Given I am logged in as an admin
-    And I search for "Map"
-    When I navigate to details display of the first result
-    Then the record should have link "Edit"
-    When I click on "Edit"
-    Then I should get to the "edit" form
+    And the record "Novel" exists
+    And I search for "Novel"
+    And I navigate to details display of the first result
+    And I click on the first "Edit" link
+    Then I should get to the edit form for "Novel"
+    When I enter the fields:
+      | Title        | Crime and Panishment |
+    And I save the record
+    Then I should see the message "Item was successfully updated."
+    When I search on the phrase "Crime and Panishment"
+    Then I should see search results
 
   @loggedin
-  Scenario: Destroy button available to loggedin user on the detailed search results page and user can destroy
-    an item, using it
+  Scenario:authorized user can call edit form and edit a record using search interface
     Given I am logged in as an admin
-    And the record "The Crab" exists
-    And I search for "The Crab"
-    When I navigate to details display of the first result
-    Then the record should have link "Destroy"
-    When I click on "Destroy"
-    And I search for "The Crab"
-    Then I should not see search results
-
-  Scenario: Edit and Destory option not available to unathenticated user on the detailed search results page
-    Given I am not logged in
-    And I search for "Map"
-    When I navigate to details display of the first result
-    Then the record should not have link "Edit"
-    Then the record should not have link "Destroy"
-
-  @loggedin
-  Scenario: Edit button available to loggedin user on search result page and user can edit
-    an item, using it
-    Given I am logged in as an admin
-    And I search for "Map"
-    Then the search results should have link "Edit"
-    When I click on the first "Edit" link
-    Then I should get to the "edit" form
-
-  @loggedin
-  Scenario: Destroy button available to loggedin user on search result page and user can destroy
-    an item, using it
-    Given I am logged in as an admin
-    And the record "The Crab" exists
-    And I search for "The Crab"
-    Then the search results should have link "Destroy"
-    When I click on the first "Destroy" link
-    Then I should not see search results
-
-  Scenario: Edit option not available to unathenticated user on search result page
-    Given I am not logged in
-    And I search for "Map"
-    Then the record should not have link "Edit"
-    Then the record should not have link "Destroy"
+    And the record "The Novel" exists
+    And I search for "The Novel"
+    And I click on the first "Edit" link 
+    Then I should get to the edit form for "The Novel"
+    When I enter the fields:
+      | Title        | War and Peace |
+    And I save the record
+    Then I should see the message "Item was successfully updated."
+    When I search on the phrase "War and Peace"
+    Then I should see search results
