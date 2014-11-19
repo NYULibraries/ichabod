@@ -3,12 +3,16 @@ module Ichabod
   module ResourceSet
     module SourceReaders
       describe NyuPressOpenAccessBookReader do
-        let(:endpoint_url) { 'http://openaccessbooks.nyupress.org/sources/discovery.json' }
+        let(:endpoint_url) { 'http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select' }
         let(:collection_code) { 'nyupress' }
+        let(:rows) { '65' }
+        let(:start) { '0' }
         let(:resource_set) { mock_resource_set }
         before do
           allow(resource_set).to receive(:endpoint_url) { endpoint_url }
           allow(resource_set).to receive(:collection_code) { collection_code }
+          allow(resource_set).to receive(:rows) { rows }
+          allow(resource_set).to receive(:start) { start }
         end
         subject(:reader) { NyuPressOpenAccessBookReader.new(resource_set) }
         describe '#resource_set' do
@@ -40,4 +44,3 @@ module Ichabod
     end
   end
 end
-
