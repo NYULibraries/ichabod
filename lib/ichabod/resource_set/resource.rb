@@ -2,6 +2,7 @@ module Ichabod
   module ResourceSet
     # Public
     class Resource
+      require 'iso-639'
 
       HANDLE_REGEXP = /^http:\/\/hdl\.handle\.net/
       URL_REGEXP = /^https?:\/\//
@@ -17,6 +18,8 @@ module Ichabod
 
       def initialize(attributes={})
         attributes.each_pair do |key, value|
+          
+          value = map_language(value[0]) if key =~ /language/ and value.length > 0
           send("#{key}=".to_sym, value)
         end
       end
@@ -52,6 +55,27 @@ module Ichabod
       end
 
       private
+
+      def map_language(lan)
+        language = ""
+        iso = ISO_639.search(lan)
+        len = iso.length
+        counter = 0
+        #doing while loop in case search function returns multiple values
+        #returns array of arrays
+        while counter < len 
+          iso[counter].each{|l|
+            if lan == l
+              #the ISO English equivalent of the code or the language
+              #always in the 4th position of the array
+              language = iso[counter][3] 
+            end
+          }
+          counter = counter + 1
+        end
+        language 
+      end
+
       def clean_identifier(identifier)
         identifier.gsub(URL_REGEXP, '').gsub(/[\.\/\\\?=]/, '-')
       end

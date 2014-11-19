@@ -38,6 +38,8 @@ gem 'unicode', platforms: [:mri_18, :mri_19]
 
 gem 'jettywrapper', group: [:development, :test, :staging]
 
+
+gem 'iso-639'
 gem 'faraday', '~> 0.9.0'
 gem 'multi_json', '~> 1.10.1'
 gem 'multi_xml', '~> 0.5.5'
