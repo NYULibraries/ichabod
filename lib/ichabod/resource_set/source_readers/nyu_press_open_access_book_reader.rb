@@ -3,89 +3,66 @@ module Ichabod
     module SourceReaders
       require 'faraday'
       require 'multi_json'
+      # A reader for the The Openaccess books collection
+      # We use json APi to grab the requested amount of "Books".
       
       class NyuPressOpenAccessBookReader < ResourceSet::SourceReader
 
         def read
-          books.collect do |book|
-            ResourceSet::Resource.new(resource_attributes_from_book(book))
+          entities.collect do |entity|
+            ResourceSet::Resource.new(resource_attributes_from_entities(entity))
           end
         end
 
         private
         extend Forwardable
-        def_delegators :resource_set, :endpoint_url, :collection_code
+        def_delegators :resource_set, :endpoint_url, :collection_code, :start, :rows
 
-        def resource_attributes_from_book(book)
+        def resource_attributes_from_entities(entity)
           {
             prefix: resource_set.prefix,
-            identifier: book['id'],
-            title: book['title'],
-            available: book['handle'],
-            citation: book['handle'],
-            date: book['date'],
-            description: book['description'],
-            type: book['type'],
-            language: book['language'],
-            format: book['format']
+            identifier: entity['id'],
+            title: entity['title'],
+            available: entity['handle'],
+            citation: entity['handle'],
+            date: entity['date'],
+            description: entity['description'],
+            type: entity['type'],
+            language: entity['language'],
+            format: entity['format']
           }
         end
         
-        def books
-          @books ||= solr_documents.find_all           
+          def entities
+          @entities ||= datasource_response['docs']
         end
 
-        def solr_documents
-          @solr_documents ||= solr_response['docs']
+        def datasource_response
+          @datasource_response ||= datasource_json['response']
         end
 
-        def solr_response
-          @solr_response ||= solr_select['response']
+        def datasource_json
+          @datasource_json ||= MultiJson.load(datasource.body)
         end
 
-        # Select all the documents from Solr for the collection
-        def solr_select
-          @solr_select ||= solr.select(params: solr_params)
-        end
-
-        # Solr params for grabbing 100 rows (more than we need)
-        def solr_params
+        # Params to send with the request to the JSON API
+        def datasource_params
           {
-            rows: 100
+            start: start,
+            rows: rows,
+            wt: 'json'
           }
         end
 
-        # Use RSolr to connect to Solr
-        def solr
-          @solr ||= RSolr.connect(url: solr_url)
-        end
-
-        # Get Solr URL by removing the /select from the end of the discovery
-        # URL that we got from the collection's JSON API
-        def solr_url
-          @solr_url ||= discovery_url.gsub(/\/select$/, '')
-        end
-
-        # Get the URL of the discovery service from the collection's JSON API
-        def discovery_url
-          @discovery_url ||= discovery_json['url']
-        end
-
-        # Get the discovery response as a Hash
-        def discovery_json
-          @discovery_json ||= MultiJson.load(discovery_endpoint.body)
-        end
-
-        # Call the "discovery" endpoint which returns JSON for the discovery
-        # service for the collection
-        def discovery_endpoint
-          @discovery_endpoint ||=
-            endpoint_connection.get("/sources/discovery.json")
+        # Connect to collection JSON API
+        def datasource
+          @datasource ||= endpoint_connection.get(endpoint_url)
         end
 
         # Use Faraday to connect to the collection's JSON API
         def endpoint_connection
           @endpoint_connection ||= Faraday.new(url: endpoint_url) do |faraday|
+            faraday.params = datasource_params
             faraday.adapter :net_http
           end
         end

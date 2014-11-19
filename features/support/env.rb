@@ -32,7 +32,8 @@ if Rails.env.cucumber?
     # Ichabod::DataLoader.new('voice', ENV['ICHABOD_VOICE_ENDPOINT_URL']).load
     Ichabod::DataLoader.new('archive_it_accw','https://archive-it.org').load
     # Loaded the NYUPress collection up to record a cassette, but don't need it after that
-    Ichabod::DataLoader.new('nyu_press_open_access_book', 'http://openaccessbooks.nyupress.org').load
+    Ichabod::DataLoader.new('nyu_press_open_access_book', 'http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select','0','5').load
+
   ensure
     WebMock.disable_net_connect!
   end

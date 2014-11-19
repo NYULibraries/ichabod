@@ -1,8 +1,10 @@
 require 'spec_helper'
 describe NyuPressOpenAccessBook do
   let(:prefix) { 'nyupress' }
-  let(:endpoint_url) { 'http://openaccessbooks.nyupress.org/sources/discovery.json' }
+  let(:endpoint_url) { 'discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select' }
   let(:collection_code) { 'nyupress' }
+  let(:rows) { '65' }
+  let(:start) { '0' }
   let(:args) { [endpoint_url].compact }
   subject(:nyu_press_open_access_book) { NyuPressOpenAccessBook.new(*args) }
   it { should be_a NyuPressOpenAccessBook }
@@ -10,6 +12,8 @@ describe NyuPressOpenAccessBook do
   its(:prefix) { should eq prefix }
   its(:endpoint_url) { should eq endpoint_url }
   its(:collection_code) { should eq collection_code }
+  its(:rows) { should eq rows }
+  its(:start) { should eq start}
   its(:editors) { should eq ['admin_group'] }
   its(:before_loads) { should eq [:add_edit_groups, :add_resource_set] }
   describe '.prefix' do
