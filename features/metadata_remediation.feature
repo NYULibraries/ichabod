@@ -105,8 +105,7 @@ Feature: Add, edit and delete records
   @loggedin
   Scenario: Deleting a record
     Given I am logged in as an admin
-    Given the record "The Tempest" exists
-    Given I search for "The Tempest"
-    When I delete the record
-    Then I search on the phrase "The Tempest"
-    And I should not see search results
+    And the record "The Tempest" exists
+    And I search for "The Tempest"
+    When I click on the "Delete" link
+    Then the record should be deleted
