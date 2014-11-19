@@ -18,7 +18,7 @@ module Ichabod
 
       def initialize(attributes={})
         attributes.each_pair do |key, value|
-          
+          #mapping iso code to language which is then faceted
           value = map_language(value[0]) if key =~ /language/ and value.length > 0
           send("#{key}=".to_sym, value)
         end
@@ -58,7 +58,8 @@ module Ichabod
 
       def map_language(lan)
         language = ""
-        iso = ISO_639.search(lan)
+        #does a search across the arrays for the string
+        iso = ISO_639.search(lan) 
         len = iso.length
         counter = 0
         #doing while loop in case search function returns multiple values
