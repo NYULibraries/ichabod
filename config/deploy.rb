@@ -80,14 +80,16 @@ namespace :nyupress do
   # desc "Set variables for the NYUPress Open Access Books ingest tasks"
   task :set_variables do
     set :nyupress_endpoint_url, ENV['ICHABOD_NYUPress_ENDPOINT_URL']
+    set :nyupress_endpoint_url, ENV['ICHABOD_NYUPress_ROWS']
+    set :nyupress_endpoint_url, ENV['ICHABOD_NYUPress_START']
   end
   task :import do
     set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['nyu_press_open_access_book',#{nyupress_endpoint_url}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['nyu_press_open_access_book',#{nyupress_endpoint_url},#{nyupress_start},#{nyupress_rows}]"
   end
   task :delete do
     set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['nyu_press_open_access_book',#{nyupress_endpoint_url}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['nyu_press_open_access_book',#{nyupress_endpoint_url}#{nyupress_start},#{nyupress_rows}]"
   end
 end
 
