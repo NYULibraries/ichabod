@@ -42,21 +42,21 @@ Add documentation for expectations on contributing.
 
 When you're confident in your code you're going to want to send in a pull request. Your commit history will be able to tell the code maintainer what you've changed and how it will affect the codebase. It may be a good idea to summarize what you have done in the pull request message, and how it will affect the codebase. To be more certain in your own code, you may want to ask for a code review.
 
-Sometimes the ```development``` branch will be updated while you have an open PR.  When this happens, your branch might become *stale*, meaning that your branch can no longer be merged into ```development``` without a conflict.  When this happens you should:
-* rebase your branch onto the latest version of ```development```, resolving any merge conflicts
+Sometimes the `development` branch will be updated while you have an open PR.  When this happens, your branch might become *stale*, meaning that your branch can no longer be merged into `development` without a conflict.  When this happens you should:
+* rebase your branch onto the latest version of `development`, resolving any merge conflicts
 * delete your stale branch **on GitHub**, which will automaticallly close the PR for your stale branch
 * push your newly rebased branch up to GitHub
 * create a new PR that contains a reference to the old PR
 
-For example, let's say you have submitted a PR (#432) for branch ``'feature/gizmo'```, but this branch has gone stale and cannot be merged. 
-You should do the following:
-* ```$ git pull origin development``` # gets the latest version of ```development```
-* ```$ git checkout feature/gizmo```  # checks out your branch locally
-* ```$ git rebase development```      # replays your changes on top of the latest development branch
-* *resolve any conflicts*
-* ```$ git push origin :feature/gizmo``` # **deletes** your stale branch on GitHub and automatically closes PR #432 (Note the ':' before the branch name)
-* ```$ git push origin feature/gizmo```  # pushes the merge-able version of your branch up to GitHub
-* create a new PR for ```feature/gizmo``` in GitHub, include a reference to the old PR (#432) in your new PR
+For example, let's say you have submitted a PR (#432) for branch `feature/gizmo`, but this branch has gone stale and cannot be merged. 
+You should do the following:  
+| `$ git pull origin development` | gets the latest version of development |  
+| `$ git checkout feature/gizmo`  | checks out your branch locally |  
+| `$ git rebase development`      | replays your changes on top of the latest development branch |  
+| *resolve any conflicts* | |  
+| `$ git push origin :feature/gizmo` | **deletes** your stale branch on GitHub and automatically closes PR #432 (Note the ':' before the branch name) |  
+| `$ git push origin feature/gizmo` | pushes the merge-able version of your branch up to GitHub |  
+| create a new PR for ```feature/gizmo``` in GitHub, include a reference to the old PR (#432) in your new PR | |  
 
 
 ###Code Review
