@@ -29,7 +29,6 @@ namespace :rosie do
   end
 end
 
-<<<<<<< HEAD
 namespace :voice do
   desc "Set variables for the Voices of the Food Revolution ingest tasks"
   task :set_variables do
