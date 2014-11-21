@@ -9,7 +9,7 @@ module Ichabod
       # Available via: the ArchiveIt JSON API
       #
       # The ArchiveIt API is not officially supported by the Internet Archive
-      # (who run ArchiveIt, and therefore we're reverse engineering the API
+      # (who run ArchiveIt), and therefore we're reverse engineering the API
       # with the knowledge that the API may change, or may not be supported at
       # all in the future.
       #

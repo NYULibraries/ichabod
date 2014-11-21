@@ -6,25 +6,13 @@ set :new_relic_environments, nil  # do not use new_relic at this time
 set :rvm_ruby_string, "ruby-2.1.3"
 
 namespace :deploy do
-  # task :create_symlink do
-  #   run "rm -rf #{app_path}#{app_title} && ln -s #{current_path}/public #{app_path}#{app_title}"
-  # end
-  # task :create_current_path_symlink do
-  #   run "rm -rf #{current_path} && ln -s #{current_release} #{current_path}"
-  # end
   task :create_jetty_symlink do
     run "ln -s #{shared_path}/jetty #{current_path}/jetty"
   end
-  # task :create_env_symlink do
-  #   run "rm -rf #{current_path}/.env && ln -s #{shared_path}/.env #{current_path}/.env"
-  # end
-  # task :passenger_symlink do
-  #  run "rm -rf #{current_path} && ln -s #{current_release} #{current_path}"
-  # end
 end
 
 namespace :rosie do
-  # desc "Set variables for the Rosie the Riveter ingest tasks"
+  desc "Set variables for the Rosie the Riveter ingest tasks"
   task :set_variables do
     set :rosie_endpoint_url, ENV['ICHABOD_ROSIE_ENDPOINT_URL']
     set :rosie_user, ENV['ICHABOD_ROSIE_USER']
@@ -42,10 +30,9 @@ namespace :rosie do
 end
 
 namespace :voice do
-  # desc "Set variables for the Voices of the Food Revolution ingest tasks"
+  desc "Set variables for the Voices of the Food Revolution ingest tasks"
   task :set_variables do
     set :voice_endpoint_url, ENV['ICHABOD_VOICE_ENDPOINT_URL']
-
   end
   task :import do
     set_variables
@@ -58,7 +45,7 @@ namespace :voice do
 end
 
 namespace :fda_ngo do
-  # desc "Set variables for FDA NGO ingest tasks"
+  desc "Set variables for FDA NGO ingest tasks"
   task :set_variables do
     set :fda_ngo_endpoint_url, ENV['ICHABOD_FDA_NGO_ENDPOINT_URL']
     set :fda_ngo_set_handle, ENV['ICHABOD_FDA_NGO_SET_HANDLE']
@@ -74,26 +61,9 @@ namespace :fda_ngo do
 end
 
 namespace :archive_it_accw do
-  # desc "Set variables for the Archive It Archive of Contemporary Composers' Websites ingest tasks"
+  desc "Set variables for the Archive It Archive of Contemporary Composers' Websites ingest tasks"
   task :set_variables do
     set :archive_it_accw_endpoint_url, ENV['ICHABOD_ARCHIVE_IT_ACCW_ENDPOINT_URL']
-
-  end
-  task :import do
-    set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['archive_it_accw',#{archive_it_accw_endpoint_url}]"
-  end
-  task :delete do
-    set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['archive_it_accw',#{archive_it_accw_endpoint_url}]"
-  end
-end
-
-namespace :archive_it_accw do
-  # desc "Set variables for the Archive It Archive of Contemporary Composers' Websites ingest tasks"
-  task :set_variables do
-    set :archive_it_accw_endpoint_url, ENV['ICHABOD_ARCHIVE_IT_ACCW_ENDPOINT_URL']
-
   end
   task :import do
     set_variables
@@ -142,5 +112,3 @@ namespace :jetty do
     run "cd #{current_path}; bundle exec rake jetty:start"
   end
 end
-
-# after "deploy", "deploy:create_symlink", "deploy:create_current_path_symlink", "deploy:create_env_symlink"
