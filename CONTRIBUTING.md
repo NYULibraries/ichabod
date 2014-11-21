@@ -50,13 +50,16 @@ Sometimes the `development` branch will be updated while you have an open PR.  W
 
 For example, let's say you have submitted a PR (#432) for branch `feature/gizmo`, but this branch has gone stale and cannot be merged. 
 You should do the following:  
-| `$ git pull origin development` | gets the latest version of development |  
+
+|step |comment|
+|-----|--------|
+| `$ git pull origin development` | gets the latest version of `development` |  
 | `$ git checkout feature/gizmo`  | checks out your branch locally |  
-| `$ git rebase development`      | replays your changes on top of the latest development branch |  
+| `$ git rebase development`      | replays your changes on top of the latest `development` branch |  
 | *resolve any conflicts* | |  
-| `$ git push origin :feature/gizmo` | **deletes** your stale branch on GitHub and automatically closes PR #432 (Note the ':' before the branch name) |  
+| `$ git push origin :feature/gizmo` | **deletes** your stale branch **on GitHub** and automatically closes PR #432 (Note the `:` before the branch name) |  
 | `$ git push origin feature/gizmo` | pushes the merge-able version of your branch up to GitHub |  
-| create a new PR for ```feature/gizmo``` in GitHub, include a reference to the old PR (#432) in your new PR | |  
+| create a new PR for `feature/gizmo` in GitHub, include a reference to the old PR (#432) in your new PR | |
 
 
 ###Code Review
