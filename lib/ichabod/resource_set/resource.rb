@@ -19,7 +19,7 @@ module Ichabod
       def initialize(attributes={})
         attributes.each_pair do |key, value|
           #mapping iso code to language which is then faceted
-          value = map_language(value[0]) if key =~ /language/ and value.length > 0
+          value = map_language(value) if key =~ /language/ and value.length > 0
           send("#{key}=".to_sym, value)
         end
       end
@@ -34,7 +34,7 @@ module Ichabod
         # raises an error if it's not found
         @nyucore = Nyucore.find(pid: pid).first
         @nyucore ||= Nyucore.new(pid: pid)
-        NYUCORE_ATTRIBUTES.each do |attribute|
+        NYUCORE_ATTRIBUTES.each do |attribute|  
           @nyucore.source_metadata.send("#{attribute}=".to_sym, send(attribute))
         end
         @nyucore
@@ -56,25 +56,34 @@ module Ichabod
 
       private
 
-      def map_language(lan)
-        language = ""
+      #expects incoming language to be an array 
+      #anything else should be handled by the data loader to convert to an array
+      def map_language(value)
+        language = []
+        language = value
+        iso_lang_code = []
+        
         #does a search across the arrays for the string
-        iso = ISO_639.search(lan) 
-        len = iso.length
-        counter = 0
-        #doing while loop in case search function returns multiple values
-        #returns array of arrays
-        while counter < len 
-          iso[counter].each{|l|
-            if lan == l
-              #the ISO English equivalent of the code or the language
-              #always in the 4th position of the array
-              language = iso[counter][3] 
-            end
-          }
-          counter = counter + 1
-        end
-        language 
+        language.each{|lan|
+          iso = ISO_639.search(lan) 
+          len = iso.length
+          counter = 0
+          #doing while loop in case search function returns multiple values
+          #returns array of arrays
+          while counter < len 
+            iso[counter].each{|l|
+              if lan == l
+                #the ISO English equivalent of the code or the language
+                #always in the 4th position of the array
+                iso_lang_code.push(iso[counter][3]) 
+
+              end
+            }
+            counter = counter + 1
+          end
+        }
+        iso_lang_code
+
       end
 
       def clean_identifier(identifier)
