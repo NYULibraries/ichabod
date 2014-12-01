@@ -9,7 +9,7 @@ describe ArchiveItAccw do
   it { should be_a Ichabod::ResourceSet::Base }
   its(:prefix) { should eq prefix }
   its(:endpoint_url) { should eq endpoint_url }
-  its(:editors) { should eq ['admin_group'] }
+  its(:editors) { should eq ['admin_group', 'afc_group'] }
   its(:before_loads) { should eq [:add_edit_groups, :add_resource_set] }
   describe '.prefix' do
     subject { ArchiveItAccw.prefix }
@@ -22,7 +22,7 @@ describe ArchiveItAccw do
   end
   describe '.editors' do
     subject { ArchiveItAccw.editors }
-    it { should eq [:admin_group] }
+    it { should eq [:admin_group, :afc_group] }
   end
   describe '.before_loads' do
     subject { ArchiveItAccw.before_loads }
