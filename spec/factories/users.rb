@@ -9,6 +9,11 @@ FactoryGirl.define do
       email "gis_admin@nyu.edu"
     end
 
+    factory :afc_group do
+      username "afc_admin"
+      email "afc_admin@nyu.edu"
+    end
+
     factory :admin do
       username "test_admin"
       email "test_admin@nyu.edu"
