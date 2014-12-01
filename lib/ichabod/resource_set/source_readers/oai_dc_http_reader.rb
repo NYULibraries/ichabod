@@ -3,7 +3,7 @@ module Ichabod
     module SourceReaders
       class OaiDcHttpReader < ResourceSet::SourceReader
       require 'oai'
- 
+
         def read
             records.collect do | record|
              ResourceSet::Resource.new(resource_attributes_from_record(record))
@@ -39,11 +39,11 @@ module Ichabod
         def records
          @records=[]
          unless load_number_of_records.nil?
-           response_oai.first(load_number_of_records).each { |oai_record| @records<<oai_record.metadata }
+           response_oai.first(load_number_of_records).each { |oai_record| @records << oai_record.metadata }
          else
-           response_oai.each { |oai_record| @records<<oai_record.metadata }
+           response_oai.each { |oai_record| @records << oai_record.metadata }
          end
-         @records            
+         @records
         end
 
         def response_oai
