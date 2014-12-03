@@ -79,8 +79,8 @@ namespace :nyupress do
   # desc "Set variables for the NYUPress Open Access Books ingest tasks"
   task :set_variables do
     set :nyupress_endpoint_url, ENV['ICHABOD_NYUPRESS_ENDPOINT_URL']
-    set :nyupress_endpoint_url, ENV['ICHABOD_NYUPRESS_ROWS']
-    set :nyupress_endpoint_url, ENV['ICHABOD_NYUPRESS_START']
+    set :nyupress_endpoint_rows, ENV['ICHABOD_NYUPRESS_ROWS']
+    set :nyupress_endpoint_start, ENV['ICHABOD_NYUPRESS_START']
   end
   task :import do
     set_variables
