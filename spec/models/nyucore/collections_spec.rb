@@ -82,5 +82,11 @@ describe Nyucore::Collections do
       let(:resource_set) { ['archive_it_accw'] }
       it { should eql ["Archive of Contemporary Composers' Websites"] }
     end
+    context "when object is from the NYUPress Open Access Books resource set" do
+      let(:type) { ['Book'] }
+      let(:publisher) { nil }
+      let(:resource_set) { ['nyu_press_open_access_book'] }
+      it { should eql ['NYU Press Open Access Books'] }
+    end
   end
 end
