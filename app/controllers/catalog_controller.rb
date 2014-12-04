@@ -115,7 +115,7 @@ class CatalogController < ApplicationController
     #
     # Search fields will inherit the :qt solr request handler from
     # config[:default_solr_parameters], OR can specify a different one
-     # with a :qt key/value. Below examples inherit, except for subject
+    # with a :qt key/value. Below examples inherit, except for subject
     # that specifies the same :qt as default for our own internal
     # testing purposes.
     #
