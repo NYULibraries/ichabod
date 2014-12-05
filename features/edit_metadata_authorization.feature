@@ -21,12 +21,18 @@ Feature: Permission to edit metadata only to authorized users
     Then the record should not have link "Edit"
 
   @loggedin
-  Scenario: Edit option is available to AFC group for ArchiveIt Accw records
+  Scenario: Edit option is available to AFC group for ArchiveIt ACCW records
     Given I am logged in as an admin
     And I view record with id "ai-accw:261ca521648b64ea12e077a254b58553"
     Then the record should have link "Edit"
 
-  Scenario: Edit option is not available to an unauthenticated user for ArchiveIt Accw records
+  @loggedin
+  Scenario: Edit option is not available to GIS Cataloger for ArchiveIt ACCW records
+    Given I am logged in as "GIS Cataloger"
+    And I view record with id "ai-accw:261ca521648b64ea12e077a254b58553"
+    Then the record should not have link "Edit"
+
+  Scenario: Edit option is not available to an unauthenticated user for ArchiveIt ACCW records
     Given I am not logged in
     And I view record with id "ai-accw:261ca521648b64ea12e077a254b58553"
     Then the record should not have link "Edit"
