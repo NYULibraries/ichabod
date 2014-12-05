@@ -42,6 +42,8 @@ Add documentation for expectations on contributing.
 
 When you're confident in your code you're going to want to send in a pull request. Your commit history will be able to tell the code maintainer what you've changed and how it will affect the codebase. It may be a good idea to summarize what you have done in the pull request message, and how it will affect the codebase. To be more certain in your own code, you may want to ask for a code review.
 
+If the merging of your code requires additional operations other than a simple merge and deploy, you should include the additional steps in your pull request. For example: if you're adding a new collection, you would add "Requires collection data load" to the PR.
+
 Sometimes the `development` branch will be updated while you have an open PR.  When this happens, your branch might become *stale*, meaning that your branch can no longer be merged into `development` without a conflict.  When this happens you should:
 * rebase your branch onto the latest version of `development`, resolving any merge conflicts
 * delete your stale branch **on GitHub**, which will automaticallly close the PR for your stale branch
