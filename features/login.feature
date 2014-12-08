@@ -22,3 +22,10 @@ Feature: Login as a user
     When I search on the phrase "nyc"
     Then I should see search results
     And I should see "Log-out"
+
+  @loggedin
+  Scenario: Logged in AFC Group
+    Given I am logged in as "AFC Group"
+    And I am on the default search page
+    Then I should see "Log-out"
+
