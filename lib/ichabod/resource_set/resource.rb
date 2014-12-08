@@ -56,8 +56,9 @@ module Ichabod
 
       private
 
-      #expects incoming language to be an array 
-      #anything else should be handled by the data loader to convert to an array
+      # expects incoming language to be an array, i.e ["lan1", "lan2"]
+      # if only one language, then ["lan1"]
+      # anything else should be handled by the data loader to convert to an array
       def map_language(value)
         language = []
         language = value
