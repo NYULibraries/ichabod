@@ -40,7 +40,6 @@ module Ichabod
             date: interview['ds_created'],
             description: interview["sm_field_beard_description"][0],
             type: interview['collection_type'].capitalize,
-            # language: interview['ss_language'],
             format: Format
           }
         end
