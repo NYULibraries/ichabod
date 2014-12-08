@@ -38,7 +38,7 @@ describe FacultyDigitalArchive do
         its(:available) { should include 'http://hdl.handle.net/2451/27761' }
         its(:creator) { should include 'Aral, Sinan' }
         its(:type) { should include 'Article' }
-        its(:language) { should include 'en_US' }
+        #its(:language) { should include 'en_US' }
         its(:citation) { should include 'Vol. 18, No. 5, September-October 2007, pp. 763-780' }
         its(:subject) { should include 'IT infrastructure' }
         its(:date) { should include '2008-11-10T21:37:47Z' }
