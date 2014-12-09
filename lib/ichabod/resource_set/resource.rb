@@ -61,11 +61,17 @@ module Ichabod
       # anything else should be handled by the data loader to convert to an array
       def map_language(value)
         language = []
-        language = value
+        if value.is_a? Array
+          language = value
+        elsif value.is_a? String
+          language = ["#{value}"]
+        end
         iso_lang_code = []
         
         #does a search across the arrays for the string
         language.each{|lan|
+          # all codes are lowercase
+          lan.downcase!      
           iso = ISO_639.search(lan) 
           len = iso.length
           counter = 0
