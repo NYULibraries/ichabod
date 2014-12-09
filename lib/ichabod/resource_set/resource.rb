@@ -56,9 +56,7 @@ module Ichabod
 
       private
 
-      # expects incoming language to be an array, i.e ["lan1", "lan2"]
-      # if only one language, then ["lan1"]
-      # anything else should be handled by the data loader to convert to an array
+      #returns one occurrence of language
       def map_language(value)
         language = []
         if value.is_a? Array
@@ -66,7 +64,7 @@ module Ichabod
         elsif value.is_a? String
           language = ["#{value}"]
         end
-        iso_lang_code = []
+        iso_lang_code = ""
         
         #does a search across the arrays for the string
         language.each{|lan|
@@ -82,7 +80,7 @@ module Ichabod
               if lan == l
                 #the ISO English equivalent of the code or the language
                 #always in the 4th position of the array
-                iso_lang_code.push(iso[counter][3]) 
+                iso_lang_code = iso[counter][3]
 
               end
             }
