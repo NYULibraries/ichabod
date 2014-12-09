@@ -37,7 +37,7 @@ module Ichabod
             its(:available) { should eq 'http://hdl.handle.net/2333.1/37pvmfhh' }
             its(:citation) { should eq 'http://hdl.handle.net/2333.1/37pvmfhh' }
             its(:type) { should eq 'Text' }
-            its(:language) { should eq 'En' }
+            its(:language) { should eq 'English' }
           end
         end
       end
