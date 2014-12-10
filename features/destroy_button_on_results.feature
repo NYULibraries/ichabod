@@ -16,10 +16,11 @@ Feature: Destroy button on main and detailed search results pages
  @loggedin
   Scenario: authorized user can delete record from the details display page and return to search results
     Given I am logged in as an admin
-    And "12" records "The Novel" exists
-    And I search for "The Novel"
+    And "12" records "The Play" exists
+    And I search for "The Play"
     And I navigate to the page "2" of the search results
-    And I click on the last "Delete" link
+    And I navigate to details display of the last result
+    And I click on the first "Delete" link
     Then the number of records should decrease to "11"
     And I should return to the page "2" of the search results
 

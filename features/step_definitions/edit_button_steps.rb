@@ -40,3 +40,9 @@ end
 Then(/^I should get to the edit form for "(.*?)"$/) do |title|
   expect(page.find('#nyucore_title').value).to eq "#{title}"
 end
+
+Given(/^I navigate to details display of the last result$/) do
+  within(documents_list_container) do
+    find(".document:last-child h5.index_title a").click
+  end
+end
