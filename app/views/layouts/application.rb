@@ -9,7 +9,8 @@ module Views
       # Print breadcrumb navigation
       def breadcrumbs
         breadcrumbs = super
-        breadcrumbs << link_to('Catalog', catalog_index_url)
+        breadcrumbs.pop # Remove BobCat from breadcrumbs array
+        breadcrumbs << link_to_unless_current(application_title, catalog_index_url)
         breadcrumbs << link_to_unless_current(controller.controller_name.humanize) unless controller.controller_name.eql? "catalog"
         return breadcrumbs
       end
