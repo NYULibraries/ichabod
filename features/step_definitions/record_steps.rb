@@ -26,7 +26,7 @@ end
 
 When(/^I delete the record$/) do
   accept_javascript_confirms
-  click_on('Destroy')  
+  click_on('Destroy')
 end
 
 When(/^I click on "(.+?)"$/) do |link_text|
