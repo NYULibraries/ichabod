@@ -37,6 +37,7 @@ Feature: Permission to edit metadata only to authorized users
     And I view record with id "ai-accw:261ca521648b64ea12e077a254b58553"
     Then the record should not have link "Edit"
 
+  @loggedin
   Scenario: Edit option for GIS records is available to GIS cataloger on the main search page
     Given I am logged in as "GIS Cataloger"
     And I search for "MapPluto"
