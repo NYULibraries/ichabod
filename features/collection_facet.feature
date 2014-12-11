@@ -31,7 +31,8 @@ Feature: Collection facet
     When I filter my search to "Asian NGOs Reports" under the "Collection" category
     Then I should see search results
 
-  Scenario: Filter by Archive of Contemporary Composers Websites
-    Given I am on the default search page
-    When I filter my search to "Archive of Contemporary Composers' Websites" under the "Collection" category
-    Then I should see search results
+  # FIXME: @jgpawletko restore after ArchiveIt cassettes in place
+  # Scenario: Filter by Archive of Contemporary Composers Websites
+  #   Given I am on the default search page
+  #   When I filter my search to "Archive of Contemporary Composers' Websites" under the "Collection" category
+  #   Then I should see search results
