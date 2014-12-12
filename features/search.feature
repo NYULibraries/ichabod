@@ -60,3 +60,7 @@ Feature: Perform a basic search
     When I search on the phrase "louiskarchin.com"
     Then I should see search results
 
+  Scenario: Search for The Masses entity title
+    Given I am on the default search page
+    When I search on the phrase "March 1911"
+    Then I should see search results
