@@ -22,7 +22,7 @@ Feature: Permission to edit metadata only to authorized users
 
   @loggedin
   Scenario: Edit option is available to AFC group for ArchiveIt ACCW records
-    Given I am logged in as an admin
+    Given I am logged in as "AFC Group"
     And I view record with id "ai-accw:261ca521648b64ea12e077a254b58553"
     Then the record should have link "Edit"
 
