@@ -176,6 +176,11 @@ class CatalogController < ApplicationController
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
     config.spell_max = 5
+
+    #define what parials will be used to display each solr document
+    config.index.partials = ['index_header','index','action_buttons']
+    config.show.partials = ['show_header','show','action_buttons']
+
   end
 
 
