@@ -11,7 +11,7 @@ describe "catalog/_action_buttons_default" do
     view.stub(:search_session).and_return({ 'counter' =>"2" })
   end
  
-  it "should show 'Destroy' and 'Edit' buttons to authorized user and pass parameter document_counter to Destroy method " do
+  it "should show 'Delete' and 'Edit' buttons to authorized user and pass parameter document_counter to Destroy method " do
     controller.stub(:current_user).and_return(build(:admin))
     render :partial => "catalog/action_buttons_default", :locals => { :document => solr_document, :document_counter => 1 }
     expect(rendered).to match /Edit/
@@ -20,14 +20,14 @@ describe "catalog/_action_buttons_default" do
   end
 
   context "when document_counter parameter is not assign" do
-    it "should read parameter counter from search_session to pass it as document_counter to Destroy method " do
+    it "should read parameter counter from search_session to pass it as document_counter to destroy method " do
       controller.stub(:current_user).and_return(build(:admin))
       render :partial => "catalog/action_buttons_default", :locals => { :document => solr_document }
       expect(rendered).to match /document_counter=2/
     end
   end
 
-  it "should not show 'Destroy' and 'Edit' buttons to un-authorized user" do
+  it "should not show 'Delete' and 'Edit' buttons to un-authorized user" do
     controller.stub(:current_user).and_return(build(:gis_cataloger))
     render :partial => "catalog/action_buttons_default", :locals => { :document => solr_document }
     expect(rendered).not_to eq /Edit/

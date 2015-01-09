@@ -21,7 +21,7 @@ When(/^I click on the "(.*?)" link$/) do |link_text|
     click_on(link_text)
 end
 
-Given(/^"(.*?)" records "(.*?)" exists$/) do |number_of_records, title|
+Given(/^"(.*?)" records with title "(.*?)" exists$/) do |number_of_records, title|
   FactoryGirl.create_list(:nyucore,number_of_records.to_i,title: title)
 end
 

@@ -90,11 +90,24 @@ class NyucoresController < ApplicationController
     end
   end
 
+
+  #Calculates on what page of the search reults we should return.
+  # To calculate the landing page number we need 2 parameters: order number of the deleted document
+  #and the number of results per page. If any of this parameters is not defined we will return to the first page.
   def get_page_number
-    unless params[:document_counter].nil? || current_per_page==0 || params[:document_counter].to_i==1
-      @query_params[:page]=((params[:document_counter].to_f-1)/current_per_page).ceil
+    if page_parameters_defined?
+      @query_params[:page] = params[:document_counter].to_i==1 ? 1 : ((params[:document_counter].to_f-1)/current_per_page).ceil
+    end
+ end
+ 
+  #If parameters needed to calculate the landing page are not defined- return to the search results page
+  def page_parameters_defined?
+   if params[:document_counter].nil? || current_per_page==0
+        @query_params[:page]=1
+        logger.warn "document_counter or current_per_page parameters are not defined, return to the first search page"
+        false
     else
-      @query_params[:page]=1
+        true
     end
   end
 end
