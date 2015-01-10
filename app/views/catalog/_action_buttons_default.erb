@@ -1,0 +1,3 @@
+<% counter= defined?(document_counter) ? document_counter_with_offset(document_counter): search_session["counter"]  %>
+<% if can?(:edit, document.id) %><td><%=link_to 'Edit', edit_nyucore_path(document.id) %></td><% end %>
+<% if can?(:destroy, document.id) %> <td><%= link_to 'Delete', nyucore_path(document.id, { document_counter: counter }), method: :delete, data: { confirm: 'Are you sure?' } %></td><% end %>
