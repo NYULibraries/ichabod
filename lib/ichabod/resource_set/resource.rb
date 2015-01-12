@@ -58,34 +58,32 @@ module Ichabod
 
       #returns one occurrence of language
       def map_language(value)
-        language = []
-        if value.is_a? Array
-          language = value
-        elsif value.is_a? String
-          language = ["#{value}"]
-        end
+        #changing to a string value since I am returning only one value
+        language = case
+           when value.is_a?(Array)  then value
+           when value.is_a?(String) then [value]
+           else raise ArgumentError.new("Expecting #{value} to be an Array or String")
+           end
+        
         iso_lang_code = ""
         
-        #does a search across the arrays for the string
         language.each{|lan|
-          # all codes are lowercase
-          lan.downcase!      
+          lan.downcase!
           iso = ISO_639.search(lan) 
-          len = iso.length
-          counter = 0
-          #doing while loop in case search function returns multiple values
-          #returns array of arrays
-          while counter < len 
-            iso[counter].each{|l|
-              if lan == l
+          #returns an array of arrays 
+          iso.each_index{|la|
+            iso[la].each{|l|
+              #if code is found in language array of arrays
+              if l == lan
                 #the ISO English equivalent of the code or the language
                 #always in the 4th position of the array
-                iso_lang_code = iso[counter][3]
-
+                iso_lang_code = iso[la][3]
+                break
               end
             }
-            counter = counter + 1
-          end
+           
+          }
+          break if !iso_lang_code.empty?
         }
         iso_lang_code
 
