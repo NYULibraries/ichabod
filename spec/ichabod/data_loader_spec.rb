@@ -45,7 +45,6 @@ module Ichabod
         its(:publisher) { should eql ['Stern'] }
         its(:type) { should eql ['Working Paper'] }
         its(:format) { should eql ['application/pdf'] }
-        its(:language) { should eql ['English'] }
         its(:relation) { should eql ['CeDER-05-01'] }
         its(:edit_groups) { should eql ['admin_group', 'fda_cataloger'] }
       end

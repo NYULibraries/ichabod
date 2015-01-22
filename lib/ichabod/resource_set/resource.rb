@@ -2,6 +2,7 @@ module Ichabod
   module ResourceSet
     # Public
     class Resource
+      require 'iso-639'
 
       HANDLE_REGEXP = /^http:\/\/hdl\.handle\.net/
       URL_REGEXP = /^https?:\/\//
@@ -17,6 +18,8 @@ module Ichabod
 
       def initialize(attributes={})
         attributes.each_pair do |key, value|
+          #mapping iso code to language which is then faceted
+          value = map_language(value) if key =~ /language/ and value.length > 0
           send("#{key}=".to_sym, value)
         end
       end
@@ -31,7 +34,7 @@ module Ichabod
         # raises an error if it's not found
         @nyucore = Nyucore.find(pid: pid).first
         @nyucore ||= Nyucore.new(pid: pid)
-        NYUCORE_ATTRIBUTES.each do |attribute|
+        NYUCORE_ATTRIBUTES.each do |attribute|  
           @nyucore.source_metadata.send("#{attribute}=".to_sym, send(attribute))
         end
         @nyucore
@@ -52,6 +55,40 @@ module Ichabod
       end
 
       private
+
+      #returns one occurrence of language
+      def map_language(value)
+        #changing to a string value since I am returning only one value
+        language = case
+           when value.is_a?(Array)  then value
+           when value.is_a?(String) then [value]
+           else raise ArgumentError.new("Expecting #{value} to be an Array or String")
+           end
+        
+        iso_lang_code = ""
+        
+        language.each{|lan|
+          lan.downcase!
+          iso = ISO_639.search(lan) 
+          #returns an array of arrays 
+          iso.each_index{|la|
+            iso[la].each{|l|
+              #if code is found in language array of arrays
+              if l == lan
+                #the ISO English equivalent of the code or the language
+                #always in the 4th position of the array
+                iso_lang_code = iso[la][3]
+                break
+              end
+            }
+           
+          }
+          break if !iso_lang_code.empty?
+        }
+        iso_lang_code
+
+      end
+
       def clean_identifier(identifier)
         identifier.gsub(URL_REGEXP, '').gsub(/[\.\/\\\?=]/, '-')
       end

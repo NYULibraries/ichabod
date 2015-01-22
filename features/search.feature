@@ -31,6 +31,11 @@ Feature: Perform a basic search
     And I limit my results to "Geospatial Data" under the "Format" category
     Then I should see search results
 
+  Scenario: Limit language by iso 639-2 English term
+    Given I am on the default search page
+    And I limit my results to "English" under the "Language" category
+    Then I should see search results
+
   @vcr
   Scenario: Search for Rosie the Riveter interview subject's name
     Given I am on the default search page

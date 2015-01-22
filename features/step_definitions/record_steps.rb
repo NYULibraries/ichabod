@@ -13,7 +13,7 @@ When(/^I save the record$/) do
 end
 
 Then(/^I should see the message "(.+?)"$/) do |message|
-  expect(page.find(:css, "div.alert.alert-info")).to have_content message
+  expect(page.first(:css, "div.alert.alert-info")).to have_content message
 end
 
 Given(/^the record "(.*?)" exists$/) do |title|
@@ -25,9 +25,8 @@ Given(/^I am on the "Edit Item" form for "(.*?)"$/) do |title|
 end
 
 When(/^I delete the record$/) do
-  visit nyucores_path
   accept_javascript_confirms
-  page.find(:xpath, "//a[@href='#{nyucore_path(@record)}'][@data-method='delete']").click
+  click_on('Delete')
 end
 
 When(/^I click on "(.+?)"$/) do |link_text|
@@ -50,4 +49,8 @@ Then(/^I should see the immutable fields:$/) do |table|
   table.rows_hash.each do |field, value|
     page.find(:xpath, "//label[@for='nyucore_#{field.downcase}']/following-sibling::div[@class='source']").text.should == value
   end
+end
+
+Then(/^the record should be deleted$/) do
+   expect(documents_list).to have_exactly(0).items
 end
