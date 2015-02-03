@@ -88,7 +88,7 @@ namespace :nyupress do
   end
   task :delete do
     set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['nyu_press_open_access_book',#{nyupress_endpoint_url}#{nyupress_endpoint_start},#{nyupress_endpoint_rows}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['nyu_press_open_access_book',#{nyupress_endpoint_url},#{nyupress_endpoint_start},#{nyupress_endpoint_rows}]"
   end
 end
 
