@@ -16,8 +16,8 @@ Feature: Delete button on the main and detailed search results pages
  @loggedin
   Scenario: authorized user can delete record from the details display page and return to search results
     Given I am logged in as an admin
-    And "12" records with title "The Play" exists
-    And I search for "The Play"
+    And "12" records with title "Einen einzigen Wert" exists
+    And I search for "Einen einzigen Wert"
     And I navigate to the page "2" of the search results
     And I navigate to details display of the last result
     And I click on the first "Delete" link
