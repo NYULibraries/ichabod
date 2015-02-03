@@ -30,4 +30,4 @@ Feature: Click "Download" link for Geospatial dataset
     Given I limit my search to "Geospatial Data" under the "Format" category
     And I search for "LION"
     When I navigate to details display of the first result
-    Then I should get "Access restrictions" field in the details display
+    Then I should see the value "NYU Only" in the "Access restriction:" field
