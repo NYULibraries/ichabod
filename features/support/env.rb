@@ -31,7 +31,10 @@ if Rails.env.cucumber?
     Ichabod::DataLoader.new('faculty_digital_archive_ngo','https://archive.nyu.edu/request','hdl_2451_33605',5).load
     # Loaded the voice collection up to record a cassette, but don't need it after that
     # Ichabod::DataLoader.new('voice', ENV['ICHABOD_VOICE_ENDPOINT_URL']).load
-    Ichabod::DataLoader.new('archive_it_accw','https://archive-it.org').load
+
+    # FIXME: @jgpawletko restore after ArchiveIt cassettes in place
+    # Ichabod::DataLoader.new('archive_it_accw','https://archive-it.org').load
+
     # Loaded the NYUPress collection up to record a cassette, but don't need it after that
     Ichabod::DataLoader.new('nyu_press_open_access_book', 'http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select','0','5').load
     # request 5 items from The Masses collection, start with item 0d
