@@ -16,5 +16,6 @@ class SpatialDataRepository < Ichabod::ResourceSet::Base
     nyucore = args.last
     nyucore.source_metadata.addinfolink = 'http://nyu.libguides.com/content.php?pid=169769&sid=1489817'
     nyucore.source_metadata.addinfotext = 'GIS Dataset Instructions'
+    nyucore.source_metadata.restrict = 'NYU Only'
   end
 end
