@@ -25,3 +25,9 @@ Feature: Click "Download" link for Geospatial dataset
     And I search for "MapPLUTO"
     When I navigate to details display of the first result
     Then I should see the link "GIS Dataset Instructions" in the "Additional Information:" field
+
+  Scenario: Display "Access restrictions" field in the details display
+    Given I limit my search to "Geospatial Data" under the "Format" category
+    And I search for "LION"
+    When I navigate to details display of the first result
+    Then I should get "Access restrictions" field in the details display

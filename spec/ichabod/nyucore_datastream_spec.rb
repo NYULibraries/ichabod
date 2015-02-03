@@ -20,7 +20,7 @@ module Ichabod
         subject { terms[NyucoreMetadata::Vocabulary] }
         it { should be_an Array }
         it do
-          should eq [:available, :edition, :series, :version, :citation]
+          should eq [:available, :edition, :series, :version, :citation, :restrict]
         end
       end
       describe 'Ichabod::Vocabulary' do
