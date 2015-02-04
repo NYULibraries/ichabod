@@ -21,7 +21,7 @@ module Ichabod
           subject(:read) { reader.read }
           it { should be_an Array }
           it { should_not be_empty }
-          its(:size) { should eq 144 }
+          its(:size) { should eq 168 }
           it 'should include only ResourceSet::Resources' do
             subject.each do |resource|
               expect(resource).to be_a ResourceSet::Resource
@@ -30,11 +30,11 @@ module Ichabod
           describe 'the first record' do
             subject { read.first }
             its(:prefix) { should eq resource_set.prefix }
-            its(:identifier) { should eq '261ca521648b64ea12e077a254b58553' }
-            its(:available) { should eq 'https://wayback.archive-it.org/4049/*/http://LouisKarchin.com/' }
-            its(:version) { should eq 'http://LouisKarchin.com/' }
+            its(:identifier) { should eq '76c2064e05d48a77873c7331371aecd4' }
+            its(:available) { should eq 'https://wayback.archive-it.org/4049/*/http://MrJoeIconis.com/' }
+            its(:version) { should eq 'http://MrJoeIconis.com/' }
             its(:series) { should be_nil }
-            its(:title) { should match 'LouisKarchin.com' }
+            its(:title) { should match 'MrJoeIconis.com' }
           end
         end
       end
