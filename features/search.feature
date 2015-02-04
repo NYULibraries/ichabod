@@ -62,7 +62,7 @@ Feature: Perform a basic search
 
   Scenario: Search for Archive of Contemporary Composers Websites title
     Given I am on the default search page
-    When I search on the phrase "louiskarchin.com"
+    When I search on the phrase "www.louiskarchin.com"
     Then I should see search results
 
   Scenario: Search for The Masses entity title
