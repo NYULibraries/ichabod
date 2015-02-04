@@ -30,4 +30,9 @@ describe ArchiveItAccw do
     subject { ArchiveItAccw.before_loads }
     it { should eq [:add_edit_groups, :add_resource_set] }
   end
+  context 'when no path is provided' do
+    let(:args) { [endpoint_url].compact }
+    subject { ArchiveItAccw.new(*args) }
+    its(:path) { should eq '/collections/4049.json' }
+  end
 end

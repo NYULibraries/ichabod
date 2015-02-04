@@ -9,7 +9,7 @@ class ArchiveItAccw < Ichabod::ResourceSet::Base
 
   def initialize(*args)
     @endpoint_url = args.shift
-    @path         = args.shift
+    @path         = args.shift || '/collections/4049.json'
     super
   end
 end
