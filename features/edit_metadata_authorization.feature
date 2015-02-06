@@ -24,7 +24,6 @@ Feature: Permission to edit metadata only to authorized users
   Scenario: Edit option is available to AFC group for ArchiveIt ACCW records
     Given I am logged in as "AFC Group"
     And I view record with id "ai-accw:388fe27b78485746b132fe4448ba2042"
-    changed accw id to an id that existed in my fedora instance. It was failing before
     Then the record should have link "Edit"
 
   @loggedin
