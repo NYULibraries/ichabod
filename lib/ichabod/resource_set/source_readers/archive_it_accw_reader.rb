@@ -58,8 +58,6 @@ module Ichabod
       # [1] https://wiki.duraspace.org/display/FEDORA37/Fedora+Identifiers
       class ArchiveItAccwReader < ResourceSet::SourceReader
 
-        ARCHIVE_IT_COLLECTION_CODE = '4049'
-
         def read
           entities.collect do |entity|
             ResourceSet::Resource.new(resource_attributes_from_entity(entity))
@@ -68,7 +66,7 @@ module Ichabod
 
         private
         extend Forwardable
-        def_delegators :resource_set, :endpoint_url, :collection_code
+        def_delegators :resource_set, :endpoint_url, :path, :collection_code
 
         def resource_attributes_from_entity(entity)
           {
@@ -95,8 +93,7 @@ module Ichabod
         end
 
         def entities_endpoint(query = '')
-          path = "/collections/#{ARCHIVE_IT_COLLECTION_CODE}.json#{query}"
-          endpoint_connection.get(path)
+          endpoint_connection.get("#{path}#{query}")
         end
 
         #https://archive-it.org/collections/4049.json
