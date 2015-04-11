@@ -33,6 +33,7 @@ Rake tasks available to ingest data from "ingest" directory.
 
 ## Resources
 
+* [Ichabod Contributers Guide] (https://github.com/NYULibraries/ichabod/blob/master/CONTRIBUTING.md)
 * [Project Hydra Homepage](http://projecthydra.org/)
 * [Project Hydra @ GitHub](https://github.com/projecthydra/hydra)
 * [Dive Into Hydra](https://github.com/projecthydra/hydra/wiki/Dive-into-Hydra)
