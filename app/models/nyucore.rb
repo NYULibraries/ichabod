@@ -1,6 +1,5 @@
 class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
-
   NYUCORE_FIELDS = {
     :multiple => [:available, :citation, :title, :creator, :type, :publisher,
                   :description, :edition, :date, :format, :language, :relation,

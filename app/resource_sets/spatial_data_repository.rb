@@ -20,6 +20,6 @@ class SpatialDataRepository < Ichabod::ResourceSet::Base
 
   def add_access_rights(*args)
     nyucore = args.last
-    nyucore.source_metadata.restrictions = "nyu_only"
+    nyucore.source_metadata.restrictions = I18n.t('restrictions.type.nyu_only') 
   end
 end

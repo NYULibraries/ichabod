@@ -71,8 +71,9 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name('desc_metadata__lc_callnum', :stored_searchable, type: :string), :label => 'Call number'
     #NYUCore Additions
     config.add_index_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher'
-    config.add_index_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions',
-                                                                                                        :helper_method => :render_restrictions_text
+    config.add_index_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions'
+    #config.add_index_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions',
+                                                                                                      #  :helper_method => :render_restrictions_text
     config.add_index_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label => 'Online Resource',
                                                                                                     :helper_method => :render_external_links,
                                                                                                     :text          => 'resource_text_display'
@@ -102,8 +103,8 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name('desc_metadata__description', :stored_searchable, type: :string), :label => 'Description'
     config.add_show_field solr_name('desc_metadata__series', :stored_searchable, type: :string), :label => 'Series'
     config.add_show_field solr_name('desc_metadata__version', :stored_searchable, type: :string), :label => 'Also available as'
-    config.add_show_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions',
-                                                                                                        :helper_method => :render_restrictions_text
+    config.add_show_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions'#,
+                                                                                                        #:helper_method => :render_restrictions_text
 
     config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label => 'Online Resource',
                                                                                                     :helper_method => :render_external_links,
