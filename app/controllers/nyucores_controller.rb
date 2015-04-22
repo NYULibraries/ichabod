@@ -110,5 +110,4 @@ class NyucoresController < ApplicationController
         true
     end
   end
-  binding.pry
 end

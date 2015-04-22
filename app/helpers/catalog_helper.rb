@@ -18,16 +18,4 @@ module CatalogHelper
       nil
     end
   end
-
-  #converts stored restriction value into display friendly text
-  def render_restrictions_text(args)
-    document = args[:document]
-    field_name = args[:field]
-    begin
-      stored_value = document[field_name][0]
-      display_text = t('restrictions.type.'"#{stored_value}")   
-    rescue ArgumentError => e
-      nil
-    end
-  end
 end
