@@ -147,14 +147,34 @@ module Ichabod
 
       def set_restriction_nyu_only(*args)
         nyucore = args.last
-        nyucore.source_metadata.restrictions = "boop"
+        restrict_hsh = add_restrictions
+        nyucore.source_metadata.restrictions = restrict_hsh[:nyu_only]
       end
 
       def set_restriction_authorized_only(*args)
         nyucore = args.last
-        nyucore.source_metadata.restrictions = "shoop"
+        restrict_hsh = add_restrictions
+        nyucore.source_metadata.restrictions = restrict_hsh[:authorized_only]
       end
+
       private
+      def add_restrictions
+        filename = 'config/access_rights.yml'
+        file = File.join(Rails.root, filename)
+
+        unless File.exists?(file)
+          raise "You are missing an access rights configuration file: #{filename}."
+        end
+
+        begin
+          yml = YAML.load_file(file)
+        rescue
+          raise("#{filename} was found, but could not be parsed.\n")
+        end
+
+        yml["type"].symbolize_keys
+      end
+
       def add_edit_groups(*args)
         nyucore = args.last
         nyucore.set_edit_groups(editors, []) unless editors.empty?
