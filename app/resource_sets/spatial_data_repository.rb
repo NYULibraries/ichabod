@@ -2,7 +2,7 @@ class SpatialDataRepository < Ichabod::ResourceSet::Base
   self.prefix = 'sdr'
   self.source_reader = :oai_dc_file_reader
   editor :gis_cataloger
-  before_load :add_additional_info_link, :add_access_rights
+  before_load :add_additional_info_link, :set_restriction_nyu_only
 
   attr_reader :filename
 
@@ -20,7 +20,6 @@ class SpatialDataRepository < Ichabod::ResourceSet::Base
 
   def add_access_rights(*args)
     nyucore = args.last
-    # hack to use controlled vocabulary only.
-    nyucore.source_metadata.restrictions = I18n.t('restrictions.type.nyu_only') 
+    nyucore.source_metadata.restrictions = nyucore.source_metadata.restrictions[0]
   end
 end

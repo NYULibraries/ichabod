@@ -145,6 +145,15 @@ module Ichabod
         end
       end
 
+      def set_restriction_nyu_only(*args)
+        nyucore = args.last
+        nyucore.source_metadata.restrictions = "boop"
+      end
+
+      def set_restriction_authorized_only(*args)
+        nyucore = args.last
+        nyucore.source_metadata.restrictions = "shoop"
+      end
       private
       def add_edit_groups(*args)
         nyucore = args.last
