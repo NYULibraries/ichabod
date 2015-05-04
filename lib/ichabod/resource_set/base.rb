@@ -2,6 +2,8 @@ module Ichabod
   module ResourceSet
     class Base
 
+      # Filename and location for yml file that contains id and value
+      RESTRICT_FILENAME = "config/access_rights.yml"
       extend Forwardable
       def_delegators :resources, :each
 
@@ -10,7 +12,7 @@ module Ichabod
         attr_accessor :prefix
       end
 
-      attr_reader :prefix, :editors, :before_loads
+      attr_reader :prefix, :editors, :before_loads, :set_restrictions
 
       def self.source_reader=(source_reader)
         unless source_reader.is_a?(Class)
@@ -85,6 +87,14 @@ module Ichabod
         self.editors.concat(editors.compact).uniq!
       end
 
+      def self.set_restrictions
+        @set_restrictions ||= gather_superclass_attributes(:set_restrictions)
+      end
+
+      def self.set_restriction(*set_restrictions)
+        self.set_restrictions.concat(set_restrictions.compact).uniq!
+      end
+
       def self.before_loads
         @before_loads ||= gather_superclass_attributes(:before_loads)
       end
@@ -97,7 +107,7 @@ module Ichabod
       editor :admin_group
 
       # Default to adding the edit groups on create
-      before_load :add_edit_groups
+      before_load :add_edit_groups, :apply_restrictions
 
       # Default to adding the ResourceSet on create
       before_load :add_resource_set
@@ -109,6 +119,7 @@ module Ichabod
         @prefix = self.class.prefix
         @editors = self.class.editors.map(&:to_s)
         @before_loads = self.class.before_loads.map(&:to_sym)
+        @set_restrictions = self.class.set_restrictions.map(&:to_s)
       end
 
       def read_from_source
@@ -145,22 +156,24 @@ module Ichabod
         end
       end
 
-      def set_restriction_nyu_only(*args)
-        nyucore = args.last
-        restrict_hsh = add_restrictions
-        nyucore.source_metadata.restrictions = restrict_hsh[:nyu_only]
-      end
-
-      def set_restriction_authorized_only(*args)
-        nyucore = args.last
-        restrict_hsh = add_restrictions
-        nyucore.source_metadata.restrictions = restrict_hsh[:authorized_only]
-      end
-
       private
+
+      # subroutine to assign restrictions field in nyucore
+      # with value from access rights file
+      # based on key given by resource set
+      def apply_restrictions(*args)
+        key = @set_restrictions[0]
+        restrict_hsh = add_restrictions
+        unless restrict_hsh.has_key?(key) 
+          raise("Expecting #{key} to be one of these choices: #{restrict_hsh.keys}")
+        end
+        restriction_value = restrict_hsh[key]
+        nyucore = args.last
+        nyucore.source_metadata.restrictions = restriction_value
+      end
+
       def add_restrictions
-        filename = 'config/access_rights.yml'
-        file = File.join(Rails.root, filename)
+        file = File.join(Rails.root, RESTRICT_FILENAME)
 
         unless File.exists?(file)
           raise "You are missing an access rights configuration file: #{filename}."
@@ -169,10 +182,10 @@ module Ichabod
         begin
           yml = YAML.load_file(file)
         rescue
-          raise("#{filename} was found, but could not be parsed.\n")
+          raise("#{filename} was found, but could not be parsed.")
         end
 
-        yml["type"].symbolize_keys
+        yml["type"]
       end
 
       def add_edit_groups(*args)
