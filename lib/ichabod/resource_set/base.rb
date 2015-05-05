@@ -107,7 +107,7 @@ module Ichabod
       editor :admin_group
 
       # Default to adding the edit groups on create
-      before_load :add_edit_groups, :apply_restrictions
+      before_load :add_edit_groups
 
       # Default to adding the ResourceSet on create
       before_load :add_resource_set
@@ -136,6 +136,10 @@ module Ichabod
           nyucore = resource.to_nyucore
           before_load_methods.each do |before_load_method|
             before_load_method.call(resource, nyucore)
+          end
+          # if restrictions are specified, run the subroutine
+          unless (@set_restrictions.nil? || @set_restrictions.empty?)
+            apply_restrictions(nyucore)
           end
           if nyucore.save
             Rails.logger.info("#{nyucore.pid} has been saved to Fedora")

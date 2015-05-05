@@ -5,9 +5,10 @@ describe SpatialDataRepository do
   subject { SpatialDataRepository.new(filename) }
   it { should be_a SpatialDataRepository }
   it { should be_a Ichabod::ResourceSet::Base }
+  its(:set_restrictions) { should eq ['nyu_only'] }
   its(:filename) { should eq filename }
   its(:editors) { should eq ['admin_group', 'gis_cataloger'] }
-  its(:before_loads) { should eq [:add_edit_groups, :add_resource_set, :add_additional_info_link, :add_access_rights] }
+  its(:before_loads) { should eq [:add_edit_groups, :add_resource_set, :add_additional_info_link] }
 
   describe '.prefix' do
     subject { SpatialDataRepository.prefix }
@@ -21,8 +22,12 @@ describe SpatialDataRepository do
     subject { SpatialDataRepository.editors }
     it { should eq [:admin_group, :gis_cataloger] }
   end
+  describe '.set_restrictions' do
+    subject { SpatialDataRepository.set_restrictions }
+    it { should eq [:nyu_only] }
+  end
   describe '.before_loads' do
     subject { SpatialDataRepository.before_loads }
-    it { should eq [:add_edit_groups, :add_resource_set, :add_additional_info_link, :add_access_rights] }
+    it { should eq [:add_edit_groups, :add_resource_set, :add_additional_info_link] }
   end
 end
