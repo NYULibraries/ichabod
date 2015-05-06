@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Identifier:</strong>
+  <%= @collection.identifier %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @collection.title %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @collection.creator %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @collection.publisher %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @collection.description %>
+</p>
+
+<p>
+  <strong>Available:</strong>
+  <%= @collection.available %>
+</p>
+
+<p>
+  <strong>Rights:</strong>
+  <%= @collection.rights %>
+</p>
+
+<%= link_to 'Edit', edit_collection_path(@collection) %> |
+<%= link_to 'Back', collections_path %>

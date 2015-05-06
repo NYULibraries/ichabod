@@ -1,4 +1,6 @@
 Ichabod::Application.routes.draw do
+  resources :collections
+
   resources :nyucores
 
   root :to => "catalog#index"
