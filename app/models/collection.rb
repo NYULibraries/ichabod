@@ -1,15 +1,14 @@
 class Collection < ActiveFedora::NtriplesRDFDatastream
-  include Hydra::AccessControls::Permissions
 
     TERMS = {
       RDF::DC => [:identifier, :title, :creator, :publisher,
-         :description, :rights],
+        :description, :rights],
 
       NyucoreMetadata::Vocabulary => [:available]
 
     }
 
-  TERMS.each_pair do |vocabulary, terms|
+   TERMS.each_pair do |vocabulary, terms|
       terms.each do |term|
         property term, predicate: vocabulary.send(term) do |index|
           index.as(*index_args)
@@ -17,5 +16,4 @@ class Collection < ActiveFedora::NtriplesRDFDatastream
       end
     end
 
-  
 end
