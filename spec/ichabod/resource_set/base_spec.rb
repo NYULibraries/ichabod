@@ -5,6 +5,7 @@ module Ichabod
       let(:before_loads) { [:method1, :method2] }
       let!(:original_before_loads) { Base.before_loads - before_loads }
       let(:set_restrictions) { [:nyu_only, :authorized_only] }
+      let(:invalid_set_restrictions) { [:only_nyu] }
       let!(:original_set_restrictions) { Base.set_restrictions - set_restrictions }
       let(:editors) { [:editor1, :editor2] }
       let!(:original_editors) { Base.editors - editors }
@@ -147,6 +148,12 @@ module Ichabod
           it { should be_an Array }
           it { should eq set_restrictions.map(&:to_s).unshift(*original_set_restrictions.map(&:to_s)) }
         end
+        context 'when configured with a value other than what is allowed for set_restrictions' do
+          before { Base.set_restriction(*invalid_set_restrictions) }
+          after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
+          it { should be_an Array }
+          it { should_not include set_restrictions.map(&:to_s).unshift(*original_set_restrictions.map(&:to_s)) }
+        end
       end
       describe '#before_loads' do
         subject { base.before_loads }
@@ -205,7 +212,7 @@ module Ichabod
          context 'when there are no restrictions' do
           before { base.delete }
           before { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
-          it 'should return an array of Nyucores with no edit groups' do
+          it 'should return an array of Nyucores with no restrictions' do
             subject.each do |nyucore|
               expect(nyucore.restrictions).to be_nil
             end
@@ -231,7 +238,7 @@ module Ichabod
           its(:size) { should eq 5 }
           it 'should return an array of Nyucores with the specified value' do
             subject.each do |nyucore|
-              expect(nyucore.restrictions).to eq set_restrictions.map(&:to_s).unshift(*original_set_restrictions.map(&:to_s))
+              expect(nyucore.restrictions).to eq "NYU Only"
             end
           end
         end
