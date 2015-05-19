@@ -3,7 +3,7 @@ class Nyucore < ActiveFedora::Base
   NYUCORE_FIELDS = {
     :multiple => [:available, :citation, :title, :creator, :type, :publisher,
                   :description, :edition, :date, :format, :language, :relation,
-                  :rights, :subject, :series, :version],
+                  :rights, :subject, :series, :version, :isbn],
     :single => [:identifier, :restrictions]
   }
   EXTRA_SINGLES = [:resource_set]

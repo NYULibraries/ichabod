@@ -22,6 +22,7 @@ module Ichabod
           {
             prefix: resource_set.prefix,
             identifier: entity['id'],
+            isbn: entity['id'],
             title: entity['title'],
             available: entity['handle'],
             citation: entity['handle'],
