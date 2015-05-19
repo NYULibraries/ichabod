@@ -11,6 +11,7 @@ FactoryGirl.define do
     edition ["10C"]
     series ["NYCDCP_DCPLION_10CAV"]
     version ["DSS.NYCDCP_DCPLION_10cav\DSS.BOLIVAR"]
+    isbn ["987654321099"]
     date ["12/05/2014","04/01/1666"]
     type ["Rosie Stuff"]
     language ["English"]
