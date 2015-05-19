@@ -1,7 +1,7 @@
 module Ichabod
   class Vocabulary < RDF::Vocabulary
     URI = 'http://library.nyu.edu/data/ichabod#'
-    TERMS = [:addinfolink, :addinfotext, :resource_set]
+    TERMS = [:addinfolink, :addinfotext, :resource_set, :isbn]
 
     TERMS.each { |term| property term }
 
