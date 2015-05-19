@@ -4,6 +4,10 @@ module Ichabod
     describe Base do
       let(:before_loads) { [:method1, :method2] }
       let!(:original_before_loads) { Base.before_loads - before_loads }
+      let(:set_restrictions) { [:nyu_only] }
+      let(:all_restrictions) { [:nyu_only, :authorized_only] }
+      let(:invalid_set_restrictions) { [:only_nyu] }
+      let!(:original_set_restrictions) { [] }
       let(:editors) { [:editor1, :editor2] }
       let!(:original_editors) { Base.editors - editors }
       let(:prefix) { 'mock' }
@@ -27,6 +31,17 @@ module Ichabod
         it 'should set the editors attribute on the class' do
           subject
           expect(Base.editors).to eq editors.unshift(*original_editors)
+        end
+      end
+      describe '.set_restriction' do
+        after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
+        subject { Base.set_restriction(*set_restrictions) }
+        it 'should not raise an ArgumentError' do
+          expect { subject }.not_to raise_error
+        end
+        it 'should set the set_restrictions attribute on the class' do
+          subject
+          expect(Base.set_restrictions).to eq set_restrictions.unshift(*original_set_restrictions)
         end
       end
       describe '.before_load' do
@@ -122,6 +137,25 @@ module Ichabod
           it { should eq editors.map(&:to_s).unshift(*original_editors.map(&:to_s)) }
         end
       end
+      describe '#set_restrictions' do
+        subject { base.set_restrictions }
+        context 'when not configured with set_restrictions' do
+          it { should be_a String }
+          it { should eq original_set_restrictions.join("") }
+        end
+        context 'when configured with set_restrictions' do
+          before { Base.set_restriction(*set_restrictions) }
+          after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
+          it { should be_a String }
+          it { should eq set_restrictions.join("") }
+        end
+        context 'when configured with a value other than what is allowed for set_restrictions' do
+          before { Base.set_restriction(*invalid_set_restrictions) }
+          after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
+          it { should be_a String }
+          it { should_not include all_restrictions.map(&:to_s).join("")  }
+        end
+      end
       describe '#before_loads' do
         subject { base.before_loads }
         context 'when not configured with before loads' do
@@ -176,6 +210,15 @@ module Ichabod
             end
           end
         end
+         context 'when there are no restrictions' do
+          before { base.delete }
+          before { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
+          it 'should return an array of Nyucores with no restrictions' do
+            subject.each do |nyucore|
+              expect(nyucore.restrictions).to be_nil
+            end
+          end
+        end
         context 'when there are editors', vcr: {cassette_name: 'resource sets/load resource set with editors'} do
           before { Base.editor(*editors) }
           after { Base.instance_variable_set(:@editors, original_editors)}
@@ -185,6 +228,18 @@ module Ichabod
           it 'should return an array of Nyucores with the specified edit groups' do
             subject.each do |nyucore|
               expect(nyucore.edit_groups).to eq editors.map(&:to_s).unshift(*original_editors.map(&:to_s))
+            end
+          end
+        end
+        context 'when there are restrictions', vcr: {cassette_name: 'resource sets/load resource set with restrictions'} do
+          before { Base.set_restriction(*set_restrictions) }
+          after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
+          it { should be_an Array }
+          it { should_not be_empty }
+          its(:size) { should eq 5 }
+          it 'should return an array of Nyucores with the specified value' do
+            subject.each do |nyucore|
+              expect(nyucore.restrictions).to eq "NYU Only"
             end
           end
         end

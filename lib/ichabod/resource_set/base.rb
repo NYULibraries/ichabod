@@ -2,6 +2,8 @@ module Ichabod
   module ResourceSet
     class Base
 
+      # Filename and location for yml file that contains id and value
+      RESTRICT_FILENAME = "config/access_rights.yml"
       extend Forwardable
       def_delegators :resources, :each
 
@@ -10,7 +12,7 @@ module Ichabod
         attr_accessor :prefix
       end
 
-      attr_reader :prefix, :editors, :before_loads
+      attr_reader :prefix, :editors, :before_loads, :set_restrictions
 
       def self.source_reader=(source_reader)
         unless source_reader.is_a?(Class)
@@ -85,6 +87,14 @@ module Ichabod
         self.editors.concat(editors.compact).uniq!
       end
 
+      def self.set_restrictions
+        @set_restrictions ||= gather_superclass_attributes(:set_restrictions)
+      end
+
+      def self.set_restriction(*restrictions)
+        self.set_restrictions.concat(restrictions.compact).uniq!
+      end
+
       def self.before_loads
         @before_loads ||= gather_superclass_attributes(:before_loads)
       end
@@ -109,6 +119,7 @@ module Ichabod
         @prefix = self.class.prefix
         @editors = self.class.editors.map(&:to_s)
         @before_loads = self.class.before_loads.map(&:to_sym)
+        @set_restrictions = self.class.set_restrictions.join("")
       end
 
       def read_from_source
@@ -126,6 +137,11 @@ module Ichabod
           before_load_methods.each do |before_load_method|
             before_load_method.call(resource, nyucore)
           end
+          # if restrictions are specified, assign the value
+          unless @set_restrictions.blank?
+            nyucore.source_metadata.restrictions = restrictions[@set_restrictions] if restrictions.has_key?(@set_restrictions)
+          end
+
           if nyucore.save
             Rails.logger.info("#{nyucore.pid} has been saved to Fedora")
             nyucore
@@ -146,6 +162,25 @@ module Ichabod
       end
 
       private
+
+      def restrictions
+        @restrictions ||= begin
+                            file = File.join(Rails.root, RESTRICT_FILENAME)
+
+                            unless File.exists?(file)
+                              raise "You are missing an access rights configuration file: #{filename}."
+                            end
+
+                            begin
+                              yml = YAML.load_file(file)
+                            rescue
+                              raise("#{filename} was found, but could not be parsed.")
+                            end
+
+                            yml["type"]
+                          end
+      end
+
       def add_edit_groups(*args)
         nyucore = args.last
         nyucore.set_edit_groups(editors, []) unless editors.empty?

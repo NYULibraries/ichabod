@@ -8,7 +8,7 @@ describe Nyucore do
     it { should have_key :single }
     it { should have_key :multiple }
     it 'should have the appropriate single fields' do
-      expect(subject[:single]).to eq [:identifier]
+      expect(subject[:single]).to eq [:identifier, :restrictions]
     end
     it 'should have the appropriate multiple fields' do
       expect(subject[:multiple]).to eq [:available, :citation, :title, :creator,
@@ -62,6 +62,8 @@ describe Nyucore do
     it { should be_valid }
     # Generic test for presence
     its(field) { should be_present }
+
+
 
     # Test the attribute writers
     describe "##{field}=" do
