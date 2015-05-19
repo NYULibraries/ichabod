@@ -5,7 +5,7 @@ describe SpatialDataRepository do
   subject { SpatialDataRepository.new(filename) }
   it { should be_a SpatialDataRepository }
   it { should be_a Ichabod::ResourceSet::Base }
-  its(:set_restrictions) { should eq ['nyu_only'] }
+  its(:set_restrictions) { should eq 'nyu_only' }
   its(:filename) { should eq filename }
   its(:editors) { should eq ['admin_group', 'gis_cataloger'] }
   its(:before_loads) { should eq [:add_edit_groups, :add_resource_set, :add_additional_info_link] }

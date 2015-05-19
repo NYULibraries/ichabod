@@ -91,8 +91,8 @@ module Ichabod
         @set_restrictions ||= gather_superclass_attributes(:set_restrictions)
       end
 
-      def self.set_restriction(*set_restrictions)
-        self.set_restrictions.concat(set_restrictions.compact).uniq!
+      def self.set_restriction(*restrictions)
+        self.set_restrictions.concat(restrictions.compact).uniq!
       end
 
       def self.before_loads
@@ -119,7 +119,7 @@ module Ichabod
         @prefix = self.class.prefix
         @editors = self.class.editors.map(&:to_s)
         @before_loads = self.class.before_loads.map(&:to_sym)
-        @set_restrictions = self.class.set_restrictions.map(&:to_s)
+        @set_restrictions = self.class.set_restrictions.join("")
       end
 
       def read_from_source
@@ -137,10 +137,11 @@ module Ichabod
           before_load_methods.each do |before_load_method|
             before_load_method.call(resource, nyucore)
           end
-          # if restrictions are specified, run the subroutine
-          unless (@set_restrictions.nil? || @set_restrictions.empty?)
-            apply_restrictions(nyucore)
+          # if restrictions are specified, assign the value
+          unless @set_restrictions.blank?
+            nyucore.source_metadata.restrictions = restrictions[@set_restrictions] if restrictions.has_key?(@set_restrictions)
           end
+
           if nyucore.save
             Rails.logger.info("#{nyucore.pid} has been saved to Fedora")
             nyucore
@@ -162,34 +163,22 @@ module Ichabod
 
       private
 
-      # subroutine to assign restrictions field in nyucore
-      # with value from access rights file
-      # based on key given by resource set
-      def apply_restrictions(*args)
-        key = @set_restrictions[0]
-        restrict_hsh = add_restrictions
-        unless restrict_hsh.has_key?(key) 
-          raise("Expecting #{key} to be one of these choices: #{restrict_hsh.keys}")
-        end
-        restriction_value = restrict_hsh[key]
-        nyucore = args.last
-        nyucore.source_metadata.restrictions = restriction_value
-      end
+      def restrictions
+        @restrictions ||= begin
+                            file = File.join(Rails.root, RESTRICT_FILENAME)
 
-      def add_restrictions
-        file = File.join(Rails.root, RESTRICT_FILENAME)
+                            unless File.exists?(file)
+                              raise "You are missing an access rights configuration file: #{filename}."
+                            end
 
-        unless File.exists?(file)
-          raise "You are missing an access rights configuration file: #{filename}."
-        end
+                            begin
+                              yml = YAML.load_file(file)
+                            rescue
+                              raise("#{filename} was found, but could not be parsed.")
+                            end
 
-        begin
-          yml = YAML.load_file(file)
-        rescue
-          raise("#{filename} was found, but could not be parsed.")
-        end
-
-        yml["type"]
+                            yml["type"]
+                          end
       end
 
       def add_edit_groups(*args)

@@ -4,9 +4,10 @@ module Ichabod
     describe Base do
       let(:before_loads) { [:method1, :method2] }
       let!(:original_before_loads) { Base.before_loads - before_loads }
-      let(:set_restrictions) { [:nyu_only, :authorized_only] }
+      let(:set_restrictions) { [:nyu_only] }
+      let(:all_restrictions) { [:nyu_only, :authorized_only] }
       let(:invalid_set_restrictions) { [:only_nyu] }
-      let!(:original_set_restrictions) { Base.set_restrictions - set_restrictions }
+      let!(:original_set_restrictions) { [] }
       let(:editors) { [:editor1, :editor2] }
       let!(:original_editors) { Base.editors - editors }
       let(:prefix) { 'mock' }
@@ -139,20 +140,20 @@ module Ichabod
       describe '#set_restrictions' do
         subject { base.set_restrictions }
         context 'when not configured with set_restrictions' do
-          it { should be_an Array }
-          it { should eq original_set_restrictions.map(&:to_s) }
+          it { should be_a String }
+          it { should eq original_set_restrictions.join("") }
         end
         context 'when configured with set_restrictions' do
           before { Base.set_restriction(*set_restrictions) }
           after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
-          it { should be_an Array }
-          it { should eq set_restrictions.map(&:to_s).unshift(*original_set_restrictions.map(&:to_s)) }
+          it { should be_a String }
+          it { should eq set_restrictions.join("") }
         end
         context 'when configured with a value other than what is allowed for set_restrictions' do
           before { Base.set_restriction(*invalid_set_restrictions) }
           after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
-          it { should be_an Array }
-          it { should_not include set_restrictions.map(&:to_s).unshift(*original_set_restrictions.map(&:to_s)) }
+          it { should be_a String }
+          it { should_not include all_restrictions.map(&:to_s).join("")  }
         end
       end
       describe '#before_loads' do
