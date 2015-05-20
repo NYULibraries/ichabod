@@ -62,7 +62,7 @@ class NyucoresController < ApplicationController
 
   # Whitelist attrs
   def item_params
-    params.require(:nyucore).permit(:identifier, title: [], creator: [], publisher: [], type: [], available: [], description: [], edition: [], series: [], version: [], date: [], format: [], language: [], relation: [], rights: [], subject: [], citation: [])
+    params.require(:nyucore).permit(:identifier, :restrictions, title: [], creator: [], publisher: [], type: [], available: [], description: [], edition: [], series: [], version: [], date: [], format: [], language: [], relation: [], rights: [], subject: [], citation: [])
   end
 
   def ensure_default_editors
