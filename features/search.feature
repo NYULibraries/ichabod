@@ -36,11 +36,11 @@ Feature: Perform a basic search
     And I limit my results to "English" under the "Language" category
     Then I should see search results
 
-  @vcr
-  Scenario: Search for Rosie the Riveter interview subject's name
-    Given I am on the default search page
-    When I search on the phrase "Jerre Kalbas"
-    Then I should see search results
+  #@vcr
+  #Scenario: Search for Rosie the Riveter interview subject's name
+    #Given I am on the default search page
+    #When I search on the phrase "Jerre Kalbas"
+    #Then I should see search results
 
   @vcr
   Scenario: Search for Voices of the Food Foundation interview subject's name
@@ -70,11 +70,13 @@ Feature: Perform a basic search
     When I search on the phrase "March 1911"
     Then I should see search results
 
+  @vcr
   Scenario: Search by ISBN
     Given I am on the default search page
     When I search on the phrase "9780814712917"
     Then I should see search results
 
+  @vcr
   Scenario: Search for NYU Press
     Given I am on the default search page
     When I limit my results to "NYU Press Open Access Books" under the "Collection" category
