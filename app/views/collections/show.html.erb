@@ -4,7 +4,7 @@
 
 <% single_fields.each do |field| %>
  <% value||= @collection.send(field) %>
- <div><%= f.label field %>:<%= value %></div>
+ <div><%= f.label field %>:<%= format_boolean_value(value,field) %></div>
 <%  end %>
  <% multiple_fields.each do |field| %>
  <div>  <%= f.label field %>:
