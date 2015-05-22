@@ -3,13 +3,13 @@ class Collection < ActiveFedora::Base
 
   COLLECTION_FIELDS = {
     :multiple => [ :creator,  :publisher ],
-    :single => [:discoverable, :title, :description, :rights]
+    :single => [ :title, :description, :rights, :discoverable]
 
   }
   SINGLE_FIELDS = COLLECTION_FIELDS[:single]
   MULTIPLE_FIELDS = COLLECTION_FIELDS[:multiple]
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true
 
   metadata_stream = 'collection_metadata'
 

@@ -7,7 +7,7 @@
 <% if field.to_s=="discoverable" %>
     <%= f.input field, as: :boolean, label: f.label(field), input_html: {name: "collection[#{field}]", checked: get_boolean(value), id: "collection_#{field}"}  %>
 <% else %>
-      <%= f.input field,  label: f.label(field),  required: get_required(field), input_html: {name: "collection[#{field}]", value: value, id: "collection_#{field}" } %>
+      <%= f.input field,  label: f.label(field),  input_html: {name: "collection[#{field}]", value: value, id: "collection_#{field}" } %>
 <%  end %>
 <%  end %>
 

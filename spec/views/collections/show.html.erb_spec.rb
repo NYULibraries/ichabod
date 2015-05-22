@@ -1,27 +1,13 @@
 require 'spec_helper'
-
-describe "collections/show" do
-  before(:each) do
-    @collection = assign(:collection, stub_model(Collection,
-      :identifier => "Identifier",
-      :title => "Title",
-      :creator => "Creator",
-      :publisher => "Publisher",
-      :description => "Description",
-      :available => "Available",
-      :rights => "Rights"
-    ))
+describe 'collections/show', vcr: {cassette_name: 'views/collections/show' } do
+  let(:user) { build(:user) }
+  let(:collection) { create(:collection) }
+  before do
+    allow(controller).to receive(:current_user).and_return(user)
+    assign(:collection, collection)
   end
-
-  it "renders attributes in <p>" do
+  it 'should show the collection page' do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Identifier/)
-    rendered.should match(/Title/)
-    rendered.should match(/Creator/)
-    rendered.should match(/Publisher/)
-    rendered.should match(/Description/)
-    rendered.should match(/Available/)
-    rendered.should match(/Rights/)
+    expect(rendered).to match /Title/
   end
 end

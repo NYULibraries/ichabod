@@ -26,7 +26,7 @@ class CollectionsController < ApplicationController
 
   # GET /collections/new
   def new
-    @collection = Collection.new
+    @collection = Collection.new(:namespace=>"ichabod-collection" )
     authorize! :new, @collection
     respond_with(@collection)
   end
