@@ -1,32 +1,21 @@
 <h1>Listing collections</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Identifier</th>
-      <th>Title</th>
-      <th>Creator</th>
-      <th>Publisher</th>
-      <th>Description</th>
-      <th>Available</th>
-      <th>Rights</th>
-      <th colspan="3"></th>
+      <th>Collection Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @collections.each do |collection| %>
       <tr>
-        <td><%= collection.identifier %></td>
         <td><%= collection.title %></td>
-        <td><%= collection.creator %></td>
-        <td><%= collection.publisher %></td>
-        <td><%= collection.description %></td>
-        <td><%= collection.available %></td>
-        <td><%= collection.rights %></td>
-        <td><%= link_to 'Show', collection %></td>
-        <td><%= link_to 'Edit', edit_collection_path(collection) %></td>
-        <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', collection%></td>
+        <% if can?(:edit, collection) %><td><%= link_to 'Edit', edit_collection_path(collection) %></td><% end %>
+        <% if can?(:destroy, collection) %><td><%= link_to 'Delete', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td><% end %>
       </tr>
     <% end %>
   </tbody>
