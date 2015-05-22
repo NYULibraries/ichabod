@@ -1,19 +1,20 @@
-class Collection < ActiveFedora::NtriplesRDFDatastream
+class Collection < ActiveFedora::Base
+   include Hydra::AccessControls::Permissions
 
-    TERMS = {
-      RDF::DC => [:identifier, :title, :creator, :publisher,
-        :description, :rights],
+  COLLECTION_FIELDS = {
+    :multiple => [ :creator,  :publisher ],
+    :single => [:discoverable, :title, :description, :rights]
 
-      NyucoreMetadata::Vocabulary => [:available]
+  }
+  SINGLE_FIELDS = COLLECTION_FIELDS[:single]
+  MULTIPLE_FIELDS = COLLECTION_FIELDS[:multiple]
 
-    }
+  validates :title, presence: true, uniqueness: true
 
-   TERMS.each_pair do |vocabulary, terms|
-      terms.each do |term|
-        property term, predicate: vocabulary.send(term) do |index|
-          index.as(*index_args)
-        end
-      end
-    end
+  metadata_stream = 'collection_metadata'
 
+    has_metadata metadata_stream, type: Ichabod::NyucoreDatastream
+    has_attributes(*SINGLE_FIELDS, datastream: metadata_stream, multiple: false)
+    has_attributes(*MULTIPLE_FIELDS, datastream: metadata_stream, multiple: true)
+    
 end
