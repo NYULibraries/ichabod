@@ -1,39 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Identifier:</strong>
-  <%= @collection.identifier %>
-</p>
+<%= simple_form_for @collection do |f| %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @collection.title %>
-</p>
-
-<p>
-  <strong>Creator:</strong>
-  <%= @collection.creator %>
-</p>
-
-<p>
-  <strong>Publisher:</strong>
-  <%= @collection.publisher %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @collection.description %>
-</p>
-
-<p>
-  <strong>Available:</strong>
-  <%= @collection.available %>
-</p>
-
-<p>
-  <strong>Rights:</strong>
-  <%= @collection.rights %>
-</p>
-
-<%= link_to 'Edit', edit_collection_path(@collection) %> |
+<% single_fields.each do |field| %>
+ <% value||= @collection.send(field) %>
+ <div><%= f.label field %>:<%= value %></div>
+<%  end %>
+ <% multiple_fields.each do |field| %>
+ <div>  <%= f.label field %>:
+ <% values||= @collection.send(field) %>
+ <%=values.join(', ')%>
+  </div>
+<%  end %>
+<%  end %>
+<% if can?(:edit, @collection) %><%= link_to 'Edit', edit_collection_path(@collection) %> | <%end%>
 <%= link_to 'Back', collections_path %>
