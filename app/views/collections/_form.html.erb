@@ -1,44 +1,29 @@
-<%= form_for(@collection) do |f| %>
-  <% if @collection.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@collection.errors.count, "error") %> prohibited this collection from being saved:</h2>
+<%= simple_form_for @collection do |f| %>
 
-      <ul>
-      <% @collection.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+ 
+<% single_fields.each do |field| %>
+
+<% value||= @collection.send(field) %>
+<% if field.to_s=="discoverable" %>
+    <%= f.input field, as: :boolean, label: f.label(field), input_html: {name: "collection[#{field}]", checked: get_boolean(value), id: "collection_#{field}"}  %>
+<% else %>
+      <%= f.input field,  label: f.label(field),  required: get_required(field), input_html: {name: "collection[#{field}]", value: value, id: "collection_#{field}" } %>
+<%  end %>
+<%  end %>
+
+<% multiple_fields.each do |field| %>
+<%= f.label field %>
+<% values = @collection.send(field) %>
+<% values.each_with_index do |value,index| %>    
+    <div class="field">
+      <%= f.input field, label: false, input_html: {name: "collection[#{field}][]", value: value, id: "collection_#{field}#{index}"} %>
     </div>
-  <% end %>
-
+      <%  end %>
   <div class="field">
-    <%= f.label :identifier %><br>
-    <%= f.text_field :identifier %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :creator %><br>
-    <%= f.text_field :creator %>
-  </div>
-  <div class="field">
-    <%= f.label :publisher %><br>
-    <%= f.text_field :publisher %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :available %><br>
-    <%= f.text_field :available %>
-  </div>
-  <div class="field">
-    <%= f.label :rights %><br>
-    <%= f.text_field :rights %>
-  </div>
+    <p><%= f.input field, label: false, input_html: {name: "collection[#{field}][]", value: nil, id: "collection_#{field}"} %></p>
+  </div> 
+<%  end %>
+ 
   <div class="actions">
     <%= f.submit %>
   </div>
