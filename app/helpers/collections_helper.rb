@@ -7,8 +7,12 @@ module CollectionsHelper
      @multiple_fields ||= Collection::MULTIPLE_FIELDS
   end
 
+  def workflow_fields
+     @workflow_fields ||= Collection::WORKFLOW_FIELDS
+  end
+
   def get_boolean(value)
-      value.blank? ? true:false
+      (value.blank?||value=='1') ? true:false
   end
 
   def format_boolean_value(value,field)
