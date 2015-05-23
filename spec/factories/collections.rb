@@ -6,12 +6,12 @@ FactoryGirl.define do
   sequence(:title) { |n| "title#{n}" }
 
   factory :collection do
-    title ["Collection of records"]
+    title "Collection of records"
     creator ["Special Collections"]
-    description ["We need to test how collection works"]
-    rights ["rights1"]
+    description "We need to test how collection works"
+    rights "rights1"
     publisher ["DLTS"]
-    discoverable '1'
+    discoverable "1"
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
   end
 end
