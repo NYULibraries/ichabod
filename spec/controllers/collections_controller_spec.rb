@@ -12,7 +12,7 @@ describe CollectionsController do
       create(:collection)
       get :index
     end
-    it 'should assign collection records to the item instance variable'  do
+    it 'should assign collection records to the collection instance variable'  do
      expect(assigns(:collections).size).to be > 0
     end
     it 'should render index template'  do
