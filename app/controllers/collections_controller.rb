@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
   include Blacklight::CatalogHelperBehavior
   include Blacklight::ConfigurationHelperBehavior
- 
+  require 'active_fedora/noid'
 
   respond_to :html, :json
   # Convert blank values to nil in params when creating and updating
@@ -26,7 +26,7 @@ class CollectionsController < ApplicationController
 
   # GET /collections/new
   def new
-    @collection = Collection.new(:namespace=>"ichabod-collection" )
+    @collection = Collection.new
     authorize! :new, @collection
     respond_with(@collection)
   end

@@ -8,9 +8,9 @@ FactoryGirl.define do
   factory :collection do
     title "Collection of records"
     creator ["Special Collections"]
+    publisher ["Special Collections","DLTS"]
     description "We need to test how collection works"
     rights "rights1"
-    publisher ["DLTS"]
     discoverable "1"
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
   end

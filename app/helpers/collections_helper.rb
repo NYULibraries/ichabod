@@ -1,6 +1,11 @@
 module CollectionsHelper
+  
   def single_fields
      @single_fields ||= Collection::SINGLE_FIELDS
+  end
+
+  def single_collection_fields
+     @single_collection_fields ||= Collection::COLLECTION_FIELDS[:single]
   end
 
   def multiple_fields
@@ -10,6 +15,15 @@ module CollectionsHelper
   def workflow_fields
      @workflow_fields ||= Collection::WORKFLOW_FIELDS
   end
+
+  def collection_fields
+     @collection_fields ||= Collection::FIELDS
+  end
+
+  def required_fields
+     @required_fields ||= Collection::REQUIRED_FIELDS
+  end
+
 
   def get_boolean(value)
       (value.blank?||value=='1') ? true:false
@@ -24,3 +38,4 @@ module CollectionsHelper
   end
 
 end
+
