@@ -2,7 +2,7 @@
 
 <%= simple_form_for @collection do |f| %>
 
-<% single_fields.each do |field| %>
+<% single_collection_fields.each do |field| %>
  <% value||= @collection.send(field) %>
  <div><%= f.label field %>:<%= value %></div>
 <%  end %>

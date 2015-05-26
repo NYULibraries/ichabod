@@ -4,7 +4,8 @@ require 'support/test_user_helper'
 describe CollectionsController do
 
   let(:user) { create_or_return_test_admin }
-  let(:collection_fields) { Collection::COLLECTION_FIELDS[:single] + Collection::COLLECTION_FIELDS[:multiple] }
+  let(:collection_fields) { Collection::SINGLE_FIELDS + Collection::MULTIPLE_FIELDS }
+  let(:required_fields) { Collection::REQUIRED_FIELDS }
   before  { controller.stub(:current_user).and_return(user) }
 
   describe 'GET index' do

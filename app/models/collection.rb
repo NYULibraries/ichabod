@@ -1,16 +1,18 @@
 class Collection < ActiveFedora::Base
    include Hydra::AccessControls::Permissions
-    require 'active_fedora/noid'
-    
+   require 'active_fedora/noid'
+  
   COLLECTION_FIELDS = {
     :multiple => [ :creator, :publisher ],
     :single => [ :title, :description, :rights ],
   }
+
   WORKFLOW_FIELDS = [ :discoverable ]
   SINGLE_FIELDS = COLLECTION_FIELDS[ :single ] + WORKFLOW_FIELDS
   MULTIPLE_FIELDS = COLLECTION_FIELDS[ :multiple ]
   FIELDS=SINGLE_FIELDS+MULTIPLE_FIELDS+ WORKFLOW_FIELDS
   REQUIRED_FIELDS = [ :title, :discoverable ]
+  NOID_PREFIX="ichabod"
 
   validates :title, presence: true
   validates :discoverable, presence: true
@@ -19,8 +21,8 @@ class Collection < ActiveFedora::Base
   workflow_stream = 'workflow_metadata'
 
   def self.assign_pid(_)
-    noid_service ||= ActiveFedora::Noid::Service.new
-   "ichabod_collection:#{noid_service.mint}"
+   noid_service ||= ActiveFedora::Noid::Service.new
+   "#{NOID_PREFIX}:#{noid_service.mint}"
   end
    
 

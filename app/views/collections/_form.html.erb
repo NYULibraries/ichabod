@@ -1,8 +1,5 @@
-<%= simple_form_for @collection do |f| %>
-
- 
+<%= simple_form_for @collection do |f| %> 
 <% single_collection_fields.each do |field| %>
-
 <% value||= @collection.send(field) %>
       <%= f.input field,  label: f.label(field),  input_html: {name: "collection[#{field}]", value: value, id: "collection_#{field}" } %>
 <%  end %>
@@ -23,7 +20,6 @@
     <p><%= f.input field, label: false, input_html: {name: "collection[#{field}][]", value: nil, id: "collection_#{field}"} %></p>
   </div> 
 <%  end %>
- 
   <div class="actions">
     <%= f.submit %>
   </div>

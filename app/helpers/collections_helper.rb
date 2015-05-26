@@ -1,5 +1,6 @@
 module CollectionsHelper
-  
+
+
   def single_fields
      @single_fields ||= Collection::SINGLE_FIELDS
   end

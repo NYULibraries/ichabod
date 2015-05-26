@@ -1,7 +1,6 @@
 class CollectionsController < ApplicationController
   include Blacklight::CatalogHelperBehavior
   include Blacklight::ConfigurationHelperBehavior
-  require 'active_fedora/noid'
 
   respond_to :html, :json
   # Convert blank values to nil in params when creating and updating

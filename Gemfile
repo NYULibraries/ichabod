@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
-#gem 'rails', '~> 4.1.8'
-gem 'rails', '~> 4.2'
+gem 'rails', '~> 4.1.8'
 
 gem 'sqlite3', group: :development
 gem 'mysql2', '~> 0.3.15'
 
+<<<<<<< HEAD
 gem 'sass-rails',   '5.0.0.beta1'
+=======
+gem 'sass-rails',   '>= 5.0.0.beta1'
+>>>>>>> Finilized specs
 gem 'compass-rails', '~> 2.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -14,8 +17,6 @@ gem 'therubyracer', '~> 0.12.0', platforms: :ruby
 gem 'jquery-rails', '~> 3.1.0'
 gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'jbuilder', '~> 2.1.3'
-
-gem 'responders', '~> 2.0'
 
 #gem 'oai','~> 0.3.1'
 gem 'oai', github: 'code4lib/ruby-oai', branch: 'master'
@@ -38,7 +39,6 @@ gem 'simple_form', '~> 3.1.0.rc2'
 gem 'kaminari', '~> 0.13'
 gem 'sorted', '~> 1.0.0'
 gem 'unicode', platforms: [:mri_18, :mri_19]
-#gem 'sprockets', '~> 2.12.3'
 
 gem 'jettywrapper', group: [:development, :test, :staging]
 
@@ -48,7 +48,8 @@ gem 'faraday', '~> 0.9.0'
 gem 'multi_json', '~> 1.10.1'
 gem 'multi_xml', '~> 0.5.5'
 
-gem 'active_fedora-noid'
+gem 'active_fedora-noid', '~> 0.1.0'
+
 group :development do
   gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller'
@@ -56,7 +57,6 @@ end
 
 group :development, :test, :cucumber do
   gem 'rspec-rails', '~> 2.14.0'
-  gem 'shoulda-matchers'
   # Phantomjs for headless browser testing
   gem 'phantomjs', '>= 1.9.0'
   gem 'poltergeist', '~> 1.5.0'
@@ -64,6 +64,7 @@ group :development, :test, :cucumber do
   gem 'factory_girl_rails', '~> 4.4.0'
   # Use pry-debugger as the REPL and for debugging
   gem 'pry', '~> 0.10.1'
+  gem 'shoulda-matchers', '~> 2.5.0'
 end
 
 group :test, :cucumber do

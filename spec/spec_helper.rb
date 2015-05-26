@@ -51,7 +51,7 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 
-  config.include SpecTestHelper, :type => :controller
+  config.include TestUserHelper, :type => :controller
 
   # Include ResourceSet macros
   config.include ResourceSetMacros

@@ -1,6 +1,8 @@
 require 'spec_helper'
+require 'active_fedora/noid'
 
 describe Collection do
+
 
 describe Collection::COLLECTION_FIELDS do
     subject { Collection::COLLECTION_FIELDS }
@@ -43,7 +45,25 @@ describe Collection::COLLECTION_FIELDS do
   subject(:collection) { build(:collection) }
   # Generic test for validity
   it { should be_valid }
-  
+
+  describe 'pid assignment' do
+    context 'before the object is saved' do
+      its 'pid should be nil' do
+        expect(collection.pid).to be_nil
+      end
+    end
+    context 'when a new object is saved' do
+        before(:each) do
+          collection.save
+        end
+        it 'should no longer be nil' do
+          expect(collection.pid).not_to be_nil
+        end
+        it 'should include "ichabod_collection' do
+          expect((collection.pid)).to include "ichabod"
+        end
+     end
+   end
 
   describe '#collection_metadata' do
     subject { collection.collection_metadata }
