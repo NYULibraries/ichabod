@@ -7,7 +7,7 @@ module Ichabod
       # We use json APi to grab the requested amount of "Books".
       
       class NyuPressOpenAccessBookReader < ResourceSet::SourceReader
-
+        FORMAT = "Book"
         def read
           entities.collect do |entity|
             ResourceSet::Resource.new(resource_attributes_from_entities(entity))
@@ -27,9 +27,9 @@ module Ichabod
             citation: entity['handle'],
             date: entity['date'],
             description: entity['description'],
-            type: entity['type'],
+            type: FORMAT,
             language: entity['language'],
-            format: entity['format']
+            format: FORMAT
           }
         end
         

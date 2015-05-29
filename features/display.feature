@@ -38,3 +38,8 @@ Feature: Geospatial dataset's various display tests
     And I search for "LION"
     When I navigate to details display of the first result
     Then I should see the value "NYU Only" in the "Access Restrictions:" field
+
+Scenario: Display "Book" field in the details display
+    Given I limit my search to "NYU Press Open Access Books" under the "Collection" category
+    When I navigate to details display of the first result
+    Then I should see the value "Book" in the "Format:" field

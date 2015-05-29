@@ -36,7 +36,7 @@ module Ichabod
             its(:title) { should eq 'Negrophobia and Reasonable Racism' }
             its(:available) { should eq 'http://hdl.handle.net/2333.1/37pvmfhh' }
             its(:citation) { should eq 'http://hdl.handle.net/2333.1/37pvmfhh' }
-            its(:type) { should eq 'Text' }
+            its(:type) { should eq 'Book' }
             its(:language) { should eq 'English' }
           end
         end
