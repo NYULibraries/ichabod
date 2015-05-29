@@ -14,11 +14,11 @@ Feature: Collection facet
     And I filter my search to "Spatial Data Repository" under the "Collection" category
     Then I should see search results
 
-  #@vcr
-  #Scenario: Filter by The Real Rosie the Riveter
-    #Given I am on the default search page
-    #When I filter my search to "The Real Rosie the Riveter" under the "Collection" category
-    #Then I should see search results
+  @vcr
+  Scenario: Filter by The Real Rosie the Riveter
+    Given I am on the default search page
+    When I filter my search to "The Real Rosie the Riveter" under the "Collection" category
+    Then I should see search results
 
   @vcr
   Scenario: Filter by Voices of the Food Revolution
