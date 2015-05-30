@@ -88,5 +88,10 @@ describe Nyucore::Collections do
       let(:resource_set) { ['nyu_press_open_access_book'] }
       it { should eql ['NYU Press Open Access Books'] }
     end
+    context "when object is from the Research Guides resource set" do
+      let(:type) { ['Research Guide'] }
+      let(:resource_set) { ['lib_guides'] }
+      it { should eql ['Research Guides'] }
+    end
   end
 end
