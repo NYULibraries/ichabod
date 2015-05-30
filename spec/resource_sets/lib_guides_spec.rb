@@ -2,11 +2,13 @@ require 'spec_helper'
 describe LibGuides do
   let(:prefix) { 'libguides' }
   let(:filename) { './spec/fixtures/sample_libguides.xml' }
+  let(:collection_code) { 'libguides' }
   subject { LibGuides.new(filename) }
   it { should be_a LibGuides }
   it { should be_a Ichabod::ResourceSet::Base }
   its(:prefix) { should eq prefix }
   its(:filename) { should eq filename }
+  its(:collection_code) { should eq collection_code }
   its(:editors) { should eq ['admin_group', 'libguides_cataloger'] }
   its(:before_loads) { should eq [:add_edit_groups, :add_resource_set] }
   describe '.prefix' do
