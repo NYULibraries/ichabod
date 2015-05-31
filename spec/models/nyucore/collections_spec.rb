@@ -90,6 +90,7 @@ describe Nyucore::Collections do
     end
     context "when object is from the Research Guides resource set" do
       let(:type) { ['Research Guide'] }
+      let(:publisher) { nil }
       let(:resource_set) { ['lib_guides'] }
       it { should eql ['Research Guides'] }
     end
