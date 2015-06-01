@@ -36,7 +36,7 @@ module Ichabod
         private
         extend Forwardable
         def_delegators :resource_set, :endpoint_url, :collection_code, :user,
-          :password
+          :password, :dataset_size
 
         def resource_attributes_from_interview(interview)
           {
@@ -66,7 +66,7 @@ module Ichabod
         # Params to send with the request to the JSON API
         def datasource_params
           {
-            rows: 33
+            rows: dataset_size
           }
         end
         def datasource_response

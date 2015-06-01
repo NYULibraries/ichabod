@@ -6,12 +6,14 @@ module Ichabod
         let(:user) { ENV['ICHABOD_ROSIE_USER'] || 'user' }
         let(:password) { ENV['ICHABOD_ROSIE_PASSWORD'] || 'password' }
         let(:endpoint_url) { 'http://dev-dl-pa.home.nyu.edu/rosie/content.json' }
+        let(:dataset_size) { 33 }
         let(:collection_code) { 'rosie' }
         let(:resource_set) { mock_resource_set }
         before do
           allow(resource_set).to receive(:endpoint_url) { endpoint_url }
           allow(resource_set).to receive(:collection_code) { collection_code }
           allow(resource_set).to receive(:user) { user }
+          allow(resource_set).to receive(:dataset_size) { dataset_size }
           allow(resource_set).to receive(:password) { password }
         end
         subject(:reader) { RosieTheRiveterReader.new(resource_set) }
@@ -23,7 +25,7 @@ module Ichabod
           subject(:read) { reader.read }
           it { should be_an Array }
           it { should_not be_empty }
-          its(:size) { should eq 33 }
+          its(:size) { should eq dataset_size }
           it 'should include only ResourceSet::Resources' do
             subject.each do |resource|
               expect(resource).to be_a ResourceSet::Resource
