@@ -26,7 +26,7 @@ module Ichabod
       # its index in the JSON API and then grab the relevant field for that
       # index from the JSON API.
       class RosieTheRiveterReader < ResourceSet::SourceReader
-        FORMAT =" Video"
+        FORMAT = "Video"
         def read
           response.collect do |interview|
             ResourceSet::Resource.new(resource_attributes_from_interview(interview))
@@ -63,7 +63,12 @@ module Ichabod
         def response
           @response ||= datasource_response['docs']
         end
-
+        # Params to send with the request to the JSON API
+        def datasource_params
+          {
+            rows: 33
+          }
+        end
         def datasource_response
           @datasource_response ||= datasource_json['response']
         end
@@ -81,6 +86,7 @@ module Ichabod
         def endpoint_connection
           @endpoint_connection ||= Faraday.new(url: endpoint_url) do |faraday|
             faraday.request :basic_auth, user, password
+            faraday.params = datasource_params
             faraday.adapter :net_http
           end
         end
