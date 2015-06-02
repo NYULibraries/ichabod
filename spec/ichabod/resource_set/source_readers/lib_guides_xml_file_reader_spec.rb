@@ -7,9 +7,8 @@ module Ichabod
         let(:collection_code) { 'libguides' }
         let(:resource_set) { mock_resource_set }
         before do
-          allow(resource_set).to receive_messages(
-            filename:  lib_guides_xml_filename,
-            collection_code:  collection_code)
+          allow(resource_set).to receive(:collection_code) { collection_code }
+          allow(resource_set).to receive(:filename) { lib_guides_xml_filename }
         end
         subject(:reader) { LibGuidesXmlFileReader.new(resource_set) }
         it { should be_a LibGuidesXmlFileReader }
