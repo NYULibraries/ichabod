@@ -5,7 +5,7 @@ gem 'rails', '~> 4.1.8'
 gem 'sqlite3', group: :development
 gem 'mysql2', '~> 0.3.15'
 
-gem 'sass-rails',   '>= 5.0.0.beta1'
+gem 'sass-rails',   '5.0.0.beta1'
 gem 'compass-rails', '~> 2.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -17,7 +17,7 @@ gem 'jbuilder', '~> 2.1.3'
 #gem 'oai','~> 0.3.1'
 gem 'oai', github: 'code4lib/ruby-oai', branch: 'master'
 gem 'mustache', '0.99.4'
-gem 'mustache-rails', github: 'josh/mustache-rails', require: 'mustache/railtie'
+gem 'mustache-rails', github: 'NYULibraries/mustache-rails', require: 'mustache/railtie'
 
 # None of these gems should be included in a real production instance.
 # This entire auth process should be handled by login
