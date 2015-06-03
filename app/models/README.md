@@ -29,12 +29,13 @@ Nyucore is an element set, based primarily on Dublin Core with careful attention
 * addinfolink
 * addinfotext
 
-##### Field Definitions
+#### Files defining vocabulary and model
 
-* Nyucore vocabulary properties are defined in [../../lib/nyucore_metadata/vocabulary.rb](../../lib/nyucore_metadata/vocabulary.rb)
-* Ichabod administrative vocabulary properties are in [../../lib/ichabod/vocabulary.rb](../../lib/ichabod/vocabulary.rb)
-* Repeatability of properties is defined in [nyucore.rb](nyucore.rb)
-* Facetability is defined in [../../lib/ichabod/nyucore_datastream.rb](../../lib/ichabod/nyucore_datastream.rb)
+* Descriptive metadata properties are defined in the [Nyucore Vocabulary](../../lib/nyucore_metadata/vocabulary.rb)
+* Administrative metadata properties are in [Ichabod Vocabulary](../../lib/ichabod/vocabulary.rb)
+* Repeatability of properties is defined in [Nyucore Model](nyucore.rb)
+* Facetability is defined in [Nycuore Datastream](../../lib/ichabod/nyucore_datastream.rb)
+* Collection level descriptive properties are in the Collections Model and Datastream
 
 ## Relationship to Data Model
 
