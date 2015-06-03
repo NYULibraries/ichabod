@@ -2,7 +2,7 @@
 
 ## Nyucore
 
-Nyucore is an element set, based primarily on Dublin Core with careful attention paid to Primo functionality. Nyucore is designed to be flexible and iterative, and fields are regularly added and refined according to the needs of collections added to Ichabod. Currently, Nyucore comprises 22 fields: 13 from the dc and dcterms namespaces, locally defined Nyucore terms, and 3 terms defined by Ichabod itself. 
+Nyucore is an element set, based primarily on Dublin Core with careful attention paid to [BobCat](http://bobcat.library.nyu.edu/) functionality, which is powered by Ex Libris' [Primo](http://www.exlibrisgroup.com/category/PrimoOverview). Nyucore is designed to be flexible and iterative, and fields are regularly added and refined according to the needs of collections added to Ichabod. Currently, Nyucore comprises 22 fields: 13 from the dc and dcterms namespaces, locally defined Nyucore terms, and 3 terms defined by Ichabod itself. 
 
 #### Nyucore Fields
 
@@ -31,10 +31,10 @@ Nyucore is an element set, based primarily on Dublin Core with careful attention
 
 ##### Field Definitions
 
-* Nyucore vocabulary properties are defined in [lib/nyucore_metadata/vocabulary.rb](lib/nyucore_metadata/vocabulary.rb)
-* Ichabod administrative vocabulary properties are in [lib/ichabod/vocabulary.rb](lib/ichabod/vocabulary.rb)
-* Repeatability of properties is defined in [lib/models/nyucore.rb](lib/models/nyucore.rb)
-* Facetability is defined in [lib/ichabod/nyucore_datastream.rb](lib/ichabod/nyucore_datastream.rb)
+* Nyucore vocabulary properties are defined in [../../lib/nyucore_metadata/vocabulary.rb](../../lib/nyucore_metadata/vocabulary.rb)
+* Ichabod administrative vocabulary properties are in [../../lib/ichabod/vocabulary.rb](../../lib/ichabod/vocabulary.rb)
+* Repeatability of properties is defined in [../../lib/models/nyucore.rb](../../lib/models/nyucore.rb)
+* Facetability is defined in [../../lib/ichabod/nyucore_datastream.rb](../../lib/ichabod/nyucore_datastream.rb)
 
 ## Relationship to Data Model
 
@@ -42,4 +42,4 @@ The ichabod application somewhat conflates the data model with the Nyucore Metad
 
 There is an additional "collection_code" concept in Ichabod that is not defined as part of Nyucore. This code drives the "Collection" facet in Ichabod, and the collection field downstream of Ichabod, but is _not_ stored in Fedora at this time. Collection codes are defined in [model/nyucore/collections.rb](model/nyucore/collections.rb)
 
-        TODO: This should likely be defined as part of Nyucore.
+        TODO: Collection_code / Collection should likely be defined as part of Nyucore.
