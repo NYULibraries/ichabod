@@ -9,7 +9,7 @@ module Ichabod
     describe Vocabulary::TERMS do
       subject { Vocabulary::TERMS }
       it { should be_an Array }
-      it { should eq [:addinfolink, :addinfotext, :resource_set]}
+      it { should eq [:addinfolink, :addinfotext, :resource_set, :isbn]}
     end
 
     # Some metaprogramming to check that the terms are set appropriately

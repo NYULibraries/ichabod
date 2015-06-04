@@ -15,6 +15,7 @@ VCR.configure do |c|
   c.cassette_library_dir     = 'features/cassettes'
   c.filter_sensitive_data('https://rosie.the.riveter') { ENV['ICHABOD_ROSIE_ENDPOINT_URL'] }
   c.filter_sensitive_data('https://voices.of.food') { ENV['ICHABOD_VOICE_ENDPOINT_URL'] }
+  c.filter_sensitive_data('https://nyupress.open.access') { ENV['ICHABOD_NYUPRESS_ENDPOINT_URL'] }
 end
 
 VCR.cucumber_tags do |t|

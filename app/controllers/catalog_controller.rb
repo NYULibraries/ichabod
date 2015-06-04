@@ -14,7 +14,7 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
       :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__publisher_tesim
                 desc_metadata__type_tesim desc_metadata__description_tesim desc_metadata__series_tesim
-                desc_metadata__creator_tesim desc_metadata__subject_tesim',
+                desc_metadata__creator_tesim desc_metadata__subject_tesim desc_metadata__isbn_tesim',
       :qt => 'search',
       :rows => 10
     }
@@ -182,7 +182,6 @@ class CatalogController < ApplicationController
     config.show.partials = ['show_header','show','action_buttons']
 
   end
-
 
 
 end

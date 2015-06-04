@@ -4,6 +4,7 @@ describe RosieTheRiveter do
   let(:endpoint_url) { 'https://rosie.the.riveter' }
   let(:user) { 'user' }
   let(:password) { 'password' }
+  let(:dataset_size) { 33 }
   let(:collection_code) { 'rosie' }
   let(:args) { [endpoint_url, user, password].compact }
   subject(:rosie_the_riveter) { RosieTheRiveter.new(*args) }
@@ -13,6 +14,7 @@ describe RosieTheRiveter do
   its(:endpoint_url) { should eq endpoint_url }
   its(:user) { should eq user }
   its(:password) { should eq password }
+  its(:dataset_size) { should eq dataset_size }
   its(:collection_code) { should eq collection_code }
   its(:editors) { should eq ['admin_group'] }
   its(:before_loads) { should eq [:add_edit_groups, :add_resource_set] }

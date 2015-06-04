@@ -7,7 +7,7 @@ class Nyucore < ActiveFedora::Base
     :single => [:identifier, :restrictions]
   }
   EXTRA_SINGLES = [:resource_set]
-  EXTRA_MULTIPLES = [:addinfolink, :addinfotext]
+  EXTRA_MULTIPLES = [:addinfolink, :addinfotext, :isbn]
   SINGLE_FIELDS = NYUCORE_FIELDS[:single] + EXTRA_SINGLES
   MULTIPLE_FIELDS = NYUCORE_FIELDS[:multiple] + EXTRA_MULTIPLES
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
