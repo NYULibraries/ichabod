@@ -2,23 +2,23 @@ class Collection < ActiveFedora::Base
    include Hydra::AccessControls::Permissions
    require 'active_fedora/noid'
   
-  COLLECTION_FIELDS = {
+  DESCRIPTIVE_FIELDS = {
     :multiple => [ :creator, :publisher ],
-    :single => [ :title, :description, :rights ],
+    :single => [ :title, :description, :rights, :identifier ],
   }
 
-  WORKFLOW_FIELDS = [ :discoverable ]
-  SINGLE_FIELDS = COLLECTION_FIELDS[ :single ] + WORKFLOW_FIELDS
-  MULTIPLE_FIELDS = COLLECTION_FIELDS[ :multiple ]
-  FIELDS=SINGLE_FIELDS+MULTIPLE_FIELDS+ WORKFLOW_FIELDS
+  ADMIN_FIELDS = [ :discoverable ]
+  SINGLE_FIELDS = DESCRIPTIVE_FIELDS[ :single ] + ADMIN_FIELDS
+  MULTIPLE_FIELDS = DESCRIPTIVE_FIELDS[ :multiple ]
+  FIELDS=SINGLE_FIELDS+MULTIPLE_FIELDS+ ADMIN_FIELDS
   REQUIRED_FIELDS = [ :title, :discoverable ]
-  NOID_PREFIX="ichabod"
+  NOID_PREFIX="ichabod:collection"
 
   validates :title, presence: true
   validates :discoverable, presence: true
 
-  metadata_stream = 'collection_metadata'
-  workflow_stream = 'workflow_metadata'
+  descriptive_metadata = 'descriptive_metadata'
+  administrative_metadata = 'administrative_metadata'
 
   def self.assign_pid(_)
    noid_service ||= ActiveFedora::Noid::Service.new
@@ -26,12 +26,12 @@ class Collection < ActiveFedora::Base
   end
    
 
-    has_metadata metadata_stream, type: Ichabod::NyucoreDatastream
-    has_attributes(*SINGLE_FIELDS, datastream: metadata_stream, multiple: false)
-    has_attributes(*MULTIPLE_FIELDS, datastream: metadata_stream, multiple: true)
+    has_metadata descriptive_metadata, type: Ichabod::NyucoreDatastream
+    has_attributes(*SINGLE_FIELDS, datastream: descriptive_metadata , multiple: false)
+    has_attributes(*MULTIPLE_FIELDS, datastream: descriptive_metadata , multiple: true)
     
-    has_metadata workflow_stream, type: Ichabod::WorkflowDatastream
-    has_attributes(*WORKFLOW_FIELDS, datastream: workflow_stream, multiple: false)
+    has_metadata administrative_metadata, type: Ichabod::AdministrativeDatastream
+    has_attributes(*ADMIN_FIELDS, datastream: administrative_metadata, multiple: false)
 
     
 end

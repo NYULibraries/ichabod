@@ -1,9 +1,9 @@
 module Ichabod
-  class WorkflowDatastream < ActiveFedora::NtriplesRDFDatastream
+  class AdminisrativeDatastream < ActiveFedora::NtriplesRDFDatastream
 
     TERMS = {
       Ichabod::Vocabulary => [ :discoverable ]
-    }    
+    }
 
     ##
     # For active_fedora 7.x properties are now mapped like this

@@ -4,6 +4,7 @@
 FactoryGirl.define do
 
   factory :collection do
+    identifier "test_collection1"
     title "Collection of records"
     creator ["Special Collections"]
     publisher ["Special Collections","DLTS"]
