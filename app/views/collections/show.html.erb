@@ -6,7 +6,7 @@
  <% value||= @collection.send(field) %>
  <div><%= f.label field %>:<%= value %></div>
 <%  end %>
- <% workflow_fields.each do |field| %>
+ <% admin_fields.each do |field| %>
  <% value||= @collection.send(field) %>
  <div><%= f.label field %>:<%= format_boolean_value(value,field) %></div>
 <%  end %>

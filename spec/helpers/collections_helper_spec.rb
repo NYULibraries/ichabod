@@ -10,22 +10,22 @@ describe CollectionsHelper do
   end
 
   describe '#single_fields' do
-    subject { helper.single_collection_fields }
+    subject { helper.single_fields }
     it { should be_an Array }
   end
 
   describe '#multiple_fields' do
-    subject { helper.single_collection_fields }
+    subject { helper.multiple_collection_fields }
     it { should be_an Array }
   end
 
-  describe '#workflow_fields' do
-    subject { helper.single_collection_fields }
+  describe '#admin_fields' do
+    subject { helper.admin_collection_fields }
     it { should be_an Array }
   end
 
   describe '#required_fields' do
-    subject { helper.single_collection_fields }
+    subject { helper.required_collection_fields }
     it { should be_an Array }
   end
 

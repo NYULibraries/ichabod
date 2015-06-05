@@ -14,7 +14,7 @@ module CollectionsHelper
   end
 
   def workflow_fields
-     @workflow_fields ||= Collection::WORKFLOW_FIELDS
+     @admin_fields ||= Collection::ADMIN_FIELDS
   end
 
   def collection_fields
@@ -39,4 +39,3 @@ module CollectionsHelper
   end
 
 end
-

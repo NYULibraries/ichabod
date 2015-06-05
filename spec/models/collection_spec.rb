@@ -22,7 +22,7 @@ describe Collection::DESCRIPTIVE_FIELDS do
     it { should eq Collection::SINGLE_FIELDS+Collection::MULTIPLE_FIELDS+Collection::ADMIN_FIELDS }
   end
 
-  describe Collection::WORKFLOW_FIELDS do
+  describe Collection::ADMIN_FIELDS do
     subject { Collection::ADMIN_FIELDS }
     it { should eq [:discoverable] }
   end
@@ -70,7 +70,7 @@ describe Collection::DESCRIPTIVE_FIELDS do
     it { should be_a Ichabod::NyucoreDatastream }
   end
 
-  describe '#workflow_metadata' do
+  describe '#administrative_metadata' do
     subject { collection.administrative_metadata }
     it { should be_a Ichabod::AdministrativeDatastream }
   end

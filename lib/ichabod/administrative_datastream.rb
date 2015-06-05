@@ -1,5 +1,5 @@
 module Ichabod
-  class AdminisrativeDatastream < ActiveFedora::NtriplesRDFDatastream
+  class AdministrativeDatastream < ActiveFedora::NtriplesRDFDatastream
 
     TERMS = {
       Ichabod::Vocabulary => [ :discoverable ]
