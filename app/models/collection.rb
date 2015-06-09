@@ -27,7 +27,7 @@ class Collection < ActiveFedora::Base
    
 
     has_metadata descriptive_metadata, type: Ichabod::NyucoreDatastream
-    has_attributes(*SINGLE_FIELDS, datastream: descriptive_metadata , multiple: false)
+    has_attributes(*DESCRIPTIVE_FIELDS[:single], datastream: descriptive_metadata , multiple: false)
     has_attributes(*MULTIPLE_FIELDS, datastream: descriptive_metadata , multiple: true)
     
     has_metadata administrative_metadata, type: Ichabod::AdministrativeDatastream

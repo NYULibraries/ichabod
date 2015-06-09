@@ -24,7 +24,7 @@ describe 'collections/show.html.erb', vcr: {cassette_name: 'views/collections/sh
       let(:collection) { create(:collection, discoverable: "1" ) }
       it 'should display discoverable field as Yes' do
         render
-          Collection::WORKFLOW_FIELDS.each do |field|
+          Collection::ADMIN_FIELDS.each do |field|
             assert_select "label[for=?]", "collection_#{field}", value: 'Yes'
           end
       end
@@ -33,7 +33,7 @@ describe 'collections/show.html.erb', vcr: {cassette_name: 'views/collections/sh
         let(:collection) { create(:collection, discoverable: "0" ) }
         it 'should display discoverable field as No' do
           render
-          Collection::WORKFLOW_FIELDS.each do |field|
+          Collection::ADMIN_FIELDS.each do |field|
             assert_select "label[for=?]", "collection_#{field}", value: 'No'
           end
         end

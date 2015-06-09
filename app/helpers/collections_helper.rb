@@ -6,14 +6,14 @@ module CollectionsHelper
   end
 
   def single_collection_fields
-     @single_collection_fields ||= Collection::COLLECTION_FIELDS[:single]
+     @single_collection_fields ||= Collection::DESCRIPTIVE_FIELDS[:single]
   end
 
   def multiple_fields
      @multiple_fields ||= Collection::MULTIPLE_FIELDS
   end
 
-  def workflow_fields
+  def admin_fields
      @admin_fields ||= Collection::ADMIN_FIELDS
   end
 

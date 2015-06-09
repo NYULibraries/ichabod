@@ -3,7 +3,7 @@
 <% value||= @collection.send(field) %>
       <%= f.input field,  label: f.label(field),  input_html: {name: "collection[#{field}]", value: value, id: "collection_#{field}" } %>
 <%  end %>
-<% workflow_fields.each do |field| %>
+<% admin_fields.each do |field| %>
 <% value||= @collection.send(field) %>
     <%= f.input field, as: :boolean, label: f.label(field), input_html: {name: "collection[#{field}]", checked: get_boolean(value), id: "collection_#{field}"}  %>
 <%  end %>

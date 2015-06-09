@@ -59,8 +59,8 @@ describe Collection::DESCRIPTIVE_FIELDS do
         it 'should no longer be nil' do
           expect(collection.pid).not_to be_nil
         end
-        it 'should include "ichabod_collection' do
-          expect((collection.pid)).to include "ichabod:collection"
+        it 'should include "ichabodcollection' do
+          expect((collection.pid)).to include "ichabodcollection"
         end
      end
    end
@@ -155,13 +155,13 @@ describe Collection::DESCRIPTIVE_FIELDS do
 
     # Test the attribute writers
     describe "##{field}=" do
-      let(:value) { "#{field}" }
+      let(:value) { '0' }
       let(:collection) { build(:collection, field => value) }
       it "should set the #{field} attribute" do
         expect(collection.send(field)).to be_present
         expect(collection.send(field)).to eq value
       end
-      it "should set the #{field} attribute in the administrative_metadata datastream" do
+      it "should set the #{field} attribute in the administrative_metadata stream" do
         expect(collection.administrative_metadata.send(field)).to be_present
         expect(collection.administrative_metadata.send(field)).to eq [value]
       end
@@ -183,7 +183,7 @@ describe Collection::DESCRIPTIVE_FIELDS do
 
 
     describe "##{field}" do
-      let(:value) { 'value' }
+      let(:value) { '1' }
       subject { collection.send(field) }
       it { should be_present }
       it { should be_a String }
