@@ -7,7 +7,7 @@ describe 'collections/_form.html.erb', vcr: {cassette_name: 'views/collections/_
   context 'when the form is rendered for a new collection record' do
     let(:collection) { build(:collection) }
       it 'should display discoverable field as checked' do
-        Collection::WORKFLOW_FIELDS.each do |field|
+        Collection::ADMIN_FIELDS.each do |field|
           assert_select "input[name=?][type=checkbox][checked=checked]", "collection[#{field}]",  count: 1
         end
       end
@@ -32,14 +32,14 @@ describe 'collections/_form.html.erb', vcr: {cassette_name: 'views/collections/_
           Collection::MULTIPLE_FIELDS.each do |field|
             assert_select "input[name=?]", "collection[#{field}][]", count: 2
           end
-          Collection::WORKFLOW_FIELDS.each do |field|
+          Collection::ADMIN_FIELDS.each do |field|
             assert_select "input[name=?][type=checkbox]", "collection[#{field}]", count: 1
           end
         end
       end
       context 'when collection is discoverable' do
         it 'should display discoverable field as checked' do
-          Collection::WORKFLOW_FIELDS.each do |field|
+          Collection::ADMIN_FIELDS.each do |field|
             assert_select "input[name=?][type=checkbox][checked=checked]", "collection[#{field}]", count: 1
           end
         end
@@ -47,7 +47,7 @@ describe 'collections/_form.html.erb', vcr: {cassette_name: 'views/collections/_
       context 'when collection is not discoverable' do
         let(:collection) { create(:collection, discoverable: "0" ) }
         it 'should display discoverable field as unchecked' do
-          Collection::WORKFLOW_FIELDS.each do |field|
+          Collection::ADMIN_FIELDS.each do |field|
             assert_select "input[name=?][type=checkbox][checked=checked]", "collection[#{field}]", count: 0
           end
         end
