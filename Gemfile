@@ -28,7 +28,7 @@ gem 'authpds-nyu', github: 'barnabyalter/authpds-nyu'
 
 gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', tag: 'v4.0.0'
 # gem 'nyulibraries-assets', path: '/apps/nyulibraries-assets'
-gem 'nyulibraries-deploy', github: 'NYULibraries/nyulibraries-deploy', branch: 'development-fig'
+gem 'formaggio', github: 'NYULibraries/formaggio', tag: 'v1.4.2'
 
 gem 'hydra', '~> 7.1.0'
 gem 'simple_form', '~> 3.1.0.rc2'
