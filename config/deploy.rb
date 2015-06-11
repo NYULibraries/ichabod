@@ -1,4 +1,4 @@
-require 'nyulibraries/deploy/capistrano'
+require 'formaggio/capistrano'
 
 set :app_title, "ichabod"
 set :new_relic_environments, nil  # do not use new_relic at this time
