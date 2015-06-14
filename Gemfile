@@ -43,6 +43,7 @@ gem 'iso-639'
 gem 'faraday', '~> 0.9.0'
 gem 'multi_json', '~> 1.10.1'
 gem 'multi_xml', '~> 0.5.5'
+gem 'blacklight_oai_provider', github: 'cbeer/blacklight_oai_provider'
 
 group :development do
   gem 'better_errors', '~> 2.0.0'
