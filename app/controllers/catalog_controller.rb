@@ -4,6 +4,8 @@ require 'blacklight/catalog'
 class CatalogController < ApplicationController
 
   include Blacklight::Catalog
+  include BlacklightOaiProvider::ControllerExtension
+
   include Hydra::Controller::ControllerBehavior
   # These before_filters apply the hydra access controls
   # before_filter :enforce_show_permissions, :only=>:show
@@ -181,6 +183,19 @@ class CatalogController < ApplicationController
     #define what parials will be used to display each solr document
     config.index.partials = ['index_header','index','action_buttons']
     config.show.partials = ['show_header','show','action_buttons']
+    config.oai = {
+      :repository_url => 'http://localhost',
+      :provider => {
+        :repository_name => 'Test',
+        :repository_url => 'http://localhost',
+        :record_prefix => '',
+        :admin_email => 'root@localhost'
+      },
+      :document => {
+        :timestamp => 'timestamp',
+        :limit => 25
+      }
+    }
 
   end
 
