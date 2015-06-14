@@ -74,6 +74,15 @@ GIT
       activesupport (>= 3.2)
 
 GIT
+  remote: git://github.com/cbeer/blacklight_oai_provider.git
+  revision: f603f8c0db19baf7a9a11b8a6a682697c8d23e2f
+  specs:
+    blacklight_oai_provider (0.1.1)
+      blacklight (>= 3.0)
+      oai
+      rails (>= 3.0)
+
+GIT
   remote: git://github.com/code4lib/ruby-oai.git
   revision: 2962523677f8619f646ea95ece490c8c3a43e742
   branch: master
@@ -548,6 +557,7 @@ DEPENDENCIES
   authpds-nyu!
   better_errors (~> 2.0.0)
   binding_of_caller
+  blacklight_oai_provider!
   coffee-rails (~> 4.0.0)
   compass-rails (~> 2.0.0)
   coveralls (~> 0.7.0)
