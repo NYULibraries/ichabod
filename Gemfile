@@ -6,7 +6,7 @@ gem 'sqlite3', group: :development
 gem 'mysql2', '~> 0.3.15'
 
 gem 'sass-rails',   '5.0.0.beta1'
-gem 'compass-rails', '~> 2.0.0'
+gem 'compass-rails', '~> 2.0.4'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', '~> 0.12.0', platforms: :ruby
