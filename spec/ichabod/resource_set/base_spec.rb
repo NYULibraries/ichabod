@@ -202,19 +202,22 @@ module Ichabod
           end
         end
         context 'when there are no editors' do
-          before { base.delete }
+          #before { base.delete }
           before { Base.instance_variable_set(:@editors, original_editors)}
           it 'should return an array of Nyucores with no edit groups' do
             subject.each do |nyucore|
+                            #binding.pry
               expect(nyucore.edit_groups).to eq original_editors.map(&:to_s)
+
             end
           end
         end
-         context 'when there are no restrictions' do
-          before { base.delete }
-          before { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
+        context 'when there are no restrictions' do
+          #before { base.delete }
+          #before { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
           it 'should return an array of Nyucores with no restrictions' do
             subject.each do |nyucore|
+              #binding.pry
               expect(nyucore.restrictions).to be_nil
             end
           end
@@ -260,13 +263,6 @@ module Ichabod
             expect(nyucore).to be_an Nyucore
             pending('Waiting for ActiveFedora 7.0 to check destruction status')
             expect(nyucore).to be_destroyed
-          end
-        end
-        context 'when there is no source reader configured' do
-          before { Base.instance_variable_set(:@source_reader, nil) }
-          before { base.instance_variable_set(:@resources, nil) }
-          it 'should raise a RuntimeError' do
-            expect { subject }.to raise_error RuntimeError
           end
         end
       end
