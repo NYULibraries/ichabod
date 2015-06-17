@@ -26,9 +26,9 @@ module Ichabod
       # its index in the JSON API and then grab the relevant field for that
       # index from the JSON API.
       class RosieTheRiveterReader < ResourceSet::SourceReader
-
+        FORMAT = "Video"
         def read
-          interviews.collect do |interview|
+          response.collect do |interview|
             ResourceSet::Resource.new(resource_attributes_from_interview(interview))
           end
         end
@@ -36,127 +36,57 @@ module Ichabod
         private
         extend Forwardable
         def_delegators :resource_set, :endpoint_url, :collection_code, :user,
-          :password
+          :password, :dataset_size
 
         def resource_attributes_from_interview(interview)
           {
             prefix: resource_set.prefix,
-            identifier: interview['dc_identifier'],
-            title: interview['label'],
-            available: interview['ss_handle'],
-            citation: interview['ss_handle'],
-            date: interview['ds_created'],
-            description: description_from_interview(interview),
-            type: interview['collection_type'].capitalize,
-            # language: interview['ss_language'],
-            format: interview['bundle_name']
+            identifier: interview['identifier'],
+            title: interview['entity_title'],
+            available: interview_metadata_field_value('handle',interview),
+            citation: interview_metadata_field_value('handle',interview),
+            description: interview_description(interview),
+            type: FORMAT,
+            format: FORMAT
           }
         end
+        def interview_metadata_field_value(metadata_field_name, response)
+          response['metadata'][metadata_field_name]['value']
+        end     
 
-        # Get the description from collection's JSON API for the given interview
-        # We need to grab the index for the particular interview and use that
-        # index to grab the relevant description
-        def description_from_interview(interview)
-          index = index_from_interview(interview)
-          descriptions[index]['value'] unless index.blank?
-        end
-
-        # We get most of the data from the Solr document but some things aren't
-        # stored (or are partially stored) in Solr. For that we need to use the
-        # collection's JSON API. We can get specific fields for the whole
-        # collection, as an Array with the indexes basically matching up.
-        # In order to find the index for the interview we want, we use the
-        # playlist reference endpoint that matches the given interview.
-        def index_from_interview(interview)
-          interview_playlist_reference =
-            interview['im_field_playlist_ref'].first.to_s
-          playlist_references.find_index do |playlist_reference|
-            playlist_reference['raw_value'] == interview_playlist_reference
-          end
-        end
-
-        # The description field for all interviews as an Array
-        def descriptions
-          @descriptions ||= fields('field_description')
-        end
-
-        # The playlist reference field for all interviews as an Array
-        def playlist_references
-          @playlist_references ||= fields('field_playlist_ref')
-        end
-
-        # Get the field response as an Array
-        def fields(field_name)
-          MultiJson.load(field_endpoint(field_name).body)
-        end
-
-        # Call the "field" endpoint which returns JSON for the given field name
-        def field_endpoint(field_name)
-          endpoint_connection.get("/#{collection_code}/services/metadata/field/#{field_name}")
-        end
+        def interview_description(response)
+          response['metadata']['description']['value']['value']
+        end     
 
         # Only grab the interviews from the returned Solr documents.
         # A collection level description is included so we want to exclude that.
-        def interviews
-          @interviews ||= solr_documents.find_all do |solr_document|
-            solr_document['bundle'] == 'rosie_interview'
-          end
+        def response
+          @response ||= datasource_response['docs']
         end
-
-        def solr_documents
-          @solr_documents ||= solr_response['docs']
-        end
-
-        def solr_response
-          @solr_response ||= solr_select['response']
-        end
-
-        # Select all the documents from Solr for the collection
-        def solr_select
-          @solr_select ||= solr.select(params: solr_params)
-        end
-
-        # Solr params for grabbing 100 rows (more than we need) and
-        # limiting to only the results for the Rosie collection
-        def solr_params
+        # Params to send with the request to the JSON API
+        def datasource_params
           {
-            fq: "collection_code:#{collection_code}",
-            rows: 100
+            rows: dataset_size
           }
         end
-
-        # Use RSolr to connect to Solr
-        def solr
-          @solr ||= RSolr.connect(url: solr_url)
+        def datasource_response
+          @datasource_response ||= datasource_json['response']
         end
 
-        # Get Solr URL by removing the /select from the end of the discovery
-        # URL that we got from the collection's JSON API
-        def solr_url
-          @solr_url ||= discovery_url.gsub(/\/select$/, '')
+        def datasource_json
+          @datasource_json ||= MultiJson.load(datasource.body)
         end
 
-        # Get the URL of the discovery service from the collection's JSON API
-        def discovery_url
-          @discovery_url ||= discovery_json['url']
-        end
-
-        # Get the discovery response as a Hash
-        def discovery_json
-          @discovery_json ||= MultiJson.load(discovery_endpoint.body)
-        end
-
-        # Call the "discovery" endpoint which returns JSON for the discovery
-        # service for the collection
-        def discovery_endpoint
-          @discovery_endpoint ||=
-            endpoint_connection.get("/#{collection_code}/sources/discovery")
+         # Connect to collection JSON API
+        def datasource
+          @datasource ||= endpoint_connection.get(endpoint_url)
         end
 
         # Use Faraday to connect to the collection's JSON API
         def endpoint_connection
           @endpoint_connection ||= Faraday.new(url: endpoint_url) do |faraday|
             faraday.request :basic_auth, user, password
+            faraday.params = datasource_params
             faraday.adapter :net_http
           end
         end

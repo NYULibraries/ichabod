@@ -69,3 +69,16 @@ Feature: Perform a basic search
     Given I am on the default search page
     When I search on the phrase "March 1911"
     Then I should see search results
+
+  @vcr
+  Scenario: Search by ISBN
+    Given I am on the default search page
+    When I search on the phrase "9780814712917"
+    Then I should see search results
+
+  @vcr
+  Scenario: Search for NYU Press
+    Given I am on the default search page
+    When I limit my results to "NYU Press Open Access Books" under the "Collection" category
+    When I navigate to details display of the first result
+    Then I should see the value "9780814712917" in the "ISBN:" field
