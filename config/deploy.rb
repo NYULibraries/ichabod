@@ -25,7 +25,7 @@ namespace :rosie do
   end
   task :delete do
     set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['rosie_the_riveter',#{rosie_endpoint_url},#{rosie_user},#{rosie_password}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['rosie_the_riveter']"
   end
 end
 
@@ -40,7 +40,7 @@ namespace :voice do
   end
   task :delete do
     set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['voice',#{voice_endpoint_url}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['voice']"
   end
 end
 
@@ -56,7 +56,7 @@ namespace :fda_ngo do
   end
   task :delete do
     set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive_ngo',#{fda_ngo_endpoint_url},#{fda_ngo_set_handle}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive_ngo']"
   end
 end
 
@@ -71,7 +71,7 @@ namespace :archive_it_accw do
   end
   task :delete do
     set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['archive_it_accw',#{archive_it_accw_endpoint_url}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['archive_it_accw']"
   end
 end
 
@@ -88,7 +88,7 @@ namespace :nyupress do
   end
   task :delete do
     set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['nyu_press_open_access_book',#{nyupress_endpoint_url},#{nyupress_endpoint_start},#{nyupress_endpoint_rows}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['nyu_press_open_access_book']"
   end
 end
 
@@ -105,7 +105,7 @@ namespace :masses do
   
   task :delete do
     set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['masses',#{masses_endpoint_url}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['masses']"
   end
 end
 
@@ -120,13 +120,13 @@ namespace :ingest do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['lib_guides','./ingest/libguides.xml']"
   end
   task :delete_sdr do
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['spatial_data_repository','./ingest/sdr.xml']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['spatial_data_repository']"
   end
   task :delete_fda do
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive','./ingest/stern.xml']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive']"
   end
   task :delete_lib_guides do
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['lib_guides','./ingest/libguides.xml']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['lib_guides']"
   end
 end
 
