@@ -4,7 +4,6 @@ module Ichabod
       class CsvFileReader < ResourceSet::SourceReader
       require 'smarter_csv'
 
-
         def read
           records.collect do | record|
              ResourceSet::Resource.new(resource_attributes_from_record(record))
@@ -18,9 +17,7 @@ module Ichabod
         def records
           @records=[]
           unless load_number_of_records.nil?
-           SmarterCSV.process(file_path,{:chunk_size=> load_number_of_records}).first do |csv_record_chunk|
-                    csv_record_chunk.each { |csv_record| @records<<csv_record }
-           end
+           SmarterCSV.process(file_path,{:chunk_size=>load_number_of_records}).first.each { |csv_record| @records<<csv_record }
           else
            SmarterCSV.process(file_path).each { |csv_record| @records<<csv_record }
           end
