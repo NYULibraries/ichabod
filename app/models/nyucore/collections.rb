@@ -10,7 +10,8 @@ class Nyucore < ActiveFedora::Base
       "Archive of Contemporary Composers' Websites" => ->(nyucore){ nyucore.resource_set == 'archive_it_accw' },
       'Asian NGOs Reports' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_ngo'},
       'NYU Press Open Access Books' => ->(nyucore){ nyucore.resource_set == 'nyu_press_open_access_book' },
-      'The Masses' => ->(nyucore){ nyucore.resource_set == 'masses' }
+      'The Masses' => ->(nyucore){ nyucore.resource_set == 'masses' },
+      'Service Data Collection' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive__service_data' }
     }
 
     attr_reader :nyucore
