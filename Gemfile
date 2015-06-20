@@ -10,7 +10,7 @@ gem 'compass-rails', '~> 2.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', '~> 0.12.0', platforms: :ruby
-gem 'jquery-rails', '~> 3.1.0'
+gem 'jquery-rails', '~> 3.1.3'
 gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'jbuilder', '~> 2.1.3'
 
@@ -41,7 +41,7 @@ gem 'jettywrapper', group: [:development, :test, :staging]
 
 gem 'iso-639'
 gem 'faraday', '~> 0.9.0'
-gem 'multi_json', '~> 1.10.1'
+gem 'multi_json', '~> 1.11.1'
 gem 'multi_xml', '~> 0.5.5'
 
 group :development do
