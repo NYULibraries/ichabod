@@ -217,18 +217,15 @@ module Ichabod
           end
         end
         context 'when there are no editors' do
-          #before { base.delete }
-          #before { Base.instance_variable_set(:@editors, original_editors)}
+          before { Base.instance_variable_set(:@editors, original_editors)}
           it 'should return an array of Nyucores with no edit groups' do
             subject.each do |nyucore|
               expect(nyucore.edit_groups).to eq original_editors.map(&:to_s)
-
             end
           end
         end
         context 'when there are no restrictions' do
-          #before { base.delete }
-          #before { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
+          before { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
           it 'should return an array of Nyucores with no restrictions' do
             subject.each do |nyucore|
               expect(nyucore.restrictions).to be_nil
