@@ -149,6 +149,7 @@ module Ichabod
         end.compact
       end
       def get_records_by_prefix
+        raise_runtime_error_if_no_prefix_specified
         prefix = self.class.prefix
         @resources = Nyucore.where("id:#{prefix}*")
         @resources.reject! do |r|
@@ -211,6 +212,11 @@ module Ichabod
           before_loads.collect do |before_load|
             method(before_load)
           end
+        end
+      end
+      def raise_runtime_error_if_no_prefix_specified
+        if self.class.prefix.blank?
+          raise RuntimeError.new("No prefix has been specified for the class #{self.class.name}")
         end
       end
 
