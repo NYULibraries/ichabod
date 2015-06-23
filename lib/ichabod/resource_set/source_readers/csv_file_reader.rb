@@ -12,15 +12,11 @@ module Ichabod
 
         private
         extend Forwardable
-        def_delegators :resource_set, :file_path, :load_number_of_records, :header_map, :csv_reader_options
+        def_delegators :resource_set, :file_path, :header_map, :csv_reader_options
 
         def records
           @records=[]
-          unless load_number_of_records.nil?
-           SmarterCSV.process(file_path,{:chunk_size=>load_number_of_records}).first.each { |csv_record| @records<<csv_record }
-          else
-           SmarterCSV.process(file_path, csv_reader_options).each { |csv_record| @records<<csv_record }
-          end
+          SmarterCSV.process(file_path, csv_reader_options).each { |csv_record| @records<<csv_record }
           @records
         end
 
