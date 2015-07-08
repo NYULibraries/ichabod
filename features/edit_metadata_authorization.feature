@@ -3,7 +3,7 @@ Feature: Permission to edit metadata only to authorized users
   As a logged in cataloger
   I want to have permission to edit metadata only for items of which I am an authorized user
 
-  @loggedin
+  @loggedin @wip
   Scenario: Edit option for GIS records is available to GIS cataloger
     Given I am logged in as "GIS Cataloger"
     And I view record with id "sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR"
@@ -20,7 +20,7 @@ Feature: Permission to edit metadata only to authorized users
     And I view record with id "sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR"
     Then the record should not have link "Edit"
 
-  @loggedin
+  @loggedin @wip
   Scenario: Edit option is available to AFC group for ArchiveIt ACCW records
     Given I am logged in as "AFC Group"
     And I view record with id "ai-accw:388fe27b78485746b132fe4448ba2042"
@@ -37,13 +37,13 @@ Feature: Permission to edit metadata only to authorized users
     And I view record with id "ai-accw:388fe27b78485746b132fe4448ba2042"
     Then the record should not have link "Edit"
 
-  @loggedin
+  @loggedin @wip
   Scenario: Edit option for GIS records is available to GIS cataloger on the main search page
     Given I am logged in as "GIS Cataloger"
     And I search for "MapPluto"
     Then the record should have link "Edit"
 
-  @loggedin
+  @loggedin @wip
   Scenario: Edit option for GIS records is available to GIS cataloger on the details display search page
     Given I am logged in as "GIS Cataloger"
     And I search for "MapPluto"
