@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   # Please be sure to impelement current_user and user_session. Blacklight depends on
   # these methods in order to perform user specific actions.
 
-  include Authpds::Controllers::AuthpdsController
   layout Proc.new{ |controller| (controller.request.xhr?) ? false : "application" }
 
   # Prevent CSRF attacks by raising an exception.
