@@ -4,9 +4,9 @@ Ichabod::Application.routes.draw do
   root :to => "catalog#index"
   Blacklight.add_routes(self)
 
-  get 'login', :to => 'user_sessions#new', :as => :login
-  get 'logout', :to => 'user_sessions#destroy', :as => :logout
-  get 'validate', :to => 'user_sessions#validate', :as => :validate
-  resources :user_sessions
-
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_scope :user do
+    get 'logout', to: 'devise/sessions#destroy', as: :logout
+    get 'login', to: redirect("#{Rails.application.config.relative_url_root}/users/auth/nyulibraries"), as: :login
+  end
 end
