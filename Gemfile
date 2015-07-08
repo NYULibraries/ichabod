@@ -24,7 +24,7 @@ gem 'mustache-rails', github: 'NYULibraries/mustache-rails', require: 'mustache/
 gem 'omniauth-nyulibraries', github: 'NYULibraries/omniauth-nyulibraries',  tag: 'v1.1.2'
 gem 'devise', '~> 3.4.1'
 
-gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', tag: 'v4.0.0'
+gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', tag: 'v4.4.1'
 # gem 'nyulibraries-assets', path: '/apps/nyulibraries-assets'
 gem 'formaggio', github: 'NYULibraries/formaggio', tag: 'v1.4.2'
 
