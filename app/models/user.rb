@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
   #devise :database_authenticatable, :registerable,
   #       :recoverable, :rememberable, :trackable, :validatable
 
-  serialize :user_attributes
 
   # Method added by Blacklight; Blacklight uses #to_s on your
   # user class to get a user-displayable login/identifier for
