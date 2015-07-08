@@ -33,45 +33,12 @@ GIT
       institutions (~> 0.1.3)
 
 GIT
-  remote: git://github.com/barnabyalter/authpds-nyu.git
-  revision: 71959075baf098c969f5dd5b11cb9859bb4a3f6c
+  remote: git://github.com/NYULibraries/omniauth-nyulibraries.git
+  revision: 73e527844b90a7fdf3faf4a7a57d39fb1566f4c7
+  tag: v1.1.2
   specs:
-    authpds-nyu (1.1.3)
-      require_all (~> 1.3.1)
-
-GIT
-  remote: git://github.com/barnabyalter/authpds.git
-  revision: 92069180f48c3dba085295798c64d30c24fbfc27
-  specs:
-    authpds (1.1.3)
-      activerecord (>= 3.2.14)
-      activesupport (>= 3.2.14)
-      authlogic (>= 3.3.0)
-      institutions (~> 0.1.3)
-      nokogiri (~> 1.6.0)
-      require_all (~> 1.3.1)
-
-GIT
-  remote: git://github.com/barnabyalter/exlibris-aleph.git
-  revision: 216a72a2cc40d6b0263e4963ae77138c6fd536e9
-  specs:
-    exlibris-aleph (1.1.0)
-      activesupport (>= 3.2.14)
-      builder (>= 3.0.0)
-      httparty (~> 0.11.0)
-      marc (~> 0.7.1)
-      nokogiri (~> 1.6.0)
-      rake (~> 10.1.0)
-      require_all (~> 1.3.1)
-
-GIT
-  remote: git://github.com/binarylogic/authlogic.git
-  revision: e4b2990d6282f3f7b50249b4f639631aef68b939
-  ref: e4b2990d6282f3f7b50249b4f639631aef68b939
-  specs:
-    authlogic (3.3.0)
-      activerecord (>= 3.2)
-      activesupport (>= 3.2)
+    omniauth-nyulibraries (1.1.0)
+      omniauth-oauth2 (~> 1.2.0)
 
 GIT
   remote: git://github.com/code4lib/ruby-oai.git
@@ -129,6 +96,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.10)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -213,6 +181,13 @@ GEM
     debug_inspector (0.0.2)
     deprecation (0.1.0)
       activesupport
+    devise (3.4.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
     ebnf (0.3.6)
@@ -242,14 +217,12 @@ GEM
     git (1.2.9.1)
     haml (4.0.5)
       tilt
+    hashie (3.4.2)
     highline (1.7.2)
     hike (1.2.3)
     hooks (0.3.6)
       uber (~> 0.0.4)
     htmlentities (4.3.2)
-    httparty (0.11.0)
-      multi_json (~> 1.0)
-      multi_xml (>= 0.5.2)
     hydra (7.1.0)
       active-fedora (~> 7.1.0)
       blacklight (~> 5.5.1)
@@ -301,6 +274,7 @@ GEM
     json (1.8.3)
     json-ld (1.1.7)
       rdf (~> 1.1, >= 1.1.4)
+    jwt (1.5.1)
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -325,7 +299,6 @@ GEM
     logger (1.2.8)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    marc (0.7.1)
     method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.0)
@@ -352,11 +325,26 @@ GEM
       activesupport
       i18n
       nokogiri
+    oauth2 (1.0.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
     om (3.1.0)
       activemodel
       activesupport
       nokogiri (>= 1.4.2)
       solrizer (~> 3.3)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-oauth2 (1.2.0)
+      faraday (>= 0.8, < 0.10)
+      multi_json (~> 1.3)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
+    orm_adapter (0.5.0)
     phantomjs (1.9.7.1)
     pickle (0.4.11)
       cucumber (>= 0.8)
@@ -429,6 +417,8 @@ GEM
       rdf (~> 1.1)
     ref (1.0.5)
     require_all (1.3.2)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
@@ -529,6 +519,8 @@ GEM
       json (>= 1.8.0)
     unicode (0.4.4.1)
     vcr (2.9.3)
+    warden (1.2.3)
+      rack (>= 1.0)
     webmock (1.19.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -542,9 +534,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  authlogic!
-  authpds!
-  authpds-nyu!
   better_errors (~> 2.0.0)
   binding_of_caller
   coffee-rails (~> 4.0.0)
@@ -552,7 +541,7 @@ DEPENDENCIES
   coveralls (~> 0.7.0)
   cucumber-rails
   database_cleaner (~> 1.3.0)
-  exlibris-aleph!
+  devise (~> 3.4.1)
   factory_girl_rails (~> 4.4.0)
   faraday (~> 0.9.0)
   formaggio!
@@ -570,6 +559,7 @@ DEPENDENCIES
   mysql2 (~> 0.3.15)
   nyulibraries-assets!
   oai!
+  omniauth-nyulibraries!
   phantomjs (>= 1.9.0)
   pickle (~> 0.4.11)
   poltergeist (~> 1.5.0)
