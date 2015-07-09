@@ -75,6 +75,9 @@ Feature: Source fields immutable, edit native fields
     Then I should see the value "New York City Department of City Planning" in the "Publisher:" field
     And I should see the value "Penguin Publishing" in the "Publisher:" field
 
+  # This is marked WIP, but this isn't a login scenario. This relies on a
+  # previous scenario, which turns out to be a login scenario.
+  @wip
   Scenario: Check that source doesn't overwrite native metadata
     Given I revert the "Spatial Data Repository" source data in the "publisher" field to "New York City Department of City Planning" for the record identified by "DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R"
     And I reload the "Spatial Data Repository" source data into Ichabod
