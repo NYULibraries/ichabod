@@ -4,7 +4,8 @@ require 'support/test_user_helper'
 describe CollectionsController do
 
   let(:user) { create_or_return_test_admin }
-  let(:collection_fields) { Collection::COLLECTION_FIELDS[:single] + Collection::COLLECTION_FIELDS[:multiple] }
+  let(:collection_fields) { Collection::SINGLE_FIELDS + Collection::MULTIPLE_FIELDS }
+  let(:required_fields) { Collection::REQUIRED_FIELDS }
   before  { controller.stub(:current_user).and_return(user) }
 
   describe 'GET index' do
@@ -90,7 +91,7 @@ describe CollectionsController do
   end
 
   describe "DELETE destroy" do
-    let!(:collection) { create(:collection, { :title => "LION" }) }    
+    let!(:collection) { create(:collection, { :title => "LION" }) }
     it 'should delete an existing collection record and return to the main page' do
           expect { delete :destroy, id: collection }.to change(Collection, :count).by(-1)
           expect response.should redirect_to collections_url

@@ -8,6 +8,6 @@ describe 'collections/new' do
   end
   it 'should render the new collection form' do
     render
-    expect(rendered).to match /New collection/
+    expect(rendered).to match /New Collection/
   end
 end

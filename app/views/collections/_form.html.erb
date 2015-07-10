@@ -1,12 +1,9 @@
 <%= simple_form_for @collection do |f| %>
-
- 
-<% single_fields.each do |field| %>
-
+<% single_collection_fields.each do |field| %>
 <% value||= @collection.send(field) %>
       <%= f.input field,  label: f.label(field),  input_html: {name: "collection[#{field}]", value: value, id: "collection_#{field}" } %>
 <%  end %>
-<% workflow_fields.each do |field| %>
+<% admin_fields.each do |field| %>
 <% value||= @collection.send(field) %>
     <%= f.input field, as: :boolean, label: f.label(field), input_html: {name: "collection[#{field}]", checked: get_boolean(value), id: "collection_#{field}"}  %>
 <%  end %>
@@ -14,16 +11,15 @@
 <% multiple_fields.each do |field| %>
 <%= f.label field %>
 <% values = @collection.send(field) %>
-<% values.each_with_index do |value,index| %>    
+<% values.each_with_index do |value,index| %>
     <div class="field">
       <%= f.input field, label: false, input_html: {name: "collection[#{field}][]", value: value, id: "collection_#{field}#{index}"} %>
     </div>
       <%  end %>
   <div class="field">
     <p><%= f.input field, label: false, input_html: {name: "collection[#{field}][]", value: nil, id: "collection_#{field}"} %></p>
-  </div> 
+  </div>
 <%  end %>
- 
   <div class="actions">
     <%= f.submit %>
   </div>
