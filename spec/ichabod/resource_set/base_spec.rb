@@ -197,7 +197,7 @@ module Ichabod
           subject.each do |nyucore|
             expect(nyucore).to be_an Nyucore
             expect(nyucore).to be_persisted
-            expect(nyucore).not_to be_new
+            expect(nyucore).not_to be_new_record
             expect(nyucore.resource_set).to eq 'base'
           end
         end

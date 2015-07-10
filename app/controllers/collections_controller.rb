@@ -1,13 +1,12 @@
 class CollectionsController < ApplicationController
   include Blacklight::CatalogHelperBehavior
   include Blacklight::ConfigurationHelperBehavior
- 
 
   respond_to :html, :json
   # Convert blank values to nil in params when creating and updating
   # in order to not save empty array values when field is not nil but is an empty string (i.e. "")
-  before_action  :blank_to_nil_params, :only => [:create, :update] 
- 
+  before_action  :blank_to_nil_params, :only => [:create, :update]
+
 
   # GET /collections
   # GET /collections.json
@@ -26,7 +25,7 @@ class CollectionsController < ApplicationController
 
   # GET /collections/new
   def new
-    @collection = Collection.new(:namespace=>"ichabod-collection" )
+    @collection = Collection.new
     authorize! :new, @collection
     respond_with(@collection)
   end
@@ -64,7 +63,7 @@ class CollectionsController < ApplicationController
     @collection =Collection.find(params[:id])
     @collection.destroy
     respond_to do |format|
-      format.html { redirect_to collections_url, notice: 'Collection was successfully destroyed.' }
+      format.html { redirect_to collections_url, notice: 'Collection was successfully deleted.' }
     end
   end
 

@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe 'collection/edit' do
+describe 'collections/edit' , vcr: {cassette_name: 'views/nyucores/edit' } do
   let(:user) { build(:user) }
   let(:collection) { create(:collection) }
   before do
@@ -8,6 +8,6 @@ describe 'collection/edit' do
   end
   it 'should render the edit collection form' do
     render
-    expect(rendered).to match /Edit Item/
+    expect(rendered).to match /Edit Collection/
   end
 end
