@@ -37,13 +37,11 @@ end
 # Faceting steps
 Given(/^I (limit|filter) my search to "(.*?)" under the "(.*?)" category$/) do |a, facet, category|
   ensure_root_path
-  save_and_open_page 'hry'
   limit_by_facet(category, facet)
 end
 
 When(/^I limit my results to "(.*?)" under the "(.*?)" category$/) do |facet, category|
   ensure_root_path
-  save_and_open_page 'hry'
   limit_by_facet(category, facet)
 end
 
