@@ -3,7 +3,7 @@ Feature: Add, edit and delete collections
   I want to see my resources organized in Ichabod by collection,
   which I can add, delete and edit
 
-  @loggedin
+  @loggedin @wip
   Scenario: New Collection form
     Given I am logged in as an admin
     And I am on the "New Collection" form
@@ -11,7 +11,7 @@ Feature: Add, edit and delete collections
     And field "discoverable" should be marked as required
     And field "discoverable" should be checked
 
-  @loggedin
+  @loggedin @wip
   Scenario: Adding a collection
     Given I am logged in as an admin
     And I am on the "New Collection" form
@@ -25,7 +25,7 @@ Feature: Add, edit and delete collections
     And I click on "Create Collection"
     Then I should see the message "Collection was successfully created."
 
- @loggedin
+ @loggedin @wip
  Scenario: Editing a record
     Given I am logged in as an admin
     And the collection "Audio Collection" exists
@@ -37,7 +37,7 @@ Feature: Add, edit and delete collections
     When I am on the collections list
     Then I should see title "The Underground Soviet Rock" in the collections list
 
-  @loggedin
+  @loggedin @wip
   Scenario: Editing a collection with multiple values in all multiple fields
     Given I am logged in as an admin
     And the collection "Collection of Old Videos" exists
@@ -54,7 +54,7 @@ Feature: Add, edit and delete collections
       | collection_publisher1       | DLTS             |
       | collection_publisher2    | Video Archive |
 
-  @loggedin
+  @loggedin @wip
   Scenario: Deleting a record
     Given I am logged in as an admin
     And the collection "The Photo Collection" exists
