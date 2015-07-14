@@ -3,7 +3,7 @@ Feature: Add, edit and delete records
   As a record maintainer
   I want to be able to add, edit and delete records locally
 
-  @loggedin
+  @loggedin @wip
   Scenario: Adding a record
     Given I am logged in as an admin
     And I am on the "New Item" form
@@ -30,7 +30,7 @@ Feature: Add, edit and delete records
     When I search on the phrase "A Comedy of Errors"
     Then I should see search results
 
-  @loggedin
+  @loggedin @wip
   Scenario: Adding a record with multiple values in all multiple fields
     Given I am logged in as an admin
     And I am on the "New Item" form
@@ -90,7 +90,7 @@ Feature: Add, edit and delete records
       | nyucore_citation      | B Shakes, SPC       |
       | nyucore_citation1     | B Shakes, SPC1      |
 
-  @loggedin
+  @loggedin @wip
   Scenario: Editing a record
     Given I am logged in as an admin
     And the record "Cymbeline" exists
@@ -102,7 +102,7 @@ Feature: Add, edit and delete records
     When I search on the phrase "The Tale of Imogen"
     Then I should see search results
 
-  @loggedin
+  @loggedin @wip
   Scenario: Deleting a record
     Given I am logged in as an admin
     And the record "The Tempest" exists
