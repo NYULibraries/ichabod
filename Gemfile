@@ -13,7 +13,7 @@ gem 'therubyracer', '~> 0.12.0', platforms: :ruby
 gem 'jquery-rails', '~> 3.1.3'
 gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'jbuilder', '~> 2.1.3'
-
+gem 'sprockets', '~> 2.12.3'
 #gem 'oai','~> 0.3.1'
 gem 'oai', github: 'code4lib/ruby-oai', branch: 'master'
 gem 'mustache', '0.99.4'
@@ -21,12 +21,10 @@ gem 'mustache-rails', github: 'NYULibraries/mustache-rails', require: 'mustache/
 
 # None of these gems should be included in a real production instance.
 # This entire auth process should be handled by login
-gem 'authlogic', github: 'binarylogic/authlogic', ref: 'e4b2990d6282f3f7b50249b4f639631aef68b939'
-gem 'exlibris-aleph', github: 'barnabyalter/exlibris-aleph'
-gem 'authpds', github: 'barnabyalter/authpds'
-gem 'authpds-nyu', github: 'barnabyalter/authpds-nyu'
+gem 'omniauth-nyulibraries', github: 'NYULibraries/omniauth-nyulibraries',  tag: 'v1.1.2'
+gem 'devise', '~> 3.4.1'
 
-gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', tag: 'v4.0.0'
+gem 'nyulibraries-assets', github: 'NYULibraries/nyulibraries-assets', tag: 'v4.4.1'
 # gem 'nyulibraries-assets', path: '/apps/nyulibraries-assets'
 gem 'formaggio', github: 'NYULibraries/formaggio', tag: 'v1.4.2'
 

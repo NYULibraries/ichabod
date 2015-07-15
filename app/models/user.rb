@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
+  devise :omniauthable, omniauth_providers: [:nyulibraries]
 # Connects this user object to Hydra behaviors.
  include Hydra::User
  # Connects this user object to Role-management behaviors. 
  #include Hydra::RoleManagement::UserRoles
-
 # Connects this user object to Blacklights Bookmarks.
  include Blacklight::User
   # Include default devise modules. Others available are:
@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
   #devise :database_authenticatable, :registerable,
   #       :recoverable, :rememberable, :trackable, :validatable
 
-  serialize :user_attributes
 
   # Method added by Blacklight; Blacklight uses #to_s on your
   # user class to get a user-displayable login/identifier for
@@ -21,13 +20,6 @@ class User < ActiveRecord::Base
     email
   end
 
-  # Configure authlogic
-  acts_as_authentic do |c|
-    c.validations_scope = :username
-    c.validate_password_field = false
-    c.require_password_confirmation = false
-    c.disable_perishable_token_maintenance = true
-  end
 
   # Override core Hydra functions which use Devise hardcoded
   def user_key

@@ -2,8 +2,8 @@ Feature: Edit button on the detailed search results page
   As an authorized Ichabod user
   I want to be able to use the existing search interface to find records to edit
   And then click an "edit" link on the resulting detail page
-  
-  @loggedin
+
+  @loggedin @wip
   Scenario:authorized user can call edit form and edit a record using search interface
     Given I am logged in as an admin
     And the record "Story" exists
@@ -18,7 +18,7 @@ Feature: Edit button on the detailed search results page
     When I search on the phrase "Advice"
     Then I should see search results
 
-  @loggedin
+  @loggedin @wip
   Scenario:authorized user can call edit form and edit a record using search interface
     Given I am logged in as an admin
     And the record "Big Novel" exists

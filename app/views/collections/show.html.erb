@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<%= simple_form_for @collection do |f| %>
+
+<% single_collection_fields.each do |field| %>
+ <% value||= @collection.send(field) %>
+ <div><%= f.label field %>:<%= value %></div>
+<%  end %>
+ <% admin_fields.each do |field| %>
+ <% value||= @collection.send(field) %>
+ <div><%= f.label field %>:<%= format_boolean_value(value,field) %></div>
+<%  end %>
+ <% multiple_fields.each do |field| %>
+ <div>  <%= f.label field %>:
+ <% values||= @collection.send(field) %>
+ <%=values.join(', ')%>
+  </div>
+<%  end %>
+<%  end %>
+<% if can?(:edit, @collection) %><%= link_to 'Edit', edit_collection_path(@collection) %> | <%end%>
+<%= link_to 'Back', collections_path %>
