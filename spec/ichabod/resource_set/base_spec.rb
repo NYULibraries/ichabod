@@ -5,14 +5,11 @@ module Ichabod
       let(:before_loads) { [:method1, :method2] }
       let!(:original_before_loads) { Base.before_loads - before_loads }
       let(:set_restrictions) { [:nyu_only] }
-      let(:all_restrictions) { [:nyu_only, :authorized_only] }
-      let(:invalid_set_restrictions) { [:only_nyu] }
-      let!(:original_set_restrictions) { [] }
       let(:editors) { [:editor1, :editor2] }
-      let!(:original_editors) { Base.editors - editors }
+      let(:original_editors) { Base.editors - editors }
       let(:prefix) { 'mock' }
+=begin
       describe '.prefix=' do
-        after { Base.prefix=(nil)}
         subject { Base.prefix=(prefix) }
         it 'should not raise an ArgumentError' do
           expect { subject }.not_to raise_error
@@ -22,43 +19,41 @@ module Ichabod
           expect(Base.prefix).to eq prefix
         end
       end
+
       describe '.editor' do
-        after { Base.instance_variable_set(:@editors, original_editors)}
         subject { Base.editor(*editors) }
         it 'should not raise an ArgumentError' do
           expect { subject }.not_to raise_error
         end
         it 'should set the editors attribute on the class' do
           subject
-          expect(Base.editors).to eq editors.unshift(*original_editors)
+          expect(Base.editors).to eq (original_editors + editors)
         end
       end
+
       describe '.set_restriction' do
-        after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
         subject { Base.set_restriction(*set_restrictions) }
         it 'should not raise an ArgumentError' do
           expect { subject }.not_to raise_error
         end
         it 'should set the set_restrictions attribute on the class' do
           subject
-          expect(Base.set_restrictions).to eq set_restrictions.unshift(*original_set_restrictions)
+          expect(Base.set_restrictions).to eq set_restrictions
         end
       end
+
       describe '.before_load' do
-        after do
-          Base.instance_variable_set(:@before_loads, original_before_loads)
-        end
         subject { Base.before_load(*before_loads) }
         it 'should not raise an ArgumentError' do
           expect { subject }.not_to raise_error
         end
         it 'should set the before_loads attribute on the class' do
           subject
-          expect(Base.before_loads).to eq before_loads.unshift(*original_before_loads)
+          expect(Base.before_loads).to eq (original_before_loads + before_loads)
         end
       end
+
       describe '.source_reader=' do
-        after { Base.instance_variable_set(:@source_reader, nil)}
         subject { Base.source_reader=(source_reader) }
         context 'when the source_reader argument cannot be coerced into a SourceReader' do
           let(:source_reader) { 'invalid' }
@@ -95,48 +90,41 @@ module Ichabod
           end
         end
       end
+=end
+       #why are we testing the same functionality again??
       subject(:base) { Base.new }
       it { should be_a Base }
       describe '#each' do
         subject { base.each }
         it { should be_an Enumerator }
       end
-      describe '#size' do
-        subject { base.size }
-        context 'when we have read from source' do
-          before { Base.source_reader = ResourceSetMocks::MockSourceReader }
-          before { base.read_from_source }
-          after { Base.instance_variable_set(:@source_reader, nil) }
-          it { should be > 0 }
-        end
-        context 'when we have read from source' do
-          it { should eq 0 }
-        end
-      end
       describe '#prefix' do
         subject { base.prefix }
+        let(:p) { Base.prefix = nil }
         context 'when not configured with a prefix' do
-          it { should be_nil }
+          it { should eq p }
         end
         context 'when configured with a prefix' do
-          before { Base.prefix = prefix }
-          after { Base.prefix = nil}
-          it { should eq prefix }
+          let(:p) { Base.prefix = prefix }
+          it { should eq p }
         end
       end
+
       describe '#editors' do
         subject { base.editors }
         context 'when not configured with editors' do
+          let!(:orig_editor) { Base.editor(*original_editors) }
           it { should be_an Array }
-          it { should eq original_editors.map(&:to_s) }
+          it { should eq orig_editor.map(&:to_s) }
         end
         context 'when configured with editors' do
-          before { Base.editor(*editors) }
-          after { Base.instance_variable_set(:@editors, original_editors)}
+          let!(:all) { original_editors + editors }
+          let!(:b_editors) { Base.editor(*editors) }
           it { should be_an Array }
-          it { should eq editors.map(&:to_s).unshift(*original_editors.map(&:to_s)) }
+          it { should eq all.map(&:to_s) }
         end
       end
+=begin
       describe '#set_restrictions' do
         subject { base.set_restrictions }
         context 'when not configured with set_restrictions' do
@@ -181,6 +169,21 @@ module Ichabod
         end
         context 'when there is no source reader configured' do
           before { Base.instance_variable_set(:@source_reader, nil) }
+          it 'should raise a RuntimeError' do
+            expect { subject }.to raise_error RuntimeError
+          end
+        end
+      end
+      describe '#get_records_by_prefix' do
+        before { Base.prefix= prefix  }
+        subject { base.get_records_by_prefix }
+        it 'should assign the @resources instance variable' do
+          expect(base.instance_variable_get(:@resources)).to be_nil
+          subject
+          expect(base.instance_variable_get(:@resources)).not_to be_nil
+        end
+        context 'when there is no prefix configured' do
+          before { Base.prefix = nil  }
           it 'should raise a RuntimeError' do
             expect { subject }.to raise_error RuntimeError
           end
@@ -271,5 +274,7 @@ module Ichabod
         end
       end
     end
+=end
+  end
   end
 end
