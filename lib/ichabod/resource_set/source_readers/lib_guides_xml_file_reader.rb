@@ -11,7 +11,7 @@ module Ichabod
 
         private
         extend Forwardable
-        def_delegators :resource_set, :prefix, :filename
+        def_delegators :resource_set, :prefix, :filename, :collection_code
 
         def resource_attributes_from_guide(guide)
           {

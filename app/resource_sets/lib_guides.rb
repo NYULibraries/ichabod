@@ -4,6 +4,7 @@ class LibGuides < Ichabod::ResourceSet::Base
   editor :libguides_cataloger
 
   attr_reader :filename
+  alias_method :collection_code, :prefix
 
   def initialize(*args)
     @filename = args.shift
