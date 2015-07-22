@@ -102,7 +102,7 @@ module Ichabod
         subject { base.prefix }
         let(:p) { Base.prefix = nil }
         context 'when not configured with a prefix' do
-          it { should eq p }
+          it { should eq p } 
         end
         context 'when configured with a prefix' do
           let(:p) { Base.prefix = prefix }
@@ -124,19 +124,17 @@ module Ichabod
           it { should eq all.map(&:to_s) }
         end
       end
-=begin
+
       describe '#set_restrictions' do
         subject { base.set_restrictions }
         context 'when not configured with set_restrictions' do
+          let!(:no_set_restrictions) { [] }
+          let!(:no_restrictions) { Base.set_restriction(*no_set_restrictions) }
           it { should be_a String }
-          it { should eq original_set_restrictions.join("") }
+          it { should be_empty }
         end
-        context 'when configured with set_restrictions' do
-          before { Base.set_restriction(*set_restrictions) }
-          after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
-          it { should be_a String }
-          it { should eq set_restrictions.join("") }
-        end
+      end
+=begin
         context 'when configured with a value other than what is allowed for set_restrictions' do
           before { Base.set_restriction(*invalid_set_restrictions) }
           after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
@@ -144,6 +142,7 @@ module Ichabod
           it { should_not include all_restrictions.map(&:to_s).join("")  }
         end
       end
+
       describe '#before_loads' do
         subject { base.before_loads }
         context 'when not configured with before loads' do
