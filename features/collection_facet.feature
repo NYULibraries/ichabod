@@ -46,3 +46,4 @@ Feature: Collection facet
     Given I am on the default search page
     When I filter my search to "Service Data Collection" under the "Collection" category
     Then I should see search results
+

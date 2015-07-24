@@ -4,9 +4,13 @@ module Ichabod
     module SourceReaders
       describe CsvFileReader do
         let(:file_path) { 'ingest/test_options.csv' }
-        let(:header_map) { { :identifier=>["identifier.uri"], :title=> ["title" ], :creator=>["contributor.author" ],:publisher=>["publisher" ],
-    :type=>["type.resource","type" ],:description=>["description.abstract","description" ],:date=>["date.issued" ],:format=>["format" ],
-      :rights=>["rights" ],:subject=>["subject","coverage","coverage.temporal"] } }
+        let(:header_map) { 
+           {
+             identifier: ["identifier.uri"], title: ["title" ], creator: ["contributor.author" ], publisher: ["publisher" ],
+             type: ["type.resource","type" ], description: ["description.abstract","description" ], date: ["date.issued" ],
+             format: ["format" ], rights: ["rights" ], subject: ["subject","coverage","coverage.temporal"]
+           }
+         }
         let(:csv_reader_options) { { :col_sep=>";" } }
         let(:resource_set) { mock_resource_set }
         before do

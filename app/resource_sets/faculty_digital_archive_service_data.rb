@@ -20,8 +20,10 @@ class FacultyDigitalArchiveServiceData < Ichabod::ResourceSet::Base
   end
 
   def set_header_map
-    { :identifier=>["identifier.uri"], :title=> ["title" ], :creator=>["contributor.author" ],:publisher=>["publisher" ],
-    :type=>["type.resource","type" ],:description=>["description.abstract","description" ],:date=>["date.issued" ],:format=>["format" ],
-      :rights=>["rights" ],:subject=>["subject","coverage","coverage.temporal" ] }
+    { 
+      identifier: ["identifier.uri"], title: ["title" ], creator: ["contributor.author" ], publisher: ["publisher" ],
+      type: ["type.resource","type" ], description: ["description.abstract","description" ], date: ["date.issued" ],
+      format: ["format" ], rights: ["rights" ], subject: ["subject","coverage","coverage.temporal" ]
+    }
   end
 end
