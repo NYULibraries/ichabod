@@ -41,3 +41,9 @@ Feature: Collection facet
     Given I am on the default search page
     When I filter my search to "The Masses" under the "Collection" category
     Then I should see search results
+
+  Scenario: Filter by The Data Service Collection
+    Given I am on the default search page
+    When I filter my search to "Service Data Collection" under the "Collection" category
+    Then I should see search results
+

@@ -82,3 +82,8 @@ Feature: Perform a basic search
     When I limit my results to "NYU Press Open Access Books" under the "Collection" category
     When I navigate to details display of the first result
     Then I should see the value "9780814712917" in the "ISBN:" field
+
+  Scenario: Search for The Service Data Collection title
+    Given I am on the default search page
+    When I search on the phrase "Gallup GPSS"
+    Then I should see search results
