@@ -88,5 +88,11 @@ describe Nyucore::Collections do
       let(:resource_set) { ['nyu_press_open_access_book'] }
       it { should eql ['NYU Press Open Access Books'] }
     end
+    context "when object is FDA Data Service resource set" do
+      let(:type) { ['Technical Report'] }
+      let(:publisher) { nil }
+      let(:resource_set) { ['faculty_digital_archive_service_data'] }
+      it { should eql ['Service Data Collection'] }
+    end
   end
 end

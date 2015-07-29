@@ -33,4 +33,32 @@ where resource_set_name is required and args are optional
     data_loader = Ichabod::DataLoader.new(args.name, *args.extras)
     data_loader.delete
   end
+
+  # tasks operate directly on NYU Core objects
+  namespace :nyucore do
+    desc  <<-DESC
+List Nyucores in Ichabod whose id attribute matches the specified pattern
+Usage: rake list['pattern'],
+e.g.,  rake ichabod:nyucore:list['sdr:DSS-ESRI_10_USA*']
+    ,  rake ichabod:nyucore:list['sdr:*']
+  DESC
+    task :list, [:pattern] => :environment do |_, args|
+      # escape colons in identifier pattern
+      query_string = args.pattern.gsub(/:/, '\:')
+      Nyucore.where("id:#{query_string}").each do |x|
+        printf "%-64s %s\n", x.id, x.title
+      end
+    end
+
+    desc  <<-DESC
+Delete Nyucores in Ichabod whose id attribute matches the specified pattern
+e.g.,  rake ichabod:nyucore:delete['sdr:DSS-ESRI_10_USA*']
+    ,  rake ichabod:nyucore:delete['sdr:*']
+  DESC
+    task :delete, [:pattern] => :environment do |_, args|
+      # escape colons in identifier pattern
+      query_string = args.pattern.gsub(/:/, '\:')
+      Nyucore.where("id:#{query_string}").each { |x| x.destroy }
+    end
+  end
 end

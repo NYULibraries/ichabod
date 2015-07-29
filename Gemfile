@@ -43,6 +43,7 @@ gem 'iso-639'
 gem 'faraday', '~> 0.9.0'
 gem 'multi_json', '~> 1.11.1'
 gem 'multi_xml', '~> 0.5.5'
+gem 'smarter_csv', '~> 1.0.19'
 
 group :development do
   gem 'better_errors', '~> 2.0.0'
