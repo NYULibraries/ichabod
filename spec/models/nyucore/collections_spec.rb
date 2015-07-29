@@ -93,6 +93,7 @@ describe Nyucore::Collections do
       let(:publisher) { nil }
       let(:resource_set) { ['faculty_digital_archive_service_data'] }
       it { should eql ['Service Data Collection'] }
+    end
     context "when object is from the Research Guides resource set" do
       let(:type) { ['Research Guide'] }
       let(:publisher) { nil }
