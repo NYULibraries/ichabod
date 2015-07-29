@@ -18,8 +18,8 @@ Feature: Add, edit and delete collections
     When I enter the fields:
       | Collection Name        | Old Russian Books |
       | Provider      | Unknown Russian Immigrant    |
-      | Department    |  Russian Leterature Department   |
-      | Abstract  | Collection of underground soviet poetry |
+      | Department    |  Russian Literature Department   |
+      | Abstract  | Collection of underground Soviet poetry |
       | Rights       | All rights          |
 
     And I click on "Create Collection"

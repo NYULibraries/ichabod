@@ -31,8 +31,8 @@ module CollectionsHelper
   end
 
   def format_boolean_value(value,field)
-     if(field.to_s=="discoverable")
-       value=='1' ? 'Yes':'No'
+     if(field.to_s == "discoverable")
+       value == '1' ? 'Yes':'No'
      else
        value
      end
