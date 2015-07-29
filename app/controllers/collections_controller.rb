@@ -11,7 +11,7 @@ class CollectionsController < ApplicationController
   # GET /collections
   # GET /collections.json
   def index
-    @collections =Collection.all
+    @collections = Collection.all
     respond_with(@collections)
   end
 
@@ -60,14 +60,14 @@ class CollectionsController < ApplicationController
   # DELETE /collections/1.json
   def destroy
     authorize! :destroy, params[:id]
-    @collection =Collection.find(params[:id])
+    @collection = Collection.find(params[:id])
     @collection.destroy
     respond_to do |format|
       format.html { redirect_to collections_url, notice: 'Collection was successfully deleted.' }
     end
   end
 
-   def blank_to_nil_params
+  def blank_to_nil_params
     params[:collection].merge!(params[:collection]){|k, v| v.blank? ? nil : v.is_a?(Array) ? v.reject{|c| c.empty? } : v}
   end
 

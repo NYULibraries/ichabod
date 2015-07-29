@@ -24,7 +24,7 @@ describe CollectionsController do
   describe "GET show" do
     let(:collection) { create(:collection) }
     before { get :show, id: collection }
-    it 'should retieve specific collection record' do
+    it 'should retrieve specific collection record' do
       expect(assigns(:collection).id).to eq collection.id
     end
   end
