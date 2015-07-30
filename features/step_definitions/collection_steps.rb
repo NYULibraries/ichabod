@@ -6,7 +6,7 @@ Given(/^the collection "(.*?)" exists$/) do |title|
    @collection = FactoryGirl.create(:collection, title: title)
 end
 
-Given(/^I am on the "Edit Collection" form for "(.*?)"$/) do
+Given(/^I am on the Edit Collection form$/) do
    visit edit_collection_path(@collection)
 end
 
