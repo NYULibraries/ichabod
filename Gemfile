@@ -13,7 +13,7 @@ gem 'therubyracer', '~> 0.12.0', platforms: :ruby
 gem 'jquery-rails', '~> 3.1.3'
 gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'jbuilder', '~> 2.1.3'
-gem 'sprockets', '~> 2.12.3'
+#gem 'sprockets', '~> 2.12.3'
 #gem 'oai','~> 0.3.1'
 gem 'oai', github: 'code4lib/ruby-oai', branch: 'master'
 gem 'mustache', '0.99.4'
