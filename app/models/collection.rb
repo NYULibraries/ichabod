@@ -1,6 +1,5 @@
 class Collection < ActiveFedora::Base
-   include Hydra::AccessControls::Permissions
-   #require 'active_fedora/noid'
+  include Hydra::AccessControls::Permissions
 
   DESCRIPTIVE_FIELDS = {
     :multiple => [ :creator, :publisher ],
@@ -22,16 +21,16 @@ class Collection < ActiveFedora::Base
   administrative_metadata = 'administrative_metadata'
 
   def self.assign_pid(_)
-   "#{NOID_PREFIX}:#{SecureRandom.uuid}"
+    "#{NOID_PREFIX}:#{SecureRandom.uuid}"
   end
 
 
-    has_metadata descriptive_metadata, type: Ichabod::NyucoreDatastream
-    has_attributes(*DESCRIPTIVE_FIELDS[:single], datastream: descriptive_metadata , multiple: false)
-    has_attributes(*MULTIPLE_FIELDS, datastream: descriptive_metadata , multiple: true)
+  has_metadata descriptive_metadata, type: Ichabod::NyucoreDatastream
+  has_attributes(*DESCRIPTIVE_FIELDS[:single], datastream: descriptive_metadata , multiple: false)
+  has_attributes(*MULTIPLE_FIELDS, datastream: descriptive_metadata , multiple: true)
 
-    has_metadata administrative_metadata, type: Ichabod::AdministrativeDatastream
-    has_attributes(*ADMIN_FIELDS, datastream: administrative_metadata, multiple: false)
+  has_metadata administrative_metadata, type: Ichabod::AdministrativeDatastream
+  has_attributes(*ADMIN_FIELDS, datastream: administrative_metadata, multiple: false)
 
 
 end
