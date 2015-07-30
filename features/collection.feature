@@ -29,7 +29,7 @@ Feature: Add, edit and delete collections
  Scenario: Editing a record
     Given I am logged in as an admin
     And the collection "Audio Collection" exists
-    And I am on the "Edit Collection" form for "Audio Collection"
+    And I am on the Edit Collection form
     When I enter the fields:
       | Collection Name        | The Underground Soviet Rock |
     And I click on "Update Collection"
@@ -41,7 +41,7 @@ Feature: Add, edit and delete collections
   Scenario: Editing a collection with multiple values in all multiple fields
     Given I am logged in as an admin
     And the collection "Collection of Old Videos" exists
-    And I am on the "Edit Collection" form for "Collection of Old Videos"
+    And I am on the Edit Collection form
     When I enter the fields:
       | collection_creator   | Video Owners |
       | collection_publisher   | Video Archive |
