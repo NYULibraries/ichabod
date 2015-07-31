@@ -186,6 +186,21 @@ module Ichabod
           end
         end
       end
+      describe '#get_records_by_prefix' do
+        before { Base.prefix= prefix  }
+        subject { base.get_records_by_prefix }
+        it 'should assign the @resources instance variable' do
+          expect(base.instance_variable_get(:@resources)).to be_nil
+          subject
+          expect(base.instance_variable_get(:@resources)).not_to be_nil
+        end
+        context 'when there is no prefix configured' do
+          before { Base.prefix = nil  }
+          it 'should raise a RuntimeError' do
+            expect { subject }.to raise_error RuntimeError
+          end
+        end
+      end
       describe '#load' do
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
         after { Base.instance_variable_set(:@source_reader, nil) }
@@ -197,12 +212,11 @@ module Ichabod
           subject.each do |nyucore|
             expect(nyucore).to be_an Nyucore
             expect(nyucore).to be_persisted
-            expect(nyucore).not_to be_new
+            expect(nyucore).not_to be_new_record
             expect(nyucore.resource_set).to eq 'base'
           end
         end
         context 'when there are no editors' do
-          before { base.delete }
           before { Base.instance_variable_set(:@editors, original_editors)}
           it 'should return an array of Nyucores with no edit groups' do
             subject.each do |nyucore|
@@ -210,8 +224,7 @@ module Ichabod
             end
           end
         end
-         context 'when there are no restrictions' do
-          before { base.delete }
+        context 'when there are no restrictions' do
           before { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
           it 'should return an array of Nyucores with no restrictions' do
             subject.each do |nyucore|
@@ -262,8 +275,8 @@ module Ichabod
             expect(nyucore).to be_destroyed
           end
         end
-        context 'when there is no source reader configured' do
-          before { Base.instance_variable_set(:@source_reader, nil) }
+        context 'when there is no prefix configured' do
+          before { Base.prefix = nil  }
           before { base.instance_variable_set(:@resources, nil) }
           it 'should raise a RuntimeError' do
             expect { subject }.to raise_error RuntimeError

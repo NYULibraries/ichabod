@@ -148,16 +148,28 @@ module Ichabod
           end
         end.compact
       end
+      def get_records_by_prefix
+        raise_runtime_error_if_no_prefix_specified
+        prefix = self.class.prefix
+        @resources = Nyucore.where("id:#{prefix}*")
+        @resources.reject! do |r|
+          r.pid !~ /^#{prefix}:.*/
+        end
+      end
 
       def delete
-        read_from_source if resources.empty?
+        get_records_by_prefix if resources.empty?
         resources.collect do |resource|
-          unless resource.is_a?(Resource)
-            raise RuntimeError.new("Expecting #{resource} to be a Resource")
+          if resource.is_a?(Resource)
+            nyucore = Nyucore.find(pid: resource.pid).first
+            nyucore.destroy if nyucore
+            nyucore
+          elsif resource.is_a?(Nyucore)
+            resource.destroy 
+            resource
+          else
+            raise RuntimeError.new("Expecting #{resource} to be of type Nyucore or Resource")
           end
-          nyucore = Nyucore.find(pid: resource.pid).first
-          nyucore.destroy if nyucore
-          nyucore
         end
       end
 
@@ -200,6 +212,11 @@ module Ichabod
           before_loads.collect do |before_load|
             method(before_load)
           end
+        end
+      end
+      def raise_runtime_error_if_no_prefix_specified
+        if self.class.prefix.blank?
+          raise RuntimeError.new("No prefix has been specified for the class #{self.class.name}")
         end
       end
 
