@@ -119,6 +119,9 @@ namespace :ingest do
   task :load_lib_guides do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['lib_guides','./ingest/libguides.xml']"
   end
+  task :load_service_data do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['faculty_digital_archive_service_data','./ingest/2451-33611.csv']"
+  end
   task :delete_sdr do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['spatial_data_repository','./ingest/sdr.xml']"
   end
@@ -127,6 +130,9 @@ namespace :ingest do
   end
   task :delete_lib_guides do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['lib_guides','./ingest/libguides.xml']"
+  end
+  task :delete_service_data do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive_service_data','./ingest/2451-33611.csv']"
   end
 end
 
