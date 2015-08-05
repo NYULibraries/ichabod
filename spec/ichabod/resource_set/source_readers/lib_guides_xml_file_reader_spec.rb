@@ -4,8 +4,10 @@ module Ichabod
     module SourceReaders
       describe LibGuidesXmlFileReader do
         let(:lib_guides_xml_filename) { './spec/fixtures/sample_libguides.xml' }
+        let(:collection_code) { 'libguides' }
         let(:resource_set) { mock_resource_set }
         before do
+          allow(resource_set).to receive(:collection_code) { collection_code }
           allow(resource_set).to receive(:filename) { lib_guides_xml_filename }
         end
         subject(:reader) { LibGuidesXmlFileReader.new(resource_set) }
