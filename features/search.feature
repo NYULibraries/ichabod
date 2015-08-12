@@ -57,7 +57,7 @@ Feature: Perform a basic search
   Scenario: Search for Asian NGO report title and limit by "Format"
     Given I am on the default search page
     When I search on the phrase "Hijras"
-    And I limit my results to "Technical Report" under the "Format" category
+    And I limit my results to "Report" under the "Format" category
     Then I should see search results
 
   Scenario: Search for Archive of Contemporary Composers Websites title
@@ -83,7 +83,7 @@ Feature: Perform a basic search
     When I navigate to details display of the first result
     Then I should see the value "9780814712917" in the "ISBN:" field
 
-  Scenario: Search for The Service Data Collection title
+  Scenario: Search for The Data Services Collection title
     Given I am on the default search page
     When I search on the phrase "Gallup GPSS"
     Then I should see search results

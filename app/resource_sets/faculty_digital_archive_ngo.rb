@@ -29,6 +29,6 @@ class FacultyDigitalArchiveNgo < Ichabod::ResourceSet::Base
 
   def set_type(*args)
     resource,nyucore = *args
-    nyucore.type="Technical Report"
+    nyucore.type="Report"
   end
 end

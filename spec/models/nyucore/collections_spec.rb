@@ -71,7 +71,7 @@ describe Nyucore::Collections do
       it { should eql ['Voices of the Food Revolution'] }
     end
     context "when object is FDA NGO resource set" do
-      let(:type) { ['Technical Report'] }
+      let(:type) { ['Report'] }
       let(:publisher) { nil }
       let(:resource_set) { ['faculty_digital_archive_ngo'] }
       it { should eql ['Asian NGOs Reports'] }
@@ -89,10 +89,10 @@ describe Nyucore::Collections do
       it { should eql ['NYU Press Open Access Books'] }
     end
     context "when object is FDA Data Service resource set" do
-      let(:type) { ['Technical Report'] }
+      let(:type) { ['DataSet'] }
       let(:publisher) { nil }
       let(:resource_set) { ['faculty_digital_archive_service_data'] }
-      it { should eql ['Service Data Collection'] }
+      it { should eql ['Data Services'] }
     end
     context "when object is from the Research Guides resource set" do
       let(:type) { ['Research Guide'] }
