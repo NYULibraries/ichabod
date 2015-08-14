@@ -87,3 +87,8 @@ Feature: Perform a basic search
     Given I am on the default search page
     When I search on the phrase "Gallup GPSS"
     Then I should see search results
+
+  Scenario: Search for The Indian Ocean Collection title
+    Given I am on the default search page
+    When I search on the phrase "VII Battaglione Eritreo"
+    Then I should see search results
