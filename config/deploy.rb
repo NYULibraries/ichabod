@@ -122,6 +122,9 @@ namespace :ingest do
   task :load_service_data do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['faculty_digital_archive_service_data','./ingest/2451-33611.csv']"
   end
+  task :load_io_data do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['indian_ocean_data','./ingest/IndianOcean_descMD_v01.csv']"
+  end
   task :delete_sdr do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:nyucore:delete['sdr:*']"
   end
@@ -133,6 +136,9 @@ namespace :ingest do
   end
   task :delete_service_data do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive_service_data','./ingest/2451-33611.csv']"
+  end
+  task :delete_io_data do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['indian_ocean_data','./ingest/IndianOcean_descMD_v01.csv']"
   end
 end
 
