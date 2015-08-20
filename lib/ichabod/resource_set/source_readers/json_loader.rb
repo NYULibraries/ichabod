@@ -6,12 +6,29 @@ module Ichabod
       require 'multi_json'    
      
         def read
-          endpoint_connection
+          entities
+          binding.pry
         end
 
         private
         extend Forwardable
-        def_delegators :resource_set, :endpoint_url, :collection_code, :datasource_params, :authentication
+        def_delegators :resource_set, :endpoint_url, :rsp_field, :each_rec_field, :datasource_params, :authentication
+
+        def entities
+          @entities ||= datasource_response[each_rec_field]
+        end  
+
+        def datasource_response
+          @datasource_response ||= datasource_json[rsp_field]
+        end
+
+        def datasource_json
+          @datasource_json ||= MultiJson.load(datasource.body)
+        end
+
+        def datasource
+          @datasource ||= endpoint_connection.get(endpoint_url)
+        end
 
         def auth
           { user: authentication[0], password: authentication[1]} if authentication
