@@ -19,14 +19,12 @@ module Ichabod
           hsh = {}
           hsh[:prefix] = resource_set.prefix
           set_data_map.each_pair { |k,v|
-            hsh[k] = entity[parse_data_map(v)] 
-                binding.pry if k =~ /type/
+            hsh[k] = v.is_a?(Array) ? entity[parse_data_map(v)] : v
           }
           hsh
-           binding.pry
         end
         def parse_data_map(map)
-          map.is_a?(Array) ? map[0] : map 
+          map[0] 
         end
         def entities
           @entities ||= datasource_response[each_rec_field]
