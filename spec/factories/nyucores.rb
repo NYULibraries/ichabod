@@ -25,6 +25,7 @@ FactoryGirl.define do
     addinfolink ["http://library.nyu.edu/ask"]
     resource_set 'resource_set'
     restrictions 'NYU Only'
+    genre ["Postcards"]
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
 
     factory :gis_record do
