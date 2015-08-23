@@ -102,6 +102,7 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name('desc_metadata__series', :stored_searchable, type: :string), :label => 'Series'
     config.add_show_field solr_name('desc_metadata__version', :stored_searchable, type: :string), :label => 'Also available as'
     config.add_show_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions'
+    config.add_show_field solr_name('desc_metadata__genre', :stored_searchable, type: :string), :label => 'Genre'
     config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label => 'Online Resource',
                                                                                                     :helper_method => :render_external_links,
                                                                                                     :text          => 'resource_text_display'

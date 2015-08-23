@@ -33,6 +33,7 @@ module Ichabod
             format: dc_attribute_from_record("format",record),
             rights: dc_attribute_from_record("rights",record),
             subject: dc_attribute_from_record("subject",record),
+            genre: dc_attribute_from_record("genre",record),
           }
         end
 
