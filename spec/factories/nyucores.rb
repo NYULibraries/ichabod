@@ -33,6 +33,7 @@ FactoryGirl.define do
     location ["Box: 2, Folder: 3"]
     contributor ["C1"]
     discoverable ["Y"]
+    genre ["Postcards"]
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
 
     factory :gis_record do

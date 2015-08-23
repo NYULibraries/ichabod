@@ -10,10 +10,10 @@ describe Nyucore do
   describe Nyucore::MULTIPLE_FIELDS do
     subject { Nyucore::MULTIPLE_FIELDS}
     it { should =~ [:available, :citation, :title, :creator,
-        :type, :publisher, :description, :edition, :date, :format, :language,
-        :relation, :rights, :subject, :series, :version, :contributor, 
-        :addinfolink, :addinfotext, :data_provider, :discoverable, :geometry, 
-        :isbn, :location, :subject_spatial, :subject_temporal] }
+                    :type, :publisher, :description, :edition, :date, :format, :language,
+                    :relation, :rights, :subject, :series, :version, :contributor,
+                    :addinfolink, :addinfotext, :data_provider, :discoverable, :geometry,
+                    :isbn, :location, :subject_spatial, :subject_temporal, :genre] }
   end
 
   subject(:nyucore) { build(:nyucore) }
