@@ -28,10 +28,10 @@ class IndianOceanData < Ichabod::ResourceSet::Base
 
   def set_header_map
     { 
-      identifier: [ "handle" ], title: [ "title" ], creator: [ "creator" ], contributor: [ "contributor" ],
-      publisher: [ "publisher", "publisher Location" ], type: [ "genre" ],
-      description: ["description" ], date: [ "date" ],
-      format: [ "typeofresource" ], subject: [ "subject","tags","geographic_location" ]
+      identifier: ["handle"], title: ["title"], creator: ["creator"], contributor: ["contributor"],
+      publisher: ["publisher", "publisher Location"], type: ["typeofresource"],
+      description: ["description" ], date: ["date"], genre: ["genre"],
+      subject: ["subject","tags","geographic_location"]
     }
   end
 end
