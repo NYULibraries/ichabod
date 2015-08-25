@@ -24,6 +24,8 @@ module Ichabod
           hsh
         end
         def parse_data_map(map)
+          # this works only if for json hashes that have a single value, not
+          # for multi dimensional arrays, i.e. ['metadata']['field_name']['value']
           map[0] 
         end
         def entities
