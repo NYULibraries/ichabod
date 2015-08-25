@@ -11,7 +11,8 @@ class Nyucore < ActiveFedora::Base
       "Archive of Contemporary Composers' Websites" => ->(nyucore){ nyucore.resource_set == 'archive_it_accw' },
       'Asian NGOs Reports' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_ngo'},
       'NYU Press Open Access Books' => ->(nyucore){ nyucore.resource_set == 'nyu_press_open_access_book' },
-      'Data Services' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_service_data' }
+      'Data Services' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_service_data' },
+      'Test Json' => ->(nyucore){ nyucore.resource_set == 'test_json_data' }
     }
 
     attr_reader :nyucore
