@@ -7,7 +7,7 @@ gem 'mysql2', '~> 0.3.15'
 
 gem 'sass-rails',   '5.0.0.beta1'
 gem 'compass-rails', '~> 2.0.0'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '~> 2.7.2'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', '~> 0.12.0', platforms: :ruby
 gem 'jquery-rails', '~> 3.1.3'
