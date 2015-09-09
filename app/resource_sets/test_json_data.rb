@@ -11,7 +11,7 @@ class TestJsonData < Ichabod::ResourceSet::Base
     #user = args.shift
     #password = args.shift
     start = args.shift || '0'
-    rows = args.shift || '65'
+    rows = args.shift || '100'
     @datasource_params = {start: start, rows: rows, wt: 'json'}
     @rsp_field = 'response'
     @each_rec_field = 'docs'
@@ -40,7 +40,16 @@ class TestJsonData < Ichabod::ResourceSet::Base
  def set_map_masses
   {
     identifier: ['identifier'],
-    available: ['metadata','handle','value']
+    title: ['entity_title'],
+    available: ['metadata','handle','value'],
+    citation: ['metadata','handle','value'],
+    date: ['metadata','publication_date', 'value'],
+    description: ['metadata','description', 'value'],
+    subject: ['metadata','subject', 'value'],
+    creator: ['metadata','editor', 'value'],
+    language: ['metadata','language', 'value'],
+    type: FORMAT,
+    format: FORMAT
 
   }
  end
