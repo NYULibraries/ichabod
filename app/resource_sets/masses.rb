@@ -1,17 +1,38 @@
 class Masses < Ichabod::ResourceSet::Base
   self.prefix = 'masses'
-  self.source_reader = :masses_reader
+  self.source_reader = :json_loader
+  FORMAT = "Book"
 
-  attr_reader :endpoint_url, :resource_format, :resource_type, :start, :rows 
-  alias_method :collection_code, :prefix
+  attr_reader :endpoint_url, :datasource_params, :authentication, :rsp_field, :each_rec_field, :set_data_map
+
 
   def initialize(*args)
     @endpoint_url = args.shift
-    @resource_format = "Book"
-    @resource_type = "Book"
-    @start = args.shift || 0
-    @rows = args.shift || 100
+    start = args.shift || 0
+    rows = args.shift || 100
+    @datasource_params = {start: start, rows: rows, wt: 'json'}
+    @rsp_field = 'response'
+    @each_rec_field = 'docs'
+    @set_data_map = set_map_masses
     super
   end
+
+  private
+  def set_map_masses
+  {
+    identifier: ['identifier'],
+    title: ['entity_title'],
+    available: ['metadata','handle','value'],
+    citation: ['metadata','handle','value'],
+    date: ['metadata','publication_date', 'value'],
+    description: ['metadata','description', 'value'],
+    subject: ['metadata','subject', 'value'],
+    creator: ['metadata','editor', 'value'],
+    language: ['metadata','language', 'value'],
+    type: FORMAT,
+    format: FORMAT
+
+  }
+ end
 
 end
