@@ -19,15 +19,40 @@ module Ichabod
           hsh = {}
           hsh[:prefix] = resource_set.prefix
           set_data_map.each_pair { |k,v|
-            hsh[k] = v.is_a?(Array) ? entity[parse_data_map(v)] : v
+            #hsh[k] = v.is_a?(Array) ? entity[parse_data_map(v)] : v
+            hsh[k] = v.is_a?(Array) ? parse_data_map(entity,v) : v
           }
           hsh
+                    binding.pry
         end
-        def parse_data_map(map)
+        def parse_data_map(entity,map)
           # this works only if for json hashes that have a single value, not
           # for multi dimensional arrays, i.e. ['metadata']['field_name']['value']
-          map[0] 
+
+            value = entity[map[0]]
+            if map.size == 1
+               #binding.pry
+               value
+            else
+              map_arr = map.drop(1)
+              index = 0
+              recurse_through_hash(value,map_arr)
+            end
         end
+
+        def recurse_through_hash(rsp_hsh,map_arr)
+          new_map_key = map_arr.first
+          if rsp_hsh.is_a?(Hash) and rsp_hsh.has_key?(new_map_key)
+            rsp_hsh = rsp_hsh[new_map_key]
+            map_arr = map_arr.drop(1)
+            recurse_through_hash(rsp_hsh,map_arr)
+          else
+            rsp_hsh.is_a?(Array) ? rsp_hsh[0] : rsp_hsh
+          end
+
+
+        end
+
         def entities
           @entities ||= datasource_response[each_rec_field]
         end  

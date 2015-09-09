@@ -16,7 +16,7 @@ class TestJsonData < Ichabod::ResourceSet::Base
     @rsp_field = 'response'
     @each_rec_field = 'docs'
     #@authentication = [user,password]
-    @set_data_map = set_map_nyu_press
+    @set_data_map = set_map_masses
     super
   end
 
@@ -37,5 +37,12 @@ class TestJsonData < Ichabod::ResourceSet::Base
     }
  end
 
+ def set_map_masses
+  {
+    identifier: ['identifier'],
+    available: ['metadata','handle','value']
+
+  }
+ end
 
 end
