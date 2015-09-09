@@ -4,12 +4,12 @@ class ArchiveItAccw < Ichabod::ResourceSet::Base
   self.source_reader = :archive_it_accw_reader
   editor :afc_group
 
-  attr_reader :endpoint_url, :path
-  alias_method :collection_code, :prefix
+  attr_reader :resource_set, :endpoint_url, :path, :datasource_params, :authentication
 
   def initialize(*args)
-    @endpoint_url = args.shift
+    url = args.shift
     @path         = args.shift || '/collections/4049.json'
+    @endpoint_url = url + path
     super
   end
 end

@@ -16,14 +16,20 @@ module Ichabod
         def_delegators :resource_set, :endpoint_url, :rsp_field, :each_rec_field, :datasource_params, :authentication, :set_data_map
 
         def resource_attributes_from_entities(entity)
+          # populating hash which will eventually become an nyucore object
           hsh = {}
           hsh[:prefix] = resource_set.prefix
+          
+          # set data map is the map of keys that
+          # contain values relevant to the records
+          # being ingested
           set_data_map.each_pair { |k,v|
             hsh[k] = v.is_a?(Array) ? parse_data_map(entity,v) : v
           }
           hsh
         end
 
+        # parse response hash with keys specified in map array
         def parse_data_map(entity,map)
             value = entity[map[0]]
             # if array that contains mapping value
@@ -73,15 +79,16 @@ module Ichabod
           @datasource ||= endpoint_connection.get(endpoint_url)
         end
 
+        # hash of user and password to pass on to endpoint connection
         def auth
-          { user: authentication[0], password: authentication[1]} if authentication
+          { user: authentication[0], password: authentication[1]} unless authentication.blank?
         end
 
         # Use Faraday to connect to the collection's JSON API
         def endpoint_connection
           @endpoint_connection ||= Faraday.new(url: endpoint_url) do |faraday|
-            faraday.request :basic_auth, auth[:user], auth[:password] if authentication
-            faraday.params = datasource_params if datasource_params
+            faraday.request :basic_auth, auth[:user], auth[:password] unless authentication.blank?
+            faraday.params = datasource_params unless datasource_params.blank?
             faraday.adapter :net_http
           end
         end
