@@ -36,9 +36,23 @@ module Ichabod
             # only has one element
             if map.size == 1
                value
-            # otherwise recurse through nested hash
             else
+              # otherwise recurse through nested hash
+              # sometimes the json response is like this:
+              # {response: docs[ {metadata: {identifier: {label: "Identifier", value:"id1"}}}]}
+              # and the value needed  from the response hash is response_hash['metadata']['identifier']['value']
+              # The data map being sent(map is the argument name in the method)
+              # is an array of fields listed in order to get the value, 
+              # i.e. ['metadata','identifier','value']
+              # so, this code is assigning the map array to the first level of the nested hash
+              # response_hsh['metadata'] which gives us {identifier: {label: "Identifier", value:"id1"}}
+              # The method recurse_through_hash processes the rest of the hash until it gets the value
+
+              # assigning first level of the nested hash
               map_arr = map.drop(1)
+              
+              # sending the first level of nested hash to the method
+              # to get the value
               recurse_through_hash(value,map_arr)
             end
         end
@@ -48,14 +62,18 @@ module Ichabod
           # contains mapping
           new_map_key = map_arr.first
           if rsp_hsh.is_a?(Hash) and rsp_hsh.has_key?(new_map_key)
+
             # re-assign response hash to required hash with the key
             # which is a nested hash
             rsp_hsh = rsp_hsh[new_map_key]
+
             # drop the now unnecessary key in the mapping array
             map_arr = map_arr.drop(1)
+
             # recurse with new arguments
             recurse_through_hash(rsp_hsh,map_arr)
           else
+
             # sometimes get a value as an array instead of just the value
             rsp_hsh.is_a?(Array) ? rsp_hsh[0] : rsp_hsh
           end
