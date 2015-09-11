@@ -7,7 +7,7 @@ gem 'mysql2', '~> 0.3.15'
 
 gem 'sass-rails',   '5.0.0.beta1'
 gem 'compass-rails', '~> 2.0.0'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '~> 2.7.2'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', '~> 0.12.0', platforms: :ruby
 gem 'jquery-rails', '~> 3.1.3'
@@ -41,6 +41,7 @@ gem 'iso-639'
 gem 'faraday', '~> 0.9.0'
 gem 'multi_json', '~> 1.11.1'
 gem 'multi_xml', '~> 0.5.5'
+gem 'smarter_csv', '~> 1.0.19'
 
 group :development do
   gem 'better_errors', '~> 2.0.0'

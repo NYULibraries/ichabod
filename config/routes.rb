@@ -2,6 +2,7 @@ Ichabod::Application.routes.draw do
   resources :nyucores
 
   root :to => "catalog#index"
+  get 'about', :to => "catalog#index"
   Blacklight.add_routes(self)
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

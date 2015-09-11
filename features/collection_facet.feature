@@ -36,7 +36,19 @@ Feature: Collection facet
     When I filter my search to "Archive of Contemporary Composers' Websites" under the "Collection" category
     Then I should see search results
 
+  @wip
   Scenario: Filter by The Masses
     Given I am on the default search page
     When I filter my search to "The Masses" under the "Collection" category
+    Then I should see search results
+
+  Scenario: Filter by The Data Services Collection
+    Given I am on the default search page
+    When I filter my search to "Data Services" under the "Collection" category
+    Then I should see search results
+
+  @wip
+  Scenario: Filter by Research Guides
+    Given I am on the default search page
+    When I filter my search to "Research Guides" under the "Collection" category
     Then I should see search results

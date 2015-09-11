@@ -2,7 +2,11 @@
 
       <% unless has_search_parameters? %>
         <%# if there are no input/search related params, display the "home" partial -%>
-        <%= render 'home' %>
+        <% if request.path.include?('about') %>
+           <%= render :partial => 'about' %>
+        <% else %>
+           <%= render 'home' %>
+        <% end %>
       <% else %>
 
       <h2 class="hide-text top-content-title"><%= t('blacklight.search.search_results_header') %></h2>
