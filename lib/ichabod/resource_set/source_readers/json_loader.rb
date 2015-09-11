@@ -31,6 +31,7 @@ module Ichabod
 
         # parse response hash with keys specified in map array
         def parse_data_map(entity,map)
+            # getting value of entity and the first element in the map array
             value = entity[map[0]]
             # if array that contains mapping value
             # only has one element
@@ -39,18 +40,20 @@ module Ichabod
             else
               # otherwise recurse through nested hash
               # sometimes the json response is like this:
-              # {response: docs[ {metadata: {identifier: {label: "Identifier", value:"id1"}}}]}
+              # response_hash = {response: docs[ {metadata: {identifier: {label: "Identifier", value:"id1"}}}]}
               # and the value needed  from the response hash is response_hash['metadata']['identifier']['value']
               # The data map being sent(map is the argument name in the method)
               # is an array of fields listed in order to get the value, 
-              # i.e. ['metadata','identifier','value']
+              # i.e. map = ['metadata','identifier','value']
               # so, this code is assigning the map array to the first level of the nested hash
               # response_hsh['metadata'] which gives us {identifier: {label: "Identifier", value:"id1"}}
               # The method recurse_through_hash processes the rest of the hash until it gets the value
-
-              # assigning first level of the nested hash
+              #
+              # dropping the first element of map since 
+              # it was already used to the var "value"
+              #
               map_arr = map.drop(1)
-              
+
               # sending the first level of nested hash to the method
               # to get the value
               recurse_through_hash(value,map_arr)
