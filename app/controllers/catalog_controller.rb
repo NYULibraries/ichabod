@@ -23,7 +23,12 @@ class CatalogController < ApplicationController
     config.index.title_field = 'desc_metadata__title_tesim'
     config.index.display_type_field = 'has_model_ssim'
 
-
+    # Thumbnails in results display
+    # https://github.com/projectblacklight/blacklight/wiki/Blacklight-configuration
+    config.index.thumbnail_field = :desc_metadata__thumbnail_tesim
+    
+    # config.index.thumbnail_field = 'desc_metadata__thumbnail_tesim'
+    
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
     #
@@ -78,6 +83,7 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name('desc_metadata__id', :stored_searchable, type: :string), :label => 'Online Resource',
                                                                                                     :helper_method => :render_external_link,
                                                                                                     :text          => 'resource_text_display'
+                                                                                                       
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     config.add_show_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title'
@@ -130,7 +136,6 @@ class CatalogController < ApplicationController
 
     config.add_search_field 'all_fields', :label => 'All Fields'
 
-
     # Now we see how to over-ride Solr request handler defaults, in this
     # case for a BL "search field", which is really a dismax aggregate
     # of Solr search fields.
@@ -178,10 +183,9 @@ class CatalogController < ApplicationController
     config.spell_max = 5
 
     #define what parials will be used to display each solr document
-    config.index.partials = ['index_header','index','action_buttons']
-    config.show.partials = ['show_header','show','action_buttons']
+    config.index.partials = ['index_header', 'thumbnail', 'index','action_buttons']
+    config.show.partials = ['show_header', 'show','action_buttons']
 
   end
-
 
 end

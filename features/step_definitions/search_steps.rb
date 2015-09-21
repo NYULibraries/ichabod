@@ -33,6 +33,10 @@ Then(/^I get a dataset with the title "(.*?)"$/) do |title|
   expect(documents_list_container).to have_link(title)
 end
 
+Then (/^I should see the image "(.+)"$/) do |image|
+  expect(page).to have_xpath("//img[contains(@src, \"#{image}\")]")
+end
+
 ##
 # Faceting steps
 Given(/^I (limit|filter) my search to "(.*?)" under the "(.*?)" category$/) do |a, facet, category|
@@ -51,3 +55,4 @@ And(/^I should see a "(.*?)" facet under the "(.*?)" category$/) do |facet, cate
     expect(page.find(:xpath, "//a[text()='#{facet}']")).to have_content
   end
 end
+
