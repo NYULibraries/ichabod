@@ -4,7 +4,7 @@ class Nyucore < ActiveFedora::Base
     :multiple => [:available, :citation, :title, :creator, :type, :publisher,
                   :description, :edition, :date, :format, :language, :relation,
                   :rights, :subject, :series, :version],
-    :single => [:identifier, :restrictions]
+    :single => [:identifier, :restrictions, :thumbnail]
   }
   EXTRA_SINGLES = [:resource_set]
   EXTRA_MULTIPLES = [:addinfolink, :addinfotext, :isbn]
