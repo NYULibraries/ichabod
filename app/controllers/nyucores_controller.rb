@@ -14,8 +14,9 @@ class NyucoresController < ApplicationController
   end
 
   def show
-    authorize! :show, params[:id]
+    #authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
+    authorize_collection
     respond_with(@item)
   end
 
@@ -74,6 +75,8 @@ class NyucoresController < ApplicationController
     @item.set_edit_groups(["admin_group"],[]) if @item.edit_groups.blank?
   end
 
+
+
   # Convert blank values to nil values in params
   # in order to not save empty array values when field is not nil but is an empty string (i.e. "")
   # Added the reject statement to get rid of blank values for array params
@@ -105,14 +108,23 @@ class NyucoresController < ApplicationController
     end
  end
  
-  #If parameters needed to calculate the landing page are not defined- return to the search results page
-  def page_parameters_defined?
+ #If parameters needed to calculate the landing page are not defined- return to the search results page
+ def page_parameters_defined?
    if params[:document_counter].nil? || current_per_page==0
         @query_params[:page]=1
         logger.warn "document_counter or current_per_page parameters are not defined, return to the first search page"
         false
-    else
+   else
         true
-    end
-  end
+   end
+ end
+
+ def authorize_collection 
+   if(@item.pid.include?('io'))
+     if current_user.nil?||!(current_user.groups.include?('io_cataloger')||current_user.groups.include?('admin_group'))
+       raise CanCan::AccessDenied.new('You are not authorized to view this item')
+     end
+   end
+ end
+
 end

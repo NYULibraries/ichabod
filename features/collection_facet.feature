@@ -41,7 +41,6 @@ Feature: Collection facet
     When I filter my search to "Data Services" under the "Collection" category
     Then I should see search results
 
-
   Scenario: Filter by Indian Ocean Collection
     Given I am on the default search page
     When I filter my search to "Indian Ocean Collection" under the "Collection" category
