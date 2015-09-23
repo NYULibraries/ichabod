@@ -38,4 +38,10 @@ module NyucoresHelper
   def field_id(field, index = nil)
     "nyucore_#{field}#{format_field_index(@item.native_metadata.send(field), index)}"
   end
+
+  def authorize_collection
+    if !user_groups.include?('admin_group') || !user_groups.include?('io_cataloger')
+      raise CanCan::AccessDenied.new("Not authorized kozel!")
+    end
+  end
 end
