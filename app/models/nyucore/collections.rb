@@ -11,7 +11,7 @@ class Nyucore < ActiveFedora::Base
       'South Asian NGO and other reports' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_ngo'},
       'NYU Press Open Access Books' => ->(nyucore){ nyucore.resource_set == 'nyu_press_open_access_book' },
       'Data Services' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_service_data' },
-      'The Masses' => ->(nyucore){ nyucore.resource_set == 'masses' }
+      'The Masses' => ->(nyucore){ nyucore.resource_set == 'masses' },
       'Indian Ocean Postcards' => ->(nyucore){ nyucore.resource_set == 'indian_ocean_data' }
     }
 
