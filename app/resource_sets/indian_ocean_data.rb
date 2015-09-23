@@ -1,7 +1,7 @@
 class IndianOceanData < Ichabod::ResourceSet::Base
   self.prefix = 'io'
   self.source_reader = :csv_file_reader
-  editor :io_cataloger 
+  editor :io_cataloger
   before_load :set_available_or_citation, :set_title_for_untitled
 
   attr_reader :resource_set, :file_path, :header_map, :csv_reader_options
@@ -21,8 +21,8 @@ class IndianOceanData < Ichabod::ResourceSet::Base
 
   def set_title_for_untitled(*args)
     resource, nyucore = *args
-    if nyucore.title.nil?
-      nyucore.source_metadata.title = 'Untitled'
+    if nyucore.title.blank?
+      nyucore.native_metadata.title = 'Untitled'
     end
   end
 

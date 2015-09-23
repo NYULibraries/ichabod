@@ -5,16 +5,16 @@ class CatalogController < ApplicationController
 
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
-  # These before_filters apply the hydra access controls
-  # before_filter :enforce_show_permissions, :only=>:show
-  # This applies appropriate access controls to all solr queries
-  # CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
-
+ 
+  #add check for descoverability on collection level
+  #(see https://github.com/projectblacklight/blacklight/wiki/Extending-or-Modifying-Blacklight-Search-Behavior)
+  
   configure_blacklight do |config|
     config.default_solr_params = {
       :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__publisher_tesim
                 desc_metadata__type_tesim desc_metadata__description_tesim desc_metadata__series_tesim
-                desc_metadata__creator_tesim desc_metadata__subject_tesim desc_metadata__isbn_tesim',
+                desc_metadata__creator_tesim desc_metadata__subject_tesim desc_metadata__isbn_tesim
+                desc_metadata__genre_tesim',
       :qt => 'search',
       :rows => 10
     }
@@ -54,6 +54,11 @@ class CatalogController < ApplicationController
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
     config.default_solr_params[:'facet.field'] = config.facet_fields.keys
+    #temporary solution will be replaced by collection filter in next iteration
+
+    if anybody_signed_in?||!(current_user.groups.include?('io_cataloger')||current_user.groups.include?('admin_group'))
+     config.default_solr_params[:'fq'] = ['-collection_sim:Indian*']
+    end
     #use this instead if you don't want to query facets marked :show=>false
     #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
 
@@ -183,6 +188,5 @@ class CatalogController < ApplicationController
     config.show.partials = ['show_header','show','action_buttons']
 
   end
-
 
 end
