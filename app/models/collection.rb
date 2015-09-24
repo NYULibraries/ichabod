@@ -11,7 +11,7 @@ class Collection < ActiveFedora::Base
   MULTIPLE_FIELDS = DESCRIPTIVE_FIELDS[ :multiple ]
   FIELDS=SINGLE_FIELDS+MULTIPLE_FIELDS+ ADMIN_FIELDS
   REQUIRED_FIELDS = [ :title, :discoverable ]
-  NOID_PREFIX="ichabodcollection"
+  ID_PREFIX="ichabodcollection"
 
 
   validates :title, presence: true
@@ -21,7 +21,7 @@ class Collection < ActiveFedora::Base
   administrative_metadata = 'administrative_metadata'
 
   def self.assign_pid(_)
-    "#{NOID_PREFIX}:#{SecureRandom.uuid}"
+    "#{ID_PREFIX}:#{SecureRandom.uuid}"
   end
 
 

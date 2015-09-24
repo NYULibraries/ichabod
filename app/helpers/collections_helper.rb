@@ -25,7 +25,6 @@ module CollectionsHelper
      @required_fields ||= Collection::REQUIRED_FIELDS
   end
 
-
   def get_boolean(value)
       (value.blank?||value=='1') ? true:false
   end
@@ -39,4 +38,3 @@ module CollectionsHelper
   end
 
 end
-

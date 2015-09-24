@@ -42,8 +42,6 @@ Feature: Collection facet
     Given I am on the default search page
     When I filter my search to "The Masses" under the "Collection" category
     Then I should see search results
-<<<<<<< HEAD
-
 
  @wip
   Scenario: Filter by The Data Service Collection
