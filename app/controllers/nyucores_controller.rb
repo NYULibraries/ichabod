@@ -1,3 +1,4 @@
+
 class NyucoresController < ApplicationController
   #needed to get current_per_page value for destroy method redirect
   include Blacklight::CatalogHelperBehavior
@@ -116,6 +117,7 @@ class NyucoresController < ApplicationController
    end
  end
 
+ #temporary solution will be replaced when collection model is completed
  def authorize_collection 
    if(@item.pid.include?('io'))
      if current_user.nil?||!(current_user.groups.include?('io_cataloger')||current_user.groups.include?('admin_group'))
