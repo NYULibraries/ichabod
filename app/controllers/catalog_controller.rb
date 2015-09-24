@@ -2,12 +2,15 @@
 require 'blacklight/catalog'
 
 class CatalogController < ApplicationController
-
+  
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
- 
+  
   #add check for descoverability on collection level
   #(see https://github.com/projectblacklight/blacklight/wiki/Extending-or-Modifying-Blacklight-Search-Behavior)
+  #as we are currently using older version of Blacklight additional method couldn't be placed to search_builder class
+  #So tempoirary added it to controller itself
+  CatalogController.solr_search_params_logic += [:show_only_discoverable_records]
   
   configure_blacklight do |config|
     config.default_solr_params = {
@@ -54,13 +57,13 @@ class CatalogController < ApplicationController
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
     config.default_solr_params[:'facet.field'] = config.facet_fields.keys
-    #temporary solution will be replaced by collection filter in next iteration
-
-    if anybody_signed_in?||!(current_user.groups.include?('io_cataloger')||current_user.groups.include?('admin_group'))
-     config.default_solr_params[:'fq'] = ['-collection_sim:Indian*']
-    end
     #use this instead if you don't want to query facets marked :show=>false
     #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
+    #temporary solution will be replaced by collection filter in next iteration
+    #Rails.logger.debug("My object: #{current_user}")
+    #if !current_user.nil?#||!(current_user[:groups].include?('io_cataloger')||current_user[:groups].include?('admin_group'))
+     #config.default_solr_params[:'fq'] = ['-collection_sim:Indian*']
+    #end
 
 
     # solr fields to be displayed in the index (search results) view
@@ -193,3 +196,12 @@ class CatalogController < ApplicationController
 
   end
 end
+
+#temporary solution will replace after collection model is completed
+
+   def show_only_discoverable_records solr_params, user_params
+     if  current_user.nil?||!(current_user.groups.include?('io_cataloger')||current_user.groups.include?('admin_group'))
+       solr_params[:fq] ||= []
+       solr_params[:'fq'] << ['-collection_sim:Indian*']
+    end
+  end
