@@ -1,6 +1,6 @@
 class UserSession < Authlogic::Session::Base
 
-  pds_url(ENV['PDS_URL'] || 'https://pdsdev.library.nyu.edu')
+  pds_url (ENV['PDS_URL'] || 'https://pdsdev.library.nyu.edu')
 
   calling_system "hydra"
   anonymous true
