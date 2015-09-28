@@ -17,8 +17,12 @@ class NyucoresController < ApplicationController
   def show
     #authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
-    authorize_collection
-    respond_with(@item)
+    #temporary solution will be replaced when collection object is ready
+    if(@item.pid.include?('io'))&&!authorize_collection
+      raise CanCan::AccessDenied.new('You are not authorized to view this item')
+    else
+      respond_with(@item)
+    end
   end
 
   def new
@@ -114,15 +118,6 @@ class NyucoresController < ApplicationController
         false
    else
         true
-   end
- end
-
- #temporary solution will be replaced when collection model is completed
- def authorize_collection 
-   if(@item.pid.include?('io'))
-     if current_user.nil?||!(current_user.groups.include?('io_cataloger')||current_user.groups.include?('admin_group'))
-       raise CanCan::AccessDenied.new('You are not authorized to view this item')
-     end
    end
  end
 

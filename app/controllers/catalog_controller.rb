@@ -195,9 +195,9 @@ class CatalogController < ApplicationController
 end
 
 #temporary solution will replace after collection model is completed
-
    def show_only_discoverable_records solr_params, user_params
-     if  current_user.nil?||!(current_user.groups.include?('io_cataloger')||current_user.groups.include?('admin_group'))
+     #if  current_user.nil?||!(current_user.groups.include?('io_cataloger')||current_user.groups.include?('admin_group'))
+     if !authorize_collection
        solr_params[:fq] ||= []
        solr_params[:'fq'] << ['-collection_sim:Indian*']
     end
