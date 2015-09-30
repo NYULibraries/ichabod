@@ -26,49 +26,58 @@ module Ichabod
       # its index in the JSON API and then grab the relevant field for that
       # index from the JSON API.
       class RosieTheRiveterReader < ResourceSet::SourceReader
+
         FORMAT = "Video"
+        
         def read
-          response.collect do |interview|
-            ResourceSet::Resource.new(resource_attributes_from_interview(interview))
+          entities.collect do |entity|
+            ResourceSet::Resource.new(resource_attributes_from_entity(entity))
           end
         end
 
         private
         extend Forwardable
-        def_delegators :resource_set, :endpoint_url, :collection_code, :user,
-          :password, :dataset_size
+        def_delegators :resource_set, :endpoint_url, :collection_code, :start,
+          :rows 
 
-        def resource_attributes_from_interview(interview)
+        def resource_attributes_from_entity(entity)
           {
             prefix: resource_set.prefix,
-            identifier: interview['identifier'],
-            title: interview['entity_title'],
-            available: interview_metadata_field_value('handle',interview),
-            citation: interview_metadata_field_value('handle',interview),
-            description: interview_description(interview),
-            type: FORMAT,
+            identifier: entity['identifier'],
+            title: entity['entity_title'],
+            date: entity['created'],
+            description: entity_description(entity),
+            thumbnail: entity_representative_image(entity['representative_image']),
+            available: entity_metadata_field_value('handle', entity),
+            citation: entity_metadata_field_value('handle', entity),
+            subject: entity_metadata_field_value('subject', entity),
+            creator: entity_metadata_field_value('editor', entity),
+            language: entity['language'],
+            type: entity['type'].capitalize,
             format: FORMAT
           }
+          
         end
-        def interview_metadata_field_value(metadata_field_name, response)
-          response['metadata'][metadata_field_name]['value']
-        end     
+        
+        def entity_description(entity)
+          value = entity_metadata_field_value('description', entity)
+          value['safe_value']
+        end
 
-        def interview_description(response)
-          response['metadata']['description']['value']['value']
-        end     
+        def entity_representative_image(representative_image)
+          representative_image['video_lg_thumbnails']
+        end        
+        
+        def entity_metadata_field_value(entity_field_name, entity)
+          if (entity['metadata'][entity_field_name])
+            entity['metadata'][entity_field_name]['value']
+          end
+        end
+                
+        def entities
+          @entities ||= datasource_response['docs']
+        end
 
-        # Only grab the interviews from the returned Solr documents.
-        # A collection level description is included so we want to exclude that.
-        def response
-          @response ||= datasource_response['docs']
-        end
-        # Params to send with the request to the JSON API
-        def datasource_params
-          {
-            rows: dataset_size
-          }
-        end
         def datasource_response
           @datasource_response ||= datasource_json['response']
         end
@@ -76,8 +85,16 @@ module Ichabod
         def datasource_json
           @datasource_json ||= MultiJson.load(datasource.body)
         end
-
-         # Connect to collection JSON API
+        
+        # Params to send with the request to the JSON API
+        def datasource_params
+          {
+            start: start,
+            rows: rows
+          }
+        end
+        
+        # Connect to collection JSON API
         def datasource
           @datasource ||= endpoint_connection.get(endpoint_url)
         end
@@ -85,12 +102,14 @@ module Ichabod
         # Use Faraday to connect to the collection's JSON API
         def endpoint_connection
           @endpoint_connection ||= Faraday.new(url: endpoint_url) do |faraday|
-            faraday.request :basic_auth, user, password
+            faraday.response :logger
             faraday.params = datasource_params
             faraday.adapter :net_http
           end
         end
+        
       end
+
     end
   end
 end
