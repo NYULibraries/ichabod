@@ -91,12 +91,12 @@ module Ichabod
         context 'when the Nyucore does not exist', vcr: {cassette_name: 'resource sets/resource/does not exist'} do
           let(:nyucore) { Nyucore.find(pid: resource.pid).first }
           before { nyucore.destroy if nyucore.present? }
-          it { should be_new }
+          it { should be_new_record }
           it { should_not be_persisted }
         end
         context 'when the Nyucore does exist', vcr: {cassette_name: 'resource sets/resource/exists'} do
           before { resource.to_nyucore.save }
-          it { should_not be_new }
+          it { should_not be_new_record }
           it { should be_persisted }
         end
       end

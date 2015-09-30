@@ -1,0 +1,26 @@
+<h1>Listing Collections</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Collection Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @collections.each do |collection| %>
+      <tr>
+        <td><%= collection.title %></td>
+        <td><%= link_to 'Show', collection%></td>
+        <% if can?(:edit, collection) %><td><%= link_to 'Edit', edit_collection_path(collection) %></td><% end %>
+        <% if can?(:destroy, collection) %><td><%= link_to 'Delete', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td><% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Collection', new_collection_path %>
