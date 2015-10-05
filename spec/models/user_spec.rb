@@ -7,6 +7,11 @@ describe User do
   subject { User.new }
   it { should be_a User }
 
+  describe "#user_attributes" do
+    subject { user.user_attributes }
+    it { should be_instance_of(Hash) }
+  end
+
   describe "#to_s" do
     subject { user.to_s }
     it { should eql(user.email) }
