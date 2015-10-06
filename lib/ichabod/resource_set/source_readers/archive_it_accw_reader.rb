@@ -56,19 +56,17 @@ module Ichabod
       #       digest of the waybackURL is used to generate the identifier.
       #
       # [1] https://wiki.duraspace.org/display/FEDORA37/Fedora+Identifiers
-      class ArchiveItAccwReader < ResourceSet::SourceReader
+      class ArchiveItAccwReader < JsonLoader
 
         def read
-          entities.collect do |entity|
-            ResourceSet::Resource.new(resource_attributes_from_entity(entity))
-          end
+           super
         end
 
         private
         extend Forwardable
-        def_delegators :resource_set, :endpoint_url, :path, :collection_code
+        def_delegators :resource_set, :endpoint_url, :datasource_params, :authentication, :path
 
-        def resource_attributes_from_entity(entity)
+        def resource_attributes_from_entities(entity)
           {
             prefix:     resource_set.prefix,
             identifier: Digest::MD5.hexdigest(entity['waybackCalendar']),
@@ -100,9 +98,7 @@ module Ichabod
 
         # Use Faraday to connect to the collection's JSON API
         def endpoint_connection
-          @endpoint_connection ||= Faraday.new(url: endpoint_url) do |faraday|
-            faraday.adapter :net_http
-          end
+          super
         end
       end
     end
