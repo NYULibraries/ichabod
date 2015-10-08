@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
   #temporary solution will be replaced when collection model is completed by real collection authorization method
  def authorize_collection
    if current_user.nil?||!(current_user.groups.include?('io_cataloger')||current_user.groups.include?('admin_group'))
-     debug(current_user.groups)
      false
    else
      true

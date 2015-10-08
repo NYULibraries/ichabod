@@ -26,6 +26,21 @@ describe NyucoresController do
     it 'should retieve specific nyucore record' do
       expect(assigns(:item).id).to eq item.id
     end
+    context 'when collection is restricted' do
+      let(:item) { create(:io_record) }
+      context 'when user is authorized to view collection' do
+        let(:user) { create(:io_cataloger) }
+        it 'should retieve nyucore record' do
+          expect{ get :show, id: item }.to render_template(:show)
+        end
+      end
+      context 'when user is not authorized to view collection' do
+        let(:user) { create(:gis_cataloger) }
+        it 'shouldn\'t retieve specific nyucore record' do
+           expect{ get :show, id: item }.to redirect_to root_url
+        end
+      end
+    end
   end
 
   describe "GET new" do

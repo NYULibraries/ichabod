@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://127.0.0.1:8983/solr/test/select?facet.field=collection_sim&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim%20desc_metadata__subject_spatial_tesim%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__subject_temporal_tesim%20desc_metadata__isbn_tesimdesc_metadata__genre_tesim&qt=search&rows=10&wt=ruby
+    uri: http://127.0.0.1:8983/solr/test/select?facet.field=collection_sim&fq=-collection_sim:Indian*&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim%20desc_metadata__subject_spatial_tesim%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__subject_temporal_tesim%20desc_metadata__isbn_tesim%20desc_metadata__genre_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
     body:
       encoding: US-ASCII
       string: ''
@@ -13,9 +13,9 @@ http_interactions:
       message: OK
     headers:
       Last-Modified:
-      - Wed, 16 Dec 2015 16:54:05 GMT
+      - Wed, 16 Dec 2015 19:44:32 GMT
       Etag:
-      - '"MzNhYTIwMDAwMDAwMDAwMFNvbHI="'
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
       Content-Type:
       - text/plain;charset=UTF-8
       Transfer-Encoding:
@@ -23,31 +23,33 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eydyZXNwb25zZUhlYWRlcic9Pnsnc3RhdHVzJz0+MCwnUVRpbWUnPT4zLCdw
-        YXJhbXMnPT57J3FmJz0+J2Rlc2NfbWV0YWRhdGFfX3RpdGxlX3Rlc2ltIGRl
-        c2NfbWV0YWRhdGFfX2F1dGhvcl90ZXNpbSBkZXNjX21ldGFkYXRhX19wdWJs
-        aXNoZXJfdGVzaW0KICAgICAgICAgICAgICAgIGRlc2NfbWV0YWRhdGFfX3R5
-        cGVfdGVzaW0gZGVzY19tZXRhZGF0YV9fZGVzY3JpcHRpb25fdGVzaW0gZGVz
-        Y19tZXRhZGF0YV9fc2VyaWVzX3Rlc2ltCiAgICAgICAgICAgICAgICBkZXNj
-        X21ldGFkYXRhX19jcmVhdG9yX3Rlc2ltIGRlc2NfbWV0YWRhdGFfX3N1Ympl
-        Y3RfdGVzaW0gZGVzY19tZXRhZGF0YV9fc3ViamVjdF9zcGF0aWFsX3Rlc2lt
-        IAogICAgICAgICAgICAgICAgZGVzY19tZXRhZGF0YV9fc3ViamVjdF90ZW1w
-        b3JhbF90ZXNpbSBkZXNjX21ldGFkYXRhX19pc2JuX3Rlc2ltZGVzY19tZXRh
-        ZGF0YV9fZ2VucmVfdGVzaW0nLCdmYWNldC5maWVsZCc9PlsnZGVzY19tZXRh
-        ZGF0YV9fdHlwZV9zaW0nLCdkZXNjX21ldGFkYXRhX19jcmVhdG9yX3NpbScs
-        J2Rlc2NfbWV0YWRhdGFfX3N1YmplY3Rfc2ltJywnZGVzY19tZXRhZGF0YV9f
-        bGFuZ3VhZ2Vfc2ltJywnY29sbGVjdGlvbl9zaW0nXSwncXQnPT4nc2VhcmNo
-        Jywnd3QnPT4ncnVieScsJ3Jvd3MnPT4nMTAnfX0sJ3Jlc3BvbnNlJz0+eydu
-        dW1Gb3VuZCc9PjEzMSwnc3RhcnQnPT4wLCdtYXhTY29yZSc9PjEuMCwnZG9j
-        cyc9Plt7J3N5c3RlbV9jcmVhdGVfZHRzaSc9PicyMDE1LTEyLTE2VDE2OjUx
-        OjQ0WicsJ3N5c3RlbV9tb2RpZmllZF9kdHNpJz0+JzIwMTUtMTItMTZUMTY6
-        NTE6NDVaJywnb2JqZWN0X3N0YXRlX3NzaSc9PidBJywnYWN0aXZlX2ZlZG9y
+        eydyZXNwb25zZUhlYWRlcic9Pnsnc3RhdHVzJz0+MCwnUVRpbWUnPT4xLCdw
+        YXJhbXMnPT57J3NvcnQnPT4nc2NvcmUgZGVzYywgcHViX2RhdGVfZHRzaSBk
+        ZXNjLCB0aXRsZV90ZXNpIGFzYycsJ3FmJz0+J2Rlc2NfbWV0YWRhdGFfX3Rp
+        dGxlX3Rlc2ltIGRlc2NfbWV0YWRhdGFfX2F1dGhvcl90ZXNpbSBkZXNjX21l
+        dGFkYXRhX19wdWJsaXNoZXJfdGVzaW0KICAgICAgICAgICAgICAgIGRlc2Nf
+        bWV0YWRhdGFfX3R5cGVfdGVzaW0gZGVzY19tZXRhZGF0YV9fZGVzY3JpcHRp
+        b25fdGVzaW0gZGVzY19tZXRhZGF0YV9fc2VyaWVzX3Rlc2ltCiAgICAgICAg
+        ICAgICAgICBkZXNjX21ldGFkYXRhX19jcmVhdG9yX3Rlc2ltIGRlc2NfbWV0
+        YWRhdGFfX3N1YmplY3RfdGVzaW0gZGVzY19tZXRhZGF0YV9fc3ViamVjdF9z
+        cGF0aWFsX3Rlc2ltIAogICAgICAgICAgICAgICAgZGVzY19tZXRhZGF0YV9f
+        c3ViamVjdF90ZW1wb3JhbF90ZXNpbSBkZXNjX21ldGFkYXRhX19pc2JuX3Rl
+        c2ltIGRlc2NfbWV0YWRhdGFfX2dlbnJlX3Rlc2ltJywnZmFjZXQuZmllbGQn
+        PT5bJ2Rlc2NfbWV0YWRhdGFfX3R5cGVfc2ltJywnZGVzY19tZXRhZGF0YV9f
+        Y3JlYXRvcl9zaW0nLCdkZXNjX21ldGFkYXRhX19zdWJqZWN0X3NpbScsJ2Rl
+        c2NfbWV0YWRhdGFfX2xhbmd1YWdlX3NpbScsJ2NvbGxlY3Rpb25fc2ltJ10s
+        J3F0Jz0+J3NlYXJjaCcsJ3d0Jz0+J3J1YnknLCdmcSc9PictY29sbGVjdGlv
+        bl9zaW06SW5kaWFuKicsJ3Jvd3MnPT4nMTAnfX0sJ3Jlc3BvbnNlJz0+eydu
+        dW1Gb3VuZCc9PjEyMywnc3RhcnQnPT4wLCdtYXhTY29yZSc9PjEuMCwnZG9j
+        cyc9Plt7J3N5c3RlbV9jcmVhdGVfZHRzaSc9PicyMDE1LTEyLTE2VDE5OjQy
+        OjU4WicsJ3N5c3RlbV9tb2RpZmllZF9kdHNpJz0+JzIwMTUtMTItMTZUMTk6
+        NDI6NTlaJywnb2JqZWN0X3N0YXRlX3NzaSc9PidBJywnYWN0aXZlX2ZlZG9y
         YV9tb2RlbF9zc2knPT4nTnl1Y29yZScsJ2lkJz0+J2ZkYTpoZGwtaGFuZGxl
         LW5ldC0yNDUxLTMzNjE0Jywnb2JqZWN0X3Byb2ZpbGVfc3NtJz0+Wyd7ImRh
         dGFzdHJlYW1zIjp7IlJFTFMtRVhUIjp7ImRzTGFiZWwiOiJGZWRvcmEgT2Jq
         ZWN0LXRvLU9iamVjdCBSZWxhdGlvbnNoaXAgTWV0YWRhdGEiLCJkc1ZlcnNp
         b25JRCI6IlJFTFMtRVhULjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2
-        VDE2OjUxOjQ0WiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBwbGljYXRp
+        VDE5OjQyOjU4WiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBwbGljYXRp
         b24vcmRmK3htbCIsImRzRm9ybWF0VVJJIjpudWxsLCJkc0NvbnRyb2xHcm91
         cCI6IlgiLCJkc1NpemUiOjI5OSwiZHNWZXJzaW9uYWJsZSI6dHJ1ZSwiZHNJ
         bmZvVHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6ImZkYTpoZGwtaGFuZGxlLW5l
@@ -55,7 +57,7 @@ http_interactions:
         VHlwZSI6bnVsbCwiZHNDaGVja3N1bVR5cGUiOiJESVNBQkxFRCIsImRzQ2hl
         Y2tzdW0iOiJub25lIn0sInJpZ2h0c01ldGFkYXRhIjp7ImRzTGFiZWwiOm51
         bGwsImRzVmVyc2lvbklEIjoicmlnaHRzTWV0YWRhdGEuMCIsImRzQ3JlYXRl
-        RGF0ZSI6IjIwMTUtMTItMTZUMTY6NTE6NDVaIiwiZHNTdGF0ZSI6IkEiLCJk
+        RGF0ZSI6IjIwMTUtMTItMTZUMTk6NDI6NThaIiwiZHNTdGF0ZSI6IkEiLCJk
         c01JTUUiOiJ0ZXh0L3htbCIsImRzRm9ybWF0VVJJIjpudWxsLCJkc0NvbnRy
         b2xHcm91cCI6Ik0iLCJkc1NpemUiOjU3OSwiZHNWZXJzaW9uYWJsZSI6dHJ1
         ZSwiZHNJbmZvVHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6ImZkYTpoZGwtaGFu
@@ -64,7 +66,7 @@ http_interactions:
         a3N1bVR5cGUiOiJESVNBQkxFRCIsImRzQ2hlY2tzdW0iOiJub25lIn0sInNv
         dXJjZV9tZXRhZGF0YSI6eyJkc0xhYmVsIjpudWxsLCJkc1ZlcnNpb25JRCI6
         InNvdXJjZV9tZXRhZGF0YS4wIiwiZHNDcmVhdGVEYXRlIjoiMjAxNS0xMi0x
-        NlQxNjo1MTo0NVoiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6ImFwcGxpY2F0
+        NlQxOTo0Mjo1OFoiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6ImFwcGxpY2F0
         aW9uL24tdHJpcGxlcyIsImRzRm9ybWF0VVJJIjpudWxsLCJkc0NvbnRyb2xH
         cm91cCI6Ik0iLCJkc1NpemUiOjQ5ODQsImRzVmVyc2lvbmFibGUiOnRydWUs
         ImRzSW5mb1R5cGUiOm51bGwsImRzTG9jYXRpb24iOiJmZGE6aGRsLWhhbmRs
@@ -73,7 +75,7 @@ http_interactions:
         a3N1bVR5cGUiOiJESVNBQkxFRCIsImRzQ2hlY2tzdW0iOiJub25lIn0sIm5h
         dGl2ZV9tZXRhZGF0YSI6eyJkc0xhYmVsIjpudWxsLCJkc1ZlcnNpb25JRCI6
         Im5hdGl2ZV9tZXRhZGF0YS4wIiwiZHNDcmVhdGVEYXRlIjoiMjAxNS0xMi0x
-        NlQxNjo1MTo0NVoiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6ImFwcGxpY2F0
+        NlQxOTo0Mjo1OVoiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6ImFwcGxpY2F0
         aW9uL24tdHJpcGxlcyIsImRzRm9ybWF0VVJJIjpudWxsLCJkc0NvbnRyb2xH
         cm91cCI6Ik0iLCJkc1NpemUiOjg3LCJkc1ZlcnNpb25hYmxlIjp0cnVlLCJk
         c0luZm9UeXBlIjpudWxsLCJkc0xvY2F0aW9uIjoiZmRhOmhkbC1oYW5kbGUt
@@ -82,8 +84,8 @@ http_interactions:
         dW1UeXBlIjoiRElTQUJMRUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9fSwib2Jq
         TGFiZWwiOm51bGwsIm9iak93bmVySWQiOiJmZWRvcmFBZG1pbiIsIm9iak1v
         ZGVscyI6WyJpbmZvOmZlZG9yYS9mZWRvcmEtc3lzdGVtOkZlZG9yYU9iamVj
-        dC0zLjAiXSwib2JqQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTY6NTE6NDRa
-        Iiwib2JqTGFzdE1vZERhdGUiOiIyMDE1LTEyLTE2VDE2OjUxOjQ0WiIsIm9i
+        dC0zLjAiXSwib2JqQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTk6NDI6NTha
+        Iiwib2JqTGFzdE1vZERhdGUiOiIyMDE1LTEyLTE2VDE5OjQyOjU4WiIsIm9i
         akRpc3NJbmRleFZpZXdVUkwiOiJodHRwOi8vbG9jYWxob3N0Ojg5ODMvZmVk
         b3JhLXRlc3Qvb2JqZWN0cy9mZGElM0FoZGwtaGFuZGxlLW5ldC0yNDUxLTMz
         NjE0L21ldGhvZHMvZmVkb3JhLXN5c3RlbSUzQTMvdmlld01ldGhvZEluZGV4
@@ -159,16 +161,16 @@ http_interactions:
         X3Rlc2ltJz0+WydmYWN1bHR5X2RpZ2l0YWxfYXJjaGl2ZV9uZ28nXSwnZGVz
         Y19tZXRhZGF0YV9fdHlwZV90ZXNpbSc9PlsnUmVwb3J0J10sJ2NvbGxlY3Rp
         b25fc3NtJz0+WydTb3V0aCBBc2lhbiBOR08gYW5kIG90aGVyIHJlcG9ydHMn
-        XSwndGltZXN0YW1wJz0+JzIwMTUtMTItMTZUMTY6NTE6NDUuNTY5WicsJ3Nj
+        XSwndGltZXN0YW1wJz0+JzIwMTUtMTItMTZUMTk6NDI6NTkuMjMzWicsJ3Nj
         b3JlJz0+MS4wfSx7J3N5c3RlbV9jcmVhdGVfZHRzaSc9PicyMDE1LTEyLTE2
-        VDE2OjUxOjQzWicsJ3N5c3RlbV9tb2RpZmllZF9kdHNpJz0+JzIwMTUtMTIt
-        MTZUMTY6NTE6NDRaJywnb2JqZWN0X3N0YXRlX3NzaSc9PidBJywnYWN0aXZl
+        VDE5OjQyOjU2WicsJ3N5c3RlbV9tb2RpZmllZF9kdHNpJz0+JzIwMTUtMTIt
+        MTZUMTk6NDI6NTdaJywnb2JqZWN0X3N0YXRlX3NzaSc9PidBJywnYWN0aXZl
         X2ZlZG9yYV9tb2RlbF9zc2knPT4nTnl1Y29yZScsJ2lkJz0+J2ZkYTpoZGwt
         aGFuZGxlLW5ldC0yNDUxLTMzNjEzJywnb2JqZWN0X3Byb2ZpbGVfc3NtJz0+
         Wyd7ImRhdGFzdHJlYW1zIjp7IlJFTFMtRVhUIjp7ImRzTGFiZWwiOiJGZWRv
         cmEgT2JqZWN0LXRvLU9iamVjdCBSZWxhdGlvbnNoaXAgTWV0YWRhdGEiLCJk
         c1ZlcnNpb25JRCI6IlJFTFMtRVhULjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1
-        LTEyLTE2VDE2OjUxOjQzWiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBw
+        LTEyLTE2VDE5OjQyOjU2WiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBw
         bGljYXRpb24vcmRmK3htbCIsImRzRm9ybWF0VVJJIjpudWxsLCJkc0NvbnRy
         b2xHcm91cCI6IlgiLCJkc1NpemUiOjI5OSwiZHNWZXJzaW9uYWJsZSI6dHJ1
         ZSwiZHNJbmZvVHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6ImZkYTpoZGwtaGFu
@@ -176,7 +178,7 @@ http_interactions:
         Y2F0aW9uVHlwZSI6bnVsbCwiZHNDaGVja3N1bVR5cGUiOiJESVNBQkxFRCIs
         ImRzQ2hlY2tzdW0iOiJub25lIn0sInJpZ2h0c01ldGFkYXRhIjp7ImRzTGFi
         ZWwiOm51bGwsImRzVmVyc2lvbklEIjoicmlnaHRzTWV0YWRhdGEuMCIsImRz
-        Q3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTY6NTE6NDRaIiwiZHNTdGF0ZSI6
+        Q3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTk6NDI6NTdaIiwiZHNTdGF0ZSI6
         IkEiLCJkc01JTUUiOiJ0ZXh0L3htbCIsImRzRm9ybWF0VVJJIjpudWxsLCJk
         c0NvbnRyb2xHcm91cCI6Ik0iLCJkc1NpemUiOjU3OSwiZHNWZXJzaW9uYWJs
         ZSI6dHJ1ZSwiZHNJbmZvVHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6ImZkYTpo
@@ -185,7 +187,7 @@ http_interactions:
         ZHNDaGVja3N1bVR5cGUiOiJESVNBQkxFRCIsImRzQ2hlY2tzdW0iOiJub25l
         In0sInNvdXJjZV9tZXRhZGF0YSI6eyJkc0xhYmVsIjpudWxsLCJkc1ZlcnNp
         b25JRCI6InNvdXJjZV9tZXRhZGF0YS4wIiwiZHNDcmVhdGVEYXRlIjoiMjAx
-        NS0xMi0xNlQxNjo1MTo0NFoiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6ImFw
+        NS0xMi0xNlQxOTo0Mjo1N1oiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6ImFw
         cGxpY2F0aW9uL24tdHJpcGxlcyIsImRzRm9ybWF0VVJJIjpudWxsLCJkc0Nv
         bnRyb2xHcm91cCI6Ik0iLCJkc1NpemUiOjQ4MDMsImRzVmVyc2lvbmFibGUi
         OnRydWUsImRzSW5mb1R5cGUiOm51bGwsImRzTG9jYXRpb24iOiJmZGE6aGRs
@@ -194,7 +196,7 @@ http_interactions:
         ZHNDaGVja3N1bVR5cGUiOiJESVNBQkxFRCIsImRzQ2hlY2tzdW0iOiJub25l
         In0sIm5hdGl2ZV9tZXRhZGF0YSI6eyJkc0xhYmVsIjpudWxsLCJkc1ZlcnNp
         b25JRCI6Im5hdGl2ZV9tZXRhZGF0YS4wIiwiZHNDcmVhdGVEYXRlIjoiMjAx
-        NS0xMi0xNlQxNjo1MTo0NFoiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6ImFw
+        NS0xMi0xNlQxOTo0Mjo1N1oiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6ImFw
         cGxpY2F0aW9uL24tdHJpcGxlcyIsImRzRm9ybWF0VVJJIjpudWxsLCJkc0Nv
         bnRyb2xHcm91cCI6Ik0iLCJkc1NpemUiOjg3LCJkc1ZlcnNpb25hYmxlIjp0
         cnVlLCJkc0luZm9UeXBlIjpudWxsLCJkc0xvY2F0aW9uIjoiZmRhOmhkbC1o
@@ -203,8 +205,8 @@ http_interactions:
         Q2hlY2tzdW1UeXBlIjoiRElTQUJMRUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9
         fSwib2JqTGFiZWwiOm51bGwsIm9iak93bmVySWQiOiJmZWRvcmFBZG1pbiIs
         Im9iak1vZGVscyI6WyJpbmZvOmZlZG9yYS9mZWRvcmEtc3lzdGVtOkZlZG9y
-        YU9iamVjdC0zLjAiXSwib2JqQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTY6
-        NTE6NDNaIiwib2JqTGFzdE1vZERhdGUiOiIyMDE1LTEyLTE2VDE2OjUxOjQz
+        YU9iamVjdC0zLjAiXSwib2JqQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTk6
+        NDI6NTZaIiwib2JqTGFzdE1vZERhdGUiOiIyMDE1LTEyLTE2VDE5OjQyOjU2
         WiIsIm9iakRpc3NJbmRleFZpZXdVUkwiOiJodHRwOi8vbG9jYWxob3N0Ojg5
         ODMvZmVkb3JhLXRlc3Qvb2JqZWN0cy9mZGElM0FoZGwtaGFuZGxlLW5ldC0y
         NDUxLTMzNjEzL21ldGhvZHMvZmVkb3JhLXN5c3RlbSUzQTMvdmlld01ldGhv
@@ -284,315 +286,94 @@ http_interactions:
         cmNoaXZlX25nbyddLCdkZXNjX21ldGFkYXRhX190eXBlX3Rlc2ltJz0+WydS
         ZXBvcnQnXSwnY29sbGVjdGlvbl9zc20nPT5bJ1NvdXRoIEFzaWFuIE5HTyBh
         bmQgb3RoZXIgcmVwb3J0cyddLCd0aW1lc3RhbXAnPT4nMjAxNS0xMi0xNlQx
-        Njo1MTo0NC41MzJaJywnc2NvcmUnPT4xLjB9LHsnc3lzdGVtX2NyZWF0ZV9k
-        dHNpJz0+JzIwMTUtMTItMTZUMTY6NTE6NDVaJywnc3lzdGVtX21vZGlmaWVk
-        X2R0c2knPT4nMjAxNS0xMi0xNlQxNjo1MTo0NlonLCdvYmplY3Rfc3RhdGVf
-        c3NpJz0+J0EnLCdhY3RpdmVfZmVkb3JhX21vZGVsX3NzaSc9PidOeXVjb3Jl
-        JywnaWQnPT4nZmRhOmhkbC1oYW5kbGUtbmV0LTI0NTEtMzM2MTUnLCdvYmpl
-        Y3RfcHJvZmlsZV9zc20nPT5bJ3siZGF0YXN0cmVhbXMiOnsiUkVMUy1FWFQi
-        OnsiZHNMYWJlbCI6IkZlZG9yYSBPYmplY3QtdG8tT2JqZWN0IFJlbGF0aW9u
-        c2hpcCBNZXRhZGF0YSIsImRzVmVyc2lvbklEIjoiUkVMUy1FWFQuMCIsImRz
-        Q3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTY6NTE6NDVaIiwiZHNTdGF0ZSI6
-        IkEiLCJkc01JTUUiOiJhcHBsaWNhdGlvbi9yZGYreG1sIiwiZHNGb3JtYXRV
-        UkkiOm51bGwsImRzQ29udHJvbEdyb3VwIjoiWCIsImRzU2l6ZSI6Mjk5LCJk
-        c1ZlcnNpb25hYmxlIjp0cnVlLCJkc0luZm9UeXBlIjpudWxsLCJkc0xvY2F0
-        aW9uIjoiZmRhOmhkbC1oYW5kbGUtbmV0LTI0NTEtMzM2MTUrUkVMUy1FWFQr
-        UkVMUy1FWFQuMCIsImRzTG9jYXRpb25UeXBlIjpudWxsLCJkc0NoZWNrc3Vt
-        VHlwZSI6IkRJU0FCTEVEIiwiZHNDaGVja3N1bSI6Im5vbmUifSwicmlnaHRz
-        TWV0YWRhdGEiOnsiZHNMYWJlbCI6bnVsbCwiZHNWZXJzaW9uSUQiOiJyaWdo
-        dHNNZXRhZGF0YS4wIiwiZHNDcmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxNjo1
-        MTo0NVoiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6InRleHQveG1sIiwiZHNG
-        b3JtYXRVUkkiOm51bGwsImRzQ29udHJvbEdyb3VwIjoiTSIsImRzU2l6ZSI6
-        NTc5LCJkc1ZlcnNpb25hYmxlIjp0cnVlLCJkc0luZm9UeXBlIjpudWxsLCJk
-        c0xvY2F0aW9uIjoiZmRhOmhkbC1oYW5kbGUtbmV0LTI0NTEtMzM2MTUrcmln
-        aHRzTWV0YWRhdGErcmlnaHRzTWV0YWRhdGEuMCIsImRzTG9jYXRpb25UeXBl
-        IjoiSU5URVJOQUxfSUQiLCJkc0NoZWNrc3VtVHlwZSI6IkRJU0FCTEVEIiwi
-        ZHNDaGVja3N1bSI6Im5vbmUifSwic291cmNlX21ldGFkYXRhIjp7ImRzTGFi
-        ZWwiOm51bGwsImRzVmVyc2lvbklEIjoic291cmNlX21ldGFkYXRhLjAiLCJk
-        c0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE2OjUxOjQ2WiIsImRzU3RhdGUi
-        OiJBIiwiZHNNSU1FIjoiYXBwbGljYXRpb24vbi10cmlwbGVzIiwiZHNGb3Jt
-        YXRVUkkiOm51bGwsImRzQ29udHJvbEdyb3VwIjoiTSIsImRzU2l6ZSI6NDMw
-        MywiZHNWZXJzaW9uYWJsZSI6dHJ1ZSwiZHNJbmZvVHlwZSI6bnVsbCwiZHNM
-        b2NhdGlvbiI6ImZkYTpoZGwtaGFuZGxlLW5ldC0yNDUxLTMzNjE1K3NvdXJj
-        ZV9tZXRhZGF0YStzb3VyY2VfbWV0YWRhdGEuMCIsImRzTG9jYXRpb25UeXBl
-        IjoiSU5URVJOQUxfSUQiLCJkc0NoZWNrc3VtVHlwZSI6IkRJU0FCTEVEIiwi
-        ZHNDaGVja3N1bSI6Im5vbmUifSwibmF0aXZlX21ldGFkYXRhIjp7ImRzTGFi
-        ZWwiOm51bGwsImRzVmVyc2lvbklEIjoibmF0aXZlX21ldGFkYXRhLjAiLCJk
-        c0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE2OjUxOjQ2WiIsImRzU3RhdGUi
-        OiJBIiwiZHNNSU1FIjoiYXBwbGljYXRpb24vbi10cmlwbGVzIiwiZHNGb3Jt
-        YXRVUkkiOm51bGwsImRzQ29udHJvbEdyb3VwIjoiTSIsImRzU2l6ZSI6ODcs
-        ImRzVmVyc2lvbmFibGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGwsImRzTG9j
-        YXRpb24iOiJmZGE6aGRsLWhhbmRsZS1uZXQtMjQ1MS0zMzYxNStuYXRpdmVf
-        bWV0YWRhdGErbmF0aXZlX21ldGFkYXRhLjAiLCJkc0xvY2F0aW9uVHlwZSI6
-        IklOVEVSTkFMX0lEIiwiZHNDaGVja3N1bVR5cGUiOiJESVNBQkxFRCIsImRz
-        Q2hlY2tzdW0iOiJub25lIn19LCJvYmpMYWJlbCI6bnVsbCwib2JqT3duZXJJ
-        ZCI6ImZlZG9yYUFkbWluIiwib2JqTW9kZWxzIjpbImluZm86ZmVkb3JhL2Zl
-        ZG9yYS1zeXN0ZW06RmVkb3JhT2JqZWN0LTMuMCJdLCJvYmpDcmVhdGVEYXRl
-        IjoiMjAxNS0xMi0xNlQxNjo1MTo0NVoiLCJvYmpMYXN0TW9kRGF0ZSI6IjIw
-        MTUtMTItMTZUMTY6NTE6NDVaIiwib2JqRGlzc0luZGV4Vmlld1VSTCI6Imh0
-        dHA6Ly9sb2NhbGhvc3Q6ODk4My9mZWRvcmEtdGVzdC9vYmplY3RzL2ZkYSUz
-        QWhkbC1oYW5kbGUtbmV0LTI0NTEtMzM2MTUvbWV0aG9kcy9mZWRvcmEtc3lz
-        dGVtJTNBMy92aWV3TWV0aG9kSW5kZXgiLCJvYmpJdGVtSW5kZXhWaWV3VVJM
-        IjoiaHR0cDovL2xvY2FsaG9zdDo4OTgzL2ZlZG9yYS10ZXN0L29iamVjdHMv
-        ZmRhJTNBaGRsLWhhbmRsZS1uZXQtMjQ1MS0zMzYxNS9tZXRob2RzL2ZlZG9y
-        YS1zeXN0ZW0lM0EzL3ZpZXdJdGVtSW5kZXgiLCJvYmpTdGF0ZSI6IkEifSdd
-        LCdlZGl0X2FjY2Vzc19ncm91cF9zc2ltJz0+WydhZG1pbl9ncm91cCcsJ2Zk
-        YV9jYXRhbG9nZXInXSwnaGFzX21vZGVsX3NzaW0nPT5bJ2luZm86ZmVkb3Jh
-        L2FmbW9kZWw6Tnl1Y29yZSddLCdkZXNjX21ldGFkYXRhX19pZGVudGlmaWVy
-        X3Rlc2ltJz0+WydodHRwOi8vd3d3Lmljcncub3JnL2ZpbGVzL3B1YmxpY2F0
-        aW9ucy9Xb21lbnMtUHJvcGVydHktUmlnaHRzLWFzLWFuLUFJRFMtUmVzcG9u
-        c2UtRW1lcmdpbmctRWZmb3J0cy1pbi1Tb3V0aC1Bc2lhLnBkZicsJ2h0dHA6
-        Ly9oZGwuaGFuZGxlLm5ldC8yNDUxLzMzNjE1J10sJ2Rlc2NfbWV0YWRhdGFf
-        X3RpdGxlX3Rlc2ltJz0+WydXb21lblwncyBwcm9wZXJ0eSByaWdodHMgYXMg
-        YW4gQUlEUyByZXNwb25zZTogZW1lcmdpbmcgZWZmb3J0cyBpbiBTb3V0aCBB
-        c2lhJ10sJ2Rlc2NfbWV0YWRhdGFfX2NyZWF0b3JfdGVzaW0nPT5bJ1N3YW1p
-        bmF0aGFuLCBIZW1hJywnQmhhdGxhLCBOYW5kaXRhJywnQ2hha3JhYm9ydHks
-        IFN3YXRpJ10sJ2Rlc2NfbWV0YWRhdGFfX3B1Ymxpc2hlcl90ZXNpbSc9Plsn
-        V2FzaGluZ3RvbiwgREMgOiBJbnRlcm5hdGlvbmFsIENlbnRlciBmb3IgUmVz
-        ZWFyY2ggb24gV29tZW4gKElDUlcpJywnV2FzaGluZ3RvbiwgREMnXSwnZGVz
-        Y19tZXRhZGF0YV9fZGVzY3JpcHRpb25fdGVzaW0nPT5bJyJUaGUgcmVzZWFy
-        Y2ggcHJlc2VudGVkIGhlcmUgdGFrZXMgSUNSVyBhbmQgdGhlIGludGVybmF0
-        aW9uYWwgZGV2ZWxvcG1lbnQgY29tbXVuaXR5IG9uZSBzdGVwIGNsb3NlciB0
-        byB1bmRlcnN0YW5kaW5nIGhvdyBzZWN1cmUgcHJvcGVydHkgcmlnaHRzIG1p
-        Z2h0IGhlbHAgd29tZW4gcHJvdGVjdCB0aGVtc2VsdmVzIGFuZCB0aGVpciBo
-        b3VzZWhvbGRzIGZyb20gYWR2ZXJzZSBzb2NpYWwgY29uc2VxdWVuY2VzIHJl
-        bGF0ZWQgdG8gSElWLCBpbmNsdWRpbmcgc3RpZ21hLCBwb3ZlcnR5IGFuZCBw
-        cm9wZXJ0eSBkaXNwb3NzZXNzaW9uLiBJdCBhbHNvIGlzIG9uZSBvZiB0aGUg
-        Zmlyc3QgZXhwbG9yYXRpb25zIG9mIHdvbWVu4oCZcyBwcm9wZXJ0eSByaWdo
-        dHMKYW5kIEhJViBpbiBTb3V0aCBBc2lhLCB3aGVyZSB0aGUgZXBpZGVtaWMg
-        aXMgc2V2ZXJlIGJ1dCByZW1haW5zIGZhaXJseSBjb25jZW50cmF0ZWQgYW1v
-        bmcgc3BlY2lmaWMgcG9wdWxhdGlvbnMuIFRoZSBzdHVkeSBpcyBhIHNuYXBz
-        aG90IG9mIHdvbWVu4oCZcyBleHBlcmllbmNlcyBvZiBwcm9wZXJ0eSBhbmQg
-        SElWIGluIEJhbmdsYWRlc2gsIEluZGlhIGFuZCBTcmkgTGFua2EsIHdoZXJl
-        IHdvbWVuIG9mdGVuIGFyZSBkZW5pZWQgdGhlaXIgbGVnYWwgcmlnaHRzIHRv
-        IHByb3BlcnR5LiBUaGlzIHNuYXBzaG90IGFsc28gZXhwbG9yZXMgdGhlIGV4
-        dGVudCB0byB3aGljaCBvcmdhbml6YXRpb25zIGFyZSBsaW5raW5nIHdvbWVu
-        4oCZcyBwcm9wZXJ0eSByaWdodHMgYW5kIEhJVi4iJ10sJ2Rlc2NfbWV0YWRh
-        dGFfX2RhdGVfdGVzaW0nPT5bJzIwMTQtMDUtMDhUMTk6MDk6MzlaJywnMjAw
-        NyddLCdkZXNjX21ldGFkYXRhX19yZWxhdGlvbl90ZXNpbSc9PlsnaHR0cDov
-        L2FyY2hpdmUubnl1LmVkdS9iaXRzdHJlYW0vMjQ1MS8zMzYxNS8yL1dvbWVu
-        cy1Qcm9wZXJ0eS1SaWdodHMtYXMtYW4tQUlEUy1SZXNwb25zZS5wZGYnXSwn
-        ZGVzY19tZXRhZGF0YV9fcmlnaHRzX3Rlc2ltJz0+WydOWVUgTGlicmFyaWVz
-        IGlzIHByb3ZpZGluZyBhY2Nlc3MgdG8gdGhlc2UgbWF0ZXJpYWxzIGFzIGEg
-        c2VydmljZSB0byBvdXIgc2Nob2xhcmx5IGNvbW11bml0eS4gV2UgZG8gbm90
-        IGNsYWltIHRoZSBjb3B5cmlnaHQgaW4gdGhlc2UgbWF0ZXJpYWxzLCBub3Ig
-        Y2FuIHdlIGdpdmUgcGVybWlzc2lvbiBmb3IgdGhlaXIgcmUtdXNlLiBJZiB5
-        b3Ugd291bGQgbGlrZSB0byByZXF1ZXN0IHRoYXQgd2UgdGFrZSBkb3duIGFu
-        eSBvZiB0aGlzIG1hdGVyaWFsLCBwbGVhc2Ugd3JpdGUgdG8gYXJjaGl2ZS5o
-        ZWxwQG55dS5lZHUgd2l0aCB0aGUgZm9sbG93aW5nIGluZm9ybWF0aW9uOiBQ
-        cm92aWRlIHRoZSBVUkwgb2YgdGhlIG1hdGVyaWFsIHRoYXQgaXMgdGhlIGJh
-        c2lzIG9mIHlvdXIgaW5xdWlyeTsgSWRlbnRpZnkgdGhlIG1hdGVyaWFsIHlv
-        dSBoYXZlIHJpZ2h0cyB0bzsgUHJvdmlkZSB5b3VyIGNvbnRhY3QgaW5mb3Jt
-        YXRpb24sIGluY2x1ZGluZyBuYW1lLCBhZGRyZXNzLCB0ZWxlcGhvbmUgbnVt
-        YmVyLCBhbmQgZS1tYWlsIGFkZHJlc3M7IFByb3ZpZGUgYSBzdGF0ZW1lbnQg
-        b2YgeW91ciBnb29kLWZhaXRoIGJlbGllZiB0aGF0IHRoZSBtYXRlcmlhbCB5
-        b3UgaWRlbnRpZmllZCBpcyBpbmZyaW5naW5nIG9mIHRoZSBtYXRlcmlhbCB5
-        b3UgaGF2ZSByaWdodHMgdG8uJ10sJ2Rlc2NfbWV0YWRhdGFfX3N1YmplY3Rf
-        dGVzaW0nPT5bJ1NleHVhbGx5IHRyYW5zbWl0dGVkIGRpc2Vhc2VzJywnU291
-        dGggQXNpYScsJ0Vjb25vbWljIGNvbmRpdGlvbnMnLCdFY29ub21pYyBzZWN1
-        cml0eScsJ0JhbmdsYWRlc2gnLCdJbmRpYScsJ1NyaSBMYW5rYScsJ0luaGVy
-        aXRhbmNlJywnSHVtYW4gcmlnaHRzJ10sJ2Rlc2NfbWV0YWRhdGFfX2F2YWls
-        YWJsZV90ZXNpbSc9PlsnaHR0cDovL2hkbC5oYW5kbGUubmV0LzI0NTEvMzM2
-        MTUnXSwnZGVzY19tZXRhZGF0YV9fY2l0YXRpb25fdGVzaW0nPT5bJ2h0dHA6
-        Ly93d3cuaWNydy5vcmcvZmlsZXMvcHVibGljYXRpb25zL1dvbWVucy1Qcm9w
-        ZXJ0eS1SaWdodHMtYXMtYW4tQUlEUy1SZXNwb25zZS1FbWVyZ2luZy1FZmZv
-        cnRzLWluLVNvdXRoLUFzaWEucGRmJ10sJ2Rlc2NfbWV0YWRhdGFfX3Jlc291
-        cmNlX3NldF90ZXNpbSc9PlsnZmFjdWx0eV9kaWdpdGFsX2FyY2hpdmVfbmdv
-        J10sJ2Rlc2NfbWV0YWRhdGFfX3R5cGVfdGVzaW0nPT5bJ1JlcG9ydCddLCdj
-        b2xsZWN0aW9uX3NzbSc9PlsnU291dGggQXNpYW4gTkdPIGFuZCBvdGhlciBy
-        ZXBvcnRzJ10sJ3RpbWVzdGFtcCc9PicyMDE1LTEyLTE2VDE2OjUxOjQ2LjU5
-        OVonLCdzY29yZSc9PjEuMH0seydzeXN0ZW1fY3JlYXRlX2R0c2knPT4nMjAx
-        NS0xMi0xNlQxNjo1MTo0NlonLCdzeXN0ZW1fbW9kaWZpZWRfZHRzaSc9Picy
-        MDE1LTEyLTE2VDE2OjUxOjQ3WicsJ29iamVjdF9zdGF0ZV9zc2knPT4nQScs
-        J2FjdGl2ZV9mZWRvcmFfbW9kZWxfc3NpJz0+J055dWNvcmUnLCdpZCc9Pidm
-        ZGE6aGRsLWhhbmRsZS1uZXQtMjQ1MS0zMzYxNicsJ29iamVjdF9wcm9maWxl
-        X3NzbSc9PlsneyJkYXRhc3RyZWFtcyI6eyJSRUxTLUVYVCI6eyJkc0xhYmVs
-        IjoiRmVkb3JhIE9iamVjdC10by1PYmplY3QgUmVsYXRpb25zaGlwIE1ldGFk
-        YXRhIiwiZHNWZXJzaW9uSUQiOiJSRUxTLUVYVC4wIiwiZHNDcmVhdGVEYXRl
-        IjoiMjAxNS0xMi0xNlQxNjo1MTo0N1oiLCJkc1N0YXRlIjoiQSIsImRzTUlN
-        RSI6ImFwcGxpY2F0aW9uL3JkZit4bWwiLCJkc0Zvcm1hdFVSSSI6bnVsbCwi
-        ZHNDb250cm9sR3JvdXAiOiJYIiwiZHNTaXplIjoyOTksImRzVmVyc2lvbmFi
-        bGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGwsImRzTG9jYXRpb24iOiJmZGE6
-        aGRsLWhhbmRsZS1uZXQtMjQ1MS0zMzYxNitSRUxTLUVYVCtSRUxTLUVYVC4w
-        IiwiZHNMb2NhdGlvblR5cGUiOm51bGwsImRzQ2hlY2tzdW1UeXBlIjoiRElT
-        QUJMRUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9LCJyaWdodHNNZXRhZGF0YSI6
-        eyJkc0xhYmVsIjpudWxsLCJkc1ZlcnNpb25JRCI6InJpZ2h0c01ldGFkYXRh
-        LjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE2OjUxOjQ3WiIsImRz
-        U3RhdGUiOiJBIiwiZHNNSU1FIjoidGV4dC94bWwiLCJkc0Zvcm1hdFVSSSI6
-        bnVsbCwiZHNDb250cm9sR3JvdXAiOiJNIiwiZHNTaXplIjo1NzksImRzVmVy
-        c2lvbmFibGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGwsImRzTG9jYXRpb24i
-        OiJmZGE6aGRsLWhhbmRsZS1uZXQtMjQ1MS0zMzYxNityaWdodHNNZXRhZGF0
-        YStyaWdodHNNZXRhZGF0YS4wIiwiZHNMb2NhdGlvblR5cGUiOiJJTlRFUk5B
-        TF9JRCIsImRzQ2hlY2tzdW1UeXBlIjoiRElTQUJMRUQiLCJkc0NoZWNrc3Vt
-        Ijoibm9uZSJ9LCJzb3VyY2VfbWV0YWRhdGEiOnsiZHNMYWJlbCI6bnVsbCwi
-        ZHNWZXJzaW9uSUQiOiJzb3VyY2VfbWV0YWRhdGEuMCIsImRzQ3JlYXRlRGF0
-        ZSI6IjIwMTUtMTItMTZUMTY6NTE6NDdaIiwiZHNTdGF0ZSI6IkEiLCJkc01J
-        TUUiOiJhcHBsaWNhdGlvbi9uLXRyaXBsZXMiLCJkc0Zvcm1hdFVSSSI6bnVs
-        bCwiZHNDb250cm9sR3JvdXAiOiJNIiwiZHNTaXplIjo0MTY5LCJkc1ZlcnNp
-        b25hYmxlIjp0cnVlLCJkc0luZm9UeXBlIjpudWxsLCJkc0xvY2F0aW9uIjoi
-        ZmRhOmhkbC1oYW5kbGUtbmV0LTI0NTEtMzM2MTYrc291cmNlX21ldGFkYXRh
-        K3NvdXJjZV9tZXRhZGF0YS4wIiwiZHNMb2NhdGlvblR5cGUiOiJJTlRFUk5B
-        TF9JRCIsImRzQ2hlY2tzdW1UeXBlIjoiRElTQUJMRUQiLCJkc0NoZWNrc3Vt
-        Ijoibm9uZSJ9LCJuYXRpdmVfbWV0YWRhdGEiOnsiZHNMYWJlbCI6bnVsbCwi
-        ZHNWZXJzaW9uSUQiOiJuYXRpdmVfbWV0YWRhdGEuMCIsImRzQ3JlYXRlRGF0
-        ZSI6IjIwMTUtMTItMTZUMTY6NTE6NDdaIiwiZHNTdGF0ZSI6IkEiLCJkc01J
-        TUUiOiJhcHBsaWNhdGlvbi9uLXRyaXBsZXMiLCJkc0Zvcm1hdFVSSSI6bnVs
-        bCwiZHNDb250cm9sR3JvdXAiOiJNIiwiZHNTaXplIjo4NywiZHNWZXJzaW9u
-        YWJsZSI6dHJ1ZSwiZHNJbmZvVHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6ImZk
-        YTpoZGwtaGFuZGxlLW5ldC0yNDUxLTMzNjE2K25hdGl2ZV9tZXRhZGF0YStu
-        YXRpdmVfbWV0YWRhdGEuMCIsImRzTG9jYXRpb25UeXBlIjoiSU5URVJOQUxf
-        SUQiLCJkc0NoZWNrc3VtVHlwZSI6IkRJU0FCTEVEIiwiZHNDaGVja3N1bSI6
-        Im5vbmUifX0sIm9iakxhYmVsIjpudWxsLCJvYmpPd25lcklkIjoiZmVkb3Jh
-        QWRtaW4iLCJvYmpNb2RlbHMiOlsiaW5mbzpmZWRvcmEvZmVkb3JhLXN5c3Rl
-        bTpGZWRvcmFPYmplY3QtMy4wIl0sIm9iakNyZWF0ZURhdGUiOiIyMDE1LTEy
-        LTE2VDE2OjUxOjQ2WiIsIm9iakxhc3RNb2REYXRlIjoiMjAxNS0xMi0xNlQx
-        Njo1MTo0NloiLCJvYmpEaXNzSW5kZXhWaWV3VVJMIjoiaHR0cDovL2xvY2Fs
-        aG9zdDo4OTgzL2ZlZG9yYS10ZXN0L29iamVjdHMvZmRhJTNBaGRsLWhhbmRs
-        ZS1uZXQtMjQ1MS0zMzYxNi9tZXRob2RzL2ZlZG9yYS1zeXN0ZW0lM0EzL3Zp
-        ZXdNZXRob2RJbmRleCIsIm9iakl0ZW1JbmRleFZpZXdVUkwiOiJodHRwOi8v
-        bG9jYWxob3N0Ojg5ODMvZmVkb3JhLXRlc3Qvb2JqZWN0cy9mZGElM0FoZGwt
-        aGFuZGxlLW5ldC0yNDUxLTMzNjE2L21ldGhvZHMvZmVkb3JhLXN5c3RlbSUz
-        QTMvdmlld0l0ZW1JbmRleCIsIm9ialN0YXRlIjoiQSJ9J10sJ2VkaXRfYWNj
-        ZXNzX2dyb3VwX3NzaW0nPT5bJ2FkbWluX2dyb3VwJywnZmRhX2NhdGFsb2dl
-        ciddLCdoYXNfbW9kZWxfc3NpbSc9PlsnaW5mbzpmZWRvcmEvYWZtb2RlbDpO
-        eXVjb3JlJ10sJ2Rlc2NfbWV0YWRhdGFfX2lkZW50aWZpZXJfdGVzaW0nPT5b
-        J2h0dHA6Ly93d3cuaWNydy5vcmcvZmlsZXMvcHVibGljYXRpb25zL1JlZHVj
-        aW5nLUhJVi1TdGlnbWEtYW5kLUdlbmRlci1CYXNlZC1WaW9sZW5jZS1Ub29s
-        a2l0LWZvci1IZWFsdGgtQ2FyZS1Qcm92aWRlcnMtaW4tSW5kaWEucGRmJywn
-        aHR0cDovL2hkbC5oYW5kbGUubmV0LzI0NTEvMzM2MTYnXSwnZGVzY19tZXRh
-        ZGF0YV9fdGl0bGVfdGVzaW0nPT5bJ1JlZHVjaW5nIEhJViBzdGlnbWEgYW5k
-        IGdlbmRlci1iYXNlZCB2aW9sZW5jZTogdG9vbGtpdCBmb3IgaGVhbHRoIGNh
-        cmUgcHJvdmlkZXJzIGluIEluZGlhJ10sJ2Rlc2NfbWV0YWRhdGFfX2NyZWF0
-        b3JfdGVzaW0nPT5bJ0tpZGQsIFJvc3MnLCdQcmFzYWQsIE5hbmRpbmknLCdB
-        dnVsYSwgSnlvdGhzbmEnLCdUYWp1ZGRpbiwgTWlyemEnXSwnZGVzY19tZXRh
-        ZGF0YV9fcHVibGlzaGVyX3Rlc2ltJz0+WydJbnRlcm5hdGlvbmFsIENlbnRl
-        ciBmb3IgUmVzZWFyY2ggb24gV29tZW4gKElDUlcpJywnV2FzaGluZ3Rvbiwg
-        REMnXSwnZGVzY19tZXRhZGF0YV9fZGVzY3JpcHRpb25fdGVzaW0nPT5bJyJU
-        aGUgb3ZlcmFsbCBhaW0gaXMgdG8gcHJldmVudCB0aGUgc3ByZWFkIG9mIEhJ
-        ViBhbmQgQUlEUyBieSBtYWtpbmcgaXQgZWFzaWVyIGZvciBwZW9wbGUgbGl2
-        aW5nIHdpdGggSElWIHRvIGFjY2VzcyBoZWFsdGggc2VydmljZXMsIGRpc2Ns
-        b3NlIHRoZWlyIHN0YXR1cyBhbmQgcHJldmVudCB0aGUgc3ByZWFkIG9mIEhJ
-        ViB0byBvdGhlcnMsIHdoaWxlIGFsc28gZWxpbWluYXRpbmcgc29tZSBvZiB0
-        aGUgYmFycmllcnMgdGhhdCBpbXBlZGUgdGhlIGFiaWxpdHkgb2YgdW5pbmZl
-        Y3RlZCB3b21lbiB0byBwcm90ZWN0IHRoZW1zZWx2ZXMgZnJvbSB0aGUgdmly
-        dXMuIFVzaW5nIHRoZSB0b29sa2l0LCB5b3Ugd2lsbCBiZSBhYmxlIHRvIHBs
-        YW4gYW5kIG9yZ2FuaXplIGVkdWNhdGlvbmFsIHNlc3Npb25zIHdpdGggaGVh
-        bHRoIGNhcmUgcHJvdmlkZXJzIHRvIGNoYWxsZW5nZSBISVYtcmVsYXRlZCBz
-        dGlnbWEgYW5kIGdlbmRlci1iYXNlZCB2aW9sZW5jZSwgYWxzbyByZWZlcnJl
-        ZCB0byBhcyBnZW5kZXIgdmlvbGVuY2UgaW4gdGhpcyByZXBvcnQuIFRoZSB0
-        b29sa2l0IHdpbGwgaGVscCB5b3UgcmFpc2UgYXdhcmVuZXNzIG9mIHRoZSBj
-        YXVzZXMgYW5kIGNvbnNlcXVlbmNlcyBvZiBzdGlnbWEgYW5kIHZpb2xlbmNl
-        LCBhbmQgcHJvbW90ZSBhY3Rpb24gYW5kIGFkdm9jYWN5IHRvIGNvbWJhdCB0
-        aGVtLiInXSwnZGVzY19tZXRhZGF0YV9fZGF0ZV90ZXNpbSc9PlsnMjAxNC0w
-        NS0wOFQxOTozMTozN1onLCcyMDA3J10sJ2Rlc2NfbWV0YWRhdGFfX3JlbGF0
-        aW9uX3Rlc2ltJz0+WydodHRwOi8vYXJjaGl2ZS5ueXUuZWR1L2JpdHN0cmVh
-        bS8yNDUxLzMzNjE2LzIvUmVkdWNpbmctSElWLVN0aWdtYS1hbmQtR2VuZGVy
-        LUJhc2VkLVZpb2xlbmNlLnBkZiddLCdkZXNjX21ldGFkYXRhX19yaWdodHNf
-        dGVzaW0nPT5bJ05ZVSBMaWJyYXJpZXMgaXMgcHJvdmlkaW5nIGFjY2VzcyB0
-        byB0aGVzZSBtYXRlcmlhbHMgYXMgYSBzZXJ2aWNlIHRvIG91ciBzY2hvbGFy
-        bHkgY29tbXVuaXR5LiBXZSBkbyBub3QgY2xhaW0gdGhlIGNvcHlyaWdodCBp
-        biB0aGVzZSBtYXRlcmlhbHMsIG5vciBjYW4gd2UgZ2l2ZSBwZXJtaXNzaW9u
-        IGZvciB0aGVpciByZS11c2UuIElmIHlvdSB3b3VsZCBsaWtlIHRvIHJlcXVl
-        c3QgdGhhdCB3ZSB0YWtlIGRvd24gYW55IG9mIHRoaXMgbWF0ZXJpYWwsIHBs
-        ZWFzZSB3cml0ZSB0byBhcmNoaXZlLmhlbHBAbnl1LmVkdSB3aXRoIHRoZSBm
-        b2xsb3dpbmcgaW5mb3JtYXRpb246IFByb3ZpZGUgdGhlIFVSTCBvZiB0aGUg
-        bWF0ZXJpYWwgdGhhdCBpcyB0aGUgYmFzaXMgb2YgeW91ciBpbnF1aXJ5OyBJ
-        ZGVudGlmeSB0aGUgbWF0ZXJpYWwgeW91IGhhdmUgcmlnaHRzIHRvOyBQcm92
-        aWRlIHlvdXIgY29udGFjdCBpbmZvcm1hdGlvbiwgaW5jbHVkaW5nIG5hbWUs
-        IGFkZHJlc3MsIHRlbGVwaG9uZSBudW1iZXIsIGFuZCBlLW1haWwgYWRkcmVz
-        czsgUHJvdmlkZSBhIHN0YXRlbWVudCBvZiB5b3VyIGdvb2QtZmFpdGggYmVs
-        aWVmIHRoYXQgdGhlIG1hdGVyaWFsIHlvdSBpZGVudGlmaWVkIGlzIGluZnJp
-        bmdpbmcgb2YgdGhlIG1hdGVyaWFsIHlvdSBoYXZlIHJpZ2h0cyB0by4nXSwn
-        ZGVzY19tZXRhZGF0YV9fc3ViamVjdF90ZXNpbSc9Plsnd29tZW5cJ3Mgcmln
-        aHRzJywnR2VuZGVyIGRpc2NyaW1pbmF0aW9uJywnU2V4dWFsbHkgdHJhbnNt
-        aXR0ZWQgZGlzZWFzZXMnLCdQdWJsaWMgaGVhbHRoJywnSGVhbHRoIHBvbGlj
-        eScsJ0h1bWFuIHJpZ2h0cycsJ1NvY2lhbCBhZHZvY2FjeSddLCdkZXNjX21l
-        dGFkYXRhX19hdmFpbGFibGVfdGVzaW0nPT5bJ2h0dHA6Ly9oZGwuaGFuZGxl
-        Lm5ldC8yNDUxLzMzNjE2J10sJ2Rlc2NfbWV0YWRhdGFfX2NpdGF0aW9uX3Rl
-        c2ltJz0+WydodHRwOi8vd3d3Lmljcncub3JnL2ZpbGVzL3B1YmxpY2F0aW9u
-        cy9SZWR1Y2luZy1ISVYtU3RpZ21hLWFuZC1HZW5kZXItQmFzZWQtVmlvbGVu
-        Y2UtVG9vbGtpdC1mb3ItSGVhbHRoLUNhcmUtUHJvdmlkZXJzLWluLUluZGlh
-        LnBkZiddLCdkZXNjX21ldGFkYXRhX19yZXNvdXJjZV9zZXRfdGVzaW0nPT5b
-        J2ZhY3VsdHlfZGlnaXRhbF9hcmNoaXZlX25nbyddLCdkZXNjX21ldGFkYXRh
-        X190eXBlX3Rlc2ltJz0+WydSZXBvcnQnXSwnY29sbGVjdGlvbl9zc20nPT5b
-        J1NvdXRoIEFzaWFuIE5HTyBhbmQgb3RoZXIgcmVwb3J0cyddLCd0aW1lc3Rh
-        bXAnPT4nMjAxNS0xMi0xNlQxNjo1MTo0Ny42MzFaJywnc2NvcmUnPT4xLjB9
-        LHsnc3lzdGVtX2NyZWF0ZV9kdHNpJz0+JzIwMTUtMTItMTZUMTY6NTE6NDJa
-        Jywnc3lzdGVtX21vZGlmaWVkX2R0c2knPT4nMjAxNS0xMi0xNlQxNjo1MTo0
-        M1onLCdvYmplY3Rfc3RhdGVfc3NpJz0+J0EnLCdhY3RpdmVfZmVkb3JhX21v
-        ZGVsX3NzaSc9PidOeXVjb3JlJywnaWQnPT4nZmRhOmhkbC1oYW5kbGUtbmV0
-        LTI0NTEtMzM2MTInLCdvYmplY3RfcHJvZmlsZV9zc20nPT5bJ3siZGF0YXN0
-        cmVhbXMiOnsiUkVMUy1FWFQiOnsiZHNMYWJlbCI6IkZlZG9yYSBPYmplY3Qt
-        dG8tT2JqZWN0IFJlbGF0aW9uc2hpcCBNZXRhZGF0YSIsImRzVmVyc2lvbklE
-        IjoiUkVMUy1FWFQuMCIsImRzQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTY6
-        NTE6NDJaIiwiZHNTdGF0ZSI6IkEiLCJkc01JTUUiOiJhcHBsaWNhdGlvbi9y
-        ZGYreG1sIiwiZHNGb3JtYXRVUkkiOm51bGwsImRzQ29udHJvbEdyb3VwIjoi
-        WCIsImRzU2l6ZSI6Mjk5LCJkc1ZlcnNpb25hYmxlIjp0cnVlLCJkc0luZm9U
-        eXBlIjpudWxsLCJkc0xvY2F0aW9uIjoiZmRhOmhkbC1oYW5kbGUtbmV0LTI0
-        NTEtMzM2MTIrUkVMUy1FWFQrUkVMUy1FWFQuMCIsImRzTG9jYXRpb25UeXBl
-        IjpudWxsLCJkc0NoZWNrc3VtVHlwZSI6IkRJU0FCTEVEIiwiZHNDaGVja3N1
-        bSI6Im5vbmUifSwicmlnaHRzTWV0YWRhdGEiOnsiZHNMYWJlbCI6bnVsbCwi
-        ZHNWZXJzaW9uSUQiOiJyaWdodHNNZXRhZGF0YS4wIiwiZHNDcmVhdGVEYXRl
-        IjoiMjAxNS0xMi0xNlQxNjo1MTo0MloiLCJkc1N0YXRlIjoiQSIsImRzTUlN
-        RSI6InRleHQveG1sIiwiZHNGb3JtYXRVUkkiOm51bGwsImRzQ29udHJvbEdy
-        b3VwIjoiTSIsImRzU2l6ZSI6NTc5LCJkc1ZlcnNpb25hYmxlIjp0cnVlLCJk
-        c0luZm9UeXBlIjpudWxsLCJkc0xvY2F0aW9uIjoiZmRhOmhkbC1oYW5kbGUt
-        bmV0LTI0NTEtMzM2MTIrcmlnaHRzTWV0YWRhdGErcmlnaHRzTWV0YWRhdGEu
-        MCIsImRzTG9jYXRpb25UeXBlIjoiSU5URVJOQUxfSUQiLCJkc0NoZWNrc3Vt
-        VHlwZSI6IkRJU0FCTEVEIiwiZHNDaGVja3N1bSI6Im5vbmUifSwic291cmNl
-        X21ldGFkYXRhIjp7ImRzTGFiZWwiOm51bGwsImRzVmVyc2lvbklEIjoic291
-        cmNlX21ldGFkYXRhLjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE2
-        OjUxOjQzWiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBwbGljYXRpb24v
-        bi10cmlwbGVzIiwiZHNGb3JtYXRVUkkiOm51bGwsImRzQ29udHJvbEdyb3Vw
-        IjoiTSIsImRzU2l6ZSI6MzcyMiwiZHNWZXJzaW9uYWJsZSI6dHJ1ZSwiZHNJ
-        bmZvVHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6ImZkYTpoZGwtaGFuZGxlLW5l
-        dC0yNDUxLTMzNjEyK3NvdXJjZV9tZXRhZGF0YStzb3VyY2VfbWV0YWRhdGEu
-        MCIsImRzTG9jYXRpb25UeXBlIjoiSU5URVJOQUxfSUQiLCJkc0NoZWNrc3Vt
-        VHlwZSI6IkRJU0FCTEVEIiwiZHNDaGVja3N1bSI6Im5vbmUifSwibmF0aXZl
-        X21ldGFkYXRhIjp7ImRzTGFiZWwiOm51bGwsImRzVmVyc2lvbklEIjoibmF0
-        aXZlX21ldGFkYXRhLjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE2
-        OjUxOjQzWiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBwbGljYXRpb24v
-        bi10cmlwbGVzIiwiZHNGb3JtYXRVUkkiOm51bGwsImRzQ29udHJvbEdyb3Vw
-        IjoiTSIsImRzU2l6ZSI6ODcsImRzVmVyc2lvbmFibGUiOnRydWUsImRzSW5m
-        b1R5cGUiOm51bGwsImRzTG9jYXRpb24iOiJmZGE6aGRsLWhhbmRsZS1uZXQt
-        MjQ1MS0zMzYxMituYXRpdmVfbWV0YWRhdGErbmF0aXZlX21ldGFkYXRhLjAi
-        LCJkc0xvY2F0aW9uVHlwZSI6IklOVEVSTkFMX0lEIiwiZHNDaGVja3N1bVR5
-        cGUiOiJESVNBQkxFRCIsImRzQ2hlY2tzdW0iOiJub25lIn19LCJvYmpMYWJl
-        bCI6bnVsbCwib2JqT3duZXJJZCI6ImZlZG9yYUFkbWluIiwib2JqTW9kZWxz
-        IjpbImluZm86ZmVkb3JhL2ZlZG9yYS1zeXN0ZW06RmVkb3JhT2JqZWN0LTMu
-        MCJdLCJvYmpDcmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxNjo1MTo0MloiLCJv
-        YmpMYXN0TW9kRGF0ZSI6IjIwMTUtMTItMTZUMTY6NTE6NDJaIiwib2JqRGlz
-        c0luZGV4Vmlld1VSTCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODk4My9mZWRvcmEt
-        dGVzdC9vYmplY3RzL2ZkYSUzQWhkbC1oYW5kbGUtbmV0LTI0NTEtMzM2MTIv
-        bWV0aG9kcy9mZWRvcmEtc3lzdGVtJTNBMy92aWV3TWV0aG9kSW5kZXgiLCJv
-        YmpJdGVtSW5kZXhWaWV3VVJMIjoiaHR0cDovL2xvY2FsaG9zdDo4OTgzL2Zl
-        ZG9yYS10ZXN0L29iamVjdHMvZmRhJTNBaGRsLWhhbmRsZS1uZXQtMjQ1MS0z
-        MzYxMi9tZXRob2RzL2ZlZG9yYS1zeXN0ZW0lM0EzL3ZpZXdJdGVtSW5kZXgi
-        LCJvYmpTdGF0ZSI6IkEifSddLCdlZGl0X2FjY2Vzc19ncm91cF9zc2ltJz0+
-        WydhZG1pbl9ncm91cCcsJ2ZkYV9jYXRhbG9nZXInXSwnaGFzX21vZGVsX3Nz
-        aW0nPT5bJ2luZm86ZmVkb3JhL2FmbW9kZWw6Tnl1Y29yZSddLCdkZXNjX21l
-        dGFkYXRhX19pZGVudGlmaWVyX3Rlc2ltJz0+WydodHRwOi8vd3d3LnVuZHAu
-        b3JnL2NvbnRlbnQvZGFtL2luZGlhL2RvY3MvaGlqcmFzX3RyYW5zZ2VuZGVy
-        X2luX2luZGlhX2hpdl9odW1hbl9yaWdodHNfYW5kX3NvY2lhbF9leGNsdXNp
-        b24ucGRmJywnaHR0cDovL2hkbC5oYW5kbGUubmV0LzI0NTEvMzM2MTInXSwn
-        ZGVzY19tZXRhZGF0YV9fdGl0bGVfdGVzaW0nPT5bJ0hpanJhcy90cmFuc2dl
-        bmRlciB3b21lbiBpbiBJbmRpYTogSElWLCBodW1hbiByaWdodHMgYW5kIHNv
-        Y2lhbCBleGNsdXNpb24nXSwnZGVzY19tZXRhZGF0YV9fY3JlYXRvcl90ZXNp
-        bSc9PlsnQ2hha3JhcGFuaSwgVmVua2F0ZXNhbicsJ1VuaXRlZCBOYXRpb25z
-        IERldmVsb3BtZW50IFByb2dyYW1tZSAoVU5EUCksIEluZGlhJ10sJ2Rlc2Nf
-        bWV0YWRhdGFfX3B1Ymxpc2hlcl90ZXNpbSc9PlsnVW5pdGVkIE5hdGlvbnMg
-        RGV2ZWxvcG1lbnQgUHJvZ3JhbW1lIChVTkRQKSwgSW5kaWEnLCdbTmV3IERl
-        bGhpXSddLCdkZXNjX21ldGFkYXRhX19kZXNjcmlwdGlvbl90ZXNpbSc9Plsn
-        VGhlIGZvY3VzIG9mIHRoaXMgVHJhbnNnZW5kZXIgSXNzdWUgQnJpZWYgaXMg
-        dG8gc3VtbWFyaXplIHRoZSB2YXJpb3VzIGlzc3VlcyBmYWNlZCBieSBIaWpy
-        YXMgYW5kIHRyYW5zZ2VuZGVyIHdvbWVuIGluIEluZGlhIGJ5IHVzaW5nIHRo
-        ZSBzb2NpYWwgZXhjbHVzaW9uIGZyYW1ld29yaywgYW5kIHRvIGhpZ2hsaWdo
-        dCB0aGUgcmVsYXRpb24gYmV0d2VlbiB0aGlzIGV4Y2x1c2lvbiBhbmQgdnVs
-        bmVyYWJpbGl0eSB0byBISVYgYW5kIG90aGVyCmhlYWx0aCByaXNrcy4nXSwn
-        ZGVzY19tZXRhZGF0YV9fZGF0ZV90ZXNpbSc9PlsnMjAxNC0wNS0wOFQxNzox
-        ODo0NVonLCcyMDEwLTEyJ10sJ2Rlc2NfbWV0YWRhdGFfX3JlbGF0aW9uX3Rl
-        c2ltJz0+WydodHRwOi8vYXJjaGl2ZS5ueXUuZWR1L2JpdHN0cmVhbS8yNDUx
-        LzMzNjEyLzIvaGlqcmFzX3RyYW5zZ2VuZGVyX2luX2luZGlhLnBkZiddLCdk
+        OTo0Mjo1Ny43OFonLCdzY29yZSc9PjEuMH0seydzeXN0ZW1fY3JlYXRlX2R0
+        c2knPT4nMjAxNS0xMi0xNlQxOTo0Mjo1OVonLCdzeXN0ZW1fbW9kaWZpZWRf
+        ZHRzaSc9PicyMDE1LTEyLTE2VDE5OjQzOjAwWicsJ29iamVjdF9zdGF0ZV9z
+        c2knPT4nQScsJ2FjdGl2ZV9mZWRvcmFfbW9kZWxfc3NpJz0+J055dWNvcmUn
+        LCdpZCc9PidmZGE6aGRsLWhhbmRsZS1uZXQtMjQ1MS0zMzYxNScsJ29iamVj
+        dF9wcm9maWxlX3NzbSc9PlsneyJkYXRhc3RyZWFtcyI6eyJSRUxTLUVYVCI6
+        eyJkc0xhYmVsIjoiRmVkb3JhIE9iamVjdC10by1PYmplY3QgUmVsYXRpb25z
+        aGlwIE1ldGFkYXRhIiwiZHNWZXJzaW9uSUQiOiJSRUxTLUVYVC4wIiwiZHND
+        cmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxOTo0Mjo1OVoiLCJkc1N0YXRlIjoi
+        QSIsImRzTUlNRSI6ImFwcGxpY2F0aW9uL3JkZit4bWwiLCJkc0Zvcm1hdFVS
+        SSI6bnVsbCwiZHNDb250cm9sR3JvdXAiOiJYIiwiZHNTaXplIjoyOTksImRz
+        VmVyc2lvbmFibGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGwsImRzTG9jYXRp
+        b24iOiJmZGE6aGRsLWhhbmRsZS1uZXQtMjQ1MS0zMzYxNStSRUxTLUVYVCtS
+        RUxTLUVYVC4wIiwiZHNMb2NhdGlvblR5cGUiOm51bGwsImRzQ2hlY2tzdW1U
+        eXBlIjoiRElTQUJMRUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9LCJyaWdodHNN
+        ZXRhZGF0YSI6eyJkc0xhYmVsIjpudWxsLCJkc1ZlcnNpb25JRCI6InJpZ2h0
+        c01ldGFkYXRhLjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE5OjQy
+        OjU5WiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoidGV4dC94bWwiLCJkc0Zv
+        cm1hdFVSSSI6bnVsbCwiZHNDb250cm9sR3JvdXAiOiJNIiwiZHNTaXplIjo1
+        NzksImRzVmVyc2lvbmFibGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGwsImRz
+        TG9jYXRpb24iOiJmZGE6aGRsLWhhbmRsZS1uZXQtMjQ1MS0zMzYxNStyaWdo
+        dHNNZXRhZGF0YStyaWdodHNNZXRhZGF0YS4wIiwiZHNMb2NhdGlvblR5cGUi
+        OiJJTlRFUk5BTF9JRCIsImRzQ2hlY2tzdW1UeXBlIjoiRElTQUJMRUQiLCJk
+        c0NoZWNrc3VtIjoibm9uZSJ9LCJzb3VyY2VfbWV0YWRhdGEiOnsiZHNMYWJl
+        bCI6bnVsbCwiZHNWZXJzaW9uSUQiOiJzb3VyY2VfbWV0YWRhdGEuMCIsImRz
+        Q3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTk6NDM6MDBaIiwiZHNTdGF0ZSI6
+        IkEiLCJkc01JTUUiOiJhcHBsaWNhdGlvbi9uLXRyaXBsZXMiLCJkc0Zvcm1h
+        dFVSSSI6bnVsbCwiZHNDb250cm9sR3JvdXAiOiJNIiwiZHNTaXplIjo0MzAz
+        LCJkc1ZlcnNpb25hYmxlIjp0cnVlLCJkc0luZm9UeXBlIjpudWxsLCJkc0xv
+        Y2F0aW9uIjoiZmRhOmhkbC1oYW5kbGUtbmV0LTI0NTEtMzM2MTUrc291cmNl
+        X21ldGFkYXRhK3NvdXJjZV9tZXRhZGF0YS4wIiwiZHNMb2NhdGlvblR5cGUi
+        OiJJTlRFUk5BTF9JRCIsImRzQ2hlY2tzdW1UeXBlIjoiRElTQUJMRUQiLCJk
+        c0NoZWNrc3VtIjoibm9uZSJ9LCJuYXRpdmVfbWV0YWRhdGEiOnsiZHNMYWJl
+        bCI6bnVsbCwiZHNWZXJzaW9uSUQiOiJuYXRpdmVfbWV0YWRhdGEuMCIsImRz
+        Q3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTk6NDM6MDBaIiwiZHNTdGF0ZSI6
+        IkEiLCJkc01JTUUiOiJhcHBsaWNhdGlvbi9uLXRyaXBsZXMiLCJkc0Zvcm1h
+        dFVSSSI6bnVsbCwiZHNDb250cm9sR3JvdXAiOiJNIiwiZHNTaXplIjo4Nywi
+        ZHNWZXJzaW9uYWJsZSI6dHJ1ZSwiZHNJbmZvVHlwZSI6bnVsbCwiZHNMb2Nh
+        dGlvbiI6ImZkYTpoZGwtaGFuZGxlLW5ldC0yNDUxLTMzNjE1K25hdGl2ZV9t
+        ZXRhZGF0YStuYXRpdmVfbWV0YWRhdGEuMCIsImRzTG9jYXRpb25UeXBlIjoi
+        SU5URVJOQUxfSUQiLCJkc0NoZWNrc3VtVHlwZSI6IkRJU0FCTEVEIiwiZHND
+        aGVja3N1bSI6Im5vbmUifX0sIm9iakxhYmVsIjpudWxsLCJvYmpPd25lcklk
+        IjoiZmVkb3JhQWRtaW4iLCJvYmpNb2RlbHMiOlsiaW5mbzpmZWRvcmEvZmVk
+        b3JhLXN5c3RlbTpGZWRvcmFPYmplY3QtMy4wIl0sIm9iakNyZWF0ZURhdGUi
+        OiIyMDE1LTEyLTE2VDE5OjQyOjU5WiIsIm9iakxhc3RNb2REYXRlIjoiMjAx
+        NS0xMi0xNlQxOTo0Mjo1OVoiLCJvYmpEaXNzSW5kZXhWaWV3VVJMIjoiaHR0
+        cDovL2xvY2FsaG9zdDo4OTgzL2ZlZG9yYS10ZXN0L29iamVjdHMvZmRhJTNB
+        aGRsLWhhbmRsZS1uZXQtMjQ1MS0zMzYxNS9tZXRob2RzL2ZlZG9yYS1zeXN0
+        ZW0lM0EzL3ZpZXdNZXRob2RJbmRleCIsIm9iakl0ZW1JbmRleFZpZXdVUkwi
+        OiJodHRwOi8vbG9jYWxob3N0Ojg5ODMvZmVkb3JhLXRlc3Qvb2JqZWN0cy9m
+        ZGElM0FoZGwtaGFuZGxlLW5ldC0yNDUxLTMzNjE1L21ldGhvZHMvZmVkb3Jh
+        LXN5c3RlbSUzQTMvdmlld0l0ZW1JbmRleCIsIm9ialN0YXRlIjoiQSJ9J10s
+        J2VkaXRfYWNjZXNzX2dyb3VwX3NzaW0nPT5bJ2FkbWluX2dyb3VwJywnZmRh
+        X2NhdGFsb2dlciddLCdoYXNfbW9kZWxfc3NpbSc9PlsnaW5mbzpmZWRvcmEv
+        YWZtb2RlbDpOeXVjb3JlJ10sJ2Rlc2NfbWV0YWRhdGFfX2lkZW50aWZpZXJf
+        dGVzaW0nPT5bJ2h0dHA6Ly93d3cuaWNydy5vcmcvZmlsZXMvcHVibGljYXRp
+        b25zL1dvbWVucy1Qcm9wZXJ0eS1SaWdodHMtYXMtYW4tQUlEUy1SZXNwb25z
+        ZS1FbWVyZ2luZy1FZmZvcnRzLWluLVNvdXRoLUFzaWEucGRmJywnaHR0cDov
+        L2hkbC5oYW5kbGUubmV0LzI0NTEvMzM2MTUnXSwnZGVzY19tZXRhZGF0YV9f
+        dGl0bGVfdGVzaW0nPT5bJ1dvbWVuXCdzIHByb3BlcnR5IHJpZ2h0cyBhcyBh
+        biBBSURTIHJlc3BvbnNlOiBlbWVyZ2luZyBlZmZvcnRzIGluIFNvdXRoIEFz
+        aWEnXSwnZGVzY19tZXRhZGF0YV9fY3JlYXRvcl90ZXNpbSc9PlsnU3dhbWlu
+        YXRoYW4sIEhlbWEnLCdCaGF0bGEsIE5hbmRpdGEnLCdDaGFrcmFib3J0eSwg
+        U3dhdGknXSwnZGVzY19tZXRhZGF0YV9fcHVibGlzaGVyX3Rlc2ltJz0+WydX
+        YXNoaW5ndG9uLCBEQyA6IEludGVybmF0aW9uYWwgQ2VudGVyIGZvciBSZXNl
+        YXJjaCBvbiBXb21lbiAoSUNSVyknLCdXYXNoaW5ndG9uLCBEQyddLCdkZXNj
+        X21ldGFkYXRhX19kZXNjcmlwdGlvbl90ZXNpbSc9PlsnIlRoZSByZXNlYXJj
+        aCBwcmVzZW50ZWQgaGVyZSB0YWtlcyBJQ1JXIGFuZCB0aGUgaW50ZXJuYXRp
+        b25hbCBkZXZlbG9wbWVudCBjb21tdW5pdHkgb25lIHN0ZXAgY2xvc2VyIHRv
+        IHVuZGVyc3RhbmRpbmcgaG93IHNlY3VyZSBwcm9wZXJ0eSByaWdodHMgbWln
+        aHQgaGVscCB3b21lbiBwcm90ZWN0IHRoZW1zZWx2ZXMgYW5kIHRoZWlyIGhv
+        dXNlaG9sZHMgZnJvbSBhZHZlcnNlIHNvY2lhbCBjb25zZXF1ZW5jZXMgcmVs
+        YXRlZCB0byBISVYsIGluY2x1ZGluZyBzdGlnbWEsIHBvdmVydHkgYW5kIHBy
+        b3BlcnR5IGRpc3Bvc3Nlc3Npb24uIEl0IGFsc28gaXMgb25lIG9mIHRoZSBm
+        aXJzdCBleHBsb3JhdGlvbnMgb2Ygd29tZW7igJlzIHByb3BlcnR5IHJpZ2h0
+        cwphbmQgSElWIGluIFNvdXRoIEFzaWEsIHdoZXJlIHRoZSBlcGlkZW1pYyBp
+        cyBzZXZlcmUgYnV0IHJlbWFpbnMgZmFpcmx5IGNvbmNlbnRyYXRlZCBhbW9u
+        ZyBzcGVjaWZpYyBwb3B1bGF0aW9ucy4gVGhlIHN0dWR5IGlzIGEgc25hcHNo
+        b3Qgb2Ygd29tZW7igJlzIGV4cGVyaWVuY2VzIG9mIHByb3BlcnR5IGFuZCBI
+        SVYgaW4gQmFuZ2xhZGVzaCwgSW5kaWEgYW5kIFNyaSBMYW5rYSwgd2hlcmUg
+        d29tZW4gb2Z0ZW4gYXJlIGRlbmllZCB0aGVpciBsZWdhbCByaWdodHMgdG8g
+        cHJvcGVydHkuIFRoaXMgc25hcHNob3QgYWxzbyBleHBsb3JlcyB0aGUgZXh0
+        ZW50IHRvIHdoaWNoIG9yZ2FuaXphdGlvbnMgYXJlIGxpbmtpbmcgd29tZW7i
+        gJlzIHByb3BlcnR5IHJpZ2h0cyBhbmQgSElWLiInXSwnZGVzY19tZXRhZGF0
+        YV9fZGF0ZV90ZXNpbSc9PlsnMjAxNC0wNS0wOFQxOTowOTozOVonLCcyMDA3
+        J10sJ2Rlc2NfbWV0YWRhdGFfX3JlbGF0aW9uX3Rlc2ltJz0+WydodHRwOi8v
+        YXJjaGl2ZS5ueXUuZWR1L2JpdHN0cmVhbS8yNDUxLzMzNjE1LzIvV29tZW5z
+        LVByb3BlcnR5LVJpZ2h0cy1hcy1hbi1BSURTLVJlc3BvbnNlLnBkZiddLCdk
         ZXNjX21ldGFkYXRhX19yaWdodHNfdGVzaW0nPT5bJ05ZVSBMaWJyYXJpZXMg
         aXMgcHJvdmlkaW5nIGFjY2VzcyB0byB0aGVzZSBtYXRlcmlhbHMgYXMgYSBz
         ZXJ2aWNlIHRvIG91ciBzY2hvbGFybHkgY29tbXVuaXR5LiBXZSBkbyBub3Qg
@@ -609,91 +390,312 @@ http_interactions:
         ZiB5b3VyIGdvb2QtZmFpdGggYmVsaWVmIHRoYXQgdGhlIG1hdGVyaWFsIHlv
         dSBpZGVudGlmaWVkIGlzIGluZnJpbmdpbmcgb2YgdGhlIG1hdGVyaWFsIHlv
         dSBoYXZlIHJpZ2h0cyB0by4nXSwnZGVzY19tZXRhZGF0YV9fc3ViamVjdF90
-        ZXNpbSc9PlsnTEdCVCBzdHVkaWVzJywnR2VuZGVyIGlkZW50aXR5JywnU2V4
-        dWFsaXR5JywnU2V4dWFsIG9yaWVudGF0aW9uJywnU29jaWFsIGNvbmRpdGlv
-        bnMnLCdTb2NpYWwgc3RydWN0dXJlJywnU2V4dWFsbHkgdHJhbnNtaXR0ZWQg
-        ZGlzZWFzZXMnLCdBSURTJywnR2VuZGVyIGRpc2NyaW1pbmF0aW9uJ10sJ2Rl
-        c2NfbWV0YWRhdGFfX2F2YWlsYWJsZV90ZXNpbSc9PlsnaHR0cDovL2hkbC5o
-        YW5kbGUubmV0LzI0NTEvMzM2MTInXSwnZGVzY19tZXRhZGF0YV9fY2l0YXRp
-        b25fdGVzaW0nPT5bJ2h0dHA6Ly93d3cudW5kcC5vcmcvY29udGVudC9kYW0v
-        aW5kaWEvZG9jcy9oaWpyYXNfdHJhbnNnZW5kZXJfaW5faW5kaWFfaGl2X2h1
-        bWFuX3JpZ2h0c19hbmRfc29jaWFsX2V4Y2x1c2lvbi5wZGYnXSwnZGVzY19t
-        ZXRhZGF0YV9fcmVzb3VyY2Vfc2V0X3Rlc2ltJz0+WydmYWN1bHR5X2RpZ2l0
-        YWxfYXJjaGl2ZV9uZ28nXSwnZGVzY19tZXRhZGF0YV9fdHlwZV90ZXNpbSc9
-        PlsnUmVwb3J0J10sJ2NvbGxlY3Rpb25fc3NtJz0+WydTb3V0aCBBc2lhbiBO
-        R08gYW5kIG90aGVyIHJlcG9ydHMnXSwndGltZXN0YW1wJz0+JzIwMTUtMTIt
-        MTZUMTY6NTE6NDMuMjczWicsJ3Njb3JlJz0+MS4wfSx7J3N5c3RlbV9jcmVh
-        dGVfZHRzaSc9PicyMDE1LTEyLTE2VDE2OjUxOjM0WicsJ3N5c3RlbV9tb2Rp
-        ZmllZF9kdHNpJz0+JzIwMTUtMTItMTZUMTY6NTE6MzZaJywnb2JqZWN0X3N0
-        YXRlX3NzaSc9PidBJywnYWN0aXZlX2ZlZG9yYV9tb2RlbF9zc2knPT4nTnl1
-        Y29yZScsJ2lkJz0+J2xpYmd1aWRlczpndWlkZXMtbnl1LWVkdS1jb250ZW50
-        LXBocC1waWQtMzg4OTgnLCdvYmplY3RfcHJvZmlsZV9zc20nPT5bJ3siZGF0
-        YXN0cmVhbXMiOnsiUkVMUy1FWFQiOnsiZHNMYWJlbCI6IkZlZG9yYSBPYmpl
-        Y3QtdG8tT2JqZWN0IFJlbGF0aW9uc2hpcCBNZXRhZGF0YSIsImRzVmVyc2lv
-        bklEIjoiUkVMUy1FWFQuMCIsImRzQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZU
-        MTY6NTE6MzVaIiwiZHNTdGF0ZSI6IkEiLCJkc01JTUUiOiJhcHBsaWNhdGlv
-        bi9yZGYreG1sIiwiZHNGb3JtYXRVUkkiOm51bGwsImRzQ29udHJvbEdyb3Vw
-        IjoiWCIsImRzU2l6ZSI6MzE2LCJkc1ZlcnNpb25hYmxlIjp0cnVlLCJkc0lu
-        Zm9UeXBlIjpudWxsLCJkc0xvY2F0aW9uIjoibGliZ3VpZGVzOmd1aWRlcy1u
-        eXUtZWR1LWNvbnRlbnQtcGhwLXBpZC0zODg5OCtSRUxTLUVYVCtSRUxTLUVY
-        VC4wIiwiZHNMb2NhdGlvblR5cGUiOm51bGwsImRzQ2hlY2tzdW1UeXBlIjoi
-        RElTQUJMRUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9LCJyaWdodHNNZXRhZGF0
-        YSI6eyJkc0xhYmVsIjpudWxsLCJkc1ZlcnNpb25JRCI6InJpZ2h0c01ldGFk
-        YXRhLjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE2OjUxOjM1WiIs
-        ImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoidGV4dC94bWwiLCJkc0Zvcm1hdFVS
-        SSI6bnVsbCwiZHNDb250cm9sR3JvdXAiOiJNIiwiZHNTaXplIjo1ODUsImRz
-        VmVyc2lvbmFibGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGwsImRzTG9jYXRp
-        b24iOiJsaWJndWlkZXM6Z3VpZGVzLW55dS1lZHUtY29udGVudC1waHAtcGlk
-        LTM4ODk4K3JpZ2h0c01ldGFkYXRhK3JpZ2h0c01ldGFkYXRhLjAiLCJkc0xv
-        Y2F0aW9uVHlwZSI6IklOVEVSTkFMX0lEIiwiZHNDaGVja3N1bVR5cGUiOiJE
-        SVNBQkxFRCIsImRzQ2hlY2tzdW0iOiJub25lIn0sInNvdXJjZV9tZXRhZGF0
-        YSI6eyJkc0xhYmVsIjpudWxsLCJkc1ZlcnNpb25JRCI6InNvdXJjZV9tZXRh
-        ZGF0YS4wIiwiZHNDcmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxNjo1MTozNloi
-        LCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6ImFwcGxpY2F0aW9uL24tdHJpcGxl
-        cyIsImRzRm9ybWF0VVJJIjpudWxsLCJkc0NvbnRyb2xHcm91cCI6Ik0iLCJk
-        c1NpemUiOjEyNTIsImRzVmVyc2lvbmFibGUiOnRydWUsImRzSW5mb1R5cGUi
-        Om51bGwsImRzTG9jYXRpb24iOiJsaWJndWlkZXM6Z3VpZGVzLW55dS1lZHUt
-        Y29udGVudC1waHAtcGlkLTM4ODk4K3NvdXJjZV9tZXRhZGF0YStzb3VyY2Vf
-        bWV0YWRhdGEuMCIsImRzTG9jYXRpb25UeXBlIjoiSU5URVJOQUxfSUQiLCJk
-        c0NoZWNrc3VtVHlwZSI6IkRJU0FCTEVEIiwiZHNDaGVja3N1bSI6Im5vbmUi
-        fSwibmF0aXZlX21ldGFkYXRhIjp7fX0sIm9iakxhYmVsIjpudWxsLCJvYmpP
-        d25lcklkIjoiZmVkb3JhQWRtaW4iLCJvYmpNb2RlbHMiOlsiaW5mbzpmZWRv
-        cmEvZmVkb3JhLXN5c3RlbTpGZWRvcmFPYmplY3QtMy4wIl0sIm9iakNyZWF0
-        ZURhdGUiOiIyMDE1LTEyLTE2VDE2OjUxOjM0WiIsIm9iakxhc3RNb2REYXRl
-        IjoiMjAxNS0xMi0xNlQxNjo1MTozNFoiLCJvYmpEaXNzSW5kZXhWaWV3VVJM
-        IjoiaHR0cDovL2xvY2FsaG9zdDo4OTgzL2ZlZG9yYS10ZXN0L29iamVjdHMv
-        bGliZ3VpZGVzJTNBZ3VpZGVzLW55dS1lZHUtY29udGVudC1waHAtcGlkLTM4
-        ODk4L21ldGhvZHMvZmVkb3JhLXN5c3RlbSUzQTMvdmlld01ldGhvZEluZGV4
-        Iiwib2JqSXRlbUluZGV4Vmlld1VSTCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODk4
-        My9mZWRvcmEtdGVzdC9vYmplY3RzL2xpYmd1aWRlcyUzQWd1aWRlcy1ueXUt
-        ZWR1LWNvbnRlbnQtcGhwLXBpZC0zODg5OC9tZXRob2RzL2ZlZG9yYS1zeXN0
-        ZW0lM0EzL3ZpZXdJdGVtSW5kZXgiLCJvYmpTdGF0ZSI6IkEifSddLCdlZGl0
-        X2FjY2Vzc19ncm91cF9zc2ltJz0+WydhZG1pbl9ncm91cCcsJ2xpYmd1aWRl
-        c19jYXRhbG9nZXInXSwnaGFzX21vZGVsX3NzaW0nPT5bJ2luZm86ZmVkb3Jh
-        L2FmbW9kZWw6Tnl1Y29yZSddLCdkZXNjX21ldGFkYXRhX19pZGVudGlmaWVy
-        X3Rlc2ltJz0+WydodHRwOi8vZ3VpZGVzLm55dS5lZHUvY29udGVudC5waHA/
-        cGlkPTM4ODk4J10sJ2Rlc2NfbWV0YWRhdGFfX3RpdGxlX3Rlc2ltJz0+WydE
-        YXRhIFNlcnZpY2VzJ10sJ2Rlc2NfbWV0YWRhdGFfX2NyZWF0b3JfdGVzaW0n
-        PT5bJ1NhbWFudGhhIEd1c3MnXSwnZGVzY19tZXRhZGF0YV9fdHlwZV90ZXNp
-        bSc9PlsnUmVzZWFyY2ggR3VpZGUnXSwnZGVzY19tZXRhZGF0YV9fZGVzY3Jp
-        cHRpb25fdGVzaW0nPT5bJ0luZm9ybWF0aW9uIG9uIE5ldyBZb3JrIFVuaXZl
-        cnNpdHlcJ3MgRGF0YSBTZXJ2aWNlcy4nXSwnZGVzY19tZXRhZGF0YV9fZGF0
-        ZV90ZXNpbSc9PlsnMjAxNC0wOC0xOCAwNDoxNzozNCBQTSddLCdkZXNjX21l
-        dGFkYXRhX19zdWJqZWN0X3Rlc2ltJz0+WydMaWJyYXJ5IFNwYWNlcyAmIFNl
-        cnZpY2VzJywnU29jaWFsIFNjaWVuY2VzJ10sJ2Rlc2NfbWV0YWRhdGFfX2F2
-        YWlsYWJsZV90ZXNpbSc9PlsnaHR0cDovL2d1aWRlcy5ueXUuZWR1L2RhdGFz
-        ZXJ2aWNlcyddLCdkZXNjX21ldGFkYXRhX19yZXNvdXJjZV9zZXRfdGVzaW0n
-        PT5bJ2xpYl9ndWlkZXMnXSwnY29sbGVjdGlvbl9zc20nPT5bJ1Jlc2VhcmNo
-        IEd1aWRlcyddLCd0aW1lc3RhbXAnPT4nMjAxNS0xMi0xNlQxNjo1MTozNy4w
-        MlonLCdzY29yZSc9PjEuMH0seydzeXN0ZW1fY3JlYXRlX2R0c2knPT4nMjAx
-        NS0xMi0xNlQxNjo1MTozN1onLCdzeXN0ZW1fbW9kaWZpZWRfZHRzaSc9Picy
-        MDE1LTEyLTE2VDE2OjUxOjM3WicsJ29iamVjdF9zdGF0ZV9zc2knPT4nQScs
+        ZXNpbSc9PlsnU2V4dWFsbHkgdHJhbnNtaXR0ZWQgZGlzZWFzZXMnLCdTb3V0
+        aCBBc2lhJywnRWNvbm9taWMgY29uZGl0aW9ucycsJ0Vjb25vbWljIHNlY3Vy
+        aXR5JywnQmFuZ2xhZGVzaCcsJ0luZGlhJywnU3JpIExhbmthJywnSW5oZXJp
+        dGFuY2UnLCdIdW1hbiByaWdodHMnXSwnZGVzY19tZXRhZGF0YV9fYXZhaWxh
+        YmxlX3Rlc2ltJz0+WydodHRwOi8vaGRsLmhhbmRsZS5uZXQvMjQ1MS8zMzYx
+        NSddLCdkZXNjX21ldGFkYXRhX19jaXRhdGlvbl90ZXNpbSc9PlsnaHR0cDov
+        L3d3dy5pY3J3Lm9yZy9maWxlcy9wdWJsaWNhdGlvbnMvV29tZW5zLVByb3Bl
+        cnR5LVJpZ2h0cy1hcy1hbi1BSURTLVJlc3BvbnNlLUVtZXJnaW5nLUVmZm9y
+        dHMtaW4tU291dGgtQXNpYS5wZGYnXSwnZGVzY19tZXRhZGF0YV9fcmVzb3Vy
+        Y2Vfc2V0X3Rlc2ltJz0+WydmYWN1bHR5X2RpZ2l0YWxfYXJjaGl2ZV9uZ28n
+        XSwnZGVzY19tZXRhZGF0YV9fdHlwZV90ZXNpbSc9PlsnUmVwb3J0J10sJ2Nv
+        bGxlY3Rpb25fc3NtJz0+WydTb3V0aCBBc2lhbiBOR08gYW5kIG90aGVyIHJl
+        cG9ydHMnXSwndGltZXN0YW1wJz0+JzIwMTUtMTItMTZUMTk6NDM6MDAuMjc4
+        WicsJ3Njb3JlJz0+MS4wfSx7J3N5c3RlbV9jcmVhdGVfZHRzaSc9PicyMDE1
+        LTEyLTE2VDE5OjQzOjAwWicsJ3N5c3RlbV9tb2RpZmllZF9kdHNpJz0+JzIw
+        MTUtMTItMTZUMTk6NDM6MDFaJywnb2JqZWN0X3N0YXRlX3NzaSc9PidBJywn
+        YWN0aXZlX2ZlZG9yYV9tb2RlbF9zc2knPT4nTnl1Y29yZScsJ2lkJz0+J2Zk
+        YTpoZGwtaGFuZGxlLW5ldC0yNDUxLTMzNjE2Jywnb2JqZWN0X3Byb2ZpbGVf
+        c3NtJz0+Wyd7ImRhdGFzdHJlYW1zIjp7IlJFTFMtRVhUIjp7ImRzTGFiZWwi
+        OiJGZWRvcmEgT2JqZWN0LXRvLU9iamVjdCBSZWxhdGlvbnNoaXAgTWV0YWRh
+        dGEiLCJkc1ZlcnNpb25JRCI6IlJFTFMtRVhULjAiLCJkc0NyZWF0ZURhdGUi
+        OiIyMDE1LTEyLTE2VDE5OjQzOjAwWiIsImRzU3RhdGUiOiJBIiwiZHNNSU1F
+        IjoiYXBwbGljYXRpb24vcmRmK3htbCIsImRzRm9ybWF0VVJJIjpudWxsLCJk
+        c0NvbnRyb2xHcm91cCI6IlgiLCJkc1NpemUiOjI5OSwiZHNWZXJzaW9uYWJs
+        ZSI6dHJ1ZSwiZHNJbmZvVHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6ImZkYTpo
+        ZGwtaGFuZGxlLW5ldC0yNDUxLTMzNjE2K1JFTFMtRVhUK1JFTFMtRVhULjAi
+        LCJkc0xvY2F0aW9uVHlwZSI6bnVsbCwiZHNDaGVja3N1bVR5cGUiOiJESVNB
+        QkxFRCIsImRzQ2hlY2tzdW0iOiJub25lIn0sInJpZ2h0c01ldGFkYXRhIjp7
+        ImRzTGFiZWwiOm51bGwsImRzVmVyc2lvbklEIjoicmlnaHRzTWV0YWRhdGEu
+        MCIsImRzQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTk6NDM6MDBaIiwiZHNT
+        dGF0ZSI6IkEiLCJkc01JTUUiOiJ0ZXh0L3htbCIsImRzRm9ybWF0VVJJIjpu
+        dWxsLCJkc0NvbnRyb2xHcm91cCI6Ik0iLCJkc1NpemUiOjU3OSwiZHNWZXJz
+        aW9uYWJsZSI6dHJ1ZSwiZHNJbmZvVHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6
+        ImZkYTpoZGwtaGFuZGxlLW5ldC0yNDUxLTMzNjE2K3JpZ2h0c01ldGFkYXRh
+        K3JpZ2h0c01ldGFkYXRhLjAiLCJkc0xvY2F0aW9uVHlwZSI6IklOVEVSTkFM
+        X0lEIiwiZHNDaGVja3N1bVR5cGUiOiJESVNBQkxFRCIsImRzQ2hlY2tzdW0i
+        OiJub25lIn0sInNvdXJjZV9tZXRhZGF0YSI6eyJkc0xhYmVsIjpudWxsLCJk
+        c1ZlcnNpb25JRCI6InNvdXJjZV9tZXRhZGF0YS4wIiwiZHNDcmVhdGVEYXRl
+        IjoiMjAxNS0xMi0xNlQxOTo0MzowMVoiLCJkc1N0YXRlIjoiQSIsImRzTUlN
+        RSI6ImFwcGxpY2F0aW9uL24tdHJpcGxlcyIsImRzRm9ybWF0VVJJIjpudWxs
+        LCJkc0NvbnRyb2xHcm91cCI6Ik0iLCJkc1NpemUiOjQxNjksImRzVmVyc2lv
+        bmFibGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGwsImRzTG9jYXRpb24iOiJm
+        ZGE6aGRsLWhhbmRsZS1uZXQtMjQ1MS0zMzYxNitzb3VyY2VfbWV0YWRhdGEr
+        c291cmNlX21ldGFkYXRhLjAiLCJkc0xvY2F0aW9uVHlwZSI6IklOVEVSTkFM
+        X0lEIiwiZHNDaGVja3N1bVR5cGUiOiJESVNBQkxFRCIsImRzQ2hlY2tzdW0i
+        OiJub25lIn0sIm5hdGl2ZV9tZXRhZGF0YSI6eyJkc0xhYmVsIjpudWxsLCJk
+        c1ZlcnNpb25JRCI6Im5hdGl2ZV9tZXRhZGF0YS4wIiwiZHNDcmVhdGVEYXRl
+        IjoiMjAxNS0xMi0xNlQxOTo0MzowMVoiLCJkc1N0YXRlIjoiQSIsImRzTUlN
+        RSI6ImFwcGxpY2F0aW9uL24tdHJpcGxlcyIsImRzRm9ybWF0VVJJIjpudWxs
+        LCJkc0NvbnRyb2xHcm91cCI6Ik0iLCJkc1NpemUiOjg3LCJkc1ZlcnNpb25h
+        YmxlIjp0cnVlLCJkc0luZm9UeXBlIjpudWxsLCJkc0xvY2F0aW9uIjoiZmRh
+        OmhkbC1oYW5kbGUtbmV0LTI0NTEtMzM2MTYrbmF0aXZlX21ldGFkYXRhK25h
+        dGl2ZV9tZXRhZGF0YS4wIiwiZHNMb2NhdGlvblR5cGUiOiJJTlRFUk5BTF9J
+        RCIsImRzQ2hlY2tzdW1UeXBlIjoiRElTQUJMRUQiLCJkc0NoZWNrc3VtIjoi
+        bm9uZSJ9fSwib2JqTGFiZWwiOm51bGwsIm9iak93bmVySWQiOiJmZWRvcmFB
+        ZG1pbiIsIm9iak1vZGVscyI6WyJpbmZvOmZlZG9yYS9mZWRvcmEtc3lzdGVt
+        OkZlZG9yYU9iamVjdC0zLjAiXSwib2JqQ3JlYXRlRGF0ZSI6IjIwMTUtMTIt
+        MTZUMTk6NDM6MDBaIiwib2JqTGFzdE1vZERhdGUiOiIyMDE1LTEyLTE2VDE5
+        OjQzOjAwWiIsIm9iakRpc3NJbmRleFZpZXdVUkwiOiJodHRwOi8vbG9jYWxo
+        b3N0Ojg5ODMvZmVkb3JhLXRlc3Qvb2JqZWN0cy9mZGElM0FoZGwtaGFuZGxl
+        LW5ldC0yNDUxLTMzNjE2L21ldGhvZHMvZmVkb3JhLXN5c3RlbSUzQTMvdmll
+        d01ldGhvZEluZGV4Iiwib2JqSXRlbUluZGV4Vmlld1VSTCI6Imh0dHA6Ly9s
+        b2NhbGhvc3Q6ODk4My9mZWRvcmEtdGVzdC9vYmplY3RzL2ZkYSUzQWhkbC1o
+        YW5kbGUtbmV0LTI0NTEtMzM2MTYvbWV0aG9kcy9mZWRvcmEtc3lzdGVtJTNB
+        My92aWV3SXRlbUluZGV4Iiwib2JqU3RhdGUiOiJBIn0nXSwnZWRpdF9hY2Nl
+        c3NfZ3JvdXBfc3NpbSc9PlsnYWRtaW5fZ3JvdXAnLCdmZGFfY2F0YWxvZ2Vy
+        J10sJ2hhc19tb2RlbF9zc2ltJz0+WydpbmZvOmZlZG9yYS9hZm1vZGVsOk55
+        dWNvcmUnXSwnZGVzY19tZXRhZGF0YV9faWRlbnRpZmllcl90ZXNpbSc9Plsn
+        aHR0cDovL3d3dy5pY3J3Lm9yZy9maWxlcy9wdWJsaWNhdGlvbnMvUmVkdWNp
+        bmctSElWLVN0aWdtYS1hbmQtR2VuZGVyLUJhc2VkLVZpb2xlbmNlLVRvb2xr
+        aXQtZm9yLUhlYWx0aC1DYXJlLVByb3ZpZGVycy1pbi1JbmRpYS5wZGYnLCdo
+        dHRwOi8vaGRsLmhhbmRsZS5uZXQvMjQ1MS8zMzYxNiddLCdkZXNjX21ldGFk
+        YXRhX190aXRsZV90ZXNpbSc9PlsnUmVkdWNpbmcgSElWIHN0aWdtYSBhbmQg
+        Z2VuZGVyLWJhc2VkIHZpb2xlbmNlOiB0b29sa2l0IGZvciBoZWFsdGggY2Fy
+        ZSBwcm92aWRlcnMgaW4gSW5kaWEnXSwnZGVzY19tZXRhZGF0YV9fY3JlYXRv
+        cl90ZXNpbSc9PlsnS2lkZCwgUm9zcycsJ1ByYXNhZCwgTmFuZGluaScsJ0F2
+        dWxhLCBKeW90aHNuYScsJ1RhanVkZGluLCBNaXJ6YSddLCdkZXNjX21ldGFk
+        YXRhX19wdWJsaXNoZXJfdGVzaW0nPT5bJ0ludGVybmF0aW9uYWwgQ2VudGVy
+        IGZvciBSZXNlYXJjaCBvbiBXb21lbiAoSUNSVyknLCdXYXNoaW5ndG9uLCBE
+        QyddLCdkZXNjX21ldGFkYXRhX19kZXNjcmlwdGlvbl90ZXNpbSc9PlsnIlRo
+        ZSBvdmVyYWxsIGFpbSBpcyB0byBwcmV2ZW50IHRoZSBzcHJlYWQgb2YgSElW
+        IGFuZCBBSURTIGJ5IG1ha2luZyBpdCBlYXNpZXIgZm9yIHBlb3BsZSBsaXZp
+        bmcgd2l0aCBISVYgdG8gYWNjZXNzIGhlYWx0aCBzZXJ2aWNlcywgZGlzY2xv
+        c2UgdGhlaXIgc3RhdHVzIGFuZCBwcmV2ZW50IHRoZSBzcHJlYWQgb2YgSElW
+        IHRvIG90aGVycywgd2hpbGUgYWxzbyBlbGltaW5hdGluZyBzb21lIG9mIHRo
+        ZSBiYXJyaWVycyB0aGF0IGltcGVkZSB0aGUgYWJpbGl0eSBvZiB1bmluZmVj
+        dGVkIHdvbWVuIHRvIHByb3RlY3QgdGhlbXNlbHZlcyBmcm9tIHRoZSB2aXJ1
+        cy4gVXNpbmcgdGhlIHRvb2xraXQsIHlvdSB3aWxsIGJlIGFibGUgdG8gcGxh
+        biBhbmQgb3JnYW5pemUgZWR1Y2F0aW9uYWwgc2Vzc2lvbnMgd2l0aCBoZWFs
+        dGggY2FyZSBwcm92aWRlcnMgdG8gY2hhbGxlbmdlIEhJVi1yZWxhdGVkIHN0
+        aWdtYSBhbmQgZ2VuZGVyLWJhc2VkIHZpb2xlbmNlLCBhbHNvIHJlZmVycmVk
+        IHRvIGFzIGdlbmRlciB2aW9sZW5jZSBpbiB0aGlzIHJlcG9ydC4gVGhlIHRv
+        b2xraXQgd2lsbCBoZWxwIHlvdSByYWlzZSBhd2FyZW5lc3Mgb2YgdGhlIGNh
+        dXNlcyBhbmQgY29uc2VxdWVuY2VzIG9mIHN0aWdtYSBhbmQgdmlvbGVuY2Us
+        IGFuZCBwcm9tb3RlIGFjdGlvbiBhbmQgYWR2b2NhY3kgdG8gY29tYmF0IHRo
+        ZW0uIiddLCdkZXNjX21ldGFkYXRhX19kYXRlX3Rlc2ltJz0+WycyMDE0LTA1
+        LTA4VDE5OjMxOjM3WicsJzIwMDcnXSwnZGVzY19tZXRhZGF0YV9fcmVsYXRp
+        b25fdGVzaW0nPT5bJ2h0dHA6Ly9hcmNoaXZlLm55dS5lZHUvYml0c3RyZWFt
+        LzI0NTEvMzM2MTYvMi9SZWR1Y2luZy1ISVYtU3RpZ21hLWFuZC1HZW5kZXIt
+        QmFzZWQtVmlvbGVuY2UucGRmJ10sJ2Rlc2NfbWV0YWRhdGFfX3JpZ2h0c190
+        ZXNpbSc9PlsnTllVIExpYnJhcmllcyBpcyBwcm92aWRpbmcgYWNjZXNzIHRv
+        IHRoZXNlIG1hdGVyaWFscyBhcyBhIHNlcnZpY2UgdG8gb3VyIHNjaG9sYXJs
+        eSBjb21tdW5pdHkuIFdlIGRvIG5vdCBjbGFpbSB0aGUgY29weXJpZ2h0IGlu
+        IHRoZXNlIG1hdGVyaWFscywgbm9yIGNhbiB3ZSBnaXZlIHBlcm1pc3Npb24g
+        Zm9yIHRoZWlyIHJlLXVzZS4gSWYgeW91IHdvdWxkIGxpa2UgdG8gcmVxdWVz
+        dCB0aGF0IHdlIHRha2UgZG93biBhbnkgb2YgdGhpcyBtYXRlcmlhbCwgcGxl
+        YXNlIHdyaXRlIHRvIGFyY2hpdmUuaGVscEBueXUuZWR1IHdpdGggdGhlIGZv
+        bGxvd2luZyBpbmZvcm1hdGlvbjogUHJvdmlkZSB0aGUgVVJMIG9mIHRoZSBt
+        YXRlcmlhbCB0aGF0IGlzIHRoZSBiYXNpcyBvZiB5b3VyIGlucXVpcnk7IElk
+        ZW50aWZ5IHRoZSBtYXRlcmlhbCB5b3UgaGF2ZSByaWdodHMgdG87IFByb3Zp
+        ZGUgeW91ciBjb250YWN0IGluZm9ybWF0aW9uLCBpbmNsdWRpbmcgbmFtZSwg
+        YWRkcmVzcywgdGVsZXBob25lIG51bWJlciwgYW5kIGUtbWFpbCBhZGRyZXNz
+        OyBQcm92aWRlIGEgc3RhdGVtZW50IG9mIHlvdXIgZ29vZC1mYWl0aCBiZWxp
+        ZWYgdGhhdCB0aGUgbWF0ZXJpYWwgeW91IGlkZW50aWZpZWQgaXMgaW5mcmlu
+        Z2luZyBvZiB0aGUgbWF0ZXJpYWwgeW91IGhhdmUgcmlnaHRzIHRvLiddLCdk
+        ZXNjX21ldGFkYXRhX19zdWJqZWN0X3Rlc2ltJz0+Wyd3b21lblwncyByaWdo
+        dHMnLCdHZW5kZXIgZGlzY3JpbWluYXRpb24nLCdTZXh1YWxseSB0cmFuc21p
+        dHRlZCBkaXNlYXNlcycsJ1B1YmxpYyBoZWFsdGgnLCdIZWFsdGggcG9saWN5
+        JywnSHVtYW4gcmlnaHRzJywnU29jaWFsIGFkdm9jYWN5J10sJ2Rlc2NfbWV0
+        YWRhdGFfX2F2YWlsYWJsZV90ZXNpbSc9PlsnaHR0cDovL2hkbC5oYW5kbGUu
+        bmV0LzI0NTEvMzM2MTYnXSwnZGVzY19tZXRhZGF0YV9fY2l0YXRpb25fdGVz
+        aW0nPT5bJ2h0dHA6Ly93d3cuaWNydy5vcmcvZmlsZXMvcHVibGljYXRpb25z
+        L1JlZHVjaW5nLUhJVi1TdGlnbWEtYW5kLUdlbmRlci1CYXNlZC1WaW9sZW5j
+        ZS1Ub29sa2l0LWZvci1IZWFsdGgtQ2FyZS1Qcm92aWRlcnMtaW4tSW5kaWEu
+        cGRmJ10sJ2Rlc2NfbWV0YWRhdGFfX3Jlc291cmNlX3NldF90ZXNpbSc9Plsn
+        ZmFjdWx0eV9kaWdpdGFsX2FyY2hpdmVfbmdvJ10sJ2Rlc2NfbWV0YWRhdGFf
+        X3R5cGVfdGVzaW0nPT5bJ1JlcG9ydCddLCdjb2xsZWN0aW9uX3NzbSc9Plsn
+        U291dGggQXNpYW4gTkdPIGFuZCBvdGhlciByZXBvcnRzJ10sJ3RpbWVzdGFt
+        cCc9PicyMDE1LTEyLTE2VDE5OjQzOjAxLjEzNFonLCdzY29yZSc9PjEuMH0s
+        eydzeXN0ZW1fY3JlYXRlX2R0c2knPT4nMjAxNS0xMi0xNlQxOTo0Mjo1NVon
+        LCdzeXN0ZW1fbW9kaWZpZWRfZHRzaSc9PicyMDE1LTEyLTE2VDE5OjQyOjU2
+        WicsJ29iamVjdF9zdGF0ZV9zc2knPT4nQScsJ2FjdGl2ZV9mZWRvcmFfbW9k
+        ZWxfc3NpJz0+J055dWNvcmUnLCdpZCc9PidmZGE6aGRsLWhhbmRsZS1uZXQt
+        MjQ1MS0zMzYxMicsJ29iamVjdF9wcm9maWxlX3NzbSc9PlsneyJkYXRhc3Ry
+        ZWFtcyI6eyJSRUxTLUVYVCI6eyJkc0xhYmVsIjoiRmVkb3JhIE9iamVjdC10
+        by1PYmplY3QgUmVsYXRpb25zaGlwIE1ldGFkYXRhIiwiZHNWZXJzaW9uSUQi
+        OiJSRUxTLUVYVC4wIiwiZHNDcmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxOTo0
+        Mjo1NVoiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6ImFwcGxpY2F0aW9uL3Jk
+        Zit4bWwiLCJkc0Zvcm1hdFVSSSI6bnVsbCwiZHNDb250cm9sR3JvdXAiOiJY
+        IiwiZHNTaXplIjoyOTksImRzVmVyc2lvbmFibGUiOnRydWUsImRzSW5mb1R5
+        cGUiOm51bGwsImRzTG9jYXRpb24iOiJmZGE6aGRsLWhhbmRsZS1uZXQtMjQ1
+        MS0zMzYxMitSRUxTLUVYVCtSRUxTLUVYVC4wIiwiZHNMb2NhdGlvblR5cGUi
+        Om51bGwsImRzQ2hlY2tzdW1UeXBlIjoiRElTQUJMRUQiLCJkc0NoZWNrc3Vt
+        Ijoibm9uZSJ9LCJyaWdodHNNZXRhZGF0YSI6eyJkc0xhYmVsIjpudWxsLCJk
+        c1ZlcnNpb25JRCI6InJpZ2h0c01ldGFkYXRhLjAiLCJkc0NyZWF0ZURhdGUi
+        OiIyMDE1LTEyLTE2VDE5OjQyOjU1WiIsImRzU3RhdGUiOiJBIiwiZHNNSU1F
+        IjoidGV4dC94bWwiLCJkc0Zvcm1hdFVSSSI6bnVsbCwiZHNDb250cm9sR3Jv
+        dXAiOiJNIiwiZHNTaXplIjo1NzksImRzVmVyc2lvbmFibGUiOnRydWUsImRz
+        SW5mb1R5cGUiOm51bGwsImRzTG9jYXRpb24iOiJmZGE6aGRsLWhhbmRsZS1u
+        ZXQtMjQ1MS0zMzYxMityaWdodHNNZXRhZGF0YStyaWdodHNNZXRhZGF0YS4w
+        IiwiZHNMb2NhdGlvblR5cGUiOiJJTlRFUk5BTF9JRCIsImRzQ2hlY2tzdW1U
+        eXBlIjoiRElTQUJMRUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9LCJzb3VyY2Vf
+        bWV0YWRhdGEiOnsiZHNMYWJlbCI6bnVsbCwiZHNWZXJzaW9uSUQiOiJzb3Vy
+        Y2VfbWV0YWRhdGEuMCIsImRzQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTk6
+        NDI6NTZaIiwiZHNTdGF0ZSI6IkEiLCJkc01JTUUiOiJhcHBsaWNhdGlvbi9u
+        LXRyaXBsZXMiLCJkc0Zvcm1hdFVSSSI6bnVsbCwiZHNDb250cm9sR3JvdXAi
+        OiJNIiwiZHNTaXplIjozNzIyLCJkc1ZlcnNpb25hYmxlIjp0cnVlLCJkc0lu
+        Zm9UeXBlIjpudWxsLCJkc0xvY2F0aW9uIjoiZmRhOmhkbC1oYW5kbGUtbmV0
+        LTI0NTEtMzM2MTIrc291cmNlX21ldGFkYXRhK3NvdXJjZV9tZXRhZGF0YS4w
+        IiwiZHNMb2NhdGlvblR5cGUiOiJJTlRFUk5BTF9JRCIsImRzQ2hlY2tzdW1U
+        eXBlIjoiRElTQUJMRUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9LCJuYXRpdmVf
+        bWV0YWRhdGEiOnsiZHNMYWJlbCI6bnVsbCwiZHNWZXJzaW9uSUQiOiJuYXRp
+        dmVfbWV0YWRhdGEuMCIsImRzQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTk6
+        NDI6NTZaIiwiZHNTdGF0ZSI6IkEiLCJkc01JTUUiOiJhcHBsaWNhdGlvbi9u
+        LXRyaXBsZXMiLCJkc0Zvcm1hdFVSSSI6bnVsbCwiZHNDb250cm9sR3JvdXAi
+        OiJNIiwiZHNTaXplIjo4NywiZHNWZXJzaW9uYWJsZSI6dHJ1ZSwiZHNJbmZv
+        VHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6ImZkYTpoZGwtaGFuZGxlLW5ldC0y
+        NDUxLTMzNjEyK25hdGl2ZV9tZXRhZGF0YStuYXRpdmVfbWV0YWRhdGEuMCIs
+        ImRzTG9jYXRpb25UeXBlIjoiSU5URVJOQUxfSUQiLCJkc0NoZWNrc3VtVHlw
+        ZSI6IkRJU0FCTEVEIiwiZHNDaGVja3N1bSI6Im5vbmUifX0sIm9iakxhYmVs
+        IjpudWxsLCJvYmpPd25lcklkIjoiZmVkb3JhQWRtaW4iLCJvYmpNb2RlbHMi
+        OlsiaW5mbzpmZWRvcmEvZmVkb3JhLXN5c3RlbTpGZWRvcmFPYmplY3QtMy4w
+        Il0sIm9iakNyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE5OjQyOjU1WiIsIm9i
+        akxhc3RNb2REYXRlIjoiMjAxNS0xMi0xNlQxOTo0Mjo1NVoiLCJvYmpEaXNz
+        SW5kZXhWaWV3VVJMIjoiaHR0cDovL2xvY2FsaG9zdDo4OTgzL2ZlZG9yYS10
+        ZXN0L29iamVjdHMvZmRhJTNBaGRsLWhhbmRsZS1uZXQtMjQ1MS0zMzYxMi9t
+        ZXRob2RzL2ZlZG9yYS1zeXN0ZW0lM0EzL3ZpZXdNZXRob2RJbmRleCIsIm9i
+        akl0ZW1JbmRleFZpZXdVUkwiOiJodHRwOi8vbG9jYWxob3N0Ojg5ODMvZmVk
+        b3JhLXRlc3Qvb2JqZWN0cy9mZGElM0FoZGwtaGFuZGxlLW5ldC0yNDUxLTMz
+        NjEyL21ldGhvZHMvZmVkb3JhLXN5c3RlbSUzQTMvdmlld0l0ZW1JbmRleCIs
+        Im9ialN0YXRlIjoiQSJ9J10sJ2VkaXRfYWNjZXNzX2dyb3VwX3NzaW0nPT5b
+        J2FkbWluX2dyb3VwJywnZmRhX2NhdGFsb2dlciddLCdoYXNfbW9kZWxfc3Np
+        bSc9PlsnaW5mbzpmZWRvcmEvYWZtb2RlbDpOeXVjb3JlJ10sJ2Rlc2NfbWV0
+        YWRhdGFfX2lkZW50aWZpZXJfdGVzaW0nPT5bJ2h0dHA6Ly93d3cudW5kcC5v
+        cmcvY29udGVudC9kYW0vaW5kaWEvZG9jcy9oaWpyYXNfdHJhbnNnZW5kZXJf
+        aW5faW5kaWFfaGl2X2h1bWFuX3JpZ2h0c19hbmRfc29jaWFsX2V4Y2x1c2lv
+        bi5wZGYnLCdodHRwOi8vaGRsLmhhbmRsZS5uZXQvMjQ1MS8zMzYxMiddLCdk
+        ZXNjX21ldGFkYXRhX190aXRsZV90ZXNpbSc9PlsnSGlqcmFzL3RyYW5zZ2Vu
+        ZGVyIHdvbWVuIGluIEluZGlhOiBISVYsIGh1bWFuIHJpZ2h0cyBhbmQgc29j
+        aWFsIGV4Y2x1c2lvbiddLCdkZXNjX21ldGFkYXRhX19jcmVhdG9yX3Rlc2lt
+        Jz0+WydDaGFrcmFwYW5pLCBWZW5rYXRlc2FuJywnVW5pdGVkIE5hdGlvbnMg
+        RGV2ZWxvcG1lbnQgUHJvZ3JhbW1lIChVTkRQKSwgSW5kaWEnXSwnZGVzY19t
+        ZXRhZGF0YV9fcHVibGlzaGVyX3Rlc2ltJz0+WydVbml0ZWQgTmF0aW9ucyBE
+        ZXZlbG9wbWVudCBQcm9ncmFtbWUgKFVORFApLCBJbmRpYScsJ1tOZXcgRGVs
+        aGldJ10sJ2Rlc2NfbWV0YWRhdGFfX2Rlc2NyaXB0aW9uX3Rlc2ltJz0+WydU
+        aGUgZm9jdXMgb2YgdGhpcyBUcmFuc2dlbmRlciBJc3N1ZSBCcmllZiBpcyB0
+        byBzdW1tYXJpemUgdGhlIHZhcmlvdXMgaXNzdWVzIGZhY2VkIGJ5IEhpanJh
+        cyBhbmQgdHJhbnNnZW5kZXIgd29tZW4gaW4gSW5kaWEgYnkgdXNpbmcgdGhl
+        IHNvY2lhbCBleGNsdXNpb24gZnJhbWV3b3JrLCBhbmQgdG8gaGlnaGxpZ2h0
+        IHRoZSByZWxhdGlvbiBiZXR3ZWVuIHRoaXMgZXhjbHVzaW9uIGFuZCB2dWxu
+        ZXJhYmlsaXR5IHRvIEhJViBhbmQgb3RoZXIKaGVhbHRoIHJpc2tzLiddLCdk
+        ZXNjX21ldGFkYXRhX19kYXRlX3Rlc2ltJz0+WycyMDE0LTA1LTA4VDE3OjE4
+        OjQ1WicsJzIwMTAtMTInXSwnZGVzY19tZXRhZGF0YV9fcmVsYXRpb25fdGVz
+        aW0nPT5bJ2h0dHA6Ly9hcmNoaXZlLm55dS5lZHUvYml0c3RyZWFtLzI0NTEv
+        MzM2MTIvMi9oaWpyYXNfdHJhbnNnZW5kZXJfaW5faW5kaWEucGRmJ10sJ2Rl
+        c2NfbWV0YWRhdGFfX3JpZ2h0c190ZXNpbSc9PlsnTllVIExpYnJhcmllcyBp
+        cyBwcm92aWRpbmcgYWNjZXNzIHRvIHRoZXNlIG1hdGVyaWFscyBhcyBhIHNl
+        cnZpY2UgdG8gb3VyIHNjaG9sYXJseSBjb21tdW5pdHkuIFdlIGRvIG5vdCBj
+        bGFpbSB0aGUgY29weXJpZ2h0IGluIHRoZXNlIG1hdGVyaWFscywgbm9yIGNh
+        biB3ZSBnaXZlIHBlcm1pc3Npb24gZm9yIHRoZWlyIHJlLXVzZS4gSWYgeW91
+        IHdvdWxkIGxpa2UgdG8gcmVxdWVzdCB0aGF0IHdlIHRha2UgZG93biBhbnkg
+        b2YgdGhpcyBtYXRlcmlhbCwgcGxlYXNlIHdyaXRlIHRvIGFyY2hpdmUuaGVs
+        cEBueXUuZWR1IHdpdGggdGhlIGZvbGxvd2luZyBpbmZvcm1hdGlvbjogUHJv
+        dmlkZSB0aGUgVVJMIG9mIHRoZSBtYXRlcmlhbCB0aGF0IGlzIHRoZSBiYXNp
+        cyBvZiB5b3VyIGlucXVpcnk7IElkZW50aWZ5IHRoZSBtYXRlcmlhbCB5b3Ug
+        aGF2ZSByaWdodHMgdG87IFByb3ZpZGUgeW91ciBjb250YWN0IGluZm9ybWF0
+        aW9uLCBpbmNsdWRpbmcgbmFtZSwgYWRkcmVzcywgdGVsZXBob25lIG51bWJl
+        ciwgYW5kIGUtbWFpbCBhZGRyZXNzOyBQcm92aWRlIGEgc3RhdGVtZW50IG9m
+        IHlvdXIgZ29vZC1mYWl0aCBiZWxpZWYgdGhhdCB0aGUgbWF0ZXJpYWwgeW91
+        IGlkZW50aWZpZWQgaXMgaW5mcmluZ2luZyBvZiB0aGUgbWF0ZXJpYWwgeW91
+        IGhhdmUgcmlnaHRzIHRvLiddLCdkZXNjX21ldGFkYXRhX19zdWJqZWN0X3Rl
+        c2ltJz0+WydMR0JUIHN0dWRpZXMnLCdHZW5kZXIgaWRlbnRpdHknLCdTZXh1
+        YWxpdHknLCdTZXh1YWwgb3JpZW50YXRpb24nLCdTb2NpYWwgY29uZGl0aW9u
+        cycsJ1NvY2lhbCBzdHJ1Y3R1cmUnLCdTZXh1YWxseSB0cmFuc21pdHRlZCBk
+        aXNlYXNlcycsJ0FJRFMnLCdHZW5kZXIgZGlzY3JpbWluYXRpb24nXSwnZGVz
+        Y19tZXRhZGF0YV9fYXZhaWxhYmxlX3Rlc2ltJz0+WydodHRwOi8vaGRsLmhh
+        bmRsZS5uZXQvMjQ1MS8zMzYxMiddLCdkZXNjX21ldGFkYXRhX19jaXRhdGlv
+        bl90ZXNpbSc9PlsnaHR0cDovL3d3dy51bmRwLm9yZy9jb250ZW50L2RhbS9p
+        bmRpYS9kb2NzL2hpanJhc190cmFuc2dlbmRlcl9pbl9pbmRpYV9oaXZfaHVt
+        YW5fcmlnaHRzX2FuZF9zb2NpYWxfZXhjbHVzaW9uLnBkZiddLCdkZXNjX21l
+        dGFkYXRhX19yZXNvdXJjZV9zZXRfdGVzaW0nPT5bJ2ZhY3VsdHlfZGlnaXRh
+        bF9hcmNoaXZlX25nbyddLCdkZXNjX21ldGFkYXRhX190eXBlX3Rlc2ltJz0+
+        WydSZXBvcnQnXSwnY29sbGVjdGlvbl9zc20nPT5bJ1NvdXRoIEFzaWFuIE5H
+        TyBhbmQgb3RoZXIgcmVwb3J0cyddLCd0aW1lc3RhbXAnPT4nMjAxNS0xMi0x
+        NlQxOTo0Mjo1Ni40ODJaJywnc2NvcmUnPT4xLjB9LHsnc3lzdGVtX2NyZWF0
+        ZV9kdHNpJz0+JzIwMTUtMTItMTZUMTk6NDI6NDVaJywnc3lzdGVtX21vZGlm
+        aWVkX2R0c2knPT4nMjAxNS0xMi0xNlQxOTo0Mjo0N1onLCdvYmplY3Rfc3Rh
+        dGVfc3NpJz0+J0EnLCdhY3RpdmVfZmVkb3JhX21vZGVsX3NzaSc9PidOeXVj
+        b3JlJywnaWQnPT4nbGliZ3VpZGVzOmd1aWRlcy1ueXUtZWR1LWNvbnRlbnQt
+        cGhwLXBpZC0zODg5OCcsJ29iamVjdF9wcm9maWxlX3NzbSc9PlsneyJkYXRh
+        c3RyZWFtcyI6eyJSRUxTLUVYVCI6eyJkc0xhYmVsIjoiRmVkb3JhIE9iamVj
+        dC10by1PYmplY3QgUmVsYXRpb25zaGlwIE1ldGFkYXRhIiwiZHNWZXJzaW9u
+        SUQiOiJSRUxTLUVYVC4wIiwiZHNDcmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQx
+        OTo0Mjo0NloiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6ImFwcGxpY2F0aW9u
+        L3JkZit4bWwiLCJkc0Zvcm1hdFVSSSI6bnVsbCwiZHNDb250cm9sR3JvdXAi
+        OiJYIiwiZHNTaXplIjozMTYsImRzVmVyc2lvbmFibGUiOnRydWUsImRzSW5m
+        b1R5cGUiOm51bGwsImRzTG9jYXRpb24iOiJsaWJndWlkZXM6Z3VpZGVzLW55
+        dS1lZHUtY29udGVudC1waHAtcGlkLTM4ODk4K1JFTFMtRVhUK1JFTFMtRVhU
+        LjAiLCJkc0xvY2F0aW9uVHlwZSI6bnVsbCwiZHNDaGVja3N1bVR5cGUiOiJE
+        SVNBQkxFRCIsImRzQ2hlY2tzdW0iOiJub25lIn0sInJpZ2h0c01ldGFkYXRh
+        Ijp7ImRzTGFiZWwiOm51bGwsImRzVmVyc2lvbklEIjoicmlnaHRzTWV0YWRh
+        dGEuMCIsImRzQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTk6NDI6NDdaIiwi
+        ZHNTdGF0ZSI6IkEiLCJkc01JTUUiOiJ0ZXh0L3htbCIsImRzRm9ybWF0VVJJ
+        IjpudWxsLCJkc0NvbnRyb2xHcm91cCI6Ik0iLCJkc1NpemUiOjU4NSwiZHNW
+        ZXJzaW9uYWJsZSI6dHJ1ZSwiZHNJbmZvVHlwZSI6bnVsbCwiZHNMb2NhdGlv
+        biI6ImxpYmd1aWRlczpndWlkZXMtbnl1LWVkdS1jb250ZW50LXBocC1waWQt
+        Mzg4OTgrcmlnaHRzTWV0YWRhdGErcmlnaHRzTWV0YWRhdGEuMCIsImRzTG9j
+        YXRpb25UeXBlIjoiSU5URVJOQUxfSUQiLCJkc0NoZWNrc3VtVHlwZSI6IkRJ
+        U0FCTEVEIiwiZHNDaGVja3N1bSI6Im5vbmUifSwic291cmNlX21ldGFkYXRh
+        Ijp7ImRzTGFiZWwiOm51bGwsImRzVmVyc2lvbklEIjoic291cmNlX21ldGFk
+        YXRhLjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE5OjQyOjQ3WiIs
+        ImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBwbGljYXRpb24vbi10cmlwbGVz
+        IiwiZHNGb3JtYXRVUkkiOm51bGwsImRzQ29udHJvbEdyb3VwIjoiTSIsImRz
+        U2l6ZSI6MTI1MiwiZHNWZXJzaW9uYWJsZSI6dHJ1ZSwiZHNJbmZvVHlwZSI6
+        bnVsbCwiZHNMb2NhdGlvbiI6ImxpYmd1aWRlczpndWlkZXMtbnl1LWVkdS1j
+        b250ZW50LXBocC1waWQtMzg4OTgrc291cmNlX21ldGFkYXRhK3NvdXJjZV9t
+        ZXRhZGF0YS4wIiwiZHNMb2NhdGlvblR5cGUiOiJJTlRFUk5BTF9JRCIsImRz
+        Q2hlY2tzdW1UeXBlIjoiRElTQUJMRUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9
+        LCJuYXRpdmVfbWV0YWRhdGEiOnt9fSwib2JqTGFiZWwiOm51bGwsIm9iak93
+        bmVySWQiOiJmZWRvcmFBZG1pbiIsIm9iak1vZGVscyI6WyJpbmZvOmZlZG9y
+        YS9mZWRvcmEtc3lzdGVtOkZlZG9yYU9iamVjdC0zLjAiXSwib2JqQ3JlYXRl
+        RGF0ZSI6IjIwMTUtMTItMTZUMTk6NDI6NDVaIiwib2JqTGFzdE1vZERhdGUi
+        OiIyMDE1LTEyLTE2VDE5OjQyOjQ1WiIsIm9iakRpc3NJbmRleFZpZXdVUkwi
+        OiJodHRwOi8vbG9jYWxob3N0Ojg5ODMvZmVkb3JhLXRlc3Qvb2JqZWN0cy9s
+        aWJndWlkZXMlM0FndWlkZXMtbnl1LWVkdS1jb250ZW50LXBocC1waWQtMzg4
+        OTgvbWV0aG9kcy9mZWRvcmEtc3lzdGVtJTNBMy92aWV3TWV0aG9kSW5kZXgi
+        LCJvYmpJdGVtSW5kZXhWaWV3VVJMIjoiaHR0cDovL2xvY2FsaG9zdDo4OTgz
+        L2ZlZG9yYS10ZXN0L29iamVjdHMvbGliZ3VpZGVzJTNBZ3VpZGVzLW55dS1l
+        ZHUtY29udGVudC1waHAtcGlkLTM4ODk4L21ldGhvZHMvZmVkb3JhLXN5c3Rl
+        bSUzQTMvdmlld0l0ZW1JbmRleCIsIm9ialN0YXRlIjoiQSJ9J10sJ2VkaXRf
+        YWNjZXNzX2dyb3VwX3NzaW0nPT5bJ2FkbWluX2dyb3VwJywnbGliZ3VpZGVz
+        X2NhdGFsb2dlciddLCdoYXNfbW9kZWxfc3NpbSc9PlsnaW5mbzpmZWRvcmEv
+        YWZtb2RlbDpOeXVjb3JlJ10sJ2Rlc2NfbWV0YWRhdGFfX2lkZW50aWZpZXJf
+        dGVzaW0nPT5bJ2h0dHA6Ly9ndWlkZXMubnl1LmVkdS9jb250ZW50LnBocD9w
+        aWQ9Mzg4OTgnXSwnZGVzY19tZXRhZGF0YV9fdGl0bGVfdGVzaW0nPT5bJ0Rh
+        dGEgU2VydmljZXMnXSwnZGVzY19tZXRhZGF0YV9fY3JlYXRvcl90ZXNpbSc9
+        PlsnU2FtYW50aGEgR3VzcyddLCdkZXNjX21ldGFkYXRhX190eXBlX3Rlc2lt
+        Jz0+WydSZXNlYXJjaCBHdWlkZSddLCdkZXNjX21ldGFkYXRhX19kZXNjcmlw
+        dGlvbl90ZXNpbSc9PlsnSW5mb3JtYXRpb24gb24gTmV3IFlvcmsgVW5pdmVy
+        c2l0eVwncyBEYXRhIFNlcnZpY2VzLiddLCdkZXNjX21ldGFkYXRhX19kYXRl
+        X3Rlc2ltJz0+WycyMDE0LTA4LTE4IDA0OjE3OjM0IFBNJ10sJ2Rlc2NfbWV0
+        YWRhdGFfX3N1YmplY3RfdGVzaW0nPT5bJ0xpYnJhcnkgU3BhY2VzICYgU2Vy
+        dmljZXMnLCdTb2NpYWwgU2NpZW5jZXMnXSwnZGVzY19tZXRhZGF0YV9fYXZh
+        aWxhYmxlX3Rlc2ltJz0+WydodHRwOi8vZ3VpZGVzLm55dS5lZHUvZGF0YXNl
+        cnZpY2VzJ10sJ2Rlc2NfbWV0YWRhdGFfX3Jlc291cmNlX3NldF90ZXNpbSc9
+        PlsnbGliX2d1aWRlcyddLCdjb2xsZWN0aW9uX3NzbSc9PlsnUmVzZWFyY2gg
+        R3VpZGVzJ10sJ3RpbWVzdGFtcCc9PicyMDE1LTEyLTE2VDE5OjQyOjQ4LjYx
+        NFonLCdzY29yZSc9PjEuMH0seydzeXN0ZW1fY3JlYXRlX2R0c2knPT4nMjAx
+        NS0xMi0xNlQxOTo0Mjo0OVonLCdzeXN0ZW1fbW9kaWZpZWRfZHRzaSc9Picy
+        MDE1LTEyLTE2VDE5OjQyOjUwWicsJ29iamVjdF9zdGF0ZV9zc2knPT4nQScs
         J2FjdGl2ZV9mZWRvcmFfbW9kZWxfc3NpJz0+J055dWNvcmUnLCdpZCc9Pids
         aWJndWlkZXM6bG9jYWxob3N0Jywnb2JqZWN0X3Byb2ZpbGVfc3NtJz0+Wyd7
         ImRhdGFzdHJlYW1zIjp7IlJFTFMtRVhUIjp7ImRzTGFiZWwiOiJGZWRvcmEg
         T2JqZWN0LXRvLU9iamVjdCBSZWxhdGlvbnNoaXAgTWV0YWRhdGEiLCJkc1Zl
         cnNpb25JRCI6IlJFTFMtRVhULjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEy
-        LTE2VDE2OjUxOjM3WiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBwbGlj
+        LTE2VDE5OjQyOjQ5WiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBwbGlj
         YXRpb24vcmRmK3htbCIsImRzRm9ybWF0VVJJIjpudWxsLCJkc0NvbnRyb2xH
         cm91cCI6IlgiLCJkc1NpemUiOjI4OSwiZHNWZXJzaW9uYWJsZSI6dHJ1ZSwi
         ZHNJbmZvVHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6ImxpYmd1aWRlczpsb2Nh
@@ -701,7 +703,7 @@ http_interactions:
         dWxsLCJkc0NoZWNrc3VtVHlwZSI6IkRJU0FCTEVEIiwiZHNDaGVja3N1bSI6
         Im5vbmUifSwicmlnaHRzTWV0YWRhdGEiOnsiZHNMYWJlbCI6bnVsbCwiZHNW
         ZXJzaW9uSUQiOiJyaWdodHNNZXRhZGF0YS4wIiwiZHNDcmVhdGVEYXRlIjoi
-        MjAxNS0xMi0xNlQxNjo1MTozN1oiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6
+        MjAxNS0xMi0xNlQxOTo0Mjo0OVoiLCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6
         InRleHQveG1sIiwiZHNGb3JtYXRVUkkiOm51bGwsImRzQ29udHJvbEdyb3Vw
         IjoiTSIsImRzU2l6ZSI6NTg1LCJkc1ZlcnNpb25hYmxlIjp0cnVlLCJkc0lu
         Zm9UeXBlIjpudWxsLCJkc0xvY2F0aW9uIjoibGliZ3VpZGVzOmxvY2FsaG9z
@@ -709,7 +711,7 @@ http_interactions:
         blR5cGUiOiJJTlRFUk5BTF9JRCIsImRzQ2hlY2tzdW1UeXBlIjoiRElTQUJM
         RUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9LCJzb3VyY2VfbWV0YWRhdGEiOnsi
         ZHNMYWJlbCI6bnVsbCwiZHNWZXJzaW9uSUQiOiJzb3VyY2VfbWV0YWRhdGEu
-        MCIsImRzQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTY6NTE6MzdaIiwiZHNT
+        MCIsImRzQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTk6NDI6NTBaIiwiZHNT
         dGF0ZSI6IkEiLCJkc01JTUUiOiJhcHBsaWNhdGlvbi9uLXRyaXBsZXMiLCJk
         c0Zvcm1hdFVSSSI6bnVsbCwiZHNDb250cm9sR3JvdXAiOiJNIiwiZHNTaXpl
         Ijo2OTIsImRzVmVyc2lvbmFibGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGws
@@ -719,8 +721,8 @@ http_interactions:
         a3N1bSI6Im5vbmUifSwibmF0aXZlX21ldGFkYXRhIjp7fX0sIm9iakxhYmVs
         IjpudWxsLCJvYmpPd25lcklkIjoiZmVkb3JhQWRtaW4iLCJvYmpNb2RlbHMi
         OlsiaW5mbzpmZWRvcmEvZmVkb3JhLXN5c3RlbTpGZWRvcmFPYmplY3QtMy4w
-        Il0sIm9iakNyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE2OjUxOjM3WiIsIm9i
-        akxhc3RNb2REYXRlIjoiMjAxNS0xMi0xNlQxNjo1MTozN1oiLCJvYmpEaXNz
+        Il0sIm9iakNyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE5OjQyOjQ5WiIsIm9i
+        akxhc3RNb2REYXRlIjoiMjAxNS0xMi0xNlQxOTo0Mjo0OVoiLCJvYmpEaXNz
         SW5kZXhWaWV3VVJMIjoiaHR0cDovL2xvY2FsaG9zdDo4OTgzL2ZlZG9yYS10
         ZXN0L29iamVjdHMvbGliZ3VpZGVzJTNBbG9jYWxob3N0L21ldGhvZHMvZmVk
         b3JhLXN5c3RlbSUzQTMvdmlld01ldGhvZEluZGV4Iiwib2JqSXRlbUluZGV4
@@ -739,16 +741,16 @@ http_interactions:
         J2Rlc2NfbWV0YWRhdGFfX2F2YWlsYWJsZV90ZXNpbSc9PlsnaHR0cDovL2xv
         Y2FsaG9zdCddLCdkZXNjX21ldGFkYXRhX19yZXNvdXJjZV9zZXRfdGVzaW0n
         PT5bJ2xpYl9ndWlkZXMnXSwnY29sbGVjdGlvbl9zc20nPT5bJ1Jlc2VhcmNo
-        IEd1aWRlcyddLCd0aW1lc3RhbXAnPT4nMjAxNS0xMi0xNlQxNjo1MTozNy43
-        NDhaJywnc2NvcmUnPT4xLjB9LHsnc3lzdGVtX2NyZWF0ZV9kdHNpJz0+JzIw
-        MTUtMTItMTZUMTY6NTE6NDlaJywnc3lzdGVtX21vZGlmaWVkX2R0c2knPT4n
-        MjAxNS0xMi0xNlQxNjo1MTo1NFonLCdvYmplY3Rfc3RhdGVfc3NpJz0+J0En
+        IEd1aWRlcyddLCd0aW1lc3RhbXAnPT4nMjAxNS0xMi0xNlQxOTo0Mjo1MC4z
+        NTdaJywnc2NvcmUnPT4xLjB9LHsnc3lzdGVtX2NyZWF0ZV9kdHNpJz0+JzIw
+        MTUtMTItMTZUMTk6NDM6MDJaJywnc3lzdGVtX21vZGlmaWVkX2R0c2knPT4n
+        MjAxNS0xMi0xNlQxOTo0MzowMlonLCdvYmplY3Rfc3RhdGVfc3NpJz0+J0En
         LCdhY3RpdmVfZmVkb3JhX21vZGVsX3NzaSc9PidOeXVjb3JlJywnaWQnPT4n
         YWktYWNjdzpkZmVmODZmNDRjYmIyMmJmYTcyOGNiYTJmNjdiNzAxNCcsJ29i
         amVjdF9wcm9maWxlX3NzbSc9PlsneyJkYXRhc3RyZWFtcyI6eyJSRUxTLUVY
         VCI6eyJkc0xhYmVsIjoiRmVkb3JhIE9iamVjdC10by1PYmplY3QgUmVsYXRp
         b25zaGlwIE1ldGFkYXRhIiwiZHNWZXJzaW9uSUQiOiJSRUxTLUVYVC4wIiwi
-        ZHNDcmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxNjo1MTo1MVoiLCJkc1N0YXRl
+        ZHNDcmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxOTo0MzowMloiLCJkc1N0YXRl
         IjoiQSIsImRzTUlNRSI6ImFwcGxpY2F0aW9uL3JkZit4bWwiLCJkc0Zvcm1h
         dFVSSSI6bnVsbCwiZHNDb250cm9sR3JvdXAiOiJYIiwiZHNTaXplIjozMTAs
         ImRzVmVyc2lvbmFibGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGwsImRzTG9j
@@ -757,7 +759,7 @@ http_interactions:
         bCwiZHNDaGVja3N1bVR5cGUiOiJESVNBQkxFRCIsImRzQ2hlY2tzdW0iOiJu
         b25lIn0sInJpZ2h0c01ldGFkYXRhIjp7ImRzTGFiZWwiOm51bGwsImRzVmVy
         c2lvbklEIjoicmlnaHRzTWV0YWRhdGEuMCIsImRzQ3JlYXRlRGF0ZSI6IjIw
-        MTUtMTItMTZUMTY6NTE6NTJaIiwiZHNTdGF0ZSI6IkEiLCJkc01JTUUiOiJ0
+        MTUtMTItMTZUMTk6NDM6MDJaIiwiZHNTdGF0ZSI6IkEiLCJkc01JTUUiOiJ0
         ZXh0L3htbCIsImRzRm9ybWF0VVJJIjpudWxsLCJkc0NvbnRyb2xHcm91cCI6
         Ik0iLCJkc1NpemUiOjU3NSwiZHNWZXJzaW9uYWJsZSI6dHJ1ZSwiZHNJbmZv
         VHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6ImFpLWFjY3c6ZGZlZjg2ZjQ0Y2Ji
@@ -766,7 +768,7 @@ http_interactions:
         ZWNrc3VtVHlwZSI6IkRJU0FCTEVEIiwiZHNDaGVja3N1bSI6Im5vbmUifSwi
         c291cmNlX21ldGFkYXRhIjp7ImRzTGFiZWwiOm51bGwsImRzVmVyc2lvbklE
         Ijoic291cmNlX21ldGFkYXRhLjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEy
-        LTE2VDE2OjUxOjU0WiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBwbGlj
+        LTE2VDE5OjQzOjAyWiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBwbGlj
         YXRpb24vbi10cmlwbGVzIiwiZHNGb3JtYXRVUkkiOm51bGwsImRzQ29udHJv
         bEdyb3VwIjoiTSIsImRzU2l6ZSI6NjUxLCJkc1ZlcnNpb25hYmxlIjp0cnVl
         LCJkc0luZm9UeXBlIjpudWxsLCJkc0xvY2F0aW9uIjoiYWktYWNjdzpkZmVm
@@ -776,8 +778,8 @@ http_interactions:
         OiJub25lIn0sIm5hdGl2ZV9tZXRhZGF0YSI6e319LCJvYmpMYWJlbCI6bnVs
         bCwib2JqT3duZXJJZCI6ImZlZG9yYUFkbWluIiwib2JqTW9kZWxzIjpbImlu
         Zm86ZmVkb3JhL2ZlZG9yYS1zeXN0ZW06RmVkb3JhT2JqZWN0LTMuMCJdLCJv
-        YmpDcmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxNjo1MTo0OVoiLCJvYmpMYXN0
-        TW9kRGF0ZSI6IjIwMTUtMTItMTZUMTY6NTE6NDlaIiwib2JqRGlzc0luZGV4
+        YmpDcmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxOTo0MzowMloiLCJvYmpMYXN0
+        TW9kRGF0ZSI6IjIwMTUtMTItMTZUMTk6NDM6MDJaIiwib2JqRGlzc0luZGV4
         Vmlld1VSTCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODk4My9mZWRvcmEtdGVzdC9v
         YmplY3RzL2FpLWFjY3clM0FkZmVmODZmNDRjYmIyMmJmYTcyOGNiYTJmNjdi
         NzAxNC9tZXRob2RzL2ZlZG9yYS1zeXN0ZW0lM0EzL3ZpZXdNZXRob2RJbmRl
@@ -797,16 +799,16 @@ http_interactions:
         X21ldGFkYXRhX19yZXNvdXJjZV9zZXRfdGVzaW0nPT5bJ2FyY2hpdmVfaXRf
         YWNjdyddLCdjb2xsZWN0aW9uX3NzbSc9PlsnQXJjaGl2ZSBvZiBDb250ZW1w
         b3JhcnkgQ29tcG9zZXJzXCcgV2Vic2l0ZXMnXSwndGltZXN0YW1wJz0+JzIw
-        MTUtMTItMTZUMTY6NTE6NTQuNTE3WicsJ3Njb3JlJz0+MS4wfSx7J3N5c3Rl
-        bV9jcmVhdGVfZHRzaSc9PicyMDE1LTEyLTE2VDE2OjUxOjU1WicsJ3N5c3Rl
-        bV9tb2RpZmllZF9kdHNpJz0+JzIwMTUtMTItMTZUMTY6NTE6NTZaJywnb2Jq
+        MTUtMTItMTZUMTk6NDM6MDIuNDc4WicsJ3Njb3JlJz0+MS4wfSx7J3N5c3Rl
+        bV9jcmVhdGVfZHRzaSc9PicyMDE1LTEyLTE2VDE5OjQzOjAyWicsJ3N5c3Rl
+        bV9tb2RpZmllZF9kdHNpJz0+JzIwMTUtMTItMTZUMTk6NDM6MDJaJywnb2Jq
         ZWN0X3N0YXRlX3NzaSc9PidBJywnYWN0aXZlX2ZlZG9yYV9tb2RlbF9zc2kn
         PT4nTnl1Y29yZScsJ2lkJz0+J2FpLWFjY3c6OWIxODNhZDUyNWE4OTc3NjQy
         YmRmMjBkNGI1NGE4MTknLCdvYmplY3RfcHJvZmlsZV9zc20nPT5bJ3siZGF0
         YXN0cmVhbXMiOnsiUkVMUy1FWFQiOnsiZHNMYWJlbCI6IkZlZG9yYSBPYmpl
         Y3QtdG8tT2JqZWN0IFJlbGF0aW9uc2hpcCBNZXRhZGF0YSIsImRzVmVyc2lv
         bklEIjoiUkVMUy1FWFQuMCIsImRzQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZU
-        MTY6NTE6NTZaIiwiZHNTdGF0ZSI6IkEiLCJkc01JTUUiOiJhcHBsaWNhdGlv
+        MTk6NDM6MDJaIiwiZHNTdGF0ZSI6IkEiLCJkc01JTUUiOiJhcHBsaWNhdGlv
         bi9yZGYreG1sIiwiZHNGb3JtYXRVUkkiOm51bGwsImRzQ29udHJvbEdyb3Vw
         IjoiWCIsImRzU2l6ZSI6MzEwLCJkc1ZlcnNpb25hYmxlIjp0cnVlLCJkc0lu
         Zm9UeXBlIjpudWxsLCJkc0xvY2F0aW9uIjoiYWktYWNjdzo5YjE4M2FkNTI1
@@ -814,7 +816,7 @@ http_interactions:
         ZHNMb2NhdGlvblR5cGUiOm51bGwsImRzQ2hlY2tzdW1UeXBlIjoiRElTQUJM
         RUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9LCJyaWdodHNNZXRhZGF0YSI6eyJk
         c0xhYmVsIjpudWxsLCJkc1ZlcnNpb25JRCI6InJpZ2h0c01ldGFkYXRhLjAi
-        LCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE2OjUxOjU2WiIsImRzU3Rh
+        LCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE5OjQzOjAyWiIsImRzU3Rh
         dGUiOiJBIiwiZHNNSU1FIjoidGV4dC94bWwiLCJkc0Zvcm1hdFVSSSI6bnVs
         bCwiZHNDb250cm9sR3JvdXAiOiJNIiwiZHNTaXplIjo1NzUsImRzVmVyc2lv
         bmFibGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGwsImRzTG9jYXRpb24iOiJh
@@ -823,7 +825,7 @@ http_interactions:
         IklOVEVSTkFMX0lEIiwiZHNDaGVja3N1bVR5cGUiOiJESVNBQkxFRCIsImRz
         Q2hlY2tzdW0iOiJub25lIn0sInNvdXJjZV9tZXRhZGF0YSI6eyJkc0xhYmVs
         IjpudWxsLCJkc1ZlcnNpb25JRCI6InNvdXJjZV9tZXRhZGF0YS4wIiwiZHND
-        cmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxNjo1MTo1NloiLCJkc1N0YXRlIjoi
+        cmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxOTo0MzowMloiLCJkc1N0YXRlIjoi
         QSIsImRzTUlNRSI6ImFwcGxpY2F0aW9uL24tdHJpcGxlcyIsImRzRm9ybWF0
         VVJJIjpudWxsLCJkc0NvbnRyb2xHcm91cCI6Ik0iLCJkc1NpemUiOjYzOSwi
         ZHNWZXJzaW9uYWJsZSI6dHJ1ZSwiZHNJbmZvVHlwZSI6bnVsbCwiZHNMb2Nh
@@ -834,8 +836,8 @@ http_interactions:
         Ont9fSwib2JqTGFiZWwiOm51bGwsIm9iak93bmVySWQiOiJmZWRvcmFBZG1p
         biIsIm9iak1vZGVscyI6WyJpbmZvOmZlZG9yYS9mZWRvcmEtc3lzdGVtOkZl
         ZG9yYU9iamVjdC0zLjAiXSwib2JqQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZU
-        MTY6NTE6NTVaIiwib2JqTGFzdE1vZERhdGUiOiIyMDE1LTEyLTE2VDE2OjUx
-        OjU1WiIsIm9iakRpc3NJbmRleFZpZXdVUkwiOiJodHRwOi8vbG9jYWxob3N0
+        MTk6NDM6MDJaIiwib2JqTGFzdE1vZERhdGUiOiIyMDE1LTEyLTE2VDE5OjQz
+        OjAyWiIsIm9iakRpc3NJbmRleFZpZXdVUkwiOiJodHRwOi8vbG9jYWxob3N0
         Ojg5ODMvZmVkb3JhLXRlc3Qvb2JqZWN0cy9haS1hY2N3JTNBOWIxODNhZDUy
         NWE4OTc3NjQyYmRmMjBkNGI1NGE4MTkvbWV0aG9kcy9mZWRvcmEtc3lzdGVt
         JTNBMy92aWV3TWV0aG9kSW5kZXgiLCJvYmpJdGVtSW5kZXhWaWV3VVJMIjoi
@@ -854,97 +856,95 @@ http_interactions:
         XSwnZGVzY19tZXRhZGF0YV9fcmVzb3VyY2Vfc2V0X3Rlc2ltJz0+WydhcmNo
         aXZlX2l0X2FjY3cnXSwnY29sbGVjdGlvbl9zc20nPT5bJ0FyY2hpdmUgb2Yg
         Q29udGVtcG9yYXJ5IENvbXBvc2Vyc1wnIFdlYnNpdGVzJ10sJ3RpbWVzdGFt
-        cCc9PicyMDE1LTEyLTE2VDE2OjUxOjU2LjgzWicsJ3Njb3JlJz0+MS4wfSx7
-        J3N5c3RlbV9jcmVhdGVfZHRzaSc9PicyMDE1LTEyLTE2VDE2OjUxOjQ4Wics
-        J3N5c3RlbV9tb2RpZmllZF9kdHNpJz0+JzIwMTUtMTItMTZUMTY6NTE6NDla
-        Jywnb2JqZWN0X3N0YXRlX3NzaSc9PidBJywnYWN0aXZlX2ZlZG9yYV9tb2Rl
-        bF9zc2knPT4nTnl1Y29yZScsJ2lkJz0+J2FpLWFjY3c6YmRhN2I3NzRhNDky
-        NmM2MmFjMjM2Y2FjYTFkYWFkNDYnLCdvYmplY3RfcHJvZmlsZV9zc20nPT5b
-        J3siZGF0YXN0cmVhbXMiOnsiUkVMUy1FWFQiOnsiZHNMYWJlbCI6IkZlZG9y
-        YSBPYmplY3QtdG8tT2JqZWN0IFJlbGF0aW9uc2hpcCBNZXRhZGF0YSIsImRz
-        VmVyc2lvbklEIjoiUkVMUy1FWFQuMCIsImRzQ3JlYXRlRGF0ZSI6IjIwMTUt
-        MTItMTZUMTY6NTE6NDhaIiwiZHNTdGF0ZSI6IkEiLCJkc01JTUUiOiJhcHBs
-        aWNhdGlvbi9yZGYreG1sIiwiZHNGb3JtYXRVUkkiOm51bGwsImRzQ29udHJv
-        bEdyb3VwIjoiWCIsImRzU2l6ZSI6MzEwLCJkc1ZlcnNpb25hYmxlIjp0cnVl
-        LCJkc0luZm9UeXBlIjpudWxsLCJkc0xvY2F0aW9uIjoiYWktYWNjdzpiZGE3
-        Yjc3NGE0OTI2YzYyYWMyMzZjYWNhMWRhYWQ0NitSRUxTLUVYVCtSRUxTLUVY
-        VC4wIiwiZHNMb2NhdGlvblR5cGUiOm51bGwsImRzQ2hlY2tzdW1UeXBlIjoi
-        RElTQUJMRUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9LCJyaWdodHNNZXRhZGF0
-        YSI6eyJkc0xhYmVsIjpudWxsLCJkc1ZlcnNpb25JRCI6InJpZ2h0c01ldGFk
-        YXRhLjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1LTEyLTE2VDE2OjUxOjQ4WiIs
-        ImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoidGV4dC94bWwiLCJkc0Zvcm1hdFVS
-        SSI6bnVsbCwiZHNDb250cm9sR3JvdXAiOiJNIiwiZHNTaXplIjo1NzUsImRz
-        VmVyc2lvbmFibGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGwsImRzTG9jYXRp
-        b24iOiJhaS1hY2N3OmJkYTdiNzc0YTQ5MjZjNjJhYzIzNmNhY2ExZGFhZDQ2
-        K3JpZ2h0c01ldGFkYXRhK3JpZ2h0c01ldGFkYXRhLjAiLCJkc0xvY2F0aW9u
-        VHlwZSI6IklOVEVSTkFMX0lEIiwiZHNDaGVja3N1bVR5cGUiOiJESVNBQkxF
-        RCIsImRzQ2hlY2tzdW0iOiJub25lIn0sInNvdXJjZV9tZXRhZGF0YSI6eyJk
-        c0xhYmVsIjpudWxsLCJkc1ZlcnNpb25JRCI6InNvdXJjZV9tZXRhZGF0YS4w
-        IiwiZHNDcmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxNjo1MTo0OVoiLCJkc1N0
-        YXRlIjoiQSIsImRzTUlNRSI6ImFwcGxpY2F0aW9uL24tdHJpcGxlcyIsImRz
-        Rm9ybWF0VVJJIjpudWxsLCJkc0NvbnRyb2xHcm91cCI6Ik0iLCJkc1NpemUi
-        OjYzNiwiZHNWZXJzaW9uYWJsZSI6dHJ1ZSwiZHNJbmZvVHlwZSI6bnVsbCwi
-        ZHNMb2NhdGlvbiI6ImFpLWFjY3c6YmRhN2I3NzRhNDkyNmM2MmFjMjM2Y2Fj
-        YTFkYWFkNDYrc291cmNlX21ldGFkYXRhK3NvdXJjZV9tZXRhZGF0YS4wIiwi
-        ZHNMb2NhdGlvblR5cGUiOiJJTlRFUk5BTF9JRCIsImRzQ2hlY2tzdW1UeXBl
-        IjoiRElTQUJMRUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9LCJuYXRpdmVfbWV0
-        YWRhdGEiOnt9fSwib2JqTGFiZWwiOm51bGwsIm9iak93bmVySWQiOiJmZWRv
-        cmFBZG1pbiIsIm9iak1vZGVscyI6WyJpbmZvOmZlZG9yYS9mZWRvcmEtc3lz
-        dGVtOkZlZG9yYU9iamVjdC0zLjAiXSwib2JqQ3JlYXRlRGF0ZSI6IjIwMTUt
-        MTItMTZUMTY6NTE6NDhaIiwib2JqTGFzdE1vZERhdGUiOiIyMDE1LTEyLTE2
-        VDE2OjUxOjQ4WiIsIm9iakRpc3NJbmRleFZpZXdVUkwiOiJodHRwOi8vbG9j
-        YWxob3N0Ojg5ODMvZmVkb3JhLXRlc3Qvb2JqZWN0cy9haS1hY2N3JTNBYmRh
-        N2I3NzRhNDkyNmM2MmFjMjM2Y2FjYTFkYWFkNDYvbWV0aG9kcy9mZWRvcmEt
-        c3lzdGVtJTNBMy92aWV3TWV0aG9kSW5kZXgiLCJvYmpJdGVtSW5kZXhWaWV3
-        VVJMIjoiaHR0cDovL2xvY2FsaG9zdDo4OTgzL2ZlZG9yYS10ZXN0L29iamVj
-        dHMvYWktYWNjdyUzQWJkYTdiNzc0YTQ5MjZjNjJhYzIzNmNhY2ExZGFhZDQ2
-        L21ldGhvZHMvZmVkb3JhLXN5c3RlbSUzQTMvdmlld0l0ZW1JbmRleCIsIm9i
-        alN0YXRlIjoiQSJ9J10sJ2VkaXRfYWNjZXNzX2dyb3VwX3NzaW0nPT5bJ2Fk
-        bWluX2dyb3VwJywnYWZjX2dyb3VwJ10sJ2hhc19tb2RlbF9zc2ltJz0+Wydp
-        bmZvOmZlZG9yYS9hZm1vZGVsOk55dWNvcmUnXSwnZGVzY19tZXRhZGF0YV9f
-        aWRlbnRpZmllcl90ZXNpbSc9PlsnYmRhN2I3NzRhNDkyNmM2MmFjMjM2Y2Fj
-        YTFkYWFkNDYnXSwnZGVzY19tZXRhZGF0YV9fdGl0bGVfdGVzaW0nPT5bJ3d3
-        dy5kYXJvbmhhZ2VuLmNvbSddLCdkZXNjX21ldGFkYXRhX19hdmFpbGFibGVf
-        dGVzaW0nPT5bJ2h0dHBzOi8vd2F5YmFjay5hcmNoaXZlLWl0Lm9yZy80MDQ5
-        LyovaHR0cDovL3d3dy5kYXJvbmhhZ2VuLmNvbS8nXSwnZGVzY19tZXRhZGF0
-        YV9fdmVyc2lvbl90ZXNpbSc9PlsnaHR0cDovL3d3dy5kYXJvbmhhZ2VuLmNv
-        bS8nXSwnZGVzY19tZXRhZGF0YV9fcmVzb3VyY2Vfc2V0X3Rlc2ltJz0+Wydh
-        cmNoaXZlX2l0X2FjY3cnXSwnY29sbGVjdGlvbl9zc20nPT5bJ0FyY2hpdmUg
-        b2YgQ29udGVtcG9yYXJ5IENvbXBvc2Vyc1wnIFdlYnNpdGVzJ10sJ3RpbWVz
-        dGFtcCc9PicyMDE1LTEyLTE2VDE2OjUxOjQ5LjQxOVonLCdzY29yZSc9PjEu
-        MH1dfSwnZmFjZXRfY291bnRzJz0+eydmYWNldF9xdWVyaWVzJz0+e30sJ2Zh
-        Y2V0X2ZpZWxkcyc9PnsnZGVzY19tZXRhZGF0YV9fdHlwZV9zaW0nPT5bJ0lu
-        dGVydmlldycsNDgsJ1ZpZGVvJywzMywnQm9vaycsMTAsJ0dlb3NwYXRpYWwg
-        RGF0YScsMTAsJ3N0aWxsIGltYWdlJyw4LCdSZXBvcnQnLDUsJ0RhdGFzZXQn
-        LDQsJ1Jlc2VhcmNoIEd1aWRlJywyLCdEb2N1bWVudCcsMV0sJ2Rlc2NfbWV0
-        YWRhdGFfX2NyZWF0b3Jfc2ltJz0+WydIb3JhdGlvIFdpbnNsb3csIE1heS1E
-        ZWMuIDE5MTEgICcsNSwnTWF4IEVhc3RtYW4sIERlYy4gMTkxMi0xOTE3Jyw1
-        LCdQaWV0IFZsYWcsIEphbi4tQXVnLiAxOTEyJyw1LCdUaG9tYXMgU2VsdHpl
-        ciwgSmFuLi1BcHIuIDE5MTEnLDUsJ1Bpc2FuaSwgVml0dG9yaW8nLDIsJ0F2
-        dWxhLCBKeW90aHNuYScsMSwnQmhhdGxhLCBOYW5kaXRhJywxLCdDaGFrcmFi
-        b3J0eSwgU3dhdGknLDEsJ0NoYWtyYXBhbmksIFZlbmthdGVzYW4nLDEsJ0Nv
-        bW1pdHRlZSBvbiBBbWVuZG1lbnRzIHRvIENyaW1pbmFsIExhdycsMV0sJ2Rl
-        c2NfbWV0YWRhdGFfX3N1YmplY3Rfc2ltJz0+WydJdGFsaWFuIG1pbGl0YXJ5
-        fExpYnlhfEFza2FyaSAoRXJpdHJlYW4pJyw3LCdMaWJ5YScsNiwnSXRhbHkt
-        LUNvbG9uaWVzLS1BZnJpY2EnLDUsJ1BlcmlvZGljYWxzJyw1LCdSYWRpY2Fs
-        aXNtJyw1LCdTb2NpYWxpc20nLDUsJ1NleHVhbGx5IHRyYW5zbWl0dGVkIGRp
-        c2Vhc2VzJyw0LCdIdW1hbiByaWdodHMnLDMsJ1NvY2lhbCBjb25kaXRpb25z
-        JywzLCdUdXJjby1JdGFsaWFuIFdhciwgMTkxMS0xOTEyJywzXSwnZGVzY19t
-        ZXRhZGF0YV9fbGFuZ3VhZ2Vfc2ltJz0+WydFbmdsaXNoJyw5LCdTcGFuaXNo
-        OyBDYXN0aWxpYW4nLDZdLCdjb2xsZWN0aW9uX3NpbSc9PlsnVm9pY2VzIG9m
-        IHRoZSBGb29kIFJldm9sdXRpb24nLDQ4LCdUaGUgUmVhbCBSb3NpZSB0aGUg
-        Uml2ZXRlcicsMzMsJ0FyY2hpdmUgb2YgQ29udGVtcG9yYXJ5IENvbXBvc2Vy
-        c1wnIFdlYnNpdGVzJywxMCwnU3BhdGlhbCBEYXRhIFJlcG9zaXRvcnknLDEw
-        LCdJbmRpYW4gT2NlYW4gUG9zdGNhcmRzJyw4LCdEYXRhIFNlcnZpY2VzJyw1
-        LCdOWVUgUHJlc3MgT3BlbiBBY2Nlc3MgQm9va3MnLDUsJ1NvdXRoIEFzaWFu
-        IE5HTyBhbmQgb3RoZXIgcmVwb3J0cycsNSwnVGhlIE1hc3NlcycsNSwnUmVz
-        ZWFyY2ggR3VpZGVzJywyXX0sJ2ZhY2V0X2RhdGVzJz0+e30sJ2ZhY2V0X3Jh
-        bmdlcyc9Pnt9fX0K
+        cCc9PicyMDE1LTEyLTE2VDE5OjQzOjAzLjAxNFonLCdzY29yZSc9PjEuMH0s
+        eydzeXN0ZW1fY3JlYXRlX2R0c2knPT4nMjAxNS0xMi0xNlQxOTo0MzowMVon
+        LCdzeXN0ZW1fbW9kaWZpZWRfZHRzaSc9PicyMDE1LTEyLTE2VDE5OjQzOjAx
+        WicsJ29iamVjdF9zdGF0ZV9zc2knPT4nQScsJ2FjdGl2ZV9mZWRvcmFfbW9k
+        ZWxfc3NpJz0+J055dWNvcmUnLCdpZCc9PidhaS1hY2N3OmJkYTdiNzc0YTQ5
+        MjZjNjJhYzIzNmNhY2ExZGFhZDQ2Jywnb2JqZWN0X3Byb2ZpbGVfc3NtJz0+
+        Wyd7ImRhdGFzdHJlYW1zIjp7IlJFTFMtRVhUIjp7ImRzTGFiZWwiOiJGZWRv
+        cmEgT2JqZWN0LXRvLU9iamVjdCBSZWxhdGlvbnNoaXAgTWV0YWRhdGEiLCJk
+        c1ZlcnNpb25JRCI6IlJFTFMtRVhULjAiLCJkc0NyZWF0ZURhdGUiOiIyMDE1
+        LTEyLTE2VDE5OjQzOjAxWiIsImRzU3RhdGUiOiJBIiwiZHNNSU1FIjoiYXBw
+        bGljYXRpb24vcmRmK3htbCIsImRzRm9ybWF0VVJJIjpudWxsLCJkc0NvbnRy
+        b2xHcm91cCI6IlgiLCJkc1NpemUiOjMxMCwiZHNWZXJzaW9uYWJsZSI6dHJ1
+        ZSwiZHNJbmZvVHlwZSI6bnVsbCwiZHNMb2NhdGlvbiI6ImFpLWFjY3c6YmRh
+        N2I3NzRhNDkyNmM2MmFjMjM2Y2FjYTFkYWFkNDYrUkVMUy1FWFQrUkVMUy1F
+        WFQuMCIsImRzTG9jYXRpb25UeXBlIjpudWxsLCJkc0NoZWNrc3VtVHlwZSI6
+        IkRJU0FCTEVEIiwiZHNDaGVja3N1bSI6Im5vbmUifSwicmlnaHRzTWV0YWRh
+        dGEiOnsiZHNMYWJlbCI6bnVsbCwiZHNWZXJzaW9uSUQiOiJyaWdodHNNZXRh
+        ZGF0YS4wIiwiZHNDcmVhdGVEYXRlIjoiMjAxNS0xMi0xNlQxOTo0MzowMVoi
+        LCJkc1N0YXRlIjoiQSIsImRzTUlNRSI6InRleHQveG1sIiwiZHNGb3JtYXRV
+        UkkiOm51bGwsImRzQ29udHJvbEdyb3VwIjoiTSIsImRzU2l6ZSI6NTc1LCJk
+        c1ZlcnNpb25hYmxlIjp0cnVlLCJkc0luZm9UeXBlIjpudWxsLCJkc0xvY2F0
+        aW9uIjoiYWktYWNjdzpiZGE3Yjc3NGE0OTI2YzYyYWMyMzZjYWNhMWRhYWQ0
+        NityaWdodHNNZXRhZGF0YStyaWdodHNNZXRhZGF0YS4wIiwiZHNMb2NhdGlv
+        blR5cGUiOiJJTlRFUk5BTF9JRCIsImRzQ2hlY2tzdW1UeXBlIjoiRElTQUJM
+        RUQiLCJkc0NoZWNrc3VtIjoibm9uZSJ9LCJzb3VyY2VfbWV0YWRhdGEiOnsi
+        ZHNMYWJlbCI6bnVsbCwiZHNWZXJzaW9uSUQiOiJzb3VyY2VfbWV0YWRhdGEu
+        MCIsImRzQ3JlYXRlRGF0ZSI6IjIwMTUtMTItMTZUMTk6NDM6MDFaIiwiZHNT
+        dGF0ZSI6IkEiLCJkc01JTUUiOiJhcHBsaWNhdGlvbi9uLXRyaXBsZXMiLCJk
+        c0Zvcm1hdFVSSSI6bnVsbCwiZHNDb250cm9sR3JvdXAiOiJNIiwiZHNTaXpl
+        Ijo2MzYsImRzVmVyc2lvbmFibGUiOnRydWUsImRzSW5mb1R5cGUiOm51bGws
+        ImRzTG9jYXRpb24iOiJhaS1hY2N3OmJkYTdiNzc0YTQ5MjZjNjJhYzIzNmNh
+        Y2ExZGFhZDQ2K3NvdXJjZV9tZXRhZGF0YStzb3VyY2VfbWV0YWRhdGEuMCIs
+        ImRzTG9jYXRpb25UeXBlIjoiSU5URVJOQUxfSUQiLCJkc0NoZWNrc3VtVHlw
+        ZSI6IkRJU0FCTEVEIiwiZHNDaGVja3N1bSI6Im5vbmUifSwibmF0aXZlX21l
+        dGFkYXRhIjp7fX0sIm9iakxhYmVsIjpudWxsLCJvYmpPd25lcklkIjoiZmVk
+        b3JhQWRtaW4iLCJvYmpNb2RlbHMiOlsiaW5mbzpmZWRvcmEvZmVkb3JhLXN5
+        c3RlbTpGZWRvcmFPYmplY3QtMy4wIl0sIm9iakNyZWF0ZURhdGUiOiIyMDE1
+        LTEyLTE2VDE5OjQzOjAxWiIsIm9iakxhc3RNb2REYXRlIjoiMjAxNS0xMi0x
+        NlQxOTo0MzowMVoiLCJvYmpEaXNzSW5kZXhWaWV3VVJMIjoiaHR0cDovL2xv
+        Y2FsaG9zdDo4OTgzL2ZlZG9yYS10ZXN0L29iamVjdHMvYWktYWNjdyUzQWJk
+        YTdiNzc0YTQ5MjZjNjJhYzIzNmNhY2ExZGFhZDQ2L21ldGhvZHMvZmVkb3Jh
+        LXN5c3RlbSUzQTMvdmlld01ldGhvZEluZGV4Iiwib2JqSXRlbUluZGV4Vmll
+        d1VSTCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODk4My9mZWRvcmEtdGVzdC9vYmpl
+        Y3RzL2FpLWFjY3clM0FiZGE3Yjc3NGE0OTI2YzYyYWMyMzZjYWNhMWRhYWQ0
+        Ni9tZXRob2RzL2ZlZG9yYS1zeXN0ZW0lM0EzL3ZpZXdJdGVtSW5kZXgiLCJv
+        YmpTdGF0ZSI6IkEifSddLCdlZGl0X2FjY2Vzc19ncm91cF9zc2ltJz0+Wydh
+        ZG1pbl9ncm91cCcsJ2FmY19ncm91cCddLCdoYXNfbW9kZWxfc3NpbSc9Plsn
+        aW5mbzpmZWRvcmEvYWZtb2RlbDpOeXVjb3JlJ10sJ2Rlc2NfbWV0YWRhdGFf
+        X2lkZW50aWZpZXJfdGVzaW0nPT5bJ2JkYTdiNzc0YTQ5MjZjNjJhYzIzNmNh
+        Y2ExZGFhZDQ2J10sJ2Rlc2NfbWV0YWRhdGFfX3RpdGxlX3Rlc2ltJz0+Wyd3
+        d3cuZGFyb25oYWdlbi5jb20nXSwnZGVzY19tZXRhZGF0YV9fYXZhaWxhYmxl
+        X3Rlc2ltJz0+WydodHRwczovL3dheWJhY2suYXJjaGl2ZS1pdC5vcmcvNDA0
+        OS8qL2h0dHA6Ly93d3cuZGFyb25oYWdlbi5jb20vJ10sJ2Rlc2NfbWV0YWRh
+        dGFfX3ZlcnNpb25fdGVzaW0nPT5bJ2h0dHA6Ly93d3cuZGFyb25oYWdlbi5j
+        b20vJ10sJ2Rlc2NfbWV0YWRhdGFfX3Jlc291cmNlX3NldF90ZXNpbSc9Plsn
+        YXJjaGl2ZV9pdF9hY2N3J10sJ2NvbGxlY3Rpb25fc3NtJz0+WydBcmNoaXZl
+        IG9mIENvbnRlbXBvcmFyeSBDb21wb3NlcnNcJyBXZWJzaXRlcyddLCd0aW1l
+        c3RhbXAnPT4nMjAxNS0xMi0xNlQxOTo0MzowMi4wMDlaJywnc2NvcmUnPT4x
+        LjB9XX0sJ2ZhY2V0X2NvdW50cyc9PnsnZmFjZXRfcXVlcmllcyc9Pnt9LCdm
+        YWNldF9maWVsZHMnPT57J2Rlc2NfbWV0YWRhdGFfX3R5cGVfc2ltJz0+WydJ
+        bnRlcnZpZXcnLDQ4LCdWaWRlbycsMzMsJ0Jvb2snLDEwLCdHZW9zcGF0aWFs
+        IERhdGEnLDEwLCdSZXBvcnQnLDUsJ0RhdGFzZXQnLDQsJ1Jlc2VhcmNoIEd1
+        aWRlJywyLCdEb2N1bWVudCcsMV0sJ2Rlc2NfbWV0YWRhdGFfX2NyZWF0b3Jf
+        c2ltJz0+WydIb3JhdGlvIFdpbnNsb3csIE1heS1EZWMuIDE5MTEgICcsNSwn
+        TWF4IEVhc3RtYW4sIERlYy4gMTkxMi0xOTE3Jyw1LCdQaWV0IFZsYWcsIEph
+        bi4tQXVnLiAxOTEyJyw1LCdUaG9tYXMgU2VsdHplciwgSmFuLi1BcHIuIDE5
+        MTEnLDUsJ0F2dWxhLCBKeW90aHNuYScsMSwnQmhhdGxhLCBOYW5kaXRhJywx
+        LCdDaGFrcmFib3J0eSwgU3dhdGknLDEsJ0NoYWtyYXBhbmksIFZlbmthdGVz
+        YW4nLDEsJ0NvbW1pdHRlZSBvbiBBbWVuZG1lbnRzIHRvIENyaW1pbmFsIExh
+        dycsMSwnRWFzdCBWaWV3IEdlb3NwYXRpYWwgKEZpcm0pJywxXSwnZGVzY19t
+        ZXRhZGF0YV9fc3ViamVjdF9zaW0nPT5bJ1BlcmlvZGljYWxzJyw1LCdSYWRp
+        Y2FsaXNtJyw1LCdTb2NpYWxpc20nLDUsJ1NleHVhbGx5IHRyYW5zbWl0dGVk
+        IGRpc2Vhc2VzJyw0LCdIdW1hbiByaWdodHMnLDMsJ1NvY2lhbCBjb25kaXRp
+        b25zJywzLCdBSURTJywyLCdCb3VuZGFyaWVzJywyLCdFY29ub21pY3MnLDIs
+        J0dlbmRlciBkaXNjcmltaW5hdGlvbicsMl0sJ2Rlc2NfbWV0YWRhdGFfX2xh
+        bmd1YWdlX3NpbSc9PlsnRW5nbGlzaCcsOSwnU3BhbmlzaDsgQ2FzdGlsaWFu
+        Jyw2XSwnY29sbGVjdGlvbl9zaW0nPT5bJ1ZvaWNlcyBvZiB0aGUgRm9vZCBS
+        ZXZvbHV0aW9uJyw0OCwnVGhlIFJlYWwgUm9zaWUgdGhlIFJpdmV0ZXInLDMz
+        LCdBcmNoaXZlIG9mIENvbnRlbXBvcmFyeSBDb21wb3NlcnNcJyBXZWJzaXRl
+        cycsMTAsJ1NwYXRpYWwgRGF0YSBSZXBvc2l0b3J5JywxMCwnRGF0YSBTZXJ2
+        aWNlcycsNSwnTllVIFByZXNzIE9wZW4gQWNjZXNzIEJvb2tzJyw1LCdTb3V0
+        aCBBc2lhbiBOR08gYW5kIG90aGVyIHJlcG9ydHMnLDUsJ1RoZSBNYXNzZXMn
+        LDUsJ1Jlc2VhcmNoIEd1aWRlcycsMl19LCdmYWNldF9kYXRlcyc9Pnt9LCdm
+        YWNldF9yYW5nZXMnPT57fX19Cg==
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 16:55:07 GMT
+  recorded_at: Wed, 16 Dec 2015 19:44:57 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:8983/solr/test/select?facet.field=collection_sim&fq=%7B!raw%20f=collection_sim%7DVoices%20of%20the%20Food%20Revolution&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim%20desc_metadata__subject_spatial_tesim%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__subject_temporal_tesim%20desc_metadata__isbn_tesimdesc_metadata__genre_tesim&qt=search&rows=10&wt=ruby
+    uri: http://127.0.0.1:8983/solr/test/select?facet.field=collection_sim&fq=-collection_sim:Indian*&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim%20desc_metadata__subject_spatial_tesim%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__subject_temporal_tesim%20desc_metadata__isbn_tesim%20desc_metadata__genre_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
     body:
       encoding: US-ASCII
       string: ''
@@ -955,86 +955,475 @@ http_interactions:
       message: OK
     headers:
       Last-Modified:
-      - Wed, 16 Dec 2015 16:54:05 GMT
+      - Wed, 16 Dec 2015 19:44:32 GMT
       Etag:
-      - '"MzNhYTIwMDAwMDAwMDAwMFNvbHI="'
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
       Content-Type:
       - text/plain;charset=UTF-8
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: "{'responseHeader'=>{'status'=>0,'QTime'=>49,'params'=>{'qf'=>'desc_metadata__title_tesim
+      string: "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','qf'=>'desc_metadata__title_tesim
         desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
         desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
         desc_metadata__subject_tesim desc_metadata__subject_spatial_tesim \n                desc_metadata__subject_temporal_tesim
-        desc_metadata__isbn_tesimdesc_metadata__genre_tesim','facet.field'=>['desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim','collection_sim'],'qt'=>'search','wt'=>'ruby','fq'=>'{!raw
-        f=collection_sim}Voices of the Food Revolution','rows'=>'10'}},'response'=>{'numFound'=>48,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2015-12-16T16:53:00Z','system_modified_dtsi'=>'2015-12-16T16:53:01Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-452','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T16:53:00Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-452+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:00Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-452+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:01Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1136,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-452+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T16:53:00Z\",\"objLastModDate\":\"2015-12-16T16:53:00Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-452/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-452/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/452'],'desc_metadata__title_tesim'=>['Dan
-        Barber Interview 3'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['The
-        youngest person to be interviewed for this project (a 1992 graduate of Tufts
-        University), Dan Barber is nevertheless a celebrity chef with multiple James
-        Beard Foundation awards to his credit. This interview covers his early life
-        and becoming a chef.'],'desc_metadata__date_tesim'=>['2011-08-15T14:42:02Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/dan-barber-interview-3'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/dan-barber-interview-3'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
-        of the Food Revolution'],'timestamp'=>'2015-12-16T16:53:01.189Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T16:52:59Z','system_modified_dtsi'=>'2015-12-16T16:52:59Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-442','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T16:52:59Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-442+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T16:52:59Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-442+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T16:52:59Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1136,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-442+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T16:52:59Z\",\"objLastModDate\":\"2015-12-16T16:52:59Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-442/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-442/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/442'],'desc_metadata__title_tesim'=>['Dan
-        Barber Interview 1'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['The
-        youngest person to be interviewed for this project (a 1992 graduate of Tufts
-        University), Dan Barber is nevertheless a celebrity chef with multiple James
-        Beard Foundation awards to his credit. This interview covers his early life
-        and becoming a chef.'],'desc_metadata__date_tesim'=>['2011-08-15T14:41:54Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/dan-barber-interview-1'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/dan-barber-interview-1'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
-        of the Food Revolution'],'timestamp'=>'2015-12-16T16:52:59.908Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T16:53:00Z','system_modified_dtsi'=>'2015-12-16T16:53:00Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-446','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T16:53:00Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-446+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:00Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-446+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:00Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1136,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-446+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T16:53:00Z\",\"objLastModDate\":\"2015-12-16T16:53:00Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-446/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-446/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/446'],'desc_metadata__title_tesim'=>['Dan
+        desc_metadata__isbn_tesim desc_metadata__genre_tesim','facet.field'=>['desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim','collection_sim'],'qt'=>'search','wt'=>'ruby','fq'=>['{!raw
+        f=collection_sim}Voices of the Food Revolution','-collection_sim:Indian*'],'rows'=>'10'}},'response'=>{'numFound'=>48,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2015-12-16T19:44:02Z','system_modified_dtsi'=>'2015-12-16T19:44:03Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-446','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T19:44:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-446+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:02Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-446+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:03Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1136,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-446+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T19:44:02Z\",\"objLastModDate\":\"2015-12-16T19:44:02Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-446/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-446/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/446'],'desc_metadata__title_tesim'=>['Dan
         Barber Interview 2'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['The
         youngest person to be interviewed for this project (a 1992 graduate of Tufts
         University), Dan Barber is nevertheless a celebrity chef with multiple James
         Beard Foundation awards to his credit. This interview covers his early life
         and becoming a chef.'],'desc_metadata__date_tesim'=>['2011-08-15T14:41:57Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/dan-barber-interview-2'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/dan-barber-interview-2'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
-        of the Food Revolution'],'timestamp'=>'2015-12-16T16:53:00.409Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T16:53:01Z','system_modified_dtsi'=>'2015-12-16T16:53:02Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-460','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T16:53:01Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-460+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:02Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-460+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1101,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-460+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T16:53:01Z\",\"objLastModDate\":\"2015-12-16T16:53:01Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-460/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-460/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/460'],'desc_metadata__title_tesim'=>['Lidia
+        of the Food Revolution'],'timestamp'=>'2015-12-16T19:44:03.113Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T19:44:02Z','system_modified_dtsi'=>'2015-12-16T19:44:02Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-442','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T19:44:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-442+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:02Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-442+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1136,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-442+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T19:44:02Z\",\"objLastModDate\":\"2015-12-16T19:44:02Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-442/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-442/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/442'],'desc_metadata__title_tesim'=>['Dan
+        Barber Interview 1'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['The
+        youngest person to be interviewed for this project (a 1992 graduate of Tufts
+        University), Dan Barber is nevertheless a celebrity chef with multiple James
+        Beard Foundation awards to his credit. This interview covers his early life
+        and becoming a chef.'],'desc_metadata__date_tesim'=>['2011-08-15T14:41:54Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/dan-barber-interview-1'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/dan-barber-interview-1'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
+        of the Food Revolution'],'timestamp'=>'2015-12-16T19:44:02.532Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T19:44:03Z','system_modified_dtsi'=>'2015-12-16T19:44:03Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-452','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T19:44:03Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-452+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:03Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-452+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:03Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1136,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-452+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T19:44:03Z\",\"objLastModDate\":\"2015-12-16T19:44:03Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-452/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-452/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/452'],'desc_metadata__title_tesim'=>['Dan
+        Barber Interview 3'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['The
+        youngest person to be interviewed for this project (a 1992 graduate of Tufts
+        University), Dan Barber is nevertheless a celebrity chef with multiple James
+        Beard Foundation awards to his credit. This interview covers his early life
+        and becoming a chef.'],'desc_metadata__date_tesim'=>['2011-08-15T14:42:02Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/dan-barber-interview-3'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/dan-barber-interview-3'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
+        of the Food Revolution'],'timestamp'=>'2015-12-16T19:44:03.681Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T19:44:04Z','system_modified_dtsi'=>'2015-12-16T19:44:05Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-460','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T19:44:04Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-460+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:04Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-460+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:05Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1101,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-460+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T19:44:04Z\",\"objLastModDate\":\"2015-12-16T19:44:04Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-460/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-460/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/460'],'desc_metadata__title_tesim'=>['Lidia
         Bastianich Interview 2'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['Bastianich,
         the acclaimed cookbook author, television personality, restaurateur, chef
         and businesswoman, discusses her early life, marriage and entry into the NY
         restaurant world, and raising a family.'],'desc_metadata__date_tesim'=>['2011-08-15T14:42:07Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/lidia-bastianich-interview-2'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/lidia-bastianich-interview-2'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
-        of the Food Revolution'],'timestamp'=>'2015-12-16T16:53:02.236Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T16:53:01Z','system_modified_dtsi'=>'2015-12-16T16:53:01Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-456','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T16:53:01Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-456+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:01Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-456+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:01Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1102,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-456+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T16:53:01Z\",\"objLastModDate\":\"2015-12-16T16:53:01Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-456/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-456/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/456'],'desc_metadata__title_tesim'=>['Lidia
+        of the Food Revolution'],'timestamp'=>'2015-12-16T19:44:05.33Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T19:44:03Z','system_modified_dtsi'=>'2015-12-16T19:44:04Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-456','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T19:44:04Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-456+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:04Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-456+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:04Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1102,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-456+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T19:44:03Z\",\"objLastModDate\":\"2015-12-16T19:44:03Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-456/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-456/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/456'],'desc_metadata__title_tesim'=>['Lidia
         Bastianich Interview 1'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['Bastianich,
         the acclaimed cookbook author, television personality, restaurateur, chef
         and businesswoman, discusses her early life, marriage and entry into the NY
         restaurant world, and raising a family. '],'desc_metadata__date_tesim'=>['2011-08-15T14:42:04Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/lidia-bastianich-interview-1'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/lidia-bastianich-interview-1'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
-        of the Food Revolution'],'timestamp'=>'2015-12-16T16:53:01.7Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T16:53:02Z','system_modified_dtsi'=>'2015-12-16T16:53:03Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-470','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T16:53:03Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-470+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:03Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-470+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:03Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1071,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-470+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T16:53:02Z\",\"objLastModDate\":\"2015-12-16T16:53:02Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-470/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-470/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/470'],'desc_metadata__title_tesim'=>['Michael
+        of the Food Revolution'],'timestamp'=>'2015-12-16T19:44:04.249Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T19:44:06Z','system_modified_dtsi'=>'2015-12-16T19:44:06Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-470','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T19:44:06Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-470+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:06Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-470+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:06Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1071,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-470+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T19:44:06Z\",\"objLastModDate\":\"2015-12-16T19:44:06Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-470/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-470/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/470'],'desc_metadata__title_tesim'=>['Michael
         Batterberry Interview 1'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['Michael
         and Ariane Batterberry generated two ground-breaking magazines: Food and Wine
         and Food Arts. Together, they helped change the way people think about food.'],'desc_metadata__date_tesim'=>['2011-08-15T14:42:14Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/michael-batterberry-interview-1'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/michael-batterberry-interview-1'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
-        of the Food Revolution'],'timestamp'=>'2015-12-16T16:53:03.722Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T16:53:02Z','system_modified_dtsi'=>'2015-12-16T16:53:02Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-464','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T16:53:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-464+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:02Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-464+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1001,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-464+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T16:53:02Z\",\"objLastModDate\":\"2015-12-16T16:53:02Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-464/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-464/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/464'],'desc_metadata__title_tesim'=>['Ariane
+        of the Food Revolution'],'timestamp'=>'2015-12-16T19:44:06.454Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T19:44:06Z','system_modified_dtsi'=>'2015-12-16T19:44:06Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-476','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T19:44:06Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-476+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:06Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-476+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:06Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1071,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-476+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T19:44:06Z\",\"objLastModDate\":\"2015-12-16T19:44:06Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-476/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-476/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/476'],'desc_metadata__title_tesim'=>['Michael
+        Batterberry Interview 2'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['Michael
+        and Ariane Batterberry generated two ground-breaking magazines: Food and Wine
+        and Food Arts. Together, they helped change the way people think about food.'],'desc_metadata__date_tesim'=>['2011-08-15T14:42:17Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/michael-batterberry-interview-2'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/michael-batterberry-interview-2'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
+        of the Food Revolution'],'timestamp'=>'2015-12-16T19:44:07.019Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T19:44:05Z','system_modified_dtsi'=>'2015-12-16T19:44:05Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-464','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T19:44:05Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-464+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:05Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-464+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:05Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1001,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-464+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T19:44:05Z\",\"objLastModDate\":\"2015-12-16T19:44:05Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-464/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-464/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/464'],'desc_metadata__title_tesim'=>['Ariane
         Batterberry Interview 1'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['Ariane
         Batterberry founded and edited Food &amp; Wine and Food Arts with her husband,
         Michael. '],'desc_metadata__date_tesim'=>['2011-08-15T14:42:10Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/ariane-batterberry-interview-1'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/ariane-batterberry-interview-1'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
-        of the Food Revolution'],'timestamp'=>'2015-12-16T16:53:02.771Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T16:53:06Z','system_modified_dtsi'=>'2015-12-16T16:53:07Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-506','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T16:53:06Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-506+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:07Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-506+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:07Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1152,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-506+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T16:53:06Z\",\"objLastModDate\":\"2015-12-16T16:53:06Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-506/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-506/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/506'],'desc_metadata__title_tesim'=>['Dalia
+        of the Food Revolution'],'timestamp'=>'2015-12-16T19:44:05.89Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T19:44:09Z','system_modified_dtsi'=>'2015-12-16T19:44:10Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-506','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T19:44:10Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-506+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:10Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-506+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:10Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1152,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-506+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T19:44:09Z\",\"objLastModDate\":\"2015-12-16T19:44:09Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-506/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-506/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/506'],'desc_metadata__title_tesim'=>['Dalia
         Carmel Interview 2'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['Food
         scholar Dalia Carmel has been called &quot;the angel of American food writers&quot;
         because she made her 11,000-volume personal library of cookbooks available
         to all who asked. Carmel discusses her life, and the gradual development of
         her cookbook collection.'],'desc_metadata__date_tesim'=>['2011-08-15T14:42:36Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/dalia-carmel-interview-2'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/dalia-carmel-interview-2'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
-        of the Food Revolution'],'timestamp'=>'2015-12-16T16:53:07.213Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T16:53:06Z','system_modified_dtsi'=>'2015-12-16T16:53:06Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-500','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T16:53:06Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-500+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:06Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-500+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:06Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1153,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-500+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T16:53:06Z\",\"objLastModDate\":\"2015-12-16T16:53:06Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-500/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-500/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/500'],'desc_metadata__title_tesim'=>['Dalia
+        of the Food Revolution'],'timestamp'=>'2015-12-16T19:44:10.339Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T19:44:09Z','system_modified_dtsi'=>'2015-12-16T19:44:09Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-500','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T19:44:09Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-500+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:09Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-500+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T19:44:09Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1153,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-500+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T19:44:09Z\",\"objLastModDate\":\"2015-12-16T19:44:09Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-500/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-500/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/500'],'desc_metadata__title_tesim'=>['Dalia
         Carmel Interview 1'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['Food
         scholar Dalia Carmel has been called &quot;the angel of American food writers&quot;
         because she made her 11,000-volume personal library of cookbooks available
         to all who asked. Carmel discusses her life, and the gradual development of
         her cookbook collection. '],'desc_metadata__date_tesim'=>['2011-08-15T14:42:32Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/dalia-carmel-interview-1'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/dalia-carmel-interview-1'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
-        of the Food Revolution'],'timestamp'=>'2015-12-16T16:53:06.704Z','score'=>1.0},{'system_create_dtsi'=>'2015-12-16T16:53:04Z','system_modified_dtsi'=>'2015-12-16T16:53:04Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'beard:mrjdj2-node-481','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
-        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2015-12-16T16:53:04Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":291,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-481+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:04Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-481+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2015-12-16T16:53:04Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1134,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"beard:mrjdj2-node-481+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2015-12-16T16:53:04Z\",\"objLastModDate\":\"2015-12-16T16:53:04Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-481/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/beard%3Amrjdj2-node-481/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['mrjdj2/node/481'],'desc_metadata__title_tesim'=>['Hilary
-        Baum Interview 1'],'desc_metadata__type_tesim'=>['Interview'],'desc_metadata__description_tesim'=>['Baum
-        discusses childhood, and how her early life influenced her choice of career.
-        She also talks about her work in the food production business, James Beard,
-        her early support for farmers and farmers markets, and her work with the Baum
-        Forum today. '],'desc_metadata__date_tesim'=>['2011-08-15T14:42:21Z'],'desc_metadata__format_tesim'=>['Audio'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/beard/interviews/hilary-baum-interview-1'],'desc_metadata__citation_tesim'=>['http://dlib.nyu.edu/beard/interviews/hilary-baum-interview-1'],'desc_metadata__resource_set_tesim'=>['voice'],'collection_ssm'=>['Voices
-        of the Food Revolution'],'timestamp'=>'2015-12-16T16:53:04.77Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'desc_metadata__type_sim'=>['Interview',48],'desc_metadata__creator_sim'=>[],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>[],'collection_sim'=>['Voices
+        of the Food Revolution'],'timestamp'=>'2015-12-16T19:44:09.751Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'desc_metadata__type_sim'=>['Interview',48],'desc_metadata__creator_sim'=>[],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>[],'collection_sim'=>['Voices
         of the Food Revolution',48]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 16:55:10 GMT
+  recorded_at: Wed, 16 Dec 2015 19:45:00 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=beard:mrjdj2-node-446&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 16 Dec 2015 19:44:32 GMT
+      Etag:
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','echoParams'=>'all','q'=>'{!raw f=id v=$id}','rows'=>'1','id'=>'beard:mrjdj2-node-446','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'beard:mrjdj2-node-446','edit_access_group_ssim'=>['admin_group']}]}}
+    http_version: 
+  recorded_at: Wed, 16 Dec 2015 19:45:00 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=beard:mrjdj2-node-442&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 16 Dec 2015 19:44:32 GMT
+      Etag:
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','echoParams'=>'all','q'=>'{!raw f=id v=$id}','rows'=>'1','id'=>'beard:mrjdj2-node-442','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'beard:mrjdj2-node-442','edit_access_group_ssim'=>['admin_group']}]}}
+    http_version: 
+  recorded_at: Wed, 16 Dec 2015 19:45:01 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=beard:mrjdj2-node-452&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 16 Dec 2015 19:44:32 GMT
+      Etag:
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'facet'=>'off','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','echoParams'=>'all','q'=>'{!raw f=id v=$id}','rows'=>'1','id'=>'beard:mrjdj2-node-452','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'beard:mrjdj2-node-452','edit_access_group_ssim'=>['admin_group']}]}}
+    http_version: 
+  recorded_at: Wed, 16 Dec 2015 19:45:01 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=beard:mrjdj2-node-460&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 16 Dec 2015 19:44:32 GMT
+      Etag:
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','echoParams'=>'all','q'=>'{!raw f=id v=$id}','rows'=>'1','id'=>'beard:mrjdj2-node-460','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'beard:mrjdj2-node-460','edit_access_group_ssim'=>['admin_group']}]}}
+    http_version: 
+  recorded_at: Wed, 16 Dec 2015 19:45:01 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=beard:mrjdj2-node-456&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 16 Dec 2015 19:44:32 GMT
+      Etag:
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'facet'=>'off','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','echoParams'=>'all','q'=>'{!raw f=id v=$id}','rows'=>'1','id'=>'beard:mrjdj2-node-456','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'beard:mrjdj2-node-456','edit_access_group_ssim'=>['admin_group']}]}}
+    http_version: 
+  recorded_at: Wed, 16 Dec 2015 19:45:01 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=beard:mrjdj2-node-470&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 16 Dec 2015 19:44:32 GMT
+      Etag:
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','echoParams'=>'all','q'=>'{!raw f=id v=$id}','rows'=>'1','id'=>'beard:mrjdj2-node-470','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'beard:mrjdj2-node-470','edit_access_group_ssim'=>['admin_group']}]}}
+    http_version: 
+  recorded_at: Wed, 16 Dec 2015 19:45:01 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=beard:mrjdj2-node-476&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 16 Dec 2015 19:44:32 GMT
+      Etag:
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'facet'=>'off','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','echoParams'=>'all','q'=>'{!raw f=id v=$id}','rows'=>'1','id'=>'beard:mrjdj2-node-476','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'beard:mrjdj2-node-476','edit_access_group_ssim'=>['admin_group']}]}}
+    http_version: 
+  recorded_at: Wed, 16 Dec 2015 19:45:01 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=beard:mrjdj2-node-464&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 16 Dec 2015 19:44:32 GMT
+      Etag:
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','echoParams'=>'all','q'=>'{!raw f=id v=$id}','rows'=>'1','id'=>'beard:mrjdj2-node-464','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'beard:mrjdj2-node-464','edit_access_group_ssim'=>['admin_group']}]}}
+    http_version: 
+  recorded_at: Wed, 16 Dec 2015 19:45:01 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=beard:mrjdj2-node-506&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 16 Dec 2015 19:44:32 GMT
+      Etag:
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'facet'=>'off','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','echoParams'=>'all','q'=>'{!raw f=id v=$id}','rows'=>'1','id'=>'beard:mrjdj2-node-506','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'beard:mrjdj2-node-506','edit_access_group_ssim'=>['admin_group']}]}}
+    http_version: 
+  recorded_at: Wed, 16 Dec 2015 19:45:01 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=beard:mrjdj2-node-500&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 16 Dec 2015 19:44:32 GMT
+      Etag:
+      - '"MjI5NjIwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet'=>'off','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','echoParams'=>'all','q'=>'{!raw f=id v=$id}','rows'=>'1','id'=>'beard:mrjdj2-node-500','qt'=>'permissions','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'beard:mrjdj2-node-500','edit_access_group_ssim'=>['admin_group']}]}}
+    http_version: 
+  recorded_at: Wed, 16 Dec 2015 19:45:01 GMT
 recorded_with: VCR 2.9.3
