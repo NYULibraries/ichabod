@@ -13,9 +13,4 @@
     end
   end
 
-  def authorize_collection
-    if !user_groups.include?('admin_group') || !user_groups.include?('io_cataloger')
-      raise CanCan::AccessDenied.new("Not authorized kozel!")
-    end
-  end
 end
