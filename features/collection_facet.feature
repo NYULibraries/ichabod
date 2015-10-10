@@ -6,15 +6,21 @@ Feature: Collection facet
 
   Scenario: Filter by single collection
     Given I am on the default search page
+<<<<<<< HEAD
     When I filter my search to "Spatial Data Repository" under the "Collection" category
     Then I should see search results
 
+=======
+    When I filter my search to "ESRI, Spatial Data Repository" under the "Collection" category
+    Then I should see search results
+
+  #@wip
+>>>>>>> Fixed collection_facet
   @vcr
   Scenario: Filter by The Real Rosie the Riveter
     Given I am on the default search page
     When I filter my search to "The Real Rosie the Riveter" under the "Collection" category
     Then I should see search results
-
   @vcr
   Scenario: Filter by Voices of the Food Revolution
     Given I am on the default search page
@@ -41,10 +47,16 @@ Feature: Collection facet
     When I filter my search to "Data Services" under the "Collection" category
     Then I should see search results
 
-  Scenario: Filter by Indian Ocean Collection
-    Given I am on the default search page
-    When I filter my search to "Indian Ocean Collection" under the "Collection" category
+  @loggedin
+  Scenario: Filter by Indian Ocean Collection for authorized users
+    Given I am logged in as "IO Cataloger"
+    And I am on the default search page
+    When I filter my search to "Indian Ocean Postcards" under the "Collection" category
     Then I should see search results
+
+  Scenario: Filter by Indian Ocean Collection for unauthorized users
+    Given I am on the default search page
+    Then I should not see "Indian Ocean Collection" under the "Collection" category
 
   Scenario: Filter by Research Guides
     Given I am on the default search page
