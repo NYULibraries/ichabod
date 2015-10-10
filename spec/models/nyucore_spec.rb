@@ -13,7 +13,7 @@ describe Nyucore do
     it 'should have the appropriate multiple fields' do
       expect(subject[:multiple]).to eq [:available, :citation, :title, :creator,
         :type, :publisher, :description, :edition, :date, :format, :language,
-        :relation, :rights, :subject, :series, :version]
+        :relation, :rights, :subject, :series, :version, :genre]
     end
   end
 

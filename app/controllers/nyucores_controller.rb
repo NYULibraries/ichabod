@@ -1,3 +1,4 @@
+
 class NyucoresController < ApplicationController
   #needed to get current_per_page value for destroy method redirect
   include Blacklight::CatalogHelperBehavior
@@ -14,9 +15,14 @@ class NyucoresController < ApplicationController
   end
 
   def show
-    authorize! :show, params[:id]
+    #authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
-    respond_with(@item)
+    #temporary solution will be replaced when collection object is ready
+    if(@item.pid.include?('io'))&&!authorize_collection
+      raise CanCan::AccessDenied.new('You are not authorized to view this item')
+    else
+      respond_with(@item)
+    end
   end
 
   def new
@@ -62,12 +68,16 @@ class NyucoresController < ApplicationController
 
   # Whitelist attrs
   def item_params
-    params.require(:nyucore).permit(:identifier, :restrictions, title: [], creator: [], publisher: [], type: [], available: [], description: [], edition: [], series: [], version: [], date: [], format: [], language: [], relation: [], rights: [], subject: [], citation: [])
+    params.require(:nyucore).permit(
+      :identifier, :restrictions, title: [], creator: [], publisher: [], type: [], available: [], description: [], edition: [], series: [], version: [],
+      date: [], format: [], language: [], relation: [], rights: [], subject: [], citation: [], genre: [])
   end
 
   def ensure_default_editors
     @item.set_edit_groups(["admin_group"],[]) if @item.edit_groups.blank?
   end
+
+
 
   # Convert blank values to nil values in params
   # in order to not save empty array values when field is not nil but is an empty string (i.e. "")
@@ -100,14 +110,15 @@ class NyucoresController < ApplicationController
     end
  end
  
-  #If parameters needed to calculate the landing page are not defined- return to the search results page
-  def page_parameters_defined?
+ #If parameters needed to calculate the landing page are not defined- return to the search results page
+ def page_parameters_defined?
    if params[:document_counter].nil? || current_per_page==0
         @query_params[:page]=1
         logger.warn "document_counter or current_per_page parameters are not defined, return to the first search page"
         false
-    else
+   else
         true
-    end
-  end
+   end
+ end
+
 end

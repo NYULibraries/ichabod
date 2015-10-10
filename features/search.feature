@@ -87,3 +87,15 @@ Feature: Perform a basic search
     Given I am on the default search page
     When I search on the phrase "Gallup GPSS"
     Then I should see search results
+
+  @loggedin
+  Scenario: Search for The Indian Ocean Collection title for authorized user
+    Given I am logged in as "IO Cataloger"
+    And I am on the default search page
+    When I search on the phrase "VII Battaglione Eritreo"
+    Then I should see search results
+
+  Scenario: Search for The Indian Ocean Collection title for authorized user
+    And I am on the default search page
+    When I search on the phrase "VII Battaglione Eritreo"
+    Then I should not see search results

@@ -2,19 +2,22 @@
 require 'blacklight/catalog'
 
 class CatalogController < ApplicationController
-
+  
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
-  # These before_filters apply the hydra access controls
-  # before_filter :enforce_show_permissions, :only=>:show
-  # This applies appropriate access controls to all solr queries
-  # CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
-
+  
+  #add check for descoverability on collection level
+  #(see https://github.com/projectblacklight/blacklight/wiki/Extending-or-Modifying-Blacklight-Search-Behavior)
+  #as we are currently using older version of Blacklight additional method couldn't be placed to search_builder class
+  #So tempoirary added it to controller itself
+  CatalogController.solr_search_params_logic += [:show_only_discoverable_records]
+  
   configure_blacklight do |config|
     config.default_solr_params = {
       :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__publisher_tesim
                 desc_metadata__type_tesim desc_metadata__description_tesim desc_metadata__series_tesim
-                desc_metadata__creator_tesim desc_metadata__subject_tesim desc_metadata__isbn_tesim',
+                desc_metadata__creator_tesim desc_metadata__subject_tesim desc_metadata__isbn_tesim
+                desc_metadata__genre_tesim',
       :qt => 'search',
       :rows => 10
     }
@@ -56,6 +59,11 @@ class CatalogController < ApplicationController
     config.default_solr_params[:'facet.field'] = config.facet_fields.keys
     #use this instead if you don't want to query facets marked :show=>false
     #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
+    #temporary solution will be replaced by collection filter in next iteration
+    #Rails.logger.debug("My object: #{current_user}")
+    #if !current_user.nil?#||!(current_user[:groups].include?('io_cataloger')||current_user[:groups].include?('admin_group'))
+     #config.default_solr_params[:'fq'] = ['-collection_sim:Indian*']
+    #end
 
 
     # solr fields to be displayed in the index (search results) view
@@ -102,6 +110,7 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name('desc_metadata__series', :stored_searchable, type: :string), :label => 'Series'
     config.add_show_field solr_name('desc_metadata__version', :stored_searchable, type: :string), :label => 'Also available as'
     config.add_show_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions'
+    config.add_show_field solr_name('desc_metadata__genre', :stored_searchable, type: :string), :label => 'Genre'
     config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label => 'Online Resource',
                                                                                                     :helper_method => :render_external_links,
                                                                                                     :text          => 'resource_text_display'
@@ -183,5 +192,12 @@ class CatalogController < ApplicationController
 
   end
 
-
 end
+
+#temporary solution will replace after collection model is completed
+   def show_only_discoverable_records solr_params, user_params
+     if !authorize_collection
+       solr_params[:fq] ||= []
+       solr_params[:'fq'] << ['-collection_sim:Indian*']
+    end
+  end

@@ -25,12 +25,19 @@ FactoryGirl.define do
     addinfolink ["http://library.nyu.edu/ask"]
     resource_set 'resource_set'
     restrictions 'NYU Only'
+    genre ["Postcards"]
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
 
     factory :gis_record do
       after(:build) { |record| record.set_edit_groups(['gis_cataloger'],[]) }
       # Don't dare put an underscore in this pid or it'll explode
       initialize_with { new(pid: 'testgisrecord:123') }
+    end
+
+    factory :io_record do
+      after(:build) { |record| record.set_edit_groups(['io_cataloger'],[]) }
+      # Don't dare put an underscore in this pid or it'll explode
+      initialize_with { new(pid: 'io:123') }
     end
   end
 end
