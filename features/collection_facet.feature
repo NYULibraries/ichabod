@@ -6,16 +6,9 @@ Feature: Collection facet
 
   Scenario: Filter by single collection
     Given I am on the default search page
-<<<<<<< HEAD
     When I filter my search to "Spatial Data Repository" under the "Collection" category
     Then I should see search results
 
-=======
-    When I filter my search to "ESRI, Spatial Data Repository" under the "Collection" category
-    Then I should see search results
-
-  #@wip
->>>>>>> Fixed collection_facet
   @vcr
   Scenario: Filter by The Real Rosie the Riveter
     Given I am on the default search page
