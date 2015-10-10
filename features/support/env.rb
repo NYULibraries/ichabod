@@ -35,9 +35,7 @@ if Rails.env.cucumber?
     # request 5 items from The Masses collection, start with item 0d
     Ichabod::DataLoader.new('masses','http://dlib.nyu.edu/themasses/books.json',0,5).load
     Ichabod::DataLoader.new('faculty_digital_archive_service_data', File.join(Rails.root, 'ingest/test_data_service.csv')).load
-    Ichabod::DataLoader.new('indian_ocean_data', File.join(Rails.root, 'ingest/test_io.csv')).load
-    
-    
+    Ichabod::DataLoader.new('indian_ocean_data', File.join(Rails.root, 'ingest/test_io.csv')).load    
   ensure
     WebMock.disable_net_connect!
   end
