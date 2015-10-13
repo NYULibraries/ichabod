@@ -6,7 +6,6 @@ class Nyucore < ActiveFedora::Base
       'The Real Rosie the Riveter' => ->(nyucore){ nyucore.resource_set == 'rosie_the_riveter' },
       'Voices of the Food Revolution' => ->(nyucore){ nyucore.resource_set == 'voice' },
       'Research Guides' => ->(nyucore){ nyucore.resource_set == 'lib_guides' },
-      "ESRI" => ->(nyucore){ nyucore.publisher.include? "ESRI" },
       "Spatial Data Repository" => ->(nyucore){ nyucore.type.include? "Geospatial Data" },
       "Archive of Contemporary Composers' Websites" => ->(nyucore){ nyucore.resource_set == 'archive_it_accw' },
       'Asian NGOs Reports' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_ngo'},

@@ -352,6 +352,8 @@ GEM
       activesupport
       i18n
       nokogiri
+    octokit (3.8.0)
+      sawyer (~> 0.6.0, >= 0.5.3)
     om (3.1.0)
       activemodel
       activesupport
@@ -466,6 +468,9 @@ GEM
       sass (~> 3.2)
       sprockets (~> 2.12)
       sprockets-rails (>= 2.0, < 4.0)
+    sawyer (0.6.0)
+      addressable (~> 2.3.5)
+      faraday (~> 0.8, < 0.10)
     selenium-webdriver (2.47.1)
       childprocess (~> 0.5)
       multi_json (~> 1.0)
@@ -571,6 +576,7 @@ DEPENDENCIES
   mysql2 (~> 0.3.15)
   nyulibraries-assets!
   oai!
+  octokit (~> 3.0)
   phantomjs (>= 1.9.0)
   pickle (~> 0.4.11)
   poltergeist (~> 1.5.0)
