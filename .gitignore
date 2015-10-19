@@ -39,3 +39,13 @@ application.yml
 # Ignore emacs auto-save and backup files
 \#*
 *~
+
+# Ignore Intellij IDEA (or RubyMine) files
+.idea/
+*.iml
+
+# Ignore individual developer customizations of Ruby environment.
+# To specify a gemset in Intellij/RubyMine, an .rvmrc file
+# must be created:
+# https://www.jetbrains.com/ruby/help/rvm-support.html
+.rvmrc
