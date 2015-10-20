@@ -26,7 +26,6 @@ if Rails.env.cucumber?
     WebMock.allow_net_connect!
     Nyucore.destroy_all
     Collection.destroy_all
-    Ichabod::DataLoader.new('spatial_data_repository', File.join(Rails.root, 'ingest/test_sdr.xml')).load
     Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
     Ichabod::DataLoader.new('faculty_digital_archive_ngo','https://archive.nyu.edu/request','hdl_2451_33605',5).load
     Ichabod::DataLoader.new('archive_it_accw','http://dev-dl-pa.home.nyu.edu','/ichabod-support/collections/4049.json').load
@@ -35,6 +34,7 @@ if Rails.env.cucumber?
     # request 5 items from The Masses collection, start with item 0d
     Ichabod::DataLoader.new('masses','http://dlib.nyu.edu/themasses/books.json',0,5).load
     Ichabod::DataLoader.new('faculty_digital_archive_service_data', File.join(Rails.root, 'ingest/test_data_service.csv')).load
+   
 
   ensure
     WebMock.disable_net_connect!
