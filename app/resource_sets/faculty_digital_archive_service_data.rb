@@ -1,5 +1,6 @@
 class FacultyDigitalArchiveServiceData < Ichabod::ResourceSet::Base
   self.prefix = 'fda'
+  self.collection = "Data Services"
   self.source_reader = :csv_file_reader
   editor :fda_cataloger 
   before_load :set_available_or_citation

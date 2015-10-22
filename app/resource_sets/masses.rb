@@ -1,5 +1,6 @@
 class Masses < Ichabod::ResourceSet::Base
   self.prefix = 'masses'
+  self.collection = "Data Services"
   self.source_reader = :masses_reader
 
   attr_reader :endpoint_url, :resource_format, :resource_type, :start, :rows 
