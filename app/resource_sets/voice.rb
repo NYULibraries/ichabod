@@ -1,5 +1,6 @@
 class Voice < Ichabod::ResourceSet::Base
   self.prefix = 'beard'
+  self.collection = "Voices of the Food Revolution"
   self.source_reader = :voice_reader
 
   attr_reader :endpoint_url

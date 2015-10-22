@@ -1,6 +1,6 @@
-
 class FacultyDigitalArchiveNgo < Ichabod::ResourceSet::Base
   self.prefix = 'fda'
+  self.collection = "Asian NGOs Reports"
   self.source_reader = :csv_file_reader
   editor :fda_cataloger
   before_load :set_available_or_citation, :set_type

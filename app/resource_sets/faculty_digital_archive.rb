@@ -1,5 +1,6 @@
 class FacultyDigitalArchive < Ichabod::ResourceSet::Base
   self.prefix = 'fda'
+  self.collection = "Faculty Digital Archive"
   self.source_reader = :oai_dc_file_reader
   editor :fda_cataloger
   before_load :add_identifier_as_available_or_citation, :set_http_identifier

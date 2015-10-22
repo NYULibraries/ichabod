@@ -1,5 +1,6 @@
 class RosieTheRiveter < Ichabod::ResourceSet::Base
   self.prefix = 'rosie'
+  self.collection = "The Real Rosie the Riveter"
   self.source_reader = :rosie_the_riveter_reader
 
   attr_reader :endpoint_url, :user, :password, :dataset_size
