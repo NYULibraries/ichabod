@@ -5,10 +5,14 @@ module IchabodFeatures
       visit root_path unless current_path == root_path
     end
 
-    def limit_by_facet(category, facet)
+
+    def limit_by_facets(category, facets)
       within(:css, '#facets') do
         click_on(category)
-        click_on(facet)
+        sleep(2)
+        facets.split(", ").each do |facet|
+          click_on(facet)
+        end
       end
     end
 
