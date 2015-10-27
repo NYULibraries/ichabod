@@ -8,8 +8,9 @@ class SpatialDataRepository < Ichabod::ResourceSet::Base
   alias_method :collection_code, :prefix
 
   def initialize(*args)
-    @repo_url = args.shift
-    @access_token = args.shift
+    @repo_url = args.shift || Rails.root.join("ingest/sdr/*json")
+    @access_token = args.shift 
+
     super
   end
 
