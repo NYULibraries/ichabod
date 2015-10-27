@@ -35,6 +35,8 @@ describe UrlPresenter do
           end
         end
       end
+# removing this test as functionality has been removed
+=begin
       context 'and one of the types of the SolrDocument "Geospatial Data"' do
         let(:type) { ['type', 'Geospatial Data'] }
         it 'should have Urls whose texts are "Download"' do
@@ -43,7 +45,9 @@ describe UrlPresenter do
           end
         end
       end
-      context 'but none of the types of the SolrDocument is "Geospatial Data"' do
+=end
+      context 'but there is a type in the SolrDocument' do
+        let(:type) { ['type', 'Video'] }
         it 'should have Urls whose texts are equal to their values' do
           subject.each do |url|
             expect(url.text).to eq url.value
