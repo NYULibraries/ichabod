@@ -110,7 +110,7 @@ Code smells aren't hard to look out for, especially when we're using [Code Clima
 * __Complex class/module definition__ — Much like a long and complex method, this smell means a class is long and complex. This happens when there is too much code in the class definition that isn't part of any method.
 * __High total complexity of a class/module__ — If a class gets too large, and has too many methods, this signifies that maybe the class has too much responsibility.
 
-With this rubric you can carry one simplifying your code and aim for a very high GPA (what Code Climate uses to grade code quality).
+With this rubric you can carry on simplifying your code and aim for a very high GPA (what Code Climate uses to grade code quality).
 
 ##Coverage
 [Coveralls](https://coveralls.io/r/NYULibraries/ichabod?branch=development) is a pretty important player as well. Coveralls shows us what percentage of code was tested. It's tightly integrated with Travis, so when Travis runs the tests, it also runs the coveralls gem, which takes metrics. Then, Travis sends those metrics to Coveralls, allowing us to see what lines of code were run during the tests, and how many times they were run. You are tasked to get as close to 100% code coverage as computerly possible.
