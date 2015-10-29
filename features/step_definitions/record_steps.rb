@@ -47,7 +47,7 @@ end
 
 Then(/^I should see the immutable fields:$/) do |table|
   table.rows_hash.each do |field, value|
-    page.find(:xpath, "//label[@for='nyucore_#{field.downcase}']/following-sibling::div[@class='source']").text.should == value
+    page.find(:xpath, "//label[@for='nyucore_#{field.downcase}']/following-sibling::div[@class='source'][1]").text.should == value
   end
 end
 

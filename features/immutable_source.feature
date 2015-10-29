@@ -19,7 +19,7 @@ Feature: Source fields immutable, edit native fields
       | Identifier    | http://hdl.handle.net/2451/34036            |
       | Available     | http://hdl.handle.net/2451/34036            |
       | Title         | 2013 Hospital Zone Areas in Buenos Aires    |
-      | Creator       | GGovernment of the Autonomous City of Buenos Aires |
+      | Creator       | Government of the Autonomous City of Buenos Aires |
       | Type          | Geospatial Data                             |
       | Publisher     | Buenos Aires (Argentina).                   |
       | Description   | This map is the boundaries and the names of the hospital zone areas in Buenos Aires, Argentina. It is taken from the City of Buenos Aires GIS and data center, and full documentation is available at http://data.buenosaires.gob.ar/dataset/areas-hospitalarias/resource/c1caac1d-6055-44fa-9367-c30c36424610 |
@@ -78,7 +78,7 @@ Feature: Source fields immutable, edit native fields
     Then I should see the value "Buenos Aires (Argentina)." in the "Publisher:" field
     And I should see the value "Penguin Publishing" in the "Publisher:" field
 
-    @me
+
   Scenario: Check that source doesn't overwrite native metadata
     Given I revert the "Spatial Data Repository" source data in the "publisher" field to "Buenos Aires (Argentina)." for the record identified by "sdr:hdl-handle-net-2451-34036"
     And I reload the "Spatial Data Repository" source data into Ichabod

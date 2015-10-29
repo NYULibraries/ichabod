@@ -10,7 +10,7 @@ Feature: Display tests for various datasets
 
   Scenario: Display "Online Resource" field in details display
     Given I limit my search to "Geospatial Data" under the "Format" category
-    And I search for "MapPLUTO"
+    And I search for "Buenos Aires"
     When I navigate to details display of the first result
     Then I should get "Online Resource" field in the details display
 

@@ -5,6 +5,6 @@ Feature: Index publisher
 
   Scenario: Search by keyword (publisher) and limit search by facet
     Given I am on the default search page
-    When I search on the phrase "ESRI"
+    When I search on the phrase "Buenos Aires"
     Then I should see search results
     And I should see a "Geospatial Data" facet under the "Format" category

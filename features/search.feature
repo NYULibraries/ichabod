@@ -26,10 +26,10 @@ Feature: Perform a basic search
     And I limit my results to "NYU Press Open Access Books" under the "Format" category
     Then I should see search results
 
-  @vcr
+
   Scenario: Search by geographic location and topic and limit results by facet
     Given I am on the default search page
-    When I search on the phrase "New York City highways"
+    When I search on the phrase "Buenos Aires"
     And I limit my results to "Geospatial Data" under the "Format" category
     Then I should see search results
 
