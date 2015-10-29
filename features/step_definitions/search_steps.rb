@@ -35,14 +35,14 @@ end
 
 ##
 # Faceting steps
-Given(/^I (limit|filter) my search to "(.*?)" under the "(.*?)" category$/) do |a, facet, category|
+Given(/^I (limit|filter) my search to "([^\"]*)" under the "(.*?)" category$/) do |a, facet, category|
   ensure_root_path
-  limit_by_facet(category, facet)
+  limit_by_facets(category, facet)
 end
 
-When(/^I limit my results to "(.*?)" under the "(.*?)" category$/) do |facet, category|
+When(/^I limit my results to "([^\"]*)" under the "(.*?)" category$/) do |facet, category|
   ensure_root_path
-  limit_by_facet(category, facet)
+  limit_by_facets(category, facet)
 end
 
 And(/^I should see a "(.*?)" facet under the "(.*?)" category$/) do |facet, category|
