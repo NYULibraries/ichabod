@@ -61,7 +61,7 @@ Feature: Source fields immutable, edit native fields
     When I search on the phrase "Echidna"
     Then I should see search results
 
-  @loggedin @me
+  @loggedin
   Scenario: Check that native doesn't overwrite source metadata
     Given I am logged in as "GIS Cataloger"
     And I view record with id "sdr:hdl-handle-net-2451-34036"

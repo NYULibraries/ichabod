@@ -95,7 +95,6 @@ module Ichabod
 
           urls = get_download_urls
           files = []
-          dir = "/Users/Esha/dev/ichabod/ingest/sdr"
           count = 0
           urls.each do |url|
             geo_blacklight  = open(url) {|fi| fi.read }
