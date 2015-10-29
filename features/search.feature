@@ -10,20 +10,20 @@ Feature: Perform a basic search
 
   Scenario: Search by keyword
     Given I am on the default search page
-    When I search on the phrase "nyc"
+    When I search on the phrase "new york city"
     Then I should see search results
 
-  
+
   Scenario: Search by keyword and limit results by facet
     Given I am on the default search page
     When I search on the phrase "books"
-    And I limit my results to "NYU Press Open Access Books" under the "Format" category
+    And I limit my results to "Book" under the "Format" category
     Then I should see search results
 
   Scenario: Search by geographic location and limit results by facet
     Given I am on the default search page
     When I search on the phrase "New York City"
-    And I limit my results to "NYU Press Open Access Books" under the "Format" category
+    And I limit my results to "Geospatial Data" under the "Format" category
     Then I should see search results
 
 
