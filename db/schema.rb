@@ -65,9 +65,14 @@ ActiveRecord::Schema.define(version: 20150823040400) do
     t.string   "current_login_ip"
     t.text     "user_attributes"
     t.datetime "refreshed_at"
+    t.string   "provider",               default: "",    null: false
+    t.string   "aleph_id"
+    t.string   "institution_code"
+    t.string   "patron_status"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username", "provider"], name: "index_users_on_username_and_provider", unique: true, using: :btree
 
 end

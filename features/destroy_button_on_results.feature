@@ -3,7 +3,7 @@ Feature: Delete button on the main and detailed search results pages
   I want to be able to use the existing search interface to find records to delete
   And then use the "Delete" link to delete the record
 
-  @loggedin
+  @loggedin @wip
   Scenario: authorized user can delete record from the main search page and return to search results
     Given I am logged in as an admin
     And "12" records with title "The Crab" exists
@@ -13,7 +13,7 @@ Feature: Delete button on the main and detailed search results pages
     Then the number of records should decrease to "11"
     And I should return to the page "1" of the search results
 
- @loggedin
+ @loggedin @wip
   Scenario: authorized user can delete record from the details display page and return to search results
     Given I am logged in as an admin
     And "12" records with title "Einen einzigen Wert" exists

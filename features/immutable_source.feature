@@ -9,7 +9,7 @@ Feature: Source fields immutable, edit native fields
     When I navigate to details display of the first result
     Then I should see the value "New York City Department of City Planning" in the "Publisher:" field
 
-  @loggedin
+  @loggedin @wip
   Scenario: Check that source metadata fields are not editable
     Given I am logged in as "GIS Cataloger"
     And I view record with id "sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
@@ -25,7 +25,7 @@ Feature: Source fields immutable, edit native fields
       | Series        | NYCDCP_ADMIN_BNDRY_10CAV                    |
       | Version       | DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R  |
 
-  @loggedin
+  @loggedin @wip
   Scenario: Check that native metadata fields are editable
     Given I am logged in as "GIS Cataloger"
     And I view record with id "sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
@@ -39,7 +39,7 @@ Feature: Source fields immutable, edit native fields
     When I search on the phrase "A Pile of Monkeys"
     Then I should see search results
 
-  @loggedin
+  @loggedin @wip
   Scenario: Check that native metadata multiples are editable
     Given I am logged in as "GIS Cataloger"
     And I view record with id "sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
@@ -58,7 +58,7 @@ Feature: Source fields immutable, edit native fields
     When I search on the phrase "Echidna"
     Then I should see search results
 
-  @loggedin
+  @loggedin @wip
   Scenario: Check that native doesn't overwrite source metadata
     Given I am logged in as "GIS Cataloger"
     And I view record with id "sdr:DSS-NYCDCP_Admin_Bndry_10cav-DSS-nyfb_05R"
@@ -75,6 +75,9 @@ Feature: Source fields immutable, edit native fields
     Then I should see the value "New York City Department of City Planning" in the "Publisher:" field
     And I should see the value "Penguin Publishing" in the "Publisher:" field
 
+  # This is marked WIP, but this isn't a login scenario. This relies on a
+  # previous scenario, which turns out to be a login scenario.
+  @wip
   Scenario: Check that source doesn't overwrite native metadata
     Given I revert the "Spatial Data Repository" source data in the "publisher" field to "New York City Department of City Planning" for the record identified by "DSS.NYCDCP_Admin_Bndry_10cav\DSS.nyfb_05R"
     And I reload the "Spatial Data Repository" source data into Ichabod

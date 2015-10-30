@@ -1,3 +1,4 @@
+@wip
 Feature: Login as a user
   In order to have permissions specific to me
   As a valid NYU user
@@ -28,4 +29,3 @@ Feature: Login as a user
     Given I am logged in as "AFC Group"
     And I am on the default search page
     Then I should see "Log-out"
-
