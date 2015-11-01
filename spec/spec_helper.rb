@@ -107,4 +107,6 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.filter_sensitive_data('user') { ENV['ICHABOD_ROSIE_USER'] }
   c.filter_sensitive_data('password') { ENV['ICHABOD_ROSIE_PASSWORD'] }
+  c.filter_sensitive_data('user_token') { ENV['ICHABOD_GIT_USER_TOKEN'] }
+  c.filter_sensitive_data('geo_repo_url') { ENV['GIT_GEO_SPATIAL_MD_URL'] }
 end
