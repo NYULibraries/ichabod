@@ -3,7 +3,7 @@ module Ichabod
   module ResourceSet
     module SourceReaders
       describe GitGeoBlacklightReader do
-        let(:repo_url) { ENV['GIT_GEO_SPATIAL_MD_URL'] || 'geo_repo_url'}
+        let(:repo_url) { ENV['GIT_GEO_SPATIAL_MD_URL'] || 'NYULibraries/test_sdr_metadata'}
         let(:access_token) { ENV['ICHABOD_GIT_USER_TOKEN'] || 'user_token' }
         let(:collection_code) { 'sdr' }
         let(:resource_set) { mock_resource_set }
