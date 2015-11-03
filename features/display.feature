@@ -43,3 +43,8 @@ Feature: Geospatial dataset's various display tests
     Given I limit my search to "NYU Press Open Access Books" under the "Collection" category
     When I navigate to details display of the first result
     Then I should see the value "Book" in the "Format:" field
+
+  Scenario: Display "Creator" field in the details display
+    Given I limit my search to "NYU Press Open Access Books" under the "Collection" category
+    When I navigate to details display of the first result
+    Then I should see the value "Jody David Armour" in the "Creator:" field
