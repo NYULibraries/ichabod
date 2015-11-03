@@ -28,10 +28,10 @@ module Ichabod
             description: gb['dc_description_s'],
             publisher: gb['dc_publisher_s'],
             type: FORMAT,
-            language: gb['dc_language_s'], # there are multiple languages, need to handle that
+            language: gb['dc_language_s'], 
             format: FORMAT,
             creator: gb['dc_creator_sm'],
-            subject: gb['dc_subject_sm'], # need to handle multiple subjects
+            subject: gb['dc_subject_sm'], 
             date: gb['dct_issued_s'],
             rights:gb['dc_rights_s'],
             data_provider: gb['dct_provenance_s'],

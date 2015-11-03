@@ -17,12 +17,17 @@ module IchabodFeatures
       instance_for_source(source).prefix
     end
 
-    def fixture_file(source, ext = ".xml")
-      "#{fixture_dir}/#{source}#{ext}"
+    def fixture_file(source, ext = "xml")
+      "#{fixture_dir}/#{source}.#{ext}"
     end
 
     def fixture_dir
       Rails.root.join("spec","fixtures")
+    end
+
+    def get_ext(prefix)
+      hsh = {'sdr' => 'json'}
+      hsh[prefix]
     end
   end
 end
