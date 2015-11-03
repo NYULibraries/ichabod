@@ -35,6 +35,7 @@ module Ichabod
             its(:identifier) { should eq '9780814706404' }
             its(:isbn) { should eq '9780814706404' }
             its(:title) { should eq 'Negrophobia and Reasonable Racism' }
+            its(:creator) { should match_array ['Jody David Armour'] }
             its(:available) { should eq 'http://hdl.handle.net/2333.1/37pvmfhh' }
             its(:citation) { should eq 'http://hdl.handle.net/2333.1/37pvmfhh' }
             its(:type) { should eq 'Book' }
