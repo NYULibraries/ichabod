@@ -1,6 +1,7 @@
 Feature: Display tests for various datasets
-  As a patron, I want to see the type of record for NYU Press Open Access Books
   As a patron, I want to see the url for GIS data
+  As a patron, I want to see the type of record for NYU Press Open Access Books
+  As a patron, I want to see the creator for NYU Press Open Access Books
 
   Scenario: Display "Online Resource" field in search results
     Given I am on the default search page
