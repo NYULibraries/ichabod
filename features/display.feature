@@ -25,4 +25,4 @@ Feature: Display tests for various datasets
     Given I limit my search to "NYU Press Open Access Books" under the "Collection" category
     And I search for "9780814712917"
     When I navigate to details display of the first result
-    Then I should see the value "Jody David Armour" in the "Creator:" field
+    Then I should see the value "Gail R. Benjamin" in the "Creator:" field
