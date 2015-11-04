@@ -1,8 +1,12 @@
-Feature: Geospatial dataset's various display tests
+Feature: Various display tests
   In order to use a Geospatial dataset
   As an on-campus NYU patron
   Once I’ve found a dataset in Ichabod, I need to be able to click on a download link
   Once I've found a geospatial dataset, I would like to know my access restrictions
+  In order to use the NYU Press Open Access Books collection
+  As an on-campus NYU patron
+  Once I’ve found a record for a book in Ichabod
+  I need to be able to see in the details display both "Format: Book" and "Creator: [X]"
 
   Scenario: Display "Online Resource" field in search results
     Given I am on the default search page
