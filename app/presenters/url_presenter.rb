@@ -26,15 +26,7 @@ class UrlPresenter < CatalogPresenter
   end
 
   def url_text_for_index(index)
-    if url_texts.blank? || url_texts[index].blank?
-      # commenting this line out because this use case
-      #  is no longer supported.
-      #if solr_document_types.include? 'Geospatial Data'
-       # I18n.t('catalog.urls.geospatial_dataset_link_text')
-     # end
-    else
-      url_texts[index]
-    end
+     url_texts[index] unless  url_texts.blank? || url_texts[index].blank?
   end
 
   def url_values

@@ -1,6 +1,6 @@
 Given(/^I (change|revert) the "(.*?)" source data in the "(.*?)" field to "(.*?)" for the record identified by "(.*?)"$/) do |method, source, field, data, identifier|
   prefix = prefix_for_source(source)
-  # in case, we doing this test for more than 
+  # in case, we are doing this test for more than 
   # one type of dataset
   # making a hash of dataset prefixes and their extensions
   ext = get_ext(prefix)

@@ -58,7 +58,7 @@ module Ichabod
           # create ruby hash from that
           # for testing purposes 
 
-          if not(Dir.exists?(File.dirname(repo_url)))
+          if not(Dir.exist?(File.dirname(repo_url)))
             raise ArgumentError.new("Error: #{repo_url} must exist")
           end
           json_file = []
@@ -95,7 +95,6 @@ module Ichabod
 
           urls = get_download_urls
           files = []
-          count = 0
           urls.each do |url|
             geo_blacklight  = open(url) {|fi| fi.read }
             files.push(geo_blacklight)
@@ -115,7 +114,7 @@ module Ichabod
           get_dirs.each do |d|
             next if d['size'] != 0
             path = d['path']
-            sub_tree = @client.tree(repo_url,d['sha'], :recursive => true) 
+            sub_tree = @client.tree(repo_url, d['sha'], :recursive => true) 
 
             sub_tree[:tree].each do |t|
               if t['type'] == 'blob'

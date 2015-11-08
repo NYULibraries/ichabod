@@ -17,17 +17,6 @@ describe CatalogHelper do
       let(:resource_text_display) { ["Yahoo!", "Google"] }
       it { should eql('<a href="http://yahoo.com" target="_blank">Yahoo!</a><br /><a href="http://google.com" target="_blank">Google</a>') }
     end
-    # removing Download test as this functionality is no longer needed
-=begin
-    context 'when there are no resource text displays in the document' do
-      context 'and the type is "Geospatial Data"' do
-        let(:type) { 'Geospatial Data' }
-        let(:available) { ["http://yahoo.com","http://google.com"] }
-        let(:resource_text_display) { nil }
-        it { should eql('<a href="http://yahoo.com" target="_blank">Download</a><br /><a href="http://google.com" target="_blank">Download</a>') }
-      end
-    end
-=end
     context 'when args are nil' do
       let(:document) { nil }
       it 'should not raise an error' do
