@@ -24,11 +24,6 @@ Given(/^I am on the "Edit Item" form for "(.*?)"$/) do |title|
   visit edit_nyucore_path(@record)
 end
 
-When(/^I delete the record$/) do
-  accept_javascript_confirms
-  click_on('Delete')
-end
-
 When(/^I click on "(.+?)"$/) do |link_text|
   click_on(link_text)
 end
@@ -47,7 +42,7 @@ end
 
 Then(/^I should see the immutable fields:$/) do |table|
   table.rows_hash.each do |field, value|
-    page.find(:xpath, "//label[@for='nyucore_#{field.downcase}']/following-sibling::div[@class='source']").text.should == value
+    page.find(:xpath, "//label[@for='nyucore_#{field.downcase}']/following-sibling::div[@class='source'][1]").text.should == value
   end
 end
 

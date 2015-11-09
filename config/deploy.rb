@@ -111,7 +111,7 @@ end
 
 namespace :ingest do
   task :load_sdr do
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['spatial_data_repository','./ingest/sdr.xml']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['spatial_data_repository',ENV['GIT_GEO_SPATIAL_MD_URL'],ENV['ICHABOD_GIT_USER_TOKEN']]"
   end
   task :load_fda do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['faculty_digital_archive','./ingest/stern.xml']"
@@ -123,7 +123,7 @@ namespace :ingest do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['faculty_digital_archive_service_data','./ingest/2451-33611.csv']"
   end
   task :delete_sdr do
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['spatial_data_repository','./ingest/sdr.xml']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:nyucore:delete['sdr:*']"
   end
   task :delete_fda do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive','./ingest/stern.xml']"

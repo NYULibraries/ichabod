@@ -21,12 +21,8 @@ end
 
 ##
 # Results steps
-Then(/^I should (not )?see search results$/) do |negator|
-  if negator
-    expect(documents_list).to have_exactly(0).items
-  else
-    expect(documents_list).to have_at_least(1).items
-  end
+Then(/^I should see search results$/) do
+  expect(documents_list).to have_at_least(1).items
 end
 
 Then(/^I get a dataset with the title "(.*?)"$/) do |title|

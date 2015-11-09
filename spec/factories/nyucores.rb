@@ -25,6 +25,10 @@ FactoryGirl.define do
     addinfolink ["http://library.nyu.edu/ask"]
     resource_set 'resource_set'
     restrictions 'NYU Only'
+    data_provider ["NYU"] 
+    geometry ["line"] 
+    subject_spatial ["Buenos Aires"]
+    subject_temporal ["2013"]
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
 
     factory :gis_record do

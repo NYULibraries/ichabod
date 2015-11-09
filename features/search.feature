@@ -10,13 +10,14 @@ Feature: Perform a basic search
 
   Scenario: Search by keyword
     Given I am on the default search page
-    When I search on the phrase "nyc"
+    When I search on the phrase "new york city"
     Then I should see search results
+
 
   Scenario: Search by keyword and limit results by facet
     Given I am on the default search page
-    When I search on the phrase "highways"
-    And I limit my results to "Geospatial Data" under the "Format" category
+    When I search on the phrase "books"
+    And I limit my results to "Book" under the "Format" category
     Then I should see search results
 
   Scenario: Search by geographic location and limit results by facet
@@ -25,9 +26,10 @@ Feature: Perform a basic search
     And I limit my results to "Geospatial Data" under the "Format" category
     Then I should see search results
 
+
   Scenario: Search by geographic location and topic and limit results by facet
     Given I am on the default search page
-    When I search on the phrase "New York City highways"
+    When I search on the phrase "Buenos Aires"
     And I limit my results to "Geospatial Data" under the "Format" category
     Then I should see search results
 
@@ -70,18 +72,18 @@ Feature: Perform a basic search
     When I search on the phrase "March 1911"
     Then I should see search results
 
-  @vcr
+  @vcr 
   Scenario: Search by ISBN
     Given I am on the default search page
-    When I search on the phrase "9780814712917"
+    When I search on the phrase "9780814706404"
     Then I should see search results
 
-  @vcr
+  @vcr 
   Scenario: Search for NYU Press
     Given I am on the default search page
     When I limit my results to "NYU Press Open Access Books" under the "Collection" category
     When I navigate to details display of the first result
-    Then I should see the value "9780814712917" in the "ISBN:" field
+    Then I should see the value "9780814706404" in the "ISBN:" field
 
   Scenario: Search for The Data Services Collection title
     Given I am on the default search page
