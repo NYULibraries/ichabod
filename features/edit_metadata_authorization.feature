@@ -6,18 +6,18 @@ Feature: Permission to edit metadata only to authorized users
   @loggedin
   Scenario: Edit option for GIS records is available to GIS cataloger
     Given I am logged in as "GIS Cataloger"
-    And I view record with id "sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR"
+    And I view record with id "sdr:hdl-handle-net-2451-34036"
     Then the record should have link "Edit"
 
   @loggedin
   Scenario: Edit option for GIS records is not available to FDA cataloger
     Given I am logged in as "FDA Cataloger"
-    And I view record with id "sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR"
+    And I view record with id "sdr:hdl-handle-net-2451-34036"
     Then the record should not have link "Edit"
 
-  Scenario: Edit option for GIS records is not available to unathenticated user
+  Scenario: Edit option for GIS records is not available to unauthenticated user
     Given I am not logged in
-    And I view record with id "sdr:DSS-NYCDCP_Mappluto_Test_11v1-DSS-jam_mappluto_7OR"
+    And I view record with id "sdr:hdl-handle-net-2451-34036"
     Then the record should not have link "Edit"
 
   @loggedin
@@ -40,35 +40,35 @@ Feature: Permission to edit metadata only to authorized users
   @loggedin
   Scenario: Edit option for GIS records is available to GIS cataloger on the main search page
     Given I am logged in as "GIS Cataloger"
-    And I search for "MapPluto"
+    And I search for "Buenos Aires"
     Then the record should have link "Edit"
 
   @loggedin
   Scenario: Edit option for GIS records is available to GIS cataloger on the details display search page
     Given I am logged in as "GIS Cataloger"
-    And I search for "MapPluto"
+    And I search for "Buenos Aires"
     And I navigate to details display of the first result
     Then the record should have link "Edit"
 
   @loggedin
   Scenario: Edit option for GIS records is not available to FDA cataloger on the main search page
     Given I am logged in as "FDA Cataloger"
-    And I search for "MapPluto"
+    And I search for "Buenos Aires"
     Then the record should not have link "Edit"
 
  @loggedin
   Scenario: Edit option for GIS records is not available to FDA cataloger on the details display search page
     Given I am logged in as "FDA Cataloger"
-    And I search for "MapPluto"
+    And I search for "Buenos Aires"
     And I navigate to details display of the first result
     Then the record should not have link "Edit"
 
-  Scenario: Edit option for GIS records is not available to unathenticated user on the main search page
+  Scenario: Edit option for GIS records is not available to unauthenticated user on the main search page
     Given I am not logged in
-    And I search for "MapPluto"
+    And I search for "Buenos Aires"
     Then the record should not have link "Edit"
 
- Scenario: Edit option for GIS records is not available to unathenticated user on the details display search page
+ Scenario: Edit option for GIS records is not available to unauthenticated user on the details display search page
     Given I am not logged in
-    And I search for "MapPluto"
+    And I search for "Buenos Aires"
     And I navigate to details display of the first result

@@ -24,7 +24,7 @@ describe Nyucore do
 
   describe Nyucore::EXTRA_MULTIPLES do
     subject { Nyucore::EXTRA_MULTIPLES }
-    it { should eq [:addinfolink, :addinfotext, :isbn] }
+    it { should eq [:addinfolink, :addinfotext, :isbn, :data_provider, :geometry, :subject_spatial, :subject_temporal] }
   end
 
   describe Nyucore::SINGLE_FIELDS do

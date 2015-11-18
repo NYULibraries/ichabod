@@ -19,7 +19,7 @@ Feature: Login as a user
   Scenario: Logged in and searching
     Given I am logged in as "GIS Cataloger"
     And I am on the default search page
-    When I search on the phrase "nyc"
+    When I search on the phrase "new york city"
     Then I should see search results
     And I should see "Log-out"
 

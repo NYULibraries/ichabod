@@ -24,6 +24,7 @@ module Ichabod
             identifier: entity['id'],
             isbn: entity['id'],
             title: entity['title'],
+            creator: entity['author'],
             available: entity['handle'],
             citation: entity['handle'],
             date: entity['date'],

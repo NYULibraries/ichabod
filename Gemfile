@@ -44,6 +44,7 @@ gem 'faraday', '~> 0.9.0'
 gem 'multi_json', '~> 1.11.1'
 gem 'multi_xml', '~> 0.5.5'
 gem 'smarter_csv', '~> 1.0.19'
+gem "octokit", "~> 3.0"
 
 group :development do
   gem 'better_errors', '~> 2.0.0'
@@ -54,7 +55,7 @@ group :development, :test, :cucumber do
   gem 'rspec-rails', '~> 2.14.0'
   # Phantomjs for headless browser testing
   gem 'phantomjs', '>= 1.9.0'
-  gem 'poltergeist', '~> 1.5.0'
+  gem 'poltergeist', '~> 1.6.0'
   # Use factory girl for creating models
   gem 'factory_girl_rails', '~> 4.4.0'
   # Use pry-debugger as the REPL and for debugging

@@ -21,12 +21,8 @@ end
 
 ##
 # Results steps
-Then(/^I should (not )?see search results$/) do |negator|
-  if negator
-    expect(documents_list).to have_exactly(0).items
-  else
-    expect(documents_list).to have_at_least(1).items
-  end
+Then(/^I should see search results$/) do
+  expect(documents_list).to have_at_least(1).items
 end
 
 Then(/^I get a dataset with the title "(.*?)"$/) do |title|
@@ -35,14 +31,14 @@ end
 
 ##
 # Faceting steps
-Given(/^I (limit|filter) my search to "(.*?)" under the "(.*?)" category$/) do |a, facet, category|
+Given(/^I (limit|filter) my search to "([^\"]*)" under the "(.*?)" category$/) do |a, facet, category|
   ensure_root_path
-  limit_by_facet(category, facet)
+  limit_by_facets(category, facet)
 end
 
-When(/^I limit my results to "(.*?)" under the "(.*?)" category$/) do |facet, category|
+When(/^I limit my results to "([^\"]*)" under the "(.*?)" category$/) do |facet, category|
   ensure_root_path
-  limit_by_facet(category, facet)
+  limit_by_facets(category, facet)
 end
 
 And(/^I should see a "(.*?)" facet under the "(.*?)" category$/) do |facet, category|
