@@ -9,10 +9,11 @@ module Ichabod
 
       class << self
         attr_reader :source_reader
+        attr_accessor :collection_title
         attr_accessor :prefix
       end
 
-      attr_reader :prefix, :editors, :before_loads, :set_restrictions
+      attr_reader :prefix, :editors, :before_loads, :set_restrictions, :collection_title
 
       def self.source_reader=(source_reader)
         unless source_reader.is_a?(Class)
@@ -38,6 +39,8 @@ module Ichabod
         @source_reader = source_reader
       end
 
+
+
       # Since the class attributes are defined as instance variables on a Class
       # we need to make sure we force inheritance by grabbing the superclass(es)
       # instance variables as well. We do this through recursion so that all
@@ -49,7 +52,7 @@ module Ichabod
       #   end
       #
       #   class SubClass < Base
-      #     editor :editor1
+      #     editor :editor1:
       #   end
       #
       #   class SubSubClass < SubClass
@@ -103,6 +106,12 @@ module Ichabod
         self.before_loads.concat(before_loads.compact).uniq!
       end
 
+
+      def self.collection_exists
+        Collection.exists?( :desc_metadata__title_tesim=>self.collection_title)?:true:false
+      end
+
+
       # Default editor on all ResourceSets is the admin group
       editor :admin_group
 
@@ -112,14 +121,17 @@ module Ichabod
       # Default to adding the ResourceSet on create
       before_load :add_resource_set
 
+
       include Enumerable
       alias_method :size, :count
 
       def initialize(*args)
         @prefix = self.class.prefix
+        @collection_title = self.class.collection_title
         @editors = self.class.editors.map(&:to_s)
         @before_loads = self.class.before_loads.map(&:to_sym)
         @set_restrictions = self.class.set_restrictions.join("")
+        @collection
       end
 
       def read_from_source
@@ -128,6 +140,10 @@ module Ichabod
       end
 
       def load
+        set_collection
+        #I don't check it erlier so it doesn't affect how delete works, e.g. if we deleted collections we still be able to delete nyucores
+        raise_runtime_error_if_no_collection_found
+        update_collection_editors
         read_from_source if resources.empty?
         resources.collect do |resource|
           unless resource.is_a?(Resource)
@@ -141,7 +157,8 @@ module Ichabod
           unless @set_restrictions.blank?
             nyucore.source_metadata.restrictions = restrictions[@set_restrictions] if restrictions.has_key?(@set_restrictions)
           end
-
+          #assign isPartOf collection
+          nyucore.source_metadata.isPartOf = @collection.pid
           if nyucore.save
             Rails.logger.info("#{nyucore.pid} has been saved to Fedora")
             nyucore
@@ -161,6 +178,12 @@ module Ichabod
         end
       end
 
+      def set_collection
+        if !@collection_title.nil?
+         @collection ||= Collection.where( :desc_metadata__title_tesim=>@collection_title )[0]
+        end
+      end
+      
       private
 
       def restrictions
@@ -195,6 +218,19 @@ module Ichabod
         @name ||= self.class.name.demodulize.underscore
       end
 
+
+      def update_collection_editors
+        if !@collection.nil?
+          @collection.set_edit_groups(editors, []) unless editors.empty?
+          @collection.save
+        end
+      end
+
+
+       def collection_exists
+        Collection.exists?( :desc_metadata__title_tesim=>@collection_title)?:true:false
+      end
+
       def before_load_methods
         @before_load_methods ||= begin
           before_loads.collect do |before_load|
@@ -206,6 +242,12 @@ module Ichabod
       def raise_runtime_error_if_no_source_reader_configured
         if self.class.source_reader.blank?
           raise RuntimeError.new("No source reader has been configured for the class #{self.class.name}")
+        end
+      end
+
+      def raise_runtime_error_if_no_collection_found
+        if !collection_exists
+          raise RuntimeError.new("No collection #{@collection_title} exists.Either it wasn't created or you have mis-spelled it's name")
         end
       end
 

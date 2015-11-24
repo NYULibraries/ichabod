@@ -13,7 +13,7 @@ describe Nyucore do
                     :type, :publisher, :description, :edition, :date, :format, :language,
                     :relation, :rights, :subject, :series, :version, :contributor,
                     :addinfolink, :addinfotext, :data_provider, :discoverable, :geometry,
-                    :isbn, :location, :subject_spatial, :subject_temporal, :genre] }
+                    :isbn, :location, :subject_spatial, :subject_temporal, :genre, :isPartOf] }
   end
 
   subject(:nyucore) { build(:nyucore) }

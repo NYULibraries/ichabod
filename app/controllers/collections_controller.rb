@@ -18,7 +18,7 @@ class CollectionsController < ApplicationController
   # GET /collections/1
   # GET /collections/1.json
   def show
-    authorize! :show, params[:id]
+    #authorize! :show, params[:id]
     @collection = Collection.find(params[:id])
     respond_with(@collection)
   end
@@ -26,13 +26,13 @@ class CollectionsController < ApplicationController
   # GET /collections/new
   def new
     @collection = Collection.new
-    authorize! :new, @collection
+    #authorize! :new, @collection
     respond_with(@collection)
   end
 
   # GET /collections/1/edit
   def edit
-    authorize! :edit, params[:id]
+    #authorize! :edit, params[:id]
     @collection = Collection.find(params[:id])
     respond_with(@collection)
   end
@@ -42,7 +42,7 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     ensure_default_editors
-    authorize! :create, @collection
+    #authorize! :create, @collection
     flash[:notice] = 'Collection was successfully created.' if @collection.save
     respond_with(@collection)
   end
@@ -50,7 +50,7 @@ class CollectionsController < ApplicationController
   # PATCH/PUT /collections/1
   # PATCH/PUT /collections/1.json
   def update
-    authorize! :update, params[:id]
+    #authorize! :update, params[:id]
     @collection = Collection.find(params[:id])
     flash[:notice] = 'Collection was successfully updated.' if @collection.update(collection_params)
     respond_with(@collection)
