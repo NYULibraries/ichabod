@@ -24,12 +24,12 @@ describe CatalogController do
       expect(response_qf).to include("desc_metadata__title_tesim")
     end
     it "should contain the collection field in the response" do
-      expect(response_facets).to include("collection_sim")
+      expect(response_facets).to include("desc_metadata__isPartOf_sim")
     end
     context "when there are restricted collections"  do
       context "when user is not authorized to see specific collection" do
         it "should be filtered in response" do
-          expect(response_fq).to include("-collection_sim")
+          expect(response_fq).to include("-desc_metadata__isPartOf_sim")
         end  
       end
       context 'when user is authorized to see specific collection' do

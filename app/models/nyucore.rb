@@ -3,7 +3,7 @@ class Nyucore < ActiveFedora::Base
   NYUCORE_FIELDS = {
     :multiple => [:available, :citation, :title, :creator, :type, :publisher,
                   :description, :edition, :date, :format, :language, :relation,
-                  :rights, :subject, :series, :version, :genre],
+                  :rights, :subject, :series, :version, :genre, :isPartOf ],
     :single => [:identifier, :restrictions]
   }
   EXTRA_SINGLES = [:resource_set]
@@ -12,6 +12,8 @@ class Nyucore < ActiveFedora::Base
   MULTIPLE_FIELDS = NYUCORE_FIELDS[:multiple] + EXTRA_MULTIPLES
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
   METADATA_STREAMS = ['source_metadata', 'native_metadata']
+
+
 
   # Add multiple metadata streams to the model and include the attributes we
   # want on each stream. AcitveFedora::Base.has_attributes sets the attribute
@@ -109,11 +111,7 @@ class Nyucore < ActiveFedora::Base
       # https://github.com/projecthydra/active_fedora/blob/889aa962a326ad9e8302ada3237193221ad2feb5/lib/active_fedora/indexing.rb
       solr_doc = ds.to_solr(solr_doc)
     end
-    Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
+    #Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
     solr_doc
-  end
-
-  def collections
-    @collections ||= Collections.new(self)
   end
 end

@@ -1,6 +1,6 @@
 class IndianOceanData < Ichabod::ResourceSet::Base
   self.prefix = 'io'
-  self.collection = "Indian Ocean Postcards"
+  self.collection_title = "Indian Ocean Postcards"
   self.source_reader = :csv_file_reader
   editor :io_cataloger
   before_load :set_available_or_citation, :set_title_for_untitled
