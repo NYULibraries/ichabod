@@ -50,7 +50,9 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
     config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
     config.add_facet_field solr_name('desc_metadata__language', :facetable), :label => 'Language'
-    config.add_facet_field solr_name('collection', :facetable), :label => 'Collection'
+    config.add_facet_field solr_name('desc_metadata__isPartOf', :facetable), :label =>  'Collection',
+                                                                           :helper_method => :render_collection_links,
+                                                                           :text          => 'collection_text_display'
 
 
     # Have BL send all facet field names to Solr, which has been the default
@@ -59,12 +61,7 @@ class CatalogController < ApplicationController
     config.default_solr_params[:'facet.field'] = config.facet_fields.keys
     #use this instead if you don't want to query facets marked :show=>false
     #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
-    #temporary solution will be replaced by collection filter in next iteration
-    #Rails.logger.debug("My object: #{current_user}")
-    #if !current_user.nil?#||!(current_user[:groups].include?('io_cataloger')||current_user[:groups].include?('admin_group'))
-     #config.default_solr_params[:'fq'] = ['-collection_sim:Indian*']
-    #end
-
+    
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
@@ -190,7 +187,7 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
 
-    #define what parials will be used to display each solr document
+    #define what pif (!can?(:discover, collection) )arials will be used to display each solr document
     config.index.partials = ['index_header','index','action_buttons']
     config.show.partials = ['show_header','show','action_buttons']
 
@@ -199,8 +196,11 @@ end
 
 #temporary solution will replace after collection model is completed
    def show_only_discoverable_records solr_params, user_params
-     if !authorize_collection
-       solr_params[:fq] ||= []
-       solr_params[:'fq'] << ['-collection_sim:Indian*']
+     solr_params[:fq] ||= []
+     Collection.all.each do |collection|
+       if (!can?(:discover, collection) )
+        #solr_params[:'fq'] << ['-desc_metadata__isPartOf_sim:'+"#{collection.pid.gsub(":","\\:")}"]
+       end
     end
   end
+

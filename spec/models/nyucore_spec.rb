@@ -13,7 +13,7 @@ describe Nyucore do
     it 'should have the appropriate multiple fields' do
       expect(subject[:multiple]).to eq [:available, :citation, :title, :creator,
         :type, :publisher, :description, :edition, :date, :format, :language,
-        :relation, :rights, :subject, :series, :version, :genre]
+        :relation, :rights, :subject, :series, :version, :genre, :isPartOf ]
     end
   end
 
@@ -49,11 +49,6 @@ describe Nyucore do
   describe '#source_metadata' do
     subject { nyucore.source_metadata }
     it { should be_a Ichabod::NyucoreDatastream }
-  end
-
-  describe "#collections" do
-    subject { nyucore.collections }
-    it { should be_instance_of Nyucore::Collections }
   end
 
   # Some meta programming to test all the single-valued Nyucore attributes

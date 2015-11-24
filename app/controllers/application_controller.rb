@@ -13,19 +13,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user_dev
-    @current_user ||= User.new(:email => "user@nyu.edu", :firstname => "Ptolemy", :username => "ppXX")
+    #@current_user ||= User.new(:email => "user@nyu.edu", :firstname => "Ptolemy", :username => "ppXX")
+    @current_user ||= User.new(:email => "gis_admin", :firstname => "Ptolemy", :username => "ppXX")
   end
 
   alias_method :current_user, :current_user_dev if Rails.env.development?
 
-  #temporary solution will be replaced when collection model is completed by real collection authorization method
- def authorize_collection
-   if current_user.nil?||!(current_user.groups.include?('io_cataloger')||current_user.groups.include?('admin_group'))
-     false
-   else
-     true
-   end
- end
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:notice] ||= exception.message.html_safe
