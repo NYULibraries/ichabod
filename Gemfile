@@ -47,7 +47,7 @@ gem 'multi_json', '~> 1.11.1'
 gem 'multi_xml', '~> 0.5.5'
 gem 'smarter_csv', '~> 1.0.19'
 gem "octokit", "~> 3.0"
-gem 'blacklight_oai_provider', :path => "/home/charper/projects/blacklight_oai_provider" 
+gem 'blacklight_oai_provider', :path => "../blacklight_oai_provider" 
 
 group :development do
   gem 'better_errors', '~> 2.0.0'
