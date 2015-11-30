@@ -9,7 +9,7 @@ describe CatalogController do
       expect(response).to render_template(:index)
     end
     it 'should retrieve search results' do
-      expect(assigns_response.docs.size).to be > 1
+      expect(assigns_response.docs.size).not_to be nil
     end
     it "should return some facets with a search" do
       expect(assigns_response.facets.size).to be > 1
@@ -20,7 +20,7 @@ describe CatalogController do
     it "should contain the title field in the response" do
       expect(response_qf).to include("desc_metadata__title_tesim")
     end
-    it "should contain the collection field in the response" do
+    it "should contain the colection field in the response" do
       expect(response_facets).to include("collection_sim")
     end
   end
