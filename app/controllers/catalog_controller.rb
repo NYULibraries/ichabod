@@ -194,13 +194,13 @@ class CatalogController < ApplicationController
   end
 end
 
-#temporary solution will replace after collection model is completed
-   def show_only_discoverable_records solr_params, user_params
+ def show_only_discoverable_records solr_params, user_params
      solr_params[:fq] ||= []
      Collection.all.each do |collection|
-       if (!can?(:discover, collection) )
-        #solr_params[:'fq'] << ['-desc_metadata__isPartOf_sim:'+"#{collection.pid.gsub(":","\\:")}"]
+       if (!collection.discoverable)&&(!can?(:edit, collection))
+        solr_params[:'fq'] << ['-desc_metadata__isPartOf_sim:'+"#{collection.pid.gsub(":","\\:")}"]
        end
     end
+    return solr_params[:'fq']
   end
 
