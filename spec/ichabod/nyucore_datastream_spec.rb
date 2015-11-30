@@ -35,7 +35,7 @@ module Ichabod
     describe NyucoreDatastream::FACETABLE_TERMS do
       subject { NyucoreDatastream::FACETABLE_TERMS }
       it { should be_an Array }
-      it { should eq [:creator, :type, :language, :subject] }
+      it { should eq [:creator, :type, :language, :subject, :isPartOf] }
     end
 
     subject(:nyucore_datastream) { NyucoreDatastream.new }

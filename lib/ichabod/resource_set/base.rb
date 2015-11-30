@@ -9,7 +9,7 @@ module Ichabod
 
       class << self
         attr_reader :source_reader
-        attr_accessor :collection_title
+        attr_reader :collection_title
         attr_accessor :prefix
       end
 
@@ -38,6 +38,14 @@ module Ichabod
         end
         @source_reader = source_reader
       end
+
+      def self.collection_title=(collection_title)
+        unless Collection.exists?( :desc_metadata__title_tesim=>collection_title)
+          raise RuntimeError.new("No collection #{collection_title} exists.Either it wasn't created or you have mis-spelled it's name")
+        end
+        @collection_title = collection_title
+      end
+
 
 
 
@@ -108,7 +116,11 @@ module Ichabod
 
 
       def self.collection_exists
-        Collection.exists?( :desc_metadata__title_tesim=>self.collection_title)?:true:false
+        if self.collection_title.nil?
+          false
+        else
+          Collection.exists?( :desc_metadata__title_tesim=>self.collection_title)?:true:false
+        end
       end
 
 
@@ -127,11 +139,10 @@ module Ichabod
 
       def initialize(*args)
         @prefix = self.class.prefix
-        @collection_title = self.class.collection_title
         @editors = self.class.editors.map(&:to_s)
         @before_loads = self.class.before_loads.map(&:to_sym)
         @set_restrictions = self.class.set_restrictions.join("")
-        @collection
+        @collection_title = self.class.collection_title
       end
 
       def read_from_source
@@ -140,9 +151,8 @@ module Ichabod
       end
 
       def load
-        set_collection
-        #I don't check it erlier so it doesn't affect how delete works, e.g. if we deleted collections we still be able to delete nyucores
-        raise_runtime_error_if_no_collection_found
+        raise_runtime_error_if_no_collection_title_configured
+        find_collection
         update_collection_editors
         read_from_source if resources.empty?
         resources.collect do |resource|
@@ -158,7 +168,7 @@ module Ichabod
             nyucore.source_metadata.restrictions = restrictions[@set_restrictions] if restrictions.has_key?(@set_restrictions)
           end
           #assign isPartOf collection
-          nyucore.source_metadata.isPartOf = @collection.pid
+          nyucore.source_metadata.isPartOf = @collection.pid 
           if nyucore.save
             Rails.logger.info("#{nyucore.pid} has been saved to Fedora")
             nyucore
@@ -178,12 +188,12 @@ module Ichabod
         end
       end
 
-      def set_collection
-        if !@collection_title.nil?
-         @collection ||= Collection.where( :desc_metadata__title_tesim=>@collection_title )[0]
+      def find_collection
+        if(!@collection_title.nil?)
+          @collection ||=Collection.where( :desc_metadata__title_tesim=>@collection_title )[0]
         end
       end
-      
+
       private
 
       def restrictions
@@ -219,16 +229,11 @@ module Ichabod
       end
 
 
-      def update_collection_editors
+      def update_collection_editors()
         if !@collection.nil?
           @collection.set_edit_groups(editors, []) unless editors.empty?
           @collection.save
         end
-      end
-
-
-       def collection_exists
-        Collection.exists?( :desc_metadata__title_tesim=>@collection_title)?:true:false
       end
 
       def before_load_methods
@@ -245,9 +250,9 @@ module Ichabod
         end
       end
 
-      def raise_runtime_error_if_no_collection_found
-        if !collection_exists
-          raise RuntimeError.new("No collection #{@collection_title} exists.Either it wasn't created or you have mis-spelled it's name")
+      def raise_runtime_error_if_no_collection_title_configured
+        if @collection_title.nil?
+          raise RuntimeError.new("You have to define parent collection before loading new items")
         end
       end
 
@@ -257,6 +262,10 @@ module Ichabod
 
       def source_reader
         @source_reader ||= self.class.source_reader.new(self)
+      end
+
+      def collection_exists(collection_title)
+          Collection.exists?( :desc_metadata__title_tesim=>collection_title)?:true:false
       end
     end
   end
