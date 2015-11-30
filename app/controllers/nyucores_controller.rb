@@ -15,10 +15,10 @@ class NyucoresController < ApplicationController
   end
 
   def show
-    #authorize! :show, params[:id]
+    authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
-    #temporary solution will be replaced when collection object is ready
-    if(@item.pid.include?('io'))&&!authorize_collection
+    collection=Collection.find(@item.isPartOf[0])
+    if (!collection.discoverable&&!can?(:edit, collection))
       raise CanCan::AccessDenied.new('You are not authorized to view this item')
     else
       respond_with(@item)

@@ -11,7 +11,8 @@ FactoryGirl.define do
     publisher ["Special Collections","DLTS"]
     description "We need to test how collection works"
     rights "rights1"
-    discoverable "1"
+    discoverable '1'
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
   end
+
 end

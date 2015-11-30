@@ -39,7 +39,7 @@ describe CatalogController do
           get :index, search_field: 'all_fields', q: 'highways'
         end
         it "should not be filtered in response" do
-          expect(response_fq).to be nil
+          expect(response_fq).to be []
         end
       end
     end
@@ -54,12 +54,12 @@ describe CatalogController do
     end
     subject { controller.instance_eval{ show_only_discoverable_records({},{}) } }
     context "when there are restricted collections"  do
-      context "when user is not authorized to see specific collection" do
+      context "when user is  authorized to see specific collection" do
         it { should eq nil }
       end
-      context 'when user is authorized to see specific collection' do
+      context 'when user is not authorized to see specific collection' do
         let(:user) { nil }
-        it { should eq [["-collection_sim:Indian*"]] }
+        it { should eq [["-desc_metadata__isPartOf_sim:*"]] }
       end
     end
   end
