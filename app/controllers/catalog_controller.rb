@@ -193,11 +193,11 @@ end
 
  def show_only_discoverable_records solr_params, user_params
      solr_params[:fq] ||= []
-     Collection.all.each do |collection|
-       if (!collection.discoverable)&&(!can?(:edit, collection))
+     Collection.private_collections.each do |collection|
+      if(!can?(:edit, collection))
         solr_params[:'fq'] << ['-desc_metadata__isPartOf_sim:'+"#{collection.pid.gsub(":","\\:")}"]
-       end
+      end
+      return solr_params[:fq]
     end
-    return solr_params[:'fq']
   end
 

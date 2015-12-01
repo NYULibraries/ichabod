@@ -3,6 +3,9 @@ require 'support/test_user_helper'
 
 
 describe CatalogController do
+
+  let(:collection_private) { Collection.find( { :desc_metadata__title_tesim=>'Indian Ocean Postcards' })[0] }
+   
   describe "GET /index", vcr: { cassette_name: "controllers/catalog controller/index" } do
     before do
       create(:nyucore, subject: 'highways')
@@ -29,7 +32,7 @@ describe CatalogController do
     context "when there are restricted collections"  do
       context "when user is not authorized to see specific collection" do
         it "should be filtered in response" do
-          expect(response_fq).to include("-desc_metadata__isPartOf_sim")
+          expect(response_fq).to include("-desc_metadata__isPartOf_sim:#{collection_private.pid.gsub(":","\\:")}")
         end  
       end
       context 'when user is authorized to see specific collection' do
@@ -39,7 +42,7 @@ describe CatalogController do
           get :index, search_field: 'all_fields', q: 'highways'
         end
         it "should not be filtered in response" do
-          expect(response_fq).to be []
+          expect(response_fq).to include "-desc_metadata__isPartOf_sim"
         end
       end
     end
@@ -55,11 +58,11 @@ describe CatalogController do
     subject { controller.instance_eval{ show_only_discoverable_records({},{}) } }
     context "when there are restricted collections"  do
       context "when user is  authorized to see specific collection" do
-        it { should eq nil }
+        it { should eq [] }
       end
       context 'when user is not authorized to see specific collection' do
         let(:user) { nil }
-        it { should eq [["-desc_metadata__isPartOf_sim:*"]] }
+        it { should include ["-desc_metadata__isPartOf_sim:#{collection_private.pid.gsub(":","\\:")}"] }
       end
     end
   end
