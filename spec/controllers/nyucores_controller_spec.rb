@@ -5,6 +5,7 @@ describe NyucoresController do
 
   let(:user) { create_or_return_test_admin }
   let(:nyucore_fields) { Nyucore::FIELDS }
+
   before  { controller.stub(:current_user).and_return(user) }
 
   describe 'GET index', vcr: {cassette_name: 'controllers/nyucores controller/index'} do
@@ -27,7 +28,7 @@ describe NyucoresController do
       expect(assigns(:item).id).to eq item.id
     end
     context 'when collection is restricted' do
-      let(:item) { create(:io_record) }
+      let(:item) { create(:io_record, :isPartOf=>collection_private.pid.gsub(":","\\:")) }
       context 'when user is authorized to view collection' do
         let(:user) { create(:io_cataloger) }
         it 'should retieve nyucore record' do
