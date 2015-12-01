@@ -33,7 +33,7 @@ if Rails.env.test?
     Ichabod::DataLoader.new('faculty_digital_archive_ngo','https://archive.nyu.edu/request','hdl_2451_33605',5).load
     Ichabod::DataLoader.new('nyu_press_open_access_book', 'http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select','0','5').load
     Ichabod::DataLoader.new('faculty_digital_archive_service_data', File.join(Rails.root, 'ingest/test_data_service.csv')).load
-    Ichabod::DataLoader.new('masses','http://dlib.nyu.edu/themasses/books.json',0,5).load
+    Ichabod::DataLoader.new('masses','http://dlib.nyu.edu/themasses/books.json','0','5').load
   ensure
     WebMock.disable_net_connect!
   end

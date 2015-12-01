@@ -20,7 +20,7 @@ describe CatalogController do
     it "should contain the title field in the response" do
       expect(response_qf).to include("desc_metadata__title_tesim")
     end
-    it "should contain the colection field in the response" do
+    it "should contain the collection field in the response" do
       expect(response_facets).to include("collection_sim")
     end
   end
