@@ -24,6 +24,10 @@ class Collection < ActiveFedora::Base
     "#{ID_PREFIX}:#{SecureRandom.uuid}"
   end
 
+  def self.private_collections
+    where( :administrative_metadata__discoverable_tesim=>"0" )
+  end
+
 
   has_metadata descriptive_metadata, type: Ichabod::NyucoreDatastream
   has_attributes(*DESCRIPTIVE_FIELDS[:single], datastream: descriptive_metadata , multiple: false)

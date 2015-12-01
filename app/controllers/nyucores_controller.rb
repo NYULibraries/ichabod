@@ -15,10 +15,9 @@ class NyucoresController < ApplicationController
   end
 
   def show
-    authorize! :show, params[:id]
+    #authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
-    collection=Collection.find(@item.isPartOf[0])
-    if (!collection.discoverable&&!can?(:edit, collection))
+    if (from_private_collection?)
       raise CanCan::AccessDenied.new('You are not authorized to view this item')
     else
       respond_with(@item)
@@ -86,7 +85,7 @@ class NyucoresController < ApplicationController
     params[:nyucore].merge!(params[:nyucore]){|k, v| v.blank? ? nil : v.is_a?(Array) ? v.reject{|c| c.empty? } : v}
   end
 
-  private
+ 
   
   #if the search parameters are saved in session return to the search results page
   def get_query_params_from_session
@@ -119,6 +118,15 @@ class NyucoresController < ApplicationController
    else
         true
    end
+ end
+
+ def from_private_collection?
+   collection=Collection.find(@item.isPartOf)  unless(@item.isPartOf.nil?)
+     if(collection.nil?||collection.discoverable=="1"||can?(:edit, collection))
+       false
+     else
+      true
+     end
  end
 
 end
