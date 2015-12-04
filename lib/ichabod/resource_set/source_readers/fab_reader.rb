@@ -79,9 +79,16 @@ module Ichabod
         end
 
         def entities
-
-          entities = MultiJson.load(datasource.body)
+          results = []
+          rsp = datasource
+          rsp = MultiJson.load(rsp.body)
+          results = rsp
+          next_page = rsp['response']['pages']['next_page']
           binding.pry
+          unless next_page.blank?
+            results.push(MultiJson.load(datasource(next_page).body))
+            
+          end
 =begin
           @entities ||= begin
                           result = []
@@ -107,10 +114,13 @@ module Ichabod
         end
 
         # Connect to collection JSON API
-        def datasource
-          endppoint_url = endpoint_url + "?f%5Bcollection_sim%5D%5B%5D=David+Wojnarowicz+Papers&f%5Bdao_sim%5D%5B%5D=Online+Access&f%5Bformat_sim%5D%5B%5D=Archival+Object"
-          @datasource ||= endpoint_connection.get(endpoint_url)
-
+        def datasource(page = nil)
+          default_req = "?f%5Bcollection_sim%5D%5B%5D=David+Wojnarowicz+Papers&f%5Bdao_sim%5D%5B%5D=Online+Access&f%5Bformat_sim%5D%5B%5D=Archival+Object"
+          page_req = default_req + "&page=#{page}"
+          url = page.nil? ?  default_req : page_req
+          url = endpoint_url + url
+          @datasource ||= endpoint_connection.get(url)
+         
         end
         #https://archive-it.org/collections/4049.json
 
