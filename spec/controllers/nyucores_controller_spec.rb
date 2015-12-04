@@ -29,7 +29,7 @@ describe NyucoresController do
       expect(assigns(:item).id).to eq item.id
     end
     context 'when collection is restricted' do
-      let(:item) { create(:io_record, :isPartOf=>collection_private.pid.gsub(":","\\:")) }
+      let(:item) { create(:io_record, :isPartOf=>collection_private.pid.gsub(":","\:")) }
       context 'when user is authorized to view collection' do
         let(:user) { create(:io_cataloger) }
         it 'should retieve nyucore record' do

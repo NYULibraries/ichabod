@@ -25,7 +25,7 @@ class Collection < ActiveFedora::Base
   end
 
   def self.private_collections
-    where( :administrative_metadata__discoverable_tesim=>"0" )
+    where( :administrative_metadata__discoverable_tesim=>'0' )
   end
 
 

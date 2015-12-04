@@ -37,7 +37,7 @@ if Rails.env.test?
     Collection.create( { :title=>"Research Guides", :discoverable=>'1'} )
     Collection.create( { :title=>"The Masses", :discoverable=>'1'} )
     Collection.create( { :title=>"NYU Press Open Access Books", :discoverable=>'1'} )
-    Collection.create( { :title=>"The Real Rosie the Riveter", :discoverable=>'1'} )
+    Collection.create( { :title=>"The Real Rosie the Rivete", :discoverable=>'1'} )
     Collection.create( { :title=>"Spatial Data Repository", :discoverable=>'1'} )
     Collection.create( { :title=>"Voices of the Food Revolution", :discoverable=>'1'} )
     Collection.create( { :title=>"Test Title", :discoverable=>'1'} )
