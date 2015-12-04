@@ -1,5 +1,5 @@
 require 'spec_helper'
-#require 'support/test_user_helper'
+
 module Ichabod
   module ResourceSet
  
@@ -43,22 +43,20 @@ module Ichabod
           expect(Base.editors).to eq editors.unshift(*original_editors)
         end
       end
-      describe '.collection_title' do
-        subject { Base.collection_title=new_title }
+      describe '.collection_title=' do
+        subject { Base.collection_title=("#{new_title}") }
         context "when collection with the title exists" do
           let(:new_title) { original_title }
-          it 'should not raise an ArgumentError' do
-            expect { subject }.not_to raise_error
-          end
           it 'should set the collection_title attribute on the class' do
+            expect(Base.collection_title).to eq 'hyi'
             subject
             expect(Base.collection_title).to eq original_title
-          end
+         end
         end
         context "when collection with the title doesn't exist" do
-          let(:new_title) { 'Invald Title' }
-          it 'should not raise an ArgumentError' do
-            expect { subject }.to raise_error
+          let(:new_title) { "invalid title" }
+          it 'should raise an ArgumentError' do
+           expect { subject }.to raise_error
           end
         end
       end
@@ -184,7 +182,7 @@ module Ichabod
         subject { base.find_collection}
         context 'when configured with valid collection_title' do
           let(:mock_title) { original_title}
-             it { should be_an Collection }
+             it { should be_a Collection }
              it { should eq collection_original }
           end
         context 'when collection title is not defined' do
@@ -216,7 +214,7 @@ module Ichabod
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
         before { Base.collection_title = original_title }
         after { Base.instance_variable_set(:@source_reader, nil) }
-        
+        after { Base.instance_variable_set(:@collection_title, nil)}
         subject { base.read_from_source }
         it 'should assign the @resources instance variable' do
           expect(base.instance_variable_get(:@resources)).to be_nil
@@ -233,7 +231,7 @@ module Ichabod
       describe '#load' do
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
         before { Base.collection_title=original_title }
-
+        after { Base.instance_variable_set(:@collection_title, nil)}
         subject { base.load }
         it { should be_an Array }
         it { should_not be_empty }
@@ -300,19 +298,18 @@ module Ichabod
           end
         end
         context 'when there is no valid collection found' do
-          before { base.instance_variable_set(:@collection, nil) }
+          before { Base.instance_variable_set(:@collection_title, nil) }
           it 'should raise a RuntimeError' do
             expect { subject }.to raise_error
           end
         end
       end
       describe '#delete' do
-        
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
         before { Base.collection_title=original_title }
         before { base.load }
         after { Base.instance_variable_set(:@source_reader, nil) }
-
+        after { Base.instance_variable_set(:@collection_title, nil)}
         subject { base.delete }
         it 'should return an array of deleted Nyucores' do
           subject.each do |nyucore|
