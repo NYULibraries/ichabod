@@ -3,7 +3,7 @@ class FacultyDigitalArchiveNgo < Ichabod::ResourceSet::Base
   self.prefix = 'fda'
   self.source_reader = :oai_dc_http_reader
   editor :fda_cataloger
-  before_load :set_available_or_citation, :set_type
+  before_load :set_available_or_citation, :set_type, :clean_dates
 
   attr_reader :endpoint_url, :set_handle, :load_number_of_records
 
@@ -30,5 +30,12 @@ class FacultyDigitalArchiveNgo < Ichabod::ResourceSet::Base
   def set_type(*args)
     resource,nyucore = *args
     nyucore.type="Report"
+  end
+
+  def clean_dates(*args)
+    resource,nyucore = *args
+    resource.date.each.with_index do |raw_date,index|
+      resource.date.delete(index) #if raw_date.to_s.include?("T")
+    end
   end
 end
