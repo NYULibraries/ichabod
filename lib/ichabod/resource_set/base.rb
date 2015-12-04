@@ -41,13 +41,10 @@ module Ichabod
 
       def self.collection_title=(collection_title)
         unless Collection.exists?( :desc_metadata__title_tesim=>collection_title)
-          raise RuntimeError.new("No collection #{collection_title} exists.Either it wasn't created or you have mis-spelled it's name")
+          raise ArgumentError.new("No collection #{collection_title} exists.Either it wasn't created or you have misspelled it's name")
         end
         @collection_title = collection_title
       end
-
-
-
 
       # Since the class attributes are defined as instance variables on a Class
       # we need to make sure we force inheritance by grabbing the superclass(es)
@@ -114,16 +111,6 @@ module Ichabod
         self.before_loads.concat(before_loads.compact).uniq!
       end
 
-
-      def self.collection_exists
-        if self.collection_title.nil?
-          false
-        else
-          Collection.exists?( :desc_metadata__title_tesim=>self.collection_title)?:true:false
-        end
-      end
-
-
       # Default editor on all ResourceSets is the admin group
       editor :admin_group
 
@@ -152,6 +139,7 @@ module Ichabod
 
       def load
         raise_runtime_error_if_no_collection_title_configured
+        collection_title
         find_collection
         update_collection_editors
         read_from_source if resources.empty?
@@ -264,9 +252,6 @@ module Ichabod
         @source_reader ||= self.class.source_reader.new(self)
       end
 
-      def collection_exists(collection_title)
-          Collection.exists?( :desc_metadata__title_tesim=>collection_title)?:true:false
-      end
     end
   end
 end

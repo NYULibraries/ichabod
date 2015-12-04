@@ -17,7 +17,7 @@ class NyucoresController < ApplicationController
   def show
     #authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
-    if (from_private_collection?)
+    if (is_restricted?)
       raise CanCan::AccessDenied.new('You are not authorized to view this item')
     else
       respond_with(@item)
@@ -120,12 +120,18 @@ class NyucoresController < ApplicationController
    end
  end
 
- def from_private_collection?
+ def is_restricted?
    collection=Collection.find(@item.isPartOf)  unless(@item.isPartOf.nil?)
-     if(collection.nil?||collection.discoverable=="1"||can?(:edit, collection))
+     if(collection.nil?)
        false
      else
-      true
+       #I assume that if an item belongs to more then 1 collection, we will hide even if one collection is private
+       #We can discuss it more when get a user story for 2 collections. In current settings all items belong to exactly
+       #one collection
+       collection.each do |collection|
+         return true if (collection.discoverable=='0'&&!can?(:edit, collection))
+       end
+       false
      end
  end
 

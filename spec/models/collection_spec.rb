@@ -16,6 +16,14 @@ describe Collection::DESCRIPTIVE_FIELDS do
     end
   end
 
+  describe 'private_collections' do
+    let(:collection_private) {  Collection.find( { :desc_metadata__title_tesim=>'Indian Ocean Postcards' })[0]  }
+    let(:collection_public) { Collection.find( { :desc_metadata__title_tesim=>'Spatial Data Repository' })[0] }
+    subject { Collection.private_collections }
+    it { should include collection_private }
+    it { should_not include collection_public }
+  end
+
   describe Collection::FIELDS do
     subject { Collection::FIELDS }
     it { should eq Collection::SINGLE_FIELDS+Collection::MULTIPLE_FIELDS+Collection::ADMIN_FIELDS }
@@ -70,14 +78,7 @@ describe Collection::DESCRIPTIVE_FIELDS do
      end
    end
 
-  describe 'private_collections' do
-    let(:collection_public) {  Collection.find( { :desc_metadata__title_tesim=>'Indian Ocean Postcards' })[0]  }
-    let(:collection_private) { Collection.find( { :desc_metadata__title_tesim=>'Spatial Data Repository' })[0] }
-    it { should be_an Array }
-    it { should include collection_private }
-    it { should include collection_public }
-  end
-
+  
 
   describe '#descriptive_metadata' do
     subject { collection.descriptive_metadata }
