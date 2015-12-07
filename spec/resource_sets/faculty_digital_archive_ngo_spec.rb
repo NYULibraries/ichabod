@@ -33,11 +33,11 @@ describe FacultyDigitalArchiveNgo do
     it { should be_an Array }
     it { should_not be_empty }
     its(:size) { should eq 5 }
-    describe 'the first record' do
+    describe 'the first record ' do
       subject { load.first }
       context 'when test records were loaded from archvie only human added date should be there' do
-        its(:date[0]) { should_not include 'T' }
+         its(:date) { should_not include ['*T*'] }
+        end
       end
-    end
   end
 end

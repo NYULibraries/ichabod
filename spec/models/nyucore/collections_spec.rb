@@ -50,7 +50,7 @@ describe Nyucore::Collections do
       let(:type) { ['Report'] }
       let(:publisher) { nil }
       let(:resource_set) { ['faculty_digital_archive_ngo'] }
-      it { should eql ['South Asian NGOs and other reports'] }
+      it { should eql ['South Asian NGO and other reports'] }
     end
     context "when object is from the Archive of Contemporary Composers' Websites resource set" do
       let(:type) { nil }

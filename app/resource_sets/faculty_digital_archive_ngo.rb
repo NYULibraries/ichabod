@@ -31,11 +31,16 @@ class FacultyDigitalArchiveNgo < Ichabod::ResourceSet::Base
     resource,nyucore = *args
     nyucore.type="Report"
   end
-
+  #The collection owner wants to exclude automatically created upload dates from the NYUcore metadata.
+  # DSpace OAI interfeace returns all dates assosiated with an object in a "date" field. The only way to exclude the upload date is
+  # to check it's format. Unlike user provided dates, upload dates contain time.
+  #It looks like there are 2 ways to validate a date in ruby
+  #1.try to convert it to a specific format and catch exception
+  #2. evaluate the string using regex. Both are not perfect but 2 is faster
   def clean_dates(*args)
     resource,nyucore = *args
-    resource.date.each.with_index do |raw_date,index|
-      resource.date.delete(index) #if raw_date.to_s.include?("T")
-    end
+    resource.date.each do |raw_date|
+         nyucore.source_metadata.date.delete(raw_date) if raw_date==~/[T,z]/
+      end
   end
 end
