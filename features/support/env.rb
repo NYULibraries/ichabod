@@ -31,6 +31,7 @@ if Rails.env.cucumber?
     Ichabod::DataLoader.new('archive_it_accw','http://dev-dl-pa.home.nyu.edu','/ichabod-support/collections/4049.json').load
     # Loaded the NYUPress collection up to record a cassette, but don't need it after that
     Ichabod::DataLoader.new('nyu_press_open_access_book','http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select','0','5').load
+    Ichabod::DataLoader.new('woj','https://specialcollections.library.nyu.edu/search/catalog.json',1).load
     # request 5 items from The Masses collection, start with item 0d
     Ichabod::DataLoader.new('masses','http://dlib.nyu.edu/themasses/books.json','0','5').load
     Ichabod::DataLoader.new('faculty_digital_archive_service_data', File.join(Rails.root, 'ingest/test_data_service.csv')).load

@@ -47,4 +47,9 @@ Feature: Collection facet
     When I filter my search to "Research Guides" under the "Collection" category
     Then I should see search results
 
+  Scenario: Filter by David Wojnarowicz Papers
+    Given I am on the default search page
+    When I filter my search to "David Wojnarowicz Papers" under the "Collection" category
+    Then I should see search results
+
 
