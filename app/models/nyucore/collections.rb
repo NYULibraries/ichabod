@@ -11,7 +11,7 @@ class Nyucore < ActiveFedora::Base
       'Asian NGOs Reports' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_ngo'},
       'NYU Press Open Access Books' => ->(nyucore){ nyucore.resource_set == 'nyu_press_open_access_book' },
       'Data Services' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_service_data' },
-      'The Masses' => ->(nyucore){ nyucore.resource_set == 'masses' }
+      'David Wojnarowicz Papers' => ->(nyucore){ nyucore.resource_set == 'woj' }
     }
 
     attr_reader :nyucore

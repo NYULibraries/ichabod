@@ -56,6 +56,8 @@ module Ichabod
       #
       # [1] https://wiki.duraspace.org/display/FEDORA37/Fedora+Identifiers
       class FabReader < ResourceSet::SourceReader
+        FINDING_AIDS_URL = "http://dlib.nyu.edu/findingaids/html/"
+        ARCHIVES_FILE = "archives.yml"
 
         def read
           entities.collect do |entity|
@@ -65,65 +67,64 @@ module Ichabod
 
         private
         extend Forwardable
-        def_delegators :resource_set, :endpoint_url, :path, :collection_code
+        def_delegators :resource_set, :endpoint_url, :query, :path, :collection_code
 
         def resource_attributes_from_entity(entity)
           {
             prefix:     resource_set.prefix,
-            identifier: Digest::MD5.hexdigest(entity['waybackCalendar']),
-            available:  entity['waybackCalendar'],
-            version:    entity['canonicalUrl'],
-            title:      entity['canonicalUrl'].gsub(%r{http(s)?://},'').gsub(%r{/\z},'')
-            #                                  ^ strip protocol and any trailing slash
+            identifier: entity['id'],
+            date:       entity['unit_date_ssm'],
+            available:  gen_url(entity['repository_ssi'],entity['ead_ssi'],entity['parent_ssi'],entity['ref_ssi']),
+            title:      entity['unittitle_ssm'],
+            type:       entity['format_ssm'],
+            location:   entity['location_ssm'],
+            data_provider: get_archive(entity['repository_ssi']),
+            relation: [entity['collection_ssm'],entity['parent_unittitles_ssm']].join(': ')
           }
+
+        end
+
+
+        def gen_url(repo,ead,parent_ref,item_ref)
+          FINDING_AIDS_URL + "#{repo}/#{ead}/dsc#{parent_ref}.html##{item_ref}"
+        end
+
+        # mapping value from FAB to the full form listed in the yml file
+        def get_archive(repo)
+          @repository ||= YAML.load_file(File.join(Rails.root, "config", ARCHIVES_FILE))['type']
+          @repository[repo]
         end
 
         def entities
           results = []
           rsp = datasource
           rsp = MultiJson.load(rsp.body)
-          results = rsp
-          next_page = rsp['response']['pages']['next_page']
-          binding.pry
-          unless next_page.blank?
-            results.push(MultiJson.load(datasource(next_page).body))
-            
-          end
-=begin
-          @entities ||= begin
-                          result = []
-                          query  = nil
-                          begin
-                            json = MultiJson.load(entities_endpoint(query).body)
-                            result += json['results']['entities']
-                            query   = json['results']['nextPageURL']
-                          end while query
-                          result
-                        end
-=end
+          results = rsp['response']['docs']
+          next_page = get_next_page(rsp)
+          while next_page do
+            rsp = MultiJson.load(datasource(next_page).body)
+            results += rsp['response']['docs']
+            next_page = get_next_page(rsp) 
+          end 
+          results
         end
- # Params to send with the request to the JSON API
-        def datasource_params
-          collection = '[collection_sim][]=David Wojnarowicz Papersf'
-          dao = '[dao_sim][]=Online Access&amp;f'
-          format = '[format_sim][]=Archival Object'
-          {
-            f: collection + dao + format
 
-          }
+        def get_next_page(rsp)
+          rsp['response']['pages']['next_page']
         end
 
         # Connect to collection JSON API
+        # ugly hack
+        # I'd like to specify this in params but it's not being formatted in the form
+        # that the FAB recognizes
         def datasource(page = nil)
-          default_req = "?f%5Bcollection_sim%5D%5B%5D=David+Wojnarowicz+Papers&f%5Bdao_sim%5D%5B%5D=Online+Access&f%5Bformat_sim%5D%5B%5D=Archival+Object"
-          page_req = default_req + "&page=#{page}"
-          url = page.nil? ?  default_req : page_req
+          page_req = query + "&page=#{page}"
+          url = page.nil? ?  query : page_req
           url = endpoint_url + url
-          @datasource ||= endpoint_connection.get(url)
+          endpoint_connection.get(url)
          
         end
-        #https://archive-it.org/collections/4049.json
-
+  
         # Use Faraday to connect to the collection's JSON API
         def endpoint_connection
           @endpoint_connection ||= Faraday.new(url: endpoint_url) do |faraday|

@@ -29,6 +29,7 @@ FactoryGirl.define do
     geometry ["line"] 
     subject_spatial ["Buenos Aires"]
     subject_temporal ["2013"]
+    location ["Box: 2, Folder: 3"]
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
 
     factory :gis_record do

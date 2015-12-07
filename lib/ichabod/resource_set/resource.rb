@@ -10,7 +10,7 @@ module Ichabod
       NYUCORE_ATTRIBUTES = [:identifier, :addinfolink, :addinfotext, :available,
         :citation, :title, :creator, :type, :publisher, :description, :edition,
         :date, :format, :language, :relation, :rights, :subject, :series,
-        :version, :isbn, :subject_spatial, :subject_temporal,:data_provider, :geometry]
+        :version, :isbn, :subject_spatial, :subject_temporal,:data_provider, :geometry, :location]
 
       attr_accessor :prefix
       attr_writer :pid_identifier
