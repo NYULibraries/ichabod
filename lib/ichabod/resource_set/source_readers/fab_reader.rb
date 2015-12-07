@@ -17,7 +17,7 @@ module Ichabod
 
         private
         extend Forwardable
-        def_delegators :resource_set, :endpoint_url, :query, :path, :collection_code
+        def_delegators :resource_set, :endpoint_url, :query, :path, :collection_code, :page
 
         def resource_attributes_from_entity(entity)
           {
@@ -47,15 +47,24 @@ module Ichabod
 
         def entities
           results = []
-          rsp = datasource
+
+          # if page is defined
+          # get results for that one page
+          # this is usually either for testing purposes
+          # or if people want a specific page for some reason
+          rsp = datasource(page)
           rsp = MultiJson.load(rsp.body)
           results = rsp['response']['docs']
-          next_page = get_next_page(rsp)
-          while next_page do
-            rsp = MultiJson.load(datasource(next_page).body)
-            results += rsp['response']['docs']
-            next_page = get_next_page(rsp) 
-          end 
+          # if page is not defined
+          # continue getting all the results
+          if page.nil?
+            next_page = get_next_page(rsp)
+            while next_page do
+              rsp = MultiJson.load(datasource(next_page).body)
+              results += rsp['response']['docs']
+              next_page = get_next_page(rsp) 
+            end 
+          end
           results
         end
 
@@ -67,12 +76,11 @@ module Ichabod
         # ugly hack
         # I'd like to specify this in params but it's not being formatted in the form
         # that the FAB recognizes
-        def datasource(page = nil)
-          page_req = query + "&page=#{page}"
-          url = page.nil? ?  query : page_req
+        def datasource(pg = nil)
+          page_req = query + "&page=#{pg}"
+          url = pg.nil? ?  query : page_req
           url = endpoint_url + url
           endpoint_connection.get(url)
-         
         end
   
         # Use Faraday to connect to the collection's JSON API
