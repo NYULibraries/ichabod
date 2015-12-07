@@ -27,7 +27,7 @@ module Ichabod
         subject { terms[Ichabod::Vocabulary] }
         it { should be_an Array }
         it do
-          should eq [:addinfolink, :addinfotext, :resource_set, :discoverable, :isbn, :geometry, :data_provider, :subject_spatial, :subject_temporal]
+          should eq [:addinfolink, :addinfotext, :resource_set, :discoverable, :isbn, :geometry, :data_provider, :subject_spatial, :subject_temporal, :location]
         end
       end
     end

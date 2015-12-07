@@ -70,6 +70,12 @@ describe Nyucore::Collections do
       let(:resource_set) { ['faculty_digital_archive_service_data'] }
       it { should eql ['Data Services'] }
     end
+     context "when object is Wojnarowicz resource set" do
+      let(:type) { ['Archival Object'] }
+      let(:publisher) { nil }
+      let(:resource_set) { ['woj'] }
+      it { should eql ['David Wojnarowicz Papers'] }
+    end
     context "when object is from the Research Guides resource set" do
       let(:type) { ['Research Guide'] }
       let(:publisher) { nil }
