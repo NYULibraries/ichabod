@@ -6,8 +6,12 @@ module Ichabod
 
       # Treating the special collections portal as an API
       class FabReader < ResourceSet::SourceReader
+        # keeping these as constants in the source reader
+        # because they will apply to all finding aids objects
+        # being imported
         FINDING_AIDS_URL = "http://dlib.nyu.edu/findingaids/html/"
         ARCHIVES_FILE = "archives.yml"
+        ENDPOINT_URL = "https://specialcollections.library.nyu.edu/search/catalog.json"
 
         def read
           entities.collect do |entity|
@@ -17,7 +21,7 @@ module Ichabod
 
         private
         extend Forwardable
-        def_delegators :resource_set, :endpoint_url, :query, :path, :collection_code, :page
+        def_delegators :resource_set, :query, :path, :collection_code, :page
 
         def resource_attributes_from_entity(entity)
           {
@@ -79,14 +83,13 @@ module Ichabod
         def datasource(pg = nil)
           page_req = query + "&page=#{pg}"
           url = pg.nil? ?  query : page_req
-          url = endpoint_url + url
+          url = ENDPOINT_URL + url
           endpoint_connection.get(url)
         end
   
         # Use Faraday to connect to the collection's JSON API
         def endpoint_connection
-          @endpoint_connection ||= Faraday.new(url: endpoint_url) do |faraday|
-            #faraday.params = datasource_params
+          @endpoint_connection ||= Faraday.new(url: ENDPOINT_URL) do |faraday|
             faraday.adapter :net_http
           end
 

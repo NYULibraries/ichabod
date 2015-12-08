@@ -1,15 +1,14 @@
 require 'spec_helper'
 describe Woj do
   let(:prefix) { 'woj' }
-  let(:endpoint_url) { 'http://www.example.com' }
-  #let(:query) { '?f%5Bcollection_sim%5D%5B%5D=David+Wojnarowicz+Papers&f%5Bdao_sim%5D%5B%5D=Online+Access&f%5Bformat_sim%5D%5B%5D=Archival+Object' }
+  let(:page) { nil }
   let(:collection_code) { 'woj' }
-  let(:args) { endpoint_url }
+  let(:args) { nil }
   subject { Woj.new(*args) }
   it { should be_a Woj }
   it { should be_a Ichabod::ResourceSet::Base }
   its(:prefix) { should eq prefix }
-  its(:endpoint_url) { should eq endpoint_url }
+  its(:page) { should eq nil }
   its(:query) { should eq '?f%5Bcollection_sim%5D%5B%5D=David+Wojnarowicz+Papers&f%5Bdao_sim%5D%5B%5D=Online+Access&f%5Bformat_sim%5D%5B%5D=Archival+Object' }
   its(:editors) { should eq ['admin_group'] }
   its(:before_loads) { should eq [:add_edit_groups, :add_resource_set] }
