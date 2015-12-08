@@ -2,64 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://specialcollections.library.nyu.edu/search/catalog.json?f%5Bsubject_sim%5D%5B0%5D=International%20relations
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.2
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Mon, 07 Dec 2015 21:13:26 GMT
-      Server:
-      - Apache/2.2.15 (Red Hat)
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Strict-Transport-Security:
-      - max-age=31536000
-      Etag:
-      - '"8892ba7674a9d775ba7c9c5e0dbe8006"'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      X-Runtime:
-      - '0.089564'
-      X-Request-Id:
-      - 55854af2-aac9-43e2-803c-92c292332d82
-      Connection:
-      - close
-      X-Powered-By:
-      - Phusion Passenger 5.0.6
-      Set-Cookie:
-      - _findingaids_session=VU1pSExaUmE2UzhsNlJZMlEwZ1VFU0dLSU9xcEhYMFo4UFI0OEY5YTR3TmYxUUJKZ0VrNXg1eEhTV2hUU0wvSCtlM21vYkprcldSRit5NFRiN3BQQVdjM0ZZNGx6QUdPS2d3UVNpOFVvRXNmcTZaYlJhQTJhM0oxelJOWWpTaTFoOTRGQUM3Yzg5M3NveisrVHRLU3BRPT0tLW1kbFUzdTBBWWlSMDBSYVBmVmcxUUE9PQ%3D%3D--d4222d10583d91d6dc24efdcfdc45583ab650e31;
-        domain=.library.nyu.edu; path=/; secure; HttpOnly
-      Status:
-      - 200 OK
-      Transfer-Encoding:
-      - chunked
-      Content-Type:
-      - application/json; charset=utf-8
-    body:
-      encoding: UTF-8
-      string: '{"response":{"docs":[],"facets":[{"items":[],"name":"repository_sim","label":"Library"},{"items":[],"name":"dao_sim","label":"Digital
-        Content"},{"items":[],"name":"creator_sim","label":"Creator"},{"items":[],"name":"date_range_sim","label":"Date
-        Range"},{"items":[],"name":"subject_sim","label":"Subject"},{"items":[],"name":"name_sim","label":"Name"},{"items":[],"name":"place_sim","label":"Place"},{"items":[],"name":"language_sim","label":"Language"},{"items":[],"name":"collection_sim","label":"Collection"},{"items":[],"name":"format_sim","label":"Level"}],"pages":{"current_page":1,"next_page":null,"prev_page":null,"total_pages":0,"limit_value":10,"offset_value":0,"total_count":0,"first_page?":true,"last_page?":true}}}'
-    http_version: 
-  recorded_at: Mon, 07 Dec 2015 21:13:26 GMT
-- request:
-    method: get
     uri: https://specialcollections.library.nyu.edu/search/catalog.json?f%5Bcollection_sim%5D%5B0%5D=David%20Wojnarowicz%20Papers&f%5Bdao_sim%5D%5B0%5D=Online%20Access&f%5Bformat_sim%5D%5B0%5D=Archival%20Object
     body:
       encoding: US-ASCII
@@ -77,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Dec 2015 21:18:57 GMT
+      - Tue, 08 Dec 2015 16:32:46 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Cache-Control:
@@ -93,15 +35,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.125368'
+      - '0.101482'
       X-Request-Id:
-      - 48ea4252-5fa9-4f6a-a69d-6cea990e8d9c
+      - 81f8a484-de79-462d-9283-be50489697bb
       Connection:
       - close
       X-Powered-By:
       - Phusion Passenger 5.0.6
       Set-Cookie:
-      - _findingaids_session=dDd1ZUxPRHliam9XTElRWTlzZW9kVXc5RGZTS1VBNUwzbENrcUt4Y1dmampqUXlsK3o2ZDZ2b2RqTzJGdXIwbG5zMlFPUmcwZElQRHFBY1o3dnhZZ1lmakpDQ2p2Q1llMklZdm5lZEV2UUNMdnJOb1hQN2NKZk5KRy9hN3VpM29oRWlmeTJjWFBSbkFVdnF6RU9IdzBnPT0tLTVyOWY1cGxwZEgzbzhKcHdJc29sVHc9PQ%3D%3D--d84381cb1b7fe1b891a1700d597f46e9a0a85ac6;
+      - _findingaids_session=ckc3b3FySXlmWGc5K2d4QzU1cXJ1TEdFUStyUVltNmZDTFJ5MlEwc3VmNldQT2lUTzBtUGY4L0NqZERPTVowNUQ1VUpzRU43VnBEUjVFWUpra3VOa1VQNk1LWU9neHpKTVNlNVlQUU95K0d1Mkp0eDdjcm4xZ05Lb084aDBGdGFnSFhHdXhFTFRCM3h0UjlSNGpYOFRRPT0tLUk1MGhKM1dzVnVaTVpyZUZrTEVkM2c9PQ%3D%3D--da23123ca18788cadad59c5dec72c44c48315445;
         domain=.library.nyu.edu; path=/; secure; HttpOnly
       Status:
       - 200 OK
@@ -172,7 +114,7 @@ http_interactions:
         Wojnarowicz Papers","hits":97,"label":"David Wojnarowicz Papers"}],"name":"collection_sim","label":"Collection"},{"items":[{"value":"Archival
         Object","hits":97,"label":"Archival Object"}],"name":"format_sim","label":"Level"}],"pages":{"current_page":1,"next_page":2,"prev_page":null,"total_pages":10,"limit_value":10,"offset_value":0,"total_count":97,"first_page?":true,"last_page?":false}}}'
     http_version: 
-  recorded_at: Mon, 07 Dec 2015 21:18:57 GMT
+  recorded_at: Tue, 08 Dec 2015 16:32:46 GMT
 - request:
     method: get
     uri: https://specialcollections.library.nyu.edu/search/catalog.json?f%5Bcollection_sim%5D%5B0%5D=David%20Wojnarowicz%20Papers&f%5Bdao_sim%5D%5B0%5D=Online%20Access&f%5Bformat_sim%5D%5B0%5D=Archival%20Object&page=2
@@ -192,7 +134,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Dec 2015 21:18:57 GMT
+      - Tue, 08 Dec 2015 16:32:46 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Cache-Control:
@@ -208,15 +150,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.173067'
+      - '0.069190'
       X-Request-Id:
-      - 7ad1ef0a-207e-4e36-ac95-ddff2582e702
+      - 2c28b8b8-630d-4030-8f45-c2866ff0c23d
       Connection:
       - close
       X-Powered-By:
       - Phusion Passenger 5.0.6
       Set-Cookie:
-      - _findingaids_session=RmhhZlByT2lLWUFmY3ZmNS9DalE0bTZtaS9IVjJoOXI5V2Y1Tlpja2J2eW40b25HbTlEdml1Y2JZVHE4M1kwQTZpenBaQmhtL3lxclBUS1hRcHVsM3IvMGJHczNpYWxUS2RUUjhVNGR0cW93Snl0SFFNS3FGMkhvMTRrZE9tWk5LMG9QN0VXdThLek1GU0JuQ1Z3QjVRPT0tLUN2MnBRVnVmNzVFQk5vYitWQWt2OEE9PQ%3D%3D--3d1b6c790d7f56cd39abf87de8f549b129e95599;
+      - _findingaids_session=ek9rMkVQTkFNYXFLMEpYRmlxZXNXYmlHanZObEpySEY1Yzl5bDZmZGFLVngwT3ZPejNoNkJ5eTdJNGg3d1BTZHFDZGpEajIvYzFmSitybUJQd0JDK1dHa3EycXpBN3I2aWlQdzl1VmJVNXNlVWRkZDU3NEViSFJ3VW93dnBVckdNa2lQc0c4dWNBaHI5MFphclA1V0xBPT0tLUppK1phU1BWQmhlSi9nWkxGNzhzV0E9PQ%3D%3D--27d36495ad5598382d1a4c02a1511b74ed4f18dc;
         domain=.library.nyu.edu; path=/; secure; HttpOnly
       Status:
       - 200 OK
@@ -280,7 +222,7 @@ http_interactions:
         Wojnarowicz Papers","hits":97,"label":"David Wojnarowicz Papers"}],"name":"collection_sim","label":"Collection"},{"items":[{"value":"Archival
         Object","hits":97,"label":"Archival Object"}],"name":"format_sim","label":"Level"}],"pages":{"current_page":2,"next_page":3,"prev_page":1,"total_pages":10,"limit_value":10,"offset_value":10,"total_count":97,"first_page?":false,"last_page?":false}}}'
     http_version: 
-  recorded_at: Mon, 07 Dec 2015 21:18:58 GMT
+  recorded_at: Tue, 08 Dec 2015 16:32:47 GMT
 - request:
     method: get
     uri: https://specialcollections.library.nyu.edu/search/catalog.json?f%5Bcollection_sim%5D%5B0%5D=David%20Wojnarowicz%20Papers&f%5Bdao_sim%5D%5B0%5D=Online%20Access&f%5Bformat_sim%5D%5B0%5D=Archival%20Object&page=3
@@ -300,7 +242,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Dec 2015 21:18:58 GMT
+      - Tue, 08 Dec 2015 16:32:47 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Cache-Control:
@@ -316,15 +258,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.085292'
+      - '0.083585'
       X-Request-Id:
-      - 420e3161-2dfa-47ad-b895-72cec6b6d134
+      - ad8a6ee4-e541-4add-80d7-9988a748edb9
       Connection:
       - close
       X-Powered-By:
       - Phusion Passenger 5.0.6
       Set-Cookie:
-      - _findingaids_session=ODJ6dlVpOUlYQ01pS0xaTzM2L3UzMmUxZHp3Zjl1L3hmK1VuN2lVWHdSdlhidSt1emJ3aUNBQzB4SWJ0eERhUUkxYkZoQWJkQldaa29wcTgyOVBOQUVCOGl4WlRLWTh4SjNRM2k5Uis1UXZuaDYrOVlJZUxHazF6aUVGQ0lrNndjV1pLMkxvVEk4SVovRDgzQmdvbE9RPT0tLTVYakMxZVBSTGJYY055TW1wT2daUHc9PQ%3D%3D--017cd4461e3219be7c32b50cc765cea7c439ee7a;
+      - _findingaids_session=UkdBQ1lUWFFiZWhyWnVab1pJbjJub3pTMngyUWQzRldKWGdnLzlXT1pTdmVKSlNFTzhzRFJJSG5NN255eDAwaXFDTngybzVPZExOOFZvcVVrajBEZzRLUGFmZzBmL1F4K1ZqcDgvTmhWNnhWalRIN0htNzhySXFselUzQUN5Y2FaRTN3RzJvYlJIamhwTzF1YzN1NGJRPT0tLU1zSkltVDVXZXprZU1ONVk3SWsrYkE9PQ%3D%3D--d549d5437471817ba09cb7088f15f3d46fee28ac;
         domain=.library.nyu.edu; path=/; secure; HttpOnly
       Status:
       - 200 OK
@@ -395,7 +337,7 @@ http_interactions:
         Wojnarowicz Papers","hits":97,"label":"David Wojnarowicz Papers"}],"name":"collection_sim","label":"Collection"},{"items":[{"value":"Archival
         Object","hits":97,"label":"Archival Object"}],"name":"format_sim","label":"Level"}],"pages":{"current_page":3,"next_page":4,"prev_page":2,"total_pages":10,"limit_value":10,"offset_value":20,"total_count":97,"first_page?":false,"last_page?":false}}}'
     http_version: 
-  recorded_at: Mon, 07 Dec 2015 21:18:58 GMT
+  recorded_at: Tue, 08 Dec 2015 16:32:47 GMT
 - request:
     method: get
     uri: https://specialcollections.library.nyu.edu/search/catalog.json?f%5Bcollection_sim%5D%5B0%5D=David%20Wojnarowicz%20Papers&f%5Bdao_sim%5D%5B0%5D=Online%20Access&f%5Bformat_sim%5D%5B0%5D=Archival%20Object&page=4
@@ -415,7 +357,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Dec 2015 21:18:58 GMT
+      - Tue, 08 Dec 2015 16:32:47 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Cache-Control:
@@ -431,15 +373,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.086644'
+      - '0.080459'
       X-Request-Id:
-      - 32d47665-94ec-4967-b1cb-95e5fee1e4a3
+      - 4d3b57d9-3717-4ea4-9594-a098c35cf9ef
       Connection:
       - close
       X-Powered-By:
       - Phusion Passenger 5.0.6
       Set-Cookie:
-      - _findingaids_session=QUtERERVL0lQSkF1b2FJdy9xeERRTkFiVTF4TDhEZHBORTJ1eko4L3hVd0c1cmhtaXo0azdaOWthRVJGN2xzaldnS2RKU1NrL2FZUm13Y0FBOUQreE1kd216cHg1Ykk4UFFoR2hRYkxWVWlYNUJnSFFDRUIyczg3dFNwOTlPb20yVDlSeTBoczJXQllnMlBqWTNFVUJ3PT0tLTluZjhCVjNadXc2MjVQM3AxbTFLNEE9PQ%3D%3D--a17639e18f2408c091eb1bb1fbe740cec324435c;
+      - _findingaids_session=RUl5bFIwUEZGazZSY1pCdWszQjl5R2x0b3ExcDFTclJ0cTlZMU1ERno3dDJIeTNHQThhSjBCMHRyRkI3ZkxaYmk1bnI3V0V0cVorcmdQRDhKYnplcDI5c1dnWjZuNTVtZGNzeDBSRjlmWEYvY3VLM1M4TERtZGliQW03WEtaRGl6ZllDdmUxYTZxNC81YkY3ZzMwODVBPT0tLUs3V05ZdU91bFFHZmpSaUlqNFpqaEE9PQ%3D%3D--ca6ee786a994c7e143cc8862178f4a4d23df2ec3;
         domain=.library.nyu.edu; path=/; secure; HttpOnly
       Status:
       - 200 OK
@@ -515,7 +457,7 @@ http_interactions:
         Wojnarowicz Papers","hits":97,"label":"David Wojnarowicz Papers"}],"name":"collection_sim","label":"Collection"},{"items":[{"value":"Archival
         Object","hits":97,"label":"Archival Object"}],"name":"format_sim","label":"Level"}],"pages":{"current_page":4,"next_page":5,"prev_page":3,"total_pages":10,"limit_value":10,"offset_value":30,"total_count":97,"first_page?":false,"last_page?":false}}}'
     http_version: 
-  recorded_at: Mon, 07 Dec 2015 21:18:58 GMT
+  recorded_at: Tue, 08 Dec 2015 16:32:47 GMT
 - request:
     method: get
     uri: https://specialcollections.library.nyu.edu/search/catalog.json?f%5Bcollection_sim%5D%5B0%5D=David%20Wojnarowicz%20Papers&f%5Bdao_sim%5D%5B0%5D=Online%20Access&f%5Bformat_sim%5D%5B0%5D=Archival%20Object&page=5
@@ -535,7 +477,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Dec 2015 21:18:58 GMT
+      - Tue, 08 Dec 2015 16:32:47 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Cache-Control:
@@ -551,15 +493,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.102755'
+      - '0.163509'
       X-Request-Id:
-      - 032a3686-ae6c-4778-bfd7-670e31fb02e0
+      - ccd84cf5-ae22-456a-a6f4-ca9c703e94b9
       Connection:
       - close
       X-Powered-By:
       - Phusion Passenger 5.0.6
       Set-Cookie:
-      - _findingaids_session=aW1xek5jQVlBcFNFZjZkdjZxbjRLbEpISU9kOHEyOENPS1RBL2tTRDNuRlU0eHhQZ09ZZGFvQ2dDZTlGZm03d0s1UmEzQTFtajlkcVhFSm5FNUhoTE9QWkJTUVAyOEltdTA0M1AwbEhSM3NVTkMwM05mSTN1alBENEhuY3B4WG1uZU5tNXFmYytIbVhtUjFBeUFrNjBnPT0tLWZEbTZRcGhLYkQ2aFhOcUxKNFhjVXc9PQ%3D%3D--72f9139419fd67232d831117c024f059c6c1a806;
+      - _findingaids_session=SzI2U3orV0l4bU5tNm41c2ZzUjNETHJXOUk3ZmQrYmdyQ2paK0VMeTBUSGMzSVNLcW54OGNETkpVSDlLbEw0SjRZMzJsTWhXYUJrT0xFQWl5WE5CYll5RDN1M1pUMzY5dTdkdDdCV3R0bnBtZUVDSG5xNGs3ZUZzMEdkMUwwNndDNkxUUWVxL3hnaVNoUENNdzBMQzhBPT0tLWxWN01WSGRBV1hobnFITUVYamFlaVE9PQ%3D%3D--f78d05dbd6a18df5c921977223bbac48dde0a0cf;
         domain=.library.nyu.edu; path=/; secure; HttpOnly
       Status:
       - 200 OK
@@ -636,7 +578,7 @@ http_interactions:
         Wojnarowicz Papers","hits":97,"label":"David Wojnarowicz Papers"}],"name":"collection_sim","label":"Collection"},{"items":[{"value":"Archival
         Object","hits":97,"label":"Archival Object"}],"name":"format_sim","label":"Level"}],"pages":{"current_page":5,"next_page":6,"prev_page":4,"total_pages":10,"limit_value":10,"offset_value":40,"total_count":97,"first_page?":false,"last_page?":false}}}'
     http_version: 
-  recorded_at: Mon, 07 Dec 2015 21:18:58 GMT
+  recorded_at: Tue, 08 Dec 2015 16:32:47 GMT
 - request:
     method: get
     uri: https://specialcollections.library.nyu.edu/search/catalog.json?f%5Bcollection_sim%5D%5B0%5D=David%20Wojnarowicz%20Papers&f%5Bdao_sim%5D%5B0%5D=Online%20Access&f%5Bformat_sim%5D%5B0%5D=Archival%20Object&page=6
@@ -656,7 +598,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Dec 2015 21:18:58 GMT
+      - Tue, 08 Dec 2015 16:32:47 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Cache-Control:
@@ -672,15 +614,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.103531'
+      - '0.141869'
       X-Request-Id:
-      - 5db50d68-fb8e-4094-a711-aa5213fcd5fc
+      - 3e1a5f52-95d4-4053-a508-f403700fef97
       Connection:
       - close
       X-Powered-By:
       - Phusion Passenger 5.0.6
       Set-Cookie:
-      - _findingaids_session=dzY5R0dHTUE4aHBFZi9nNFladkQzK25xTHdBem5pVldWNzZwZWpWWDQ1eHVPSnlEeEtxdmQybWNrMlRRMnQ3WENlUTk5bi9CNklNQVljRFhlc0MzOSt5b0hKa1lNenRaM0N1RWs3cVFwWXZqV2NTYzl2dVAvNlJFNUdyZ0NjOHJrRERpTWtFOUZ6dmRiSy91VFpRdG5nPT0tLWRnZ0ZXWnpsOEZxTDR5T1V5dnkxdGc9PQ%3D%3D--ccf6bab41a2c7ab69bda8abdedde9d3ba135f708;
+      - _findingaids_session=OFNYeGhWSytVb00yZmczM3VJV0dUSDNhREtLT09MSWFCQ2k4L3M4WDIwMkhZblNQRUZXTnFhTS92dGJnRk4xQVpMTE8zUzhMdGozREg1R0hpUk5NVVNaSHF3UTIrbFFDaTJQMTB6T1c1VGtnTm15cGVGQTEyNHgzdm8wVXRDeDRIdHBIRmNmZGhuOExiTFZWZElybDlRPT0tLTc4TjArNmU4QnIzeDFON2Q4NmdEZ3c9PQ%3D%3D--ff23f7d708cafacc3c4315455d7cea40ed4d438a;
         domain=.library.nyu.edu; path=/; secure; HttpOnly
       Status:
       - 200 OK
@@ -757,7 +699,7 @@ http_interactions:
         Wojnarowicz Papers","hits":97,"label":"David Wojnarowicz Papers"}],"name":"collection_sim","label":"Collection"},{"items":[{"value":"Archival
         Object","hits":97,"label":"Archival Object"}],"name":"format_sim","label":"Level"}],"pages":{"current_page":6,"next_page":7,"prev_page":5,"total_pages":10,"limit_value":10,"offset_value":50,"total_count":97,"first_page?":false,"last_page?":false}}}'
     http_version: 
-  recorded_at: Mon, 07 Dec 2015 21:18:58 GMT
+  recorded_at: Tue, 08 Dec 2015 16:32:47 GMT
 - request:
     method: get
     uri: https://specialcollections.library.nyu.edu/search/catalog.json?f%5Bcollection_sim%5D%5B0%5D=David%20Wojnarowicz%20Papers&f%5Bdao_sim%5D%5B0%5D=Online%20Access&f%5Bformat_sim%5D%5B0%5D=Archival%20Object&page=7
@@ -777,7 +719,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Dec 2015 21:18:58 GMT
+      - Tue, 08 Dec 2015 16:32:47 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Cache-Control:
@@ -793,15 +735,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.082985'
+      - '0.119099'
       X-Request-Id:
-      - 9f399f12-0794-4329-af52-17e5dd8359da
+      - e5b46441-511f-4b7d-886a-b954b484dc93
       Connection:
       - close
       X-Powered-By:
       - Phusion Passenger 5.0.6
       Set-Cookie:
-      - _findingaids_session=OGRXbnowWUdwclpsYzgzTkpUVUVrdVZoMFJnWEQvTVNhY1UzeHpJSG9tY1VzQkdDRXluRlNYWjcrRDNpU0d6YXQvajM4citYSXlHMk5sRG9sTEZhdDEwVjYvbHZTTzU0Mk1XdWdGSEcyYmw4NTdXRy8xZmNJSVZkWUZUNTZHczI4N0o5SVFzQWlVUDBuK0pMVUV0QkJnPT0tLWNkeEVGNjI5M0F2d1Z6bTltVUNnbUE9PQ%3D%3D--2c86775f482563b7090f8206f5897643e9deddc0;
+      - _findingaids_session=dHZLb1ZXMkF4RUJwTUVIdHVkN2NOQTNpWEJaeXJneXlXZFovbm9QL1ZWdS9QWmFBZnRXNjdSbzMvNk9NOVo5NHE5SERHa3J4dEcxN1lEb0p4dHp6SWpoSXc3ZDkvckJlMitId00rdllvMHRKdmd1elNzTWxnMGhidDlqaDZVQTlwT0NRVEFpWmxOak94OEppUk9nSmdBPT0tLS9ZUzdLU2lwVDBRd2tKaHdJTG83U1E9PQ%3D%3D--258c3fffbdfd9ea1f599030d77649f7836ed1115;
         domain=.library.nyu.edu; path=/; secure; HttpOnly
       Status:
       - 200 OK
@@ -874,7 +816,7 @@ http_interactions:
         Wojnarowicz Papers","hits":97,"label":"David Wojnarowicz Papers"}],"name":"collection_sim","label":"Collection"},{"items":[{"value":"Archival
         Object","hits":97,"label":"Archival Object"}],"name":"format_sim","label":"Level"}],"pages":{"current_page":7,"next_page":8,"prev_page":6,"total_pages":10,"limit_value":10,"offset_value":60,"total_count":97,"first_page?":false,"last_page?":false}}}'
     http_version: 
-  recorded_at: Mon, 07 Dec 2015 21:18:58 GMT
+  recorded_at: Tue, 08 Dec 2015 16:32:47 GMT
 - request:
     method: get
     uri: https://specialcollections.library.nyu.edu/search/catalog.json?f%5Bcollection_sim%5D%5B0%5D=David%20Wojnarowicz%20Papers&f%5Bdao_sim%5D%5B0%5D=Online%20Access&f%5Bformat_sim%5D%5B0%5D=Archival%20Object&page=8
@@ -894,7 +836,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Dec 2015 21:18:58 GMT
+      - Tue, 08 Dec 2015 16:32:47 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Cache-Control:
@@ -910,15 +852,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.106870'
+      - '0.100900'
       X-Request-Id:
-      - 609fce16-a13f-41c2-be7f-8bb1b01969fc
+      - e3087b23-d414-450e-8b3f-1e0a61e64624
       Connection:
       - close
       X-Powered-By:
       - Phusion Passenger 5.0.6
       Set-Cookie:
-      - _findingaids_session=Zjh1OENvN0pqOFhoeEJLK1p6b1FyWFNTdWxTRGJZOWgxUGVZYWkyOXFWQlpJV0Y2cjhxMVBxS3VjSjhMSDZtT1FxZzROOWt3TDl3VXpjeUt0T0JqeWxIR0pFMjVXZU1YWTNNejdqMzhxcjBDbUJ0QXZCZW91SjJpWlFzL2dXNXk3UlhIcGJ1b0hxY3ZBRXBsWC9ZeDV3PT0tLXE0RGNCcC9EQjh2Zzhzc3dzOS9vS2c9PQ%3D%3D--c54f4bfd3db81afac16bed50a3ed678084acf2e3;
+      - _findingaids_session=S1psSnRUS2cyamd4akVzam9QYlErbXN2UWZYS1YwUEtLVUxxS09aaGlMTlU0R25nYThjT3djZy9MRUN6YnJGNjlEeHFUZ1FtS0pGSzVjMDNhblBwcWNrcU05cWtmUXVaMjFsT3F2N2dWUkZramxyUVhCdHNtR0Vpc0ZGZEZJNTlzZHZQMzc0K1ZTc3JaSVFRcGljN1h3PT0tLXJHd21WZjNGb1FDWStMclEyMmJVTFE9PQ%3D%3D--2dfa3a8837436a386baeae84c074d817611355e8;
         domain=.library.nyu.edu; path=/; secure; HttpOnly
       Status:
       - 200 OK
@@ -991,7 +933,7 @@ http_interactions:
         Wojnarowicz Papers","hits":97,"label":"David Wojnarowicz Papers"}],"name":"collection_sim","label":"Collection"},{"items":[{"value":"Archival
         Object","hits":97,"label":"Archival Object"}],"name":"format_sim","label":"Level"}],"pages":{"current_page":8,"next_page":9,"prev_page":7,"total_pages":10,"limit_value":10,"offset_value":70,"total_count":97,"first_page?":false,"last_page?":false}}}'
     http_version: 
-  recorded_at: Mon, 07 Dec 2015 21:18:59 GMT
+  recorded_at: Tue, 08 Dec 2015 16:32:48 GMT
 - request:
     method: get
     uri: https://specialcollections.library.nyu.edu/search/catalog.json?f%5Bcollection_sim%5D%5B0%5D=David%20Wojnarowicz%20Papers&f%5Bdao_sim%5D%5B0%5D=Online%20Access&f%5Bformat_sim%5D%5B0%5D=Archival%20Object&page=9
@@ -1011,7 +953,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Dec 2015 21:18:59 GMT
+      - Tue, 08 Dec 2015 16:32:48 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Cache-Control:
@@ -1027,15 +969,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.114832'
+      - '0.154296'
       X-Request-Id:
-      - 8a151a34-b42e-43ce-887b-be895fcdfad1
+      - 36d0bff8-5952-48e0-a3bf-b2c58941f20c
       Connection:
       - close
       X-Powered-By:
       - Phusion Passenger 5.0.6
       Set-Cookie:
-      - _findingaids_session=N2lOVFlrUC9XNlBxWXVSdjJoV0k1MU1LeXpwSU1Denl0cW9NbExsMFY5aUhzMFFvNzJ5WmlYM1NQb2VyV1FscWJ4bHhtWWhpT0lUN2Fmd3FGZmREQzlHbnZBbzJoV3ZIL056cXRiU2w1Vnplc1o4T21vQUtRMjlBOUVHbkZIV2wwS0NXcDhaRXJ4RU50S2NkVXBFa3ZnPT0tLUtRN1dTWWZUdVpPTGpwNlVjZjNoV1E9PQ%3D%3D--21cfde39f2b53f1d9095843698aa6d618d7b4f08;
+      - _findingaids_session=aG1ubCtmVytGVVpKMldEN0VMSVp4enZMZzV5VWZ3cktqRnJScGtKTDZpVGQ2R0gzVkhCMHV5Y0ZyMUdnYklSVDI2Y2VEZ2F0RkMrYnJZSEZueWRUM2NhLzN0ZzFqaHBrWWNyQW1YS1RqZ04vTDNsb3RCeVdoRE0wMGkwUXE2YUhIQkNXdDBXY3JoZ2x6cHZTb2dPamJBPT0tLVpzdDFPRjh6V3U3amtTK2JqdXNtZ2c9PQ%3D%3D--47944bd855d05ee6e21a6bdab70a6ee49ed7d421;
         domain=.library.nyu.edu; path=/; secure; HttpOnly
       Status:
       - 200 OK
@@ -1113,7 +1055,7 @@ http_interactions:
         Wojnarowicz Papers","hits":97,"label":"David Wojnarowicz Papers"}],"name":"collection_sim","label":"Collection"},{"items":[{"value":"Archival
         Object","hits":97,"label":"Archival Object"}],"name":"format_sim","label":"Level"}],"pages":{"current_page":9,"next_page":10,"prev_page":8,"total_pages":10,"limit_value":10,"offset_value":80,"total_count":97,"first_page?":false,"last_page?":false}}}'
     http_version: 
-  recorded_at: Mon, 07 Dec 2015 21:18:59 GMT
+  recorded_at: Tue, 08 Dec 2015 16:32:48 GMT
 - request:
     method: get
     uri: https://specialcollections.library.nyu.edu/search/catalog.json?f%5Bcollection_sim%5D%5B0%5D=David%20Wojnarowicz%20Papers&f%5Bdao_sim%5D%5B0%5D=Online%20Access&f%5Bformat_sim%5D%5B0%5D=Archival%20Object&page=10
@@ -1133,7 +1075,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Dec 2015 21:18:59 GMT
+      - Tue, 08 Dec 2015 16:32:48 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Cache-Control:
@@ -1149,15 +1091,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.105815'
+      - '0.078604'
       X-Request-Id:
-      - 32d2191d-b295-4c85-8d0a-51912d2cb3ca
+      - e75c5bd1-ff83-422c-bedd-d5834b5cbb7b
       Connection:
       - close
       X-Powered-By:
       - Phusion Passenger 5.0.6
       Set-Cookie:
-      - _findingaids_session=Rmg2U2VpbWhQYWU1aFhqdWhQYUcwam5GMjVXa3RyTWhtb3pGSUZFNHVpdzJRdG5UYkhIVGV3Wkc2MHhsK3ZvUVJ4VkE4RE5kTlVucytCcGJCTTh3eWxkUWwyUUlDZW55bEFwaEM3WkllTVhtU0lEZERYMnVzZkhYZmJnNnVKdGlCRGU0dzRMUm9VaW5lZ2kyS3pqckJRPT0tLThPMHJ5cGpDNTFjaW1HRk1YMXR3R2c9PQ%3D%3D--a1dbbb72c2847dee966df90923852848a659eec7;
+      - _findingaids_session=M3BhUzQwYmhqMi8ra0lKcHFSN1NOVkxGRWdOdFBkeVNPdHFRdkFHQ1hSdlo0bjk0OUllVjM4OUVQOFBxbUVBalIrdTVTZGFtNUxsVTJDTEk0OFR3VFhoYnFBc1BKS21PYjJJZ1BJT1U1Rm1OS1U1c1NnREFOUWNyY1M0RnFhOWZOaVRoR05Ja1JmQ292NlB3RnpnZCtRPT0tLWMzTVgyZVp4eGhyQmlsbDRkY2s2MWc9PQ%3D%3D--f633decb9d0a159a2ac95a80c8bc68e47b5f646b;
         domain=.library.nyu.edu; path=/; secure; HttpOnly
       Status:
       - 200 OK
@@ -1213,5 +1155,5 @@ http_interactions:
         Wojnarowicz Papers","hits":97,"label":"David Wojnarowicz Papers"}],"name":"collection_sim","label":"Collection"},{"items":[{"value":"Archival
         Object","hits":97,"label":"Archival Object"}],"name":"format_sim","label":"Level"}],"pages":{"current_page":10,"next_page":null,"prev_page":9,"total_pages":10,"limit_value":10,"offset_value":90,"total_count":97,"first_page?":false,"last_page?":true}}}'
     http_version: 
-  recorded_at: Mon, 07 Dec 2015 21:18:59 GMT
+  recorded_at: Tue, 08 Dec 2015 16:32:48 GMT
 recorded_with: VCR 2.9.3
