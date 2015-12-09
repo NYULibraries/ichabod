@@ -17,11 +17,23 @@ describe Collection::DESCRIPTIVE_FIELDS do
   end
 
   describe 'private_collections' do
-    let(:collection_private) {  Collection.find( { :desc_metadata__title_tesim=>'Indian Ocean Postcards' })[0]  }
-    let(:collection_public) { Collection.find( { :desc_metadata__title_tesim=>'Spatial Data Repository' })[0] }
+    let(:collection_private) { create(:collection, :discoverable=>'0')  }
+    let(:collection_public) { create(:collection, :discoverable=>'1')  }
     subject { Collection.private_collections }
     it { should include collection_private }
     it { should_not include collection_public }
+  end
+
+  describe 'has_records?' do
+    subject { collection.has_records? }
+      context ' When collection has related records' do
+      let(:collection) {  Collection.find( { :desc_metadata__title_tesim=>'Indian Ocean Postcards' })[0]  }
+        it { should be true }
+      end
+    context ' When collection has no related records' do
+        let(:collection) { create(:collection) }
+        it { should be false }
+      end
   end
 
   describe Collection::FIELDS do

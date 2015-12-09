@@ -4,8 +4,9 @@ require 'support/test_user_helper'
 describe NyucoresController do
 
   let(:user) { create_or_return_test_admin }
-  let(:nyucore_fields) { Nyucore::NYUCORE_FIELDS[:single] + Nyucore::NYUCORE_FIELDS[:multiple] }
+  let(:nyucore_fields) { Nyucore::NYUCORE_FIELDS[:single] + Nyucore::NYUCORE_FIELDS[:multiple]-[:isPartOf] }
   let(:collection_private) { Collection.find( { :desc_metadata__title_tesim=>'Indian Ocean Postcards' })[0] }
+  let(:collection_public) { Collection.find( { :desc_metadata__title_tesim=>'Spatial Data Repository' })[0] }
   
   before  { controller.stub(:current_user).and_return(user) }
 
@@ -23,7 +24,7 @@ describe NyucoresController do
   end
 
   describe "GET show", vcr: {cassette_name: 'controllers/nyucores controller/show'} do
-    let(:item) { create(:nyucore) }
+    let(:item) { create(:nyucore, :isPartOf=>collection_public.pid.gsub(":","\:")) }
     before { get :show, id: item }
     it 'should retieve specific nyucore record' do
       expect(assigns(:item).id).to eq item.id

@@ -43,20 +43,16 @@ module Ichabod
           expect(Base.editors).to eq editors.unshift(*original_editors)
         end
       end
-      describe '.collection_title=' do
-        subject { Base.collection_title=("#{new_title}") }
+      describe '.collection_title=' do       
         context "when collection with the title exists" do
-          let(:new_title) { original_title }
           it 'should set the collection_title attribute on the class' do
-            expect(Base.collection_title).to eq 'hyi'
-            subject
-            expect(Base.collection_title).to eq original_title
+            expect(Base.collection_title=(original_title)).to eq original_title
          end
         end
         context "when collection with the title doesn't exist" do
-          let(:new_title) { "invalid title" }
+          let(:new_title) { 'invalid title' }
           it 'should raise an ArgumentError' do
-           expect { subject }.to raise_error
+           expect{Base.collection_title=("invalid_title")}.to raise_error
           end
         end
       end
