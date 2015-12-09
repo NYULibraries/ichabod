@@ -26,13 +26,13 @@ class CollectionsController < ApplicationController
   # GET /collections/new
   def new
     @collection = Collection.new
-    #authorize! :new, @collection
+    authorize! :new, @collection
     respond_with(@collection)
   end
 
   # GET /collections/1/edit
   def edit
-    #authorize! :edit, params[:id]
+    authorize! :edit, params[:id]
     @collection = Collection.find(params[:id])
     respond_with(@collection)
   end
@@ -42,7 +42,7 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     ensure_default_editors
-    #authorize! :create, @collection
+    authorize! :create, @collection
     flash[:notice] = 'Collection was successfully created.' if @collection.save
     respond_with(@collection)
   end
@@ -50,7 +50,7 @@ class CollectionsController < ApplicationController
   # PATCH/PUT /collections/1
   # PATCH/PUT /collections/1.json
   def update
-    #authorize! :update, params[:id]
+    authorize! :update, params[:id]
     @collection = Collection.find(params[:id])
     flash[:notice] = 'Collection was successfully updated.' if @collection.update(collection_params)
     respond_with(@collection)
@@ -61,9 +61,15 @@ class CollectionsController < ApplicationController
   def destroy
     authorize! :destroy, params[:id]
     @collection = Collection.find(params[:id])
-    @collection.destroy
-    respond_to do |format|
-      format.html { redirect_to collections_url, notice: 'Collection was successfully deleted.' }
+    if @collection.has_records?
+      respond_to do |format|
+        format.html { redirect_to collections_url, notice: 'Collection has assosiated records and can not be deleted' }
+      end
+    else
+      @collection.destroy unless @collection.has_records?
+      respond_to do |format|
+        format.html { redirect_to collections_url, notice: 'Collection was successfully deleted.' }
+      end
     end
   end
 
