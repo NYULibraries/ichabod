@@ -28,6 +28,14 @@ class Collection < ActiveFedora::Base
     where( :administrative_metadata__discoverable_tesim=>'0' )
   end
 
+  def has_records?
+    if Nyucore.exists?( :desc_metadata__isPartOf_sim=>pid)
+      true
+    else
+      false
+    end
+  end
+
 
   has_metadata descriptive_metadata, type: Ichabod::NyucoreDatastream
   has_attributes(*DESCRIPTIVE_FIELDS[:single], datastream: descriptive_metadata , multiple: false)

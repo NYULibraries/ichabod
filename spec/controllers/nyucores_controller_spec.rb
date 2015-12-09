@@ -22,7 +22,7 @@ describe NyucoresController do
   end
 
   describe "GET show", vcr: {cassette_name: 'controllers/nyucores controller/show'} do
-    let(:item) { create(:nyucore) }
+    let(:item) { create(:nyucore, :isPartOf=>collection_public.pid.gsub(":","\:")) }
     before { get :show, id: item }
     it 'should retieve specific nyucore record' do
       expect(assigns(:item).id).to eq item.id
