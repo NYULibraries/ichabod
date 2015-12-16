@@ -1,4 +1,3 @@
-
 class NyucoresController < ApplicationController
   #needed to get current_per_page value for destroy method redirect
   include Blacklight::CatalogHelperBehavior
@@ -15,7 +14,7 @@ class NyucoresController < ApplicationController
   end
 
   def show
-    #authorize! :show, params[:id]
+    authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
     if (is_restricted?)
       raise CanCan::AccessDenied.new('You are not authorized to view this item')
@@ -79,16 +78,12 @@ class NyucoresController < ApplicationController
     @item.set_edit_groups(["admin_group"],[]) if @item.edit_groups.blank?
   end
 
-
-
   # Convert blank values to nil values in params
   # in order to not save empty array values when field is not nil but is an empty string (i.e. "")
   # Added the reject statement to get rid of blank values for array params
   def blank_to_nil_params
     params[:nyucore].merge!(params[:nyucore]){|k, v| v.blank? ? nil : v.is_a?(Array) ? v.reject{|c| c.empty? } : v}
-  end
-
- 
+  end 
   
   #if the search parameters are saved in session return to the search results page
   def get_query_params_from_session
@@ -101,7 +96,6 @@ class NyucoresController < ApplicationController
       logger.error "Unable to restore search from session due to the following error: #{e}"
     end
   end
-
 
   #Calculates on what page of the search reults we should return.
   # To calculate the landing page number we need 2 parameters: order number of the deleted document

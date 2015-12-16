@@ -62,14 +62,12 @@ describe Collection::DESCRIPTIVE_FIELDS do
   end
 
 
-    #Test that we do presence test for required field
+    #Test that we do presence and uniqueness tests for required field
   
  
   subject(:collection) { build(:collection) }
   # Generic test for validity
   it { should be_valid }
-
-  
 
   describe 'pid assignment' do
     context 'before the object is saved' do
