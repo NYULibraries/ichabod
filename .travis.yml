@@ -1,10 +1,14 @@
 sudo: false
 language: ruby
 
+# Ruby versions to test:
+# - Current Ruby version running prod Ichabod
+# - Latest patch for current prod minor version
+# - Latest stable Ruby
 rvm:
-  - 2.0.0
-  - 2.1.0
   - 2.1.3
+  - 2.1.7
+  - 2.2.3
 
 before_script:
   - mysql -e 'create database ichabod_test;'
