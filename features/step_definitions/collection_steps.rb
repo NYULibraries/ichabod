@@ -14,7 +14,7 @@ When(/^I am on the collections list$/) do
     visit collections_path
 end
 
-Then(/^I should (not )?see title "(.*?)" in the collections list$/) do |negator, title|
+Then(/^I should (not )?see the title "(.*?)" in the collections list$/) do |negator, title|
   visit collections_path
   if negator
     expect(page.first(:css, ".nyu-container")).not_to have_content title

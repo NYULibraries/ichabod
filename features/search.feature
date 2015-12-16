@@ -97,7 +97,7 @@ Feature: Perform a basic search
     When I search on the phrase "VII Battaglione Eritreo"
     Then I should see search results
 
-  Scenario: Search for The Indian Ocean Collection title for authorized user
+  Scenario: Search for The Indian Ocean Collection title for un-authorized user
     And I am on the default search page
     When I search on the phrase "VII Battaglione Eritreo"
     Then I should not see search results

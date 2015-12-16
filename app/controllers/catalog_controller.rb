@@ -50,7 +50,8 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
     config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
     config.add_facet_field solr_name('desc_metadata__language', :facetable), :label => 'Language'
-    config.add_facet_field solr_name('desc_metadata__isPartOf', :facetable), :label =>  'Collection',
+    #config.add_facet_field solr_name('desc_metadata__isPartOf', :facetable), :label =>  'Collection',
+    config.add_facet_field 'desc_metadata__isPartOf_sim', :label =>  'Collection',
                                                                            :helper_method => :render_collection_links,
                                                                            :text          => 'collection_text_display'
 

@@ -35,7 +35,7 @@ Feature: Add, edit and delete collections
     And I click on "Update Collection"
     Then I should see the message "Collection was successfully updated."
     When I am on the collections list
-    Then I should see title "The Underground Soviet Rock" in the collections list
+    Then I should see the title "The Underground Soviet Rock" in the collections list
 
   @loggedin
   Scenario: Editing a collection with multiple values in all multiple fields

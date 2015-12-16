@@ -36,6 +36,7 @@ gem 'simple_form', '~> 3.1.0.rc2'
 gem 'kaminari', '~> 0.13'
 gem 'sorted', '~> 1.0.0'
 gem 'unicode', platforms: [:mri_18, :mri_19]
+gem 'hydra-validations', '~> 0.5.0'
 
 gem 'jettywrapper', group: [:development, :test, :staging]
 
