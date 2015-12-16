@@ -13,8 +13,6 @@ class Nyucore < ActiveFedora::Base
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
   METADATA_STREAMS = ['source_metadata', 'native_metadata']
 
-
-
   # Add multiple metadata streams to the model and include the attributes we
   # want on each stream. AcitveFedora::Base.has_attributes sets the attribute
   # readers and writers, which we explictly override below, but this gives us

@@ -57,7 +57,7 @@ module Ichabod
       #   end
       #
       #   class SubClass < Base
-      #     editor :editor1:
+      #     editor :editor1
       #   end
       #
       #   class SubSubClass < SubClass
@@ -139,7 +139,6 @@ module Ichabod
 
       def load
         raise_runtime_error_if_no_collection_title_configured
-        #collection_title
         find_collection
         update_collection_editors
         read_from_source if resources.empty?
@@ -177,7 +176,7 @@ module Ichabod
       end
 
       def find_collection
-        #this ugliness because dismax solr parser we use doesn't support exact phrase search (yes, I mean it)
+        #this ugliness because, dismax solr parser we use, doesn't support exact phrase search (yes, I mean it)
         if(!@collection_title.nil?)
           Collection.where( :desc_metadata__title_tesim=>@collection_title  ).each do |collection|
             if(collection.title==@collection_title)
