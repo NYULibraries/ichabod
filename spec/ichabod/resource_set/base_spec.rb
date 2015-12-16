@@ -160,17 +160,16 @@ module Ichabod
           it { should eq editors.map(&:to_s).unshift(*original_editors.map(&:to_s)) }
         end
       end
-      describe '#editors' do
-        subject { base.editors }
-        context 'when not configured with editors' do
-          it { should be_an Array }
-          it { should eq original_editors.map(&:to_s) }
-        end
-        context 'when configured with editors' do
-          before { Base.editor(*editors) }
-          after { Base.instance_variable_set(:@editors, original_editors)}
-          it { should be_an Array }
-          it { should eq editors.map(&:to_s).unshift(*original_editors.map(&:to_s)) }
+      describe '#set_restrictions' do
+        subject { base.set_restrictions }
+        context 'when not configured with set_restrictions' do
+          it { should be_a String }
+          it { should eq original_set_restrictions.join("") }
+        context 'when configured with a value other than what is allowed for set_restrictions' do
+          before { Base.set_restriction(*invalid_set_restrictions) }
+          after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
+          it { should be_a String }
+          it { should_not include all_restrictions.map(&:to_s).join("")  }
         end
       end
       describe '#find_collection' do
@@ -227,6 +226,7 @@ module Ichabod
       describe '#load' do
         before { Base.source_reader = ResourceSetMocks::MockSourceReader }
         before { Base.collection_title=original_title }
+        after { Base.instance_variable_set(:@source_reader, nil) }
         after { Base.instance_variable_set(:@collection_title, nil)}
         subject { base.load }
         it { should be_an Array }

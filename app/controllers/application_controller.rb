@@ -18,7 +18,6 @@ class ApplicationController < ActionController::Base
 
   alias_method :current_user, :current_user_dev if Rails.env.development?
 
-
   rescue_from CanCan::AccessDenied do |exception|
     flash[:notice] ||= exception.message.html_safe
     redirect_to root_url

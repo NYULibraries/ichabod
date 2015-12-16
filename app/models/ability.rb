@@ -1,4 +1,4 @@
- class Ability
+class Ability
   include Hydra::Ability
 
   # Define any customized permissions here.
@@ -12,5 +12,4 @@
       can [:new, :create], ActiveFedora::Base
     end
   end
-
 end

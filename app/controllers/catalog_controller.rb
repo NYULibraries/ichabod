@@ -2,14 +2,13 @@
 require 'blacklight/catalog'
 
 class CatalogController < ApplicationController
-  
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
   
   #add check for descoverability on collection level
   #(see https://github.com/projectblacklight/blacklight/wiki/Extending-or-Modifying-Blacklight-Search-Behavior)
-  #as we are currently using older version of Blacklight additional method couldn't be placed to search_builder class
-  #So tempoirary added it to controller itself
+  #as we are currently using older version of Blacklight, additional method couldn't be placed to search_builder class
+  #So tempoirary added it to the controller itself
   CatalogController.solr_search_params_logic += [:show_only_discoverable_records]
   
   configure_blacklight do |config|
@@ -61,8 +60,8 @@ class CatalogController < ApplicationController
     # handler defaults, or have no facets.
     config.default_solr_params[:'facet.field'] = config.facet_fields.keys
     #use this instead if you don't want to query facets marked :show=>false
-    #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
-    
+    #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys 
+
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
@@ -185,20 +184,21 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
 
-    #define what pif (!can?(:discover, collection) )arials will be used to display each solr document
+    #define what partials will be used to display each solr document
     config.index.partials = ['index_header','index','action_buttons']
     config.show.partials = ['show_header','show','action_buttons']
 
   end
 end
-
- def show_only_discoverable_records solr_params, user_params
-     solr_params[:fq] ||= []
-     Collection.private_collections.each do |collection|
+#define what records user can discover based on his/her privillages. We get list of
+#collections, which are private and show items from them only to collection editors
+def show_only_discoverable_records solr_params, user_params
+    solr_params[:fq] ||= []
+    Collection.private_collections.each do |collection|
       if(!can?(:edit, collection))
         solr_params[:'fq'] << ['-desc_metadata__isPartOf_sim:'+"#{collection.pid.gsub(":","\\:")}"]
       end
-      return solr_params[:fq]
-    end
+    return solr_params[:fq]
   end
+end
 
