@@ -3,7 +3,6 @@ Feature: Collection facet
   As a user searching Ichabod
   I want to filter my search results by a "Collection" facet.
 
-
   Scenario: Filter by single collection
     Given I am on the default search page
     When I filter my search to "Spatial Data Repository" under the "Collection" category
@@ -40,6 +39,11 @@ Feature: Collection facet
     When I filter my search to "Data Services" under the "Collection" category
     Then I should see search results
 
+  Scenario: Filter by The Spatial Data Repository
+    Given I am on the default search page
+    When I filter my search to "Spatial Data Repository" under the "Collection" category
+    Then I should see search results
+
   @loggedin
   Scenario: Filter by Indian Ocean Collection for authorized users
     Given I am logged in as "IO Cataloger"
@@ -49,7 +53,7 @@ Feature: Collection facet
 
   Scenario: Filter by Indian Ocean Collection for unauthorized users
     Given I am on the default search page
-    Then I should not see "Indian Ocean Collection" under the "Collection" category
+    Then I should not see a "Indian Ocean Collection" facet under the "Collection" category
 
   Scenario: Filter by Research Guides
     Given I am on the default search page

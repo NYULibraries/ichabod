@@ -21,10 +21,9 @@ module CatalogHelper
 
   def render_collection_links(args)
     if Collection.exists?(args)
-      @collection ||= Collection.find(args)
-      link_to(@collection.title, "?f%5Bdesc_metadata__isPartOf_sim%5D%5B%5D=#{@collection.pid}", {target: '_blank'})
+      Collection.find(args).title
     else
-      link_to("Unknown collection", "", {target: '_blank'})
+      "Unknown Collection"
     end
   end
 end

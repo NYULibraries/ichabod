@@ -1,5 +1,6 @@
 class Collection < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
+  include Hydra::Validations
 
   DESCRIPTIVE_FIELDS = {
     :multiple => [ :creator, :publisher ],
@@ -15,6 +16,7 @@ class Collection < ActiveFedora::Base
 
 
   validates :title, presence: true
+  validates :title, uniqueness: { solr_name: "administrative_metadata__title_tesim" }
   validates :discoverable, presence: true
 
   descriptive_metadata = 'descriptive_metadata'
@@ -33,6 +35,14 @@ class Collection < ActiveFedora::Base
       true
     else
       false
+    end
+  end
+
+  def self.is_title_unique?(title)
+    if exists?( :administrative_metadata__title_tesim=>title )
+      false
+    else
+      true
     end
   end
 
