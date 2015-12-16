@@ -18,7 +18,7 @@ class CollectionsController < ApplicationController
   # GET /collections/1
   # GET /collections/1.json
   def show
-    #authorize! :show, params[:id]
+    authorize! :show, params[:id]
     @collection = Collection.find(params[:id])
     respond_with(@collection)
   end
@@ -66,7 +66,7 @@ class CollectionsController < ApplicationController
         format.html { redirect_to collections_url, notice: 'Collection has assosiated records and can not be deleted' }
       end
     else
-      @collection.destroy unless @collection.has_records?
+      @collection.destroy
       respond_to do |format|
         format.html { redirect_to collections_url, notice: 'Collection was successfully deleted.' }
       end

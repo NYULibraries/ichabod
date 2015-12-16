@@ -1,7 +1,7 @@
 class SpatialDataRepository < Ichabod::ResourceSet::Base
   self.prefix = 'sdr'
   self.source_reader = :git_geo_blacklight_reader
-  self.collection = "Spatial Data Repository"
+  self.collection_title = "Spatial Data Repository"
   editor :gis_cataloger
 
   
