@@ -32,7 +32,8 @@ module Ichabod
             title:      entity['unittitle_ssm'],
             type:       entity['format_ssm'],
             location:   entity['location_ssm'],
-            data_provider: get_archive(entity['repository_ssi']),
+            repo:       get_archive(entity['repository_ssi']),
+            data_provider: 'NYU',
             relation: [entity['collection_ssm'],entity['parent_unittitles_ssm']].join(': ')
           }
 

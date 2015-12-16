@@ -24,6 +24,7 @@ FactoryGirl.define do
     addinfotext ["Ask a Librarian"]
     addinfolink ["http://library.nyu.edu/ask"]
     resource_set 'resource_set'
+    repo 'Fales'
     restrictions 'NYU Only'
     data_provider ["NYU"] 
     geometry ["line"] 
