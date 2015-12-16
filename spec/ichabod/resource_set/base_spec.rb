@@ -165,6 +165,7 @@ module Ichabod
         context 'when not configured with set_restrictions' do
           it { should be_a String }
           it { should eq original_set_restrictions.join("") }
+        end
         context 'when configured with a value other than what is allowed for set_restrictions' do
           before { Base.set_restriction(*invalid_set_restrictions) }
           after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
