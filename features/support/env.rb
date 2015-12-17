@@ -28,7 +28,7 @@ if Rails.env.cucumber?
     Collection.destroy_all
     Collection.create( { :title=>"Archive of Contemporary Composers' Websites", :discoverable=>'1'} )
     Collection.create( { :title=>"Faculty Digital Archive", :discoverable=>'1'} )
-    Collection.create( { :title=>"Asian NGOs Reports", :discoverable=>'1'} )
+    Collection.create( { :title=>"South Asian NGO and other reports", :discoverable=>'1'} )
     Collection.create( { :title=>"Data Services", :discoverable=>'1'} )
     Collection.create( { :title=>"Indian Ocean Postcards", :discoverable=>'0'} )
     Collection.create( { :title=>"Research Guides", :discoverable=>'1'} )
