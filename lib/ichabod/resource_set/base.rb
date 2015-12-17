@@ -180,12 +180,12 @@ module Ichabod
         if(!@collection_title.nil?)
           Collection.where( :desc_metadata__title_tesim=>@collection_title  ).each do |collection|
             if(collection.title==@collection_title)
-            @collection ||=collection 
-            break
+              @collection=collection
+              break
+            end
           end
+          @collection
         end
-        @collection
-      end
       end
 
       private
