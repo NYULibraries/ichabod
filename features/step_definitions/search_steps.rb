@@ -55,10 +55,3 @@ And(/^I should (not )?see a "(.*?)" facet under the "(.*?)" category$/) do |nega
     end
   end
 end
-
-Then(/^I should not see "(.*?)" under the "(.*?)" category$/) do |facet, category|
-  within(:css, "#facets") do
-    click_link(category)
-    expect(page.first(:css, "#facet-collection_sim")).not_to have_content facet
-  end
-end

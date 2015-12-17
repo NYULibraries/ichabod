@@ -39,11 +39,6 @@ Feature: Collection facet
     When I filter my search to "Data Services" under the "Collection" category
     Then I should see search results
 
-  Scenario: Filter by The Spatial Data Repository
-    Given I am on the default search page
-    When I filter my search to "Spatial Data Repository" under the "Collection" category
-    Then I should see search results
-
   @loggedin
   Scenario: Filter by Indian Ocean Collection for authorized users
     Given I am logged in as "IO Cataloger"
