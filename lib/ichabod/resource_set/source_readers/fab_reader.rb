@@ -8,10 +8,10 @@ module Ichabod
       class FabReader < ResourceSet::SourceReader
         # keeping these as constants in the source reader
         # because they will apply to all finding aids objects
-        # being imported
-        FINDING_AIDS_URL = "http://dlib.nyu.edu/findingaids/html/"
         ARCHIVES_FILE = "archives.yml"
-        ENDPOINT_URL = "https://specialcollections.library.nyu.edu/search/catalog.json"
+        FINDINGAIDS_URL = YAML.load_file(File.join(Rails.root, "config", ARCHIVES_FILE))['urls']['findingaids']
+        ENDPOINT_URL = YAML.load_file(File.join(Rails.root, "config", ARCHIVES_FILE))['urls']['endpoint_url']
+
 
         def read
           entities.collect do |entity|
@@ -21,7 +21,7 @@ module Ichabod
 
         private
         extend Forwardable
-        def_delegators :resource_set, :query, :path, :collection_code, :page
+        def_delegators :resource_set, :data_params, :path, :collection_code, :page
 
         def resource_attributes_from_entity(entity)
           {
@@ -41,7 +41,7 @@ module Ichabod
 
 
         def gen_url(repo,ead,parent_ref,item_ref)
-          FINDING_AIDS_URL + "#{repo}/#{ead}/dsc#{parent_ref}.html##{item_ref}"
+          FINDINGAIDS_URL + "#{repo}/#{ead}/dsc#{parent_ref}.html##{item_ref}"
         end
 
         # mapping value from FAB to the full form listed in the yml file
@@ -77,23 +77,21 @@ module Ichabod
           rsp['response']['pages']['next_page']
         end
 
-        # Connect to collection JSON API
-        # ugly hack
-        # I'd like to specify this in params but it's not being formatted in the form
-        # that the FAB recognizes
+
         def datasource(pg = nil)
-          page_req = query + "&page=#{pg}"
-          url = pg.nil? ?  query : page_req
-          url = ENDPOINT_URL + url
-          endpoint_connection.get(url)
+          data_params["page"] = pg unless pg.nil?
+          endpoint_connection
         end
-  
+        
+
         # Use Faraday to connect to the collection's JSON API
         def endpoint_connection
-          @endpoint_connection ||= Faraday.new(url: ENDPOINT_URL) do |faraday|
+          @conn ||= Faraday.new(url: ENDPOINT_URL) do |faraday|
             faraday.adapter :net_http
           end
-
+          rsp = @conn.get do |request|
+            request.params = data_params
+          end
         end
       end
     end
