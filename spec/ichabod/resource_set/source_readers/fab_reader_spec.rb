@@ -3,12 +3,12 @@ module Ichabod
   module ResourceSet
     module SourceReaders
       describe FabReader do
-        let(:query) { "?f%5Bcollection_sim%5D%5B%5D=David+Wojnarowicz+Papers&f%5Bdao_sim%5D%5B%5D=Online+Access&f%5Bformat_sim%5D%5B%5D=Archival+Object" }
+        let(:data_params) { {"f[collection_sim][]" => 'David Wojnarowicz Papers', "f[dao_sim][]" => 'Online Access',"f[format_sim][]"     => 'Archival Object'} }
         let(:collection_code) { 'woj' }
         let(:page) { nil }
         let(:resource_set) { mock_resource_set }
         before do
-          allow(resource_set).to receive(:query) { query }
+          allow(resource_set).to receive(:data_params) { data_params }
           allow(resource_set).to receive(:page)  { page }
           allow(resource_set).to receive(:collection_code) { collection_code }
         end

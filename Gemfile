@@ -38,6 +38,7 @@ gem 'sorted', '~> 1.0.0'
 gem 'unicode', platforms: [:mri_18, :mri_19]
 
 gem 'jettywrapper', group: [:development, :test, :staging]
+gem "rack-test", require: "rack/test", group: [:development, :test]
 
 
 gem 'iso-639'
