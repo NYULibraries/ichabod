@@ -107,6 +107,7 @@ class CatalogController < ApplicationController
                                                                                                     :text          => 'resource_text_display'
     config.add_show_field solr_name('desc_metadata__relation', :stored_searchable, type: :string), :label => 'Relation'
     config.add_show_field solr_name('desc_metadata__location', :stored_searchable, type: :string), :label => 'Location'
+    config.add_show_field solr_name('desc_metadata__repo', :stored_searchable, type: :string), :label => 'Repository'
     config.add_show_field solr_name('desc_metadata__data_provider', :stored_searchable, type: :string), :label => 'Data Provider'
     config.add_show_field solr_name('desc_metadata__addinfolink', :stored_searchable, type: :string), :label => 'Additional Information',
                                                                                                     :helper_method => :render_external_links,

@@ -30,9 +30,7 @@ module Ichabod
           describe 'the first record' do
             subject { read.first }
             its(:prefix) { should eq resource_set.prefix }
-            #describe 'check api', type: :request do
-              #get '/catalog/woj:wojref14.json'
-            #end
+            its(:repo) { should eq 'The Fales Library & Special Collections'}
           end
         end
       end
