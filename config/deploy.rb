@@ -46,11 +46,9 @@ end
 
 namespace :woj do
   task :import do
-    set_variables
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['woj']"
   end
   task :delete do
-    set_variables
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:nyucore:delete['woj']"
   end
 end
