@@ -24,11 +24,13 @@ FactoryGirl.define do
     addinfotext ["Ask a Librarian"]
     addinfolink ["http://library.nyu.edu/ask"]
     resource_set 'resource_set'
+    repo 'Fales'
     restrictions 'NYU Only'
     data_provider ["NYU"] 
     geometry ["line"] 
     subject_spatial ["Buenos Aires"]
     subject_temporal ["2013"]
+    location ["Box: 2, Folder: 3"]
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
 
     factory :gis_record do
