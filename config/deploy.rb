@@ -44,6 +44,15 @@ namespace :voice do
   end
 end
 
+namespace :woj do
+  task :import do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['woj']"
+  end
+  task :delete do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:nyucore:delete['woj:*']"
+  end
+end
+
 namespace :fda_ngo do
   desc "Set variables for FDA NGO ingest tasks"
   task :set_variables do

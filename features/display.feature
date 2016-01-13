@@ -26,3 +26,9 @@ Feature: Display tests for various datasets
     And I search for "9780814712917"
     When I navigate to details display of the first result
     Then I should see the value "Gail R. Benjamin" in the "Creator:" field
+
+  Scenario: Display "Repository" field in the details display
+    Given I limit my search to "David Wojnarowicz Papers" under the "Collection" category
+    When I navigate to details display of the first result
+    Then I should see the value "The Fales Library & Special Collections" in the "Repository:" field
+

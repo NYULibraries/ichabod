@@ -19,12 +19,12 @@ describe Nyucore do
 
   describe Nyucore::EXTRA_SINGLES do
     subject { Nyucore::EXTRA_SINGLES }
-    it { should eq [:resource_set] }
+    it { should eq [:resource_set, :repo] }
   end
 
   describe Nyucore::EXTRA_MULTIPLES do
     subject { Nyucore::EXTRA_MULTIPLES }
-    it { should eq [:addinfolink, :addinfotext, :isbn, :data_provider, :geometry, :subject_spatial, :subject_temporal] }
+    it { should eq [:addinfolink, :addinfotext, :isbn, :data_provider, :geometry, :subject_spatial, :subject_temporal, :location] }
   end
 
   describe Nyucore::SINGLE_FIELDS do
