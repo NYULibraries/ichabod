@@ -11,13 +11,13 @@ terms:
             searchable: true
             stored: true
          title:
-            facetable: false
-            mandatory: true
-            occurence: 1
-            stored: true
-            searchable: true
             data_type: text
+            facetable: false
             indexed: true
+            mandatory: true
+            multiple: true
+            searchable: true
+            stored: true
          creator:
             data_type: text
             facetable: true
@@ -170,7 +170,7 @@ terms:
             indexed: true
             mandatory: false
             multiple: true
-            searchable: true
+            searchable: false
             stored: true
           repo:
             data_type: text
@@ -178,7 +178,7 @@ terms:
             indexed: true
             mandatory: false
             multiple: true
-            searchable: true
+            searchable: false
             stored: true
           available:
             data_type: text
@@ -210,7 +210,7 @@ terms:
             indexed: true
             mandatory: false
             multiple: true
-            searchable: true
+            searchable: false
             stored: true
          citation:
             data_type: text
@@ -218,7 +218,22 @@ terms:
             indexed: true
             mandatory: false
             multiple: true
-            searchable: true
+            searchable: false
             stored: true
-
+         restriction:
+            data_type: text
+            facetable: false
+            indexed: true
+            mandatory: false
+            multiple: false
+            searchable: false
+            stored: true
+         #isPartOf:
+         	data_type: relationship
+            facetable: true
+            indexed: true
+            mandatory: true
+            multiple: true
+            searchable: false
+            stored: true
 
