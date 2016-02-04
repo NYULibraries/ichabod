@@ -1,1 +1,1 @@
-MD_FIELDS = YAML.load_file(File.join(Rails.root, "config", "metadata_fields.yml"))["terms"]
+MD_FIELDS = YAML.load_file(File.join(Rails.root, "config", "metadata_fields.yml"))["terms"].deep_symbolize_keys
