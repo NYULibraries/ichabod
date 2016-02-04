@@ -1,11 +1,128 @@
 terms:
   vocabulary:
-     dc:
-       title:
-         facetable: "y"
-         mandatory: "y"
-         occurence: 1
-         stored: "y"
-         searchable: "y"
-         data_type: String
-         indexed: "y"
+    source: "dcterms"
+       name:
+         identifier:
+            data_type: text
+            facetable: "n"
+            indexed: "y"
+            mandatory: "y"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+         title:
+            facetable: "n"
+            mandatory: "y"
+            occurence: 1
+            stored: "y"
+            searchable: "y"
+            data_type: text
+            indexed: "y"
+         creator:
+            data_type: text
+            facetable: "y"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+        contributor:
+            data_type: text
+            facetable: "y"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+        publisher:
+            data_type: text
+            facetable: "n"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+        type: 
+            data_type: text
+            facetable: "n"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+        description: 
+            data_type: text
+            facetable: "n"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+        date: 
+            data_type: date
+            facetable: "n"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+        format: 
+            data_type: text
+            facetable: "y"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+         language: 
+            data_type: text
+            facetable: "y"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+         relation: 
+            data_type: text
+            facetable: "n"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+         rights: 
+            data_type: text
+            facetable: "n"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+         subject: 
+            data_type: text
+            facetable: "y"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+    source: "ichabod"
+        name:
+          addinfolink:
+            data_type: text
+            facetable: "n"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+          addinfotext:
+            data_type: text
+            facetable: "n"
+            indexed: "y"
+            mandatory: "n"
+            multiple: "y"
+            searchable: "y"
+            stored: "y"
+
+
