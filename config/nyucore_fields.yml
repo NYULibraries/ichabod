@@ -1,7 +1,9 @@
 terms:
   vocabulary:
     dcterms:
+
       # Mandatory Fields
+
       identifier:
         data_type: text
         facetable: false
@@ -18,7 +20,17 @@ terms:
         multiple: true
         searchable: true
         stored: true
+
       # Optional Fields
+
+      contributor:
+        data_type: text
+        facetable: true
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
       creator:
         data_type: text
         facetable: true
@@ -27,7 +39,31 @@ terms:
         multiple: true
         searchable: true
         stored: true
-      contributor:
+      date:
+        data_type: date
+        facetable: false
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      description:
+        data_type: text
+        facetable: false
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      format:
+        data_type: text
+        facetable: true
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      language:
         data_type: text
         facetable: true
         indexed: true
@@ -43,7 +79,7 @@ terms:
         multiple: true
         searchable: true
         stored: true
-      type: 
+      relation:
         data_type: text
         facetable: false
         indexed: true
@@ -51,7 +87,7 @@ terms:
         multiple: true
         searchable: true
         stored: true
-      description: 
+      rights:
         data_type: text
         facetable: false
         indexed: true
@@ -59,15 +95,7 @@ terms:
         multiple: true
         searchable: true
         stored: true
-      date: 
-        data_type: date
-        facetable: false
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      format: 
+      subject:
         data_type: text
         facetable: true
         indexed: true
@@ -75,15 +103,7 @@ terms:
         multiple: true
         searchable: true
         stored: true
-      language: 
-        data_type: text
-        facetable: true
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      relation: 
+      type:
         data_type: text
         facetable: false
         indexed: true
@@ -91,24 +111,12 @@ terms:
         multiple: true
         searchable: true
         stored: true
-      rights: 
-        data_type: text
-        facetable: false
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      subject: 
-        data_type: text
-        facetable: true
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
+
     ichabod:
-      resource_set:
+
+      # Optional Fields
+
+      available:
         data_type: text
         facetable: false
         indexed: true
@@ -116,7 +124,15 @@ terms:
         multiple: true
         searchable: true
         stored: true
-      isbn:
+      citation:
+        data_type: text
+        facetable: false
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: false
+        stored: true
+      data_provider:
         data_type: text
         facetable: false
         indexed: true
@@ -132,7 +148,7 @@ terms:
         multiple: true
         searchable: true
         stored: true
-      data_provider:
+      edition:
         data_type: text
         facetable: false
         indexed: true
@@ -148,15 +164,7 @@ terms:
         multiple: true
         searchable: true
         stored: true
-      subject_spatial:
-        data_type: text
-        facetable: false
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      subject_temporal:
+      isbn:
         data_type: text
         facetable: false
         indexed: true
@@ -180,7 +188,7 @@ terms:
         multiple: true
         searchable: false
         stored: true
-      available:
+      resource_set:
         data_type: text
         facetable: false
         indexed: true
@@ -188,15 +196,31 @@ terms:
         multiple: true
         searchable: true
         stored: true
-      edition:
+      restriction:
         data_type: text
         facetable: false
         indexed: true
         mandatory: false
-        multiple: true
-        searchable: true
+        multiple: false
+        searchable: false
         stored: true
       series:
+        data_type: text
+        facetable: false
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      subject_spatial:
+        data_type: text
+        facetable: false
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      subject_temporal:
         data_type: text
         facetable: false
         indexed: true
@@ -210,21 +234,5 @@ terms:
         indexed: true
         mandatory: false
         multiple: true
-        searchable: false
-        stored: true
-      citation:
-        data_type: text
-        facetable: false
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: false
-        stored: true
-      restriction:
-        data_type: text
-        facetable: false
-        indexed: true
-        mandatory: false
-        multiple: false
         searchable: false
         stored: true
