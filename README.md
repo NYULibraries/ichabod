@@ -24,12 +24,10 @@ Students, faculty, researchers - can search through collection metadata and get 
 Rake tasks available to ingest data from "ingest" directory.
 
     rake ichabod:load['spatial_data_repository','./ingest/sdr.xml']
-    rake ichabod:load['faculty_digital_archive','./ingest/stern.xml']
 
 ... and to purge data based on same data files.
 
     rake ichabod:delete['spatial_data_repository','./ingest/sdr.xml']
-    rake ichabod:delete['faculty_digital_archive','./ingest/stern.xml']
 
 ## Resources
 
