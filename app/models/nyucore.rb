@@ -1,5 +1,22 @@
 class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
+  md_fields = MD_FIELDS[:vocabulary][:nyucore]
+  NYUCORE_FIELDS = {}
+  NYUCORE_FIELDS[:single] = []
+  NYUCORE_FIELDS[:multiple] = []
+  md_fields.keys.each{ |k|
+    case md_fields[k][:multiple]
+    when true
+       NYUCORE_FIELDS[:multiple].push(k) 
+    when false
+      NYUCORE_FIELDS[:single].push(k)
+    else
+      raise ArgumentError.new("Expecting either true or false, but got #{k[:mutliple]}")
+    end
+
+  }
+  binding.pry
+  #NYUCORE_FIELDS[:multiple] = MD_FIELDS[:vocabulary]
   NYUCORE_FIELDS = {
     :multiple => [:available, :citation, :title, :creator, :type, :publisher,
                   :description, :edition, :date, :format, :language, :relation,
