@@ -22,11 +22,23 @@ Students, faculty, researchers - can search through collection metadata and get 
 ## Sample Data Ingest
 
 Rake tasks available to ingest data from "ingest" directory.
-
+```
+    rake ichabod:load['nyu_press_open_access_book','http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select']
+    # Load first five records only (start = 0, rows = 5)
+    rake ichabod:load['nyu_press_open_access_book','http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select','0','5']
+```
+```
+    rake ichabod:load['faculty_digital_archive_ngo','https://archive.nyu.edu/request','hdl_2451_33605']
+    # Load five records only (rows = 5)
+    rake ichabod:load['faculty_digital_archive_ngo','https://archive.nyu.edu/request','hdl_2451_33605','5']
+```
+```
     rake ichabod:load['spatial_data_repository','./ingest/sdr.xml']
-
+```
 ... and to purge data based on same data files.
 
+    rake ichabod:delete['nyu_press_open_access_book','http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select']
+    rake ichabod:delete['faculty_digital_archive_ngo','https://archive.nyu.edu/request','hdl_2451_33605']
     rake ichabod:delete['spatial_data_repository','./ingest/sdr.xml']
 
 ## Resources
