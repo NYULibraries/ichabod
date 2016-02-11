@@ -3,15 +3,6 @@ terms:
     dcterms:
 
       # Mandatory Fields
-
-      identifier:
-        data_type: text
-        facetable: false
-        indexed: true
-        mandatory: true
-        multiple: true
-        searchable: true
-        stored: true
       title:
         data_type: text
         facetable: false
@@ -190,9 +181,16 @@ terms:
         stored: true
 
     nyucore:
-
+      
+      identifier:
+        data_type: text
+        facetable: false
+        indexed: true
+        mandatory: true
+        multiple: false
+        searchable: true
+        stored: true
       # Optional Fields
-
       available:
         data_type: text
         facetable: false
