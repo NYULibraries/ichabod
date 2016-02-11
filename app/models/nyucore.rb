@@ -15,14 +15,7 @@ class Nyucore < ActiveFedora::Base
     end
 
   }
-  binding.pry
-  #NYUCORE_FIELDS[:multiple] = MD_FIELDS[:vocabulary]
-  NYUCORE_FIELDS = {
-    :multiple => [:available, :citation, :title, :creator, :type, :publisher,
-                  :description, :edition, :date, :format, :language, :relation,
-                  :rights, :subject, :series, :version],
-    :single => [:identifier, :restrictions]
-  }
+  
   EXTRA_SINGLES = [:resource_set, :repo]
   EXTRA_MULTIPLES = [:addinfolink, :addinfotext, :isbn, :data_provider, :geometry, :subject_spatial, :subject_temporal, :location]
   SINGLE_FIELDS = NYUCORE_FIELDS[:single] + EXTRA_SINGLES

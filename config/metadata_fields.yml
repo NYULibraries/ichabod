@@ -1,19 +1,7 @@
 terms:
   vocabulary:
     dcterms:
-
-      # Mandatory Fields
-      title:
-        data_type: text
-        facetable: false
-        indexed: true
-        mandatory: true
-        multiple: true
-        searchable: true
-        stored: true
-
       # Optional Fields
-
       contributor:
         data_type: text
         facetable: true
@@ -22,91 +10,8 @@ terms:
         multiple: true
         searchable: true
         stored: true
-      creator:
-        data_type: text
-        facetable: true
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      date:
-        data_type: date
-        facetable: false
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      description:
-        data_type: text
-        facetable: false
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      format:
-        data_type: text
-        facetable: true
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      language:
-        data_type: text
-        facetable: true
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      publisher:
-        data_type: text
-        facetable: false
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      relation:
-        data_type: text
-        facetable: false
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      rights:
-        data_type: text
-        facetable: false
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      subject:
-        data_type: text
-        facetable: true
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-      type:
-        data_type: text
-        facetable: false
-        indexed: true
-        mandatory: false
-        multiple: true
-        searchable: true
-        stored: true
-
     ichabod:
-
       # Optional Fields
-
       data_provider:
         data_type: text
         facetable: false
@@ -199,6 +104,14 @@ terms:
         multiple: true
         searchable: true
         stored: true
+      creator:
+        data_type: text
+        facetable: true
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
       citation:
         data_type: text
         facetable: false
@@ -207,7 +120,71 @@ terms:
         multiple: true
         searchable: false
         stored: true
+      date:
+        data_type: date
+        facetable: false
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      description:
+        data_type: text
+        facetable: false
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      format:
+        data_type: text
+        facetable: true
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      language:
+        data_type: text
+        facetable: true
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      relation:
+        data_type: text
+        facetable: false
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      rights:
+        data_type: text
+        facetable: false
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      subject:
+        data_type: text
+        facetable: true
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
       edition:
+        data_type: text
+        facetable: false
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      publisher:
         data_type: text
         facetable: false
         indexed: true
@@ -224,6 +201,22 @@ terms:
         searchable: false
         stored: true
       series:
+        data_type: text
+        facetable: false
+        indexed: true
+        mandatory: false
+        multiple: true
+        searchable: true
+        stored: true
+      title:
+        data_type: text
+        facetable: false
+        indexed: true
+        mandatory: true
+        multiple: true
+        searchable: true
+        stored: true
+      type:
         data_type: text
         facetable: false
         indexed: true
