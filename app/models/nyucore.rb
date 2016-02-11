@@ -1,22 +1,55 @@
 class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
-  md_fields = MD_FIELDS[:vocabulary][:nyucore]
+  fields = MD_FIELDS[:nyucore]
   NYUCORE_FIELDS = {}
   NYUCORE_FIELDS[:single] = []
   NYUCORE_FIELDS[:multiple] = []
-  md_fields.keys.each{ |k|
-    case md_fields[k][:multiple]
+=begin
+  fields.keys.each{ |k|
+    case fields[k][:multiple]
     when true
        NYUCORE_FIELDS[:multiple].push(k) 
     when false
       NYUCORE_FIELDS[:single].push(k)
     else
-      raise ArgumentError.new("Expecting either true or false, but got #{k[:mutliple]}")
+      raise ArgumentError.new("Expecting either true or false, but got #{fields[k][:mutliple]}")
     end
 
   }
+=end
+  EXTRA_SINGLES = []
+  EXTRA_MULTIPLES = []
+  MD_FIELDS.keys.each{ |ns|
+    case ns
+    when :nyucore
+      MD_FIELDS[ns].keys.each { |f|
+        case MD_FIELDS[ns][f][:multiple]
+        when true
+           NYUCORE_FIELDS[:multiple].push(f) 
+        when false
+           NYUCORE_FIELDS[:single].push(f)
+        else
+           raise ArgumentError.new("Expecting either true or false, but got #{fields[k][:mutliple]}")
+        end
+      }
+    else
+      MD_FIELDS[ns].keys.each { |f|
+        case MD_FIELDS[ns][f][:multiple]
+        when true
+          EXTRA_MULTIPLES.push(f)
+        when false
+          EXTRA_SINGLES.push(f)
+        else
+          raise ArgumentError.new("Expecting either true or false, but got #{fields[k][:mutliple]}")
+        end
+      }
+    end
+  }
+
+  binding.pry
   
-  EXTRA_SINGLES = [:resource_set, :repo]
+
+  #EXTRA_SINGLES = [MD_FIELDS[:ichabod][:resource_set, :repo]
   EXTRA_MULTIPLES = [:addinfolink, :addinfotext, :isbn, :data_provider, :geometry, :subject_spatial, :subject_temporal, :location]
   SINGLE_FIELDS = NYUCORE_FIELDS[:single] + EXTRA_SINGLES
   MULTIPLE_FIELDS = NYUCORE_FIELDS[:multiple] + EXTRA_MULTIPLES
@@ -126,4 +159,6 @@ class Nyucore < ActiveFedora::Base
   def collections
     @collections ||= Collections.new(self)
   end
+
+
 end
