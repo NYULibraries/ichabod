@@ -31,6 +31,8 @@ FactoryGirl.define do
     subject_spatial ["Buenos Aires"]
     subject_temporal ["2013"]
     location ["Box: 2, Folder: 3"]
+    contributor ["C1"]
+    discoverable ["Y"]
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
 
     factory :gis_record do
