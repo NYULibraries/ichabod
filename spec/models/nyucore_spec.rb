@@ -1,30 +1,29 @@
 require 'spec_helper'
 
 describe Nyucore do
-
   describe Nyucore::NYUCORE_FIELDS do
     subject { Nyucore::NYUCORE_FIELDS }
     it { should be_a Hash }
     it { should have_key :single }
     it { should have_key :multiple }
     it 'should have the appropriate single fields' do
-      expect(subject[:single]).to eq [:identifier, :restrictions]
+      expect(subject[:single]).to match_array [:identifier, :restrictions]
     end
     it 'should have the appropriate multiple fields' do
-      expect(subject[:multiple]).to eq [:available, :citation, :title, :creator,
+      expect(subject[:multiple]).to match_array [:available, :citation, :title, :creator,
         :type, :publisher, :description, :edition, :date, :format, :language,
         :relation, :rights, :subject, :series, :version]
     end
   end
-
+  
   describe Nyucore::EXTRA_SINGLES do
     subject { Nyucore::EXTRA_SINGLES }
-    it { should eq [:resource_set, :repo] }
+    it { should =~ [:resource_set, :repo] }
   end
 
   describe Nyucore::EXTRA_MULTIPLES do
     subject { Nyucore::EXTRA_MULTIPLES }
-    it { should eq [:addinfolink, :addinfotext, :isbn, :data_provider, :geometry, :subject_spatial, :subject_temporal, :location] }
+    it { should =~ [:contributor, :addinfolink, :addinfotext, :data_provider, :discoverable, :geometry, :isbn, :location, :subject_spatial, :subject_temporal] }
   end
 
   describe Nyucore::SINGLE_FIELDS do
