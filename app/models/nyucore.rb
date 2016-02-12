@@ -4,19 +4,8 @@ class Nyucore < ActiveFedora::Base
   NYUCORE_FIELDS = {}
   NYUCORE_FIELDS[:single] = []
   NYUCORE_FIELDS[:multiple] = []
-=begin
-  fields.keys.each{ |k|
-    case fields[k][:multiple]
-    when true
-       NYUCORE_FIELDS[:multiple].push(k) 
-    when false
-      NYUCORE_FIELDS[:single].push(k)
-    else
-      raise ArgumentError.new("Expecting either true or false, but got #{fields[k][:mutliple]}")
-    end
 
-  }
-=end
+
   EXTRA_SINGLES = []
   EXTRA_MULTIPLES = []
   MD_FIELDS.keys.each{ |ns|
@@ -45,12 +34,7 @@ class Nyucore < ActiveFedora::Base
       }
     end
   }
-
-  binding.pry
   
-
-  #EXTRA_SINGLES = [MD_FIELDS[:ichabod][:resource_set, :repo]
-  EXTRA_MULTIPLES = [:addinfolink, :addinfotext, :isbn, :data_provider, :geometry, :subject_spatial, :subject_temporal, :location]
   SINGLE_FIELDS = NYUCORE_FIELDS[:single] + EXTRA_SINGLES
   MULTIPLE_FIELDS = NYUCORE_FIELDS[:multiple] + EXTRA_MULTIPLES
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
@@ -60,6 +44,7 @@ class Nyucore < ActiveFedora::Base
   # want on each stream. AcitveFedora::Base.has_attributes sets the attribute
   # readers and writers, which we explictly override below, but this gives us
   # our base.
+
   METADATA_STREAMS.each do |metadata_stream|
     has_metadata metadata_stream, type: Ichabod::NyucoreDatastream
     has_attributes(*SINGLE_FIELDS, datastream: metadata_stream, multiple: false)
@@ -159,6 +144,13 @@ class Nyucore < ActiveFedora::Base
   def collections
     @collections ||= Collections.new(self)
   end
-
-
+=begin
+  def assign_fields(field_array,multiple)
+    MD_FIELDS.keys.each{ |source|
+      MD_FIELDS[source].keys.each { |f|
+        field_array.push(f) if MD_FIELDS[source][f][:multiple] == multiple
+      }
+    }
+  end
+=end
 end
