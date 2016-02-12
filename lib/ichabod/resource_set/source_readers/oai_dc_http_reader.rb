@@ -39,7 +39,7 @@ module Ichabod
         def records
          @records=[]
          unless load_number_of_records.nil?
-           response_oai.first(load_number_of_records).each { |oai_record| @records << oai_record.metadata }
+           response_oai.first(load_number_of_records.to_i).each { |oai_record| @records << oai_record.metadata }
          else
            response_oai.each { |oai_record| @records << oai_record.metadata }
          end
