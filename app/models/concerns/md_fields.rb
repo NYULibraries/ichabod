@@ -3,6 +3,9 @@ module MdFields
 	extend self
 
    def process_md_fields(ns:'all', multiple: 'all')
+   	  unless allowed_values_for_multiple.include?(multiple)
+   	  	raise ArgumentError.new("#{multiple} should be one of these values: #{allowed_values}")	
+   	  end
    	  chk_key = ns.to_sym
       fields = []
    	  if MD_FIELDS.has_key?(chk_key)
@@ -29,6 +32,11 @@ module MdFields
      }
    end
 
-   private_class_method :parse_all_fields, :process_source_fields
+   def allowed_values_for_multiple
+   	 [true, false, 'all']
+   end
+
+
+   private_class_method :parse_all_fields, :process_source_fields, :allowed_values_for_multiple
 end
 
