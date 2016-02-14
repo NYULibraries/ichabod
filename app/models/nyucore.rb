@@ -1,6 +1,8 @@
 class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
-  fields = MD_FIELDS[:nyucore]
+   include MdFields
+
+ 
   NYUCORE_FIELDS = {}
   NYUCORE_FIELDS[:single] = []
   NYUCORE_FIELDS[:multiple] = []
@@ -8,6 +10,15 @@ class Nyucore < ActiveFedora::Base
 
   EXTRA_SINGLES = []
   EXTRA_MULTIPLES = []
+
+  
+  NYUCORE_FIELDS[:single] = MdFields.process_md_fields(ns:'nyucore', multiple: false)
+  NYUCORE_FIELDS[:multiple] = MdFields.process_md_fields(ns:'nyucore', multiple: true)
+  EXTRA_SINGLES = MdFields.process_md_fields(ns:'ichabod', multiple: false)
+  EXTRA_SINGLES += MdFields.process_md_fields(ns:'dcterms', multiple: false)
+  EXTRA_MULTIPLES = MdFields.process_md_fields(ns:'ichabod', multiple: true)
+  EXTRA_MULTIPLES += MdFields.process_md_fields(ns:'dcterms', multiple: true)
+=begin
   MD_FIELDS.keys.each{ |ns|
     case ns
     when :nyucore
@@ -34,7 +45,7 @@ class Nyucore < ActiveFedora::Base
       }
     end
   }
-  
+=end
   SINGLE_FIELDS = NYUCORE_FIELDS[:single] + EXTRA_SINGLES
   MULTIPLE_FIELDS = NYUCORE_FIELDS[:multiple] + EXTRA_MULTIPLES
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
