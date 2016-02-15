@@ -138,13 +138,4 @@ class Nyucore < ActiveFedora::Base
   def collections
     @collections ||= Collections.new(self)
   end
-=begin
-  def assign_fields(field_array,multiple)
-    MD_FIELDS.keys.each{ |source|
-      MD_FIELDS[source].keys.each { |f|
-        field_array.push(f) if MD_FIELDS[source][f][:multiple] == multiple
-      }
-    }
-  end
-=end
 end
