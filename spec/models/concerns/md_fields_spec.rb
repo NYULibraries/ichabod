@@ -10,11 +10,11 @@ describe MdFields do
 	describe 'process_md_fields' do
 		it { MdFields.should respond_to :process_md_fields }
 
-		it 'fails if an invalid namespace value is passed to the method' do 
+		it 'raises an error if an invalid namespace value is passed to the method' do 
 		    expect { MdFields.process_md_fields(ns: invalid_value) }.to raise_error
 		end
 
-		it 'fails if an invalid occurrence value is passed to the method' do 
+		it 'raises an error if an invalid occurrence value is passed to the method' do 
 		    expect { MdFields.process_md_fields(multiple: invalid_value) }.to raise_error
 		end
 
