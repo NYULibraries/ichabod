@@ -28,7 +28,7 @@ module MdFields
      MD_FIELDS[ns].keys.each{ |field|
        # if output is true then print out field
        output = multiple == 'all' ? true : MD_FIELDS[ns][field][:multiple] == multiple
-	   fields.push(field) if output
+	     fields.push(field) if output
      }
    end
 

@@ -12,53 +12,23 @@ class Nyucore < ActiveFedora::Base
   # I don't think separate arrays 
   # for nyucore and extra fields
   # are needed 
-  # Keeping it the way it was for now
+  # Keeping it the way it is for now
   # until we discuss further
   # Because unraveling the tests 
   # will be onerous
   # Also to accomodate the tests
   # have to assign the variables to the constants
   # Should be changed to make it cleaner
+  # when we determine test strategy
   sources = ['ichabod', 'dcterms']
   sources.each { |ns|
     singles += MdFields.process_md_fields(ns: ns, multiple: false)
     multiples += MdFields.process_md_fields(ns: ns, multiple: true)
   }
+
   EXTRA_SINGLES = singles
   EXTRA_MULTIPLES = multiples
-=begin
-  EXTRA_SINGLES = MdFields.process_md_fields(ns:'ichabod', multiple: false)
-  EXTRA_SINGLES += MdFields.process_md_fields(ns:'dcterms', multiple: false)
-  EXTRA_MULTIPLES = MdFields.process_md_fields(ns:'ichabod', multiple: true)
-  EXTRA_MULTIPLES += MdFields.process_md_fields(ns:'dcterms', multiple: true)
 
-  MD_FIELDS.keys.each{ |ns|
-    case ns
-    when :nyucore
-      MD_FIELDS[ns].keys.each { |f|
-        case MD_FIELDS[ns][f][:multiple]
-        when true
-           NYUCORE_FIELDS[:multiple].push(f) 
-        when false
-           NYUCORE_FIELDS[:single].push(f)
-        else
-           raise ArgumentError.new("Expecting either true or false, but got #{fields[k][:mutliple]}")
-        end
-      }
-    else
-      MD_FIELDS[ns].keys.each { |f|
-        case MD_FIELDS[ns][f][:multiple]
-        when true
-          EXTRA_MULTIPLES.push(f)
-        when false
-          EXTRA_SINGLES.push(f)
-        else
-          raise ArgumentError.new("Expecting either true or false, but got #{fields[k][:mutliple]}")
-        end
-      }
-    end
-  }
-=end
   SINGLE_FIELDS = NYUCORE_FIELDS[:single] + EXTRA_SINGLES
   MULTIPLE_FIELDS = NYUCORE_FIELDS[:multiple] + EXTRA_MULTIPLES
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
