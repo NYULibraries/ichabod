@@ -2,18 +2,16 @@ require 'spec_helper'
 
 describe MdFields do
 	let(:invalid_value) { 'foo' }
-	let(:single_source) { MdFields.process_md_fields(ns:'nyucore', multiple: false) }
-	let(:multiple_source) { MdFields.process_md_fields(ns:'nyucore', multiple: true) }
-	let(:single_all) { MdFields.process_md_fields(multiple: true) }
+	let(:source) { 'nyucore' }
 	let(:all) { MdFields.process_md_fields }
-	#let!(:single_occ_valid_values) do
-		 ##fields = []
-		 MD_FIELDS[:nyucore].keys.each do |field|
-		 ##	multiple = MD_FIELDS[:nyucore][field][:multiple]
-		  #  fields.push(field) if multiple == false
-		 #end
-    #end
-
+	let(:single_source) { MdFields.process_md_fields(ns:source, multiple: false) }
+	let(:multiple_source) { MdFields.process_md_fields(ns:source, multiple: true) }
+	let(:single_all) { MdFields.process_md_fields(multiple: true) }
+	let(:dummy_class) { Class.new { include MdFields } }
+		#Class.new do
+			#include MdFields
+		#end
+	#}
 	describe 'process_md_fields' do
 		it { MdFields.should respond_to :process_md_fields }
 
@@ -31,11 +29,16 @@ describe MdFields do
 
 		it 'returns an array, if passing valid values for namespace and occurrence' do	    
 		    expect(single_source).to be_an(Array)
-		    #single_source.should =~ single_occ_valid_values
 		end
-
-		
+  	
+  	    context 'use of process_md_fields in an instance of a class' do
+  	       subject { dummy_class.new }
+  	       it { subject.should be_an_instance_of(dummy_class) }
+  	       it { should respond_to(:process_md_fields) }
+  	    end
 	end
+
+	
     
 	
 	 
