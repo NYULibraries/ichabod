@@ -5,13 +5,8 @@ describe MdFields do
 	let(:source) { 'nyucore' }
 	let(:all) { MdFields.process_md_fields }
 	let(:single_source) { MdFields.process_md_fields(ns:source, multiple: false) }
-	let(:multiple_source) { MdFields.process_md_fields(ns:source, multiple: true) }
-	let(:single_all) { MdFields.process_md_fields(multiple: true) }
 	let(:dummy_class) { Class.new { include MdFields } }
-		#Class.new do
-			#include MdFields
-		#end
-	#}
+	
 	describe 'process_md_fields' do
 		it { MdFields.should respond_to :process_md_fields }
 
@@ -36,10 +31,5 @@ describe MdFields do
   	       it { subject.should be_an_instance_of(dummy_class) }
   	       it { should respond_to(:process_md_fields) }
   	    end
-	end
-
-	
-    
-	
-	 
+	end	 
 end 
