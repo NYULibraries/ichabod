@@ -1,11 +1,11 @@
 class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
-   include MdFields
+   include MetadataFields
 
  
   NYUCORE_FIELDS = {}
-  NYUCORE_FIELDS[:single] = MdFields.process_md_fields(ns: 'nyucore', multiple: false)
-  NYUCORE_FIELDS[:multiple] = MdFields.process_md_fields(ns:'nyucore', multiple: true)
+  NYUCORE_FIELDS[:single] = MetadataFields.process_metadata_fields(ns: 'nyucore', multiple: false)
+  NYUCORE_FIELDS[:multiple] = MetadataFields.process_metadata_fields(ns:'nyucore', multiple: true)
   singles = []
   multiples = []
   # have to do this stupid hack
@@ -22,8 +22,8 @@ class Nyucore < ActiveFedora::Base
   # when we determine test strategy
   sources = ['ichabod', 'dcterms']
   sources.each { |ns|
-    singles += MdFields.process_md_fields(ns: ns, multiple: false)
-    multiples += MdFields.process_md_fields(ns: ns, multiple: true)
+    singles += MetadataFields.process_metadata_fields(ns: ns, multiple: false)
+    multiples += MetadataFields.process_metadata_fields(ns: ns, multiple: true)
   }
 
   EXTRA_SINGLES = singles
