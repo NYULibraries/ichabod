@@ -71,17 +71,17 @@ describe CatalogController do
         end
       end
 
-      describe "'available' show field" do
-        let(:field) { blacklight_show_field('desc_metadata__available_tesim') }
+      describe "'addinfolink' show field" do
+        let(:field) { blacklight_show_field('desc_metadata__addinfolink_tesim') }
 
         it "should have correct helper method" do
           expect(field.helper_method).to eq(:render_external_links)
         end
         it "should have correct label" do
-          expect(field.label).to eq('Online Resource')
+          expect(field.label).to eq('Additional Information')
         end
         it "should have correct text" do
-          expect(field.text).to eq('resource_text_display')
+          expect(field.text).to eq('desc_metadata__addinfotext_tesim')
         end
       end
     end
