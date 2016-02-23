@@ -70,6 +70,9 @@ describe CatalogController do
     @controller.instance_variable_get("@response")
   end
 
+  def blacklight_configuration
+    @controller.instance_variable_get('@blacklight_config')
+  end
   def response_qf
     assigns_response["responseHeader"]["params"]["qf"]
   end
