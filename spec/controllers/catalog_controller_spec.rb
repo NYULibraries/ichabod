@@ -57,6 +57,14 @@ describe CatalogController do
         expect(blacklight_configuration.show_fields.keys).to eq(expected_show_fields_order)
       end
 
+      describe "'type' facet field" do
+        let(:field) { blacklight_facet_field('desc_metadata__type_sim') }
+
+        it "should have correct label" do
+          expect(field.label).to eq('Format')
+        end
+      end
+
       describe "'available' index field" do
         let(:field) { blacklight_index_field('desc_metadata__available_tesim') }
 
@@ -114,6 +122,10 @@ describe CatalogController do
 
   def blacklight_configuration
     @controller.instance_variable_get('@blacklight_config')
+  end
+
+  def blacklight_facet_field(field_name)
+    blacklight_configuration.facet_fields[field_name]
   end
 
   def blacklight_index_field(field_name)
