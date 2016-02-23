@@ -44,16 +44,19 @@ describe CatalogController do
       end
     end
 
-    it "should generate a Blacklight configuration with facet fields in the correct order" do
-      expect(blacklight_configuration.facet_fields.keys).to eq(expected_facet_fields_order)
-    end
+    describe "Blacklight configuration" do
+      it "should have facet fields in the correct order" do
+        expect(blacklight_configuration.facet_fields.keys).to eq(expected_facet_fields_order)
+      end
 
-    it "should generate a Blacklight configuration with index fields (search result item fields) in the correct order" do
-      expect(blacklight_configuration.index_fields.keys).to eq(expected_index_fields_order)
-    end
+      it "should have index fields (search result item fields) in the correct order" do
+        expect(blacklight_configuration.index_fields.keys).to eq(expected_index_fields_order)
+      end
 
-    it "should generate a Blacklight configuration with show fields (canonical item view fields) in the correct order" do
-      expect(blacklight_configuration.show_fields.keys).to eq(expected_show_fields_order)
+      it "should have show fields (canonical item view fields) in the correct order" do
+        expect(blacklight_configuration.show_fields.keys).to eq(expected_show_fields_order)
+      end
+
     end
   end
 
