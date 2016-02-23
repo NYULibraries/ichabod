@@ -23,6 +23,18 @@ describe CatalogController do
     it "should contain the collection field in the response" do
       expect(response_facets).to include("collection_sim")
     end
+
+    it "should generate a Blacklight configuration with facet fields in the correct order" do
+      expect(blacklight_configuration.facet_fields.keys).to eq(expected_facet_fields_order)
+    end
+
+    it "should generate a Blacklight configuration with index fields (search result item fields) in the correct order" do
+      expect(blacklight_configuration.index_fields.keys).to eq(expected_index_fields_order)
+    end
+
+    it "should generate a Blacklight configuration with show fields (canonical item view fields) in the correct order" do
+      expect(blacklight_configuration.show_fields.keys).to eq(expected_show_fields_order)
+    end
   end
 
   # Convenience
