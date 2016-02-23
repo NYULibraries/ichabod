@@ -71,6 +71,19 @@ describe CatalogController do
         end
       end
 
+      describe "'available' show field" do
+        let(:field) { blacklight_show_field('desc_metadata__available_tesim') }
+
+        it "should have correct helper method" do
+          expect(field.helper_method).to eq(:render_external_links)
+        end
+        it "should have correct label" do
+          expect(field.label).to eq('Online Resource')
+        end
+        it "should have correct text" do
+          expect(field.text).to eq('resource_text_display')
+        end
+      end
     end
   end
 
@@ -105,6 +118,10 @@ describe CatalogController do
 
   def blacklight_index_field(field_name)
     blacklight_configuration.index_fields[field_name]
+  end
+
+  def blacklight_show_field(field_name)
+    blacklight_configuration.show_fields[field_name]
   end
 
   def expected_facet_fields_order
