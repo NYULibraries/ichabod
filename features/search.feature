@@ -72,13 +72,13 @@ Feature: Perform a basic search
     When I search on the phrase "March 1911"
     Then I should see search results
 
-  @vcr 
+  @vcr
   Scenario: Search by ISBN
     Given I am on the default search page
     When I search on the phrase "9780814706404"
     Then I should see search results
 
-  @vcr 
+  @vcr
   Scenario: Search for NYU Press
     Given I am on the default search page
     When I limit my results to "NYU Press Open Access Books" under the "Collection" category
@@ -92,5 +92,5 @@ Feature: Perform a basic search
 
   Scenario: Search for David Wojnarowicz Papers records title
     Given I am on the default search page
-    When I search on the phrase "Human Head"
+    When I search on the phrase "globe"
     Then I should see search results
