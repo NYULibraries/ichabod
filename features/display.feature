@@ -27,6 +27,7 @@ Feature: Display tests for various datasets
     When I navigate to details display of the first result
     Then I should see the value "Gail R. Benjamin" in the "Creator:" field
 
+  @vcr
   Scenario: Display "Repository" field in the details display
     Given I limit my search to "David Wojnarowicz Papers" under the "Collection" category
     When I navigate to details display of the first result
