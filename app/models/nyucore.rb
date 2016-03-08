@@ -2,36 +2,11 @@ class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
    include MetadataFields
 
- 
-  NYUCORE_FIELDS = {}
-  NYUCORE_FIELDS[:single] = MetadataFields.process_metadata_fields(ns: 'nyucore', multiple: false)
-  NYUCORE_FIELDS[:multiple] = MetadataFields.process_metadata_fields(ns:'nyucore', multiple: true)
-  singles = []
-  multiples = []
-  # have to do this stupid hack
-  # I don't think separate arrays 
-  # for nyucore and extra fields
-  # are needed 
-  # Keeping it the way it is for now
-  # until we discuss further
-  # Because unraveling the tests 
-  # will be onerous
-  # Also to accomodate the tests
-  # have to assign the variables to the constants
-  # Should be changed to make it cleaner
-  # when we determine test strategy
-  sources = ['ichabod', 'dcterms']
-  sources.each { |ns|
-    singles += MetadataFields.process_metadata_fields(ns: ns, multiple: false)
-    multiples += MetadataFields.process_metadata_fields(ns: ns, multiple: true)
-  }
+  SINGLE_FIELDS = MetadataFields.process_metadata_fields(multiple: false)
+  MULTIPLE_FIELDS = MetadataFields.process_metadata_fields(multiple: true)
 
-  EXTRA_SINGLES = singles
-  EXTRA_MULTIPLES = multiples
-
-  SINGLE_FIELDS = NYUCORE_FIELDS[:single] + EXTRA_SINGLES
-  MULTIPLE_FIELDS = NYUCORE_FIELDS[:multiple] + EXTRA_MULTIPLES
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
+
   METADATA_STREAMS = ['source_metadata', 'native_metadata']
 
   # Add multiple metadata streams to the model and include the attributes we
