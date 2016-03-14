@@ -26,7 +26,7 @@ module MetadataFields
    end
    
    def get_source_info(ns:DEFAULT_NAMESPACE)
-     unless allowed_values_for_ns(ns)
+     unless allowed_values_for_ns
       raise ArgumentError.new("#{ns} should be one of these values: #{allowed_values_for_ns}")   
      end
      chk_key = ns.to_sym
@@ -47,9 +47,9 @@ module MetadataFields
    end
 
    def get_metadata_source_info(ns)
-     ns = METADATA_FIELDS[ns][:info][:namespace]
+     namespace = METADATA_FIELDS[ns][:info][:namespace]
      uri = METADATA_FIELDS[ns][:info][:uri]
-     info = { ns: ns, uri: uri }
+     info = { namespace: namespace, uri: uri }
    end
    
    # output all fields regardless of namespace
