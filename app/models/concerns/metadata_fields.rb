@@ -25,6 +25,8 @@ module MetadataFields
    	  fields
    end
    
+   # get namespace and uri for
+   # metadata namespace
    def get_source_info(ns:DEFAULT_NAMESPACE)
      unless allowed_values_for_ns
       raise ArgumentError.new("#{ns} should be one of these values: #{allowed_values_for_ns}")   
@@ -38,6 +40,8 @@ module MetadataFields
        
    end
     
+   # get namespace and uri for all 
+   # metadata sources 
    def get_all_sources_info
     source_info = {}
     METADATA_FIELDS.keys.each { |ns|

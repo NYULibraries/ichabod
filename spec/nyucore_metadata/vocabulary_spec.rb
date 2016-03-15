@@ -9,7 +9,7 @@ module NyucoreMetadata
     describe Vocabulary::TERMS do
       subject { Vocabulary::TERMS }
       it { should be_an Array }
-      it { should eq [:available, :edition, :series, :version, :citation, :restrictions] }
+      it { should =~ [:available, :edition, :series, :version, :citation, :restrictions] }
     end
 
     # Some metaprogramming to check that the terms are set appropriately
