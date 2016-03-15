@@ -7,7 +7,7 @@ module MetadataFields
    DEFAULT_NAMESPACE = NAMESPACE_ALL
    DEFAULT_MULTIPLE  = MULTIPLE_ALL
 
-
+   # get metadata fields
    def process_metadata_fields(ns:DEFAULT_NAMESPACE, multiple: DEFAULT_MULTIPLE)
    	  unless allowed_values(ns,multiple)
    	  	raise ArgumentError.new(
@@ -28,7 +28,7 @@ module MetadataFields
    # get namespace and uri for
    # metadata namespace
    def get_source_info(ns:DEFAULT_NAMESPACE)
-     unless allowed_values_for_ns
+     unless allowed_values_for_ns.include?(ns)
       raise ArgumentError.new("#{ns} should be one of these values: #{allowed_values_for_ns}")   
      end
      chk_key = ns.to_sym
@@ -50,6 +50,7 @@ module MetadataFields
     source_info
    end
 
+   # get source info by namespace
    def get_metadata_source_info(ns)
      namespace = METADATA_FIELDS[ns][:info][:namespace]
      uri = METADATA_FIELDS[ns][:info][:uri]

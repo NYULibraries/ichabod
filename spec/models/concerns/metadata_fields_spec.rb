@@ -5,7 +5,10 @@ describe MetadataFields do
 	let(:source) { 'nyucore' }
 	let(:all) { MetadataFields.process_metadata_fields }
 	let(:single_source) { MetadataFields.process_metadata_fields(ns:source, multiple: false) }
+	let(:single_source_info) { MetadataFields.get_source_info(ns:source) }
+	let(:all_sources_info) { MetadataFields.get_source_info }
 	let(:dummy_class) { Class.new { include MetadataFields } }
+
 	
 	describe 'process_metadata_fields' do
 		it { MetadataFields.should respond_to :process_metadata_fields }
@@ -30,5 +33,26 @@ describe MetadataFields do
   	       subject { dummy_class.new }
   	       it { should respond_to(:process_metadata_fields) }
   	    end
-	end	 
+	end	
+
+	describe 'get_source_info' do
+	    it { MetadataFields.should respond_to :get_source_info }
+
+		it 'raises an error if an invalid namespace value is passed to the method' do 
+		    expect { MetadataFields.get_source_info(ns: invalid_value) }.to raise_error
+		end
+
+		it 'returns a hash if no arguments are sent' do 
+			expect(all_sources_info).to be_a_kind_of(Hash)
+		end
+
+		it 'returns a hash, if passing a valid value for namespace' do	    
+		    expect(single_source_info).to be_an(Hash)
+		end
+  	
+  	    context 'use of process_metadata_fields in an instance of a class' do
+  	       subject { dummy_class.new }
+  	       it { should respond_to(:get_source_info) }
+  	    end
+  	end
 end 
