@@ -28,7 +28,7 @@ module Ichabod
             prefix:     resource_set.prefix,
             identifier: entity['id'],
             date:       entity['unit_date_ssm'],
-            available:  gen_url(entity['repository_ssi'],entity['ead_ssi'],entity['parent_ssi'],entity['ref_ssi']),
+            available:  gen_url(entity['repository_ssi'],entity['ead_ssi'],entity['parent_ssm'][0],entity['ref_ssi']),
             title:      entity['unittitle_ssm'],
             type:       entity['format_ssm'],
             location:   entity['location_ssm'],
@@ -40,8 +40,8 @@ module Ichabod
         end
 
 
-        def gen_url(repo,ead,parent_ref,item_ref)
-          FINDINGAIDS_URL + "#{repo}/#{ead}/dsc#{parent_ref}.html##{item_ref}"
+        def gen_url(repo,ead,series_ref,item_ref)
+          FINDINGAIDS_URL + "#{repo}/#{ead}/dsc#{series_ref}.html##{item_ref}"
         end
 
         # mapping value from FAB to the full form listed in the yml file
