@@ -14,6 +14,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: true
+          search_order: 1
+          display_in_full: true
+          full_order: 1
+          display_in_facet: false
         identifier:
           data_type: text
           facetable: false
@@ -22,8 +27,10 @@ terms:
           multiple: false
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: false
         # Optional Fields
-
         contributor:
           data_type: text
           facetable: true
@@ -32,6 +39,9 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: false
         creator:
           data_type: text
           facetable: true
@@ -40,6 +50,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 2
+          display_in_facet: true
+          facet_order: 2
         date:
           data_type: date
           facetable: false
@@ -48,6 +63,9 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: false
         description:
           data_type: text
           facetable: false
@@ -56,6 +74,10 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 8
+          display_in_facet: false
         format:
           data_type: text
           facetable: true
@@ -64,6 +86,12 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: true
+          search_order: 2
+          display_in_full: true
+          full_order: 3
+          display_in_facet: true
+          facet_order: 1
         language:
           data_type: text
           facetable: true
@@ -72,6 +100,12 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: true
+          search_order: 3
+          display_in_full: true
+          full_order: 4
+          display_in_facet: true
+          facet_order: 4
         publisher:
           data_type: text
           facetable: false
@@ -80,6 +114,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: true
+          search_order: 4
+          display_in_full: true
+          full_order: 6
+          display_in_facet: false
         relation:
           data_type: text
           facetable: false
@@ -88,6 +127,10 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 13
+          display_in_facet: false
         rights:
           data_type: text
           facetable: false
@@ -96,14 +139,22 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 18
+          display_in_facet: false
         subject:
           data_type: text
           facetable: true
-          indexed: true
+          indexed: true 
           mandatory: false
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: true
+          facet_order: 3
         type:
           data_type: text
           facetable: false
@@ -112,6 +163,10 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 7
+          display_in_facet: false
 
     ichabod:
       info:
@@ -127,6 +182,10 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 17
+          display_in_facet: false
         addinfotext:
           data_type: text
           facetable: false
@@ -135,6 +194,9 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: false
         data_provider:
           data_type: text
           facetable: false
@@ -143,6 +205,10 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 16
+          display_in_facet: false
         discoverable:
           data_type: text
           facetable: false
@@ -151,6 +217,9 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: false
         geometry:
           data_type: text
           facetable: false
@@ -159,6 +228,9 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: false
         isbn:
           data_type: text
           facetable: false
@@ -167,6 +239,10 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 5
+          display_in_facet: false
         location:
           data_type: text
           facetable: false
@@ -175,6 +251,10 @@ terms:
           multiple: true
           searchable: false
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 14
+          display_in_facet: false
         repo:
           data_type: text
           facetable: false
@@ -183,6 +263,10 @@ terms:
           multiple: false
           searchable: false
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 15
+          display_in_facet: false
         resource_set:
           data_type: text
           facetable: false
@@ -191,6 +275,9 @@ terms:
           multiple: false
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: false
         subject_spatial:
           data_type: text
           facetable: false
@@ -199,6 +286,9 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: false
         subject_temporal:
           data_type: text
           facetable: false
@@ -207,6 +297,9 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: false
 
     nyucore:
       info:
@@ -224,6 +317,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: true
+          search_order: 6
+          display_in_full: true
+          full_order: 12
+          display_in_facet: false
         citation:
           data_type: text
           facetable: false
@@ -232,6 +330,9 @@ terms:
           multiple: true
           searchable: false
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: false
         edition:
           data_type: text
           facetable: false
@@ -240,6 +341,9 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: false
+          display_in_facet: false
         restrictions:
           data_type: text
           facetable: false
@@ -248,6 +352,11 @@ terms:
           multiple: false
           searchable: false
           stored: true
+          display_in_search: true
+          search_order: 5
+          display_in_full: true
+          full_order: 11
+          display_in_facet: false
         series:
           data_type: text
           facetable: false
@@ -256,6 +365,10 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 9
+          display_in_facet: false
         version:
           data_type: text
           facetable: false
@@ -264,3 +377,7 @@ terms:
           multiple: true
           searchable: false
           stored: true
+          display_in_search: false
+          display_in_full: true
+          full_order: 10
+          display_in_facet: false
