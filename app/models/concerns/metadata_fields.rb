@@ -21,7 +21,6 @@ module MetadataFields
    	  # adding business logic here that handles "section" as well?
       # Might be clearner to have separate method?
       chk_key = ns.to_sym
-      puts chk_key
       fields = []
       ordered_fields = []
    	  if METADATA_FIELDS.has_key?(chk_key)

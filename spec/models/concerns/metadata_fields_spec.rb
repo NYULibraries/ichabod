@@ -3,8 +3,10 @@ require 'spec_helper'
 describe MetadataFields do
 	let(:invalid_value) { 'foo' }
 	let(:source) { 'nyucore' }
+	let(:section) { 'facet'}
 	let(:all) { MetadataFields.process_metadata_fields }
 	let(:single_source) { MetadataFields.process_metadata_fields(ns:source, multiple: false) }
+	let(:facet_section) { MetadataFields.process_metadata_fields(section:section) }
 	let(:single_source_info) { MetadataFields.get_source_info(ns:source) }
 	let(:all_sources_info) { MetadataFields.get_source_info }
 	let(:dummy_class) { Class.new { include MetadataFields } }
@@ -19,6 +21,10 @@ describe MetadataFields do
 
 		it 'raises an error if an invalid occurrence value is passed to the method' do 
 		    expect { MetadataFields.process_metadata_fields(multiple: invalid_value) }.to raise_error
+		end
+
+		it 'raises an error if an invalid occurrence value is passed to the method' do 
+		    expect { MetadataFields.process_metadata_fields(section: invalid_value) }.to raise_error
 		end
 
 		it 'returns an array if no arguments are sent' do 
