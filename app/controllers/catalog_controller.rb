@@ -43,9 +43,6 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
-    
-    #for field in MetadataFields.process_metadata_fields():
-    #    if M
 
     FACET_FIELDS = MetadataFields.process_metadata_fields(section: 'facet')
     FACET_FIELDS.each do |field|
