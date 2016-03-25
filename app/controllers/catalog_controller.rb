@@ -43,6 +43,12 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
+    
+    #for field in MetadataFields.process_metadata_fields():
+    #    if M
+
+    FACET_FIELDS = MetadataFields.process_metadata_fields(section: 'facet')
+binding.pry()
     config.add_facet_field solr_name('desc_metadata__type', :facetable), :label => 'Format'
     config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
     config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
