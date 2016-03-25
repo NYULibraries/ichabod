@@ -19,6 +19,7 @@ terms:
           display_in_full: true
           full_order: 1
           display_in_facet: false
+          display_label: "Title"
         identifier:
           data_type: text
           facetable: false
@@ -55,6 +56,7 @@ terms:
           full_order: 2
           display_in_facet: true
           facet_order: 2
+          display_label: "Creator"
         date:
           data_type: date
           facetable: false
@@ -78,6 +80,7 @@ terms:
           display_in_full: true
           full_order: 8
           display_in_facet: false
+          display_label: "Description"
         format:
           data_type: text
           facetable: true
@@ -90,8 +93,8 @@ terms:
           search_order: 2
           display_in_full: true
           full_order: 3
-          display_in_facet: true
-          facet_order: 1
+          display_in_facet: false
+          display_label: "Format"
         language:
           data_type: text
           facetable: true
@@ -106,6 +109,7 @@ terms:
           full_order: 4
           display_in_facet: true
           facet_order: 4
+          display_label: "Language"
         publisher:
           data_type: text
           facetable: false
@@ -119,6 +123,7 @@ terms:
           display_in_full: true
           full_order: 6
           display_in_facet: false
+          display_label: "Publisher"
         relation:
           data_type: text
           facetable: false
@@ -131,6 +136,7 @@ terms:
           display_in_full: true
           full_order: 13
           display_in_facet: false
+          display_label: "Relation"
         rights:
           data_type: text
           facetable: false
@@ -143,6 +149,7 @@ terms:
           display_in_full: true
           full_order: 18
           display_in_facet: false
+          display_label: "Rights"
         subject:
           data_type: text
           facetable: true
@@ -155,6 +162,7 @@ terms:
           display_in_full: false
           display_in_facet: true
           facet_order: 3
+          display_label: "Subject"
         type:
           data_type: text
           facetable: false
@@ -166,7 +174,9 @@ terms:
           display_in_search: false
           display_in_full: true
           full_order: 7
-          display_in_facet: false
+          display_in_facet: true
+          facet_order: 1
+          display_label: "Format"
 
     ichabod:
       info:
@@ -186,6 +196,7 @@ terms:
           display_in_full: true
           full_order: 17
           display_in_facet: false
+          display_label: "Additional Information"
         addinfotext:
           data_type: text
           facetable: false
@@ -209,6 +220,7 @@ terms:
           display_in_full: true
           full_order: 16
           display_in_facet: false
+          display_label: "Data Provider"
         discoverable:
           data_type: text
           facetable: false
@@ -243,6 +255,7 @@ terms:
           display_in_full: true
           full_order: 5
           display_in_facet: false
+          display_label: "ISBN"
         location:
           data_type: text
           facetable: false
@@ -255,6 +268,7 @@ terms:
           display_in_full: true
           full_order: 14
           display_in_facet: false
+          display_label: "Location"
         repo:
           data_type: text
           facetable: false
@@ -267,6 +281,7 @@ terms:
           display_in_full: true
           full_order: 15
           display_in_facet: false
+          display_label: "Repository"
         resource_set:
           data_type: text
           facetable: false
@@ -322,6 +337,7 @@ terms:
           display_in_full: true
           full_order: 12
           display_in_facet: false
+          display_label: "Online Resource"
         citation:
           data_type: text
           facetable: false
@@ -357,6 +373,7 @@ terms:
           display_in_full: true
           full_order: 11
           display_in_facet: false
+          display_label: "Access Restrictions"
         series:
           data_type: text
           facetable: false
@@ -369,6 +386,7 @@ terms:
           display_in_full: true
           full_order: 9
           display_in_facet: false
+          display_label: "Series"
         version:
           data_type: text
           facetable: false
@@ -381,3 +399,4 @@ terms:
           display_in_full: true
           full_order: 10
           display_in_facet: false
+          display_label: "Version"

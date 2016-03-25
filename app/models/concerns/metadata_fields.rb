@@ -23,7 +23,7 @@ module MetadataFields
       chk_key = ns.to_sym
       puts chk_key
       fields = []
-      ordered_fields = {}
+      ordered_fields = []
    	  if METADATA_FIELDS.has_key?(chk_key)
    	  	add_fields_by_ns(multiple,fields,chk_key)
       elsif section != "none"
@@ -32,7 +32,7 @@ module MetadataFields
    	  	add_all_fields(multiple,fields)
       end
       if ordered_fields.length > 0
-        fields = Hash[ordered_fields.sort_by{|k,v| v}].keys
+        fields = ordered_fields.sort_by { |record| record[:order] }
    	  end
       fields
    end
@@ -109,7 +109,9 @@ module MetadataFields
        display_in_section = "display_in_" + section
        section_order = section + "_order"
        if metadata_fields[field][display_in_section.to_sym] == true
-          ordered_fields[field] = metadata_fields[field][section_order]
+          ordered_fields.push({ :field => field, 
+                                :order => metadata_fields[field][section_order.to_sym], 
+                                :label => metadata_fields[field][:display_label] })
        end
      }
    end

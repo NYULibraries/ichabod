@@ -48,11 +48,10 @@ class CatalogController < ApplicationController
     #    if M
 
     FACET_FIELDS = MetadataFields.process_metadata_fields(section: 'facet')
-binding.pry()
-    config.add_facet_field solr_name('desc_metadata__type', :facetable), :label => 'Format'
-    config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
-    config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
-    config.add_facet_field solr_name('desc_metadata__language', :facetable), :label => 'Language'
+    FACET_FIELDS.each do |field|
+        config.add_facet_field solr_name("desc_metadata__#{field[:field]}", :facetable), :label => field[:label] 
+    end    
+    ## This is still here because it's not actually defined in Fedora or in Nyucore
     config.add_facet_field solr_name('collection', :facetable), :label => 'Collection'
 
 
