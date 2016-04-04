@@ -52,9 +52,7 @@ module MetadataFields
 
 	# get source info by namespace
 	def get_metadata_source_info(ns)
-		namespace = METADATA_FIELDS[ns][:info][:namespace]
-		uri = METADATA_FIELDS[ns][:info][:uri]
-		info = { namespace: namespace, uri: uri }
+		METADATA_FIELDS[ns][:info]
 	end
 
 	# output all fields regardless of namespace

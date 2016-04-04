@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 def read_yaml_file
-	YAML.load_file(File.join(Rails.root, "config", "metadata_fields.yml"))["terms"]["vocabulary"].deep_symbolize_keys
+	YAML.load_file(File.join(Rails.root, "spec/fixtures", "fixture_metadata_fields.yml"))["terms"]["vocabulary"].deep_symbolize_keys
 end
 
 def get_fields_all_sources
@@ -42,9 +42,7 @@ end
 def get_info_by_source(ns)
 	contents = read_yaml_file
 	ns = ns.to_sym
-	namespace = contents[ns][:info][:namespace]
-	uri = contents[ns][:info][:uri]
-	info = { namespace: namespace, uri: uri }
+	info = contents[ns][:info]
 end
 
 
@@ -65,7 +63,6 @@ describe MetadataFields do
 		it 'raises an error if an invalid occurrence value is passed to the method' do
 			expect { MetadataFields.process_metadata_fields(multiple: invalid_value) }.to raise_error
 		end
-
 
 		context 'check method returns based on various valid parameters' do
 			sources = read_yaml_file
@@ -101,7 +98,6 @@ describe MetadataFields do
 				end
 			}
 		end
-
 		context 'use of process_metadata_fields in an instance of a class' do
 			subject { dummy_class.new }
 			it { should respond_to(:process_metadata_fields) }
@@ -120,10 +116,21 @@ describe MetadataFields do
 			it 'returns a hash if no arguments are sent' do
 				expect(all_sources_info).to be_a_kind_of(Hash)
 			end
-			it 'should return all source information for all sources if no source is specified' do
+			context 'return the correct information when no source is specified' do
 				all_info = get_all_sources_info
-				expect(all_sources_info).to include(all_info)
+				it 'should return all sources' do
+					all_info_keys = all_info.keys
+					all_sources_info_keys = all_sources_info.keys
+					expect(all_sources_info_keys).to match_array(all_info_keys)
+				end
+
+				it 'should return the corresponding information hashes' do
+					all_info.each_pair { |source, info_hash|
+						expect(all_sources_info[source]).to match_ichabod_source_uri_hash(info_hash)
+					}
+				end
 			end
+
 			sources.keys.each { |ns|
 				ns = ns.to_s
 				it "returns a hash, if passing a valid value for namespace: #{ns}" do
