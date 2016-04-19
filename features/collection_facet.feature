@@ -42,6 +42,11 @@ Feature: Collection facet
     Then I should see search results
 
 
+  Scenario: Filter by Indian Ocean Collection
+    Given I am on the default search page
+    When I filter my search to "Indian Ocean Collection" under the "Collection" category
+    Then I should see search results
+
   Scenario: Filter by Research Guides
     Given I am on the default search page
     When I filter my search to "Research Guides" under the "Collection" category
@@ -52,5 +57,4 @@ Feature: Collection facet
     Given I am on the default search page
     When I filter my search to "David Wojnarowicz Papers" under the "Collection" category
     Then I should see search results
-
 

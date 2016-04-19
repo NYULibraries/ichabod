@@ -13,6 +13,7 @@ class Nyucore < ActiveFedora::Base
       'Data Services' => ->(nyucore){ nyucore.resource_set == 'faculty_digital_archive_service_data' },
       'David Wojnarowicz Papers' => ->(nyucore){ nyucore.resource_set == 'woj' },
       'The Masses' => ->(nyucore){ nyucore.resource_set == 'masses' }
+      'Indian Ocean Postcards' => ->(nyucore){ nyucore.resource_set == 'indian_ocean_data' }
     }
 
     attr_reader :nyucore
