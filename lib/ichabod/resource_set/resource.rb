@@ -7,7 +7,7 @@ module Ichabod
 
       HANDLE_REGEXP = /^http:\/\/hdl\.handle\.net/
       URL_REGEXP = /^https?:\/\//
-      
+
       #module METADATA_FIELDS is in app/model/concerns
       NYUCORE_ATTRIBUTES = MetadataFields.process_metadata_fields
 

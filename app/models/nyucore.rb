@@ -1,12 +1,16 @@
 class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
   include MetadataFields
+  include ActiveFedora::Rdf
 
   SINGLE_FIELDS = MetadataFields.process_metadata_fields(multiple: false)
   MULTIPLE_FIELDS = MetadataFields.process_metadata_fields(multiple: true)
+
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
 
   METADATA_STREAMS = ['source_metadata', 'native_metadata']
+
+  belongs_to :collection, property: RDF::DC.isPartOf
 
   # Add multiple metadata streams to the model and include the attributes we
   # want on each stream. AcitveFedora::Base.has_attributes sets the attribute
