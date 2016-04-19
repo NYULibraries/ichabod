@@ -1,5 +1,7 @@
 class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
+  include ActiveFedora::Rdf
+
   NYUCORE_FIELDS = {
     :multiple => [:available, :citation, :title, :creator, :type, :publisher,
                   :description, :edition, :date, :format, :language, :relation,
@@ -12,6 +14,8 @@ class Nyucore < ActiveFedora::Base
   MULTIPLE_FIELDS = NYUCORE_FIELDS[:multiple] + EXTRA_MULTIPLES
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
   METADATA_STREAMS = ['source_metadata', 'native_metadata']
+
+  belongs_to :collection, property: RDF::DC.isPartOf
 
   # Add multiple metadata streams to the model and include the attributes we
   # want on each stream. AcitveFedora::Base.has_attributes sets the attribute

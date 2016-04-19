@@ -44,4 +44,6 @@ class Collection < ActiveFedora::Base
   has_attributes(*MULTIPLE_FIELDS, datastream: descriptive_metadata , multiple: true)
   has_metadata administrative_metadata, type: Ichabod::AdministrativeDatastream
   has_attributes(*ADMIN_FIELDS, datastream: administrative_metadata, multiple: false)
+
+  has_many :nyucores
 end
