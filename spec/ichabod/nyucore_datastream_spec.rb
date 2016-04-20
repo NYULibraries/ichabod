@@ -11,7 +11,7 @@ module Ichabod
         subject { terms[RDF::DC] }
         it { should be_an Array }
         it do
-          should eq [:identifier, :title, :creator, :contributor, :publisher,
+          should =~  [:identifier, :title, :creator, :contributor, :publisher,
             :type, :description, :date, :format, :language, :relation, :rights,
             :subject]
         end
@@ -20,14 +20,14 @@ module Ichabod
         subject { terms[NyucoreMetadata::Vocabulary] }
         it { should be_an Array }
         it do
-          should eq [:available, :edition, :series, :version, :citation, :restrictions]
+          should =~ [:available, :edition, :series, :version, :citation, :restrictions]
         end
       end
       describe 'Ichabod::Vocabulary' do
         subject { terms[Ichabod::Vocabulary] }
         it { should be_an Array }
         it do
-          should eq [:addinfolink, :addinfotext, :resource_set, :discoverable, :isbn, :geometry, :data_provider, :subject_spatial, :subject_temporal, :location, :repo]
+          should =~ [:addinfolink, :addinfotext, :resource_set, :discoverable, :isbn, :geometry, :data_provider, :subject_spatial, :subject_temporal, :location, :repo]
         end
       end
     end

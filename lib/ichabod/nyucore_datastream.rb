@@ -1,10 +1,10 @@
 module Ichabod
   class NyucoreDatastream < ActiveFedora::NtriplesRDFDatastream
-
+    include MetadataFields
+    # pulling in fields for source dcterms
+    dcterms = MetadataFields.process_metadata_fields(ns: 'dcterms')
     TERMS = {
-      RDF::DC => [:identifier, :title, :creator, :contributor, :publisher,
-        :type, :description, :date, :format, :language, :relation, :rights,
-        :subject],
+      RDF::DC => dcterms,
       NyucoreMetadata::Vocabulary => NyucoreMetadata::Vocabulary::TERMS,
       Ichabod::Vocabulary => Ichabod::Vocabulary::TERMS
     }

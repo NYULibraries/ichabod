@@ -1,22 +1,19 @@
 class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
-  NYUCORE_FIELDS = {
-    :multiple => [:available, :citation, :title, :creator, :type, :publisher,
-                  :description, :edition, :date, :format, :language, :relation,
-                  :rights, :subject, :series, :version],
-    :single => [:identifier, :restrictions]
-  }
-  EXTRA_SINGLES = [:resource_set, :repo]
-  EXTRA_MULTIPLES = [:addinfolink, :addinfotext, :isbn, :data_provider, :geometry, :subject_spatial, :subject_temporal, :location]
-  SINGLE_FIELDS = NYUCORE_FIELDS[:single] + EXTRA_SINGLES
-  MULTIPLE_FIELDS = NYUCORE_FIELDS[:multiple] + EXTRA_MULTIPLES
+   include MetadataFields
+
+  SINGLE_FIELDS = MetadataFields.process_metadata_fields(multiple: false)
+  MULTIPLE_FIELDS = MetadataFields.process_metadata_fields(multiple: true)
+
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
+
   METADATA_STREAMS = ['source_metadata', 'native_metadata']
 
   # Add multiple metadata streams to the model and include the attributes we
   # want on each stream. AcitveFedora::Base.has_attributes sets the attribute
   # readers and writers, which we explictly override below, but this gives us
   # our base.
+
   METADATA_STREAMS.each do |metadata_stream|
     has_metadata metadata_stream, type: Ichabod::NyucoreDatastream
     has_attributes(*SINGLE_FIELDS, datastream: metadata_stream, multiple: false)
