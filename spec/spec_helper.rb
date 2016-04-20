@@ -40,6 +40,7 @@ if Rails.env.test?
     Collection.create( { :title=>"The Real Rosie the Rivete", :discoverable=>'1'} )
     Collection.create( { :title=>"Spatial Data Repository", :discoverable=>'1'} )
     Collection.create( { :title=>"Voices of the Food Revolution", :discoverable=>'1'} )
+    Collection.create( { :title=>"David Wojnarowicz Papers", :discoverable=>'1'} )
     Collection.create( { :title=>"Test Title", :discoverable=>'1'} )
     Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
     Ichabod::DataLoader.new('faculty_digital_archive_ngo',File.join(Rails.root, 'ingest/test_ngo_fda.csv')).load
