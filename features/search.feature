@@ -90,20 +90,15 @@ Feature: Perform a basic search
     When I search on the phrase "Gallup GPSS"
     Then I should see search results
 
-<<<<<<< HEAD
   Scenario: Search for David Wojnarowicz Papers records title
     Given I am on the default search page
     When I search on the phrase "Human Head"
     Then I should see search results
 
-  Scenario: Search for The Indian Ocean Collection title
-    Given I am on the default search page
-=======
   @loggedin
   Scenario: Search for The Indian Ocean Collection title for authorized user
     Given I am logged in as "IO Cataloger"
     And I am on the default search page
->>>>>>> Fixed collection_facet
     When I search on the phrase "VII Battaglione Eritreo"
     Then I should see search results
 
