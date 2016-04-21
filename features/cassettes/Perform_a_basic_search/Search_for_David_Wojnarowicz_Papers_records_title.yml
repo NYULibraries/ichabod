@@ -1,0 +1,2320 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?fl=id&q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Collection%22%20AND%20administrative_metadata__discoverable_tesim:0&qt=standard&rows=1000&sort=system_create_dtsi%20asc&start=0&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Apr 2016 17:39:32 GMT
+      Etag:
+      - '"Njk2MDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'q'=>'_query_:"{!raw f=has_model_ssim}info:fedora/afmodel:Collection" AND administrative_metadata__discoverable_tesim:0','qt'=>'standard','fl'=>'id','start'=>'0','sort'=>'system_create_dtsi asc','rows'=>'1000','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897'}]}}
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1k8vx8xium936pnh1pan6vbi8;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:01.123Z</objCreateDate><objLastModDate>2016-04-21T17:39:29.429Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Aca2fcc2c-5ed6-42a2-9fab-7b8deb515897/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Aca2fcc2c-5ed6-42a2-9fab-7b8deb515897/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897/datastreams?format=xml&profiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=46j32ivhgh8v3xiegmwynrp;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+      Content-Length:
+      - '4604'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://localhost:8983/fedora-test/schema/listDatastreams.xsd" pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897"  baseURL="http://localhost:8983/fedora-test/"
+        ><datastreamProfile pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897"
+        dsID="DC" ><apim:dsLabel>Dublin Core Record for this object</apim:dsLabel><apim:dsVersionID>DC1.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.123Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>383</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897+DC+DC1.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897" dsID="RELS-EXT"
+        ><apim:dsLabel>Fedora Object-to-Object Relationship Metadata</apim:dsLabel><apim:dsVersionID>RELS-EXT.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.168Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/rdf+xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>327</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897+RELS-EXT+RELS-EXT.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897" dsID="descriptive_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>descriptive_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.210Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>129</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897+descriptive_metadata+descriptive_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897" dsID="administrative_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>administrative_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.242Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>109</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897+administrative_metadata+administrative_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897" dsID="rightsMetadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>rightsMetadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:29.429Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>578</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897+rightsMetadata+rightsMetadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1apvzsm51jwlz8856a2zysjm2;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+    body:
+      encoding: UTF-8
+      string: |2
+
+        <rdf:RDF xmlns:ns0="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897">
+            <ns0:hasModel rdf:resource="info:fedora/afmodel:Collection"></ns0:hasModel>
+          </rdf:Description>
+        </rdf:RDF>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Apr 2016 17:39:32 GMT
+      Etag:
+      - '"Njk2MDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'q'=>'{!raw f=id v=$id}','echoParams'=>'all','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','rows'=>'1','facet'=>'off','qt'=>'permissions','id'=>'ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897','edit_access_group_ssim'=>['admin_group','io_cataloger']}]}}
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?facet.field=desc_metadata__isPartOf_sim&fq=-desc_metadata__isPartOf_sim:ichabodcollection%5C:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim%20desc_metadata__subject_spatial_tesim%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__subject_temporal_tesim%20desc_metadata__isbn_tesim%20desc_metadata__genre_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Apr 2016 17:39:32 GMT
+      Etag:
+      - '"Njk2MDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'facet.field'=>['desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim','desc_metadata__isPartOf_sim'],'qt'=>'search','qf'=>'desc_metadata__title_tesim
+        desc_metadata__author_tesim desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim desc_metadata__subject_spatial_tesim \n                desc_metadata__subject_temporal_tesim
+        desc_metadata__isbn_tesim desc_metadata__genre_tesim','fq'=>'-desc_metadata__isPartOf_sim:ichabodcollection\\\\:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897','sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','rows'=>'10','wt'=>'ruby'}},'response'=>{'numFound'=>65,'start'=>0,'maxScore'=>1.0,'docs'=>[{'system_create_dtsi'=>'2016-04-21T17:39:08Z','system_modified_dtsi'=>'2016-04-21T17:39:09Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'fda:hdl-handle-net-2451-33613','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2016-04-21T17:39:08Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":299,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-33613+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:08Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":579,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-33613+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:09Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":4942,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-33613+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"native_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:09Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":87,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-33613+native_metadata+native_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2016-04-21T17:39:08Z\",\"objLastModDate\":\"2016-04-21T17:39:08Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-33613/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-33613/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group','fda_cataloger'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['http://humsafar.org/ResDown/RESEARCH%20Building%20evidence%20around%20adolescent%20same-sex%20behavior%20and%20vulnerability%20to%20HIV%20-%202013.pdf','http://hdl.handle.net/2451/33613'],'desc_metadata__title_tesim'=>['Building
+        evidence around adolescent same-sex behavior and vulnerability to HIV: report
+        prepared [by] The Humsafar Trust'],'desc_metadata__creator_tesim'=>['Hamsafar
+        Trust'],'desc_metadata__publisher_tesim'=>['Humsafar Trust','Mumbai'],'desc_metadata__description_tesim'=>['This
+        report is one of the first in-depth analyses of same-sex behaviour among adolescents
+        in India, providing the field research and background for future directions
+        for research and interventions. Researchers found that MSM (Men who have Sex
+        with Men) who start having sex early have different identities and behaviours
+        compared with those who start later -- potentially indicating a greater sense
+        of sexual desire, orientation, and identity. Furthermore, they are also subjected
+        to \\'name calling\\' and other \\'discriminatory behaviour\\' in the\nsociety.
+        They also found that younger MSM had low levels of awareness about HIV but
+        had high risk behaviours compared with older MSM. Lack of adequate documentation
+        of same-sex behaviour among adolescents often is a deterrent in designing
+        appropriate targeted interventions for this\npopulation. Thus, there is an
+        urgent need to pursue research and develop targeted interventions for same-sex
+        desiring adolescents in India, with an aim to reduce HIV transmission in this
+        population.'],'desc_metadata__date_tesim'=>['2014-05-08T17:49:33Z','2013'],'desc_metadata__relation_tesim'=>['http://archive.nyu.edu/bitstream/2451/33613/2/Building
+        evidence around adolescent same-sex behavior.pdf'],'desc_metadata__rights_tesim'=>['NYU
+        Libraries is providing access to these materials as a service to our scholarly
+        community. We do not claim the copyright in these materials, nor can we give
+        permission for their re-use. If you would like to request that we take down
+        any of this material, please write to archive.help@nyu.edu with the following
+        information: Provide the URL of the material that is the basis of your inquiry;
+        Identify the material you have rights to; Provide your contact information,
+        including name, address, telephone number, and e-mail address; Provide a statement
+        of your good-faith belief that the material you identified is infringing of
+        the material you have rights to.'],'desc_metadata__subject_tesim'=>['UNICEF','Sexually
+        transmitted diseases','LGBT studies','Sexual orientation','AIDS','Public health','India','Mumbai','Demography','Health
+        statistics','Sexual identity','Social conditions','Urban studies'],'desc_metadata__isPartOf_tesim'=>['ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2'],'desc_metadata__available_tesim'=>['http://hdl.handle.net/2451/33613'],'desc_metadata__citation_tesim'=>['http://humsafar.org/ResDown/RESEARCH%20Building%20evidence%20around%20adolescent%20same-sex%20behavior%20and%20vulnerability%20to%20HIV%20-%202013.pdf'],'desc_metadata__resource_set_tesim'=>['faculty_digital_archive_ngo'],'desc_metadata__type_tesim'=>['Report'],'timestamp'=>'2016-04-21T17:39:09.234Z','score'=>1.0},{'system_create_dtsi'=>'2016-04-21T17:39:07Z','system_modified_dtsi'=>'2016-04-21T17:39:08Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'fda:hdl-handle-net-2451-33612','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2016-04-21T17:39:07Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":299,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-33612+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:07Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":579,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-33612+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:08Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":3861,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-33612+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"native_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:08Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":87,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"fda:hdl-handle-net-2451-33612+native_metadata+native_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2016-04-21T17:39:07Z\",\"objLastModDate\":\"2016-04-21T17:39:07Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-33612/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/fda%3Ahdl-handle-net-2451-33612/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group','fda_cataloger'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['http://www.undp.org/content/dam/india/docs/hijras_transgender_in_india_hiv_human_rights_and_social_exclusion.pdf','http://hdl.handle.net/2451/33612'],'desc_metadata__title_tesim'=>['Hijras/transgender
+        women in India: HIV, human rights and social exclusion'],'desc_metadata__creator_tesim'=>['Chakrapani,
+        Venkatesan','United Nations Development Programme (UNDP), India'],'desc_metadata__publisher_tesim'=>['United
+        Nations Development Programme (UNDP), India','[New Delhi]'],'desc_metadata__description_tesim'=>['The
+        focus of this Transgender Issue Brief is to summarize the various issues faced
+        by Hijras and transgender women in India by using the social exclusion framework,
+        and to highlight the relation between this exclusion and vulnerability to
+        HIV and other\nhealth risks.'],'desc_metadata__date_tesim'=>['2014-05-08T17:18:45Z','2010-12'],'desc_metadata__relation_tesim'=>['http://archive.nyu.edu/bitstream/2451/33612/2/hijras_transgender_in_india.pdf'],'desc_metadata__rights_tesim'=>['NYU
+        Libraries is providing access to these materials as a service to our scholarly
+        community. We do not claim the copyright in these materials, nor can we give
+        permission for their re-use. If you would like to request that we take down
+        any of this material, please write to archive.help@nyu.edu with the following
+        information: Provide the URL of the material that is the basis of your inquiry;
+        Identify the material you have rights to; Provide your contact information,
+        including name, address, telephone number, and e-mail address; Provide a statement
+        of your good-faith belief that the material you identified is infringing of
+        the material you have rights to.'],'desc_metadata__subject_tesim'=>['LGBT
+        studies','Gender identity','Sexuality','Sexual orientation','Social conditions','Social
+        structure','Sexually transmitted diseases','AIDS','Gender discrimination'],'desc_metadata__isPartOf_tesim'=>['ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2'],'desc_metadata__available_tesim'=>['http://hdl.handle.net/2451/33612'],'desc_metadata__citation_tesim'=>['http://www.undp.org/content/dam/india/docs/hijras_transgender_in_india_hiv_human_rights_and_social_exclusion.pdf'],'desc_metadata__resource_set_tesim'=>['faculty_digital_archive_ngo'],'desc_metadata__type_tesim'=>['Report'],'timestamp'=>'2016-04-21T17:39:08.27Z','score'=>1.0},{'system_create_dtsi'=>'2016-04-21T17:39:03Z','system_modified_dtsi'=>'2016-04-21T17:39:04Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'libguides:guides-nyu-edu-content-php-pid-38898','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2016-04-21T17:39:03Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":316,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"libguides:guides-nyu-edu-content-php-pid-38898+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:03Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":585,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"libguides:guides-nyu-edu-content-php-pid-38898+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:04Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1408,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"libguides:guides-nyu-edu-content-php-pid-38898+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2016-04-21T17:39:03Z\",\"objLastModDate\":\"2016-04-21T17:39:03Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/libguides%3Aguides-nyu-edu-content-php-pid-38898/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/libguides%3Aguides-nyu-edu-content-php-pid-38898/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group','libguides_cataloger'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['http://guides.nyu.edu/content.php?pid=38898'],'desc_metadata__title_tesim'=>['Data
+        Services'],'desc_metadata__creator_tesim'=>['Samantha Guss'],'desc_metadata__type_tesim'=>['Research
+        Guide'],'desc_metadata__description_tesim'=>['Information on New York University\\'s
+        Data Services.'],'desc_metadata__date_tesim'=>['2014-08-18 04:17:34 PM'],'desc_metadata__subject_tesim'=>['Library
+        Spaces & Services','Social Sciences'],'desc_metadata__isPartOf_tesim'=>['ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11'],'desc_metadata__available_tesim'=>['http://guides.nyu.edu/dataservices'],'desc_metadata__resource_set_tesim'=>['lib_guides'],'timestamp'=>'2016-04-21T17:39:04.113Z','score'=>1.0},{'system_create_dtsi'=>'2016-04-21T17:39:02Z','system_modified_dtsi'=>'2016-04-21T17:39:02Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Collection','id'=>'ichabodcollection:d4ef68ef-ede2-4899-b741-07d938d3c9aa','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2016-04-21T17:39:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":327,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:d4ef68ef-ede2-4899-b741-07d938d3c9aa+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descriptive_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"descriptive_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":133,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:d4ef68ef-ede2-4899-b741-07d938d3c9aa+descriptive_metadata+descriptive_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"administrative_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"administrative_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":109,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:d4ef68ef-ede2-4899-b741-07d938d3c9aa+administrative_metadata+administrative_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2016-04-21T17:39:02Z\",\"objLastModDate\":\"2016-04-21T17:39:02Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3Ad4ef68ef-ede2-4899-b741-07d938d3c9aa/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3Ad4ef68ef-ede2-4899-b741-07d938d3c9aa/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['The
+        Real Rosie the Riveter'],'administrative_metadata__discoverable_tesim'=>['1'],'has_model_ssim'=>['info:fedora/afmodel:Collection'],'timestamp'=>'2016-04-21T17:39:02.349Z','score'=>1.0},{'system_create_dtsi'=>'2016-04-21T17:39:00Z','system_modified_dtsi'=>'2016-04-21T17:39:00Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Collection','id'=>'ichabodcollection:9131fc45-6d6b-4ac9-97ef-f34d17fd85a1','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2016-04-21T17:39:00Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":327,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:9131fc45-6d6b-4ac9-97ef-f34d17fd85a1+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descriptive_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"descriptive_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:00Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":130,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:9131fc45-6d6b-4ac9-97ef-f34d17fd85a1+descriptive_metadata+descriptive_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"administrative_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"administrative_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:00Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":109,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:9131fc45-6d6b-4ac9-97ef-f34d17fd85a1+administrative_metadata+administrative_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2016-04-21T17:39:00Z\",\"objLastModDate\":\"2016-04-21T17:39:00Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3A9131fc45-6d6b-4ac9-97ef-f34d17fd85a1/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3A9131fc45-6d6b-4ac9-97ef-f34d17fd85a1/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['Faculty
+        Digital Archive'],'administrative_metadata__discoverable_tesim'=>['1'],'has_model_ssim'=>['info:fedora/afmodel:Collection'],'timestamp'=>'2016-04-21T17:39:00.465Z','score'=>1.0},{'system_create_dtsi'=>'2016-04-21T17:39:04Z','system_modified_dtsi'=>'2016-04-21T17:39:04Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'libguides:localhost','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2016-04-21T17:39:04Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":289,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"libguides:localhost+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:04Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":585,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"libguides:localhost+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:04Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":821,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"libguides:localhost+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2016-04-21T17:39:04Z\",\"objLastModDate\":\"2016-04-21T17:39:04Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/libguides%3Alocalhost/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/libguides%3Alocalhost/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group','libguides_cataloger'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['http://localhost'],'desc_metadata__title_tesim'=>['NAME'],'desc_metadata__creator_tesim'=>['NAME'],'desc_metadata__type_tesim'=>['Research
+        Guide'],'desc_metadata__description_tesim'=>['DESCRIPTION.'],'desc_metadata__date_tesim'=>['2014-01-01
+        00:00:00 AM'],'desc_metadata__isPartOf_tesim'=>['ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11'],'desc_metadata__available_tesim'=>['http://localhost'],'desc_metadata__resource_set_tesim'=>['lib_guides'],'timestamp'=>'2016-04-21T17:39:04.468Z','score'=>1.0},{'system_create_dtsi'=>'2016-04-21T17:39:00Z','system_modified_dtsi'=>'2016-04-21T17:39:04Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Collection','id'=>'ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2','object_profile_ssm'=>['{\"datastreams\":{\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2016-04-21T17:39:00Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":383,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2016-04-21T17:39:00Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":327,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descriptive_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"descriptive_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:00Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":140,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2+descriptive_metadata+descriptive_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"administrative_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"administrative_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:00Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":109,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2+administrative_metadata+administrative_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:04Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":579,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\",\"info:fedora/afmodel:Collection\"],\"objCreateDate\":\"2016-04-21T17:39:00Z\",\"objLastModDate\":\"2016-04-21T17:39:00Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3A7e2274b3-e98c-49fd-b1cf-3712443befe2/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3A7e2274b3-e98c-49fd-b1cf-3712443befe2/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['South
+        Asian NGO and other reports'],'administrative_metadata__discoverable_tesim'=>['1'],'edit_access_group_ssim'=>['admin_group','fda_cataloger'],'has_model_ssim'=>['info:fedora/afmodel:Collection'],'timestamp'=>'2016-04-21T17:39:04.628Z','score'=>1.0},{'system_create_dtsi'=>'2016-04-21T17:39:01Z','system_modified_dtsi'=>'2016-04-21T17:39:03Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Collection','id'=>'ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11','object_profile_ssm'=>['{\"datastreams\":{\"DC\":{\"dsLabel\":\"Dublin
+        Core Record for this object\",\"dsVersionID\":\"DC1.0\",\"dsCreateDate\":\"2016-04-21T17:39:01Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":\"http://www.openarchives.org/OAI/2.0/oai_dc/\",\"dsControlGroup\":\"X\",\"dsSize\":383,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11+DC+DC1.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2016-04-21T17:39:01Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":327,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"descriptive_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"descriptive_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:01Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":122,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11+descriptive_metadata+descriptive_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"administrative_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"administrative_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:01Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":109,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11+administrative_metadata+administrative_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:03Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":585,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\",\"info:fedora/afmodel:Collection\"],\"objCreateDate\":\"2016-04-21T17:39:01Z\",\"objLastModDate\":\"2016-04-21T17:39:01Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab9052654-a67d-4aed-ad89-5ed5f687bd11/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab9052654-a67d-4aed-ad89-5ed5f687bd11/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['Research
+        Guides'],'administrative_metadata__discoverable_tesim'=>['1'],'edit_access_group_ssim'=>['admin_group','libguides_cataloger'],'has_model_ssim'=>['info:fedora/afmodel:Collection'],'timestamp'=>'2016-04-21T17:39:03.671Z','score'=>1.0},{'system_create_dtsi'=>'2016-04-21T17:39:02Z','system_modified_dtsi'=>'2016-04-21T17:39:02Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Collection','id'=>'ichabodcollection:f74861c3-5329-4043-8406-73af97a15b58','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2016-04-21T17:39:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":327,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:f74861c3-5329-4043-8406-73af97a15b58+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descriptive_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"descriptive_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":136,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:f74861c3-5329-4043-8406-73af97a15b58+descriptive_metadata+descriptive_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"administrative_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"administrative_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:02Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":109,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:f74861c3-5329-4043-8406-73af97a15b58+administrative_metadata+administrative_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2016-04-21T17:39:02Z\",\"objLastModDate\":\"2016-04-21T17:39:02Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3Af74861c3-5329-4043-8406-73af97a15b58/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3Af74861c3-5329-4043-8406-73af97a15b58/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['Voices
+        of the Food Revolution'],'administrative_metadata__discoverable_tesim'=>['1'],'has_model_ssim'=>['info:fedora/afmodel:Collection'],'timestamp'=>'2016-04-21T17:39:02.902Z','score'=>1.0},{'system_create_dtsi'=>'2016-04-21T17:39:03Z','system_modified_dtsi'=>'2016-04-21T17:39:03Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Collection','id'=>'ichabodcollection:f25aa598-2950-4b26-a918-4322df710839','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2016-04-21T17:39:03Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":327,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:f25aa598-2950-4b26-a918-4322df710839+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{},\"descriptive_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"descriptive_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:03Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":117,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:f25aa598-2950-4b26-a918-4322df710839+descriptive_metadata+descriptive_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"administrative_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"administrative_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:03Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":109,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"ichabodcollection:f25aa598-2950-4b26-a918-4322df710839+administrative_metadata+administrative_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2016-04-21T17:39:03Z\",\"objLastModDate\":\"2016-04-21T17:39:03Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3Af25aa598-2950-4b26-a918-4322df710839/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/ichabodcollection%3Af25aa598-2950-4b26-a918-4322df710839/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'desc_metadata__title_tesim'=>['Test
+        Title'],'administrative_metadata__discoverable_tesim'=>['1'],'has_model_ssim'=>['info:fedora/afmodel:Collection'],'timestamp'=>'2016-04-21T17:39:03.454Z','score'=>1.0}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'desc_metadata__type_sim'=>['Archival
+        Object',10,'Book',10,'Geospatial Data',10,'Report',5,'Dataset',4,'Research
+        Guide',2,'Document',1],'desc_metadata__creator_sim'=>['Horatio Winslow, May-Dec.
+        1911  ',5,'Max Eastman, Dec. 1912-1917',5,'Piet Vlag, Jan.-Aug. 1912',5,'Thomas
+        Seltzer, Jan.-Apr. 1911',5,'Avula, Jyothsna',1,'Bhatla, Nandita',1,'Chakraborty,
+        Swati',1,'Chakrapani, Venkatesan',1,'Committee on Amendments to Criminal Law',1,'East
+        View Geospatial (Firm)',1],'desc_metadata__subject_sim'=>['Periodicals',5,'Radicalism',5,'Socialism',5,'Sexually
+        transmitted diseases',4,'Human rights',3,'Social conditions',3,'AIDS',2,'Boundaries',2,'Economics',2,'Gender
+        discrimination',2],'desc_metadata__language_sim'=>['English',9,'Spanish; Castilian',6],'desc_metadata__isPartOf_sim'=>['ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392',10,'ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436',10,'ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8',10,'ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed',5,'ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2',5,'ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11',5,'ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc',5,'ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11',2]},'facet_dates'=>{},'facet_ranges'=>{}}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=12mqi5rfcxiw01mucprojg4x2t;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:03.029Z</objCreateDate><objLastModDate>2016-04-21T17:39:16.509Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A0c15981d-9f27-453b-9492-b12e553da392/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A0c15981d-9f27-453b-9492-b12e553da392/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=4f3gveb4ngar13mwwac5xcoxn;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:03.029Z</objCreateDate><objLastModDate>2016-04-21T17:39:16.509Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A0c15981d-9f27-453b-9492-b12e553da392/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A0c15981d-9f27-453b-9492-b12e553da392/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392/datastreams?format=xml&profiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1vvra0ey0z5d17rk9i58hzjx;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+      Content-Length:
+      - '4604'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://localhost:8983/fedora-test/schema/listDatastreams.xsd" pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392"  baseURL="http://localhost:8983/fedora-test/"
+        ><datastreamProfile pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392"
+        dsID="DC" ><apim:dsLabel>Dublin Core Record for this object</apim:dsLabel><apim:dsVersionID>DC1.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:03.029Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>383</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392+DC+DC1.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392" dsID="RELS-EXT"
+        ><apim:dsLabel>Fedora Object-to-Object Relationship Metadata</apim:dsLabel><apim:dsVersionID>RELS-EXT.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:03.086Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/rdf+xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>327</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392+RELS-EXT+RELS-EXT.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392" dsID="descriptive_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>descriptive_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:03.124Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>131</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392+descriptive_metadata+descriptive_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392" dsID="administrative_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>administrative_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:03.164Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>109</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392+administrative_metadata+administrative_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392" dsID="rightsMetadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>rightsMetadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:16.509Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>544</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392+rightsMetadata+rightsMetadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1qggermz94cm2108x6s84228ly;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+    body:
+      encoding: UTF-8
+      string: |2
+
+        <rdf:RDF xmlns:ns0="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392">
+            <ns0:hasModel rdf:resource="info:fedora/afmodel:Collection"></ns0:hasModel>
+          </rdf:Description>
+        </rdf:RDF>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392/datastreams/descriptive_metadata/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=knirk4rf2xa6yhziftwlkbb2;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="descriptive_metadata.bin"
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/n-triples
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <info:fedora/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392> <http://purl.org/dc/terms/title> "David Wojnarowicz Papers" .
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=19mjik9ghbgh9a8jmxijjysm;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:02.470Z</objCreateDate><objLastModDate>2016-04-21T17:39:25.213Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A25e45d6a-9663-4f34-bf6a-cf4637bf2436/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A25e45d6a-9663-4f34-bf6a-cf4637bf2436/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=13x4av48ft6erktkqrq57r8qz;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:02.470Z</objCreateDate><objLastModDate>2016-04-21T17:39:25.213Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A25e45d6a-9663-4f34-bf6a-cf4637bf2436/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A25e45d6a-9663-4f34-bf6a-cf4637bf2436/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436/datastreams?format=xml&profiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=h9guijc49qotk8zamgcqqt9k;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+      Content-Length:
+      - '4604'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://localhost:8983/fedora-test/schema/listDatastreams.xsd" pid="ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436"  baseURL="http://localhost:8983/fedora-test/"
+        ><datastreamProfile pid="ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436"
+        dsID="DC" ><apim:dsLabel>Dublin Core Record for this object</apim:dsLabel><apim:dsVersionID>DC1.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:02.470Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>383</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436+DC+DC1.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436" dsID="RELS-EXT"
+        ><apim:dsLabel>Fedora Object-to-Object Relationship Metadata</apim:dsLabel><apim:dsVersionID>RELS-EXT.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:02.527Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/rdf+xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>327</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436+RELS-EXT+RELS-EXT.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436" dsID="descriptive_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>descriptive_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:02.567Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>130</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436+descriptive_metadata+descriptive_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436" dsID="administrative_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>administrative_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:02.604Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>109</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436+administrative_metadata+administrative_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436" dsID="rightsMetadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>rightsMetadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:25.213Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>579</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436+rightsMetadata+rightsMetadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=qz3erqdfo74ganesoo5zgpj9;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+    body:
+      encoding: UTF-8
+      string: |2
+
+        <rdf:RDF xmlns:ns0="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436">
+            <ns0:hasModel rdf:resource="info:fedora/afmodel:Collection"></ns0:hasModel>
+          </rdf:Description>
+        </rdf:RDF>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436/datastreams/descriptive_metadata/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1cznujjq64b171gehqjit8nlt6;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="descriptive_metadata.bin"
+      Content-Length:
+      - '130'
+      Content-Type:
+      - application/n-triples
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <info:fedora/ichabodcollection:25e45d6a-9663-4f34-bf6a-cf4637bf2436> <http://purl.org/dc/terms/title> "Spatial Data Repository" .
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1t4t07hpgedaq1h3xq9bgbqsgl;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:11 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:00.033Z</objCreateDate><objLastModDate>2016-04-21T17:39:11.045Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Abe16f050-9b0b-4227-93c6-06ff1135a3d8/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Abe16f050-9b0b-4227-93c6-06ff1135a3d8/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:11 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=yg7vss47csyh13awp65xs5r6e;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:00.033Z</objCreateDate><objLastModDate>2016-04-21T17:39:11.045Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Abe16f050-9b0b-4227-93c6-06ff1135a3d8/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Abe16f050-9b0b-4227-93c6-06ff1135a3d8/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8/datastreams?format=xml&profiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=ijcqf4hqickk864jzclp26r4;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '4604'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://localhost:8983/fedora-test/schema/listDatastreams.xsd" pid="ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8"  baseURL="http://localhost:8983/fedora-test/"
+        ><datastreamProfile pid="ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8"
+        dsID="DC" ><apim:dsLabel>Dublin Core Record for this object</apim:dsLabel><apim:dsVersionID>DC1.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.033Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>383</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8+DC+DC1.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8" dsID="RELS-EXT"
+        ><apim:dsLabel>Fedora Object-to-Object Relationship Metadata</apim:dsLabel><apim:dsVersionID>RELS-EXT.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.089Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/rdf+xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>327</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8+RELS-EXT+RELS-EXT.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8" dsID="descriptive_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>descriptive_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.141Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>150</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8+descriptive_metadata+descriptive_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8" dsID="administrative_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>administrative_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.174Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>109</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8+administrative_metadata+administrative_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8" dsID="rightsMetadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>rightsMetadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:11.045Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>575</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8+rightsMetadata+rightsMetadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1lh4y5hlhfbcm1ly9i81u4r9wl;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |2
+
+        <rdf:RDF xmlns:ns0="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8">
+            <ns0:hasModel rdf:resource="info:fedora/afmodel:Collection"></ns0:hasModel>
+          </rdf:Description>
+        </rdf:RDF>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8/datastreams/descriptive_metadata/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=76tvvu9sszsf57iqu97e99uz;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="descriptive_metadata.bin"
+      Content-Length:
+      - '150'
+      Content-Type:
+      - application/n-triples
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <info:fedora/ichabodcollection:be16f050-9b0b-4227-93c6-06ff1135a3d8> <http://purl.org/dc/terms/title> "Archive of Contemporary Composers' Websites" .
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=5spyfamdihxa15dh94xe0ydsq;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:01.653Z</objCreateDate><objLastModDate>2016-04-21T17:39:20.727Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A77bbb9b1-ab2b-4260-b302-b7772d9d6eed/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A77bbb9b1-ab2b-4260-b302-b7772d9d6eed/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1igk90ea2jv9t16xoy62erayhg;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:01.653Z</objCreateDate><objLastModDate>2016-04-21T17:39:20.727Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A77bbb9b1-ab2b-4260-b302-b7772d9d6eed/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A77bbb9b1-ab2b-4260-b302-b7772d9d6eed/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed/datastreams?format=xml&profiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=es9fp8av7zgv9vx6un0alvr9;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '4604'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://localhost:8983/fedora-test/schema/listDatastreams.xsd" pid="ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed"  baseURL="http://localhost:8983/fedora-test/"
+        ><datastreamProfile pid="ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed"
+        dsID="DC" ><apim:dsLabel>Dublin Core Record for this object</apim:dsLabel><apim:dsVersionID>DC1.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.653Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>383</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed+DC+DC1.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed" dsID="RELS-EXT"
+        ><apim:dsLabel>Fedora Object-to-Object Relationship Metadata</apim:dsLabel><apim:dsVersionID>RELS-EXT.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.706Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/rdf+xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>327</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed+RELS-EXT+RELS-EXT.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed" dsID="descriptive_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>descriptive_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.755Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>117</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed+descriptive_metadata+descriptive_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed" dsID="administrative_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>administrative_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.788Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>109</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed+administrative_metadata+administrative_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed" dsID="rightsMetadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>rightsMetadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:20.727Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>544</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed+rightsMetadata+rightsMetadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1nshiogmwphr6xdciwqw7v1yd;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |2
+
+        <rdf:RDF xmlns:ns0="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed">
+            <ns0:hasModel rdf:resource="info:fedora/afmodel:Collection"></ns0:hasModel>
+          </rdf:Description>
+        </rdf:RDF>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed/datastreams/descriptive_metadata/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=121wwoi92gzbbgf2tepjdfx55;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="descriptive_metadata.bin"
+      Content-Length:
+      - '117'
+      Content-Type:
+      - application/n-triples
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <info:fedora/ichabodcollection:77bbb9b1-ab2b-4260-b302-b7772d9d6eed> <http://purl.org/dc/terms/title> "The Masses" .
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=mlz0m1hyeku513g8px0kvvn6;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:00.590Z</objCreateDate><objLastModDate>2016-04-21T17:39:04.610Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A7e2274b3-e98c-49fd-b1cf-3712443befe2/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A7e2274b3-e98c-49fd-b1cf-3712443befe2/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1lampe2syvvbt1p80jxbogzdzh;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:00.590Z</objCreateDate><objLastModDate>2016-04-21T17:39:04.610Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A7e2274b3-e98c-49fd-b1cf-3712443befe2/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A7e2274b3-e98c-49fd-b1cf-3712443befe2/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2/datastreams?format=xml&profiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=r5h6ft6sxp1a14uttpl075rka;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '4604'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://localhost:8983/fedora-test/schema/listDatastreams.xsd" pid="ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2"  baseURL="http://localhost:8983/fedora-test/"
+        ><datastreamProfile pid="ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2"
+        dsID="DC" ><apim:dsLabel>Dublin Core Record for this object</apim:dsLabel><apim:dsVersionID>DC1.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.590Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>383</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2+DC+DC1.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2" dsID="RELS-EXT"
+        ><apim:dsLabel>Fedora Object-to-Object Relationship Metadata</apim:dsLabel><apim:dsVersionID>RELS-EXT.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.641Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/rdf+xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>327</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2+RELS-EXT+RELS-EXT.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2" dsID="descriptive_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>descriptive_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.683Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>140</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2+descriptive_metadata+descriptive_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2" dsID="administrative_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>administrative_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.712Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>109</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2+administrative_metadata+administrative_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2" dsID="rightsMetadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>rightsMetadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:04.610Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>579</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2+rightsMetadata+rightsMetadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=t8pa4meae15ixd9qsy1w754s;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |2
+
+        <rdf:RDF xmlns:ns0="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2">
+            <ns0:hasModel rdf:resource="info:fedora/afmodel:Collection"></ns0:hasModel>
+          </rdf:Description>
+        </rdf:RDF>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2/datastreams/descriptive_metadata/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=186ez14zq6x90tc7t6i27vomo;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="descriptive_metadata.bin"
+      Content-Length:
+      - '140'
+      Content-Type:
+      - application/n-triples
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <info:fedora/ichabodcollection:7e2274b3-e98c-49fd-b1cf-3712443befe2> <http://purl.org/dc/terms/title> "South Asian NGO and other reports" .
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1r27ytmhigw3dq2jz3aaftmxd;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:00.845Z</objCreateDate><objLastModDate>2016-04-21T17:39:23.205Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab058ba4f-7cf1-453c-9ec3-6d7ade0e8d11/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab058ba4f-7cf1-453c-9ec3-6d7ade0e8d11/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1qz5xwqx2dj5h1bvkcoj990vwb;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:00.845Z</objCreateDate><objLastModDate>2016-04-21T17:39:23.205Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab058ba4f-7cf1-453c-9ec3-6d7ade0e8d11/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab058ba4f-7cf1-453c-9ec3-6d7ade0e8d11/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11/datastreams?format=xml&profiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=10278w7gjbanwaowhptf2eszn;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '4604'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://localhost:8983/fedora-test/schema/listDatastreams.xsd" pid="ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11"  baseURL="http://localhost:8983/fedora-test/"
+        ><datastreamProfile pid="ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11"
+        dsID="DC" ><apim:dsLabel>Dublin Core Record for this object</apim:dsLabel><apim:dsVersionID>DC1.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.845Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>383</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11+DC+DC1.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11" dsID="RELS-EXT"
+        ><apim:dsLabel>Fedora Object-to-Object Relationship Metadata</apim:dsLabel><apim:dsVersionID>RELS-EXT.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.900Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/rdf+xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>327</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11+RELS-EXT+RELS-EXT.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11" dsID="descriptive_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>descriptive_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.942Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>120</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11+descriptive_metadata+descriptive_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11" dsID="administrative_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>administrative_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:00.976Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>109</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11+administrative_metadata+administrative_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11" dsID="rightsMetadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>rightsMetadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:23.205Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>579</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11+rightsMetadata+rightsMetadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=g002j5ybhyml1o85yrrglqjd0;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |2
+
+        <rdf:RDF xmlns:ns0="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11">
+            <ns0:hasModel rdf:resource="info:fedora/afmodel:Collection"></ns0:hasModel>
+          </rdf:Description>
+        </rdf:RDF>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11/datastreams/descriptive_metadata/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1hsmx51aqkgyemz5cfh1oocve;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="descriptive_metadata.bin"
+      Content-Length:
+      - '120'
+      Content-Type:
+      - application/n-triples
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <info:fedora/ichabodcollection:b058ba4f-7cf1-453c-9ec3-6d7ade0e8d11> <http://purl.org/dc/terms/title> "Data Services" .
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=7mh026rqiboq1rpf2cucz9r4w;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:01.929Z</objCreateDate><objLastModDate>2016-04-21T17:39:14.354Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1nlk8nfdjgecd11la35hpzcb7p;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:01.929Z</objCreateDate><objLastModDate>2016-04-21T17:39:14.354Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc/datastreams?format=xml&profiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1t2pmcdekbiuvodp0w7hxvt38;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '4604'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://localhost:8983/fedora-test/schema/listDatastreams.xsd" pid="ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc"  baseURL="http://localhost:8983/fedora-test/"
+        ><datastreamProfile pid="ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc"
+        dsID="DC" ><apim:dsLabel>Dublin Core Record for this object</apim:dsLabel><apim:dsVersionID>DC1.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.929Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>383</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc+DC+DC1.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc" dsID="RELS-EXT"
+        ><apim:dsLabel>Fedora Object-to-Object Relationship Metadata</apim:dsLabel><apim:dsVersionID>RELS-EXT.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.986Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/rdf+xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>327</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc+RELS-EXT+RELS-EXT.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc" dsID="descriptive_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>descriptive_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:02.024Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>134</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc+descriptive_metadata+descriptive_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc" dsID="administrative_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>administrative_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:02.057Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>109</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc+administrative_metadata+administrative_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc" dsID="rightsMetadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>rightsMetadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:14.354Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>544</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc+rightsMetadata+rightsMetadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=pr3jkx8b24px1tjv7n3qfeshu;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |2
+
+        <rdf:RDF xmlns:ns0="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc">
+            <ns0:hasModel rdf:resource="info:fedora/afmodel:Collection"></ns0:hasModel>
+          </rdf:Description>
+        </rdf:RDF>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc/datastreams/descriptive_metadata/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=c0odqc4cdfzogk2bmca5aq7x;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="descriptive_metadata.bin"
+      Content-Length:
+      - '134'
+      Content-Type:
+      - application/n-triples
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <info:fedora/ichabodcollection:b5ce4db6-d5d1-4a73-bb24-48e2d7fec3cc> <http://purl.org/dc/terms/title> "NYU Press Open Access Books" .
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=3qbp663drw8pf4hbzifdelh1;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:01.385Z</objCreateDate><objLastModDate>2016-04-21T17:39:03.656Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab9052654-a67d-4aed-ad89-5ed5f687bd11/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab9052654-a67d-4aed-ad89-5ed5f687bd11/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=dogs2myo412hpz1f36vkg4dj;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:01.385Z</objCreateDate><objLastModDate>2016-04-21T17:39:03.656Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab9052654-a67d-4aed-ad89-5ed5f687bd11/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Ab9052654-a67d-4aed-ad89-5ed5f687bd11/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11/datastreams?format=xml&profiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1czsl5ejn3v431oqrt014p191q;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '4604'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://localhost:8983/fedora-test/schema/listDatastreams.xsd" pid="ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11"  baseURL="http://localhost:8983/fedora-test/"
+        ><datastreamProfile pid="ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11"
+        dsID="DC" ><apim:dsLabel>Dublin Core Record for this object</apim:dsLabel><apim:dsVersionID>DC1.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.385Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>383</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11+DC+DC1.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11" dsID="RELS-EXT"
+        ><apim:dsLabel>Fedora Object-to-Object Relationship Metadata</apim:dsLabel><apim:dsVersionID>RELS-EXT.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.432Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/rdf+xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>327</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11+RELS-EXT+RELS-EXT.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11" dsID="descriptive_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>descriptive_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.472Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>122</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11+descriptive_metadata+descriptive_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11" dsID="administrative_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>administrative_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.508Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>109</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11+administrative_metadata+administrative_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11" dsID="rightsMetadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>rightsMetadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:03.656Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>585</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11+rightsMetadata+rightsMetadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1m2ra375asoh5cdfjm0g54n3t;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |2
+
+        <rdf:RDF xmlns:ns0="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11">
+            <ns0:hasModel rdf:resource="info:fedora/afmodel:Collection"></ns0:hasModel>
+          </rdf:Description>
+        </rdf:RDF>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11/datastreams/descriptive_metadata/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1f837gmnerd60sk4hq66kp4d4;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="descriptive_metadata.bin"
+      Content-Length:
+      - '122'
+      Content-Type:
+      - application/n-triples
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <info:fedora/ichabodcollection:b9052654-a67d-4aed-ad89-5ed5f687bd11> <http://purl.org/dc/terms/title> "Research Guides" .
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?fl=id&q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Collection%22%20AND%20administrative_metadata__discoverable_tesim:0&qt=standard&rows=1000&sort=system_create_dtsi%20asc&start=0&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Apr 2016 17:39:32 GMT
+      Etag:
+      - '"Njk2MDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'q'=>'_query_:"{!raw f=has_model_ssim}info:fedora/afmodel:Collection" AND administrative_metadata__discoverable_tesim:0','qt'=>'standard','fl'=>'id','start'=>'0','sort'=>'system_create_dtsi asc','rows'=>'1000','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897'}]}}
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=14ip1mao5nouj1tsthn3z4mwvw;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:01.123Z</objCreateDate><objLastModDate>2016-04-21T17:39:29.429Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Aca2fcc2c-5ed6-42a2-9fab-7b8deb515897/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3Aca2fcc2c-5ed6-42a2-9fab-7b8deb515897/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897/datastreams?format=xml&profiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1ah8bifeun1blzigdaywx54uk;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '4604'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://localhost:8983/fedora-test/schema/listDatastreams.xsd" pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897"  baseURL="http://localhost:8983/fedora-test/"
+        ><datastreamProfile pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897"
+        dsID="DC" ><apim:dsLabel>Dublin Core Record for this object</apim:dsLabel><apim:dsVersionID>DC1.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.123Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>383</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897+DC+DC1.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897" dsID="RELS-EXT"
+        ><apim:dsLabel>Fedora Object-to-Object Relationship Metadata</apim:dsLabel><apim:dsVersionID>RELS-EXT.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.168Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/rdf+xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>327</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897+RELS-EXT+RELS-EXT.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897" dsID="descriptive_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>descriptive_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.210Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>129</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897+descriptive_metadata+descriptive_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897" dsID="administrative_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>administrative_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:01.242Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>109</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897+administrative_metadata+administrative_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897" dsID="rightsMetadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>rightsMetadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:29.429Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>578</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897+rightsMetadata+rightsMetadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1fbj6jpn9szz8zt5b3lfkmull;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |2
+
+        <rdf:RDF xmlns:ns0="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897">
+            <ns0:hasModel rdf:resource="info:fedora/afmodel:Collection"></ns0:hasModel>
+          </rdf:Description>
+        </rdf:RDF>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Apr 2016 17:39:32 GMT
+      Etag:
+      - '"Njk2MDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'q'=>'{!raw f=id v=$id}','echoParams'=>'all','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','rows'=>'1','facet'=>'off','qt'=>'permissions','id'=>'ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'ichabodcollection:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897','edit_access_group_ssim'=>['admin_group','io_cataloger']}]}}
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?facet.field=desc_metadata__isPartOf_sim&fq=-desc_metadata__isPartOf_sim:ichabodcollection%5C:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897&q=Glass%20Phial&qf=desc_metadata__title_tesim%20desc_metadata__author_tesim%20desc_metadata__publisher_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__type_tesim%20desc_metadata__description_tesim%20desc_metadata__series_tesim%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__creator_tesim%20desc_metadata__subject_tesim%20desc_metadata__subject_spatial_tesim%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc_metadata__subject_temporal_tesim%20desc_metadata__isbn_tesim%20desc_metadata__genre_tesim&qt=search&rows=10&sort=score%20desc,%20pub_date_dtsi%20desc,%20title_tesi%20asc&spellcheck.q=Glass%20Phial&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Apr 2016 17:39:32 GMT
+      Etag:
+      - '"Njk2MDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: "{'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'q'=>'Glass Phial','facet.field'=>['desc_metadata__type_sim','desc_metadata__creator_sim','desc_metadata__subject_sim','desc_metadata__language_sim','desc_metadata__isPartOf_sim'],'spellcheck.q'=>'Glass
+        Phial','qt'=>'search','qf'=>'desc_metadata__title_tesim desc_metadata__author_tesim
+        desc_metadata__publisher_tesim\n                desc_metadata__type_tesim
+        desc_metadata__description_tesim desc_metadata__series_tesim\n                desc_metadata__creator_tesim
+        desc_metadata__subject_tesim desc_metadata__subject_spatial_tesim \n                desc_metadata__subject_temporal_tesim
+        desc_metadata__isbn_tesim desc_metadata__genre_tesim','fq'=>'-desc_metadata__isPartOf_sim:ichabodcollection\\\\:ca2fcc2c-5ed6-42a2-9fab-7b8deb515897','sort'=>'score
+        desc, pub_date_dtsi desc, title_tesi asc','rows'=>'10','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'maxScore'=>0.1749282,'docs'=>[{'system_create_dtsi'=>'2016-04-21T17:39:18Z','system_modified_dtsi'=>'2016-04-21T17:39:19Z','object_state_ssi'=>'A','active_fedora_model_ssi'=>'Nyucore','id'=>'woj:wojref4082','object_profile_ssm'=>['{\"datastreams\":{\"RELS-EXT\":{\"dsLabel\":\"Fedora
+        Object-to-Object Relationship Metadata\",\"dsVersionID\":\"RELS-EXT.0\",\"dsCreateDate\":\"2016-04-21T17:39:18Z\",\"dsState\":\"A\",\"dsMIME\":\"application/rdf+xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"X\",\"dsSize\":284,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"woj:wojref4082+RELS-EXT+RELS-EXT.0\",\"dsLocationType\":null,\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"rightsMetadata\":{\"dsLabel\":null,\"dsVersionID\":\"rightsMetadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:18Z\",\"dsState\":\"A\",\"dsMIME\":\"text/xml\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":544,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"woj:wojref4082+rightsMetadata+rightsMetadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"source_metadata\":{\"dsLabel\":null,\"dsVersionID\":\"source_metadata.0\",\"dsCreateDate\":\"2016-04-21T17:39:19Z\",\"dsState\":\"A\",\"dsMIME\":\"application/n-triples\",\"dsFormatURI\":null,\"dsControlGroup\":\"M\",\"dsSize\":1025,\"dsVersionable\":true,\"dsInfoType\":null,\"dsLocation\":\"woj:wojref4082+source_metadata+source_metadata.0\",\"dsLocationType\":\"INTERNAL_ID\",\"dsChecksumType\":\"DISABLED\",\"dsChecksum\":\"none\"},\"native_metadata\":{}},\"objLabel\":null,\"objOwnerId\":\"fedoraAdmin\",\"objModels\":[\"info:fedora/fedora-system:FedoraObject-3.0\"],\"objCreateDate\":\"2016-04-21T17:39:18Z\",\"objLastModDate\":\"2016-04-21T17:39:18Z\",\"objDissIndexViewURL\":\"http://localhost:8983/fedora-test/objects/woj%3Awojref4082/methods/fedora-system%3A3/viewMethodIndex\",\"objItemIndexViewURL\":\"http://localhost:8983/fedora-test/objects/woj%3Awojref4082/methods/fedora-system%3A3/viewItemIndex\",\"objState\":\"A\"}'],'edit_access_group_ssim'=>['admin_group'],'has_model_ssim'=>['info:fedora/afmodel:Nyucore'],'desc_metadata__identifier_tesim'=>['wojref4082'],'desc_metadata__title_tesim'=>['Glass
+        Phial with Porcupine Quills'],'desc_metadata__type_tesim'=>['Archival Object'],'desc_metadata__relation_tesim'=>['David
+        Wojnarowicz Papers: Series XIII: Objects and Artifacts: Subseries B: The \"Magic
+        Box\"'],'desc_metadata__isPartOf_tesim'=>['ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392'],'desc_metadata__available_tesim'=>['http://dlib.nyu.edu/findingaids/html/fales/woj/dscref3901.html#ref4082'],'desc_metadata__resource_set_tesim'=>['woj'],'desc_metadata__data_provider_tesim'=>['NYU'],'desc_metadata__location_tesim'=>['Box:
+        \n, Folder: 092.2.0589'],'desc_metadata__repo_tesim'=>['The Fales Library
+        & Special Collections'],'timestamp'=>'2016-04-21T17:39:19.053Z','score'=>0.1749282}]},'facet_counts'=>{'facet_queries'=>{},'facet_fields'=>{'desc_metadata__type_sim'=>['Archival
+        Object',1],'desc_metadata__creator_sim'=>[],'desc_metadata__subject_sim'=>[],'desc_metadata__language_sim'=>[],'desc_metadata__isPartOf_sim'=>['ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392',1]},'facet_dates'=>{},'facet_ranges'=>{}},'spellcheck'=>{'suggestions'=>['correctlySpelled',true]}}\n"
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8983/solr/test/select?id=woj:wojref4082&qt=permissions&wt=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Thu, 21 Apr 2016 17:39:32 GMT
+      Etag:
+      - '"Njk2MDAwMDAwMDAwMDAwMFNvbHI="'
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'q'=>'{!raw f=id v=$id}','echoParams'=>'all','fl'=>'
+                id,
+                access_ssim,
+                discover_access_group_ssim,discover_access_person_ssim,
+                read_access_group_ssim,read_access_person_ssim,
+                edit_access_group_ssim,edit_access_person_ssim,
+                depositor_ti,
+                embargo_release_date_dtsi
+                inheritable_access_ssim,
+                inheritable_discover_access_group_ssim,inheritable_discover_access_person_ssim,
+                inheritable_read_access_group_ssim,inheritable_read_access_person_ssim,
+                inheritable_edit_access_group_ssim,inheritable_edit_access_person_ssim,
+                inheritable_embargo_release_date_dtsi
+              ','rows'=>'1','facet'=>'off','qt'=>'permissions','id'=>'woj:wojref4082','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'woj:wojref4082','edit_access_group_ssim'=>['admin_group']}]}}
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=ucenkiephdm4jzdzkenyx5kl;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:03.029Z</objCreateDate><objLastModDate>2016-04-21T17:39:16.509Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A0c15981d-9f27-453b-9492-b12e553da392/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A0c15981d-9f27-453b-9492-b12e553da392/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392?format=xml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=bxkt4v63ksgy1eieq8zingxkv;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '1092'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectProfile  xmlns="http://www.fedora.info/definitions/1/0/access/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://www.fedora.info/definitions/1/0/objectProfile.xsd" pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392"
+        ><objLabel></objLabel><objOwnerId>fedoraAdmin</objOwnerId><objModels><model>info:fedora/fedora-system:FedoraObject-3.0</model><model>info:fedora/afmodel:Collection</model></objModels><objCreateDate>2016-04-21T17:39:03.029Z</objCreateDate><objLastModDate>2016-04-21T17:39:16.509Z</objLastModDate><objDissIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A0c15981d-9f27-453b-9492-b12e553da392/methods/fedora-system%3A3/viewMethodIndex</objDissIndexViewURL><objItemIndexViewURL>http://localhost:8983/fedora-test/objects/ichabodcollection%3A0c15981d-9f27-453b-9492-b12e553da392/methods/fedora-system%3A3/viewItemIndex</objItemIndexViewURL><objState>A</objState></objectProfile>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392/datastreams?format=xml&profiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=1c42p9nrkitdr1o8aeuodtgzm3;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - text/xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+      Content-Length:
+      - '4604'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><objectDatastreams xmlns="http://www.fedora.info/definitions/1/0/access/"
+        xmlns:apim="http://www.fedora.info/definitions/1/0/management/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fedora.info/definitions/1/0/access/
+        http://localhost:8983/fedora-test/schema/listDatastreams.xsd" pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392"  baseURL="http://localhost:8983/fedora-test/"
+        ><datastreamProfile pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392"
+        dsID="DC" ><apim:dsLabel>Dublin Core Record for this object</apim:dsLabel><apim:dsVersionID>DC1.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:03.029Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI>http://www.openarchives.org/OAI/2.0/oai_dc/</apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>383</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392+DC+DC1.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392" dsID="RELS-EXT"
+        ><apim:dsLabel>Fedora Object-to-Object Relationship Metadata</apim:dsLabel><apim:dsVersionID>RELS-EXT.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:03.086Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/rdf+xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>X</apim:dsControlGroup><apim:dsSize>327</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392+RELS-EXT+RELS-EXT.0</apim:dsLocation><apim:dsLocationType></apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392" dsID="descriptive_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>descriptive_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:03.124Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>131</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392+descriptive_metadata+descriptive_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392" dsID="administrative_metadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>administrative_metadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:03.164Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>application/n-triples</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>109</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392+administrative_metadata+administrative_metadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile><datastreamProfile
+        pid="ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392" dsID="rightsMetadata"
+        ><apim:dsLabel></apim:dsLabel><apim:dsVersionID>rightsMetadata.0</apim:dsVersionID><apim:dsCreateDate>2016-04-21T17:39:16.509Z</apim:dsCreateDate><apim:dsState>A</apim:dsState><apim:dsMIME>text/xml</apim:dsMIME><apim:dsFormatURI></apim:dsFormatURI><apim:dsControlGroup>M</apim:dsControlGroup><apim:dsSize>544</apim:dsSize><apim:dsVersionable>true</apim:dsVersionable><apim:dsInfoType></apim:dsInfoType><apim:dsLocation>ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392+rightsMetadata+rightsMetadata.0</apim:dsLocation><apim:dsLocationType>INTERNAL_ID</apim:dsLocationType><apim:dsChecksumType>DISABLED</apim:dsChecksumType><apim:dsChecksum>none</apim:dsChecksum></datastreamProfile></objectDatastreams>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392/datastreams/RELS-EXT/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=18m3zj7w03raobrvdcim0k19v;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="Fedora Object-to-Object Relationship Metadata.rdf"
+      Content-Length:
+      - '327'
+      Content-Type:
+      - application/rdf+xml
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |2
+
+        <rdf:RDF xmlns:ns0="info:fedora/fedora-system:def/model#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="info:fedora/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392">
+            <ns0:hasModel rdf:resource="info:fedora/afmodel:Collection"></ns0:hasModel>
+          </rdf:Description>
+        </rdf:RDF>
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+- request:
+    method: get
+    uri: http://fedoraAdmin:fedoraAdmin@127.0.0.1:8983/fedora-test/objects/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392/datastreams/descriptive_metadata/content
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Set-Cookie:
+      - JSESSIONID=c189xocyja9f1axmhhbrwv7kt;Path=/fedora-test
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Disposition:
+      - inline; filename="descriptive_metadata.bin"
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/n-triples
+      Date:
+      - Thu, 21 Apr 2016 17:40:12 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <info:fedora/ichabodcollection:0c15981d-9f27-453b-9492-b12e553da392> <http://purl.org/dc/terms/title> "David Wojnarowicz Papers" .
+    http_version: 
+  recorded_at: Thu, 21 Apr 2016 17:40:12 GMT
+recorded_with: VCR 2.9.3

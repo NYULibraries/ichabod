@@ -90,9 +90,10 @@ Feature: Perform a basic search
     When I search on the phrase "Gallup GPSS"
     Then I should see search results
 
+  @vcr
   Scenario: Search for David Wojnarowicz Papers records title
     Given I am on the default search page
-    When I search on the phrase "Human Head"
+    When I search on the phrase "Glass Phial"
     Then I should see search results
 
   @loggedin
