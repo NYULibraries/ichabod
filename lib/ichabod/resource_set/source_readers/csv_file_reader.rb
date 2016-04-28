@@ -12,7 +12,7 @@ module Ichabod
 
         private
         extend Forwardable
-        def_delegators :resource_set, :file_path, :header_map, :marc_order_for_publisher, :csv_reader_options
+        def_delegators :resource_set, :file_path, :header_map, :csv_reader_options
 
         def records
           @records=[]

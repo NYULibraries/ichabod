@@ -11,11 +11,6 @@ module Ichabod
              format: ["format" ], rights: ["rights" ], subject: ["subject","coverage","coverage.temporal"]
            }
          }
-        let(:header_map2) {
-          {
-              identifier: ["identifier.uri"]
-          }
-        }
         let(:csv_reader_options) { { :col_sep=>";" } }
         let(:resource_set) { mock_resource_set }
         before do

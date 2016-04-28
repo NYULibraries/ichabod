@@ -5,13 +5,12 @@ class FacultyDigitalArchiveNgo < Ichabod::ResourceSet::Base
   editor :fda_cataloger
   before_load :set_available_or_citation, :set_type
 
-  attr_reader :resource_set, :file_path, :header_map, :marc_order_for_publisher, :csv_reader_options
+  attr_reader :resource_set, :file_path, :header_map, :csv_reader_options
 
   def initialize(*args)
     @file_path = args.shift
     @csv_reader_options = {}
     @header_map = set_header_map
-    @marc_order_for_publisher = true
     super
   end
 
