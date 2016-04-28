@@ -4,7 +4,7 @@ require 'blacklight/catalog'
 class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
-  
+
   #add check for discoverability on collection level
   #(see https://github.com/projectblacklight/blacklight/wiki/Extending-or-Modifying-Blacklight-Search-Behavior)
   #as we are currently using older version of Blacklight, additional method couldn't be placed to search_builder class
@@ -15,7 +15,7 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
       :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__publisher_tesim
                 desc_metadata__type_tesim desc_metadata__description_tesim desc_metadata__series_tesim
-                desc_metadata__creator_tesim desc_metadata__subject_tesim desc_metadata__subject_spatial_tesim 
+                desc_metadata__creator_tesim desc_metadata__subject_tesim desc_metadata__subject_spatial_tesim
                 desc_metadata__subject_temporal_tesim desc_metadata__isbn_tesim desc_metadata__genre_tesim',
       :qt => 'search',
       :rows => 10
@@ -45,21 +45,34 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
+
+    # Replace this:
+
     config.add_facet_field solr_name('desc_metadata__type', :facetable), :label => 'Format'
     config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
     config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
     config.add_facet_field solr_name('desc_metadata__language', :facetable), :label => 'Language'
+
+    # With this:
+
+    # facetable_fields = MetadataFields.get_facetable_fields_sorted
+    # facetable_fields.each do |field|
+    #   config.add_facet_field solr_name('desc_metadata__#{field.name}', :facetable),
+    #     :label => field.label
+    # end
+
+    # This can't be part of our new processing until this branch is merged:
+    # https://github.com/NYULibraries/ichabod/tree/feature/collection_new
     config.add_facet_field 'is_part_of_ssim', :label =>  'Collection',
                                                                            :helper_method => :render_collection_links,
                                                                            :text          => 'collection_text_display'
-
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
     config.default_solr_params[:'facet.field'] = config.facet_fields.keys
     #use this instead if you don't want to query facets marked :show=>false
-    #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys 
+    #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
 
 
     # solr fields to be displayed in the index (search results) view
@@ -203,4 +216,3 @@ def show_only_discoverable_records solr_params, user_params
     end
     return solr_params[:fq]
 end
-
