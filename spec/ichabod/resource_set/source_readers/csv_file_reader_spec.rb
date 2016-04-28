@@ -6,11 +6,16 @@ module Ichabod
         let(:file_path) { 'ingest/test_options.csv' }
         let(:header_map) { 
            {
-             identifier: ["identifier.uri"], title: ["title" ], creator: ["contributor.author" ], publisher: ["publisher" ],
-             type: ["type.resource","type" ], description: ["description.abstract","description" ], date: ["date.issued" ],
+             identifier: ["identifier.uri"], title: ["title" ], creator: ["contributor.author" ], publisher: [["publisher.place","publisher", "date.issued"], [":",","]],
+             type: ["type.resource","type" ], description: ["description.abstract","description" ], date: ["date.issued"],
              format: ["format" ], rights: ["rights" ], subject: ["subject","coverage","coverage.temporal"]
            }
          }
+        let(:header_map2) {
+          {
+              identifier: ["identifier.uri"]
+          }
+        }
         let(:csv_reader_options) { { :col_sep=>";" } }
         let(:resource_set) { mock_resource_set }
         before do
@@ -35,6 +40,7 @@ module Ichabod
               expect(resource).to be_a ResourceSet::Resource
             end
           end
+
           describe 'the first record' do
             subject { read.first }
             context 'when test records were loaded from csv file' do
@@ -42,11 +48,31 @@ module Ichabod
               its(:identifier) { should eql ['http://hdl.handle.net/2451/test2'] }
               its(:date) { should eql ["2015-03-14"] }
               its(:title) { should eq ["Test Data 2"] }
-              its(:publisher) { should eq ["test publisher"] }
+              its(:publisher) { should eq ["publisher_place:test publisher,2015-03-14"] }
               its(:creator) { should eq ["author2", "author3", "author4"] }
               its(:subject) { should eql ["Business--Demande", "Business--Supply"] }
               its(:description) { should eql ["Millions of US businesses dating back to 2010 the codebook."] }
             end
+          end
+          describe 'when first joined column is blank it should use correct join signs' do
+            subject { read.last }
+            its(:publisher) { should eq  ["2015-04-14"] }
+          end
+          describe 'when not first joined columns are blank it should use correct join signs' do
+            subject { read[1]}
+            its(:publisher) { should eq ["Business,2015-02-14"] }
+          end
+        end
+        context 'when number of columns to join mismatch with join sign in the  header map it should throw an error' do
+          let(:header_map) { {identifier: [["identifier.uri"],[",",".",":"]]} }
+          it 'should raise an ArgumentError' do
+            expect { subject.read }.to raise_error ArgumentError
+          end
+        end
+        context 'when attempt is made to join fields with multiple values it should throw an error' do
+          let(:header_map) { {identifier: [["identifier.uri","subject"],[","]]} }
+          it 'should raise an ArgumentError' do
+            expect { subject.read }.to raise_error ArgumentError
           end
         end
       end
