@@ -43,12 +43,25 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
+
+    # Replace this:
+
     config.add_facet_field solr_name('desc_metadata__type', :facetable), :label => 'Format'
     config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
     config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
     config.add_facet_field solr_name('desc_metadata__language', :facetable), :label => 'Language'
-    config.add_facet_field solr_name('collection', :facetable), :label => 'Collection'
 
+    # With this:
+
+    # facetable_fields = MetadataFields.get_facetable_fields_sorted
+    # facetable_fields.each do |field|
+    #   config.add_facet_field solr_name('desc_metadata__#{field.name}', :facetable),
+    #     :label => field.label
+    # end
+
+    # This can't be part of our new processing until this branch is merged:
+    # https://github.com/NYULibraries/ichabod/tree/feature/collection_new
+    config.add_facet_field solr_name('collection', :facetable), :label => 'Collection'
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
