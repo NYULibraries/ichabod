@@ -4,19 +4,19 @@ def read_yaml_file
 	YAML.load_file(File.join(Rails.root, "spec/fixtures", "fixture_metadata_fields.yml"))["terms"]["vocabulary"].deep_symbolize_keys
 end
 
-def get_fields_all_sources
+def get_field_names_all_sources
 	contents = read_yaml_file
-	all_fields = []
+	all_field_names = []
 	contents.keys.each { |ns|
 		contents[ns][:fields].keys.each { |f|
-			all_fields << f
+			all_field_names << f
 		}
 	}
-	all_fields
+	all_field_names
 end
 
-def get_fields_by_source(source, multiple = nil)
-	fields = []
+def get_field_names_by_source(source, multiple = nil)
+	field_names = []
 	contents = read_yaml_file
 	s = source
 	source = source.to_sym
@@ -25,9 +25,9 @@ def get_fields_by_source(source, multiple = nil)
 		output = multiple.nil? ?
 		true :
 		metadata_fields[field][:multiple] == multiple
-		fields << field if output
+		field_names << field if output
 	}
-	fields
+	field_names
 end
 
 def get_all_sources_info
@@ -66,26 +66,26 @@ describe MetadataFields do
 			end
 
 			it 'should equal all fields in the yml file if no arguments are sent' do
-				all = get_fields_all_sources
+				all = get_field_names_all_sources
 				expect(all_fields_expected).to match_array(all)
 			end
 
 			sources.keys.each { |ns|
 				ns = ns.to_s
 				it "should return fields for a specific source: #{ns} and no occurrences specified" do
-					fields = get_fields_by_source(ns)
+					fields = get_field_names_by_source(ns)
 					expect(MetadataFields.process_metadata_field_names(ns:ns)).to match_array(fields)
 				end
 
 				it "should return fields for a specific source: #{ns} and for multiple occurrences" do
 					multiple = true
-					fields = get_fields_by_source(ns,multiple)
+					fields = get_field_names_by_source(ns, multiple)
 					expect(MetadataFields.process_metadata_field_names(ns:ns, multiple:multiple)).to match_array(fields)
 				end
 
 				it "should return fields for a specific source: #{ns} and for single occurrences" do
 					multiple = false
-					fields = get_fields_by_source(ns,multiple)
+					fields = get_field_names_by_source(ns, multiple)
 					expect(MetadataFields.process_metadata_field_names(ns:ns, multiple:multiple)).to match_array(fields)
 				end
 			}
