@@ -46,20 +46,14 @@ class CatalogController < ApplicationController
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
 
-    # Replace this:
-
-    config.add_facet_field solr_name('desc_metadata__type', :facetable), :label => 'Format'
-    config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
-    config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
-    config.add_facet_field solr_name('desc_metadata__language', :facetable), :label => 'Language'
-
-    # With this:
-
-    # facetable_fields = MetadataFields.get_facetable_fields_sorted
-    # facetable_fields.each do |field|
-    #   config.add_facet_field solr_name('desc_metadata__#{field.name}', :facetable),
-    #     :label => field.label
-    # end
+    # TODO: This won't work until we fix the "format" vs. "type" madness
+    facetable_fields = MetadataFields.get_facetable_fields_in_display_order
+    facetable_fields.each do |field|
+      field_name = field[0]
+      field_facet_label = field[1][:display][:facet_label]
+      config.add_facet_field solr_name("desc_metadata__#{field_name}", :facetable),
+        :label => field_facet_label
+    end
 
     # This can't be part of our new processing until this branch is merged:
     # https://github.com/NYULibraries/ichabod/tree/feature/collection_new
