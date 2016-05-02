@@ -55,14 +55,14 @@ module MetadataFields
 		METADATA_FIELDS[ns][:info]
 	end
 
-	# output all fields regardless of namespace
+	# output all field names regardless of namespace
 	def add_all_field_names(multiple, fields)
 		METADATA_FIELDS.keys.each { |ns|
 			add_field_names_by_ns(multiple, fields, ns)
 		}
 	end
 
-	# add fields specified by namespace
+	# add field names specified by namespace
 	def add_field_names_by_ns(multiple, fields, ns)
 		#grabbing only fields
 		metadata_field_names = METADATA_FIELDS[ns][:fields]
