@@ -89,6 +89,26 @@ module MetadataFields
 		values << NAMESPACE_ALL
 	end
 
+	# output all fields regardless of namespace
+	def add_all_fields(multiple, fields)
+		METADATA_FIELDS.keys.each { |ns|
+			add_fields_by_ns(multiple, fields, ns)
+		}
+	end
+
+	# add fields specified by namespace
+	def add_fields_by_ns(multiple, fields, ns)
+		metadata_fields = METADATA_FIELDS[ns][:fields]
+		METADATA_FIELDS[ns][:fields].each{ |field|
+			# if output is true then print out field name
+			# if multiple has the default value
+			# or one of the values in the yml file
+			output = ( multiple == DEFAULT_MULTIPLE ) ?
+					true :
+					metadata_fields[field][:multiple] == multiple
+			fields.push(field) if output
+		}
+	end
 	private_class_method :add_all_field_names, :add_field_names_by_ns, :allowed_values_for_multiple, :allowed_values_for_ns,
 											 :get_all_sources_info, :get_metadata_source_info
 end
