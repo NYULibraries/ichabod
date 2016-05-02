@@ -73,7 +73,7 @@ module MetadataFields
 			output = ( multiple == DEFAULT_MULTIPLE ) ?
 			true :
 			metadata_fields[field_name][:multiple] == multiple
-			field_names.push(field) if output
+			field_names.push(field_name) if output
 		}
 	end
 
