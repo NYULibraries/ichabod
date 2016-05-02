@@ -14,6 +14,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         identifier:
           data_type: text
           facetable: false
@@ -22,6 +24,8 @@ terms:
           multiple: false
           searchable: true
           stored: true
+          display:
+            facet: false
         # Optional Fields
 
         contributor:
@@ -32,6 +36,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         creator:
           data_type: text
           facetable: true
@@ -40,6 +46,10 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: true
+            facet_label: "Creator"
+            facet_sort_key: 2
         date:
           data_type: date
           facetable: false
@@ -48,6 +58,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         description:
           data_type: text
           facetable: false
@@ -56,6 +68,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         format:
           data_type: text
           facetable: true
@@ -64,6 +78,10 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: true
+            facet_label: "Format"
+            facet_sort_key: 1
         language:
           data_type: text
           facetable: true
@@ -72,6 +90,10 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: true
+            facet_label: "Language"
+            facet_sort_key: 4
         publisher:
           data_type: text
           facetable: false
@@ -80,6 +102,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         relation:
           data_type: text
           facetable: false
@@ -88,6 +112,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         rights:
           data_type: text
           facetable: false
@@ -96,6 +122,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         subject:
           data_type: text
           facetable: true
@@ -104,6 +132,10 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: true
+            facet_label: "Subject"
+            facet_sort_key: 3
         type:
           data_type: text
           facetable: false
@@ -112,6 +144,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
 
     ichabod:
       info:
@@ -127,6 +161,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         addinfotext:
           data_type: text
           facetable: false
@@ -135,6 +171,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         data_provider:
           data_type: text
           facetable: false
@@ -143,6 +181,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         discoverable:
           data_type: text
           facetable: false
@@ -151,6 +191,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         geometry:
           data_type: text
           facetable: false
@@ -159,6 +201,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         isbn:
           data_type: text
           facetable: false
@@ -167,6 +211,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         location:
           data_type: text
           facetable: false
@@ -175,6 +221,8 @@ terms:
           multiple: true
           searchable: false
           stored: true
+          display:
+            facet: false
         repo:
           data_type: text
           facetable: false
@@ -183,6 +231,8 @@ terms:
           multiple: false
           searchable: false
           stored: true
+          display:
+            facet: false
         resource_set:
           data_type: text
           facetable: false
@@ -191,6 +241,8 @@ terms:
           multiple: false
           searchable: true
           stored: true
+          display:
+            facet: false
         subject_spatial:
           data_type: text
           facetable: false
@@ -199,6 +251,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         subject_temporal:
           data_type: text
           facetable: false
@@ -207,6 +261,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
 
     nyucore:
       info:
@@ -224,6 +280,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         citation:
           data_type: text
           facetable: false
@@ -232,6 +290,8 @@ terms:
           multiple: true
           searchable: false
           stored: true
+          display:
+            facet: false
         edition:
           data_type: text
           facetable: false
@@ -240,6 +300,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         restrictions:
           data_type: text
           facetable: false
@@ -248,6 +310,8 @@ terms:
           multiple: false
           searchable: false
           stored: true
+          display:
+            facet: false
         series:
           data_type: text
           facetable: false
@@ -256,6 +320,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
         version:
           data_type: text
           facetable: false
@@ -264,6 +330,8 @@ terms:
           multiple: true
           searchable: false
           stored: true
+          display:
+            facet: false
         genre:
           data_type: text
           facetable: false
@@ -272,3 +340,5 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet: false
