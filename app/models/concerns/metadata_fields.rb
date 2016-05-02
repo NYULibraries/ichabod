@@ -56,9 +56,9 @@ module MetadataFields
 	end
 
 	# output all field names regardless of namespace
-	def add_all_field_names(multiple, fields)
+	def add_all_field_names(multiple, field_names)
 		METADATA_FIELDS.keys.each { |ns|
-			add_field_names_by_ns(multiple, fields, ns)
+			add_field_names_by_ns(multiple, field_names, ns)
 		}
 	end
 
