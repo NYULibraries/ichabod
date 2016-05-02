@@ -109,6 +109,27 @@ module MetadataFields
 			fields.push(field) if output
 		}
 	end
+
+	def get_facetable_fields_in_display_order
+		fields = []
+		add_all_fields(DEFAULT_MULTIPLE, fields)
+
+		# Filter for facetable
+		fields = fields.select { |field| field[1][:display][:facet] == true }
+
+		sort_fields_by_display_attribute(fields, :facet_sort_key)
+
+		fields
+	end
+
+	def sort_fields_by_display_attribute(fields, sort_key)
+		fields.sort_by! do |field|
+			field[1][:display][sort_key]
+		end
+
+		fields
+	end
+
 	private_class_method :add_all_field_names, :add_field_names_by_ns, :allowed_values_for_multiple, :allowed_values_for_ns,
 											 :get_all_sources_info, :get_metadata_source_info
 end
