@@ -63,17 +63,17 @@ module MetadataFields
 	end
 
 	# add field names specified by namespace
-	def add_field_names_by_ns(multiple, fields, ns)
+	def add_field_names_by_ns(multiple, field_names, ns)
 		#grabbing only fields
-		metadata_field_names = METADATA_FIELDS[ns][:fields]
-		METADATA_FIELDS[ns][:fields].keys.each{ |field|
-			# if output is true then print out field
+		metadata_fields = METADATA_FIELDS[ns][:fields]
+		METADATA_FIELDS[ns][:fields].keys.each{ |field_name|
+			# if output is true then print out field name
 			# if multiple has the default value
 			# or one of the values in the yml file
 			output = ( multiple == DEFAULT_MULTIPLE ) ?
 			true :
-			metadata_field_names[field][:multiple] == multiple
-			fields.push(field) if output
+			metadata_fields[field_name][:multiple] == multiple
+			field_names.push(field) if output
 		}
 	end
 
