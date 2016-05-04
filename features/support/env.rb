@@ -27,7 +27,7 @@ if Rails.env.cucumber?
     Nyucore.destroy_all
     Collection.destroy_all
     Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
-    Ichabod::DataLoader.new('faculty_digital_archive_ngo','https://archive.nyu.edu/request','hdl_2451_33605',5).load
+    Ichabod::DataLoader.new('faculty_digital_archive_ngo',File.join(Rails.root, 'ingest/test_ngo_fda.csv')).load
     Ichabod::DataLoader.new('archive_it_accw','http://dev-dl-pa.home.nyu.edu','/ichabod-support/collections/4049.json').load
     # Loaded the NYUPress collection up to record a cassette, but don't need it after that
     Ichabod::DataLoader.new('nyu_press_open_access_book','http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select','0','5').load
