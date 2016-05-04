@@ -93,7 +93,7 @@ Feature: Perform a basic search
   @vcr
   Scenario: Search for David Wojnarowicz Papers records title
     Given I am on the default search page
-    When I search on the phrase "globe"
+    When I search on the phrase "Glass Pilah"
     Then I should see search results
 
   @loggedin

@@ -4,7 +4,10 @@ require 'support/test_user_helper'
 describe NyucoresController do
 
   let(:user) { create_or_return_test_admin }
-  let(:nyucore_fields) { Nyucore::FIELDS }
+  let(:nyucore_fields) { Nyucore::FIELDS-[:isPartOf] }
+  let(:collection_private) { Collection.find( { :desc_metadata__title_tesim=>'Indian Ocean Postcards' })[0] }
+  let(:collection_public) { Collection.find( { :desc_metadata__title_tesim=>'Spatial Data Repository' })[0] }
+
 
   before  { controller.stub(:current_user).and_return(user) }
 

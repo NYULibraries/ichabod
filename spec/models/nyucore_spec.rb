@@ -30,11 +30,6 @@ describe Nyucore do
     it { should be_a Ichabod::NyucoreDatastream }
   end
 
-  describe "#collections" do
-    subject { nyucore.collections }
-    it { should be_instance_of Nyucore::Collections }
-  end
-
   # Some meta programming to test all the single-valued Nyucore attributes
   Nyucore::SINGLE_FIELDS.each do |field|
     # Generic test for validity

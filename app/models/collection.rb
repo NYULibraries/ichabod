@@ -14,7 +14,6 @@ class Collection < ActiveFedora::Base
   REQUIRED_FIELDS = [ :title, :discoverable ]
   ID_PREFIX="ichabodcollection"
 
-
   validates :title, presence: true
   validates :title, uniqueness: { solr_name: "administrative_metadata__title_tesim" }
   validates :discoverable, presence: true
@@ -31,13 +30,13 @@ class Collection < ActiveFedora::Base
   end
 
   def has_records?
-    if Nyucore.exists?( :desc_metadata__isPartOf_sim=>pid)
+    #if Nyucore..exists?( :desc_metadata__isPartOf_sim=>pid)
+    if self.nyucores.size>0
       true
     else
       false
     end
   end
-
 
   has_metadata descriptive_metadata, type: Ichabod::NyucoreDatastream
   has_attributes(*DESCRIPTIVE_FIELDS[:single], datastream: descriptive_metadata , multiple: false)

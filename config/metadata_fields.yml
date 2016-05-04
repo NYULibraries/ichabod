@@ -22,6 +22,14 @@ terms:
           multiple: false
           searchable: true
           stored: true
+        isPartOf:
+          data_type: text
+          facetable: true
+          indexed: true
+          mandatory: true
+          multiple: true
+          searchable: true
+          stored: true
         # Optional Fields
 
         contributor:
@@ -263,4 +271,12 @@ terms:
           mandatory: false
           multiple: true
           searchable: false
+          stored: true
+        genre:
+          data_type: text
+          facetable: false
+          indexed: true
+          mandatory: false
+          multiple: true
+          searchable: true
           stored: true
