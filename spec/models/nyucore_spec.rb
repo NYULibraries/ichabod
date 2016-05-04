@@ -1,40 +1,19 @@
 require 'spec_helper'
 
 describe Nyucore do
-
-  describe Nyucore::NYUCORE_FIELDS do
-    subject { Nyucore::NYUCORE_FIELDS }
-    it { should be_a Hash }
-    it { should have_key :single }
-    it { should have_key :multiple }
-    it 'should have the appropriate single fields' do
-      expect(subject[:single]).to eq [:identifier, :restrictions]
-    end
-    it 'should have the appropriate multiple fields' do
-      expect(subject[:multiple]).to eq [:available, :citation, :title, :creator,
-        :type, :publisher, :description, :edition, :date, :format, :language,
-        :relation, :rights, :subject, :series, :version]
-    end
-  end
-
-  describe Nyucore::EXTRA_SINGLES do
-    subject { Nyucore::EXTRA_SINGLES }
-    it { should eq [:resource_set, :repo] }
-  end
-
-  describe Nyucore::EXTRA_MULTIPLES do
-    subject { Nyucore::EXTRA_MULTIPLES }
-    it { should eq [:addinfolink, :addinfotext, :isbn, :data_provider, :geometry, :subject_spatial, :subject_temporal, :location] }
-  end
-
-  describe Nyucore::SINGLE_FIELDS do
+  describe Nyucore::SINGLE_FIELDS  do
     subject { Nyucore::SINGLE_FIELDS }
-    it { should eq Nyucore::NYUCORE_FIELDS[:single] + Nyucore::EXTRA_SINGLES }
+    it { should be_a Array }
+    it { should =~ [:identifier, :restrictions, :resource_set, :repo] }
   end
 
   describe Nyucore::MULTIPLE_FIELDS do
-    subject { Nyucore::MULTIPLE_FIELDS }
-    it { should eq Nyucore::NYUCORE_FIELDS[:multiple] + Nyucore::EXTRA_MULTIPLES }
+    subject { Nyucore::MULTIPLE_FIELDS}
+    it { should =~ [:available, :citation, :title, :creator,
+        :type, :publisher, :description, :edition, :date, :format, :language,
+        :relation, :rights, :subject, :series, :version, :contributor, 
+        :addinfolink, :addinfotext, :data_provider, :discoverable, :geometry, 
+        :isbn, :location, :subject_spatial, :subject_temporal] }
   end
 
   subject(:nyucore) { build(:nyucore) }
@@ -62,8 +41,6 @@ describe Nyucore do
     it { should be_valid }
     # Generic test for presence
     its(field) { should be_present }
-
-
 
     # Test the attribute writers
     describe "##{field}=" do

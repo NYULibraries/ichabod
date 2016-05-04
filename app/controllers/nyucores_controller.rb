@@ -2,7 +2,7 @@ class NyucoresController < ApplicationController
   #needed to get current_per_page value for destroy method redirect
   include Blacklight::CatalogHelperBehavior
   include Blacklight::ConfigurationHelperBehavior
-  
+
   respond_to :html, :json
   # Convert blank values to nil in params when creating and updating
   # in order to not save empty array values when field is not nil but is an empty string (i.e. "")
@@ -62,7 +62,12 @@ class NyucoresController < ApplicationController
 
   # Whitelist attrs
   def item_params
-    params.require(:nyucore).permit(:identifier, :restrictions, title: [], creator: [], publisher: [], type: [], available: [], description: [], edition: [], series: [], version: [], date: [], format: [], language: [], relation: [], rights: [], subject: [], citation: [])
+    # changed this to allow all attributes of nyucore to pass
+    # unless it needs to be a specific set for some reason?
+    # probably should add an argument that allows a specific set
+    # rather than hard code it?
+
+    params.require(:nyucore).permit!
   end
 
   def ensure_default_editors

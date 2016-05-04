@@ -2,16 +2,14 @@ module Ichabod
   module ResourceSet
     # Public
     class Resource
+      include MetadataFields
       require 'iso-639'
 
       HANDLE_REGEXP = /^http:\/\/hdl\.handle\.net/
       URL_REGEXP = /^https?:\/\//
 
-      NYUCORE_ATTRIBUTES = [:identifier, :addinfolink, :addinfotext, :available,
-        :citation, :title, :creator, :type, :publisher, :description, :edition,
-        :date, :format, :language, :relation, :rights, :subject, :series,
-        :version, :isbn, :subject_spatial, :subject_temporal,:data_provider, :geometry, :location, :repo]
-
+      #module METADATA_FIELDS is in app/model/concerns
+      NYUCORE_ATTRIBUTES = MetadataFields.process_metadata_fields
       attr_accessor :prefix
       attr_writer :pid_identifier
       attr_accessor(*NYUCORE_ATTRIBUTES)
