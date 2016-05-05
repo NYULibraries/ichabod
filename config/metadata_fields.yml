@@ -70,18 +70,21 @@ terms:
           stored: true
           display:
             facet: false
+        # The format/type field confusion needs to be addressed.  For now we are
+        # merely reproducing that already problematic configuration that was already
+        # in place.
+        #
+        # See https://www.pivotaltracker.com/n/projects/1025368/stories/113569497
         format:
           data_type: text
-          facetable: true
+          facetable: facetable
           indexed: true
           mandatory: false
           multiple: true
           searchable: true
           stored: true
           display:
-            facet: true
-            facet_label: "Format"
-            facet_sort_key: 1
+            facet: false
         language:
           data_type: text
           facetable: true
@@ -136,16 +139,23 @@ terms:
             facet: true
             facet_label: "Subject"
             facet_sort_key: 3
+        # The format/type field confusion needs to be addressed.  For now we are
+        # merely reproducing that already problematic configuration that was already
+        # in place.
+        #
+        # See https://www.pivotaltracker.com/n/projects/1025368/stories/113569497
         type:
           data_type: text
-          facetable: false
+          facetable: true
           indexed: true
           mandatory: false
           multiple: true
           searchable: true
           stored: true
           display:
-            facet: false
+            facet: true
+            facet_label: "Format"
+            facet_sort_key: 1
 
     ichabod:
       info:
