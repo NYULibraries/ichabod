@@ -71,8 +71,15 @@ class CatalogController < ApplicationController
 
     search_result_fields = MetadataFields.get_search_result_fields_in_display_order
     search_result_fields.each do |field|
-      config.add_index_field solr_name("desc_metadata__#{field[:name]}", :stored_searchable, type: :string),
-                             :label => field[:attributes][:display][:search_result][:label]
+      if (field[:attributes][:display][:search_result][:special_handling])
+        config.add_index_field solr_name("desc_metadata__#{field[:name]}", :stored_searchable, type: :string),
+                               :label => field[:attributes][:display][:search_result][:label],
+                               :helper_method => field[:attributes][:display][:search_result][:special_handling][:helper_method],
+                               :text          => field[:attributes][:display][:search_result][:special_handling][:text]
+      else
+        config.add_index_field solr_name("desc_metadata__#{field[:name]}", :stored_searchable, type: :string),
+                               :label => field[:attributes][:display][:search_result][:label]
+      end
     end
 
     # solr fields to be displayed in the show (single result) view
