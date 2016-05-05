@@ -116,27 +116,23 @@ module MetadataFields
 	end
 
 	def get_facet_fields_in_display_order
-		fields = []
-		add_all_fields(DEFAULT_MULTIPLE, fields)
-
-		# Filter for facet fields
-		fields = fields.select { |field| field[:attributes][:display][:facet][:show] == true }
-
-		sort_fields_by_display_attribute(fields, :facet, :sort_key)
-
-		fields
+		get_fields_in_display_order_by_section(:facet)
 	end
 
 	def get_search_result_fields_in_display_order
+		get_fields_in_display_order_by_section(:search_result)
+	end
+
+	def get_fields_in_display_order_by_section(section)
 		fields = []
 		add_all_fields(DEFAULT_MULTIPLE, fields)
 
 		# Filter for search_result fields
 		fields = fields.select do |field|
-			field[:attributes][:display][:search_result][:show] == true
+			field[:attributes][:display][section][:show] == true
 		end
 
-		sort_fields_by_display_attribute(fields, :search_result, :sort_key)
+		sort_fields_by_display_attribute(fields, section, :sort_key)
 
 		fields
 	end
