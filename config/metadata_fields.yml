@@ -32,6 +32,8 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: false
         # Optional Fields
 
         contributor:
@@ -44,6 +46,8 @@ terms:
           stored: true
           display:
             facet:
+              show: false
+            search_result:
               show: false
         creator:
           data_type: text
@@ -58,6 +62,8 @@ terms:
               show: true
               label: "Creator"
               sort_key: 2
+            search_result:
+              show: false
         date:
           data_type: date
           facetable: false
@@ -69,6 +75,8 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: false
         description:
           data_type: text
           facetable: false
@@ -79,6 +87,8 @@ terms:
           stored: true
           display:
             facet:
+              show: false
+            search_result:
               show: false
         # The format/type field confusion needs to be addressed.  For now we are
         # merely reproducing that already problematic configuration that was already
@@ -132,6 +142,8 @@ terms:
               show: true
               label: "Publisher"
               sort_key: 4
+            search_result:
+              show: false
         relation:
           data_type: text
           facetable: false
@@ -143,6 +155,8 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: false
         rights:
           data_type: text
           facetable: false
@@ -153,6 +167,8 @@ terms:
           stored: true
           display:
             facet:
+              show: false
+            search_result:
               show: false
         subject:
           data_type: text
@@ -167,6 +183,8 @@ terms:
               show: true
               label: "Subject"
               sort_key: 3
+            search_result:
+              show: false
         # The format/type field confusion needs to be addressed.  For now we are
         # merely reproducing that already problematic configuration that was already
         # in place.
@@ -185,6 +203,8 @@ terms:
               show: true
               label: "Format"
               sort_key: 1
+            search_result:
+              show: false
 
     ichabod:
       info:
@@ -203,6 +223,8 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: false
         addinfotext:
           data_type: text
           facetable: false
@@ -213,6 +235,8 @@ terms:
           stored: true
           display:
             facet:
+              show: false
+            search_result:
               show: false
         data_provider:
           data_type: text
@@ -225,6 +249,8 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: false
         discoverable:
           data_type: text
           facetable: false
@@ -235,6 +261,8 @@ terms:
           stored: true
           display:
             facet:
+              show: false
+            search_result:
               show: false
         geometry:
           data_type: text
@@ -258,6 +286,8 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: false
         location:
           data_type: text
           facetable: false
@@ -268,6 +298,8 @@ terms:
           stored: true
           display:
             facet:
+              show: false
+            search_result:
               show: false
         repo:
           data_type: text
@@ -280,6 +312,8 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: false
         resource_set:
           data_type: text
           facetable: false
@@ -290,6 +324,8 @@ terms:
           stored: true
           display:
             facet:
+              show: false
+            search_result:
               show: false
         subject_spatial:
           data_type: text
@@ -302,6 +338,8 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: false
         subject_temporal:
           data_type: text
           facetable: false
@@ -312,6 +350,8 @@ terms:
           stored: true
           display:
             facet:
+              show: false
+            search_result:
               show: false
 
     nyucore:
@@ -351,6 +391,8 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: false
         edition:
           data_type: text
           facetable: false
@@ -361,6 +403,8 @@ terms:
           stored: true
           display:
             facet:
+              show: false
+            search_result:
               show: false
         restrictions:
           data_type: text
@@ -388,6 +432,8 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: false
         version:
           data_type: text
           facetable: false
@@ -409,4 +455,6 @@ terms:
           stored: true
           display:
             facet: false
+              show: false
+            search_result:
               show: false
