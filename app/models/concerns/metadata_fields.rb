@@ -120,16 +120,16 @@ module MetadataFields
 		add_all_fields(DEFAULT_MULTIPLE, fields)
 
 		# Filter for facetable
-		fields = fields.select { |field| field[:attributes][:display][:facet] == true }
+		fields = fields.select { |field| field[:attributes][:display][:facet][:show] == true }
 
-		sort_fields_by_display_attribute(fields, :facet_sort_key)
+		sort_fields_by_display_attribute(fields, :facet, :sort_key)
 
 		fields
 	end
 
-	def sort_fields_by_display_attribute(fields, sort_key)
+	def sort_fields_by_display_attribute(fields, section, sort_key)
 		fields.sort_by! do |field|
-			field[:attributes][:display][sort_key]
+			field[:attributes][:display][section][sort_key]
 		end
 
 		fields
