@@ -149,18 +149,11 @@ describe CatalogController do
   def expected_index_fields_order
     [
         'desc_metadata__title_tesim',
-        'desc_metadata__title_vern_tesim',
-        'desc_metadata__author_tesim',
-        'desc_metadata__author_vern_tesim',
         'desc_metadata__format_ssim',
         'desc_metadata__language_tesim',
-        'desc_metadata__published_tesim',
-        'desc_metadata__published_vern_tesim',
-        'desc_metadata__lc_callnum_tesim',
         'desc_metadata__publisher_tesim',
         'desc_metadata__restrictions_tesim',
         'desc_metadata__available_tesim',
-        'desc_metadata__id_tesim'
     ]
   end
 
