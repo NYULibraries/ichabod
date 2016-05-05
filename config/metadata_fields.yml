@@ -142,8 +142,6 @@ terms:
               show: true
               label: "Publisher"
               sort_key: 4
-            search_result:
-              show: false
         relation:
           data_type: text
           facetable: false
@@ -274,6 +272,8 @@ terms:
           stored: true
           display:
             facet:
+              show: false
+            search_result:
               show: false
         isbn:
           data_type: text
