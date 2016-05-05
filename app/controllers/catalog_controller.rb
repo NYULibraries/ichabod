@@ -47,8 +47,8 @@ class CatalogController < ApplicationController
     # facet bar
 
     # TODO: This won't work until we fix the "format" vs. "type" madness
-    facetable_fields = MetadataFields.get_facetable_fields_in_display_order
-    facetable_fields.each do |field|
+    facet_fields = MetadataFields.get_facetable_fields_in_display_order
+    facet_fields.each do |field|
       config.add_facet_field solr_name("desc_metadata__#{field[:name]}", :facetable),
         :label => field[:attributes][:display][:facet][:label]
     end
