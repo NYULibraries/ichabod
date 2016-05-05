@@ -127,6 +127,20 @@ module MetadataFields
 		fields
 	end
 
+	def get_search_result_fields_in_display_order
+		fields = []
+		add_all_fields(DEFAULT_MULTIPLE, fields)
+
+		# Filter for search_result fields
+		fields = fields.select do |field|
+			field[:attributes][:display][:search_result][:show] == true
+		end
+
+		sort_fields_by_display_attribute(fields, :search_result, :sort_key)
+
+		fields
+	end
+
 	def sort_fields_by_display_attribute(fields, section, sort_key)
 		fields.sort_by! do |field|
 			field[:attributes][:display][section][sort_key]
