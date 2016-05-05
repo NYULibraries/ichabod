@@ -68,15 +68,12 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title'
-    config.add_index_field solr_name('desc_metadata__format', :symbol), :label => 'Format'
-    config.add_index_field solr_name('desc_metadata__language', :stored_searchable, type: :string), :label => 'Language'
-    #NYUCore Additions
-    config.add_index_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher'
-    config.add_index_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions'
-    config.add_index_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label => 'Online Resource',
-                                                                                                    :helper_method => :render_external_links,
-                                                                                                    :text          => 'resource_text_display'
+
+    search_result_fields = MetadataFields.get_search_result_fields_in_display_order
+    search_result_fields.each do |field|
+      config.add_index_field solr_name("desc_metadata__#{field[:name]}", :stored_searchable, type: :string),
+                             :label => field[:attributes][:display][:search_result][:label]
+    end
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
