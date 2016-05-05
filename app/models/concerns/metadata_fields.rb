@@ -99,13 +99,18 @@ module MetadataFields
 	# add fields specified by namespace
 	def add_fields_by_ns(multiple, fields, ns)
 		metadata_fields = METADATA_FIELDS[ns][:fields]
-		METADATA_FIELDS[ns][:fields].each{ |field|
+		METADATA_FIELDS[ns][:fields].each{ |fieldPair|
 			# if output is true then print out field name
 			# if multiple has the default value
 			# or one of the values in the yml file
 			output = ( multiple == DEFAULT_MULTIPLE ) ?
 					true :
-					metadata_fields[field][:multiple] == multiple
+					metadata_fields[fieldPair][:multiple] == multiple
+
+			field = {}
+			field[:name] = fieldPair[0]
+			field[:attributes] = fieldPair[1]
+
 			fields.push(field) if output
 		}
 	end
@@ -115,7 +120,7 @@ module MetadataFields
 		add_all_fields(DEFAULT_MULTIPLE, fields)
 
 		# Filter for facetable
-		fields = fields.select { |field| field[1][:display][:facet] == true }
+		fields = fields.select { |field| field[:attributes][:display][:facet] == true }
 
 		sort_fields_by_display_attribute(fields, :facet_sort_key)
 
@@ -124,7 +129,7 @@ module MetadataFields
 
 	def sort_fields_by_display_attribute(fields, sort_key)
 		fields.sort_by! do |field|
-			field[1][:display][sort_key]
+			field[:attributes][:display][sort_key]
 		end
 
 		fields
