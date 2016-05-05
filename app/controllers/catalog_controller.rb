@@ -70,23 +70,15 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     config.add_index_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title'
-    config.add_index_field solr_name('desc_metadata__title_vern', :stored_searchable, type: :string), :label => 'Title'
-    config.add_index_field solr_name('desc_metadata__author', :stored_searchable, type: :string), :label => 'Author'
-    config.add_index_field solr_name('desc_metadata__author_vern', :stored_searchable, type: :string), :label => 'Author'
     config.add_index_field solr_name('desc_metadata__format', :symbol), :label => 'Format'
     config.add_index_field solr_name('desc_metadata__language', :stored_searchable, type: :string), :label => 'Language'
-    config.add_index_field solr_name('desc_metadata__published', :stored_searchable, type: :string), :label => 'Published'
-    config.add_index_field solr_name('desc_metadata__published_vern', :stored_searchable, type: :string), :label => 'Published'
-    config.add_index_field solr_name('desc_metadata__lc_callnum', :stored_searchable, type: :string), :label => 'Call number'
     #NYUCore Additions
     config.add_index_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher'
     config.add_index_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions'
     config.add_index_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label => 'Online Resource',
                                                                                                     :helper_method => :render_external_links,
                                                                                                     :text          => 'resource_text_display'
-    config.add_index_field solr_name('desc_metadata__id', :stored_searchable, type: :string), :label => 'Online Resource',
-                                                                                                    :helper_method => :render_external_link,
-                                                                                                    :text          => 'resource_text_display'
+
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     config.add_show_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title'
