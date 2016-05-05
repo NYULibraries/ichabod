@@ -115,11 +115,11 @@ module MetadataFields
 		}
 	end
 
-	def get_facetable_fields_in_display_order
+	def get_facet_fields_in_display_order
 		fields = []
 		add_all_fields(DEFAULT_MULTIPLE, fields)
 
-		# Filter for facetable
+		# Filter for facet fields
 		fields = fields.select { |field| field[:attributes][:display][:facet][:show] == true }
 
 		sort_fields_by_display_attribute(fields, :facet, :sort_key)
