@@ -17,6 +17,10 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: true
+              label: "Title"
+              sort_key: 1
         identifier:
           data_type: text
           facetable: false
@@ -92,6 +96,10 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: true
+              label: "Format"
+              sort_key: 2
         language:
           data_type: text
           facetable: true
@@ -105,6 +113,10 @@ terms:
               show: true
               label: "Language"
               sort_key: 4
+            search_result:
+              show: true
+              label: "Language"
+              sort_key: 3
         publisher:
           data_type: text
           facetable: false
@@ -116,6 +128,10 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: true
+              label: "Publisher"
+              sort_key: 4
         relation:
           data_type: text
           facetable: false
@@ -317,6 +333,13 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: true
+              label: "Online Resource"
+              sort_key: 6
+            special_handling:
+              helper_method: "render_external_links"
+              text: "resource_text_display"
         citation:
           data_type: text
           facetable: false
@@ -350,6 +373,10 @@ terms:
           display:
             facet:
               show: false
+            search_result:
+              show: true
+              label: "Access Restrictions"
+              sort_key: 5
         series:
           data_type: text
           facetable: false
