@@ -46,7 +46,6 @@ class CatalogController < ApplicationController
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
 
-    # TODO: This won't work until we fix the "format" vs. "type" madness
     facet_fields = MetadataFields.get_facet_fields_in_display_order
     facet_fields.each do |field|
       config.add_facet_field solr_name("desc_metadata__#{field[:name]}", :facetable),
