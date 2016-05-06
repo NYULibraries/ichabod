@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-def read_yaml_file
+def fixture_vocabulary
   YAML.load_file(File.join(Rails.root, "spec/fixtures", "fixture_metadata_fields.yml"))["terms"]["vocabulary"].deep_symbolize_keys
 end
 
 def get_field_names_all_sources
-  contents = read_yaml_file
+  contents = fixture_vocabulary
   all_field_names = []
   contents.keys.each { |ns|
     contents[ns][:fields].keys.each { |f|
@@ -17,7 +17,7 @@ end
 
 def get_field_names_by_source(source, multiple = nil)
   field_names = []
-  contents = read_yaml_file
+  contents = fixture_vocabulary
   s = source
   source = source.to_sym
   metadata_fields = contents[source][:fields]
@@ -31,7 +31,7 @@ def get_field_names_by_source(source, multiple = nil)
 end
 
 def get_all_sources_info
-  contents = read_yaml_file
+  contents = fixture_vocabulary
   info = {}
   contents.keys.each { |ns|
     info[ns] = get_info_by_source(ns)
@@ -40,7 +40,7 @@ def get_all_sources_info
 end
 
 def get_info_by_source(ns)
-  contents = read_yaml_file
+  contents = fixture_vocabulary
   ns = ns.to_sym
   info = contents[ns][:info]
 end
@@ -59,7 +59,7 @@ describe MetadataFields do
     end
 
     context 'check method returns based on various valid parameters' do
-      sources = read_yaml_file
+      sources = fixture_vocabulary
       let(:all_fields_expected) { MetadataFields.process_metadata_field_names }
       it 'returns an array if no arguments are sent' do
         expect(all_fields_expected).to be_a_kind_of(Array)
@@ -97,7 +97,7 @@ describe MetadataFields do
       expect { MetadataFields.get_source_info(ns: invalid_value) }.to raise_error
     end
     context 'check method returns based on various valid parameters' do
-      sources = read_yaml_file
+      sources = fixture_vocabulary
       let(:all_source_info_expected) { MetadataFields.get_source_info }
       it 'returns a hash if no arguments are sent' do
         expect(all_source_info_expected).to be_a_kind_of(Hash)
