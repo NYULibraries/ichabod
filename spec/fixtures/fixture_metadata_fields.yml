@@ -1,10 +1,10 @@
+---
 terms:
   vocabulary:
     dcterms:
       info:
-        namespace: "RDF::DC"
-        uri: "http://purl.org/dc/terms/"
-      # Mandatory Fields
+        namespace: RDF::DC
+        uri: http://purl.org/dc/terms/
       fields:
         title:
           data_type: text
@@ -14,6 +14,13 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              label: Title
+              show: true
+              sort_key: 1
         identifier:
           data_type: text
           facetable: false
@@ -22,8 +29,11 @@ terms:
           multiple: false
           searchable: true
           stored: true
-        # Optional Fields
-
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         contributor:
           data_type: text
           facetable: true
@@ -32,6 +42,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         creator:
           data_type: text
           facetable: true
@@ -40,6 +55,13 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              label: Creator
+              show: true
+              sort_key: 2
+            search_result:
+              show: false
         date:
           data_type: date
           facetable: false
@@ -48,6 +70,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         description:
           data_type: text
           facetable: false
@@ -56,6 +83,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         format:
           data_type: text
           facetable: true
@@ -64,6 +96,13 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              label: Format
+              show: true
+              sort_key: 2
         language:
           data_type: text
           facetable: true
@@ -72,6 +111,15 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              label: Language
+              show: true
+              sort_key: 4
+            search_result:
+              label: Language
+              show: true
+              sort_key: 3
         publisher:
           data_type: text
           facetable: false
@@ -80,6 +128,13 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              label: Publisher
+              show: true
+              sort_key: 4
         relation:
           data_type: text
           facetable: false
@@ -88,6 +143,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         rights:
           data_type: text
           facetable: false
@@ -96,6 +156,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         subject:
           data_type: text
           facetable: true
@@ -104,6 +169,13 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              label: Subject
+              show: true
+              sort_key: 3
+            search_result:
+              show: false
         type:
           data_type: text
           facetable: false
@@ -112,12 +184,17 @@ terms:
           multiple: true
           searchable: true
           stored: true
-
+          display:
+            facet:
+              label: Format
+              show: true
+              sort_key: 1
+            search_result:
+              show: false
     ichabod:
       info:
-        namespace: "NYU::Ichabod::Local"
-        uri: "http://library.nyu.edu/data/ichabod#"
-      # Optional Fields
+        namespace: NYU::Ichabod::Local
+        uri: http://library.nyu.edu/data/ichabod#
       fields:
         addinfolink:
           data_type: text
@@ -127,6 +204,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         addinfotext:
           data_type: text
           facetable: false
@@ -135,6 +217,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         data_provider:
           data_type: text
           facetable: false
@@ -143,6 +230,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         discoverable:
           data_type: text
           facetable: false
@@ -151,6 +243,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         geometry:
           data_type: text
           facetable: false
@@ -159,6 +256,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         isbn:
           data_type: text
           facetable: false
@@ -167,6 +269,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         location:
           data_type: text
           facetable: false
@@ -175,6 +282,11 @@ terms:
           multiple: true
           searchable: false
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         repo:
           data_type: text
           facetable: false
@@ -183,6 +295,11 @@ terms:
           multiple: false
           searchable: false
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         resource_set:
           data_type: text
           facetable: false
@@ -191,6 +308,11 @@ terms:
           multiple: false
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         subject_spatial:
           data_type: text
           facetable: false
@@ -199,6 +321,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         subject_temporal:
           data_type: text
           facetable: false
@@ -207,15 +334,16 @@ terms:
           multiple: true
           searchable: true
           stored: true
-
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
     nyucore:
       info:
-        namespace: "NYU::Nyucore"
-        uri: "http://harper.bobst.nyu.edu/data/nyucore#"
-        # The above uri needs to be changed to something
-        # more official
+        namespace: NYU::Nyucore
+        uri: http://harper.bobst.nyu.edu/data/nyucore#
       fields:
-        # Optional Fields
         available:
           data_type: text
           facetable: false
@@ -224,6 +352,16 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              label: Available
+              show: true
+              sort_key: 6
+              special_handling:
+                helper_method: render_external_links
+                text: resource_text_display
         citation:
           data_type: text
           facetable: false
@@ -232,6 +370,11 @@ terms:
           multiple: true
           searchable: false
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         edition:
           data_type: text
           facetable: false
@@ -240,6 +383,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         restrictions:
           data_type: text
           facetable: false
@@ -248,6 +396,13 @@ terms:
           multiple: false
           searchable: false
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              label: Restrictions
+              show: true
+              sort_key: 5
         series:
           data_type: text
           facetable: false
@@ -256,6 +411,11 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         version:
           data_type: text
           facetable: false
@@ -264,6 +424,11 @@ terms:
           multiple: true
           searchable: false
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
         genre:
           data_type: text
           facetable: false
@@ -272,3 +437,8 @@ terms:
           multiple: true
           searchable: true
           stored: true
+          display:
+            facet:
+              show: false
+            search_result:
+              show: false
