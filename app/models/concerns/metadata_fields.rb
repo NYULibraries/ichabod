@@ -116,14 +116,14 @@ module MetadataFields
 	end
 
 	def get_facet_fields_in_display_order
-		get_fields_in_display_order_by_section(:facet)
+		get_fields_for_section_in_display_order(:facet)
 	end
 
 	def get_search_result_fields_in_display_order
-		get_fields_in_display_order_by_section(:search_result)
+		get_fields_for_section_in_display_order(:search_result)
 	end
 
-	def get_fields_in_display_order_by_section(section)
+	def get_fields_for_section_in_display_order(section)
 		fields = []
 		add_all_fields(DEFAULT_MULTIPLE, fields)
 
