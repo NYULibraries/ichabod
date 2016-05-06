@@ -54,18 +54,11 @@ namespace :woj do
 end
 
 namespace :fda_ngo do
-  desc "Set variables for FDA NGO ingest tasks"
-  task :set_variables do
-    set :fda_ngo_endpoint_url, ENV['ICHABOD_FDA_NGO_ENDPOINT_URL']
-    set :fda_ngo_set_handle, ENV['ICHABOD_FDA_NGO_SET_HANDLE']
-  end
   task :import do
-    set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['faculty_digital_archive_ngo',#{fda_ngo_endpoint_url},#{fda_ngo_set_handle}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['faculty_digital_archive_ngo','./ingest/2451-33605.csv']"
   end
   task :delete do
-    set_variables
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive_ngo',#{fda_ngo_endpoint_url},#{fda_ngo_set_handle}]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive_ngo','./ingest/2451-33605.csv']"
   end
 end
 
