@@ -184,7 +184,9 @@ module Ichabod
               break
             end
           end
-          @collection
+          if
+            @collection.nil? raise RuntimeError.new("Collection #{@collection_title} not found")
+          end
         end
       end
 
