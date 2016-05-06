@@ -1,7 +1,11 @@
 require 'spec_helper'
 
+def fixture
+  YAML.load_file(File.join(Rails.root, "spec/fixtures", "fixture_metadata_fields.yml")).deep_symbolize_keys
+end
+
 def fixture_vocabulary
-  YAML.load_file(File.join(Rails.root, "spec/fixtures", "fixture_metadata_fields.yml"))["terms"]["vocabulary"].deep_symbolize_keys
+	fixture[:terms][:vocabulary]
 end
 
 def get_field_names_all_sources
