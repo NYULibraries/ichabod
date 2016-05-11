@@ -13,7 +13,7 @@ module Ichabod
         it do
           should =~  [:identifier, :title, :creator, :contributor, :publisher,
             :type, :description, :date, :format, :language, :relation, :rights,
-            :subject, :isPartOf]
+            :subject]
         end
       end
       describe 'NyucoreMetadata::Vocabulary' do

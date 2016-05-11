@@ -13,12 +13,13 @@ describe Nyucore do
                     :type, :publisher, :description, :edition, :date, :format, :language,
                     :relation, :rights, :subject, :series, :version, :contributor,
                     :addinfolink, :addinfotext, :data_provider, :discoverable, :geometry,
-                    :isbn, :location, :subject_spatial, :subject_temporal, :genre, :isPartOf] }
+                    :isbn, :location, :subject_spatial, :subject_temporal, :genre ] }
   end
 
-  subject(:nyucore) { build(:nyucore) }
+  subject(:nyucore) { create(:nyucore) }
   # Generic test for validity
   it { should be_valid }
+
 
   describe '#native_metadata' do
     subject { nyucore.native_metadata }
@@ -28,6 +29,12 @@ describe Nyucore do
   describe '#source_metadata' do
     subject { nyucore.source_metadata }
     it { should be_a Ichabod::NyucoreDatastream }
+  end
+
+  describe '#collection' do
+    subject { nyucore.collection }
+    before { nyucore.collection=create(:collection)}
+    it { should be_a Collection}
   end
 
   # Some meta programming to test all the single-valued Nyucore attributes

@@ -6,13 +6,21 @@ FactoryGirl.define do
 
   factory :collection do
     identifier "test_collection1"
-    title "Collection of records"
+    title  "Collection of records"
     creator ["Special Collections"]
     publisher ["Special Collections","DLTS"]
     description "We need to test how collection works"
     rights "rights1"
     discoverable '1'
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
+
+
+  factory :collection_with_nyucores do
+    after(:create) { |record| record.nyucores<<build(:nyucore) }
   end
 
+    factory :collection_for_gis_cataloger do
+      after(:build) { |record| record.set_edit_groups(['gis_cataloger'],[]) }
+    end
+end
 end

@@ -61,7 +61,7 @@ class CollectionsController < ApplicationController
   def destroy
     authorize! :destroy, params[:id]
     @collection = Collection.find(params[:id])
-    if @collection.has_records?
+    if @collection.nyucores.size>0
       respond_to do |format|
         format.html { redirect_to collections_url, notice: 'Collection has assosiated records and can not be deleted' }
       end

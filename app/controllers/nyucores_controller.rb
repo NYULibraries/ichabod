@@ -118,18 +118,11 @@ class NyucoresController < ApplicationController
  end
 
  def is_restricted?
-   collection=Collection.find(@item.isPartOf)  unless(@item.isPartOf.nil?)
-     if(collection.nil?)
-       false
-     else
-       #I assume that if an item belongs to more then 1 collection, we will hide even if one collection is private
-       #We can discuss it more when get a user story for 2 collections. In current settings all items belong to exactly
-       #one collection
-       collection.each do |collection|
-         return true if (collection.discoverable=='0'&&!can?(:edit, collection))
-       end
-       false
-     end
+   collection=Collection.find(@item.collection.pid)  unless(@item.collection.nil?)
+   if (!@item.collection.nil?)
+     return true if (@item.collection.discoverable=='0'&&!can?(:edit, collection))
+   end
+   false
  end
 
 end

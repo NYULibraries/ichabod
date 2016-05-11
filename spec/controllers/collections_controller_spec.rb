@@ -99,7 +99,7 @@ describe CollectionsController do
       end
     end
     context 'when collection has  assosiated record' do
-      let(:collection) {   Collection.find( { :desc_metadata__title_tesim=>'Indian Ocean Postcards' })[0]  } 
+      let(:collection) {   Collection.where( :desc_metadata__title_tesim=>'Indian Ocean Postcards' ).first  }
       it 'should not delete the existing collection' do
           expect { delete :destroy, id: collection }.to change(Collection, :count).by(0)
           expect response.should redirect_to collections_url

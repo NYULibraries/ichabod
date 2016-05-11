@@ -4,9 +4,9 @@ require 'support/test_user_helper'
 describe NyucoresController do
 
   let(:user) { create_or_return_test_admin }
-  let(:nyucore_fields) { Nyucore::FIELDS-[:isPartOf] }
-  let(:collection_private) { Collection.find( { :desc_metadata__title_tesim=>'Indian Ocean Postcards' })[0] }
-  let(:collection_public) { Collection.find( { :desc_metadata__title_tesim=>'Spatial Data Repository' })[0] }
+  let(:nyucore_fields) { Nyucore::FIELDS }
+  let(:collection_private) { create(:collection_with_nyucores, :discoverable=>'0') }
+  let(:collection_public) { create(:collection_with_nyucores, :discoverable=>'1') }
 
 
   before  { controller.stub(:current_user).and_return(user) }
@@ -25,15 +25,15 @@ describe NyucoresController do
   end
 
   describe "GET show", vcr: {cassette_name: 'controllers/nyucores controller/show'} do
-    let(:item) { create(:nyucore, :isPartOf=>collection_public.pid.gsub(":","\:")) }
+    let(:item) { create(:nyucore) }
     before { get :show, id: item }
     it 'should retieve specific nyucore record' do
       expect(assigns(:item).id).to eq item.id
     end
     context 'when collection is restricted' do
-      let(:item) { create(:io_record, :isPartOf=>collection_private.pid.gsub(":","\:")) }
+      before { item.collection=collection_private }
       context 'when user is authorized to view collection' do
-        let(:user) { create(:io_cataloger) }
+        let(:user) { create(:admin) }
         it 'should retieve nyucore record' do
           expect{ get :show, id: item }.to render_template(:show)
         end

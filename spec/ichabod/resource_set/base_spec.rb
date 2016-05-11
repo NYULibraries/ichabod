@@ -16,10 +16,10 @@ module Ichabod
       let!(:original_editors) { Base.editors - editors }
       let(:prefix) { 'mock' }
       
-      let(:collection_original) { Collection.where(:desc_metadata__title_tesim=>'Test Title')[0]  }
+      let(:collection_original) { Collection.where(:desc_metadata__title_tesim=>'Test Title').first  }
       let(:original_title) { 'Test Title' }
-      
-      
+
+
       
       describe '.prefix=' do
         after { Base.prefix=(nil)}
@@ -174,11 +174,11 @@ module Ichabod
         end
       end
       describe '#find_collection' do
-        before { Base.collection_title=mock_title}       
-        subject { base.find_collection}
+        before { Base.collection_title=mock_title}
+        subject(:collection) { base.find_collection }
         context 'when configured with valid collection_title' do
-          let(:mock_title) { original_title}
-             it { should be_a Collection }
+          let(:mock_title) { 'Test Title' }
+             it { should be_a Collection}
              it { should eq collection_original }
           end
         context 'when collection title is not defined' do
@@ -239,7 +239,7 @@ module Ichabod
             expect(nyucore).to be_persisted
             expect(nyucore).not_to be_new_record
             expect(nyucore.resource_set).to eq 'base'
-            expect(nyucore.isPartOf[0]).to eq collection_original.pid
+            expect(nyucore.collection.pid).to eq collection_original.pid
           end
         end
         context 'when there are no editors' do

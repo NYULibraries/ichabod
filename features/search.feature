@@ -83,7 +83,7 @@ Feature: Perform a basic search
     Given I am on the default search page
     When I limit my results to "NYU Press Open Access Books" under the "Collection" category
     When I navigate to details display of the first result
-    Then I should see the value "9780814712771" in the "ISBN:" field
+    Then I should see the value "9780814712917" in the "ISBN:" field
 
   Scenario: Search for The Data Services Collection title
     Given I am on the default search page
@@ -93,7 +93,7 @@ Feature: Perform a basic search
   @vcr
   Scenario: Search for David Wojnarowicz Papers records title
     Given I am on the default search page
-    When I search on the phrase "Glass Pilah"
+    When I search on the phrase "Glass Phial"
     Then I should see search results
 
   @loggedin

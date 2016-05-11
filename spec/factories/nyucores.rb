@@ -35,10 +35,7 @@ FactoryGirl.define do
     contributor ["C1"]
     discoverable ["Y"]
     genre ["Postcards"]
-    isPartOf ["ichabodcollection:fakepid"]
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
-    before(:build) { create(:collection, :pid=>"ichabodcollection:fakepid")  }
-    
 
     factory :gis_record do
       after(:build) { |record| record.set_edit_groups(['gis_cataloger'],[]) }

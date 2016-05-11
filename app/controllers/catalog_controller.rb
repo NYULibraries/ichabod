@@ -10,7 +10,7 @@ class CatalogController < ApplicationController
   #as we are currently using older version of Blacklight, additional method couldn't be placed to search_builder class
   #So tempoirary added it to the controller itself
   CatalogController.solr_search_params_logic += [:show_only_discoverable_records]
-  
+
   configure_blacklight do |config|
     config.default_solr_params = {
       :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__publisher_tesim
@@ -49,8 +49,7 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
     config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
     config.add_facet_field solr_name('desc_metadata__language', :facetable), :label => 'Language'
-    #config.add_facet_field solr_name('desc_metadata__isPartOf', :facetable), :label =>  'Collection',
-    config.add_facet_field 'desc_metadata__isPartOf_sim', :label =>  'Collection',
+    config.add_facet_field 'is_part_of_ssim', :label =>  'Collection',
                                                                            :helper_method => :render_collection_links,
                                                                            :text          => 'collection_text_display'
 
@@ -198,10 +197,10 @@ end
 def show_only_discoverable_records solr_params, user_params
     solr_params[:fq] ||= []
     Collection.private_collections.each do |collection|
-      if(!can?(:edit, collection))
-        solr_params[:'fq'] << ['-desc_metadata__isPartOf_sim:'+"#{collection.pid.gsub(":","\\:")}"]
+      if !can?(:edit, collection)
+        solr_params[:fq] << '-is_part_of_ssim:'+"info\\:fedora/#{collection.pid.gsub(":","\\:")}"
       end
+    end
     return solr_params[:fq]
-  end
 end
 

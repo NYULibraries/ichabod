@@ -154,8 +154,8 @@ module Ichabod
           unless @set_restrictions.blank?
             nyucore.source_metadata.restrictions = restrictions[@set_restrictions] if restrictions.has_key?(@set_restrictions)
           end
-          #assign isPartOf collection
-          nyucore.source_metadata.isPartOf = @collection.pid 
+          #assign collection
+          nyucore.collection=@collection
           if nyucore.save
             Rails.logger.info("#{nyucore.pid} has been saved to Fedora")
             nyucore
@@ -176,18 +176,17 @@ module Ichabod
       end
 
       def find_collection
-        #this ugliness because, dismax solr parser we use, doesn't support exact phrase search (yes, I mean it)
-        if(!@collection_title.nil?)
-          Collection.where( :desc_metadata__title_tesim=>@collection_title  ).each do |collection|
-            if(collection.title==@collection_title)
-              @collection=collection
-              break
+        #this ugliness because, dismax solr parser we use, doesn't support exact phrase search. Probably I misunderstand something
+        if (!@collection_title.nil?)
+            Collection.where( :desc_metadata__title_tesim=>"#{@collection_title}" ).each do |collection|
+              if collection.title==@collection_title
+                  @collection=collection
+              end
             end
-          end
-          if
-            @collection.nil? raise RuntimeError.new("Collection #{@collection_title} not found")
-          end
+        else
+            @collection=nil
         end
+        @collection
       end
 
       private
