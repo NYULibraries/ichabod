@@ -8,7 +8,7 @@ module Ichabod
       NyucoreMetadata::Vocabulary => NyucoreMetadata::Vocabulary::TERMS,
       Ichabod::Vocabulary => Ichabod::Vocabulary::TERMS
     }
-    FACETABLE_TERMS = [:creator, :type, :language, :subject]
+    FACETABLE_TERMS = [:creator, :type, :language, :subject, :isPartOf ]
 
     ##
     # For active_fedora 7.x properties are now mapped like this

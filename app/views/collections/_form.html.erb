@@ -19,6 +19,9 @@
   <div class="field">
     <p><%= f.input field, label: false, input_html: {name: "collection[#{field}][]", value: nil, id: "collection_#{field}"} %></p>
   </div>
+   <div class="field">
+    <p><%= f.input field, label: false, input_html: {name: "collection[#{field}][]", value: nil, id: "collection_#{field}#{values.size}"} %></p>
+  </div>
 <%  end %>
   <div class="actions">
     <%= f.submit %>

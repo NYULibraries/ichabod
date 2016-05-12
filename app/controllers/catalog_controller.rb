@@ -2,19 +2,21 @@
 require 'blacklight/catalog'
 
 class CatalogController < ApplicationController
-
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
-  # These before_filters apply the hydra access controls
-  # before_filter :enforce_show_permissions, :only=>:show
-  # This applies appropriate access controls to all solr queries
-  # CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
+  
+  #add check for descoverability on collection level
+  #(see https://github.com/projectblacklight/blacklight/wiki/Extending-or-Modifying-Blacklight-Search-Behavior)
+  #as we are currently using older version of Blacklight, additional method couldn't be placed to search_builder class
+  #So tempoirary added it to the controller itself
+  CatalogController.solr_search_params_logic += [:show_only_discoverable_records]
 
   configure_blacklight do |config|
     config.default_solr_params = {
       :qf => 'desc_metadata__title_tesim desc_metadata__author_tesim desc_metadata__publisher_tesim
                 desc_metadata__type_tesim desc_metadata__description_tesim desc_metadata__series_tesim
-                desc_metadata__creator_tesim desc_metadata__subject_tesim desc_metadata__subject_spatial_tesim desc_metadata__subject_temporal_tesim desc_metadata__isbn_tesim',
+                desc_metadata__creator_tesim desc_metadata__subject_tesim desc_metadata__subject_spatial_tesim 
+                desc_metadata__subject_temporal_tesim desc_metadata__isbn_tesim desc_metadata__genre_tesim',
       :qt => 'search',
       :rows => 10
     }
@@ -47,7 +49,9 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
     config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
     config.add_facet_field solr_name('desc_metadata__language', :facetable), :label => 'Language'
-    config.add_facet_field solr_name('collection', :facetable), :label => 'Collection'
+    config.add_facet_field 'is_part_of_ssim', :label =>  'Collection',
+                                                                           :helper_method => :render_collection_links,
+                                                                           :text          => 'collection_text_display'
 
 
     # Have BL send all facet field names to Solr, which has been the default
@@ -55,7 +59,7 @@ class CatalogController < ApplicationController
     # handler defaults, or have no facets.
     config.default_solr_params[:'facet.field'] = config.facet_fields.keys
     #use this instead if you don't want to query facets marked :show=>false
-    #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
+    #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys 
 
 
     # solr fields to be displayed in the index (search results) view
@@ -102,6 +106,7 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name('desc_metadata__series', :stored_searchable, type: :string), :label => 'Series'
     config.add_show_field solr_name('desc_metadata__version', :stored_searchable, type: :string), :label => 'Also available as'
     config.add_show_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions'
+    config.add_show_field solr_name('desc_metadata__genre', :stored_searchable, type: :string), :label => 'Genre'
     config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label => 'Online Resource',
                                                                                                     :helper_method => :render_external_links,
                                                                                                     :text          => 'resource_text_display'
@@ -181,11 +186,21 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
 
-    #define what parials will be used to display each solr document
+    #define what partials will be used to display each solr document
     config.index.partials = ['index_header','index','action_buttons']
     config.show.partials = ['show_header','show','action_buttons']
 
   end
-
-
 end
+#define what records user can discover based on his/her privillages. We get list of
+#collections, which are private and show items from them only to collection editors
+def show_only_discoverable_records solr_params, user_params
+    solr_params[:fq] ||= []
+    Collection.private_collections.each do |collection|
+      if !can?(:edit, collection)
+        solr_params[:fq] << '-is_part_of_ssim:'+"info\\:fedora/#{collection.pid.gsub(":","\\:")}"
+      end
+    end
+    return solr_params[:fq]
+end
+

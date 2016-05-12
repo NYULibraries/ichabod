@@ -21,8 +21,12 @@ end
 
 ##
 # Results steps
-Then(/^I should see search results$/) do
-  expect(documents_list).to have_at_least(1).items
+Then(/^I should (not )?see search results$/) do |negator|
+  if negator
+    expect(documents_list).to have_exactly(0).items
+  else
+    expect(documents_list).to have_at_least(1).items
+  end
 end
 
 Then(/^I get a dataset with the title "(.*?)"$/) do |title|
@@ -41,9 +45,13 @@ When(/^I limit my results to "([^\"]*)" under the "(.*?)" category$/) do |facet,
   limit_by_facets(category, facet)
 end
 
-And(/^I should see a "(.*?)" facet under the "(.*?)" category$/) do |facet, category|
+And(/^I should (not )?see a "(.*?)" facet under the "(.*?)" category$/) do |negator, facet, category|
   within(:css, "#facets") do
     click_link(category)
-    expect(page.find(:xpath, "//a[text()='#{facet}']")).to have_content
+    if negator
+      expect(page.find(:xpath, "//a[text()='#{category}']")).not_to have_content facet
+    else
+      expect(page.find(:xpath, "//a[text()='#{facet}']")).to have_content
+    end
   end
 end

@@ -83,15 +83,27 @@ Feature: Perform a basic search
     Given I am on the default search page
     When I limit my results to "NYU Press Open Access Books" under the "Collection" category
     When I navigate to details display of the first result
-    Then I should see the value "9780814706404" in the "ISBN:" field
+    Then I should see the value "9780814712917" in the "ISBN:" field
 
   Scenario: Search for The Data Services Collection title
     Given I am on the default search page
     When I search on the phrase "Gallup GPSS"
     Then I should see search results
-
+    
   @vcr
   Scenario: Search for David Wojnarowicz Papers records title
     Given I am on the default search page
-    When I search on the phrase "globe"
+    When I search on the phrase "Glass Phial"
     Then I should see search results
+
+  @loggedin
+  Scenario: Search for The Indian Ocean Collection title for authorized user
+    Given I am logged in as "IO Cataloger"
+    And I am on the default search page
+    When I search on the phrase "VII Battaglione Eritreo"
+    Then I should see search results
+
+  Scenario: Search for The Indian Ocean Collection title for un-authorized user
+    And I am on the default search page
+    When I search on the phrase "VII Battaglione Eritreo"
+    Then I should not see search results

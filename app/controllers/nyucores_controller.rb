@@ -16,7 +16,11 @@ class NyucoresController < ApplicationController
   def show
     authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
-    respond_with(@item)
+    if (is_restricted?)
+      raise CanCan::AccessDenied.new('You are not authorized to view this item')
+    else
+      respond_with(@item)
+    end
   end
 
   def new
@@ -79,9 +83,7 @@ class NyucoresController < ApplicationController
   # Added the reject statement to get rid of blank values for array params
   def blank_to_nil_params
     params[:nyucore].merge!(params[:nyucore]){|k, v| v.blank? ? nil : v.is_a?(Array) ? v.reject{|c| c.empty? } : v}
-  end
-
-  private
+  end 
   
   #if the search parameters are saved in session return to the search results page
   def get_query_params_from_session
@@ -95,7 +97,6 @@ class NyucoresController < ApplicationController
     end
   end
 
-
   #Calculates on what page of the search reults we should return.
   # To calculate the landing page number we need 2 parameters: order number of the deleted document
   #and the number of results per page. If any of this parameters is not defined we will return to the first page.
@@ -105,14 +106,23 @@ class NyucoresController < ApplicationController
     end
  end
  
-  #If parameters needed to calculate the landing page are not defined- return to the search results page
-  def page_parameters_defined?
+ #If parameters needed to calculate the landing page are not defined- return to the search results page
+ def page_parameters_defined?
    if params[:document_counter].nil? || current_per_page==0
         @query_params[:page]=1
         logger.warn "document_counter or current_per_page parameters are not defined, return to the first search page"
         false
-    else
+   else
         true
-    end
-  end
+   end
+ end
+
+ def is_restricted?
+   collection=Collection.find(@item.collection.pid)  unless(@item.collection.nil?)
+   if (!@item.collection.nil?)
+     return true if (@item.collection.discoverable=='0'&&!can?(:edit, collection))
+   end
+   false
+ end
+
 end

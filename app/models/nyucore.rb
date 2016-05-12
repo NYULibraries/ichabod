@@ -1,6 +1,6 @@
 class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
-   include MetadataFields
+  include MetadataFields
 
   SINGLE_FIELDS = MetadataFields.process_metadata_fields(multiple: false)
   MULTIPLE_FIELDS = MetadataFields.process_metadata_fields(multiple: true)
@@ -8,6 +8,8 @@ class Nyucore < ActiveFedora::Base
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
 
   METADATA_STREAMS = ['source_metadata', 'native_metadata']
+
+  belongs_to :collection, :property=> :is_part_of
 
   # Add multiple metadata streams to the model and include the attributes we
   # want on each stream. AcitveFedora::Base.has_attributes sets the attribute
@@ -106,11 +108,7 @@ class Nyucore < ActiveFedora::Base
       # https://github.com/projecthydra/active_fedora/blob/889aa962a326ad9e8302ada3237193221ad2feb5/lib/active_fedora/indexing.rb
       solr_doc = ds.to_solr(solr_doc)
     end
-    Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
+    #Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
     solr_doc
-  end
-
-  def collections
-    @collections ||= Collections.new(self)
   end
 end

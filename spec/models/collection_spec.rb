@@ -16,6 +16,14 @@ describe Collection::DESCRIPTIVE_FIELDS do
     end
   end
 
+  describe 'private_collections' do
+    let(:collection_private) { create(:collection, :discoverable=>'0')  }
+    let(:collection_public) { create(:collection, :discoverable=>'1')  }
+    subject { Collection.private_collections }
+    it { should include collection_private }
+    it { should_not include collection_public }
+  end
+
   describe Collection::FIELDS do
     subject { Collection::FIELDS }
     it { should eq Collection::SINGLE_FIELDS+Collection::MULTIPLE_FIELDS+Collection::ADMIN_FIELDS }
@@ -42,14 +50,13 @@ describe Collection::DESCRIPTIVE_FIELDS do
   end
 
 
-    #Test that we do presence test for required field
+    #Test that we do presence and uniqueness tests for required field
   
  
   subject(:collection) { build(:collection) }
+
   # Generic test for validity
   it { should be_valid }
-
-  
 
   describe 'pid assignment' do
     context 'before the object is saved' do
@@ -59,6 +66,7 @@ describe Collection::DESCRIPTIVE_FIELDS do
     end
     context 'when a new object is saved' do
         before(:each) do
+          collection.nyucores<<create(:nyucore)
           collection.save
         end
         it 'should no longer be nil' do
@@ -67,9 +75,11 @@ describe Collection::DESCRIPTIVE_FIELDS do
         it 'should include "ichabodcollection' do
           expect((collection.pid)).to include "ichabodcollection"
         end
-     end
+        it "should have associated nyucores" do
+          expect((collection.nyucores.size)).to be > 0
+        end
+    end
    end
-
 
   describe '#descriptive_metadata' do
     subject { collection.descriptive_metadata }
