@@ -124,6 +124,10 @@ module MetadataFields
 		get_fields_for_section_in_display_order(:search_result)
 	end
 
+	def get_detail_fields_in_display_order
+		get_fields_for_section_in_display_order(:detail)
+	end
+
 	def get_fields_for_section_in_display_order(section)
 		raise ArgumentError, '"section" argument is nil' if section.nil?
 
