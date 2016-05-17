@@ -84,30 +84,18 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title'
-    config.add_show_field solr_name('desc_metadata__creator', :stored_searchable, type: :string), :label => 'Creator'
-    config.add_show_field solr_name('desc_metadata__format', :symbol), :label => 'Format'
-    config.add_show_field solr_name('desc_metadata__language', :stored_searchable, type: :string), :label => 'Language'
-    config.add_show_field solr_name('desc_metadata__isbn', :stored_searchable, type: :string), :label => 'ISBN'
-    #NYUCore Additions
-    config.add_show_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher'
-    config.add_show_field solr_name('desc_metadata__type', :stored_searchable, type: :string), :label => 'Format'
-    config.add_show_field solr_name('desc_metadata__description', :stored_searchable, type: :string), :label => 'Description'
-    config.add_show_field solr_name('desc_metadata__series', :stored_searchable, type: :string), :label => 'Series'
-    config.add_show_field solr_name('desc_metadata__version', :stored_searchable, type: :string), :label => 'Also available as'
-    config.add_show_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions'
-    config.add_show_field solr_name('desc_metadata__genre', :stored_searchable, type: :string), :label => 'Genre'
-    config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label => 'Online Resource',
-                                                                                                    :helper_method => :render_external_links,
-                                                                                                    :text          => 'resource_text_display'
-    config.add_show_field solr_name('desc_metadata__relation', :stored_searchable, type: :string), :label => 'Relation'
-    config.add_show_field solr_name('desc_metadata__location', :stored_searchable, type: :string), :label => 'Location'
-    config.add_show_field solr_name('desc_metadata__repo', :stored_searchable, type: :string), :label => 'Repository'
-    config.add_show_field solr_name('desc_metadata__data_provider', :stored_searchable, type: :string), :label => 'Data Provider'
-    config.add_show_field solr_name('desc_metadata__addinfolink', :stored_searchable, type: :string), :label => 'Additional Information',
-                                                                                                    :helper_method => :render_external_links,
-                                                                                                    :text          => 'desc_metadata__addinfotext_tesim'
-    config.add_show_field solr_name('desc_metadata__rights', :stored_searchable, type: :string), :label => 'Rights'
+    search_result_fields = MetadataFields.get_detail_fields_in_display_order
+    search_result_fields.each do |field|
+      if (field[:attributes][:display][:detail][:special_handling])
+        config.add_show_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
+                               :label => field[:attributes][:display][:detail][:label],
+                               :helper_method => field[:attributes][:display][:detail][:special_handling][:helper_method],
+                               :text          => field[:attributes][:display][:detail][:special_handling][:text]
+      else
+        config.add_show_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
+                                 :label => field[:attributes][:display][:detail][:label]
+      end
+    end
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

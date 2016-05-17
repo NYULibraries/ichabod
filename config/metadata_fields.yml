@@ -22,6 +22,10 @@ terms:
               show: true
               label: "Title"
               sort_key: 1
+            detail:
+              show: true
+              label: "Title"
+              sort_key: 1
         identifier:
           data_type: text
           facetable: false
@@ -35,6 +39,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         # Optional Fields
 
@@ -52,6 +58,8 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: false
         creator:
           data_type: text
           facetable: true
@@ -68,6 +76,10 @@ terms:
               sort_key: 2
             search_result:
               show: false
+            detail:
+              show: true
+              label: "Creator"
+              sort_key: 2
         date:
           data_type: date
           facetable: false
@@ -81,6 +93,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         description:
           data_type: text
@@ -96,6 +110,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: true
+              label: "Description"
+              sort_key: 8
         # The format/type field confusion needs to be addressed.  For now we are
         # merely reproducing that already problematic configuration that was already
         # in place.
@@ -117,6 +135,10 @@ terms:
               show: true
               label: "Format"
               sort_key: 2
+            detail:
+              show: true
+              label: "Format"
+              sort_key: 3
         language:
           data_type: text
           facetable: true
@@ -135,6 +157,10 @@ terms:
               show: true
               label: "Language"
               sort_key: 3
+            detail:
+              show: true
+              label: "Language"
+              sort_key: 4
         publisher:
           data_type: text
           facetable: false
@@ -151,6 +177,10 @@ terms:
               show: true
               label: "Publisher"
               sort_key: 4
+            detail:
+              show: true
+              label: "Publisher"
+              sort_key: 6
         relation:
           data_type: text
           facetable: false
@@ -165,6 +195,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: true
+              label: "Relation"
+              sort_key: 13
         rights:
           data_type: text
           facetable: false
@@ -179,6 +213,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: true
+              label: "Rights"
+              sort_key: 18
         subject:
           data_type: text
           facetable: true
@@ -194,6 +232,8 @@ terms:
               label: "Subject"
               sort_key: 3
             search_result:
+              show: false
+            detail:
               show: false
         # The format/type field confusion needs to be addressed.  For now we are
         # merely reproducing that already problematic configuration that was already
@@ -216,7 +256,10 @@ terms:
               sort_key: 1
             search_result:
               show: false
-
+            detail:
+              show: true
+              label: "Format"
+              sort_key: 7
     ichabod:
       info:
         namespace: "NYU::Ichabod::Local"
@@ -237,6 +280,13 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: true
+              label: "Additional Information"
+              sort_key: 17
+              special_handling:
+                helper_method: "render_external_links"
+                text: "desc_metadata__addinfotext_tesim"
         addinfotext:
           data_type: text
           facetable: false
@@ -250,6 +300,8 @@ terms:
               solr_type: "tesim"
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         data_provider:
           data_type: text
@@ -265,6 +317,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: true
+              label: "Data Provider"
+              sort_key: 16
         discoverable:
           data_type: text
           facetable: false
@@ -278,6 +334,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         geometry:
           data_type: text
@@ -293,6 +351,8 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: false
         isbn:
           data_type: text
           facetable: false
@@ -307,6 +367,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: true
+              label: "ISBN"
+              sort_key: 5
         location:
           data_type: text
           facetable: false
@@ -321,6 +385,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: true
+              label: "Location"
+              sort_key: 14
         repo:
           data_type: text
           facetable: false
@@ -335,6 +403,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: true
+              label: "Repository"
+              sort_key: 15
         resource_set:
           data_type: text
           facetable: false
@@ -348,6 +420,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         subject_spatial:
           data_type: text
@@ -363,6 +437,8 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: false
         subject_temporal:
           data_type: text
           facetable: false
@@ -376,6 +452,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
 
     nyucore:
@@ -405,6 +483,13 @@ terms:
               special_handling:
                 helper_method: "render_external_links"
                 text: "resource_text_display"
+            detail:
+              show: true
+              label: "Online Resource"
+              sort_key: 12
+              special_handling:
+                helper_method: "render_external_links"
+                text: "resource_text_display"
         citation:
           data_type: text
           facetable: false
@@ -419,6 +504,8 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: false
         edition:
           data_type: text
           facetable: false
@@ -432,6 +519,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         restrictions:
           data_type: text
@@ -449,6 +538,10 @@ terms:
               show: true
               label: "Access Restrictions"
               sort_key: 5
+            detail:
+              show: true
+              label: "Access Restrictions"
+              sort_key: 11
         series:
           data_type: text
           facetable: false
@@ -463,6 +556,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: true
+              label: "Series"
+              sort_key: 9
         version:
           data_type: text
           facetable: false
@@ -477,6 +574,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: true
+              label: "Also available as"
+              sort_key: 10
         genre:
           data_type: text
           facetable: false
@@ -490,4 +591,6 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
