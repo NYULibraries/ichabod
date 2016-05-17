@@ -69,7 +69,7 @@ describe CatalogController do
         let(:field) { blacklight_index_field('desc_metadata__available_tesim') }
 
         it "should have correct helper method" do
-          expect(field.helper_method).to eq(:render_external_links)
+          expect(field.helper_method).to eq('render_external_links')
         end
         it "should have correct label" do
           expect(field.label).to eq('Online Resource')
