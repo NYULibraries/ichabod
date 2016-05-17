@@ -91,18 +91,8 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_show_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title'
     config.add_show_field solr_name('desc_metadata__creator', :stored_searchable, type: :string), :label => 'Creator'
-    config.add_show_field solr_name('desc_metadata__title_vern', :stored_searchable, type: :string), :label => 'Title'
-    config.add_show_field solr_name('desc_metadata__subtitle', :stored_searchable, type: :string), :label => 'Subtitle'
-    config.add_show_field solr_name('desc_metadata__subtitle_vern', :stored_searchable, type: :string), :label => 'Subtitle'
-    config.add_show_field solr_name('desc_metadata__author', :stored_searchable, type: :string), :label => 'Author'
-    config.add_show_field solr_name('desc_metadata__author_vern', :stored_searchable, type: :string), :label => 'Author'
     config.add_show_field solr_name('desc_metadata__format', :symbol), :label => 'Format'
-    config.add_show_field solr_name('desc_metadata__url_fulltext_tsim', :stored_searchable, type: :string), :label => 'URL'
-    config.add_show_field solr_name('desc_metadata__url_suppl_tsim', :stored_searchable, type: :string), :label => 'More Information'
     config.add_show_field solr_name('desc_metadata__language', :stored_searchable, type: :string), :label => 'Language'
-    config.add_show_field solr_name('desc_metadata__published', :stored_searchable, type: :string), :label => 'Published'
-    config.add_show_field solr_name('desc_metadata__published_vern', :stored_searchable, type: :string), :label => 'Published'
-    config.add_show_field solr_name('desc_metadata__lc_callnum', :stored_searchable, type: :string), :label => 'Call number'
     config.add_show_field solr_name('desc_metadata__isbn', :stored_searchable, type: :string), :label => 'ISBN'
     #NYUCore Additions
     config.add_show_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher'
