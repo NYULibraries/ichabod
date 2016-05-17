@@ -72,18 +72,13 @@ class CatalogController < ApplicationController
     search_result_fields = MetadataFields.get_search_result_fields_in_display_order
     search_result_fields.each do |field|
       if (field[:attributes][:display][:search_result][:special_handling])
-        config.add_index_field solr_name("desc_metadata__#{field[:name]}", :stored_searchable, type: :string),
+        config.add_index_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
                                :label => field[:attributes][:display][:search_result][:label],
                                :helper_method => field[:attributes][:display][:search_result][:special_handling][:helper_method],
                                :text          => field[:attributes][:display][:search_result][:special_handling][:text]
       else
-        if (field[:attributes][:display][:solr_type] == "tesim")
-          config.add_index_field solr_name("desc_metadata__#{field[:name]}", :stored_searchable, type: :string),
+        config.add_index_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
                                  :label => field[:attributes][:display][:search_result][:label]
-        elsif (field[:attributes][:display][:solr_type] == "ssim")
-          config.add_index_field solr_name("desc_metadata__#{field[:name]}", :symbol),
-                                 :label => field[:attributes][:display][:search_result][:label]
-        end
       end
     end
 
