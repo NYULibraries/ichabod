@@ -161,6 +161,17 @@ module MetadataFields
 		fields
 	end
 
+	def get_solr_name_opts(field)
+		solr_type = field[:attributes][:display][:solr_type]
+		if solr_type == "tesim"
+			solr_opts = [:stored_searchable, {:type=>:string}]
+		elsif solr_type == "ssim"
+			solr_opts = [:symbol]
+		end
+
+		solr_opts
+	end
+
 	private_class_method :add_all_field_names, :add_field_names_by_ns, :allowed_values_for_multiple, :allowed_values_for_ns,
 											 :get_all_sources_info, :get_metadata_source_info
 end
