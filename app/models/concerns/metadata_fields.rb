@@ -125,6 +125,7 @@ module MetadataFields
 	end
 
 	def get_fields_for_section_in_display_order(section)
+		raise ArgumentError, '"section" argument is nil' if section.nil?
 		fields = []
 		add_all_fields(DEFAULT_MULTIPLE, fields)
 
