@@ -126,6 +126,12 @@ module MetadataFields
 
 	def get_fields_for_section_in_display_order(section)
 		raise ArgumentError, '"section" argument is nil' if section.nil?
+
+		# Accept strings even though our data structure uses symbol keys
+		if section.is_a?(String)
+			section = section.to_sym
+		end
+
 		fields = []
 		add_all_fields(DEFAULT_MULTIPLE, fields)
 
