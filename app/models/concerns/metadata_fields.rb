@@ -137,6 +137,10 @@ module MetadataFields
 
 		# Filter for search_result fields
 		fields = fields.select do |field|
+			if field[:attributes][:display][section].nil?
+				raise ArgumentError, "section \"#{section}\" not found for field \"#{field[:name]}\""
+			end
+
 			field[:attributes][:display][section][:show] == true
 		end
 
