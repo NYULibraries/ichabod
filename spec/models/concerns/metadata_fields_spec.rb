@@ -49,6 +49,25 @@ def get_info_by_source(ns)
   info = contents[ns][:info]
 end
 
+def expected_facet_fields_order
+  [
+    :type,
+    :creator,
+    :subject,
+    :language
+  ]
+end
+
+def expected_search_result_fields_order
+  [
+    :title,
+    :format,
+    :language,
+    :publisher,
+    :restrictions,
+    :available
+  ]
+end
 
 describe MetadataFields do
   let(:invalid_value) { 'foo' }
@@ -128,4 +147,23 @@ describe MetadataFields do
       }
     end
   end
+
+  describe 'get_facet_fields_in_display_order' do
+    it 'returns fields in correct order' do
+      field_names = MetadataFields.get_facet_fields_in_display_order.map do |field|
+        field[:name]
+      end
+      expect(field_names).to eq(expected_facet_fields_order)
+    end
+  end
+
+  describe 'get_search_result_fields_in_display_order' do
+    it 'returns fields in correct order' do
+      field_names = MetadataFields.get_search_result_fields_in_display_order.map do |field|
+        field[:name]
+      end
+      expect(field_names).to eq(expected_search_result_fields_order)
+    end
+  end
+
 end
