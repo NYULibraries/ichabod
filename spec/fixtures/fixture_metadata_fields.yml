@@ -22,6 +22,10 @@ terms:
               label: Title
               show: true
               sort_key: 1
+            detail:
+              label: Title
+              show: true
+              sort_key: 1
         identifier:
           data_type: text
           facetable: false
@@ -36,6 +40,8 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: false
         contributor:
           data_type: text
           facetable: true
@@ -49,6 +55,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         creator:
           data_type: text
@@ -66,6 +74,10 @@ terms:
               sort_key: 2
             search_result:
               show: false
+            detail:
+              label: Creator
+              show: true
+              sort_key: 2
         date:
           data_type: date
           facetable: false
@@ -79,6 +91,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         description:
           data_type: text
@@ -94,6 +108,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              label: Description
+              show: true
+              sort_key: 8
         format:
           data_type: text
           facetable: true
@@ -110,6 +128,10 @@ terms:
               label: Format
               show: true
               sort_key: 2
+            detail:
+              label: Format
+              show: true
+              sort_key: 3
         language:
           data_type: text
           facetable: true
@@ -128,6 +150,10 @@ terms:
               label: Language
               show: true
               sort_key: 3
+            detail:
+              label: Language
+              show: true
+              sort_key: 4
         publisher:
           data_type: text
           facetable: false
@@ -144,6 +170,10 @@ terms:
               label: Publisher
               show: true
               sort_key: 4
+            detail:
+              label: Publisher
+              show: true
+              sort_key: 6
         relation:
           data_type: text
           facetable: false
@@ -158,6 +188,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              label: Relation
+              show: true
+              sort_key: 13
         rights:
           data_type: text
           facetable: false
@@ -172,6 +206,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              label: Rights
+              show: true
+              sort_key: 18
         subject:
           data_type: text
           facetable: true
@@ -187,6 +225,8 @@ terms:
               show: true
               sort_key: 3
             search_result:
+              show: false
+            detail:
               show: false
         type:
           data_type: text
@@ -204,6 +244,10 @@ terms:
               sort_key: 1
             search_result:
               show: false
+            detail:
+              label: Format
+              show: true
+              sort_key: 7
     ichabod:
       info:
         namespace: NYU::Ichabod::Local
@@ -223,6 +267,13 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              label: Additional Information
+              show: true
+              sort_key: 17
+              special_handling:
+                helper_method: render_external_links
+                text: desc_metadata__addinfotext_tesim
         addinfotext:
           data_type: text
           facetable: false
@@ -236,6 +287,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         data_provider:
           data_type: text
@@ -251,6 +304,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              label: Data Provider
+              show: true
+              sort_key: 16
         discoverable:
           data_type: text
           facetable: false
@@ -264,6 +321,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         geometry:
           data_type: text
@@ -279,6 +338,8 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: false
         isbn:
           data_type: text
           facetable: false
@@ -293,6 +354,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              label: ISBN
+              show: true
+              sort_key: 5
         location:
           data_type: text
           facetable: false
@@ -307,6 +372,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              label: Location
+              show: true
+              sort_key: 14
         repo:
           data_type: text
           facetable: false
@@ -321,6 +390,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              label: Repository
+              show: true
+              sort_key: 15
         resource_set:
           data_type: text
           facetable: false
@@ -334,6 +407,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         subject_spatial:
           data_type: text
@@ -349,6 +424,8 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: false
         subject_temporal:
           data_type: text
           facetable: false
@@ -362,6 +439,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
     nyucore:
       info:
@@ -387,6 +466,13 @@ terms:
               special_handling:
                 helper_method: render_external_links
                 text: resource_text_display
+            detail:
+              label: Online Resource
+              show: true
+              sort_key: 12
+              special_handling:
+                helper_method: render_external_links
+                text: resource_text_display
         citation:
           data_type: text
           facetable: false
@@ -401,6 +487,8 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              show: false
         edition:
           data_type: text
           facetable: false
@@ -414,6 +502,8 @@ terms:
             facet:
               show: false
             search_result:
+              show: false
+            detail:
               show: false
         restrictions:
           data_type: text
@@ -431,6 +521,10 @@ terms:
               label: Restrictions
               show: true
               sort_key: 5
+            detail:
+              label: Access Restrictions
+              show: true
+              sort_key: 11
         series:
           data_type: text
           facetable: false
@@ -445,6 +539,10 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              label: Series
+              show: true
+              sort_key: 9
         version:
           data_type: text
           facetable: false
@@ -472,3 +570,7 @@ terms:
               show: false
             search_result:
               show: false
+            detail:
+              label: Also available as
+              show: true
+              sort_key: 10
