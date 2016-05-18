@@ -166,4 +166,27 @@ describe MetadataFields do
     end
   end
 
+  describe 'get_fields_for_section_in_display_order' do
+    it 'works if passed a string instead of a symbol' do
+      field_names = MetadataFields.get_fields_for_section_in_display_order('facet').map do |field|
+        field[:name]
+      end
+
+      expect(field_names).to eq(expected_facet_fields_order)
+    end
+
+    it 'raises nil ArgumentError when passed nil' do
+      expect {
+        MetadataFields.get_fields_for_section_in_display_order nil
+      }.to raise_error(ArgumentError, '"section" argument is nil')
+    end
+
+    it 'raises "section not found" ArgumentError when passed non-existent section' do
+      bad_section = 'nonexistent_section_xyz'
+      expect {
+        MetadataFields.get_fields_for_section_in_display_order bad_section
+      }.to raise_error(ArgumentError, /section "#{bad_section}" not found for field "\w+"/)
+    end
+  end
+
 end
