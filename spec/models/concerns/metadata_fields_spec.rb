@@ -167,6 +167,14 @@ describe MetadataFields do
   end
 
   describe 'get_fields_for_section_in_display_order' do
+    it 'works if passed a symbol' do
+      field_names = MetadataFields.get_fields_for_section_in_display_order(:facet).map do |field|
+        field[:name]
+      end
+
+      expect(field_names).to eq(expected_facet_fields_order)
+    end
+
     it 'works if passed a string instead of a symbol' do
       field_names = MetadataFields.get_fields_for_section_in_display_order('facet').map do |field|
         field[:name]
