@@ -69,6 +69,36 @@ def expected_search_result_fields_order
   ]
 end
 
+def expected_detail_fields_order
+  [
+    :title,
+    :creator,
+    :format,
+    :language,
+    :isbn,
+    :publisher,
+    :type,
+    :description,
+    :series,
+    :version,
+    :restrictions,
+    :available,
+    :relation,
+    :location,
+    :repo,
+    :data_provider,
+    :addinfolink,
+    :rights
+  ]
+end
+
+def expected_title_solr_opts
+  [
+    :stored_searchable,
+    {:type=>:string}
+  ]
+end
+
 describe MetadataFields do
   let(:invalid_value) { 'foo' }
 
@@ -148,6 +178,22 @@ describe MetadataFields do
     end
   end
 
+  describe 'add_all_fields' do
+    it 'returns 30 fields' do
+      fields = []
+      MetadataFields.add_all_fields('all', fields)
+      expect(fields.length).to eq(30)
+    end
+  end
+
+  describe 'add_fields_by_ns' do
+    it 'returns 13 fields for dublin core' do
+      fields = []
+      MetadataFields.add_fields_by_ns('all', fields, :dcterms)
+      expect(fields.length).to eq(13)
+    end
+  end
+
   describe 'get_facet_fields_in_display_order' do
     it 'returns fields in correct order' do
       field_names = MetadataFields.get_facet_fields_in_display_order.map do |field|
@@ -163,6 +209,15 @@ describe MetadataFields do
         field[:name]
       end
       expect(field_names).to eq(expected_search_result_fields_order)
+    end
+  end
+
+  describe 'get_detail_fields_in_display_order' do
+    it 'returns fields in correct order' do
+      field_names = MetadataFields.get_detail_fields_in_display_order.map do |field|
+        field[:name]
+      end
+      expect(field_names).to eq(expected_detail_fields_order)
     end
   end
 
@@ -194,6 +249,34 @@ describe MetadataFields do
       expect {
         MetadataFields.get_fields_for_section_in_display_order bad_section
       }.to raise_error(ArgumentError, /section "#{bad_section}" not found for field "\w+"/)
+    end
+  end
+
+  describe 'sort_fields_by_display_attribute' do
+    fields = []
+    MetadataFields.add_all_fields('all', fields)
+    fields = fields.select do |field|
+      field[:attributes][:display][:facet][:show] == true
+    end
+    it 'sorts fields by section' do
+      field_names = MetadataFields.sort_fields_by_display_attribute(fields, :facet, :sort_key).map do |field|
+        field[:name]
+      end
+
+      expect(field_names).to eq(expected_facet_fields_order)
+    end
+  end
+
+  describe 'get_solr_name_opts' do
+    fields = []
+    MetadataFields.add_all_fields('all', fields)
+    title_field = fields.select do |field|
+      field[:name] == :title
+    end
+    it 'returns the correct solr options in an array' do
+      opts =  MetadataFields.get_solr_name_opts(title_field[0])
+
+      expect(opts).to eq(expected_title_solr_opts)
     end
   end
 
