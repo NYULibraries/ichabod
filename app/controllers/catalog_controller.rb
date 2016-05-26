@@ -187,10 +187,10 @@ class CatalogController < ApplicationController
     config.index.partials = ['index_header','index','action_buttons']
     config.show.partials = ['show_header','show','action_buttons']
     config.oai = {
-      :repository_url => 'http://localhost',
+      :repository_url => 'http://ichabod.library.nyu.edu',
       :provider => {
         :repository_name => 'Test',
-        :repository_url => 'http://localhost',
+        :repository_url => 'http://ichabod.library.nyu.edu',
         :record_prefix => '',
         :admin_email => 'root@localhost'
       },
