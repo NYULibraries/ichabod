@@ -273,7 +273,7 @@ describe MetadataFields do
     title_field = fields.select do |field|
       field[:name] == :title
     end
-    it 'returns the correct solr options in an array' do
+    it 'returns the correct solr options for "title" field' do
       opts =  MetadataFields.get_solr_name_opts(title_field[0])
 
       expect(opts).to eq(expected_title_solr_opts)
