@@ -84,8 +84,9 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    search_result_fields = MetadataFields.get_detail_fields_in_display_order
-    search_result_fields.each do |field|
+
+    detail_fields = MetadataFields.get_detail_fields_in_display_order
+    detail_fields.each do |field|
       if (field[:attributes][:display][:detail][:special_handling])
         config.add_show_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
                                :label => field[:attributes][:display][:detail][:label],
