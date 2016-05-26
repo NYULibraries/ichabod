@@ -1,4 +1,4 @@
-module ApiHelper
+module OaiHelper
   include Rack::Test::Methods
 
   def app
@@ -7,5 +7,5 @@ module ApiHelper
 end
 
 RSpec.configure do |config|
-  config.include ApiHelper, :type=>:oai #apply to all spec for oais folder
+  config.include OaiHelper, :type=>:oai #apply to all spec for oai folder
 end
