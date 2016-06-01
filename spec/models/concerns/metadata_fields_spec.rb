@@ -179,18 +179,37 @@ describe MetadataFields do
   end
 
   describe 'add_all_fields' do
-    it 'returns 30 fields' do
+    it 'returns correct fields for all' do
       fields = []
       MetadataFields.add_all_fields('all', fields)
-      expect(fields.length).to eq(30)
+      expect(fields.length).to eq(get_field_names_all_sources.length)
+      all_names = fields.map do |field|
+        field[:name]
+      end
+      expect(all_names).to eq(get_field_names_all_sources)
     end
   end
 
   describe 'add_fields_by_ns' do
-    it 'returns 13 fields for dublin core' do
+    it 'returns correct fields for dublin core' do
       fields = []
       MetadataFields.add_fields_by_ns('all', fields, :dcterms)
-      expect(fields.length).to eq(13)
+      expect(fields.length).to eq(get_field_names_by_source(:dcterms, multiple = nil).length)
+      dcterms_names = fields.map do |field|
+        field[:name]
+      end
+      expect(dcterms_names).to eq(get_field_names_by_source(:dcterms, multiple = nil))
+    end
+    it 'returns correct attributes for addinfolink field' do
+      fields = []
+      MetadataFields.add_all_fields('all', fields)
+      addinfolink_field = fields.select do |field|
+        field[:name] == :addinfolink
+      end
+      expect(addinfolink_field[0][:attributes][:display][:detail][:special_handling][:helper_method]).to be
+      expect(addinfolink_field[0][:attributes][:display][:detail][:special_handling][:helper_method]).to be
+      expect(addinfolink_field[0][:attributes].length).to eql(8)
+
     end
   end
 
