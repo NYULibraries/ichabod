@@ -202,12 +202,13 @@ describe MetadataFields do
     end
     it 'returns correct attributes for addinfolink field' do
       fields = []
+      #MyClass.send(:public, *MyClass.protected_instance_methods)
       MetadataFields.add_all_fields('all', fields)
       addinfolink_field = fields.select do |field|
         field[:name] == :addinfolink
       end
       expect(addinfolink_field[0][:attributes][:display][:detail][:special_handling][:helper_method]).to be
-      expect(addinfolink_field[0][:attributes][:display][:detail][:special_handling][:helper_method]).to be
+      expect(addinfolink_field[0][:attributes][:display][:detail][:special_handling][:text]).to be
       expect(addinfolink_field[0][:attributes].length).to eql(8)
 
     end
