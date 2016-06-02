@@ -45,6 +45,7 @@ class SolrDocument
   field_semantics.merge!(
                          :identifier => "desc_metadata__identifier_tesim",
                          :title => "desc_metadata__title_tesim",
+                         :creator => "desc_metadata__creator_tesim",
                          :publisher => "desc_metadata__publisher_tesim",
                          :type => "desc_metadata__type_tesim",
                          :description => "desc_metadata__description_tesim",
@@ -56,6 +57,6 @@ class SolrDocument
                          :addinfolink => "desc_metadata__addinfolink_tesim",
                          :addinfotext => "desc_metadata__addinfotext_tesim",
                          :isPartOf => "collection_ssm",
-                         :date => "timestamp"
+                         :date => "desc_metadata__date_tesim"
                          )
 end
