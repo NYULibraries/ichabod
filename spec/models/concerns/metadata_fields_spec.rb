@@ -49,6 +49,13 @@ def get_info_by_source(ns)
   info = contents[ns][:info]
 end
 
+def get_field_by_name_from_fields_array(fields, field_name)
+  field = fields.select do |field|
+    field[:name] == field_name
+  end
+  field
+end
+
 def expected_facet_fields_order
   [
     :type,
@@ -181,7 +188,7 @@ describe MetadataFields do
   describe 'add_all_fields' do
     it 'returns correct fields for all' do
       fields = []
-      MetadataFields.add_all_fields('all', fields)
+      MetadataFields.add_all_fields(MetadataFields::DEFAULT_NAMESPACE, fields)
       expect(fields.length).to eq(get_field_names_all_sources.length)
       all_names = fields.map do |field|
         field[:name]
@@ -193,7 +200,7 @@ describe MetadataFields do
   describe 'add_fields_by_ns' do
     it 'returns correct fields for dublin core' do
       fields = []
-      MetadataFields.add_fields_by_ns('all', fields, :dcterms)
+      MetadataFields.add_fields_by_ns(MetadataFields::DEFAULT_NAMESPACE, fields, :dcterms)
       expect(fields.length).to eq(get_field_names_by_source(:dcterms, multiple = nil).length)
       dcterms_names = fields.map do |field|
         field[:name]
@@ -202,13 +209,10 @@ describe MetadataFields do
     end
     it 'returns correct attributes for addinfolink field' do
       fields = []
-      #MyClass.send(:public, *MyClass.protected_instance_methods)
-      MetadataFields.add_all_fields('all', fields)
-      addinfolink_field = fields.select do |field|
-        field[:name] == :addinfolink
-      end
-      expect(addinfolink_field[0][:attributes][:display][:detail][:special_handling][:helper_method]).to be
-      expect(addinfolink_field[0][:attributes][:display][:detail][:special_handling][:text]).to be
+      MetadataFields.add_all_fields(MetadataFields::DEFAULT_NAMESPACE, fields)
+      addinfolink_field = get_field_by_name_from_fields_array(fields, :addinfolink)
+      expect(addinfolink_field[0][:attributes][:display][:detail][:special_handling][:helper_method]).to eq("render_external_links")
+      expect(addinfolink_field[0][:attributes][:display][:detail][:special_handling][:text]).to eq("desc_metadata__addinfotext_tesim")
       expect(addinfolink_field[0][:attributes].length).to eql(8)
 
     end
@@ -274,7 +278,7 @@ describe MetadataFields do
 
   describe 'sort_fields_by_display_attribute' do
     fields = []
-    MetadataFields.add_all_fields('all', fields)
+    MetadataFields.add_all_fields(MetadataFields::DEFAULT_NAMESPACE, fields)
     fields = fields.select do |field|
       field[:attributes][:display][:facet][:show] == true
     end
@@ -289,7 +293,7 @@ describe MetadataFields do
 
   describe 'get_solr_name_opts' do
     fields = []
-    MetadataFields.add_all_fields('all', fields)
+    MetadataFields.add_all_fields(MetadataFields::DEFAULT_NAMESPACE, fields)
     title_field = fields.select do |field|
       field[:name] == :title
     end
