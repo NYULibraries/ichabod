@@ -67,7 +67,7 @@ module MetadataFields
 	def add_field_names_by_ns(multiple, field_names, ns)
 		#grabbing only fields
 		metadata_fields = METADATA_FIELDS[ns][:fields]
-		METADATA_FIELDS[ns][:fields].keys.each{ |field_name|
+		metadata_fields.keys.each{ |field_name|
 			# if output is true then print out field name
 			# if multiple has the default value
 			# or one of the values in the yml file
@@ -100,7 +100,7 @@ module MetadataFields
 	# add fields specified by namespace
 	def add_fields_by_ns(multiple, fields, ns)
 		metadata_fields = METADATA_FIELDS[ns][:fields]
-		METADATA_FIELDS[ns][:fields].each{ |fieldPair|
+		metadata_fields.each{ |fieldPair|
 			# if output is true then print out field name
 			# if multiple has the default value
 			# or one of the values in the yml file
