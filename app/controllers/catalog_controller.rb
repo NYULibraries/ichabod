@@ -68,6 +68,10 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
+    # Calls to MetadataFields.get_solr_name_opts have to be splatted below
+    # because the return value is variable length.
+    # Also, this has to match the upstream behavior in active_fedora:
+    # https://github.com/projecthydra/active_fedora/blob/7.x-stable/lib/active_fedora/solr_service.rb#L98-L100
 
     search_result_fields = MetadataFields.get_search_result_fields_in_display_order
     search_result_fields.each do |field|
