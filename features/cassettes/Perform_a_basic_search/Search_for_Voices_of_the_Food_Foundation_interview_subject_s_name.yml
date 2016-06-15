@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://127.0.0.1:8983/solr/test/select?fl=id&q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Collection%22%20AND%20administrative_metadata__discoverable_tesim:0&qt=standard&rows=1000&sort=system_create_dtsi%20asc&start=0&wt=ruby
+    uri: http://127.0.0.1:8983/solr/test/select?fl=id&q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Collection%22%20AND%20administrative_metadata__discoverable_tesim:N&qt=standard&rows=1000&sort=system_create_dtsi%20asc&start=0&wt=ruby
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |
-        {'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'q'=>'_query_:"{!raw f=has_model_ssim}info:fedora/afmodel:Collection" AND administrative_metadata__discoverable_tesim:0','qt'=>'standard','fl'=>'id','start'=>'0','sort'=>'system_create_dtsi asc','rows'=>'1000','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'ichabodcollection:c39352d6-c7d5-4c06-b2ff-2e396b075748'}]}}
+        {'responseHeader'=>{'status'=>0,'QTime'=>1,'params'=>{'q'=>'_query_:"{!raw f=has_model_ssim}info:fedora/afmodel:Collection" AND administrative_metadata__discoverable_tesim:N','qt'=>'standard','fl'=>'id','start'=>'0','sort'=>'system_create_dtsi asc','rows'=>'1000','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'ichabodcollection:c39352d6-c7d5-4c06-b2ff-2e396b075748'}]}}
     http_version: 
   recorded_at: Wed, 11 May 2016 06:19:32 GMT
 - request:
@@ -1628,7 +1628,7 @@ http_interactions:
   recorded_at: Wed, 11 May 2016 06:19:33 GMT
 - request:
     method: get
-    uri: http://127.0.0.1:8983/solr/test/select?fl=id&q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Collection%22%20AND%20administrative_metadata__discoverable_tesim:0&qt=standard&rows=1000&sort=system_create_dtsi%20asc&start=0&wt=ruby
+    uri: http://127.0.0.1:8983/solr/test/select?fl=id&q=_query_:%22%7B!raw%20f=has_model_ssim%7Dinfo:fedora/afmodel:Collection%22%20AND%20administrative_metadata__discoverable_tesim:N&qt=standard&rows=1000&sort=system_create_dtsi%20asc&start=0&wt=ruby
     body:
       encoding: US-ASCII
       string: ''
@@ -1649,7 +1649,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |
-        {'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'q'=>'_query_:"{!raw f=has_model_ssim}info:fedora/afmodel:Collection" AND administrative_metadata__discoverable_tesim:0','qt'=>'standard','fl'=>'id','start'=>'0','sort'=>'system_create_dtsi asc','rows'=>'1000','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'ichabodcollection:c39352d6-c7d5-4c06-b2ff-2e396b075748'}]}}
+        {'responseHeader'=>{'status'=>0,'QTime'=>0,'params'=>{'q'=>'_query_:"{!raw f=has_model_ssim}info:fedora/afmodel:Collection" AND administrative_metadata__discoverable_tesim:N','qt'=>'standard','fl'=>'id','start'=>'0','sort'=>'system_create_dtsi asc','rows'=>'1000','wt'=>'ruby'}},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'ichabodcollection:c39352d6-c7d5-4c06-b2ff-2e396b075748'}]}}
     http_version: 
   recorded_at: Wed, 11 May 2016 06:19:33 GMT
 - request:

@@ -16,11 +16,8 @@ class NyucoresController < ApplicationController
   def show
     authorize! :show, params[:id]
     @item = Nyucore.find(params[:id])
-    if (is_restricted?)
-      raise CanCan::AccessDenied.new('You are not authorized to view this item')
-    else
-      respond_with(@item)
-    end
+    raise CanCan::AccessDenied.new('You are not authorized to view this item') if is_restricted?
+    respond_with(@item)
   end
 
   def new
@@ -120,7 +117,7 @@ class NyucoresController < ApplicationController
  def is_restricted?
    collection=Collection.find(@item.collection.pid)  unless(@item.collection.nil?)
    if (!@item.collection.nil?)
-     return true if (@item.collection.discoverable=='0'&&!can?(:edit, collection))
+     return true if (!@item.collection.discoverable?&&!can?(:edit, collection))
    end
    false
  end

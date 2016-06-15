@@ -271,7 +271,7 @@ module Ichabod
               expect(nyucore.edit_groups).to eq editors.map(&:to_s).unshift(*original_editors.map(&:to_s))
             end
           end
-          it 'should should assign edit groups to the parent collection' do
+          it 'should assign edit groups to the parent collection' do
               subject
               expect(collection_original.edit_groups).to eq editors.map(&:to_s).unshift(*original_editors.map(&:to_s))
           end

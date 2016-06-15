@@ -17,11 +17,37 @@ describe Collection::DESCRIPTIVE_FIELDS do
   end
 
   describe 'private_collections' do
-    let(:collection_private) { create(:collection, :discoverable=>'0')  }
-    let(:collection_public) { create(:collection, :discoverable=>'1')  }
+    let(:collection_private) { create(:collection, :discoverable=>'N')  }
+    let(:collection_public) { create(:collection, :discoverable=>'Y')  }
     subject { Collection.private_collections }
     it { should include collection_private }
     it { should_not include collection_public }
+  end
+
+  describe 'construct_searchable_pid' do
+    let(:pid) { "ichabodcollection:11111" }
+    subject { Collection.construct_searchable_pid(pid) }
+    it { should eq "info\\:fedora/ichabodcollection\\:11111" }
+    context " when provided pid is nil should return empty string" do
+      let(:pid) { nil }
+      it { should eq " " }
+    end
+  end
+
+  describe 'escape_pid_for_search' do
+    let(:pid) { "info:fedora/ichabodcollection:11111" }
+    subject { Collection.escape_pid_for_search(pid) }
+    it { should eq "info\\:fedora/ichabodcollection\\:11111" }
+    context " when provided pid is nil should return empty string" do
+      let(:pid) { nil }
+      it { should eq " " }
+    end
+  end
+
+  describe 'add_fedora_prefix' do
+    let(:pid) { "ichabodcollection:11111" }
+    subject { Collection.add_fedora_prefix(pid) }
+    it { should eq "info:fedora/ichabodcollection:11111" }
   end
 
   describe Collection::FIELDS do
@@ -50,7 +76,7 @@ describe Collection::DESCRIPTIVE_FIELDS do
   end
 
 
-    #Test that we do presence and uniqueness tests for required field
+    #Test that we do presence  tests for required field
   
  
   subject(:collection) { build(:collection) }
@@ -79,7 +105,19 @@ describe Collection::DESCRIPTIVE_FIELDS do
           expect((collection.nyucores.size)).to be > 0
         end
     end
-   end
+  end
+
+  describe '#discoverable?' do
+    subject { collection.discoverable? }
+    context 'when it is a discoverable collection' do
+      let(:collection) { create(:collection, :discoverable=>'Y')}
+      it { should be true }
+    end
+    context 'when it is a non-discoverable collection' do
+      let(:collection) { create(:collection, :discoverable=>'N')}
+      it { should be false }
+    end
+  end
 
   describe '#descriptive_metadata' do
     subject { collection.descriptive_metadata }

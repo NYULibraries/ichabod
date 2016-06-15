@@ -5,10 +5,10 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
   
-  #add check for descoverability on collection level
+  #add check for discoverability on collection level
   #(see https://github.com/projectblacklight/blacklight/wiki/Extending-or-Modifying-Blacklight-Search-Behavior)
   #as we are currently using older version of Blacklight, additional method couldn't be placed to search_builder class
-  #So tempoirary added it to the controller itself
+  #So temporarily added it to the controller itself
   CatalogController.solr_search_params_logic += [:show_only_discoverable_records]
 
   configure_blacklight do |config|
@@ -198,7 +198,7 @@ def show_only_discoverable_records solr_params, user_params
     solr_params[:fq] ||= []
     Collection.private_collections.each do |collection|
       if !can?(:edit, collection)
-        solr_params[:fq] << '-is_part_of_ssim:'+"info\\:fedora/#{collection.pid.gsub(":","\\:")}"
+        solr_params[:fq] << '-is_part_of_ssim:'+Collection.construct_searchable_pid(collection.pid)
       end
     end
     return solr_params[:fq]

@@ -5,7 +5,7 @@
 <%  end %>
 <% admin_fields.each do |field| %>
 <% value||= @collection.send(field) %>
-    <%= f.input field, as: :boolean, label: f.label(field), input_html: {name: "collection[#{field}]", checked: get_boolean(value), id: "collection_#{field}"}  %>
+    <%= f.input field, as: :boolean, checked_value: 'Y', unchecked_value: 'N', label: f.label(field), input_html: {name: "collection[#{field}]",  id: "collection_#{field}", checked: get_boolean(value)}  %>
 <%  end %>
 
 <% multiple_fields.each do |field| %>

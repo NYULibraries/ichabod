@@ -10,10 +10,10 @@ module CatalogHelper
     field_name = args[:field]
     begin
       url_presenter = UrlPresenter.new(document, field_name)
-        links = url_presenter.urls.collect do |url|
-          link_to(url.text, url.value, {target: '_blank'})
-        end
-        links.join(field_value_separator).html_safe
+      links = url_presenter.urls.collect do |url|
+        link_to(url.text, url.value, {target: '_blank'})
+      end
+      links.join(field_value_separator).html_safe
     rescue ArgumentError => e
       nil
     end

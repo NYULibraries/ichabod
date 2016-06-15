@@ -5,8 +5,8 @@ describe NyucoresController do
 
   let(:user) { create_or_return_test_admin }
   let(:nyucore_fields) { Nyucore::FIELDS }
-  let(:collection_private) { create(:collection_with_nyucores, :discoverable=>'0') }
-  let(:collection_public) { create(:collection_with_nyucores, :discoverable=>'1') }
+  let(:collection_private) { create(:collection_with_nyucores, :discoverable=>'N') }
+  let(:collection_public) { create(:collection_with_nyucores, :discoverable=>'Y') }
 
 
   before  { controller.stub(:current_user).and_return(user) }

@@ -17,7 +17,6 @@ class Collection < ActiveFedora::Base
   ID_PREFIX="ichabodcollection"
 
   validates :title, presence: true
-  #validates :title, uniqueness: { solr_name: "desc_metadata__title_tesim" }
   validates :discoverable, presence: true
 
   descriptive_metadata = 'descriptive_metadata'
@@ -27,8 +26,30 @@ class Collection < ActiveFedora::Base
     "#{ID_PREFIX}:#{SecureRandom.uuid}"
   end
 
+  def self.construct_searchable_pid(pid)
+    if(pid.nil?)
+      return " "
+    end
+    escape_pid_for_search(add_fedora_prefix(pid))
+  end
+
+  def self.add_fedora_prefix(pid)
+    "info:fedora/#{pid}"
+  end
+
+  def self.escape_pid_for_search(pid)
+    if(pid.nil?)
+      return " "
+    end
+    pid.gsub(":","\\:")
+  end
+
   def self.private_collections
-    where( :administrative_metadata__discoverable_tesim=>'0' )
+    where( :administrative_metadata__discoverable_tesim=>'N' )
+  end
+
+  def discoverable?
+    discoverable=='Y' ? true:false
   end
 
   has_metadata descriptive_metadata, type: Ichabod::NyucoreDatastream

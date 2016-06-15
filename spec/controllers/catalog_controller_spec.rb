@@ -4,7 +4,7 @@ require 'support/test_user_helper'
 
 describe CatalogController do
   describe "GET /index", vcr: { cassette_name: "controllers/catalog controller/index" } do
-    let(:collection_private) { create( :collection_for_gis_cataloger, {:discoverable=>'0'} ) }
+    let(:collection_private) { create( :collection_for_gis_cataloger, {:discoverable=>'N'} ) }
     let(:user) { nil }
     before do
       controller.stub(:current_user).and_return(user)
@@ -49,7 +49,7 @@ describe CatalogController do
     let(:solr_params) { {} }
     let(:user_params) { {} }
     let(:user) { create_or_return_test_admin }
-    let(:collection_private) { create(:collection, {:discoverable => "0"}) }
+    let(:collection_private) { create(:collection, {:discoverable => 'N'}) }
     before do
       controller.stub(:current_user).and_return(user)
     end

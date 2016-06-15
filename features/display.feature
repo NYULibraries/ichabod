@@ -15,17 +15,19 @@ Feature: Display tests for various datasets
     When I navigate to details display of the first result
     Then I should get "Online Resource" field in the details display
 
+  @vcr
   Scenario: Display "Book" field in the details display
     Given I limit my search to "NYU Press Open Access Books" under the "Collection" category
-    And I search for "9780814712917"
+    And I search for "9780814706404"
     When I navigate to details display of the first result
     Then I should see the value "Book" in the "Format:" field
 
+  @vcr
   Scenario: Display "Creator" field in the details display
     Given I limit my search to "NYU Press Open Access Books" under the "Collection" category
-    And I search for "9780814712917"
+    And I search for "9780814706404"
     When I navigate to details display of the first result
-    Then I should see the value "Gail R. Benjamin" in the "Creator:" field
+    Then I should see the value "Jody David Armour" in the "Creator:" field
 
   @vcr
   Scenario: Display "Repository" field in the details display

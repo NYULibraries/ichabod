@@ -40,12 +40,12 @@ describe CollectionsHelper do
         let(:value) { nil }
         it { should be true }
     end
-    context "when value is 1" do
-        let(:value) { '1' }
+    context "when value is Y" do
+        let(:value) { 'Y' }
         it { should be true }
     end
-    context "when value is 0" do
-        let(:value) { '0' }
+    context "when value is N" do
+        let(:value) { 'N' }
         it { should be false }
     end 
   end
@@ -54,19 +54,14 @@ describe CollectionsHelper do
     subject { helper.format_boolean_value(value,field) }
      context "when field is equal to discoverable" do
          let(:field) { :discoverable }
-         context "when value is 1" do          
-           let(:value) { '1' }
+         context "when value is Y" do
+           let(:value) { 'Y' }
            it { should eq 'Yes' }
          end
-         context "when value is 0" do
-           let(:value) { '0' }
+         context "when value is N" do
+           let(:value) { 'N' }
            it { should eq 'No' }
          end
-     end 
-     context "when field is not equal to discoverable" do
-       let(:field) {:title }
-       let(:value) { 'title_value' }
-       it { should eq 'title_value' }
      end
   end
 

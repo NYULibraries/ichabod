@@ -108,7 +108,6 @@ class Nyucore < ActiveFedora::Base
       # https://github.com/projecthydra/active_fedora/blob/889aa962a326ad9e8302ada3237193221ad2feb5/lib/active_fedora/indexing.rb
       solr_doc = ds.to_solr(solr_doc)
     end
-    #Solrizer.insert_field(solr_doc, "collection", collections, :facetable, :displayable)
     solr_doc
   end
 end
