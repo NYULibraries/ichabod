@@ -147,10 +147,11 @@ module MetadataFields
 
 			field[:attributes][:display][section][:show] == true
 		end
-
+		# sort, then extract just display variables (flatten)
 		sort_fields_by_display_attribute(fields, section, :sort_key)
+		field_parts = get_field_display_variables(fields, section)
 
-		fields
+		field_parts
 	end
 
 	def sort_fields_by_display_attribute(fields, section, sort_key)
@@ -161,8 +162,21 @@ module MetadataFields
 		fields
 	end
 
-	def get_solr_name_opts(field)
-		solr_type = field[:attributes][:display][:solr_type]
+	def get_field_display_variables(fields, section)
+		# Gets the subset of variables relevant to controller/display for a section
+		field_parts = fields.map { |field|
+			{ :name => field[:name],
+				:solr_type => field[:attributes][:display][:solr_type],
+				:label => field[:attributes][:display][section][:label],
+				:special_handling => field[:attributes][:display][section][:special_handling]
+			}
+		}
+
+		field_parts
+	end
+
+	def get_solr_name_opts(field_part)
+		solr_type = field_part[:solr_type]
 		if solr_type == "tesim"
 			solr_opts = [:stored_searchable, {:type=>:string}]
 		elsif solr_type == "ssim"

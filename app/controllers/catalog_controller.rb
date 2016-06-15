@@ -49,7 +49,7 @@ class CatalogController < ApplicationController
     facet_fields = MetadataFields.get_facet_fields_in_display_order
     facet_fields.each do |field|
       config.add_facet_field solr_name("desc_metadata__#{field[:name]}", :facetable),
-        :label => field[:attributes][:display][:facet][:label]
+        :label => field[:label]
     end
 
     # This can't be part of our new processing until this branch is merged:
@@ -62,8 +62,8 @@ class CatalogController < ApplicationController
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
     config.default_solr_params[:'facet.field'] = config.facet_fields.keys
-    #use this instead if you don't want to query facets marked :show=>false
-    #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
+    # use this instead if you don't want to query facets marked :show=>false
+    # config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
 
 
     # solr fields to be displayed in the index (search results) view
@@ -75,30 +75,30 @@ class CatalogController < ApplicationController
 
     search_result_fields = MetadataFields.get_search_result_fields_in_display_order
     search_result_fields.each do |field|
-      if (field[:attributes][:display][:search_result][:special_handling])
+      if (field[:special_handling] != nil)
         config.add_index_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
-                               :label => field[:attributes][:display][:search_result][:label],
-                               :helper_method => field[:attributes][:display][:search_result][:special_handling][:helper_method],
-                               :text          => field[:attributes][:display][:search_result][:special_handling][:text]
+                               :label => field[:label],
+                               :helper_method => field[:special_handling][:helper_method],
+                               :text          => field[:special_handling][:text]
       else
         config.add_index_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
-                                 :label => field[:attributes][:display][:search_result][:label]
+                                 :label => field[:label]
       end
     end
 
     # solr fields to be displayed in the show (single result) view
-    #   The ordering of the field names is the order of the display
+    # The ordering of the field names is the order of the display
 
     detail_fields = MetadataFields.get_detail_fields_in_display_order
     detail_fields.each do |field|
-      if (field[:attributes][:display][:detail][:special_handling])
+      if (field[:special_handling])
         config.add_show_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
-                               :label => field[:attributes][:display][:detail][:label],
-                               :helper_method => field[:attributes][:display][:detail][:special_handling][:helper_method],
-                               :text          => field[:attributes][:display][:detail][:special_handling][:text]
+                               :label => field[:label],
+                               :helper_method => field[:special_handling][:helper_method],
+                               :text          => field[:special_handling][:text]
       else
         config.add_show_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
-                                 :label => field[:attributes][:display][:detail][:label]
+                                 :label => field[:label]
       end
     end
 
