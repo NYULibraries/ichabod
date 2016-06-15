@@ -65,6 +65,16 @@ def expected_facet_fields_order
   ]
 end
 
+def expected_facet_field_labels
+  [
+    "Format",
+    "Creator",
+    "Subject",
+    "Language"
+  ]
+end
+
+
 def expected_search_result_fields_order
   [
     :title,
@@ -291,6 +301,32 @@ describe MetadataFields do
     end
   end
 
+  describe 'get_field_display_variables' do
+    fields = []
+    MetadataFields.add_all_fields(MetadataFields::DEFAULT_NAMESPACE, fields)
+    fields = fields.select do |field|
+      field[:attributes][:display][:facet][:show] == true
+    end
+    fields_sorted = MetadataFields.sort_fields_by_display_attribute(fields, :facet, :sort_key)
+    it 'includes the labels of the relevant section' do
+      field_labels = MetadataFields.get_field_display_variables(fields_sorted, :facet).map do |field|
+        field[:label]
+      end
+
+      expect(field_labels).to eq(expected_facet_field_labels)
+    end
+
+    it 'includes special handling attributes for available field' do
+      fields = []
+      MetadataFields.add_all_fields(MetadataFields::DEFAULT_NAMESPACE, fields)
+      available_field = get_field_by_name_from_fields_array(fields, :available)
+      available_field_part = MetadataFields.get_field_display_variables(available_field, :detail)
+      expect(available_field_part[0][:special_handling][:helper_method]).to eq("render_external_links")
+      expect(available_field_part[0][:special_handling][:text]).to eq("resource_text_display")
+    end
+
+  end
+
   describe 'get_solr_name_opts' do
     fields = []
     MetadataFields.add_all_fields(MetadataFields::DEFAULT_NAMESPACE, fields)
@@ -298,7 +334,7 @@ describe MetadataFields do
       field[:name] == :title
     end
     it 'returns the correct solr options for "title" field' do
-      opts =  MetadataFields.get_solr_name_opts(title_field[0])
+      opts =  MetadataFields.get_solr_name_opts(title_field[0][:attributes][:display])
 
       expect(opts).to eq(expected_title_solr_opts)
     end
