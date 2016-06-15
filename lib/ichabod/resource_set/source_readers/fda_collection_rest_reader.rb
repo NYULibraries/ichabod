@@ -17,6 +17,7 @@ module Ichabod
         def resource_attributes_from_record(record)
           {
               prefix: resource_set.prefix,
+              available: available_link_from_record(record),
               identifier: dc_attribute_from_record('identifier', record),
               title: dc_attribute_from_record('title', record),
               creator: dc_attribute_from_record('creator', record),
@@ -37,6 +38,16 @@ module Ichabod
           record['metadata'].each do |element|
             if element['key'].include? "dc.#{attribute}"
               values << element['value']
+            end
+          end
+          values
+        end
+
+        def available_link_from_record(record)
+          values = []
+          record['metadata'].each do |element|
+            if element['key'].include? "dc.identifier"
+              values << element['value'] if element['value'].include? "handle"
             end
           end
           values
