@@ -37,7 +37,6 @@ end
 # Faceting steps
 Given(/^I (limit|filter) my search to "([^\"]*)" under the "(.*?)" category$/) do |a, facet, category|
   ensure_root_path
-  save_and_open_page("/Users/katepechekhonova/ichabod/#{facet}.html")
   limit_by_facets(category, facet)
 end
 
