@@ -43,76 +43,60 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
-    config.add_facet_field solr_name('desc_metadata__type', :facetable), :label => 'Format'
-    config.add_facet_field solr_name('desc_metadata__creator', :facetable), :label => 'Creator'
-    config.add_facet_field solr_name('desc_metadata__subject', :facetable), :label => 'Subject'
-    config.add_facet_field solr_name('desc_metadata__language', :facetable), :label => 'Language'
-    config.add_facet_field solr_name('collection', :facetable), :label => 'Collection'
 
+    facet_fields = MetadataFields.get_facet_fields_in_display_order
+    facet_fields.each do |field|
+      config.add_facet_field solr_name("desc_metadata__#{field[:name]}", :facetable),
+        :label => field[:label]
+    end
+
+    # This can't be part of our new processing until this branch is merged:
+    # https://github.com/NYULibraries/ichabod/tree/feature/collection_new
+    config.add_facet_field solr_name('collection', :facetable), :label => 'Collection'
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
     config.default_solr_params[:'facet.field'] = config.facet_fields.keys
-    #use this instead if you don't want to query facets marked :show=>false
-    #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
+    # use this instead if you don't want to query facets marked :show=>false
+    # config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
 
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title'
-    config.add_index_field solr_name('desc_metadata__title_vern', :stored_searchable, type: :string), :label => 'Title'
-    config.add_index_field solr_name('desc_metadata__author', :stored_searchable, type: :string), :label => 'Author'
-    config.add_index_field solr_name('desc_metadata__author_vern', :stored_searchable, type: :string), :label => 'Author'
-    config.add_index_field solr_name('desc_metadata__format', :symbol), :label => 'Format'
-    config.add_index_field solr_name('desc_metadata__language', :stored_searchable, type: :string), :label => 'Language'
-    config.add_index_field solr_name('desc_metadata__published', :stored_searchable, type: :string), :label => 'Published'
-    config.add_index_field solr_name('desc_metadata__published_vern', :stored_searchable, type: :string), :label => 'Published'
-    config.add_index_field solr_name('desc_metadata__lc_callnum', :stored_searchable, type: :string), :label => 'Call number'
-    #NYUCore Additions
-    config.add_index_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher'
-    config.add_index_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions'
-    config.add_index_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label => 'Online Resource',
-                                                                                                    :helper_method => :render_external_links,
-                                                                                                    :text          => 'resource_text_display'
-    config.add_index_field solr_name('desc_metadata__id', :stored_searchable, type: :string), :label => 'Online Resource',
-                                                                                                    :helper_method => :render_external_link,
-                                                                                                    :text          => 'resource_text_display'
+    # Calls to MetadataFields.get_solr_name_opts have to be splatted below
+    # because the return value is variable length.
+    # Also, this has to match the upstream behavior in active_fedora:
+    # https://github.com/projecthydra/active_fedora/blob/7.x-stable/lib/active_fedora/solr_service.rb#L98-L100
+
+    search_result_fields = MetadataFields.get_search_result_fields_in_display_order
+    search_result_fields.each do |field|
+      if (field[:special_handling] != nil)
+        config.add_index_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
+                               :label => field[:label],
+                               :helper_method => field[:special_handling][:helper_method],
+                               :text          => field[:special_handling][:text]
+      else
+        config.add_index_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
+                                 :label => field[:label]
+      end
+    end
+
     # solr fields to be displayed in the show (single result) view
-    #   The ordering of the field names is the order of the display
-    config.add_show_field solr_name('desc_metadata__title', :stored_searchable, type: :string), :label => 'Title'
-    config.add_show_field solr_name('desc_metadata__creator', :stored_searchable, type: :string), :label => 'Creator'
-    config.add_show_field solr_name('desc_metadata__title_vern', :stored_searchable, type: :string), :label => 'Title'
-    config.add_show_field solr_name('desc_metadata__subtitle', :stored_searchable, type: :string), :label => 'Subtitle'
-    config.add_show_field solr_name('desc_metadata__subtitle_vern', :stored_searchable, type: :string), :label => 'Subtitle'
-    config.add_show_field solr_name('desc_metadata__author', :stored_searchable, type: :string), :label => 'Author'
-    config.add_show_field solr_name('desc_metadata__author_vern', :stored_searchable, type: :string), :label => 'Author'
-    config.add_show_field solr_name('desc_metadata__format', :symbol), :label => 'Format'
-    config.add_show_field solr_name('desc_metadata__url_fulltext_tsim', :stored_searchable, type: :string), :label => 'URL'
-    config.add_show_field solr_name('desc_metadata__url_suppl_tsim', :stored_searchable, type: :string), :label => 'More Information'
-    config.add_show_field solr_name('desc_metadata__language', :stored_searchable, type: :string), :label => 'Language'
-    config.add_show_field solr_name('desc_metadata__published', :stored_searchable, type: :string), :label => 'Published'
-    config.add_show_field solr_name('desc_metadata__published_vern', :stored_searchable, type: :string), :label => 'Published'
-    config.add_show_field solr_name('desc_metadata__lc_callnum', :stored_searchable, type: :string), :label => 'Call number'
-    config.add_show_field solr_name('desc_metadata__isbn', :stored_searchable, type: :string), :label => 'ISBN'
-    #NYUCore Additions
-    config.add_show_field solr_name('desc_metadata__publisher', :stored_searchable, type: :string), :label => 'Publisher'
-    config.add_show_field solr_name('desc_metadata__type', :stored_searchable, type: :string), :label => 'Format'
-    config.add_show_field solr_name('desc_metadata__description', :stored_searchable, type: :string), :label => 'Description'
-    config.add_show_field solr_name('desc_metadata__series', :stored_searchable, type: :string), :label => 'Series'
-    config.add_show_field solr_name('desc_metadata__version', :stored_searchable, type: :string), :label => 'Also available as'
-    config.add_show_field solr_name('desc_metadata__restrictions', :stored_searchable, type: :string), :label => 'Access Restrictions'
-    config.add_show_field solr_name('desc_metadata__available', :stored_searchable, type: :string), :label => 'Online Resource',
-                                                                                                    :helper_method => :render_external_links,
-                                                                                                    :text          => 'resource_text_display'
-    config.add_show_field solr_name('desc_metadata__relation', :stored_searchable, type: :string), :label => 'Relation'
-    config.add_show_field solr_name('desc_metadata__location', :stored_searchable, type: :string), :label => 'Location'
-    config.add_show_field solr_name('desc_metadata__repo', :stored_searchable, type: :string), :label => 'Repository'
-    config.add_show_field solr_name('desc_metadata__data_provider', :stored_searchable, type: :string), :label => 'Data Provider'
-    config.add_show_field solr_name('desc_metadata__addinfolink', :stored_searchable, type: :string), :label => 'Additional Information',
-                                                                                                    :helper_method => :render_external_links,
-                                                                                                    :text          => 'desc_metadata__addinfotext_tesim'
-    config.add_show_field solr_name('desc_metadata__rights', :stored_searchable, type: :string), :label => 'Rights'
+    # The ordering of the field names is the order of the display
+
+    detail_fields = MetadataFields.get_detail_fields_in_display_order
+    detail_fields.each do |field|
+      if (field[:special_handling])
+        config.add_show_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
+                               :label => field[:label],
+                               :helper_method => field[:special_handling][:helper_method],
+                               :text          => field[:special_handling][:text]
+      else
+        config.add_show_field solr_name("desc_metadata__#{field[:name]}", *MetadataFields.get_solr_name_opts(field)),
+                                 :label => field[:label]
+      end
+    end
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

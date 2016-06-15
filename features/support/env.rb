@@ -30,7 +30,7 @@ if Rails.env.cucumber?
     Ichabod::DataLoader.new('faculty_digital_archive_ngo',File.join(Rails.root, 'ingest/test_ngo_fda.csv')).load
     Ichabod::DataLoader.new('archive_it_accw','http://dev-dl-pa.home.nyu.edu','/ichabod-support/collections/4049.json').load
     # Loaded the NYUPress collection up to record a cassette, but don't need it after that
-    Ichabod::DataLoader.new('nyu_press_open_access_book','http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select','0','5').load
+    Ichabod::DataLoader.new('nyu_press_open_access_book','http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select','0','6').load
     # loading one page of results from FAB for cucumber tests
     # Ichabod::DataLoader.new('woj',1).load
     # request 5 items from The Masses collection, start with item 0d
