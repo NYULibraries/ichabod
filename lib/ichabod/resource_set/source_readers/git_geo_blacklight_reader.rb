@@ -4,12 +4,12 @@ module Ichabod
       require 'octokit'
       require 'open-uri'
       require 'multi_json'
-      
+
       class GitGeoBlacklightReader < ResourceSet::SourceReader
 
         def read
           if repo_url
-            map.collect do |gb| 
+            map.collect do |gb|
              ResourceSet::Resource.new(resource_attributes_from_geoblacklight(gb))
             end
           end
@@ -19,19 +19,20 @@ module Ichabod
         extend Forwardable
         def_delegators :resource_set, :collection_code, :repo_url, :access_token
         FORMAT = "Geospatial Data"
+        URL="https://geo.nyu.edu/catalog"
         def resource_attributes_from_geoblacklight(gb)
           {
             prefix: resource_set.prefix,
             identifier: gb['uuid'],
-            available: gb['dc_identifier_s'],
+            available: "#{URL}/#{gb['layer_slug_s']}",
             title: gb['dc_title_s'],
             description: gb['dc_description_s'],
             publisher: gb['dc_publisher_s'],
             type: FORMAT,
-            language: gb['dc_language_s'], 
+            language: gb['dc_language_s'],
             format: FORMAT,
             creator: gb['dc_creator_sm'],
-            subject: gb['dc_subject_sm'], 
+            subject: gb['dc_subject_sm'],
             date: gb['dct_issued_s'],
             rights:gb['dc_rights_s'],
             data_provider: gb['dct_provenance_s'],
@@ -49,6 +50,7 @@ module Ichabod
           # in the github repository
 
           json_file = access_token ? parse_download_files : read_static_files
+          #json_file = parse_download_files
 
         end
 
@@ -56,7 +58,7 @@ module Ichabod
 
           # read the static files
           # create ruby hash from that
-          # for testing purposes 
+          # for testing purposes
 
           if not(Dir.exist?(File.dirname(repo_url)))
             raise ArgumentError.new("Error: #{repo_url} must exist")
@@ -68,7 +70,7 @@ module Ichabod
             json_file.push(MultiJson.load(IO.read("#{f}")))
           }
           json_file
-        
+
         end
 
         def parse_download_files
@@ -76,10 +78,10 @@ module Ichabod
           # create ruby hash
           # from json data
           # downloaded from github repository
-          
+
           data = read_download_files
           json_file = []
-          
+
           data.each do |str|
             unless str.blank?
               json = MultiJson.load(str)
@@ -107,30 +109,29 @@ module Ichabod
           get_dirs = first_tree
 
           json_file_paths = []
-          # get json download urls 
-          # by doing a recursive call to 
+          # get json download urls
+          # by doing a recursive call to
           # navigate the directories
           # and get the json file
           get_dirs.each do |d|
             next if d['size'] != 0
             path = d['path']
-            sub_tree = @client.tree(repo_url, d['sha'], :recursive => true) 
-
+            sub_tree = @client.tree(repo_url, d['sha'], :recursive => true)
             sub_tree[:tree].each do |t|
-              if t['type'] == 'blob'
+              if t['path'] =~ /json/
                 full_path = "#{path}/#{t['path']}"
-                download_url = @client.contents(repo_url, :path => full_path)['download_url'] 
-                json_file_paths.push(download_url) 
+                download_url = @client.contents(repo_url, :path => full_path)['download_url']
+                json_file_paths.push(download_url)
               end
             end
           end
           json_file_paths
         end
-      
+
 
         # Use Octokit to connect to harvest metadata from Github
         def get_client
-          @client ||= Octokit::Client.new(:access_token => access_token) 
+          @client ||= Octokit::Client.new(:access_token => access_token)
         end
         def first_tree
           @client ||= get_client
