@@ -62,6 +62,23 @@ namespace :fda_ngo do
   end
 end
 
+namespace :fda_jv do
+  desc "Set variables for Jennifer Vinopal FDA collection ingest tasks"
+  task :set_variables do
+    set :fda_rest_url, ENV['FDA_REST_URL']
+    set :fda_rest_user, ENV['FDA_REST_USER']
+    set :fda_rest_pass, ENV['FDA_REST_PASS']
+  end
+  task :import do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['vinopal_fda_collection',#{fda_rest_url},#{fda_rest_user},#{fda_rest_pass}]"
+  end
+  task :delete do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['vinopal_fda_collection',#{fda_rest_url},#{fda_rest_user},#{fda_rest_pass}]"
+  end
+end
+
 namespace :archive_it_accw do
   desc "Set variables for the Archive It Archive of Contemporary Composers' Websites ingest tasks"
   task :set_variables do
