@@ -65,6 +65,11 @@ describe Collection::DESCRIPTIVE_FIELDS do
     it { should eq [:title, :discoverable] }
   end
 
+  describe Collection::BOOLEAN_FIELDS do
+    subject { Collection::BOOLEAN_FIELDS }
+    it { should eq [:discoverable] }
+  end
+
   describe Collection::MULTIPLE_FIELDS do
     subject { Collection::MULTIPLE_FIELDS }
     it { should eq [:creator, :publisher ] }

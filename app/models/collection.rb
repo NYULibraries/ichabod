@@ -14,6 +14,7 @@ class Collection < ActiveFedora::Base
   MULTIPLE_FIELDS = DESCRIPTIVE_FIELDS[ :multiple ]
   FIELDS=SINGLE_FIELDS+MULTIPLE_FIELDS+ ADMIN_FIELDS
   REQUIRED_FIELDS = [ :title, :discoverable ]
+  BOOLEAN_FIELDS= [ :discoverable ]
   ID_PREFIX="ichabodcollection"
 
   validates :title, presence: true

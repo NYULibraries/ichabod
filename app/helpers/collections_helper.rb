@@ -25,6 +25,10 @@ module CollectionsHelper
      @required_fields ||= Collection::REQUIRED_FIELDS
   end
 
+  def boolean_fields
+    @required_fields ||= Collection::BOOLEAN_FIELDS
+  end
+
   def get_boolean(value)
       (value.blank?||value=='Y') ? true:false
   end

@@ -24,6 +24,11 @@ describe CollectionsHelper do
     it { should be_an Array }
   end
 
+  describe '#boolean_fields' do
+    subject { helper.boolean_fields }
+    it { should be_an Array }
+  end
+
   describe '#collection_fields' do
     subject { helper.collection_fields }
     it { should be_an Array }
