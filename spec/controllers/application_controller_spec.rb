@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'support/test_user_helper'
 
 describe ApplicationController do
 
@@ -7,5 +8,4 @@ describe ApplicationController do
     it { should be_instance_of(User) }
     it { expect(user.email).to eql("user@nyu.edu") }
   end
-
 end

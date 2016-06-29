@@ -18,4 +18,12 @@ module CatalogHelper
       nil
     end
   end
+
+  def render_collection_links(args)
+    if Collection.exists?(args)
+      Collection.find(args).title
+    else
+      "Unknown Collection"
+    end
+  end
 end

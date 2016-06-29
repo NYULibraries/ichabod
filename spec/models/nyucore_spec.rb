@@ -10,15 +10,16 @@ describe Nyucore do
   describe Nyucore::MULTIPLE_FIELDS do
     subject { Nyucore::MULTIPLE_FIELDS}
     it { should =~ [:available, :citation, :title, :creator,
-        :type, :publisher, :description, :edition, :date, :format, :language,
-        :relation, :rights, :subject, :series, :version, :contributor, 
-        :addinfolink, :addinfotext, :data_provider, :discoverable, :geometry, 
-        :isbn, :location, :subject_spatial, :subject_temporal] }
+                    :type, :publisher, :description, :edition, :date, :format, :language,
+                    :relation, :rights, :subject, :series, :version, :contributor,
+                    :addinfolink, :addinfotext, :data_provider, :discoverable, :geometry,
+                    :isbn, :location, :subject_spatial, :subject_temporal, :genre ] }
   end
 
-  subject(:nyucore) { build(:nyucore) }
+  subject(:nyucore) { create(:nyucore) }
   # Generic test for validity
   it { should be_valid }
+
 
   describe '#native_metadata' do
     subject { nyucore.native_metadata }
@@ -30,9 +31,10 @@ describe Nyucore do
     it { should be_a Ichabod::NyucoreDatastream }
   end
 
-  describe "#collections" do
-    subject { nyucore.collections }
-    it { should be_instance_of Nyucore::Collections }
+  describe '#collection' do
+    subject { nyucore.collection }
+    before { nyucore.collection=create(:collection)}
+    it { should be_a Collection}
   end
 
   # Some meta programming to test all the single-valued Nyucore attributes

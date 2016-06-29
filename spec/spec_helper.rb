@@ -29,11 +29,26 @@ if Rails.env.test?
     WebMock.allow_net_connect!
     Nyucore.destroy_all
     Collection.destroy_all
+    Collection.create( { :title=>"Archive of Contemporary Composers' Websites", :discoverable=>'Y'} )
+    Collection.create( { :title=>"Faculty Digital Archive", :discoverable=>'Y'} )
+    Collection.create( { :title=>"South Asian NGO and other reports", :discoverable=>'Y'} )
+    Collection.create( { :title=>"Data Services", :discoverable=>'Y'} )
+    Collection.create( { :title=>"Indian Ocean Postcards", :discoverable=>'N'} )
+    Collection.create( { :title=>"Research Guides", :discoverable=>'Y'} )
+    Collection.create( { :title=>"The Masses", :discoverable=>'Y'} )
+    Collection.create( { :title=>"NYU Press Open Access Books", :discoverable=>'Y'} )
+    Collection.create( { :title=>"The Real Rosie the Rivete", :discoverable=>'Y'} )
+    Collection.create( { :title=>"Spatial Data Repository", :discoverable=>'Y'} )
+    Collection.create( { :title=>"Voices of the Food Revolution", :discoverable=>'Y'} )
+    Collection.create( { :title=>"David Wojnarowicz Papers", :discoverable=>'Y'} )
+    Collection.create( { :title=>"Test Title", :discoverable=>'Y'} )
     Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
     Ichabod::DataLoader.new('faculty_digital_archive_ngo',File.join(Rails.root, 'ingest/test_ngo_fda.csv')).load
     Ichabod::DataLoader.new('nyu_press_open_access_book', 'http://discovery.dlib.nyu.edu:8080/solr3_discovery/nyupress/select','0','5').load
     Ichabod::DataLoader.new('faculty_digital_archive_service_data', File.join(Rails.root, 'ingest/test_data_service.csv')).load
     Ichabod::DataLoader.new('masses','http://dlib.nyu.edu/themasses/books.json','0','5').load
+    Ichabod::DataLoader.new('indian_ocean_data', File.join(Rails.root, 'ingest/test_io.csv')).load
+    
   ensure
     WebMock.disable_net_connect!
   end

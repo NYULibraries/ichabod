@@ -10,6 +10,7 @@ module Ichabod
 
       #module METADATA_FIELDS is in app/model/concerns
       NYUCORE_ATTRIBUTES = MetadataFields.process_metadata_fields
+
       attr_accessor :prefix
       attr_writer :pid_identifier
       attr_accessor(*NYUCORE_ATTRIBUTES)

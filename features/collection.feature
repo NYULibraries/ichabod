@@ -35,7 +35,7 @@ Feature: Add, edit and delete collections
     And I click on "Update Collection"
     Then I should see the message "Collection was successfully updated."
     When I am on the collections list
-    Then I should see title "The Underground Soviet Rock" in the collections list
+    Then I should see the title "The Underground Soviet Rock" in the collections list
 
   @loggedin
   Scenario: Editing a collection with multiple values in all multiple fields
@@ -55,10 +55,18 @@ Feature: Add, edit and delete collections
       | collection_publisher2    | Video Archive |
 
   @loggedin
-  Scenario: Deleting a record
+  Scenario: Deleting a collection with no associated records
     Given I am logged in as an admin
     And the collection "The Photo Collection" exists
     When I am on the collections list
     And I click on the "Delete" link for "The Photo Collection"
     Then I should see the message "Collection was successfully deleted."
-    And I should not see title "The Photo Collection" in the collections list
+    And I should not see the title "The Photo Collection" in the collections list
+
+@loggedin
+  Scenario: Deleting a collection with associated records
+    Given I am logged in as an admin
+    When I am on the collections list
+    And I click on the "Delete" link for "Indian Ocean Postcards"
+    Then I should see the message "Collection has associated records and can not be deleted"
+    And I should see the title "Indian Ocean Postcards" in the collections list
