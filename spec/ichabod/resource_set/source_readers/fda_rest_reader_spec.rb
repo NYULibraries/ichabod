@@ -19,7 +19,7 @@ module Ichabod
           subject { reader.resource_set }
           it { should eq resource_set }
         end
-        describe '#read', vcr: {cassette_name: 'resource sets/fda vinopal collection'} do
+        describe '#read', vcr: {cassette_name: 'resource sets/fda_vinopal_collection'} do
           subject(:read) { reader.read }
           it { should be_an Array }
           it { should_not be_empty }
