@@ -106,11 +106,11 @@ VCR.configure do |c|
   c.ignore_localhost = true
   c.configure_rspec_metadata!
   c.hook_into :webmock
-  c.filter_sensitive_data('user') { ENV['ICHABOD_ROSIE_USER'] }
-  c.filter_sensitive_data('password') { ENV['ICHABOD_ROSIE_PASSWORD'] }
-  c.filter_sensitive_data('user_token') { ENV['ICHABOD_GIT_USER_TOKEN'] }
-  c.filter_sensitive_data('foo/bar') { ENV['GIT_GEO_SPATIAL_MD_URL'] }
-  c.filter_sensitive_data('endpoint') { ENV['FDA_REST_URL'] }
-  c.filter_sensitive_data('user') { ENV['FDA_REST_USER'] }
-  c.filter_sensitive_data('password') { ENV['FDA_REST_PASS'] }
+  c.filter_sensitive_data('2C3D4N8jE9L4%g=LUP9unT') { ENV['ICHABOD_ROSIE_USER'] }
+  c.filter_sensitive_data('8mp8Z6C339TytM6,YTA.oY') { ENV['ICHABOD_ROSIE_PASSWORD'] }
+  c.filter_sensitive_data('Ue7PHK9WtD824V8{6u>rBU') { ENV['ICHABOD_GIT_USER_TOKEN'] }
+  c.filter_sensitive_data('7n8nnsizBM2dnW9M2>i49@') { ENV['GIT_GEO_SPATIAL_MD_URL'] }
+  c.filter_sensitive_data('o,4Z$A42beF7ccug8mm6C8') { ENV['FDA_REST_URL'] }
+  c.filter_sensitive_data('p4oWnb7r2H,X2scZ3ww76(') { ENV['FDA_REST_USER'] }
+  c.filter_sensitive_data('2E4%dX;4B4hi4oHYJU4Lm2') { ENV['FDA_REST_PASS'] }
 end
