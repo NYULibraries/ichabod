@@ -101,6 +101,8 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |c|
+  c.allow_http_connections_when_no_cassette = true
+
   c.default_cassette_options = { allow_playback_repeats: true, record: :new_episodes }
   c.cassette_library_dir = 'spec/vcr_cassettes'
   c.ignore_localhost = true

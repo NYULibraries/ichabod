@@ -18,7 +18,7 @@ module Ichabod
           subject { reader.resource_set }
           it { should eq resource_set }
         end
-        describe '#read', vcr: {cassette_name: 'resource sets/spatial data repository'} do
+        describe '#read' do
           subject(:read) { reader.read }
           it { should be_an Array }
           it { should_not be_empty }
