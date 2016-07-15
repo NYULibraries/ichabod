@@ -125,7 +125,7 @@ VCR.configure do |c|
   c.filter_sensitive_data('ichabod_rosie_user') { ENV['ICHABOD_ROSIE_USER'] }
   c.filter_sensitive_data('ichabod_rosie_password') { ENV['ICHABOD_ROSIE_PASSWORD'] }
   c.filter_sensitive_data('ichabod_git_user_token') { ENV['ICHABOD_GIT_USER_TOKEN'] }
-  c.filter_sensitive_data('git_geo_spatial_md_url') { ENV['GIT_GEO_SPATIAL_MD_URL'] }
+  c.filter_sensitive_data('geo_user/git_geo_spatial_md_url') { ENV['GIT_GEO_SPATIAL_MD_URL'] }
   c.filter_sensitive_data('fda_rest_user') { ENV['FDA_REST_USER'] }
   c.filter_sensitive_data('fda_rest_pass') { ENV['FDA_REST_PASS'] }
 end
