@@ -5,8 +5,8 @@ module Ichabod
       describe FdaCollectionRestReader do
         let(:fda_collection_id) { '520' }
         let(:fda_rest_url) { 'https://archive.nyu.edu/rest' }
-        let(:fda_rest_user) { ENV['FDA_REST_USER'] || 'username' }
-        let(:fda_rest_pass) { ENV['FDA_REST_PASS'] || 'password' }
+        let(:fda_rest_user) { ENV['FDA_REST_USER'] || 'fda_rest_user' }
+        let(:fda_rest_pass) { ENV['FDA_REST_PASS'] || 'fda_rest_pass' }
         let(:resource_set) { mock_resource_set }
         before do
           allow(resource_set).to receive(:fda_collection_id) { fda_collection_id }

@@ -115,6 +115,7 @@ RSpec.configure do |config|
   end
 end
 
+# See Ichabod developers' documentation for details on cassette filtering
 VCR.configure do |c|
   c.default_cassette_options = { allow_playback_repeats: true, record: :new_episodes }
   c.cassette_library_dir = 'spec/vcr_cassettes'
@@ -123,8 +124,8 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.filter_sensitive_data('ichabod_rosie_user') { ENV['ICHABOD_ROSIE_USER'] }
   c.filter_sensitive_data('ichabod_rosie_password') { ENV['ICHABOD_ROSIE_PASSWORD'] }
-  c.filter_sensitive_data('Ue7PHK9WtD824V8{6u>rBU') { ENV['ICHABOD_GIT_USER_TOKEN'] }
-  c.filter_sensitive_data('7n8nnsizBM2dnW9M2>i49@') { ENV['GIT_GEO_SPATIAL_MD_URL'] }
-  c.filter_sensitive_data('p4oWnb7r2H,X2scZ3ww76(') { ENV['FDA_REST_USER'] }
-  c.filter_sensitive_data('2E4%dX;4B4hi4oHYJU4Lm2') { ENV['FDA_REST_PASS'] }
+  c.filter_sensitive_data('ichabod_git_user_token') { ENV['ICHABOD_GIT_USER_TOKEN'] }
+  c.filter_sensitive_data('git_geo_spatial_md_url') { ENV['GIT_GEO_SPATIAL_MD_URL'] }
+  c.filter_sensitive_data('fda_rest_user') { ENV['FDA_REST_USER'] }
+  c.filter_sensitive_data('fda_rest_pass') { ENV['FDA_REST_PASS'] }
 end
