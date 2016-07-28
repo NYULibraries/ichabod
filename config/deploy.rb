@@ -177,3 +177,4 @@ namespace :jetty do
     run "cd #{current_path}; bundle exec rake jetty:start"
   end
 end
+
