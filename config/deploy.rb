@@ -178,3 +178,8 @@ namespace :jetty do
   end
 end
 
+namespace :collections do
+  task :create_all_collections do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} ichabod:create_collection['Archive of Contemporary Composers\\\' Websites','Y']
+  end
+end
