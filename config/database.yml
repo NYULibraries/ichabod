@@ -7,7 +7,7 @@ remote: &remote
   host:     <%= (ENV['ICHABOD_DB_HOST']     || 'localhost') %>
   database: <%= (ENV['ICHABOD_DB_DATABASE'] || 'ichabod_test') %>
   username: <%= (ENV['ICHABOD_DB_USER']     || 'root') %>
-  password: <%= ENV['ICHABOD_DB_PASSWORD']  %>
+  password: <%= ENV['ICHABOD_DB_PASSWORD'] %>
 
 local: &local
   <<: *remote
