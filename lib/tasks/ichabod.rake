@@ -34,6 +34,16 @@ where resource_set_name is required and args are optional
     data_loader.delete
   end
 
+  #task to create collections
+  desc <<-DESC
+Creates collection
+Usage: rake create_collection['name',['Y'|'N']]
+e.g.,  rake ichabod:create_collection['David Wojnarowicz Papers','Y']
+  DESC
+  task :create_collection, [:name,:discoverable] => :environment do |t, args|
+    Collection.create({:title=>args.name,:discoverable=>args.discoverable})
+  end
+
   # tasks operate directly on NYU Core objects
   namespace :nyucore do
     desc  <<-DESC
@@ -62,13 +72,4 @@ e.g.,  rake ichabod:nyucore:delete['sdr:DSS-ESRI_10_USA*']
     end
   end
 
-  #task to create collections
-  desc <<-DESC
-Creates collection
-Usage: rake create_collection['name',['Y'|'N']]
-e.g.,  rake ichabod:create_collection['David Wojnarowicz Papers','Y']
-  DESC
-  task :create_collection, [:name,:discoverable] => :environment do |t, args|
-    Collection.create({:title=>args[:name],:discoverable=>args[:discoverable]})
-  end
 end
