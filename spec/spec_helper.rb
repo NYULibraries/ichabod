@@ -29,8 +29,8 @@ if Rails.env.test?
     WebMock.allow_net_connect!
     Nyucore.destroy_all
     Collection.destroy_all
-    Collection.create( { :title=>"Archive of Contemporary Composers Websites", :discoverable=>'Y'} )
-    Collection.create( { :title=>"Faculty Digital Archive", :discoverable=>'Y'} )
+    Collection.create( { :title=>'Archive of Contemporary Composers Websites', :discoverable=>'Y'} )
+    Collection.create( { :title=>'Faculty Digital Archive', :discoverable=>'Y'} )
     Collection.create( { :title=>"South Asian NGO and other reports", :discoverable=>'Y'} )
     Collection.create( { :title=>"Data Services", :discoverable=>'Y'} )
     Collection.create( { :title=>"Indian Ocean Postcards", :discoverable=>'N'} )
