@@ -40,9 +40,19 @@ Creates collection
 Usage: rake create_collection['name',['Y'|'N']]
 e.g.,  rake ichabod:create_collection['David Wojnarowicz Papers','Y']
   DESC
-  task :create_collection, [:name,:discoverable] => :environment do |t, args|
+  task :create_collection, [:name,:discoverable] => :environment do |_, args|
     Collection.create({:title=>args.name,:discoverable=>args.discoverable})
   end
+
+  #task to create collections
+  desc <<-DESC
+  test
+  DESC
+  task :test do
+    puts "done"
+  end
+
+
 
   # tasks operate directly on NYU Core objects
   namespace :nyucore do
