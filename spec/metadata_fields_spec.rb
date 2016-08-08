@@ -99,6 +99,7 @@ def expected_detail_fields_order
     :series,
     :version,
     :restrictions,
+    :genre,
     :available,
     :relation,
     :location,

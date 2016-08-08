@@ -34,7 +34,7 @@ describe CatalogController do
       context "when user is not authorized to see specific collection" do
         it "should be filtered in response" do
           expect(response_fq).to include("-is_part_of_ssim:info\\:fedora/#{collection_private.pid.gsub(":","\\:")}")
-        end  
+        end
       end
       context 'when user is authorized to see specific collection' do
         let(:user) {create(:gis_cataloger )}
@@ -142,7 +142,7 @@ describe CatalogController do
         'desc_metadata__creator_sim',
         'desc_metadata__subject_sim',
         'desc_metadata__language_sim',
-        'collection_sim'
+        'is_part_of_ssim'
     ]
   end
 
@@ -170,6 +170,7 @@ describe CatalogController do
         'desc_metadata__series_tesim',
         'desc_metadata__version_tesim',
         'desc_metadata__restrictions_tesim',
+        'desc_metadata__genre_tesim',
         'desc_metadata__available_tesim',
         'desc_metadata__relation_tesim',
         'desc_metadata__location_tesim',
