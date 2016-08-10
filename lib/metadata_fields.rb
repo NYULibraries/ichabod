@@ -116,6 +116,22 @@ module MetadataFields
 		}
 	end
 
+	def get_queryable_fields
+		fields = []
+		add_all_fields(DEFAULT_MULTIPLE, fields)
+
+		# Filter for queryable fields
+		fields = fields.select do |field|
+			if field[:attributes][:queryable].nil?
+				raise ArgumentError, "Queryable info not found for field \"#{field[:name]}\""
+			end
+
+			field[:attributes][:queryable] == true
+		end
+
+		fields
+	end
+
 	def get_facet_fields_in_display_order
 		get_fields_for_section_in_display_order(:facet)
 	end

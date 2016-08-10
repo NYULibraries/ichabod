@@ -56,6 +56,22 @@ def get_field_by_name_from_fields_array(fields, field_name)
   field
 end
 
+def expected_queryable_fields
+  [
+    :title,
+    :creator,
+    :description,
+    :publisher,
+    :subject,
+    :type,
+    :isbn,
+    :subject_spatial,
+    :subject_temporal,
+    :series,
+    :genre
+  ]
+end
+
 def expected_facet_fields_order
   [
     :type,
@@ -224,8 +240,17 @@ describe MetadataFields do
       addinfolink_field = get_field_by_name_from_fields_array(fields, :addinfolink)
       expect(addinfolink_field[0][:attributes][:display][:detail][:special_handling][:helper_method]).to eq("render_external_links")
       expect(addinfolink_field[0][:attributes][:display][:detail][:special_handling][:text]).to eq("desc_metadata__addinfotext_tesim")
-      expect(addinfolink_field[0][:attributes].length).to eql(8)
+      expect(addinfolink_field[0][:attributes].length).to eql(9)
 
+    end
+  end
+
+  describe 'get_queryable_fields' do
+    it 'returns queryable fields' do
+      field_names = MetadataFields.get_queryable_fields.map do |field|
+        field[:name]
+      end
+      expect(field_names).to eq(expected_queryable_fields)
     end
   end
 
