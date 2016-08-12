@@ -1,6 +1,7 @@
 class VinopalFdaCollection < Ichabod::ResourceSet::Base
   self.prefix = 'fda'
   self.source_reader = :fda_collection_rest_reader
+  self.collection_title = "Jennifer Vinopal Collection"
   editor :fda_cataloger
 
 
