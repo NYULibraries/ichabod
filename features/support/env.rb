@@ -38,7 +38,7 @@ if Rails.env.cucumber?
     Collection.create( { :title=>"Spatial Data Repository", :discoverable=>'Y'} )
     Collection.create( { :title=>"Voices of the Food Revolution", :discoverable=>'Y'} )
     Collection.create( { :title=>"David Wojnarowicz Papers", :discoverable=>'Y'} )
-    Collection.create( { :title=>"Jennifer Vinopal Collection", :discoverable=>'N'} )
+    Collection.create( { :title=>"Jennifer Vinopal Collection", :discoverable=>'Y'} )
     Collection.create( { :title=>"Test Title", :discoverable=>'Y'} )
     Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
     #Ichabod::DataLoader.new('voice', 'http://discovery.dlib.nyu.edu:8080/solr3_discovery/core0/select','beard').load
