@@ -41,6 +41,7 @@ if Rails.env.test?
     Collection.create( { :title=>"Spatial Data Repository", :discoverable=>'Y'} )
     Collection.create( { :title=>"Voices of the Food Revolution", :discoverable=>'Y'} )
     Collection.create( { :title=>"David Wojnarowicz Papers", :discoverable=>'Y'} )
+    Collection.create( { :title=>"Jennifer Vinopal Collection", :discoverable=>'Y'} )
     Collection.create( { :title=>"Test Title", :discoverable=>'Y'} )
     Ichabod::DataLoader.new('lib_guides', File.join(Rails.root, 'ingest/test_libguides.xml')).load
     Ichabod::DataLoader.new('faculty_digital_archive_ngo',File.join(Rails.root, 'ingest/test_ngo_fda.csv')).load
@@ -115,14 +116,17 @@ RSpec.configure do |config|
   end
 end
 
+# See Ichabod developers' documentation for details on cassette filtering
 VCR.configure do |c|
   c.default_cassette_options = { allow_playback_repeats: true, record: :new_episodes }
   c.cassette_library_dir = 'spec/vcr_cassettes'
   c.ignore_localhost = true
   c.configure_rspec_metadata!
   c.hook_into :webmock
-  c.filter_sensitive_data('user') { ENV['ICHABOD_ROSIE_USER'] }
-  c.filter_sensitive_data('password') { ENV['ICHABOD_ROSIE_PASSWORD'] }
-  c.filter_sensitive_data('user_token') { ENV['ICHABOD_GIT_USER_TOKEN'] }
-  c.filter_sensitive_data('foo/bar') { ENV['GIT_GEO_SPATIAL_MD_URL'] }
+  c.filter_sensitive_data('ichabod_rosie_user') { ENV['ICHABOD_ROSIE_USER'] }
+  c.filter_sensitive_data('ichabod_rosie_password') { ENV['ICHABOD_ROSIE_PASSWORD'] }
+  c.filter_sensitive_data('ichabod_git_user_token') { ENV['ICHABOD_GIT_USER_TOKEN'] }
+  c.filter_sensitive_data('geo_user/git_geo_spatial_md_url') { ENV['GIT_GEO_SPATIAL_MD_URL'] }
+  c.filter_sensitive_data('fda_rest_user') { ENV['FDA_REST_USER'] }
+  c.filter_sensitive_data('fda_rest_pass') { ENV['FDA_REST_PASS'] }
 end
