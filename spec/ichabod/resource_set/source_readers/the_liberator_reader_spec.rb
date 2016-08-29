@@ -30,6 +30,7 @@ module Ichabod
             end
           end
           describe 'the first record' do
+            # http://discovery.dlib.nyu.edu:8080/solr3_discovery/viewer/select/?qf=sm_collection_code&qf=ss_handle&q=http://hdl.handle.net/2333.1/5x69pb34
             subject { read.first }
             its(:prefix) { should eq resource_set.prefix }
             its(:available) { should eq 'http://hdl.handle.net/2333.1/5x69pb34' }
