@@ -34,7 +34,7 @@ module Ichabod
           # }
         end
         
-          def entities
+        def entities
           @entities ||= datasource_response['docs']
         end
 
