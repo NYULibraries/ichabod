@@ -18,20 +18,35 @@ module Ichabod
         def_delegators :resource_set, :endpoint_url, :collection_code, :start, :rows
 
         def resource_attributes_from_entities(entity)
-          # {
-          #   prefix: resource_set.prefix,
-          #   identifier: entity['id'],
-          #   isbn: entity['id'],
-          #   title: entity['title'],
-          #   creator: entity['author'],
-          #   available: entity['handle'],
-          #   citation: entity['handle'],
-          #   date: entity['date'],
-          #   description: entity['description'],
-          #   type: FORMAT,
-          #   language: entity['language'],
-          #   format: FORMAT
-          # }
+          {
+              available: entity['ss_handle'],
+              # TODO
+              # citation: entity['handle'],
+              creator: entity['sm_author'],
+              data_provider: entity['sm_provider_code'],
+              date: entity['ss_publication_date_text'],
+
+              # TODO: have someone confirm this.
+              # For now, using http://www.chicagomanualofstyle.org/16/ch14/ch14_sec180.html,
+              # which uses: "[journal] [volume - in Arabic numerals], [issue, optional] ([date])".
+              # In our record, that would be:
+              #     * Journal: hardcoded "The Liberator", because the `ss_title` field includes the date
+              #     * Volume: `sm_field_volume`
+              #     * Issue: omitted, because date includes month
+              #     * Date: In parentheses, `ss_publication_date_text`
+              description: parse_description_from_entity( entity ),
+
+              format: FORMAT,
+              identifier: entity['ss_handle'],
+              language: entity['sm_language'],
+              prefix: resource_set.prefix,
+              publisher: entity['sm_publisher'],
+              series: entity['sm_field_volume'],
+              subject: entity['sm_subject_label'],
+              title: entity['ss_title']
+              # TODO
+              # type : FORMAT
+          }
         end
         
         def entities
@@ -66,6 +81,19 @@ module Ichabod
             faraday.params = datasource_params
             faraday.adapter :net_http
           end
+        end
+
+        def parse_description_from_entity(entity)
+            # TODO: have someone confirm this.
+            # For now, using http://www.chicagomanualofstyle.org/16/ch14/ch14_sec180.html,
+            # which uses: "[journal] [volume - in Arabic numerals], [issue, optional] ([date])".
+            # In our record, that would be:
+            #     * Journal: hardcoded "The Liberator", because the `ss_title` field includes the date
+            #     * Volume: `sm_field_volume`
+            #     * Issue: omitted, because date includes month
+            #     * Date: In parentheses, `ss_publication_date_text`
+
+            "The Liberator #{entity['sm_field_volume'][ 0 ]}, (#{entity['ss_publication_date_text']})"
         end
       end
     end
