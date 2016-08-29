@@ -34,6 +34,7 @@ module Ichabod
             subject { read.first }
             its(:prefix) { should eq resource_set.prefix }
             its(:available) { should eq 'http://hdl.handle.net/2333.1/5x69pb34' }
+            its(:citation) { should eq 'http://hdl.handle.net/2333.1/5x69pb34' }
             its(:creator) { should match_array [
                                                    'Eastman, Max, 1883-1969, ed.',
                                                    'Eastman, Crystal, 1881-1928, ed.',
@@ -42,6 +43,15 @@ module Ichabod
             }
             its(:data_provider) { should match_array ['tamwag'] }
             its(:date) { should eq 'August 1921' }
+            # TODO: have someone confirm this.
+            # For now, using http://www.chicagomanualofstyle.org/16/ch14/ch14_sec180.html,
+            # which uses: "[journal] [volume - in Arabic numerals], [issue, optional] ([date])".
+            # In our record, that would be:
+            #     * Journal: hardcoded "The Liberator", because the `ss_title` field includes the date
+            #     * Volume: `sm_field_volume`
+            #     * Issue: omitted, because date includes month
+            #     * Date: In parentheses, `ss_publication_date_text`
+            its(:description) { should eq 'The Liberator 4, (August 1921)' }
             its(:identifier) { should eq 'http://hdl.handle.net/2333.1/5x69pb34' }
             its(:language) { should eq 'en' }
             its(:publisher) { should match_array ['Liberator Publishing Co.'] }
