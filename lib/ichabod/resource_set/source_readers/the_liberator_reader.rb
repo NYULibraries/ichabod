@@ -5,6 +5,7 @@ module Ichabod
       require 'multi_json'
       
       class TheLiberatorReader < ResourceSet::SourceReader
+        # TODO
         FORMAT = "[TBD]"
         def read
           entities.collect do |entity|
