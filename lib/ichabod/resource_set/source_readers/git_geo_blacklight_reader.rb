@@ -23,7 +23,7 @@ module Ichabod
         def resource_attributes_from_geoblacklight(gb)
           {
             prefix: resource_set.prefix,
-            identifier: gb['uuid'],
+            identifier: gb['dc_identifier_s'],
             available: "#{URL}/#{gb['layer_slug_s']}",
             title: gb['dc_title_s'],
             description: gb['dc_description_s'],
@@ -40,7 +40,6 @@ module Ichabod
             subject_spatial: gb['dct_spatial_sm'],
             subject_temporal: gb['dct_temporal_sm']
           }
-
         end
 
         def map
