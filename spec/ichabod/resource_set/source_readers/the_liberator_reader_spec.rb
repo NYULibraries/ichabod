@@ -52,7 +52,8 @@ module Ichabod
             #     * Date: In parentheses, `ss_publication_date_text`
             its(:description) { should eq 'The Liberator 4, (August 1921)' }
             its(:identifier) { should eq 'http://hdl.handle.net/2333.1/5x69pb34' }
-            its(:language) { should eq 'en' }
+            # TODO: https://www.pivotaltracker.com/story/show/120388273/comments/148193089
+            its(:language) { should eq 'English' }
             its(:publisher) { should match_array ['Liberator Publishing Co.'] }
             its(:series) { should match_array ['4'] }
             its(:subject) { should match_array [
