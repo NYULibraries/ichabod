@@ -96,7 +96,17 @@ module Ichabod
             #     * Issue: omitted, because date includes month
             #     * Date: In parentheses, `ss_publication_date_text`
 
-            "The Liberator #{entity['sm_field_volume'][ 0 ]}, (#{entity['ss_publication_date_text']})"
+          journal = "The Liberator"
+
+          # TODO: Figure out if we want to consider empty sm_field_volume in the
+          # source record to be an error. See:
+          # https://www.pivotaltracker.com/story/show/120388273/comments/148179533
+          volume = entity['sm_field_volume']               ?
+                      " #{entity['sm_field_volume'][ 0 ]}" :
+                      ''
+          publication_date = entity['ss_publication_date_text']
+
+          "#{journal}#{volume}, (#{publication_date})"
         end
       end
     end
