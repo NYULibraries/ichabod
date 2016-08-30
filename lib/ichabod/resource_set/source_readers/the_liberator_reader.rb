@@ -64,8 +64,8 @@ module Ichabod
         # Params to send with the request to the JSON API
         def datasource_params
           {
-            start: start,
             rows: rows,
+            start: start,
             wt: 'json'
           }
         end
