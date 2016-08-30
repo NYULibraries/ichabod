@@ -36,7 +36,7 @@ module Ichabod
 
               format: FORMAT,
               identifier: entity['ss_handle'],
-              language: entity['sm_language'],
+              language: entity['sm_language_code'],
               prefix: resource_set.prefix,
               publisher: entity['sm_publisher'],
               series: entity['sm_field_volume'],
