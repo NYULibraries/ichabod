@@ -34,7 +34,6 @@ module Ichabod
             subject { read.first }
             its(:prefix) { should eq resource_set.prefix }
             its(:available) { should eq 'http://hdl.handle.net/2333.1/5x69pb34' }
-            its(:citation) { should eq 'http://hdl.handle.net/2333.1/5x69pb34' }
             its(:creator) { should match_array [
                                                    'Eastman, Max, 1883-1969, ed.',
                                                    'Eastman, Crystal, 1881-1928, ed.',
