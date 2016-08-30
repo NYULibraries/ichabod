@@ -20,8 +20,6 @@ module Ichabod
         def resource_attributes_from_entities(entity)
           {
               available: entity['ss_handle'],
-              # TODO
-              # citation: entity['handle'],
               creator: entity['sm_author'],
               data_provider: entity['sm_provider_code'],
               date: entity['ss_publication_date_text'],
@@ -64,7 +62,12 @@ module Ichabod
         # Params to send with the request to the JSON API
         def datasource_params
           {
+            # We want to make sure we don't load the collection record, but only
+            # records that belong to that collection record.
+            fq: 'sm_collection_code:theliberator',
+
             rows: rows,
+            sort: 'id asc',
             start: start,
             wt: 'json'
           }
