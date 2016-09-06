@@ -2,8 +2,8 @@ require 'spec_helper'
 describe RosieTheRiveter do
   let(:prefix) { 'rosie' }
   let(:endpoint_url) { 'https://rosie.the.riveter' }
-  let(:user) { 'ichabod_rosie_user' }
-  let(:password) { 'ichabod_rosie_password' }
+  let(:user) { 'user' }
+  let(:password) { 'password' }
   let(:dataset_size) { 33 }
   let(:collection_code) { 'rosie' }
   let(:args) { [endpoint_url, user, password].compact }

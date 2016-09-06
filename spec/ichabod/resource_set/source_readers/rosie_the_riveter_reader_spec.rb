@@ -3,8 +3,8 @@ module Ichabod
   module ResourceSet
     module SourceReaders
       describe RosieTheRiveterReader do
-        let(:user) { ENV['ICHABOD_ROSIE_USER'] || 'ichabod_rosie_user' }
-        let(:password) { ENV['ICHABOD_ROSIE_PASSWORD'] || 'ichabod_rosie_password' }
+        let(:user) { ENV['ICHABOD_ROSIE_USER'] || 'user' }
+        let(:password) { ENV['ICHABOD_ROSIE_PASSWORD'] || 'password' }
         let(:endpoint_url) { 'http://dev-dl-pa.home.nyu.edu/rosie/content.json' }
         let(:dataset_size) { 33 }
         let(:collection_code) { 'rosie' }
