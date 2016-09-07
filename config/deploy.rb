@@ -115,9 +115,6 @@ namespace :ingest do
   task :load_sdr do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['spatial_data_repository',#{ENV['GIT_GEO_SPATIAL_MD_URL']},#{ENV['ICHABOD_GIT_USER_TOKEN']}]"
   end
-  task :load_fda do
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['faculty_digital_archive','./ingest/stern.xml']"
-  end
   task :load_lib_guides do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['lib_guides','./ingest/libguides.xml']"
   end
