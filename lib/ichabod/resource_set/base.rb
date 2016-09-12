@@ -40,9 +40,6 @@ module Ichabod
       end
 
       def self.collection_title=(collection_title)
-        unless Collection.exists?( { :desc_metadata__title_tesim=>collection_title } )
-          raise ArgumentError.new("No collection #{collection_title} exists.Either it wasn't created or you have misspelled it's name")
-        end
         @collection_title = collection_title
       end
 
@@ -138,7 +135,6 @@ module Ichabod
       end
 
       def load
-        raise_runtime_error_if_no_collection_title_configured
         find_collection
         update_collection_editors
         read_from_source if resources.empty?
@@ -176,15 +172,15 @@ module Ichabod
       end
 
       def find_collection
+        raise_runtime_error_if_no_collection_title_configured
         #this ugliness because, dismax solr parser we use, doesn't support exact phrase search. Probably I misunderstand something
-        if (!@collection_title.nil?)
-            Collection.where( :desc_metadata__title_tesim=>"#{@collection_title}" ).each do |collection|
-              if collection.title==@collection_title
-                  @collection=collection
-              end
-            end
-        else
-            @collection=nil
+        Collection.where( :desc_metadata__title_tesim=>"#{@collection_title}" ).each do |collection|
+          if collection.title==@collection_title
+            @collection=collection
+          end
+        end
+        if(@collection.nil?)
+          raise ArgumentError.new("No collection #{collection_title} exists.Either it wasn't created or you have misspelled it's name")
         end
         @collection
       end
