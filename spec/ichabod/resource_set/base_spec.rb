@@ -49,12 +49,6 @@ module Ichabod
             expect(Base.collection_title=(original_title)).to eq original_title
          end
         end
-        context "when collection with the title doesn't exist" do
-          let(:new_title) { 'invalid title' }
-          it 'should raise an ArgumentError' do
-           expect{Base.collection_title=("invalid_title")}.to raise_error
-          end
-        end
       end
       describe '.set_restriction' do
         after { Base.instance_variable_set(:@set_restrictions, original_set_restrictions)}
@@ -183,8 +177,16 @@ module Ichabod
           end
         context 'when collection title is not defined' do
            let(:mock_title)  { nil }
-           it { should eq nil }
+           it 'should raise a RuntimeError' do
+             expect { subject }.to raise_error RuntimeError
+           end
+        end
+        context 'when collection doesnt exist' do
+          let(:mock_title)  { "Fake Title" }
+          it 'should raise a RuntimeError' do
+            expect { subject }.to raise_error ArgumentError
           end
+        end
         end
       describe '#collection_title' do
         before { Base.collection_title=original_title }
