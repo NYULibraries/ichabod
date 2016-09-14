@@ -1,7 +1,7 @@
 class ArchiveItAccw < Ichabod::ResourceSet::Base
   # N.B. limitations here: https://wiki.duraspace.org/display/FEDORA37/Fedora+Identifiers
   self.prefix = 'ai-accw'
-  self.collection_title = "Archive of Contemporary Composers' Websites"
+  self.collection_title = "Archive of Contemporary Composers Websites"
   self.source_reader = :archive_it_accw_reader
   editor :afc_group
 
