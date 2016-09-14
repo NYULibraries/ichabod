@@ -64,7 +64,7 @@ e.g.,  rake ichabod:nyucore:delete['sdr:DSS-ESRI_10_USA*']
 
   #task to create collections
   desc <<-DESC
-Creates collection
+Creates and deletes collections
 Usage: rake create_collection['name',['Y'|'N']]
 e.g.,  rake ichabod:create_collection['David Wojnarowicz Papers','Y']
   DESC
@@ -72,7 +72,11 @@ e.g.,  rake ichabod:create_collection['David Wojnarowicz Papers','Y']
     collection=Collection.create({:title=>args[:name],:discoverable=>args[:discoverable]})
     collection.set_edit_groups(["admin_group"],[])
   end
-  task :delete_collections do
+  #task to delete collections
+  desc <<-DESC
+Deletes all collections
+  DESC
+  task :delete_collections, [] => :environment do |t|
     Collection.destroy_all
   end
 end
