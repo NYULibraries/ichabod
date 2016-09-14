@@ -195,5 +195,36 @@ namespace :collections do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Spatial Data Repository\",'Y']"
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Voices of the Food Revolution\",'Y']"
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Spatial Data Repository\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Jennifer Vinopal Collection\",'Y']"
+  end
+  task :delete_all_collections do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"Archive of Contemporary Composers' Websites\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"Faculty Digital Archive\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"South Asian NGO and other reports\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"Data Services\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"Indian Ocean Postcards\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"Research Guides\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"The Masses\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"NYU Press Open Access Books\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"The Real Rosie the Riveter\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"Spatial Data Repository\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"Voices of the Food Revolution\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"Spatial Data Repository\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collection[\"Jennifer Vinopal Collection\"]"
+  end
+  task :set_all_collections_editor do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"Archive of Contemporary Composers' Websites\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"Faculty Digital Archive\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"South Asian NGO and other reports\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"Data Services\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"Indian Ocean Postcards\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"Research Guides\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"The Masses\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"NYU Press Open Access Books\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"The Real Rosie the Riveter\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"Spatial Data Repository\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"Voices of the Food Revolution\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"Spatial Data Repository\"]"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:set_collection_editor[\"Jennifer Vinopal Collection\"]"
   end
 end
