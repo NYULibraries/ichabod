@@ -72,16 +72,7 @@ e.g.,  rake ichabod:create_collection['David Wojnarowicz Papers','Y']
     collection=Collection.create({:title=>args[:name],:discoverable=>args[:discoverable]})
     collection.set_edit_groups(["admin_group"],[])
   end
-  task :set_collection_editor, [:name,:discoverable] => :environment do |t, args|
-    collection=Collection.find({:title=>args[:name]})[0]
-    if(!collection.nil?)
-      collection.set_edit_groups(["admin_group"],[])
-    end
-  end
-  task :delete_collection, [:name] => :environment do |t, args|
-    collection=Collection.find({:title=>args[:name]})[0]
-    if(!collection.nil?)
-      collection.destroy
-    end
+  task :delete_collections do
+    Collection.destroy_all
   end
 end
