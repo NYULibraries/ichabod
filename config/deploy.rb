@@ -159,6 +159,9 @@ namespace :ingest do
   task :delete_io_data do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['indian_ocean_data','./ingest/IndianOcean_descMD_v01.csv']"
   end
+  task :delete_composers do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:nyucore:delete['ai-accw:*']"
+  end
 end
 
 namespace :cache do
@@ -175,5 +178,25 @@ namespace :jetty do
   desc "Startup new jetty for current release"
   task :start do
     run "cd #{current_path}; bundle exec rake jetty:start"
+  end
+end
+
+namespace :collections do
+  task :create_all_collections do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Archive of Contemporary Composers' Websites\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Faculty Digital Archive\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"South Asian NGO and other reports\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Data Services\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Indian Ocean Postcards\",'N']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Research Guides\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"The Masses\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"NYU Press Open Access Books\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"The Real Rosie the Riveter\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Spatial Data Repository\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Voices of the Food Revolution\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Jennifer Vinopal Collection\",'Y']"
+  end
+  task :delete_all_collections do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collections"
   end
 end
