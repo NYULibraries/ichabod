@@ -195,7 +195,7 @@ namespace :collections do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Spatial Data Repository\",'Y']"
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Voices of the Food Revolution\",'Y']"
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"David Wojnarowicz Papers\",'Y']"
-    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Jennifer Vinopal Collection\",'Y']"
   end
   task :delete_all_collections do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collections"
