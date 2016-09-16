@@ -93,12 +93,11 @@ module Ichabod
         def read_download_files
           # read through the download urls
           # and store results in an array
-
           urls = get_download_urls
           files = []
           urls.each do |url|
-            geo_blacklight  = open(url) {|fi| fi.read }
-            files.push(geo_blacklight)
+              geo_blacklight  = open(url) {|fi| fi.read }
+              files.push(geo_blacklight)
           end
           files
         end
