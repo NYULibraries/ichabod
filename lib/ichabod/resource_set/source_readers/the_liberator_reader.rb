@@ -6,7 +6,7 @@ module Ichabod
       
       class TheLiberatorReader < ResourceSet::SourceReader
         # TODO
-        FORMAT = "[TBD]"
+        FORMAT = "Journal"
         def read
           entities.collect do |entity|
             ResourceSet::Resource.new(resource_attributes_from_entities(entity))
