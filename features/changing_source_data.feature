@@ -4,12 +4,11 @@ Feature: See up-to-date metadata for GIS datasets in Ichabod
   As an NYU Patron
   I would like to confirm that external data updates are reflected in Ichabod
 
-
   Scenario: Check value of Publisher field before update
     Given I limit my search to "Geospatial Data" under the "Format" category
-    And I search for "2013 Hospital Zone Areas in Buenos Aires"
+    And I search for "National Jewish Population Map by County"
     When I navigate to details display of the first result
-    Then I should see the value "Buenos Aires (Argentina)." in the "Publisher:" field
+    Then I should see the value "The Jewish Federations of North America" in the "Publisher:" field
 
 
   Scenario: Update data and check for new value of Publisher field
@@ -20,7 +19,7 @@ Feature: See up-to-date metadata for GIS datasets in Ichabod
     And I navigate to details display of the first result
     Then I should see the value "Buenos Aires Dept of City Planning" in the "Publisher:" field
 
-  
+
   Scenario: Revert data and check for original value of Publisher field
     Given I revert the "Spatial Data Repository" source data in the "publisher" field to "Buenos Aires (Argentina)." for the record identified by "sdr:hdl-handle-net-2451-34036"
     And I reload the "Spatial Data Repository" source data into Ichabod
