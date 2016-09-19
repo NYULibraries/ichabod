@@ -41,7 +41,7 @@ module Ichabod
                                                    ]
             }
             its(:data_provider) { should eq TheLiberatorReader::DATA_PROVIDER }
-            its(:date) { should eq 'August 1921' }
+            its(:date) { should eq "1921-08-01T00:00:00Z" }
             # TODO: have someone confirm this.
             # For now, using http://www.chicagomanualofstyle.org/16/ch14/ch14_sec180.html,
             # which uses: "[journal] [volume - in Arabic numerals], [issue, optional] ([date])".

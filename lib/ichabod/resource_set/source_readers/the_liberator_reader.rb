@@ -23,7 +23,7 @@ module Ichabod
               available: entity['ss_handle'],
               contributor: entity['sm_author'],
               data_provider: DATA_PROVIDER,
-              date: entity['ss_publication_date_text'],
+              date: parse_solr_date( entity['ss_publication_date_text'] ),
 
               # TODO: have someone confirm this.
               # For now, using http://www.chicagomanualofstyle.org/16/ch14/ch14_sec180.html,
@@ -83,6 +83,15 @@ module Ichabod
             faraday.params = datasource_params
             faraday.adapter :net_http
           end
+        end
+
+        def parse_solr_date(date_string)
+          # We are expecting a publication date with no time, so we provide our
+          # own.
+          time_part = "T00:00:00Z"
+          # Date.parse("January 1909").iso8601 returns "1909-01-01" -- note the
+          # addition of the day.
+          "#{Date.parse(date_string).iso8601}#{time_part}"
         end
 
         def parse_description_from_entity(entity)
