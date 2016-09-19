@@ -5,8 +5,9 @@ module Ichabod
       require 'multi_json'
       
       class TheLiberatorReader < ResourceSet::SourceReader
-        # TODO
+        DATA_PROVIDER = "NYU"
         FORMAT = "Journal"
+
         def read
           entities.collect do |entity|
             ResourceSet::Resource.new(resource_attributes_from_entities(entity))
@@ -21,7 +22,7 @@ module Ichabod
           {
               available: entity['ss_handle'],
               creator: entity['sm_author'],
-              data_provider: entity['sm_provider_code'],
+              data_provider: DATA_PROVIDER,
               date: entity['ss_publication_date_text'],
 
               # TODO: have someone confirm this.
