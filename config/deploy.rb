@@ -128,6 +128,23 @@ namespace :masses do
   end
 end
 
+namespace :the_liberator do
+  # desc "Set variables for the The Liberator ingest tasks"
+  task :set_variables do
+    set :the_liberator_endpoint_url, ENV['ICHABOD_THE_LIBERATOR_ENDPOINT_URL']
+    set :the_liberator_endpoint_rows, ENV['ICHABOD_THE_LIBERATOR_ROWS']
+    set :the_liberator_endpoint_start, ENV['ICHABOD_THE_LIBERATOR_START']
+  end
+  task :import do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['the_liberator',#{the_liberator_endpoint_url},#{the_liberator_endpoint_start},#{the_liberator_endpoint_rows}]"
+  end
+  task :delete do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['the_liberator',#{the_liberator_endpoint_url},#{the_liberator_endpoint_start},#{the_liberator_endpoint_rows}]"
+  end
+end
+
 namespace :ingest do
   task :load_sdr do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['spatial_data_repository',#{ENV['GIT_GEO_SPATIAL_MD_URL']},#{ENV['ICHABOD_GIT_USER_TOKEN']}]"
