@@ -37,7 +37,6 @@ if Rails.env.cucumber?
     Collection.create( { :title=>"South Asian NGO and other reports", :discoverable=>'Y'} )
     Collection.create( { :title=>"Spatial Data Repository", :discoverable=>'Y'} )
     Collection.create( { :title=>"Test Title", :discoverable=>'Y'} )
-    Collection.create( { :title=>"The Liberator", :discoverable=>'Y'} )
     Collection.create( { :title=>"The Masses", :discoverable=>'Y'} )
     Collection.create( { :title=>"The Real Rosie the Riveter", :discoverable=>'Y'} )
     Collection.create( { :title=>"Voices of the Food Revolution", :discoverable=>'Y'} )
