@@ -64,7 +64,7 @@ module Ichabod
                                                ]
             }
             its(:title) { should eq 'The Liberator, August 1921' }
-
+            its(:type) { should eq TheLiberatorReader::FORMAT }
           end
         end
       end
