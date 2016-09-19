@@ -34,16 +34,14 @@ module Ichabod
               #     * Date: In parentheses, `ss_publication_date_text`
               description: parse_description_from_entity( entity ),
 
-              format: FORMAT,
               identifier: entity['ss_handle'],
               language: entity['sm_language_code'],
               prefix: resource_set.prefix,
               publisher: entity['sm_publisher'],
               series: entity['sm_field_volume'],
               subject: entity['sm_subject_label'],
-              title: entity['ss_title']
-              # TODO
-              # type : FORMAT
+              title: entity['ss_title'],
+              type: FORMAT
           }
         end
         
