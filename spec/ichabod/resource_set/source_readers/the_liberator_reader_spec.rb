@@ -40,7 +40,7 @@ module Ichabod
                                                    'Watts, Theodore F., ctb.',
                                                    ]
             }
-            its(:data_provider) { should match_array ['tamwag'] }
+            its(:data_provider) { should eq 'NYU' }
             its(:date) { should eq 'August 1921' }
             # TODO: have someone confirm this.
             # For now, using http://www.chicagomanualofstyle.org/16/ch14/ch14_sec180.html,
