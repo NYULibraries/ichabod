@@ -21,7 +21,7 @@ module Ichabod
         def resource_attributes_from_entities(entity)
           {
               available: entity['ss_handle'],
-              contributor: entity['sm_author'],
+              creator: entity['sm_author'],
               data_provider: DATA_PROVIDER,
               date: parse_solr_date( entity['ss_publication_date_text'] ),
 
