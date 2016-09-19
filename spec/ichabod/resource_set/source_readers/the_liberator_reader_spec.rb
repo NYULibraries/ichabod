@@ -38,7 +38,7 @@ module Ichabod
                                                    'Eastman, Max, 1883-1969, ed.',
                                                    'Eastman, Crystal, 1881-1928, ed.',
                                                    'Watts, Theodore F., ctb.',
-                                               ]
+                                                   ]
             }
             its(:data_provider) { should match_array ['tamwag'] }
             its(:date) { should eq 'August 1921' }
