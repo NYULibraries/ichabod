@@ -62,6 +62,23 @@ namespace :fda_ngo do
   end
 end
 
+namespace :fda_jv do
+  desc "Set variables for Jennifer Vinopal FDA collection ingest tasks"
+  task :set_variables do
+    set :fda_rest_url, ENV['FDA_REST_URL']
+    set :fda_rest_user, ENV['FDA_REST_USER']
+    set :fda_rest_pass, ENV['FDA_REST_PASS']
+  end
+  task :import do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['vinopal_fda_collection',#{fda_rest_url},#{fda_rest_user},#{fda_rest_pass}]"
+  end
+  task :delete do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['vinopal_fda_collection',#{fda_rest_url},#{fda_rest_user},#{fda_rest_pass}]"
+  end
+end
+
 namespace :archive_it_accw do
   desc "Set variables for the Archive It Archive of Contemporary Composers' Websites ingest tasks"
   task :set_variables do
@@ -124,6 +141,9 @@ namespace :ingest do
   task :load_service_data do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['faculty_digital_archive_service_data','./ingest/2451-33611.csv']"
   end
+  task :load_io_data do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['indian_ocean_data','./ingest/IndianOcean_descMD_v01.csv']"
+  end
   task :delete_sdr do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:nyucore:delete['sdr:*']"
   end
@@ -135,6 +155,12 @@ namespace :ingest do
   end
   task :delete_service_data do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['faculty_digital_archive_service_data','./ingest/2451-33611.csv']"
+  end
+  task :delete_io_data do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['indian_ocean_data','./ingest/IndianOcean_descMD_v01.csv']"
+  end
+  task :delete_composers do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:nyucore:delete['ai-accw:*']"
   end
 end
 
@@ -152,5 +178,25 @@ namespace :jetty do
   desc "Startup new jetty for current release"
   task :start do
     run "cd #{current_path}; bundle exec rake jetty:start"
+  end
+end
+
+namespace :collections do
+  task :create_all_collections do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Archive of Contemporary Composers' Websites\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Faculty Digital Archive\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"South Asian NGO and other reports\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Data Services\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Indian Ocean Postcards\",'N']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Research Guides\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"The Masses\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"NYU Press Open Access Books\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"The Real Rosie the Riveter\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Spatial Data Repository\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Voices of the Food Revolution\",'Y']"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:create_collection[\"Jennifer Vinopal Collection\",'Y']"
+  end
+  task :delete_all_collections do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete_collections"
   end
 end

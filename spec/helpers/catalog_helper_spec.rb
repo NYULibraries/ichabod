@@ -25,4 +25,17 @@ describe CatalogHelper do
       it { should be_nil }
     end
   end
+
+  describe ".render_collection_links" do
+    let(:collection) { create(:collection)}
+    let(:pid) { collection.pid }
+    subject { render_collection_links(pid ) }
+    context 'when the collection exist' do
+      it { should eql('Collection of records') }
+    end
+    context 'when collection does not exists ' do
+      let(:pid) { 'ichabodcollection:invalidpid' }
+      it { should eql('Unknown Collection') }
+    end
+  end
 end

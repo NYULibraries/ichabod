@@ -91,10 +91,19 @@ describe CollectionsController do
   end
 
   describe "DELETE destroy" do
-    let!(:collection) { create(:collection, { :title => "LION" }) }
-    it 'should delete an existing collection record and return to the main page' do
+    context 'when collection has no assosiated record' do
+      let!(:collection) { create(:collection, { :title => "LION" }) }
+      it 'should delete an existing collection record and return to the main page' do
           expect { delete :destroy, id: collection }.to change(Collection, :count).by(-1)
           expect response.should redirect_to collections_url
+      end
+    end
+    context 'when collection has  assosiated record' do
+      let(:collection) {   Collection.where( :desc_metadata__title_tesim=>'Indian Ocean Postcards' ).first  }
+      it 'should not delete the existing collection' do
+          expect { delete :destroy, id: collection }.to change(Collection, :count).by(0)
+          expect response.should redirect_to collections_url
+      end
     end
   end
 end

@@ -61,4 +61,22 @@ e.g.,  rake ichabod:nyucore:delete['sdr:DSS-ESRI_10_USA*']
       Nyucore.where("id:#{query_string}").each { |x| x.destroy }
     end
   end
+
+  #task to create collections
+  desc <<-DESC
+Creates and deletes collections
+Usage: rake create_collection['name',['Y'|'N']]
+e.g.,  rake ichabod:create_collection['David Wojnarowicz Papers','Y']
+  DESC
+  task :create_collection, [:name,:discoverable] => :environment do |t, args|
+    collection=Collection.create({:title=>args[:name],:discoverable=>args[:discoverable]})
+    collection.set_edit_groups(["admin_group"],[])
+  end
+  #task to delete collections
+  desc <<-DESC
+Deletes all collections
+  DESC
+  task :delete_collections, [] => :environment do |t|
+    Collection.destroy_all
+  end
 end

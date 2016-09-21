@@ -1,6 +1,7 @@
 class Woj < Ichabod::ResourceSet::Base
   self.prefix = 'woj'
   self.source_reader = :fab_reader
+  self.collection_title = "David Wojnarowicz Papers"
 
   attr_reader :page, :data_params
   alias_method :collection_code, :prefix

@@ -1,4 +1,3 @@
-
 Then(/^I should get "(.*?)" field in all results$/) do |field|
   expect(documents_list_container.all('dt', :text => field)).to have_exactly(10).items
 end

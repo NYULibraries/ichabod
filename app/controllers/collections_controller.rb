@@ -58,13 +58,18 @@ class CollectionsController < ApplicationController
 
   # DELETE /collections/1
   # DELETE /collections/1.json
+  # can tighten up logic a bit, and require that collection size is exactly zero
   def destroy
     authorize! :destroy, params[:id]
     @collection = Collection.find(params[:id])
-    @collection.destroy
-    respond_to do |format|
-      format.html { redirect_to collections_url, notice: 'Collection was successfully deleted.' }
+    if @collection.nyucores.size == 0
+      @collection.destroy
+      msg = 'Collection was successfully deleted.'
+    else
+      msg = 'Collection has associated records and can not be deleted'
     end
+    flash[:notice] = msg
+    redirect_to collections_url
   end
 
   def blank_to_nil_params

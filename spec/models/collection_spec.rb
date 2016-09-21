@@ -16,6 +16,40 @@ describe Collection::DESCRIPTIVE_FIELDS do
     end
   end
 
+  describe 'private_collections' do
+    let(:collection_private) { create(:collection, :discoverable=>'N')  }
+    let(:collection_public) { create(:collection, :discoverable=>'Y')  }
+    subject { Collection.private_collections }
+    it { should include collection_private }
+    it { should_not include collection_public }
+  end
+
+  describe 'construct_searchable_pid' do
+    let(:pid) { "ichabodcollection:11111" }
+    subject { Collection.construct_searchable_pid(pid) }
+    it { should eq "info\\:fedora/ichabodcollection\\:11111" }
+    context " when provided pid is nil should return empty string" do
+      let(:pid) { nil }
+      it { should eq " " }
+    end
+  end
+
+  describe 'escape_pid_for_search' do
+    let(:pid) { "info:fedora/ichabodcollection:11111" }
+    subject { Collection.escape_pid_for_search(pid) }
+    it { should eq "info\\:fedora/ichabodcollection\\:11111" }
+    context " when provided pid is nil should return empty string" do
+      let(:pid) { nil }
+      it { should eq " " }
+    end
+  end
+
+  describe 'add_fedora_prefix' do
+    let(:pid) { "ichabodcollection:11111" }
+    subject { Collection.add_fedora_prefix(pid) }
+    it { should eq "info:fedora/ichabodcollection:11111" }
+  end
+
   describe Collection::FIELDS do
     subject { Collection::FIELDS }
     it { should eq Collection::SINGLE_FIELDS+Collection::MULTIPLE_FIELDS+Collection::ADMIN_FIELDS }
@@ -31,6 +65,11 @@ describe Collection::DESCRIPTIVE_FIELDS do
     it { should eq [:title, :discoverable] }
   end
 
+  describe Collection::BOOLEAN_FIELDS do
+    subject { Collection::BOOLEAN_FIELDS }
+    it { should eq [:discoverable] }
+  end
+
   describe Collection::MULTIPLE_FIELDS do
     subject { Collection::MULTIPLE_FIELDS }
     it { should eq [:creator, :publisher ] }
@@ -42,14 +81,13 @@ describe Collection::DESCRIPTIVE_FIELDS do
   end
 
 
-    #Test that we do presence test for required field
+    #Test that we do presence  tests for required field
   
  
   subject(:collection) { build(:collection) }
+
   # Generic test for validity
   it { should be_valid }
-
-  
 
   describe 'pid assignment' do
     context 'before the object is saved' do
@@ -59,6 +97,7 @@ describe Collection::DESCRIPTIVE_FIELDS do
     end
     context 'when a new object is saved' do
         before(:each) do
+          collection.nyucores<<create(:nyucore)
           collection.save
         end
         it 'should no longer be nil' do
@@ -67,9 +106,23 @@ describe Collection::DESCRIPTIVE_FIELDS do
         it 'should include "ichabodcollection' do
           expect((collection.pid)).to include "ichabodcollection"
         end
-     end
-   end
+        it "should have associated nyucores" do
+          expect((collection.nyucores.size)).to be > 0
+        end
+    end
+  end
 
+  describe '#discoverable?' do
+    subject { collection.discoverable? }
+    context 'when it is a discoverable collection' do
+      let(:collection) { create(:collection, :discoverable=>'Y')}
+      it { should be true }
+    end
+    context 'when it is a non-discoverable collection' do
+      let(:collection) { create(:collection, :discoverable=>'N')}
+      it { should be false }
+    end
+  end
 
   describe '#descriptive_metadata' do
     subject { collection.descriptive_metadata }
