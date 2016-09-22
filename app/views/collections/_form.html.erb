@@ -5,7 +5,11 @@
 <%  end %>
 <% admin_fields.each do |field| %>
 <% value||= @collection.send(field) %>
-    <%= f.input field, as: :boolean, label: f.label(field), input_html: {name: "collection[#{field}]", checked: get_boolean(value), id: "collection_#{field}"}  %>
+    <% if boolean_fields.include?(field) %>
+      <%= f.input field, as: :boolean, checked_value: 'Y', unchecked_value: 'N', label: f.label(field), input_html: {name: "collection[#{field}]", id: "collection_#{field}", checked: get_boolean(value)}  %>
+    <% else %>
+      <%= f.input field,  label: f.label(field),  input_html: {name: "collection[#{field}]", value: value, id: "collection_#{field}" } %>
+    <% end %>
 <%  end %>
 
 <% multiple_fields.each do |field| %>
@@ -18,6 +22,9 @@
       <%  end %>
   <div class="field">
     <p><%= f.input field, label: false, input_html: {name: "collection[#{field}][]", value: nil, id: "collection_#{field}"} %></p>
+  </div>
+   <div class="field">
+    <p><%= f.input field, label: false, input_html: {name: "collection[#{field}][]", value: nil, id: "collection_#{field}#{values.size}"} %></p>
   </div>
 <%  end %>
   <div class="actions">

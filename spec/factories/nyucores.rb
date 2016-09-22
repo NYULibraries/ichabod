@@ -1,6 +1,7 @@
 # Dummy up an NYUcore record for Fedora ingestion
 # Note that every test that uses this factory will have to be wrapped
 # in a VCR cassette since saving Fedora records in Hydra requires an http call
+
 FactoryGirl.define do
   factory :nyucore do
     sequence(:identifier) { |n| "#{series.first}_#{n}" }
@@ -33,12 +34,19 @@ FactoryGirl.define do
     location ["Box: 2, Folder: 3"]
     contributor ["C1"]
     discoverable ["Y"]
+    genre ["Postcards"]
     after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
 
     factory :gis_record do
       after(:build) { |record| record.set_edit_groups(['gis_cataloger'],[]) }
       # Don't dare put an underscore in this pid or it'll explode
       initialize_with { new(pid: 'testgisrecord:123') }
+    end
+
+    factory :io_record do
+      after(:build) { |record| record.set_edit_groups(['io_cataloger'],[]) }
+      # Don't dare put an underscore in this pid or it'll explode
+      initialize_with { new(pid: 'io:123') }
     end
   end
 end
