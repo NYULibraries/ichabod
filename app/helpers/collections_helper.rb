@@ -25,15 +25,17 @@ module CollectionsHelper
      @required_fields ||= Collection::REQUIRED_FIELDS
   end
 
+  def boolean_fields
+    @required_fields ||= Collection::BOOLEAN_FIELDS
+  end
+
   def get_boolean(value)
-      (value.blank?||value=='1') ? true:false
+      (value.blank?||value=='Y') ? true:false
   end
 
   def format_boolean_value(value,field)
      if(field.to_s == "discoverable")
-       value == '1' ? 'Yes':'No'
-     else
-       value
+       value == 'Y' ? 'Yes':'No'
      end
   end
 

@@ -9,10 +9,11 @@ module Ichabod
 
       class << self
         attr_reader :source_reader
+        attr_reader :collection_title
         attr_accessor :prefix
       end
 
-      attr_reader :prefix, :editors, :before_loads, :set_restrictions
+      attr_reader :prefix, :editors, :before_loads, :set_restrictions, :collection_title
 
       def self.source_reader=(source_reader)
         unless source_reader.is_a?(Class)
@@ -36,6 +37,10 @@ module Ichabod
           raise ArgumentError.new("Expecting #{source_reader} to be a descendant of Ichabod::ResourceSet::SourceReader")
         end
         @source_reader = source_reader
+      end
+
+      def self.collection_title=(collection_title)
+        @collection_title = collection_title
       end
 
       # Since the class attributes are defined as instance variables on a Class
@@ -112,6 +117,7 @@ module Ichabod
       # Default to adding the ResourceSet on create
       before_load :add_resource_set
 
+
       include Enumerable
       alias_method :size, :count
 
@@ -120,6 +126,7 @@ module Ichabod
         @editors = self.class.editors.map(&:to_s)
         @before_loads = self.class.before_loads.map(&:to_sym)
         @set_restrictions = self.class.set_restrictions.join("")
+        @collection_title = self.class.collection_title
       end
 
       def read_from_source
@@ -128,6 +135,8 @@ module Ichabod
       end
 
       def load
+        find_collection
+        update_collection_editors
         read_from_source if resources.empty?
         resources.collect do |resource|
           unless resource.is_a?(Resource)
@@ -141,7 +150,8 @@ module Ichabod
           unless @set_restrictions.blank?
             nyucore.source_metadata.restrictions = restrictions[@set_restrictions] if restrictions.has_key?(@set_restrictions)
           end
-
+          #assign collection
+          nyucore.collection=@collection
           if nyucore.save
             Rails.logger.info("#{nyucore.pid} has been saved to Fedora")
             nyucore
@@ -159,6 +169,20 @@ module Ichabod
           nyucore.destroy if nyucore
           nyucore
         end
+      end
+
+      def find_collection
+        raise_runtime_error_if_no_collection_title_configured
+        #this ugliness because, dismax solr parser we use, doesn't support exact phrase search. Probably I misunderstand something
+        Collection.where( :desc_metadata__title_tesim=>"#{@collection_title}" ).each do |collection|
+          if collection.title==@collection_title
+            @collection=collection
+          end
+        end
+        if(@collection.nil?)
+          raise ArgumentError.new("No collection #{collection_title} exists.Either it wasn't created or you have misspelled it's name")
+        end
+        @collection
       end
 
       private
@@ -195,6 +219,14 @@ module Ichabod
         @name ||= self.class.name.demodulize.underscore
       end
 
+
+      def update_collection_editors()
+        if !@collection.nil?
+          @collection.set_edit_groups(editors, []) unless editors.empty?
+          @collection.save
+        end
+      end
+
       def before_load_methods
         @before_load_methods ||= begin
           before_loads.collect do |before_load|
@@ -209,6 +241,12 @@ module Ichabod
         end
       end
 
+      def raise_runtime_error_if_no_collection_title_configured
+        if @collection_title.nil?
+          raise RuntimeError.new("You have to define parent collection before loading new items")
+        end
+      end
+
       def resources
         (@resources || [])
       end
@@ -216,6 +254,7 @@ module Ichabod
       def source_reader
         @source_reader ||= self.class.source_reader.new(self)
       end
+
     end
   end
 end

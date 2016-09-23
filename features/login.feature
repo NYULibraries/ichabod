@@ -16,6 +16,12 @@ Feature: Login as a user
     Then I should see "Log-out"
 
   @loggedin
+  Scenario: Logged in IO Cataloger
+    Given I am logged in as "IO Cataloger"
+    And I am on the default search page
+    Then I should see "Log-out"
+
+  @loggedin
   Scenario: Logged in and searching
     Given I am logged in as "GIS Cataloger"
     And I am on the default search page

@@ -20,7 +20,7 @@ module Ichabod
         subject { terms[NyucoreMetadata::Vocabulary] }
         it { should be_an Array }
         it do
-          should =~ [:available, :edition, :series, :version, :citation, :restrictions]
+          should =~ [:available, :edition, :series, :version, :citation, :restrictions, :genre]
         end
       end
       describe 'Ichabod::Vocabulary' do
@@ -35,7 +35,7 @@ module Ichabod
     describe NyucoreDatastream::FACETABLE_TERMS do
       subject { NyucoreDatastream::FACETABLE_TERMS }
       it { should be_an Array }
-      it { should eq [:creator, :type, :language, :subject] }
+      it { should eq [:creator, :type, :language, :subject, :isPartOf] }
     end
 
     subject(:nyucore_datastream) { NyucoreDatastream.new }
