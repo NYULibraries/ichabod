@@ -47,10 +47,7 @@ module Ichabod
           # if there is no access token specified,
           # use the static files, else use the files listed
           # in the github repository
-
           json_file = access_token ? parse_download_files : read_static_files
-          #json_file = parse_download_files
-
         end
 
         def read_static_files
@@ -66,7 +63,8 @@ module Ichabod
           file_entries = Dir.glob(repo_url)
           raise ArgumentError.new("No files here: #{repo}") if file_entries.blank?
           file_entries.each { |f|
-            json_file.push(MultiJson.load(IO.read("#{f}")))
+            contents = IO.read(f)
+            json_file = read_json_file(contents,json_file)
           }
           json_file
 
@@ -77,53 +75,48 @@ module Ichabod
           # create ruby hash
           # from json data
           # downloaded from github repository
-
-          data = read_download_files
+          data = read_layer_paths
+          size = data.size
           json_file = []
-
           data.each do |str|
             unless str.blank?
-              json = MultiJson.load(str)
-              json_file.push(json)
+              contents = open(str) { |fi| fi.read }
+              json_file = read_json_file(contents,json_file)
             end
           end
           json_file
         end
 
-        def read_download_files
-          # read through the download urls
-          # and store results in an array
-          urls = get_download_urls
-          files = []
-          urls.each do |url|
-              geo_blacklight  = open(url) {|fi| fi.read }
-              files.push(geo_blacklight)
-          end
-          files
+        def read_json_file(contents,array)
+          array.push(MultiJson.load(contents))
         end
 
-        def get_download_urls
-          # get first tree
-          get_dirs = first_tree
+        def read_layer_paths
+          repo_url = "https://raw.githubusercontent.com/OpenGeoMetadata/edu.nyu/master/handle"
+          filename = "geoblacklight.json"
+          # read through layers.json
+          # and store results in an array
+          url = get_layer_path
+          path = open(url) { |fi| fi.read }
+          file_paths = []
+          file_paths = MultiJson.load(path)
+          download_urls = []
+          file_paths.each do |p|
+            download_urls.push("#{repo_url}/#{p}/#{filename}")
+          end
+          download_urls
+        end
 
-          json_file_paths = []
-          # get json download urls
-          # by doing a recursive call to
-          # navigate the directories
-          # and get the json file
-          get_dirs.each do |d|
-            next if d['size'] != 0
-            path = d['path']
-            sub_tree = @client.tree(repo_url, d['sha'], :recursive => true)
-            sub_tree[:tree].each do |t|
-              if t['path'] =~ /json/
-                full_path = "#{path}/#{t['path']}"
-                download_url = @client.contents(repo_url, :path => full_path)['download_url']
-                json_file_paths.push(download_url)
-              end
+        def get_layer_path
+          # get first tree
+          get_layer = first_tree
+          layer_download_url = nil
+          get_layer.each do |d|
+            if d[:name] == "layers.json" and d[:size] != 0
+              layer_download_url = d[:download_url]
             end
           end
-          json_file_paths
+          layer_download_url
         end
 
 
@@ -133,7 +126,7 @@ module Ichabod
         end
         def first_tree
           @client ||= get_client
-          @contents = @client.contents(repo_url)
+          @contents = @client.contents(repo_url, :path => "handle?ref=master")
         end
       end
     end
