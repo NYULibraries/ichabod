@@ -25,14 +25,6 @@ module Ichabod
               data_provider: DATA_PROVIDER,
               date: parse_solr_date( entity['ss_publication_date_text'] ),
 
-              # TODO: have someone confirm this.
-              # For now, using http://www.chicagomanualofstyle.org/16/ch14/ch14_sec180.html,
-              # which uses: "[journal] [volume - in Arabic numerals], [issue, optional] ([date])".
-              # In our record, that would be:
-              #     * Journal: hardcoded "The Liberator", because the `ss_title` field includes the date
-              #     * Volume: `sm_field_volume`
-              #     * Issue: omitted, because date includes month
-              #     * Date: In parentheses, `ss_publication_date_text`
               description: parse_description_from_entity( entity ),
 
               identifier: entity['ss_handle'],
@@ -95,20 +87,16 @@ module Ichabod
         end
 
         def parse_description_from_entity(entity)
-            # TODO: have someone confirm this.
-            # For now, using http://www.chicagomanualofstyle.org/16/ch14/ch14_sec180.html,
-            # which uses: "[journal] [volume - in Arabic numerals], [issue, optional] ([date])".
-            # In our record, that would be:
-            #     * Journal: hardcoded "The Liberator", because the `ss_title` field includes the date
-            #     * Volume: `sm_field_volume`
-            #     * Issue: omitted, because date includes month
-            #     * Date: In parentheses, `ss_publication_date_text`
+          # Using the style described in http://www.chicagomanualofstyle.org/16/ch14/ch14_sec180.html:
+          #     "[journal] [volume - in Arabic numerals], [issue, optional] ([date])".
+          # In our record, that would be:
+          #     * Journal: hardcoded "The Liberator", because the `ss_title` field includes the date
+          #     * Volume: `sm_field_volume`
+          #     * Issue: omitted, because date includes month
+          #     * Date: In parentheses, `ss_publication_date_text`
 
           journal = "The Liberator"
 
-          # TODO: Figure out if we want to consider empty sm_field_volume in the
-          # source record to be an error. See:
-          # https://www.pivotaltracker.com/story/show/120388273/comments/148179533
           volume = entity['sm_field_volume']               ?
                       " #{entity['sm_field_volume'][ 0 ]}" :
                       ''
