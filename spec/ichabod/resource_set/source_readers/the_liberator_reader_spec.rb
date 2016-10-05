@@ -42,17 +42,8 @@ module Ichabod
             }
             its(:data_provider) { should eq TheLiberatorReader::DATA_PROVIDER }
             its(:date) { should eq "1921-08-01T00:00:00Z" }
-            # TODO: have someone confirm this.
-            # For now, using http://www.chicagomanualofstyle.org/16/ch14/ch14_sec180.html,
-            # which uses: "[journal] [volume - in Arabic numerals], [issue, optional] ([date])".
-            # In our record, that would be:
-            #     * Journal: hardcoded "The Liberator", because the `ss_title` field includes the date
-            #     * Volume: `sm_field_volume`
-            #     * Issue: omitted, because date includes month
-            #     * Date: In parentheses, `ss_publication_date_text`
             its(:description) { should eq 'The Liberator 4, (August 1921)' }
             its(:identifier) { should eq 'http://hdl.handle.net/2333.1/5x69pb34' }
-            # TODO: https://www.pivotaltracker.com/story/show/120388273/comments/148193089
             its(:language) { should eq 'English' }
             its(:publisher) { should match_array ['Liberator Publishing Co.'] }
             its(:series) { should match_array ['4'] }
