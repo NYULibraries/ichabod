@@ -1,6 +1,8 @@
 # We need to bypass VCR in order to load data in the test environment
-require 'webmock' unless (Rails.env.staging?||Rails.env.production?)
-WebMock.allow_net_connect!
+unless (Rails.env.staging?||Rails.env.production?)
+ require 'webmock'
+ WebMock.allow_net_connect!
+end
 
 namespace :ichabod do
 
