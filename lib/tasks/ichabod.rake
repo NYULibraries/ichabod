@@ -1,6 +1,8 @@
 # We need to bypass VCR in order to load data in the test environment
-require 'webmock'
-WebMock.allow_net_connect!
+if Rails.env.test? || Rails.env.cucumber?
+ require 'webmock'
+ WebMock.allow_net_connect!
+end
 
 namespace :ichabod do
 
@@ -74,7 +76,7 @@ e.g.,  rake ichabod:create_collection['David Wojnarowicz Papers','Y']
   end
   #task to delete collections
   desc <<-DESC
-Deletes all collections
+  Deletes all collections
   DESC
   task :delete_collections, [] => :environment do |t|
     Collection.destroy_all
