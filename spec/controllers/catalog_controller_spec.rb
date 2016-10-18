@@ -53,6 +53,10 @@ describe CatalogController do
         expect(blacklight_configuration.index_fields.keys).to eq(expected_index_fields_order)
       end
 
+      it "should have title as its index title" do
+        expect(blacklight_configuration.index.title_field).to eq('desc_metadata__title_tesim')
+      end
+
       it "should have show fields (canonical item view fields) in the correct order" do
         expect(blacklight_configuration.show_fields.keys).to eq(expected_show_fields_order)
       end
