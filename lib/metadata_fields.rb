@@ -7,6 +7,7 @@ module MetadataFields
 	DEFAULT_NAMESPACE = NAMESPACE_ALL
 	DEFAULT_MULTIPLE  = MULTIPLE_ALL
 	METADATA_FIELDS = YAML.load_file(File.join(Rails.root, "config", "metadata_fields.yml"))["terms"]["vocabulary"].deep_symbolize_keys
+	DISPLAY_CONFIG = YAML.load_file(File.join(Rails.root, "config", "metadata_fields.yml"))["config"].deep_symbolize_keys
 
 	# get metadata fields
 	def process_metadata_field_names(ns:DEFAULT_NAMESPACE, multiple: DEFAULT_MULTIPLE)
@@ -200,6 +201,13 @@ module MetadataFields
 		end
 
 		solr_opts
+	end
+
+	# get configuration values
+	def get_config_value_by_key(key)
+		value = DISPLAY_CONFIG[key]
+
+		value
 	end
 
 	private_class_method :add_all_field_names, :add_field_names_by_ns, :allowed_values_for_multiple, :allowed_values_for_ns,
