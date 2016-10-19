@@ -23,7 +23,7 @@ class CatalogController < ApplicationController
     }
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'desc_metadata__title_tesim'
+    config.index.title_field = MetadataFields.get_config_value_by_key('index_title_field')
     config.index.display_type_field = 'has_model_ssim'
 
 
