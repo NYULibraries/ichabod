@@ -14,6 +14,10 @@ When(/^I am on the collections list$/) do
     visit collections_path
 end
 
+Then(/^I should see the detailed collection view$/) do
+  expect(page.first(:css, "div.alert.alert-info")).to have_content message
+end
+
 Then(/^I should (not )?see the title "(.*?)" in the collections list$/) do |negator, title|
   visit collections_path
   if negator
@@ -39,4 +43,8 @@ end
 
 Then(/^field "(.*?)" should be checked$/) do |field|
   expect(page.has_checked_field?("collection_#{field}")).to eq true
+end
+
+Then(/^I should see the "(.*?)" title/) do |value|
+  expect(page).to have_text(value)
 end

@@ -49,6 +49,8 @@ describe CollectionsController do
       expect(assigns(:collection)).to be_an Collection
       expect(assigns(:collection)).to be_persisted
       expect(assigns(:collection)).to be_valid
+      expect(assigns(:collection).read_groups).to eq ['public']
+      expect(assigns(:collection).edit_groups).to eq ['admin_group']
       expect(response).to redirect_to collection_path(assigns(:collection))
     end
     it 'should map attributes to all available fields' do

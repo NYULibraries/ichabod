@@ -42,6 +42,7 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     ensure_default_editors
+    ensure_default_viewers
     authorize! :create, @collection
     flash[:notice] = 'Collection was successfully created.' if @collection.save
     respond_with(@collection)
@@ -87,7 +88,11 @@ class CollectionsController < ApplicationController
       params.require(:collection).permit(:title, :identifier, :description, :discoverable, :rights, creator: [], publisher: [])
     end
 
-     def ensure_default_editors
+    def ensure_default_editors
       @collection.set_edit_groups(["admin_group"],[]) if @collection.edit_groups.blank?
-  end
+    end
+
+    def ensure_default_viewers
+      @collection.set_read_groups(["public"],[]) if @collection.read_groups.blank?
+    end
 end
