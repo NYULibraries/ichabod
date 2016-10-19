@@ -7,7 +7,7 @@ module MetadataFields
 	DEFAULT_NAMESPACE = NAMESPACE_ALL
 	DEFAULT_MULTIPLE  = MULTIPLE_ALL
 	METADATA_FIELDS = YAML.load_file(File.join(Rails.root, "config", "metadata_fields.yml"))["terms"]["vocabulary"].deep_symbolize_keys
-	DISPLAY_CONFIG = YAML.load_file(File.join(Rails.root, "config", "metadata_fields.yml"))["config"].deep_symbolize_keys
+	DISPLAY_CONFIG = YAML.load_file(File.join(Rails.root, "config", "metadata_fields.yml"))["config"]
 
 	# get metadata fields
 	def process_metadata_field_names(ns:DEFAULT_NAMESPACE, multiple: DEFAULT_MULTIPLE)
