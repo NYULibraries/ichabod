@@ -366,4 +366,11 @@ describe MetadataFields do
     end
   end
 
+  describe 'get_config_value_by_key' do
+    index_title = MetadataFields.get_config_value_by_key('index_title_field')
+    it 'returns the correct value for the "index_title_field" key' do
+      expect(index_title).to eq("desc_metadata__title_tesim")
+    end
+	end
+
 end
