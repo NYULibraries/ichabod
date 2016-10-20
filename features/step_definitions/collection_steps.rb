@@ -14,10 +14,6 @@ When(/^I am on the collections list$/) do
     visit collections_path
 end
 
-Then(/^I should see the detailed collection view$/) do
-  expect(page.first(:css, "div.alert.alert-info")).to have_content message
-end
-
 Then(/^I should (not )?see the title "(.*?)" in the collections list$/) do |negator, title|
   visit collections_path
   if negator
