@@ -12,7 +12,10 @@ FactoryGirl.define do
     description "We need to test how collection works"
     rights "rights1"
     discoverable 'Y'
-    after(:build) { |record| record.set_edit_groups(['admin_group'],[]) }
+    after(:build) do  |record|
+      record.set_edit_groups(['admin_group'],[])
+      record.set_read_groups(['public'],[])
+    end
 
 
     factory :collection_with_nyucores do

@@ -40,3 +40,7 @@ end
 Then(/^field "(.*?)" should be checked$/) do |field|
   expect(page.has_checked_field?("collection_#{field}")).to eq true
 end
+
+Then(/^I should see the "(.*?)" title/) do |value|
+  expect(page).to have_text(value)
+end
