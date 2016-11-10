@@ -6,17 +6,16 @@ module MetadataFields
   MULTIPLE_ALL  = 'all'
   DEFAULT_NAMESPACE = NAMESPACE_ALL
   DEFAULT_MULTIPLE  = MULTIPLE_ALL
-  METADATA_FIELDS = YAML.load_file(File.join(Rails.root, "config", "metadata_fields.yml"))["terms"]["vocabulary"].deep_symbolize_keys
-  DISPLAY_CONFIG = YAML.load_file(File.join(Rails.root, "config", "metadata_fields.yml"))["config"]
+  CONFIG_DATA = YAML.load_file(File.join(Rails.root, "config", "metadata_fields.yml"))
+  METADATA_FIELDS = CONFIG_DATA["terms"]["vocabulary"].deep_symbolize_keys
+  DISPLAY_CONFIG = CONFIG_DATA["config"]
 
   # get metadata fields
   def process_metadata_field_names(ns:DEFAULT_NAMESPACE, multiple: DEFAULT_MULTIPLE)
-    unless allowed_values_for_ns.include?(ns)
-      raise ArgumentError.new("#{ns} should be one of these values: #{allowed_values_for_ns}")
-    end
-    unless allowed_values_for_multiple.include?(multiple)
-      raise ArgumentError.new("#{multiple} should be one of these values: #{allowed_values_for_multiple}")
-    end
+    emsg_ns = "#{ns} should be one of these values: #{allowed_values_for_ns}"
+    raise ArgumentError.new(emsg_ns) unless allowed_values_for_ns.include?(ns)
+    emsg_multi = "#{multiple} should be one of these values: #{allowed_values_for_multiple}"
+    raise ArgumentError.new(emsg_multi) unless allowed_values_for_multiple.include?(multiple)
     chk_key = ns.to_sym
     field_names = []
     if METADATA_FIELDS.has_key?(chk_key)
@@ -205,9 +204,8 @@ module MetadataFields
 
   # get configuration values
   def get_config_value_by_key(key)
-    value = DISPLAY_CONFIG[key]
+    DISPLAY_CONFIG[key]
 
-    value
   end
 
   private_class_method :add_all_field_names, :add_field_names_by_ns, :allowed_values_for_multiple, :allowed_values_for_ns,
