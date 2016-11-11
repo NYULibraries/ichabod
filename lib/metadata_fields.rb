@@ -29,7 +29,7 @@ module MetadataFields
   # get namespace and uri for
   # metadata namespace
   def get_source_info(ns:DEFAULT_NAMESPACE)
-    emsg = "#{ns} should be one of these values: #{allowed_values_for_ns}")
+    emsg = "#{ns} should be one of these values: #{allowed_values_for_ns}"
     raise ArgumentError.new(emsg) unless allowed_values_for_ns.include?(ns)
     chk_key = ns.to_sym
     if METADATA_FIELDS.has_key?(chk_key)
