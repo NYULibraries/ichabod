@@ -12,10 +12,10 @@ module MetadataFields
 
   # get metadata fields
   def process_metadata_field_names(ns:DEFAULT_NAMESPACE, multiple: DEFAULT_MULTIPLE)
-    emsg_ns = "#{ns} should be one of these values: #{allowed_values_for_ns}"
-    raise ArgumentError.new(emsg_ns) unless allowed_values_for_ns.include?(ns)
-    emsg_multi = "#{multiple} should be one of these values: #{allowed_values_for_multiple}"
-    raise ArgumentError.new(emsg_multi) unless allowed_values_for_multiple.include?(multiple)
+    emsg = "#{ns} should be one of these values: #{allowed_values_for_ns}"
+    raise ArgumentError.new(emsg) unless allowed_values_for_ns.include?(ns)
+    emsg = "#{multiple} should be one of these values: #{allowed_values_for_multiple}"
+    raise ArgumentError.new(emsg) unless allowed_values_for_multiple.include?(multiple)
     chk_key = ns.to_sym
     field_names = []
     if METADATA_FIELDS.has_key?(chk_key)
@@ -29,9 +29,8 @@ module MetadataFields
   # get namespace and uri for
   # metadata namespace
   def get_source_info(ns:DEFAULT_NAMESPACE)
-    unless allowed_values_for_ns.include?(ns)
-      raise ArgumentError.new("#{ns} should be one of these values: #{allowed_values_for_ns}")
-    end
+    emsg = "#{ns} should be one of these values: #{allowed_values_for_ns}")
+    raise ArgumentError.new(emsg) unless allowed_values_for_ns.include?(ns)
     chk_key = ns.to_sym
     if METADATA_FIELDS.has_key?(chk_key)
       get_metadata_source_info(chk_key)
