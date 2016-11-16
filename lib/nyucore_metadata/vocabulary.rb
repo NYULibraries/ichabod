@@ -5,7 +5,7 @@ module NyucoreMetadata
     source_info = MetadataFields.get_source_info(ns:'nyucore')
     NAMESPACE = source_info[:namespace]
     URI = source_info[:uri]
-    TERMS = MetadataFields.process_metadata_fields(ns:'nyucore')
+    TERMS = MetadataFields.process_metadata_field_names(ns:'nyucore')
     TERMS.each { |term| property term }
 
     def initialize

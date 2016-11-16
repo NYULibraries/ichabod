@@ -9,8 +9,7 @@ module Ichabod
       URL_REGEXP = /^https?:\/\//
 
       #module METADATA_FIELDS is in app/model/concerns
-      NYUCORE_ATTRIBUTES = MetadataFields.process_metadata_fields
-
+      NYUCORE_ATTRIBUTES = MetadataFields.process_metadata_field_names
       attr_accessor :prefix
       attr_writer :pid_identifier
       attr_accessor(*NYUCORE_ATTRIBUTES)
@@ -33,7 +32,7 @@ module Ichabod
         # raises an error if it's not found
         @nyucore = Nyucore.find(pid: pid).first
         @nyucore ||= Nyucore.new(pid: pid)
-        NYUCORE_ATTRIBUTES.each do |attribute|  
+        NYUCORE_ATTRIBUTES.each do |attribute|
           @nyucore.source_metadata.send("#{attribute}=".to_sym, send(attribute))
         end
         @nyucore
@@ -63,13 +62,13 @@ module Ichabod
            when value.is_a?(String) then [value]
            else raise ArgumentError.new("Expecting #{value} to be an Array or String")
            end
-        
+
         iso_lang_code = ""
-        
+
         language.each{|lan|
           lan.downcase!
-          iso = ISO_639.search(lan) 
-          #returns an array of arrays 
+          iso = ISO_639.search(lan)
+          #returns an array of arrays
           iso.each_index{|la|
             iso[la].each{|l|
               #if code is found in language array of arrays
@@ -80,7 +79,7 @@ module Ichabod
                 break
               end
             }
-           
+
           }
           break if !iso_lang_code.empty?
         }
