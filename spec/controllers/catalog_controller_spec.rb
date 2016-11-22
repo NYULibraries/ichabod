@@ -34,12 +34,66 @@ describe CatalogController do
       context "when user is not authorized to see specific collection" do
         it "should be filtered in response" do
           expect(response_fq).to include("-is_part_of_ssim:info\\:fedora/#{collection_private.pid.gsub(":","\\:")}")
-        end  
+        end
       end
       context 'when user is authorized to see specific collection' do
         let(:user) {create(:gis_cataloger )}
         it "should not be filtered in response" do
           expect(response_fq).not_to include("-is_part_of_ssim:info\\:fedora/#{collection_private.pid.gsub(":","\\:")}")
+        end
+      end
+    end
+
+    describe "Blacklight configuration" do
+      it "should have facet fields in the correct order" do
+        expect(blacklight_configuration.facet_fields.keys).to eq(expected_facet_fields_order)
+      end
+
+      it "should have index fields (search result item fields) in the correct order" do
+        expect(blacklight_configuration.index_fields.keys).to eq(expected_index_fields_order)
+      end
+
+      it "should have title as its index title" do
+        expect(blacklight_configuration.index.title_field).to eq('desc_metadata__title_tesim')
+      end
+
+      it "should have show fields (canonical item view fields) in the correct order" do
+        expect(blacklight_configuration.show_fields.keys).to eq(expected_show_fields_order)
+      end
+
+      describe "'type' facet field" do
+        let(:field) { blacklight_facet_field('desc_metadata__type_sim') }
+
+        it "should have correct label" do
+          expect(field.label).to eq('Format')
+        end
+      end
+
+      describe "'available' index field" do
+        let(:field) { blacklight_index_field('desc_metadata__available_tesim') }
+
+        it "should have correct helper method" do
+          expect(field.helper_method).to eq('render_external_links')
+        end
+        it "should have correct label" do
+          expect(field.label).to eq('Online Resource')
+        end
+        it "should have correct text" do
+          expect(field.text).to eq('resource_text_display')
+        end
+      end
+
+      describe "'addinfolink' show field" do
+        let(:field) { blacklight_show_field('desc_metadata__addinfolink_tesim') }
+
+        it "should have correct helper method" do
+          expect(field.helper_method).to eq('render_external_links')
+        end
+        it "should have correct label" do
+          expect(field.label).to eq('Additional Information')
+        end
+        it "should have correct text" do
+          expect(field.text).to eq('desc_metadata__addinfotext_tesim')
         end
       end
     end
@@ -68,6 +122,67 @@ describe CatalogController do
   # Convenience
   def assigns_response
     @controller.instance_variable_get("@response")
+  end
+
+  def blacklight_configuration
+    @controller.instance_variable_get('@blacklight_config')
+  end
+
+  def blacklight_facet_field(field_name)
+    blacklight_configuration.facet_fields[field_name]
+  end
+
+  def blacklight_index_field(field_name)
+    blacklight_configuration.index_fields[field_name]
+  end
+
+  def blacklight_show_field(field_name)
+    blacklight_configuration.show_fields[field_name]
+  end
+
+  def expected_facet_fields_order
+    [
+        'desc_metadata__type_sim',
+        'desc_metadata__creator_sim',
+        'desc_metadata__subject_sim',
+        'desc_metadata__language_sim',
+        'is_part_of_ssim'
+    ]
+  end
+
+  def expected_index_fields_order
+    [
+        'desc_metadata__title_tesim',
+        'desc_metadata__format_ssim',
+        'desc_metadata__language_tesim',
+        'desc_metadata__publisher_tesim',
+        'desc_metadata__restrictions_tesim',
+        'desc_metadata__available_tesim',
+    ]
+  end
+
+  def expected_show_fields_order
+    [
+        'desc_metadata__title_tesim',
+        'desc_metadata__creator_tesim',
+        'desc_metadata__format_ssim',
+        'desc_metadata__language_tesim',
+        'desc_metadata__isbn_tesim',
+        'desc_metadata__publisher_tesim',
+        'desc_metadata__type_tesim',
+        'desc_metadata__description_tesim',
+        'desc_metadata__series_tesim',
+        'desc_metadata__version_tesim',
+        'desc_metadata__restrictions_tesim',
+        'desc_metadata__genre_tesim',
+        'desc_metadata__available_tesim',
+        'desc_metadata__relation_tesim',
+        'desc_metadata__location_tesim',
+        'desc_metadata__repo_tesim',
+        'desc_metadata__data_provider_tesim',
+        'desc_metadata__addinfolink_tesim',
+        'desc_metadata__rights_tesim'
+    ]
   end
 
   def response_qf

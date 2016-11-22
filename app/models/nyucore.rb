@@ -2,8 +2,8 @@ class Nyucore < ActiveFedora::Base
   include Hydra::AccessControls::Permissions
   include MetadataFields
 
-  SINGLE_FIELDS = MetadataFields.process_metadata_fields(multiple: false)
-  MULTIPLE_FIELDS = MetadataFields.process_metadata_fields(multiple: true)
+  SINGLE_FIELDS = MetadataFields.process_metadata_field_names(multiple: false)
+  MULTIPLE_FIELDS = MetadataFields.process_metadata_field_names(multiple: true)
 
   FIELDS = SINGLE_FIELDS + MULTIPLE_FIELDS
 

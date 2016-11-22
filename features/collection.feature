@@ -3,6 +3,12 @@ Feature: Add, edit and delete collections
   I want to see my resources organized in Ichabod by collection,
   which I can add, delete and edit
 
+  Scenario: Collection is viewable by public
+    Given the collection "The Image Collection" exists
+    And I am on the collections list
+    And I click on the "Show" link for "The Image Collection"
+    Then I should see the "The Image Collection" title
+
   @loggedin
   Scenario: New Collection form
     Given I am logged in as an admin
@@ -26,7 +32,7 @@ Feature: Add, edit and delete collections
     Then I should see the message "Collection was successfully created."
 
  @loggedin
- Scenario: Editing a record
+ Scenario: Editing a collection
     Given I am logged in as an admin
     And the collection "Audio Collection" exists
     And I am on the Edit Collection form
