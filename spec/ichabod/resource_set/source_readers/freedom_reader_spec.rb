@@ -42,8 +42,6 @@ module Ichabod
                                                    ]
             }
             its(:data_provider) { should eq FreedomReader::DATA_PROVIDER }
-            # There might be date errors in the Solr record.  For now, using what
-            # appears to be an incorrect date value for this magazine issue.
             its(:date) { should eq "1955-08-01T00:00:00Z" }
             # ss_publication_date_text value has a leading space.
             its(:description) { should eq 'Freedom 5, ( July-August 1955)' }
