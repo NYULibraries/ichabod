@@ -36,6 +36,8 @@ describe IndianOceanData do
         its(:identifier) { should eql 'http://hdl.handle.net/2333.1/djh9w3n0' }
         its(:title) { should eq ['VII Battaglione Eritreo'] }
         its(:subject) { should eql ['Turco-Italian War, 1911-1912','Italian military|Libya|Askari (Eritrean)','Libya'] }
+        its(:subject_spatial) { should eql ['Libya'] }
+        its(:language) { should eql ["Italian"] }
         its(:genre) { should eql ['Postcards'] }
         its(:type) { should eql ['still image'] }
         its(:description) { should eql ['Commemorates an Askari (Eritrian) battalion in the Italian army. Includes a list of major engagements and a listing of Italian officers.' ] }
