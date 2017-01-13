@@ -145,6 +145,23 @@ namespace :the_liberator do
   end
 end
 
+namespace :freedom do
+  # desc "Set variables for the Freedom ingest tasks"
+  task :set_variables do
+    set :freedom_endpoint_url, ENV['ICHABOD_FREEDOM_ENDPOINT_URL']
+    set :freedom_endpoint_rows, ENV['ICHABOD_FREEDOM_ROWS']
+    set :freedom_endpoint_start, ENV['ICHABOD_FREEDOM_START']
+  end
+  task :import do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['freedom',#{freedom_endpoint_url},#{freedom_endpoint_start},#{freedom_endpoint_rows}]"
+  end
+  task :delete do
+    set_variables
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:delete['freedom',#{freedom_endpoint_url},#{freedom_endpoint_start},#{freedom_endpoint_rows}]"
+  end
+end
+
 namespace :ingest do
   task :load_sdr do
     run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake ichabod:load['spatial_data_repository',#{ENV['GIT_GEO_SPATIAL_MD_URL']},#{ENV['ICHABOD_GIT_USER_TOKEN']}]"
