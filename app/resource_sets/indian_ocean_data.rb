@@ -32,7 +32,7 @@ class IndianOceanData < Ichabod::ResourceSet::Base
       identifier: ["handle"], title: ["title"], creator: ["creator"], contributor: ["contributor"],
       publisher: ["publisher", "publisher Location"], type: ["typeofresource"],
       description: ["description" ], date: ["date"], genre: ["genre"],
-      subject: ["subject","tags","geographic_location"], language: [ "language"], subject_spatial: ["geographic_location"]
+      subject: ["subject","tags","geographic_location"], language: ["language"], subject_spatial: ["geographic_location"]
     }
   end
 end
