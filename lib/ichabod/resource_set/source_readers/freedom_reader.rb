@@ -58,7 +58,7 @@ module Ichabod
             fq: 'sm_collection_code:fdm',
 
             rows: rows,
-            sort: 'id asc',
+            sort: 'id desc',
             start: start,
             wt: 'json'
           }
@@ -83,6 +83,9 @@ module Ichabod
           time_part = "T00:00:00Z"
           # Date.parse("January 1951").iso8601 returns "1951-01-01" -- note the
           # addition of the day.
+          # Date.parse("July-August 1955").iso8601 returns "1955-08-01" -- note
+          # that the 2nd month only is retained.  At least one record in Freedom
+          # has a date in this form.
           "#{Date.parse(date_string).iso8601}#{time_part}"
         end
 

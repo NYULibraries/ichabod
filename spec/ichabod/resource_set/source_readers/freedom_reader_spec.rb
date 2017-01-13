@@ -30,10 +30,11 @@ module Ichabod
             end
           end
           describe 'the first record' do
-            # http://discovery.dlib.nyu.edu:8080/solr3_discovery/viewer/select/?fq=http://hdl.handle.net/2333.1/5x69pb34
+            # http://http://discovery.dlib.nyu.edu:8080/solr3_discovery/viewer/select/?qf=id&q=705lna/node/14018
             subject { read.first }
             its(:prefix) { should eq resource_set.prefix }
-            its(:available) { should eq 'http://hdl.handle.net/2333.1/djh9w50t' }
+            its(:available) { should eq 'http://hdl.handle.net/2333.1/vhhmgvws' }
+            # Typo of "PaulJr" is in the Solr record.
             its(:creator) { should match_array [
                                                    'Robeson, Paul, 1898-1976, editorial director.',
                                                    'Burnham, Louis E., editor.',
@@ -41,12 +42,15 @@ module Ichabod
                                                    ]
             }
             its(:data_provider) { should eq FreedomReader::DATA_PROVIDER }
-            its(:date) { should eq "1951-01-01T00:00:00Z" }
-            its(:description) { should eq 'Freedom 1, (January 1951)' }
-            its(:identifier) { should eq 'http://hdl.handle.net/2333.1/djh9w50t' }
+            # There might be date errors in the Solr record.  For now, using what
+            # appears to be an incorrect date value for this magazine issue.
+            its(:date) { should eq "1955-08-01T00:00:00Z" }
+            # ss_publication_date_text value has a leading space.
+            its(:description) { should eq 'Freedom 5, ( July-August 1955)' }
+            its(:identifier) { should eq 'http://hdl.handle.net/2333.1/vhhmgvws' }
             its(:language) { should eq 'English' }
             its(:publisher) { should match_array ['Freedom Associates'] }
-            its(:series) { should match_array ['1'] }
+            its(:series) { should match_array ['5'] }
             its(:subject) { should match_array [
                                                    'African Americans -- Civil rights -- United States -- Newspapers',
                                                    'African Americans -- Economic conditions -- Newspapers',
@@ -59,7 +63,7 @@ module Ichabod
                                                    'United States'
                                                ]
             }
-            its(:title) { should eq 'Freedom, January 1951' }
+            its(:title) { should eq 'Freedom, July-August 1955' }
             its(:type) { should eq FreedomReader::FORMAT }
           end
         end
