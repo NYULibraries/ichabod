@@ -8,7 +8,7 @@ module Ichabod
            {
              identifier: ["identifier.uri"], title: ["title" ], creator: ["contributor.author" ], publisher: [["publisher.place","publisher", "date.issued"], [":",","]],
              type: ["type.resource","type" ], description: ["description.abstract","description" ], date: ["date.issued"],
-             format: ["format" ], rights: ["rights" ], subject: ["subject","coverage","coverage.temporal"], language: ["language"], spatial_subject: ["coverage.temporal"]
+             format: ["format" ], rights: ["rights" ], subject: ["subject","coverage","coverage.temporal"], language: ["language.iso"], subject_spatial: ["coverage.temporal"]
            }
          }
         let(:csv_reader_options) { { :col_sep=>";" } }
@@ -48,7 +48,7 @@ module Ichabod
               its(:subject) { should eql ["Business--Demande", "Business--Supply", "Test Location"] }
               its(:description) { should eql ["Millions of US businesses dating back to 2010 the codebook."] }
               its(:language) { should eq 'English' }
-              its(:spatial_subject) { should eql ["Test Location"] }
+              its(:subject_spatial) { should eql ["Test Location"] }
             end
           end
           describe 'when first joined column is blank it should use correct join signs' do

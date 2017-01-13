@@ -35,7 +35,7 @@ module Ichabod
             format: dc_attribute_from_record("format",record),
             rights: dc_attribute_from_record("rights",record),
             subject: dc_attribute_from_record("subject",record),
-            spatial_subject: dc_attribute_from_record("spatial_subject",record),
+            subject_spatial: dc_attribute_from_record("subject_spatial",record),
             language: dc_attribute_from_record("language",record),
             genre: dc_attribute_from_record("genre",record),
           }
