@@ -56,7 +56,7 @@ module Ichabod
           {
             # We want to make sure we don't load the collection record, but only
             # records that belong to that collection record.
-            fq: "sm_collection_code:#{@collection_code}",
+            fq: "sm_collection_code:#{collection_code}",
 
             rows: rows,
             sort: 'id asc',
@@ -101,7 +101,7 @@ module Ichabod
                       ''
           publication_date = entity['ss_publication_date_text']
 
-          "#{@journal}#{volume}, (#{publication_date})"
+          "#{journal}#{volume}, (#{publication_date})"
         end
       end
     end
