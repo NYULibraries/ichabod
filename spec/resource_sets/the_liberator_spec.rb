@@ -22,7 +22,7 @@ describe TheLiberator do
   end
   describe '.source_reader' do
     subject { TheLiberator.source_reader }
-    it { should eq Ichabod::ResourceSet::SourceReaders::TheLiberatorReader }
+    it { should eq Ichabod::ResourceSet::SourceReaders::TamimentJournalReader }
   end
   describe '.editors' do
     subject { TheLiberator.editors }
