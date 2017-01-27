@@ -1,5 +1,5 @@
 class Freedom < Ichabod::ResourceSet::Base
-  self.prefix = 'freedom'
+  self.prefix = 'fdm'
   self.collection_title = "Freedom"
   self.source_reader = :freedom_reader
 
