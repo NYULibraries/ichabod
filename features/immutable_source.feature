@@ -10,23 +10,21 @@ Feature: Source fields immutable, edit native fields
     When I navigate to details display of the first result
     Then I should see the value "Buenos Aires (Argentina)." in the "Publisher:" field
 
-  @loggedin
+  @loggedin 
   Scenario: Check that source metadata fields are not editable
     Given I am logged in as "GIS Cataloger"
-    And I view record with id "sdr:hdl-handle-net-2451-34036"
+    And I view record with id "sdr:hdl-handle-net-2451-33876"
     When I click on "Edit"
     Then I should see the immutable fields:
-      | Identifier    | http://hdl.handle.net/2451/34036            |
-      | Available     | http://hdl.handle.net/2451/34036            |
-      | Title         | 2013 Hospital Zone Areas in Buenos Aires    |
-      | Creator       | Government of the Autonomous City of Buenos Aires |
+      | Identifier    | http://hdl.handle.net/2451/33876            |
+      | Available     | https://geo.nyu.edu/catalog/nyu_2451_33876  |
+      | Title         | National Jewish Population Map by County    |
+      | Creator       | Joshua Comenetz |
       | Type          | Geospatial Data                             |
-      | Publisher     | Buenos Aires (Argentina).                   |
-      | Description   | This map is the boundaries and the names of the hospital zone areas in Buenos Aires, Argentina. It is taken from the City of Buenos Aires GIS and data center, and full documentation is available at http://data.buenosaires.gob.ar/dataset/areas-hospitalarias/resource/c1caac1d-6055-44fa-9367-c30c36424610 |
-      | Date          | 07/02/2013                                  |
-      | Language      | English                                     |
+      | Publisher     | The Jewish Federations of North America                   |
+      | Description   | This file is an estimate of the number of Jewish persons in the U.S. by county in 2010 census geographies, based upon multiple sources of data, including Jewish community studies available at the Jewish Data Bank, the Data Bank's Current Jewish Population Report series, and the American Community Survey. Joshua Comenetz used indicators like language spoken and ancestry in the absence of standard demographic data to measure Jewish populations. For more information on the methodology used to compile this data set, see the Jewish Data Bank. |
       | Rights        | Public                                      |
-      | Subject       | Buenos Aires Metropolitan Area (Argentina)--Maps  |
+      | Subject       | Judaism  |
 
   @loggedin
   Scenario: Check that native metadata fields are editable
