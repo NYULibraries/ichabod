@@ -4,7 +4,7 @@ module Ichabod
       require 'faraday'
       require 'multi_json'
       
-      class TheLiberatorReader < ResourceSet::SourceReader
+      class TamimentJournalReader < ResourceSet::SourceReader
         DATA_PROVIDER = "NYU"
         FORMAT = "Journal"
 
@@ -16,7 +16,8 @@ module Ichabod
 
         private
         extend Forwardable
-        def_delegators :resource_set, :endpoint_url, :collection_code, :start, :rows
+        def_delegators :resource_set, :endpoint_url, :collection_code, :journal,
+          :start, :rows
 
         def resource_attributes_from_entities(entity)
           {
@@ -55,7 +56,7 @@ module Ichabod
           {
             # We want to make sure we don't load the collection record, but only
             # records that belong to that collection record.
-            fq: 'sm_collection_code:theliberator',
+            fq: "sm_collection_code:#{collection_code}",
 
             rows: rows,
             sort: 'id asc',
@@ -94,8 +95,6 @@ module Ichabod
           #     * Volume: `sm_field_volume`
           #     * Issue: omitted, because date includes month
           #     * Date: In parentheses, `ss_publication_date_text`
-
-          journal = "The Liberator"
 
           volume = entity['sm_field_volume']               ?
                       " #{entity['sm_field_volume'][ 0 ]}" :
